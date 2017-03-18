@@ -12,6 +12,7 @@ services:
       - db
     volumes: 
       - ${DOCUMENT_ROOT-./www}:/var/www/html
+      - ${VHOSTS_DIR-./config/vhosts}:/etc/apache2/sites-enabled
   db:
     build: ./bin/mysql
     container_name: db
