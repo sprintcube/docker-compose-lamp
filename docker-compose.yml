@@ -17,8 +17,8 @@ services:
     container_name: db
     ports:
       - "3306:3306"
-    expose:
-      - "3306"
+    # expose:
+    #   - "3306"
     volumes: 
       - ${DATABASE_DIR-./data}:/var/lib/mysql
     environment:
@@ -26,3 +26,15 @@ services:
       MYSQL_DATABASE: docker
       MYSQL_USER: docker
       MYSQL_PASSWORD: docker
+  phpmyadmin:
+    image: phpmyadmin/phpmyadmin
+    container_name: phpmyadmin
+    links:
+      - db
+    ports:
+      - 8080:80
+    environment:
+      MYSQL_USERNAME: root
+      MYSQL_ROOT_PASSWORD: password
+    volumes: 
+      - /sessions
