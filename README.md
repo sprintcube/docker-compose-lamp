@@ -49,7 +49,7 @@ _**MYSQL_LOG_DIR**_
 This will be used to store Apache logs. The default value for this is `./logs/mysql`.
 
 ## Web Server
-----------------------------------------------
+-------------
 Apache is configured to run on port 80. So, you can access it via `http://localhost`.
 
 #### Apache Modules
@@ -62,7 +62,7 @@ By default following modules are enabled.
 > You have to rebuild the docker image by running `docker-compose buld` and restart the docker containers.
 
 ## PHP
-----------------------------------------------
+------
 The installed version of PHP is 7.1.
 
 #### Extensions
@@ -81,7 +81,7 @@ By default following extensions are installed.
 > You have to rebuild the docker image by running `docker-compose buld` and restart the docker containers.
 
 ## phpMyAdmin
-----------------------------------------------
+-------------
 phpMyAdmin is configured to run on port 8080. Use following default credentials.
 
 http://localhost:8080/
