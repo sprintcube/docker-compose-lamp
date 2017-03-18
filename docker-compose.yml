@@ -13,6 +13,7 @@ services:
     volumes: 
       - ${DOCUMENT_ROOT-./www}:/var/www/html
       - ${VHOSTS_DIR-./config/vhosts}:/etc/apache2/sites-enabled
+      - ${LOG_DIR-./logs/apache2}:/var/log/apache2
   db:
     build: ./bin/mysql
     container_name: db
@@ -20,6 +21,7 @@ services:
       - "3306:3306"
     volumes: 
       - ${DATABASE_DIR-./data}:/var/lib/mysql
+      - ${MYSQL_LOG_DIR-./logs/mysql}:/var/log/mysql
     environment:
       MYSQL_ROOT_PASSWORD: tiger
       MYSQL_DATABASE: docker

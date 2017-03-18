@@ -1,4 +1,5 @@
 /.env
 /.vscode
-/config/vhosts/*
+/config/*
 /data/*
+/logs/*
