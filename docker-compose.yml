@@ -1,1 +1,28 @@
+version: "3"
 
+services:
+  webserver:
+    build: 
+      context: ./bin/webserver
+    container_name: webserver
+    ports:
+      - "80:80"
+      - "443:443"
+    links: 
+      - db
+    volumes: 
+      - ${DOCUMENT_ROOT-./www}:/var/www/html
+  db:
+    build: ./bin/mysql
+    container_name: db
+    ports:
+      - "3306:3306"
+    expose:
+      - "3306"
+    volumes: 
+      - ${DATABASE_DIR-./data}:/var/lib/mysql
+    environment:
+      MYSQL_ROOT_PASSWORD: password
+      MYSQL_DATABASE: docker
+      MYSQL_USER: docker
+      MYSQL_PASSWORD: docker
