@@ -30,10 +30,10 @@ RUN docker-php-ext-install gd exif
 RUN pecl install xdebug \
     && docker-php-ext-enable xdebug \
     && echo "zend_extension=$(find /usr/local/lib/php/extensions/ -name xdebug.so)\n" >> /usr/local/etc/php/conf.d/xdebug.ini \
-    && echo "xdebug.default_enable=1\n" >> /usr/local/etc/php/conf.d/xdebug.ini \
-    && echo "xdebug.remote_enable=1\n" >> /usr/local/etc/php/conf.d/xdebug.ini \
-    && echo "xdebug.remote_connect_back=1\n" >> /usr/local/etc/php/conf.d/xdebug.ini \
-    && echo "xdebug.remote_autostart=1\n" >> /usr/local/etc/php/conf.d/xdebug.ini \
+    && echo "xdebug.default_enable=On\n" >> /usr/local/etc/php/conf.d/xdebug.ini \
+    && echo "xdebug.remote_enable=On\n" >> /usr/local/etc/php/conf.d/xdebug.ini \
+    && echo "xdebug.remote_connect_back=On\n" >> /usr/local/etc/php/conf.d/xdebug.ini \
+    && echo "xdebug.remote_autostart=On\n" >> /usr/local/etc/php/conf.d/xdebug.ini \
     && echo "xdebug.remote_handler=dbgp\n" >> /usr/local/etc/php/conf.d/xdebug.ini \
     && echo "xdebug.remote_port=9000\n" >> /usr/local/etc/php/conf.d/xdebug.ini
 
