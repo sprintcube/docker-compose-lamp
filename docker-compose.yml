@@ -17,8 +17,6 @@ services:
     container_name: db
     ports:
       - "3306:3306"
-    # expose:
-    #   - "3306"
     volumes: 
       - ${DATABASE_DIR-./data}:/var/lib/mysql
     environment:
