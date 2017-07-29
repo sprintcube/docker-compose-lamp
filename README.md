@@ -32,9 +32,9 @@ _**DOCUMENT_ROOT**_
 
 It is a document root for Apache server. The default value for this is `./www`. All your sites will go here and will be synced automatically.
 
-_**DATABASE_DIR**_
+_**MYSQL_DATA_DIR**_
 
-This is MySQL data directory. The default value for this is `./data`. All your MySQL data files will be stored here.
+This is MySQL data directory. The default value for this is `./data/mysql`. All your MySQL data files will be stored here.
 
 _**VHOSTS_DIR**_
 
