@@ -1,5 +1,5 @@
 <?php
-$link = mysqli_connect("db", "docker", "docker", "docker");
+$link = mysqli_connect("mysql", "tnb", "tnb", "tnb");
 
 if (!$link) {
     echo "Error: Unable to connect to MySQL." . PHP_EOL;

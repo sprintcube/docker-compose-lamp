@@ -1,41 +1,20 @@
-FROM php:7.1-apache
+FROM php:7.0-apache
 
-RUN apt-get update
+RUN curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local/bin --filename=composer
 
-RUN apt-get install -y g++
+RUN apt-get update && apt-get install -y g++ \
+		libfreetype6-dev libjpeg62-turbo-dev libmcrypt-dev \
+		libpng12-dev zlib1g-dev libpng-dev libicu-dev libcurl4-openssl-dev libxml2-dev
 
-# install extensions
+RUN docker-php-ext-install mysqli mbstring zip intl mcrypt curl json
+RUN docker-php-ext-install iconv xml xmlrpc 
 
-RUN apt-get install -y libcurl4-openssl-dev
-RUN docker-php-ext-install curl
+RUN docker-php-ext-configure gd --with-freetype-dir=/usr/include/ --with-jpeg-dir=/usr/include/ \
+    && docker-php-ext-install -j$(nproc) gd
 
-RUN apt-get install -y libicu-dev
-RUN docker-php-ext-install intl
-
-RUN docker-php-ext-install mbstring
-
-RUN apt-get install -y libmcrypt-dev
-RUN docker-php-ext-install mcrypt
-
-RUN apt-get install -y libxml2-dev
-RUN docker-php-ext-install dom xml
-
-RUN docker-php-ext-install pdo_mysql mysqli
-
-RUN apt-get install -y libgd-dev libfreetype6-dev libjpeg62-turbo-dev libpng12-dev
-RUN docker-php-ext-configure gd --with-freetype-dir=/usr
-RUN docker-php-ext-install gd exif
-
-# xdebug
-RUN pecl install xdebug \
-    && docker-php-ext-enable xdebug \
-    && echo "zend_extension=$(find /usr/local/lib/php/extensions/ -name xdebug.so)\n" >> /usr/local/etc/php/conf.d/xdebug.ini \
-    && echo "xdebug.default_enable=On\n" >> /usr/local/etc/php/conf.d/xdebug.ini \
-    && echo "xdebug.remote_enable=On\n" >> /usr/local/etc/php/conf.d/xdebug.ini \
-    && echo "xdebug.remote_connect_back=On\n" >> /usr/local/etc/php/conf.d/xdebug.ini \
-    && echo "xdebug.remote_autostart=On\n" >> /usr/local/etc/php/conf.d/xdebug.ini \
-    && echo "xdebug.remote_handler=dbgp\n" >> /usr/local/etc/php/conf.d/xdebug.ini \
-    && echo "xdebug.remote_port=9000\n" >> /usr/local/etc/php/conf.d/xdebug.ini
+RUN pecl install redis-3.1.0 \
+    && pecl install xdebug-2.5.0 \
+    && docker-php-ext-enable redis xdebug
 
 # Enable apache modules
-RUN a2enmod rewrite
+RUN a2enmod rewrite headers

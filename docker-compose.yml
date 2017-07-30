@@ -4,39 +4,46 @@ services:
   webserver:
     build: 
       context: ./bin/webserver
-    container_name: webserver
+    container_name: 'tnb-webserver'
+    restart: 'always'
     ports:
       - "80:80"
       - "443:443"
     links: 
-      - db
+      - mysql
     volumes: 
       - ${DOCUMENT_ROOT-./www}:/var/www/html
       - ${PHP_INI-./config/php/php.ini}:/usr/local/etc/php/php.ini
       - ${VHOSTS_DIR-./config/vhosts}:/etc/apache2/sites-enabled
       - ${LOG_DIR-./logs/apache2}:/var/log/apache2
-  db:
+  mysql:
     build: ./bin/mysql
-    container_name: db
+    container_name: 'tnb-mysql'
+    restart: 'always'
     ports:
       - "3306:3306"
     volumes: 
-      - ${DATABASE_DIR-./data}:/var/lib/mysql
+      - ${MYSQL_DATA_DIR-./data/mysql}:/var/lib/mysql
       - ${MYSQL_LOG_DIR-./logs/mysql}:/var/log/mysql
     environment:
       MYSQL_ROOT_PASSWORD: tiger
-      MYSQL_DATABASE: docker
-      MYSQL_USER: docker
-      MYSQL_PASSWORD: docker
+      MYSQL_DATABASE: tnb
+      MYSQL_USER: tnb
+      MYSQL_PASSWORD: tnb
   phpmyadmin:
     image: phpmyadmin/phpmyadmin
-    container_name: phpmyadmin
+    container_name: 'tnb-phpmyadmin'
     links:
-      - db
-    ports:
-      - 8080:80
+      - mysql
     environment:
-      MYSQL_USERNAME: root
-      MYSQL_ROOT_PASSWORD: password
+      PMA_HOST: mysql
+      PMA_PORT: 3306
+    ports:
+      - '8080:80'
     volumes: 
       - /sessions
+  redis:
+    container_name: 'tnb-redis'
+    image: redis:latest
+    ports:
+      - "6379:6379"

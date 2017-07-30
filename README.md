@@ -2,7 +2,7 @@
 
 This is a basic LAMP stack environment buit using Docker Compose. It consists following:
 
-* PHP 7.1
+* PHP 7.0
 * Apache 2.4
 * MySQL 5.7
 * phpMyAdmin
@@ -32,9 +32,9 @@ _**DOCUMENT_ROOT**_
 
 It is a document root for Apache server. The default value for this is `./www`. All your sites will go here and will be synced automatically.
 
-_**DATABASE_DIR**_
+_**MYSQL_DATA_DIR**_
 
-This is MySQL data directory. The default value for this is `./data`. All your MySQL data files will be stored here.
+This is MySQL data directory. The default value for this is `./data/mysql`. All your MySQL data files will be stored here.
 
 _**VHOSTS_DIR**_
 
@@ -69,12 +69,16 @@ The installed version of PHP is 7.1.
 
 By default following extensions are installed.
 
-* curl
-* intl
-* mbstring
-* mcrypt
 * mysqli
+* mbstring
+* zip
+* intl
+* mcrypt
+* curl
+* json
+* iconv
 * xml
+* xmlrpc
 * gd
 
 > If you want to install more extension, just update `./bin/webserver/Dockerfile`. You can also generate a PR and we will merge if seems good for general purpose.
@@ -84,6 +88,6 @@ By default following extensions are installed.
 
 phpMyAdmin is configured to run on port 8080. Use following default credentials.
 
-http://localhost:8080/
-username: root
+http://localhost:8080/  
+username: root  
 password: tiger
