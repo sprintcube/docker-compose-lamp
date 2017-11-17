@@ -2,7 +2,7 @@
 
 This is a basic LAMP stack environment buit using Docker Compose. It consists following:
 
-* PHP 7.0
+* PHP 7.1
 * Apache 2.4
 * MySQL 5.7
 * phpMyAdmin
@@ -16,6 +16,7 @@ git clone https://github.com/theknightlybuilders/docker-compose-lamp.git
 cd docker-compose-lamp/
 docker-compose up -d
 ```
+
 Your LAMP stack is now ready!! You can access it via `http://localhost`.
 
 ## Configuration
