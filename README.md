@@ -1,6 +1,6 @@
 # LAMP stack built with Docker Compose
 
-This is a basic LAMP stack environment buit using Docker Compose. It consists following:
+This is a basic LAMP stack environment built using Docker Compose. It consists following:
 
 * PHP 7.1
 * Apache 2.4
