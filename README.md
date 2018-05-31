@@ -63,6 +63,14 @@ By default following modules are enabled.
 > If you want to enable more modules, just update `./bin/webserver/Dockerfile`. You can also generate a PR and we will merge if seems good for general purpose.
 > You have to rebuild the docker image by running `docker-compose build` and restart the docker containers.
 
+#### Connect via SSH
+
+You can connect to web server using `docker exec` command to perform various operation on it. Use below command to login to container via ssh.
+
+```shell
+docker exec -it png-webserver /bin/bash
+```
+
 ## PHP
 
 The installed version of PHP is 7.1.
