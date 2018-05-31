@@ -31,9 +31,9 @@
                                 <li>PHP <?= phpversion(); ?></li>
                                 <li>
                                     <?php
-                                    $link = mysqli_connect("mysql", "tnb", "tnb", "tnb");
+                                    $link = mysqli_connect("mysql", "png", "png", "png");
 
-                                    /* check connection */
+/* check connection */
                                     if (mysqli_connect_errno()) {
                                         printf("MySQL connecttion failed: %s", mysqli_connect_error());
                                     } else {

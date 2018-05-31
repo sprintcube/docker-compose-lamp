@@ -1,5 +1,5 @@
 <?php
-$link = mysqli_connect("mysql", "tnb", "tnb", "tnb");
+$link = mysqli_connect("mysql", "png", "png", "png");
 
 if (!$link) {
     echo "Error: Unable to connect to MySQL." . PHP_EOL;
