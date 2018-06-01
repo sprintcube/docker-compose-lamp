@@ -43,6 +43,8 @@ _**VHOSTS_DIR**_
 
 This is for virtual hosts. The default value for this is `./config/vhosts`. You can place your virtual hosts conf files here.
 
+> Make sure you add an entry to your system's `hosts` file for each virtual host.
+
 _**APACHE_LOG_DIR**_
 
 This will be used to store Apache logs. The default value for this is `./logs/apache2`.
