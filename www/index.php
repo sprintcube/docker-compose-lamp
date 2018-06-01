@@ -31,7 +31,7 @@
                                 <li>PHP <?= phpversion(); ?></li>
                                 <li>
                                     <?php
-                                    $link = mysqli_connect("mysql", "png", "png", "png");
+                                    $link = mysqli_connect("mysql", "root", "tiger", null);
 
 /* check connection */
                                     if (mysqli_connect_errno()) {
