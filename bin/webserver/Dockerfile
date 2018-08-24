@@ -47,6 +47,3 @@ RUN a2enmod rewrite headers
 
 ADD ../config/php/php.ini /usr/local/etc/php/php.ini
 ADD ../config/vhost/default.conf /usr/local/etc/php/php.ini
-
-
-
