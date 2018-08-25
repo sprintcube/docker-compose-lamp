@@ -46,4 +46,4 @@ RUN docker-php-ext-install -j$(nproc) gd
 RUN a2enmod rewrite headers
 
 ADD ./config/php/php.ini /usr/local/etc/php/php.ini
-ADD ./config/vhost/default.conf /usr/local/etc/php/php.ini
+ADD ./config/vhost/default.conf /etc/apache2/sites-enabled
