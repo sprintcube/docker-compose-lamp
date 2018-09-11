@@ -9,11 +9,13 @@ This is a basic LAMP stack environment built using Docker Compose. It consists f
 
 ## Installation
 
-Clone this repository on your local computer. Run the `docker-compose up -d`.
+Clone this repository on your local computer and switch to branch `7.2.x`. Run the `docker-compose up -d`.
 
 ```shell
-git clone https://github.com/pnglabz/docker-compose-lamp.git
+git clone https://github.com/sprintcube/docker-compose-lamp.git
 cd docker-compose-lamp/
+git fetch --all
+git checkout 7.2.x
 docker-compose up -d
 ```
 
@@ -70,7 +72,7 @@ By default following modules are enabled.
 You can connect to web server using `docker exec` command to perform various operation on it. Use below command to login to container via ssh.
 
 ```shell
-docker exec -it png-webserver /bin/bash
+docker exec -it 7.2.x-webserver /bin/bash
 ```
 
 ## PHP
