@@ -1,10 +1,8 @@
 # LAMP stack built with Docker Compose
 
-![Landing Page](https://preview.ibb.co/gOTa0y/LAMP_STACK.png)
-
 This is a basic LAMP stack environment built using Docker Compose. It consists following:
 
-* PHP 7.1.20
+* PHP 7.2
 * Apache 2.4
 * MySQL 5.7
 * phpMyAdmin
@@ -77,7 +75,7 @@ docker exec -it png-webserver /bin/bash
 
 ## PHP
 
-The installed version of PHP is 7.1.20
+The installed version of PHP is 7.2
 
 #### Extensions
 
