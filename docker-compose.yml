@@ -7,8 +7,8 @@ services:
     container_name: 'png-webserver'
     restart: 'always'
     ports:
-      - "80:80"
-      - "443:443"
+      - "90:80"
+      - "543:443"
     links: 
       - mysql
     volumes: 
