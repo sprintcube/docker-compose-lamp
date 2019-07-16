@@ -2,20 +2,20 @@
 
 This is a basic LAMP stack environment built using Docker Compose. It consists following:
 
-* PHP 7.2
+* PHP 7.3
 * Apache 2.4
 * MySQL 5.7
 * phpMyAdmin
 
 ## Installation
 
-Clone this repository on your local computer and switch to branch `7.2.x`. Run the `docker-compose up -d`.
+Clone this repository on your local computer and switch to branch `7.3.x`. Run the `docker-compose up -d`.
 
 ```shell
 git clone https://github.com/sprintcube/docker-compose-lamp.git
 cd docker-compose-lamp/
 git fetch --all
-git checkout 7.2.x
+git checkout 7.3.x
 docker-compose up -d
 ```
 
@@ -72,12 +72,12 @@ By default following modules are enabled.
 You can connect to web server using `docker exec` command to perform various operation on it. Use below command to login to container via ssh.
 
 ```shell
-docker exec -it 7.2.x-webserver /bin/bash
+docker exec -it 7.3.x-webserver /bin/bash
 ```
 
 ## PHP
 
-The installed version of PHP is 7.2
+The installed version of PHP is 7.3
 
 #### Extensions
 
