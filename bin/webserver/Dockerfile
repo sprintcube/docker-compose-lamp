@@ -31,7 +31,7 @@ RUN docker-php-ext-install curl
 RUN docker-php-ext-install tokenizer
 RUN docker-php-ext-install json
 
-RUN apt-get -y install zlib1g-dev
+RUN apt-get -y install zlib1g-dev libzip-dev
 RUN docker-php-ext-install zip
 
 RUN apt-get -y install libicu-dev
