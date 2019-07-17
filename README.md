@@ -51,7 +51,7 @@ This will be used to store Apache logs. The default value for this is `./logs/ap
 
 _**MYSQL_LOG_DIR**_
 
-This will be used to store Apache logs. The default value for this is `./logs/mysql`.
+This will be used to store MySQL logs. The default value for this is `./logs/mysql`.
 
 ## Web Server
 
