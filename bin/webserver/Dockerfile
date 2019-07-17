@@ -13,7 +13,7 @@ RUN apt-get -y install --fix-missing apt-utils build-essential git curl libcurl3
 RUN curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local/bin --filename=composer
 
 # Install xdebug
-RUN pecl install xdebug-2.6.0
+RUN pecl install xdebug-2.7.2
 RUN docker-php-ext-enable xdebug
 
 # Install redis
