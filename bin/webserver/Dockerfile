@@ -1,4 +1,4 @@
-FROM php:7.2-apache
+FROM php:7.3-apache-stretch
 
 RUN apt-get -y update --fix-missing
 RUN apt-get upgrade -y
@@ -13,7 +13,7 @@ RUN apt-get -y install --fix-missing apt-utils build-essential git curl libcurl3
 RUN curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local/bin --filename=composer
 
 # Install xdebug
-RUN pecl install xdebug-2.6.0
+RUN pecl install xdebug-2.7.2
 RUN docker-php-ext-enable xdebug
 
 # Install redis
@@ -31,7 +31,7 @@ RUN docker-php-ext-install curl
 RUN docker-php-ext-install tokenizer
 RUN docker-php-ext-install json
 
-RUN apt-get -y install zlib1g-dev
+RUN apt-get -y install zlib1g-dev libzip-dev
 RUN docker-php-ext-install zip
 
 RUN apt-get -y install libicu-dev
