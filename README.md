@@ -77,9 +77,11 @@ docker exec -it 7.3.x-webserver /bin/bash
 
 ## Database
 
-This will be used to choose the Database vendor. MySQL is used by default.
+There are following configuration variables available and you can customize them by overwritting in your own .env file.
 
 _**DATABASE**_
+
+Switch the database vendor from mysql to mariadb. You can also easily add additonal database versions. 
 
 ## PHP
 
