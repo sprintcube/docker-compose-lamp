@@ -4,7 +4,7 @@ services:
   webserver:
     build: 
       context: ./bin/webserver
-    container_name: '7.2.x-webserver'
+    container_name: '7.3.x-webserver'
     restart: 'always'
     ports:
       - "${HOST_MACHINE_UNSECURE_HOST_PORT}:80"
