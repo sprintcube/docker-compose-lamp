@@ -1,6 +1,9 @@
 # LAMP stack built with Docker Compose
 
-![Landing Page](https://preview.ibb.co/gOTa0y/LAMP_STACK.png)
+
+<p align="center">
+  <img width="600" height="400" src="https://preview.ibb.co/gOTa0y/LAMP_STACK.png">
+</p>
 
 This is a basic LAMP stack environment built using Docker Compose. It consists following:
 
@@ -23,7 +26,7 @@ Clone this repository on your local computer and checkout the appropriate branch
 git clone https://github.com/sprintcube/docker-compose-lamp.git
 cd docker-compose-lamp/
 git fetch --all
-git checkout 7.1.x
+git checkout 7.3.x
 docker-compose up -d
 ```
 
