@@ -4,7 +4,7 @@ This is a basic LAMP stack environment built using Docker Compose. It consists f
 
 * PHP 7.3
 * Apache 2.4
-* MySQL 5.7
+* MySQL 5.7 or MariaDB 10.3
 * phpMyAdmin
 
 ## Installation
@@ -66,6 +66,12 @@ By default following modules are enabled.
 
 > If you want to enable more modules, just update `./bin/webserver/Dockerfile`. You can also generate a PR and we will merge if seems good for general purpose.
 > You have to rebuild the docker image by running `docker-compose build` and restart the docker containers.
+
+## Database
+
+This will be used to choose the Database vendor. MySQL is used by default.
+
+_**DATABASE**_
 
 #### Connect via SSH
 
