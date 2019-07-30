@@ -67,12 +67,6 @@ By default following modules are enabled.
 > If you want to enable more modules, just update `./bin/webserver/Dockerfile`. You can also generate a PR and we will merge if seems good for general purpose.
 > You have to rebuild the docker image by running `docker-compose build` and restart the docker containers.
 
-## Database
-
-This will be used to choose the Database vendor. MySQL is used by default.
-
-_**DATABASE**_
-
 #### Connect via SSH
 
 You can connect to web server using `docker exec` command to perform various operation on it. Use below command to login to container via ssh.
@@ -80,6 +74,12 @@ You can connect to web server using `docker exec` command to perform various ope
 ```shell
 docker exec -it 7.3.x-webserver /bin/bash
 ```
+
+## Database
+
+This will be used to choose the Database vendor. MySQL is used by default.
+
+_**DATABASE**_
 
 ## PHP
 
