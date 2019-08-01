@@ -4,7 +4,7 @@ This is a basic LAMP stack environment built using Docker Compose. It consists f
 
 * PHP 7.3
 * Apache 2.4
-* MySQL 5.7
+* MySQL 5.7 or MariaDB 10.3
 * phpMyAdmin
 
 ## Installation
@@ -74,6 +74,14 @@ You can connect to web server using `docker exec` command to perform various ope
 ```shell
 docker exec -it 7.3.x-webserver /bin/bash
 ```
+
+## Database
+
+There are following configuration variables available and you can customize them by overwritting in your own .env file.
+
+_**DATABASE**_
+
+Switch the database vendor from mysql to mariadb. You can also easily add additonal database versions. 
 
 ## PHP
 
