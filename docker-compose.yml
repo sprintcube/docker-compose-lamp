@@ -17,7 +17,8 @@ services:
       - ${VHOSTS_DIR-./config/vhosts}:/etc/apache2/sites-enabled
       - ${LOG_DIR-./logs/apache2}:/var/log/apache2
   mysql:
-    build: "${DATABASE}"
+    build:
+      context: "./bin/${DATABASE}"
     container_name: '5.7-mysql'
     restart: 'always'
     ports:
