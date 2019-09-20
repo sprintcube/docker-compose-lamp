@@ -69,10 +69,10 @@ By default following modules are enabled.
 
 #### Connect via SSH
 
-You can connect to web server using `docker exec` command to perform various operation on it. Use below command to login to container via ssh.
+You can connect to web server using `docker-compose exec` command to perform various operation on it. Use below command to login to container via ssh.
 
 ```shell
-docker exec -it 7.3.x-webserver /bin/bash
+docker-compose exec webserver bash
 ```
 
 ## Database
