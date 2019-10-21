@@ -1,15 +1,15 @@
-FROM php:7.1.20-apache
+FROM php:7.1.32-apache
 
 RUN apt-get -y update --fix-missing
 RUN apt-get upgrade -y
 
 # Install tools & libraries
 RUN apt-get -y install apt-utils nano wget dialog \
-    build-essential git curl libcurl3 libcurl3-dev zip
+    build-essential git curl libcurl4 libcurl4-openssl-dev zip
 
 # Install important libraries
-RUN apt-get -y install --fix-missing apt-utils build-essential git curl libcurl3 libcurl3-dev zip \
-    libmcrypt-dev libsqlite3-dev libsqlite3-0 mysql-client zlib1g-dev \
+RUN apt-get -y install --fix-missing apt-utils build-essential git curl libcurl4 libcurl4-openssl-dev zip \
+    libmcrypt-dev libsqlite3-dev libsqlite3-0 mariadb-client zlib1g-dev \
     libicu-dev libfreetype6-dev libjpeg62-turbo-dev libpng-dev
 
 # Composer
