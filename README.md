@@ -25,6 +25,7 @@ cd docker-compose-lamp/
 git fetch --all
 git checkout 7.3.x
 cp sample.env .env
+export UID=${UID}
 docker-compose up -d
 ```
 

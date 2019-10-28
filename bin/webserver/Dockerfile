@@ -44,3 +44,11 @@ RUN docker-php-ext-install -j$(nproc) gd
 
 # Enable apache modules
 RUN a2enmod rewrite headers
+
+# in docker-compose file, pass the current UID and create such a user
+# otherwise command from inside container will create root-owned files and directories
+ARG uid
+ARG username
+RUN useradd -G www-data,root -u $uid -d /home/$username $username
+RUN mkdir -p /home/$username/.composer && \
+    chown -R $username:$username /home/$username
