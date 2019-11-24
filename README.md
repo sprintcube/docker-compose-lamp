@@ -64,6 +64,10 @@ By default following modules are enabled.
 
 * rewrite
 * headers
+* ssl
+* deflate
+* filter
+* expires
 
 > If you want to enable more modules, just update `./bin/webserver/Dockerfile`. You can also generate a PR and we will merge if seems good for general purpose.
 > You have to rebuild the docker image by running `docker-compose build` and restart the docker containers.
@@ -103,6 +107,7 @@ By default following extensions are installed.
 * xml
 * xmlrpc
 * gd
+* bcmath
 
 > If you want to install more extension, just update `./bin/webserver/Dockerfile`. You can also generate a PR and we will merge if seems good for general purpose.
 > You have to rebuild the docker image by running `docker-compose build` and restart the docker containers.

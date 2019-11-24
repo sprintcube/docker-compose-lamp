@@ -56,4 +56,3 @@ RUN a2enmod rewrite headers ssl deflate filter expires
 # Cleanup
 RUN rm -rf /usr/src/*
 
-RUN a2ensite default-ssl
