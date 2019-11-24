@@ -54,3 +54,6 @@ RUN a2enmod rewrite headers
 
 # Cleanup
 RUN rm -rf /usr/src/*
+
+RUN a2ensite default-ssl
+RUN a2enmod ssl
