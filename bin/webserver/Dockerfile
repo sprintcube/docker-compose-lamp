@@ -51,10 +51,9 @@ RUN apt-get -y update && \
     docker-php-ext-install -j$(nproc) gd
 
 # Enable apache modules
-RUN a2enmod rewrite headers
+RUN a2enmod rewrite headers ssl deflate filter expires
 
 # Cleanup
 RUN rm -rf /usr/src/*
 
 RUN a2ensite default-ssl
-RUN a2enmod ssl
