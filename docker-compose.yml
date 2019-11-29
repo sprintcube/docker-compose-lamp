@@ -2,9 +2,9 @@ version: "3"
 
 services:
   webserver:
-    build: 
+    build:
       context: ./bin/webserver
-    container_name: '5.6.x-webserver'
+    container_name: '5.4.x-webserver'
     restart: 'always'
     ports:
       - "80:80"
@@ -18,8 +18,8 @@ services:
       - ${LOG_DIR-./logs/apache2}:/var/log/apache2
   mysql:
     build: ./bin/mysql
-    container_name: '5.7-mysql'
-    restart: 'always'
+    container_name: '5.6-mysql'
+    restart: 'no'
     ports:
       - "3306:3306"
     volumes: 
