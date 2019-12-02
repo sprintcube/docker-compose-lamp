@@ -2,10 +2,11 @@
 
 This is a basic LAMP stack environment built using Docker Compose. It consists following:
 
-* PHP 7.3
+* PHP 7.4
 * Apache 2.4
-* MySQL 5.7 or MariaDB 10.3
+* MySQL 5.7 and MySQL 8 or MariaDB 10.3
 * phpMyAdmin
+* Redis
 
 ## Installation
 
@@ -15,7 +16,7 @@ Clone this repository on your local computer and switch to branch `7.3.x`. Run t
 git clone https://github.com/sprintcube/docker-compose-lamp.git
 cd docker-compose-lamp/
 git fetch --all
-git checkout 7.3.x
+git checkout 7.4.x
 cp sample.env .env
 docker-compose up -d
 ```
@@ -86,7 +87,7 @@ Switch the database vendor from mysql to mariadb. You can also easily add addito
 
 ## PHP
 
-The installed version of PHP is 7.3
+The installed version of PHP is 7.4
 
 #### Extensions
 
