@@ -16,7 +16,7 @@ As of now, we have different branches for different PHP versions. Use appropriat
 * [7.1.x](https://github.com/sprintcube/docker-compose-lamp/tree/7.1.x)
 * [7.2.x](https://github.com/sprintcube/docker-compose-lamp/tree/7.2.x)
 * [7.3.x](https://github.com/sprintcube/docker-compose-lamp/tree/7.3.x)
-* [7.4.x](https://github.com/sprintcube/docker-compose-lamp/tree/7.4.x)
+* [7.4.x](https://github.com/sprintcube/docker-compose-lamp/tree/7.4.x) WIP
 
 ## Installation
 
