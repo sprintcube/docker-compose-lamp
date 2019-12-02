@@ -10,7 +10,7 @@ This is a basic LAMP stack environment built using Docker Compose. It consists f
 
 ## Installation
 
-Clone this repository on your local computer and switch to branch `7.3.x`. Run the `docker-compose up -d`.
+Clone this repository on your local computer and switch to branch `7.4.x`. Run the `docker-compose up -d`.
 
 ```shell
 git clone https://github.com/sprintcube/docker-compose-lamp.git
