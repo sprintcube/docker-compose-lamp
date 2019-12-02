@@ -8,6 +8,7 @@ A basic LAMP stack environment built using Docker Compose. It consists of the fo
 * Apache
 * MySQL
 * phpMyAdmin
+* Redis
 
 As of now, we have different branches for different PHP versions. Use appropriate branch as per your php version needed:
 * [5.4.x](https://github.com/sprintcube/docker-compose-lamp/tree/5.4.x)
