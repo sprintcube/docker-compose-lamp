@@ -1,4 +1,3 @@
-# Work in Progress here 
 # LAMP stack built with Docker Compose
 
 This is a basic LAMP stack environment built using Docker Compose. It consists following:
