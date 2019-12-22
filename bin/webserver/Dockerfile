@@ -56,3 +56,5 @@ RUN a2enmod rewrite headers ssl deflate filter expires
 # Cleanup
 RUN rm -rf /usr/src/*
 
+COPY ./config/conf-available/ssl-params.conf /etc/apache2/conf-available/ssl-params.conf
+RUN a2enconf ssl-params

@@ -30,7 +30,7 @@ To make it easy, just copy the content from `sample.env` file and update the env
 
 ### Configuration Variables
 
-There are following configuration variables available and you can customize them by overwritting in your own `.env` file.
+There are following configuration variables available and you can customize them by overwriting in your own `.env` file.
 
 _**DOCUMENT_ROOT**_
 
@@ -82,11 +82,11 @@ docker-compose exec webserver bash
 
 ## Database
 
-There are following configuration variables available and you can customize them by overwritting in your own .env file.
+There are following configuration variables available and you can customize them by overwriting in your own .env file.
 
 _**DATABASE**_
 
-Switch the database vendor from mysql to mariadb. You can also easily add additonal database versions. 
+Switch the database vendor from mysql to mariadb. You can also easily add additional database versions. 
 
 ## PHP
 
@@ -111,6 +111,7 @@ By default following extensions are installed.
 
 > If you want to install more extension, just update `./bin/webserver/Dockerfile`. You can also generate a PR and we will merge if seems good for general purpose.
 > You have to rebuild the docker image by running `docker-compose build` and restart the docker containers.
+> This service is dependent on `certs` service which generates the SSL certificates at the build time.
 
 ## phpMyAdmin
 
@@ -123,3 +124,27 @@ password: tiger
 ## Redis
 
 It comes with Redis. It runs on default port `6379`.
+
+## SSL Certificate generation
+
+It has an image which uses OpenSSL to generate the ssl certificates at the build time. It has following configuration variables available and you can customize them by overwriting in your own .env file.
+
+_**COUNTRY**_
+
+A two-letter country code. e.g. IN, US etc.
+
+_**STATE**_
+
+Full name of the state.
+
+_**CITY**_
+
+Full name of the city.
+
+_**ORG_NAME**_
+
+Legal name under which your organization is registered.
+
+_**COMMON_NAME**_
+
+The common name is the fully qualified domain name. e.g. www.example.com
