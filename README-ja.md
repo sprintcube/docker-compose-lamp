@@ -86,7 +86,7 @@ $ docker exec -it 5.4.x-webserver /bin/bash
 
 インストールされている PHP のバージョンは 5.4 です。
 
-#### Extensions
+#### 拡張機能
 
 デフォルトでは、次の拡張機能がインストールされます。
 
