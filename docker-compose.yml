@@ -42,6 +42,7 @@ services:
       - '8080:80'
     volumes: 
       - /sessions
+      - ${PHP_INI-./config/php/php.ini}:/usr/local/etc/php/conf.d/php-phpmyadmin.ini
   redis:
     container_name: 'png-redis'
     image: redis:latest
