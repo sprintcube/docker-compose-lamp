@@ -53,7 +53,7 @@
                         <div class="content">
                             <ul>
                                 <li><a href="/phpinfo.php">phpinfo()</a></li>
-                                <li><a href="//<?php print $_SERVER{'SERVER_NAME'}; ?>:8080">phpMyAdmin</a></li>
+                                <li><a href="//<?php print $_SERVER{'SERVER_NAME'}; ?>:<? print $_ENV['PMA_PORT']; ?>">phpMyAdmin</a></li>
                                 <li><a href="/test_db.php">Test DB Connection</a></li>
                             </ul>
                         </div>
