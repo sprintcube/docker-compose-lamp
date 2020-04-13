@@ -22,7 +22,7 @@ services:
     container_name: 'database'
     restart: 'always'
     ports:
-      - "${HOST_MACHINE_MYSQL_PORT}:3306"
+      - "127.0.0.1:${HOST_MACHINE_MYSQL_PORT}:3306"
     volumes: 
       - ${MYSQL_DATA_DIR-./data/mysql}:/var/lib/mysql
       - ${MYSQL_LOG_DIR-./logs/mysql}:/var/log/mysql
@@ -53,4 +53,4 @@ services:
     container_name: 'redis'
     image: redis:latest
     ports:
-      - "${HOST_MACHINE_REDIS_PORT}:6379"
+      - "127.0.0.1:${HOST_MACHINE_REDIS_PORT}:6379"
