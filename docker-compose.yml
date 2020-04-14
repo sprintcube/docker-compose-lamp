@@ -3,47 +3,54 @@ version: "3"
 services:
   webserver:
     build: 
-      context: ./bin/webserver
-    container_name: 'png-webserver'
+      context: ./bin/${PHPVERSION}
+    container_name: ${PHPVERSION}
     restart: 'always'
     ports:
-      - "80:80"
-      - "443:443"
+      - "${HOST_MACHINE_UNSECURE_HOST_PORT}:80"
+      - "${HOST_MACHINE_SECURE_HOST_PORT}:443"
     links: 
-      - mysql
+      - database
     volumes: 
       - ${DOCUMENT_ROOT-./www}:/var/www/html
       - ${PHP_INI-./config/php/php.ini}:/usr/local/etc/php/php.ini
       - ${VHOSTS_DIR-./config/vhosts}:/etc/apache2/sites-enabled
       - ${LOG_DIR-./logs/apache2}:/var/log/apache2
-  mysql:
-    build: ./bin/mysql
-    container_name: 'png-mysql'
+  database:
+    build:
+      context: "./bin/${DATABASE}"
+    container_name: 'database'
     restart: 'always'
     ports:
-      - "3306:3306"
+      - "127.0.0.1:${HOST_MACHINE_MYSQL_PORT}:3306"
     volumes: 
       - ${MYSQL_DATA_DIR-./data/mysql}:/var/lib/mysql
       - ${MYSQL_LOG_DIR-./logs/mysql}:/var/log/mysql
     environment:
-      MYSQL_ROOT_PASSWORD: tiger
-      MYSQL_DATABASE: png
-      MYSQL_USER: png
-      MYSQL_PASSWORD: png
+      MYSQL_ROOT_PASSWORD: ${MYSQL_ROOT_PASSWORD}
+      MYSQL_DATABASE: ${MYSQL_DATABASE}
+      MYSQL_USER: ${MYSQL_USER}
+      MYSQL_PASSWORD: ${MYSQL_PASSWORD}
   phpmyadmin:
     image: phpmyadmin/phpmyadmin
-    container_name: 'png-phpmyadmin'
+    container_name: 'phpmyadmin'
     links:
-      - mysql
+      - database
     environment:
-      PMA_HOST: mysql
+      PMA_HOST: database
       PMA_PORT: 3306
+      PMA_USER: ${MYSQL_USER}
+      PMA_PASSWORD: ${MYSQL_PASSWORD}
+      MYSQL_ROOT_PASSWORD: ${MYSQL_ROOT_PASSWORD}
+      MYSQL_USER: ${MYSQL_USER}
+      MYSQL_PASSWORD: ${MYSQL_PASSWORD}
     ports:
       - '8080:80'
     volumes: 
       - /sessions
+      - ${PHP_INI-./config/php/php.ini}:/usr/local/etc/php/conf.d/php-phpmyadmin.ini
   redis:
-    container_name: 'png-redis'
+    container_name: 'redis'
     image: redis:latest
     ports:
-      - "6379:6379"
+      - "127.0.0.1:${HOST_MACHINE_REDIS_PORT}:6379"
