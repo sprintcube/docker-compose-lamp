@@ -166,4 +166,4 @@ We want to empower developers to quickly create creative Applications. Therefore
 In Production you should modify at a minimum the following subjects:
 
 * php handler: mod_php=> php-fpm
-* secure mysql users with proper source IP limitations
+* secure mysql users with proper source IP limitationsp
