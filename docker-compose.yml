@@ -4,7 +4,7 @@ services:
   webserver:
     build: 
       context: ./bin/${PHPVERSION}
-    container_name: ${PHPVERSION}
+    container_name: '${COMPOSE_PROJECT_NAME}-${PHPVERSION}'
     restart: 'always'
     ports:
       - "${HOST_MACHINE_UNSECURE_HOST_PORT}:80"
@@ -21,7 +21,7 @@ services:
   database:
     build:
       context: "./bin/${DATABASE}"
-    container_name: 'database'
+    container_name: '${COMPOSE_PROJECT_NAME}-database'
     restart: 'always'
     ports:
       - "127.0.0.1:${HOST_MACHINE_MYSQL_PORT}:3306"
@@ -35,7 +35,7 @@ services:
       MYSQL_PASSWORD: ${MYSQL_PASSWORD}
   phpmyadmin:
     image: phpmyadmin/phpmyadmin
-    container_name: 'phpmyadmin'
+    container_name: '${COMPOSE_PROJECT_NAME}-phpmyadmin'
     links:
       - database
     environment:
@@ -52,7 +52,7 @@ services:
       - /sessions
       - ${PHP_INI-./config/php/php.ini}:/usr/local/etc/php/conf.d/php-phpmyadmin.ini
   redis:
-    container_name: 'redis'
+    container_name: '${COMPOSE_PROJECT_NAME}-redis'
     image: redis:latest
     ports:
       - "127.0.0.1:${HOST_MACHINE_REDIS_PORT}:6379"
