@@ -1,3 +1,5 @@
+# This branch is marked as legacy and will be kept for backward compatibility. Please take a look at the master branch, where you can find all php versions and the latest stack version
+
 # LAMP stack built with Docker Compose
 
 This is a basic LAMP stack environment built using Docker Compose. It consists following:
