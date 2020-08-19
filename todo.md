@@ -1,4 +1,3 @@
-* inform japanese translator
-* github actions / travis CI pipeline to test webserver builds on pull requests, is usually for free for open source projects. 
+* Update japanese Readme
 * Update issue templates
-* mark old php versions branches as legacy
+* php8 as soon as it is available

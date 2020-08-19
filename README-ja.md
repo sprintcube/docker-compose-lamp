@@ -1,4 +1,4 @@
-# WIP - Outdated
+# Outdated
 # Docker Compose を用いた LAMP 環境の構築方法
 
 ![Landing Page](https://preview.ibb.co/gOTa0y/LAMP_STACK.png)
