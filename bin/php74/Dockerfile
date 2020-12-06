@@ -11,7 +11,6 @@ RUN apt-get -y update --fix-missing && \
     apt-get --no-install-recommends install -y apt-utils && \
     rm -rf /var/lib/apt/lists/*
 
-
 # Install useful tools and install important libaries
 RUN apt-get -y update && \
     apt-get -y --no-install-recommends install nano wget \
@@ -24,6 +23,8 @@ libzip-dev \
 libicu-dev && \
     apt-get -y --no-install-recommends install --fix-missing apt-utils \
 build-essential \
+net-tools \
+openssh-server \
 git \
 curl \
 libonig-dev && \ 
@@ -50,7 +51,6 @@ RUN apt-get update && \
     docker-php-ext-enable imagick
 
 # Other PHP7 Extensions
-
 RUN docker-php-ext-install pdo_mysql && \
     docker-php-ext-install pdo_sqlite && \
     docker-php-ext-install mysqli && \
@@ -62,7 +62,6 @@ RUN docker-php-ext-install pdo_mysql && \
     docker-php-ext-install mbstring && \
     docker-php-ext-install gettext && \
     docker-php-ext-install exif
-
 
 # Install Freetype 
 RUN apt-get -y update && \
@@ -76,5 +75,9 @@ libpng-dev && \
 # Enable apache modules
 RUN a2enmod rewrite headers
 
+RUN mkdir /var/run/sshd
+# Generate keys
+RUN /usr/bin/ssh-keygen -A
+RUN /usr/sbin/sshd -k start
 # Cleanup
 RUN rm -rf /usr/src/*
