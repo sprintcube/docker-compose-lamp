@@ -1,0 +1,9 @@
+# Prevents "Are you sure you want to continue connecting (yes/no)?" question while connecting to the server.
+# The host IP below is the client machine where the ssh command is issued from.
+# Host 192.168.99.*
+#   StrictHostKeyChecking no
+#    UserKnownHostsFile=/dev/null
+ 
+Host *
+    HashKnownHosts yes
+    GSSAPIAuthentication yes

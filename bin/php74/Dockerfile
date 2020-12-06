@@ -4,6 +4,8 @@ FROM php:7.4.2-apache-buster
 # https://github.com/moby/moby/issues/4032#issuecomment-192327844
  
 ARG DEBIAN_FRONTEND=noninteractive
+ARG SSH_MASTER_USER
+ARG SSH_MASTER_PASS
 
 # Update
 RUN apt-get -y update --fix-missing && \
@@ -76,8 +78,20 @@ libpng-dev && \
 RUN a2enmod rewrite headers
 
 RUN mkdir /var/run/sshd
+COPY ./ssh/ssh_config /etc/ssh/ssh_config
+COPY ./ssh/sshd_config /etc/ssh/sshd_config
+ 
+COPY ./ssh/user.sh /usr/local/bin/user.sh
+RUN chmod +x /usr/local/bin/user.sh
+RUN /usr/local/bin/user.sh
+RUN rm /usr/local/bin/user.sh
+ 
+COPY ./ssh/entrypoint.sh /usr/local/bin/entrypoint.sh
+RUN chmod +x /usr/local/bin/entrypoint.sh
 # Generate keys
 RUN /usr/bin/ssh-keygen -A
-RUN /usr/sbin/sshd -k start
+
+RUN /usr/local/bin/entrypoint.sh
+
 # Cleanup
 RUN rm -rf /usr/src/*
