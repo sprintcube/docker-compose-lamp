@@ -4,6 +4,9 @@ services:
   webserver:
     build: 
       context: ./bin/${PHPVERSION}
+      args:
+        SSH_MASTER_USER: ${SSH_MASTER_USER}
+        SSH_MASTER_PASS: ${SSH_MASTER_PASS}
     container_name: '${COMPOSE_PROJECT_NAME}-${PHPVERSION}'
     restart: 'always'
     ports:
