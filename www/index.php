@@ -30,10 +30,10 @@
 					<div class="content">
 						<ul>
 							<li><?= apache_get_version(); ?></li>
-							<li>PHP <?= phpversion(); ?></li>
+							<li>PHP a<?= phpversion(); ?></li>
 							<li>
 								<?php
-								if (!mysqli_connect("database", "root", "tiger", null)) :
+								if (!$link=mysqli_connect("database", "root", "tiger", null)) :
 									if (mysqli_connect_errno()) :
 										printf("MySQL connecttion failed: %s", mysqli_connect_error());
 									endif;
