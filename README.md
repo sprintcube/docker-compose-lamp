@@ -22,6 +22,7 @@ As of now, we have several different PHP versions. Use appropriate php version a
 * 7.2.x
 * 7.3.x
 * 7.4.x
+* 8.0.x WIP waiting for dependencies to introduce php8 support
 
 > Please note that we simplified the project structure from several branches for each php version, to one centralized master branch. Please let us know if you encouter any problems. 
 ##  Installation
