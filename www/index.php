@@ -30,7 +30,7 @@
 					<div class="content">
 						<ul>
 							<li><?= apache_get_version(); ?></li>
-							<li>PHP a<?= phpversion(); ?></li>
+							<li>PHP <?= phpversion(); ?></li>
 							<li>
 								<?php
 								if (!$link=mysqli_connect("database", "root", "tiger", null)) :
