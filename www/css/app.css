@@ -198,8 +198,11 @@ h1, h2, h3, h4, h5, h6, strong{
     color: white;
 }
 #promo > main .promo-feed{
-    width: 90%;
+    width: 126%;
     display: flex;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
     float: left;
     margin-left: -19%;
 }
@@ -348,8 +351,11 @@ h1, h2, h3, h4, h5, h6, strong{
     text-decoration: underline;
 }
 #investsearch > main .popular-objects{
-    width: 90%;
+    width: 119%;
     display: flex;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
     float: left;
     margin-left: -15%;
 }
