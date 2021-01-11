@@ -1,7 +1,7 @@
 <?php
 
 $DBuser = 'root';
-$DBpass = 'tiger';
+$DBpass = $_ENV['MYSQL_ROOT_PASSWORD'];
 $pdo = null;
 
 try{
