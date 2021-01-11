@@ -226,12 +226,15 @@ h1, h2, h3, h4, h5, h6, strong{
     height: 42px;
     margin-left: 0%;
     text-transform: uppercase;
+    padding-top: 3%;
+    padding-bottom: 3%;
 }
 #promo > main .promo-feed .promoblock header a{
     margin-left: 2%;
     margin-top: 13px;
     color: white;
     text-decoration: none;
+    margin-left: 4%;
 }
 #promo > main .promo-feed .promoblock header strong{
     display: inline-table;
@@ -244,14 +247,16 @@ h1, h2, h3, h4, h5, h6, strong{
     font-style: italic;
     display: inline-table;
     margin-top: 19%;
+    font-family: Times New Roman, serif;
 }
 #promo > main .promo-feed .promoblock main img{
     width: 50%;
     height: 150px;
-    object-fit: cover;
     float: right;
-    margin-right: 2%;
+    margin-right: 7%;
     display: inline-table;
+    object-fit: cover;
+    margin-top: 5%;
 }
 #promo > main .promo-feed .promoblock main{
     display: block;
@@ -375,15 +380,17 @@ h1, h2, h3, h4, h5, h6, strong{
     color: white;
     height: 37px;
     margin-left: 0%;
+    padding-top: 4%;
+    padding-bottom: 4%;
 }
 #investsearch > main .popular-objects .popular-object header h3{
-    margin-left: 2%;
+    margin-left: 4%;
     margin-top: -2px;
     font-size: 93%;
 }
 #investsearch > main .popular-objects .popular-object main img{
     width: 100%;
-    height: 14vh;
+    height: 228px;
     object-fit: cover;
 }
 #investsearch > main .popular-objects .popular-object main{
@@ -739,7 +746,10 @@ h1, h2, h3, h4, h5, h6, strong{
     color:black;
     font-weight: bold;
 }
-
+.raiting{
+    margin-left: 2%;
+    padding-bottom: 3%;
+}
 .raiting > span{
     display: block;
     margin-top: 2%;
@@ -755,7 +765,7 @@ h1, h2, h3, h4, h5, h6, strong{
 }
 .rating-mini span {
 	padding: 0;
-	font-size: 20px;
+	font-size: 29px;
 	line-height: 1;
 	color: lightgrey;
 }
@@ -929,16 +939,13 @@ h1, h2, h3, h4, h5, h6, strong{
         font-size: 97%;
     }
     #promo {
-        height: 531px;
+        height: 567px;
     }
     #promo > main .promo-feed,  #investsearch > main .popular-objects{
         margin-left: -11%;
     }
     #promo > main .promo-feed .promoblock header {
         height: 34px;
-    }
-    #promo > main .promo-feed .promoblock main {
-        display: none;
     }
     #promo > main .promo-feed .promoblock footer {
         margin-top: 4%;
@@ -956,9 +963,6 @@ h1, h2, h3, h4, h5, h6, strong{
     }
     #investsearch > main .popular-objects .popular-object header h3 {
         font-size: 58%;
-    }
-    #investsearch > main .popular-objects .popular-object main {
-        display: none;
     }
     #investsearch > main .popular-objects .popular-object footer .info span:nth-child(2) {
         font-size: 102%;
@@ -1027,6 +1031,18 @@ h1, h2, h3, h4, h5, h6, strong{
     #reviews > main #slider-controller img {
         width: 48%;
         top: 34px;
+    }
+    #promo > main .promo-feed .promoblock footer .info {
+        margin-top: 47%;
+    }
+    .rating-mini span {
+        font-size: 23px;
+    }
+    #promo > main .promo-feed .promoblock main img {
+        height: 99px;
+    }
+    #investsearch > main .popular-objects .popular-object main img {
+        height: 149px;
     }
 }
 @media all and (min-width:1280px) and (max-width: 1366px){
@@ -1058,9 +1074,6 @@ h1, h2, h3, h4, h5, h6, strong{
     #promo > main .promo-feed .promoblock header {
         height: 34px;
     }
-    #promo > main .promo-feed .promoblock main {
-        display: none;
-    }
     #promo > main .promo-feed .promoblock footer {
         margin-top: 4%;
     }
@@ -1077,9 +1090,6 @@ h1, h2, h3, h4, h5, h6, strong{
     }
     #investsearch > main .popular-objects .popular-object header h3 {
         font-size: 58%;
-    }
-    #investsearch > main .popular-objects .popular-object main {
-        display: none;
     }
     #investsearch > main .popular-objects .popular-object footer .info span:nth-child(2) {
         font-size: 102%;
@@ -1088,13 +1098,10 @@ h1, h2, h3, h4, h5, h6, strong{
         font-size: 73%;
     }
     #promo {
-        height: 531px;
+        height: 557px;
     }
     #promo > main .promo-feed .promoblock header {
         height: 34px;
-    }
-    #promo > main .promo-feed .promoblock main {
-        display: none;
     }
     #promo > main .promo-feed .promoblock footer {
         margin-top: 4%;
@@ -1112,9 +1119,6 @@ h1, h2, h3, h4, h5, h6, strong{
     }
     #investsearch > main .popular-objects .popular-object header h3 {
         font-size: 58%;
-    }
-    #investsearch > main .popular-objects .popular-object main {
-        display: none;
     }
     #investsearch > main .popular-objects .popular-object footer .info span:nth-child(2) {
         font-size: 102%;
@@ -1184,6 +1188,18 @@ h1, h2, h3, h4, h5, h6, strong{
         width: 48%;
         top: 34px;
     }
+    #promo > main .promo-feed .promoblock footer .info {
+        margin-top: 47%;
+    }
+    .rating-mini span {
+        font-size: 23px;
+    }
+    #promo > main .promo-feed .promoblock main img {
+        height: 99px;
+    }
+    #investsearch > main .popular-objects .popular-object main img {
+        height: 149px;
+    }
 }
 @media all and (min-width:1366px) and (max-width: 1400px){
     .header > #header_top .ht_header {
@@ -1209,7 +1225,7 @@ h1, h2, h3, h4, h5, h6, strong{
         margin-right: -5%;
     }
     #promo {
-        height: 541px;
+        height: 594px;
     }
     #promo > main .promo-feed,  #investsearch > main .popular-objects{
         margin-left: -20%;
@@ -1224,13 +1240,16 @@ h1, h2, h3, h4, h5, h6, strong{
         font-size: 104%;
     }
     #investsearch {
-        height: 450px;
+        height: 514px;
     }
     #investsearch > main .popular-objects .popular-object header {
         height: 27px;
     }
     #investsearch > main .popular-objects .popular-object header h3 {
         font-size: 79%;
+    }
+    #investsearch > main .popular-objects .popular-object main img {
+        height: 194px;
     }
 }
 @media all and (min-width:1400px) and (max-width: 1600px){
@@ -1251,7 +1270,7 @@ h1, h2, h3, h4, h5, h6, strong{
         margin-right: -1%;
     }
     #promo {
-        height: 561px;
+        height: 622px;
     }
     #promo > main .promo-feed,  #investsearch > main .popular-objects{
         margin-left: -12%;
@@ -1266,7 +1285,7 @@ h1, h2, h3, h4, h5, h6, strong{
         font-size: 125%;
     }
     #investsearch {
-        height: 450px;
+        height: 519px;
     }
     #investsearch > main .popular-objects .popular-object header {
         height: 27px;
@@ -1274,13 +1293,16 @@ h1, h2, h3, h4, h5, h6, strong{
     #investsearch > main .popular-objects .popular-object header h3 {
         font-size: 79%;
     }
+    #investsearch > main .popular-objects .popular-object main img {
+        height: 194px;
+    }
 }
 @media all and (min-width:1600px) and (max-width: 1800px){
     .header > #header_top .ht_header span {
         margin-top: 10%;
     }
     #promo {
-        height: 601px;
+        height: 656px;
     }
     #promo > main .promo-feed,  #investsearch > main .popular-objects{
         margin-left: -18%;
@@ -1295,7 +1317,7 @@ h1, h2, h3, h4, h5, h6, strong{
         font-size: 138%;
     }
     #investsearch {
-        height: 450px;
+        height: 537px;
     }
     #investsearch > main .popular-objects .popular-object header {
         height: 27px;
