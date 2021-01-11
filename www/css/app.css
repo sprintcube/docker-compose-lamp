@@ -931,6 +931,9 @@ h1, h2, h3, h4, h5, h6, strong{
     #promo {
         height: 531px;
     }
+    #promo > main .promo-feed,  #investsearch > main .popular-objects{
+        margin-left: -11%;
+    }
     #promo > main .promo-feed .promoblock header {
         height: 34px;
     }
@@ -1048,6 +1051,9 @@ h1, h2, h3, h4, h5, h6, strong{
     }
     #promo {
         height: 531px;
+    }
+    #promo > main .promo-feed,  #investsearch > main .popular-objects{
+        margin-left: -11%;
     }
     #promo > main .promo-feed .promoblock header {
         height: 34px;
@@ -1205,6 +1211,9 @@ h1, h2, h3, h4, h5, h6, strong{
     #promo {
         height: 541px;
     }
+    #promo > main .promo-feed,  #investsearch > main .popular-objects{
+        margin-left: -20%;
+    }
     #promo > main .promo-feed .promoblock main img {
         height: 109px;
     }
@@ -1244,6 +1253,9 @@ h1, h2, h3, h4, h5, h6, strong{
     #promo {
         height: 561px;
     }
+    #promo > main .promo-feed,  #investsearch > main .popular-objects{
+        margin-left: -12%;
+    }
     #promo > main .promo-feed .promoblock main img {
         height: 133px;
     }
@@ -1269,6 +1281,9 @@ h1, h2, h3, h4, h5, h6, strong{
     }
     #promo {
         height: 601px;
+    }
+    #promo > main .promo-feed,  #investsearch > main .popular-objects{
+        margin-left: -18%;
     }
     #promo > main .promo-feed .promoblock main img {
         height: 148px;
