@@ -204,14 +204,14 @@ h1, h2, h3, h4, h5, h6, strong{
     display: -webkit-flex;
     display: -ms-flexbox;
     float: left;
-    margin-left: -19%;
+    margin-left: -23%;
 }
 #promo > main .promo-feed .promoblock{
     width: 20%;
     display: inline-table;
     background-color: white;
     box-shadow: 3px -1px 11px 3px darkgray;
-    margin-left: 4%;
+    margin-left: 2%;
 }
 #promo > main .promo-feed .promoblock:hover{
     cursor: pointer;
@@ -357,14 +357,14 @@ h1, h2, h3, h4, h5, h6, strong{
     display: -webkit-flex;
     display: -ms-flexbox;
     float: left;
-    margin-left: -15%;
+    margin-left: -17%;
 }
 #investsearch > main .popular-objects .popular-object{
     width: 19%;
     display: inline-table;
     background-color: white;
     box-shadow: 3px -1px 11px 3px darkgray;
-    margin-left: 5%;
+    margin-left: 3%;
 }
 #investsearch > main .popular-objects .popular-object:hover{
     cursor: pointer;
