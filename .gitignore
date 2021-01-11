@@ -3,5 +3,4 @@
 /config/*
 /data/*
 /logs/*
-/www/**
 .DS_Store

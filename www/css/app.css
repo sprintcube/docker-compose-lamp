@@ -1,0 +1,1285 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@600&family=Roboto&display=swap');
+html{
+    overflow-x: hidden;
+    font-family: 'Roboto', sans-serif;
+}
+html,body{ margin: 0; padding: 0;}
+h1, h2, h3, h4, h5, h6, strong{
+    font-family: 'Open Sans', sans-serif;
+}
+.header{
+    width: 100%;
+    height: 172px;
+    background-color: rgb(236, 234, 234);
+    /* position: fixed;
+    top: 0;
+    z-index: 1; */
+}
+.header > #header_top{
+    float: left;
+    width: 21%;
+    margin-top: 0px;
+    margin-left: 8%;
+}
+.header > #header_top .ht_header{
+    margin-left: 1%;
+}
+.header > #header_top .ht_header h1{
+    font-size: 190%;
+    color: dodgerblue;
+    display: inline-table;
+    width: 50%;
+    float: left;
+    margin-top: 15%;
+    margin-left: -5%;
+}
+.header > #header_top .ht_header span{
+    font-size: 115%;
+    color: darkgray;
+    display: inline-table;
+    width: 49%;
+    float: right;
+    margin-top: 12%;
+}
+.header > #header_bottom{
+    float: right;
+    width: 69%;
+    margin-top: 0px;
+    margin-right: 0%;
+}
+.header > #header_bottom .hb_bottom{
+    float: left;
+    margin-left: 1%;
+}
+.header > #header_bottom .hb_bottom header{
+    display: block;
+    padding-top: 6px;
+    padding-bottom: 6px;
+    width: 100%;
+}
+.header > #header_bottom .hb_bottom header .welcome-link {
+	float: left;
+	display: inline-block;
+	font-size: 120%;
+	position: relative;
+	top: 42px;
+	margin-left: 24px;
+}
+.header > #header_bottom .hb_bottom header .welcome-link a{
+    color: dodgerblue;
+    text-decoration: none;
+}
+.header > #header_bottom .hb_bottom header .header-informer{
+    display: inline;
+    float: right;
+}
+.header > #header_bottom .hb_bottom header .header-informer main {
+	display: inline-block;
+	margin-left: -12%;
+	position: relative;
+	top: 9px;
+}
+.header > #header_bottom .hb_bottom header .header-informer main a {
+	display: inline;
+	margin-left: 11px;
+}
+.header > #header_bottom .hb_bottom header .header-informer main a img {
+	width: 35px;
+}
+.header > #header_bottom .hb_bottom header .header-informer footer {
+	display: inline;
+	float: right;
+	margin-top: 1px;
+	padding-left: 44px;
+    width: 53%;
+    margin-right: -9%;
+}
+.header > #header_bottom .hb_bottom header .header-informer footer .user-services{
+    display: inline;
+    position: relative;
+    left: -8%;
+}
+.header > #header_bottom .hb_bottom header .header-informer footer .user-services div{
+    padding-right: 2%;
+    display: inline;
+}
+.header > #header_bottom .hb_bottom header .header-informer footer .user-services a {
+	color: dodgerblue;
+	font-size: 120%;
+	text-decoration: none;
+	position: relative;
+	top: -9px;
+}
+.header > #header_bottom .hb_bottom header .header-informer footer .user-services img{
+    width: 35px;
+}
+.header > #header_bottom .hb_bottom header .header-informer footer .menu-show{
+    display: inline;
+    position: relative;
+    left: -8px;
+}
+.header > #header_bottom .hb_bottom header .header-informer footer .menu-show img{
+    width: 35px;
+}
+.header > #header_bottom .hb_bottom footer{
+    display: block;
+    padding-top: 6px;
+    padding-bottom: 6px;
+    margin-top: 63px;
+}
+.header > #header_bottom .hb_bottom footer nav{
+    font-size: 125%;
+}
+.header > #header_bottom .hb_bottom footer nav a{
+    display: inline;
+    color: dodgerblue;
+    text-transform: uppercase;
+    text-decoration: none;
+    font-weight: 700;
+    margin-left: 21px;
+    margin-right: 8px;
+    padding-bottom: 17px;
+}
+.header > #header_bottom .hb_bottom footer nav #active{
+    border-bottom: solid 2px dodgerblue;
+}
+.header > #header_bottom .hb_bottom footer nav img{
+    width: 35px;
+    position: relative;
+    top: 10px;
+}
+.main{
+    width: 100%;
+    height: auto;
+}
+.main > .section{
+    width: 100%;
+    height: 880px;
+    display: block;
+    padding-bottom: 5%;
+    padding-top: 5%;
+}
+.main > .section header{
+    color:darkgray;
+    font-size: 150%;
+    margin-left: 8%;
+    padding-top: 2px;
+}
+.main > .section header hr{
+    display: block;
+}
+.main > .section header h2, .main > .section header strong{
+    display: block;
+    margin-top: 2%;
+}
+.main > .section header a{
+    color: darkblue;
+    font-size: 70%;
+}
+.main > .section header a strong{
+    display: inline-table;
+}
+
+#promo{ height: 760px; }
+#news{ height:320px; }
+#investsearch{ height: 470px; }
+#services{ height: 250px; }
+#analytics{ height: 245px; }
+#estate{ height: 335px;}
+#reviews{ height: 235px; }
+
+#promo{
+    background-color: #21214b;
+}
+#promo > .section header h2, #promo > .section header strong{
+    color: white;
+}
+#promo > .section header a{
+    color: white;
+}
+#promo > main .promo-feed{
+    width: 90%;
+    display: flex;
+    float: left;
+    margin-left: -19%;
+}
+#promo > main .promo-feed .promoblock{
+    width: 20%;
+    display: inline-table;
+    background-color: white;
+    box-shadow: 3px -1px 11px 3px darkgray;
+    margin-left: 4%;
+}
+#promo > main .promo-feed .promoblock:hover{
+    cursor: pointer;
+}
+#promo > main .promo-feed .promoblock:hover header{
+    background-color: dodgerblue;
+}
+#promo > main .promo-feed .promoblock header{
+    width: 100%;
+    background-color:darkgray;
+    color: white;
+    height: 42px;
+    margin-left: 0%;
+    text-transform: uppercase;
+}
+#promo > main .promo-feed .promoblock header a{
+    margin-left: 2%;
+    margin-top: 13px;
+    color: white;
+    text-decoration: none;
+}
+#promo > main .promo-feed .promoblock header strong{
+    display: inline-table;
+}
+#promo > main .promo-feed .promoblock main .location{
+    float: left;
+    margin-left: 2%;
+    font-size: 120%;
+    color: darkgray;
+    font-style: italic;
+    display: inline-table;
+    margin-top: 19%;
+}
+#promo > main .promo-feed .promoblock main img{
+    width: 50%;
+    height: 150px;
+    object-fit: cover;
+    float: right;
+    margin-right: 2%;
+    display: inline-table;
+}
+#promo > main .promo-feed .promoblock main{
+    display: block;
+    width: 100%;
+    padding-top: 0%;
+    padding-bottom: 0%;
+    margin-left: 2%;
+}
+#promo > main .promo-feed .promoblock footer{
+    width: 100%;
+    margin-top: 45%;
+}
+#promo > main .promo-feed .promoblock footer .info{
+    display: block;
+    padding-top: 0%;
+    padding-bottom: 0%;
+    margin-left: 2%;
+}
+#promo > main .promo-feed .promoblock footer .info span{
+    display: block;
+    padding-top: 3%;
+    padding-bottom: 3%;
+    font-size: 150%;
+    font-weight: bold;
+    color: darkgray;
+}
+#promo > main .promo-feed .promoblock footer .info span:nth-child(1){
+    color: black;
+}
+#promo > main .promo-feed .promoblock footer .info span:nth-child(2){
+    font-size: 119%;
+}
+
+
+#news > header h2{
+    display: inline;
+}
+#news > header a{
+    display: inline;
+    margin-left: 2%;
+}
+#news > main{
+    width: 90%;
+    margin-left: 6%;
+    margin-top: 2%;
+}
+#news > main #slider-controller{
+    width: 10%;
+    display: inline-table;
+}
+#news > main #slider-controller img{
+    width: 30%;
+    position: relative;
+    top: 80px;
+}
+#news > main #slider-view{
+    width: 65%;
+    display: inline-table;
+}
+#news > main #slider-view .news-feed{
+   display: block; 
+   margin-left: -8%;
+}
+#news > main #slider-view .news-feed .news{
+    display: inline-table;
+    width: 30%;
+    margin-left: 2%;
+}
+#news > main #slider-view .news-feed .news a{
+    display: block;
+    margin-top: 2px;
+    color: darkblue;
+    font-size: 150%;
+    text-decoration: none;
+}
+#news > main #slider-view .news-feed .news .descr{
+    display: block;
+    margin-top: 4px;
+    font-size: 140%;
+}
+#news > main #slider-view .news-feed .news .date{
+    display: block;
+    margin-top: 4px;
+    font-size: 140%;
+    font-style: italic;
+}
+
+#investsearch > header a{
+    display: inline-block;
+    text-decoration: none;
+    text-transform: uppercase;
+    margin-left: 10%;
+    position: relative;
+    top: -51px;
+}
+#investsearch > header a strong{
+    text-decoration: underline;
+}
+#investsearch > main .popular-objects{
+    width: 90%;
+    display: flex;
+    float: left;
+    margin-left: -15%;
+}
+#investsearch > main .popular-objects .popular-object{
+    width: 19%;
+    display: inline-table;
+    background-color: white;
+    box-shadow: 3px -1px 11px 3px darkgray;
+    margin-left: 5%;
+}
+#investsearch > main .popular-objects .popular-object:hover{
+    cursor: pointer;
+}
+#investsearch > main .popular-objects .popular-object header{
+    width: 100%;
+    background-color: dodgerblue;
+    color: white;
+    height: 37px;
+    margin-left: 0%;
+}
+#investsearch > main .popular-objects .popular-object header h3{
+    margin-left: 2%;
+    margin-top: -2px;
+    font-size: 93%;
+}
+#investsearch > main .popular-objects .popular-object main img{
+    width: 100%;
+    height: 14vh;
+    object-fit: cover;
+}
+#investsearch > main .popular-objects .popular-object main{
+    display: block;
+    width: 100%;
+}
+#investsearch > main .popular-objects .popular-object footer{
+    width: 100%;
+}
+#investsearch > main .popular-objects .popular-object footer .info{
+    display: block;
+    padding-top: 0%;
+    padding-bottom: 0%;
+    margin-left: 2%;
+}
+#investsearch > main .popular-objects .popular-object footer .info span{
+    display: block;
+    padding-top: 3%;
+    padding-bottom: 3%;
+    font-size: 150%;
+}
+#investsearch > main .popular-objects .popular-object footer .info span:nth-child(1){
+    font-size: calc(170% / 2);
+}
+#investsearch > main .popular-objects .popular-object footer .info span:nth-child(2){
+    text-transform: uppercase;
+    font-weight: bold;
+    font-size: 128%;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    height: 38px;
+}
+#investsearch > main .popular-objects .popular-object footer .info span:nth-child(3){
+    font-size: 111%;
+    color: darkgray;
+    font-style: italic;
+}
+#investsearch > main .popular-objects .popular-object footer a{
+    display: block;
+    padding-top: 2%;
+    padding-bottom: 3%;
+    text-decoration: none;
+    color: darkgray;
+    text-transform: uppercase;
+    margin-left: 2%;
+}
+
+
+
+
+#eventcalendar > main{
+    width: 90%;
+    margin-left: 4%;
+    margin-top: 2%;
+}
+#eventcalendar > main .calendar{
+    border-top: solid 1px black;
+    width: 100%;
+    height: 180px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    display: block;
+}
+#eventcalendar > main .calendar header{
+    float: left;
+    font-size: calc(150% * 2);
+    font-weight: bold;
+    display: inline;
+    width: 10%;
+    color: black;
+}
+#eventcalendar > main .calendar .date{
+    position: relative;
+    top: 60px;
+}
+#eventcalendar > main .calendar main{
+    display: inline;
+    width: 5%;
+}
+#eventcalendar > main .calendar footer{
+    float: right;
+    display: inline;
+    width: 65%;
+    margin-top: 1%;
+}
+#eventcalendar > main .calendar a{
+    text-decoration: none;
+    color: darkblue;
+    font-size: 160%;
+    display: block;
+}
+#eventcalendar > main .calendar .event-location{
+    font-size: 140%;
+    display: block;
+    font-style: italic;
+}
+#eventcalendar > main .calendar .descr{
+    font-size: 140%;
+    display: block;
+}
+
+#services > header{
+    width: 20%;
+    float: left;
+    display: inline-table;
+}
+#services > header a{
+   text-decoration: none;
+   text-transform: uppercase;
+}
+#services > header a strong{
+    text-decoration: underline;
+ }
+#services > main{
+    width: 70%;
+    float: right;
+    display: inline-table;
+
+}
+#services > main #slider-controller{
+    width: 10%;
+    display: inline-table;
+}
+#services > main #slider-controller img{
+    width: 30%;
+    position: relative;
+    top: -120px;
+}
+#services > main #slider-view{
+    width: 70%;
+    display: inline-table;
+}
+#services > main #slider-view .service-feed{
+    display: block;
+    margin-left: -12%;
+}
+#services > main #slider-view .service-feed .service{
+    width: 26%;
+    height: 230px;
+    display: inline-table;
+    box-shadow: 3px -1px 11px 3px darkgray;
+    margin-left: 6%;
+}
+#services > main #slider-view .service-feed .service header{
+    background-color: darkgray;
+    color: white;
+    text-transform: uppercase;
+    width: 102%;
+    display: block;
+    font-size: 94%;
+    float: left;
+    margin-left: -1%;
+}
+#services > main #slider-view .service-feed .service:hover{
+    cursor: pointer;
+}
+#services > main #slider-view .service-feed .service:hover header{
+    background-color: dodgerblue;
+}
+#services > main #slider-view .service-feed .service header h3{
+    margin-left: 2%;
+}
+#services > main #slider-view .service-feed .service main{
+    width: 100%;
+    float: left;
+    padding-top: 1%;
+    padding-bottom: 1%;
+}
+#services > main #slider-view .service-feed .service main img{
+    width: 50%;
+    object-fit: cover;
+    margin-left: 2%;
+}
+#services > main #slider-view .service-feed .service footer{
+    display: block;
+    width: 100%;
+    font-size: 120%;
+    margin-left: 2%;
+    padding-top: 2%;
+    padding-bottom: 2%;
+}
+#services > main #slider-view .service-feed .service footer .title{
+    font-weight: bold;
+    display: block;
+}
+#services > main #slider-view .service-feed .service footer .location{
+    color: darkgray;
+    font-style: italic;
+    font-size: 110%;
+    display: block;
+}
+#services > main #slider-view .service-feed .service footer .descr{
+    display: block;
+}
+
+
+
+
+
+#analytics > header{
+    width: 20%;
+    float: left;
+    display: inline-table;
+}
+#analytics > main{
+    width: 70%;
+    float: right;
+    display: inline-table;
+}
+#analytics > main #slider-controller{
+    width: 10%;
+    display: inline-table;
+}
+#analytics > main #slider-controller img{
+    width: 30%;
+    position: relative;
+    top: 80px;
+}
+#analytics > main #slider-view{
+    width: 70%;
+    display: inline-table;
+}
+#analytics > main #slider-view .analytic-feed{
+   display: block;
+   margin-left: -12%;
+}
+#analytics > main #slider-view .analytic-feed .analytic{
+    width: 26%;
+    height: 137px;
+    display: inline-table;
+    box-shadow: 3px -1px 11px 3px darkgray;
+    margin-left: 6%;
+    padding-bottom: 2%;
+}
+#analytics > main #slider-view .analytic-feed .analytic:hover {
+    background-color: dodgerblue;
+    cursor: pointer;
+}
+#analytics > main #slider-view .analytic-feed .analytic:hover *, #analytics > main #slider-view .analytic-feed .analytic:hover .descr{
+    color: white;
+}
+#analytics > main #slider-view .analytic-feed .analytic h2{
+    display: block;
+    margin-left: 1%;
+    margin-top: 1%;
+    color: dodgerblue;
+    font-size: 150%;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    height: 118px;
+}
+#analytics > main #slider-view .analytic-feed .analytic .descr{
+    display: block;
+    margin-left: 1%;
+    margin-top: 1%;
+    font-size: 120%;
+    color: darkgray;
+}
+#analytics > main #slider-view .analytic-feed .analytic a{
+    display: block;
+    margin-left: 1%;
+    margin-top: 1%;
+    color: darkblue;
+    font-size: 110%;
+}
+
+#estate > header{
+    width: 20%;
+    float: left;
+    display: inline-table;
+}
+#estate > main{
+    width: 70%;
+    float: right;
+    display: inline-table;
+}
+#estate > main #slider-controller{
+    width: 10%;
+    display: inline-table;
+}
+#estate > main #slider-controller img{
+    width: 30%;
+    position: relative;
+    top: -177px;
+}
+#estate > main #slider-view{
+    width: 70%;
+    display: inline-table;
+}
+#estate > main #slider-view .estat-feed{
+    display: block;
+    margin-left: -12%;
+}
+#estate > main #slider-view .estat-feed .estat{
+    width: 26%;
+    height: 181px;
+    display: inline-table;
+    box-shadow: 3px -1px 11px 3px darkgray;
+    margin-left: 6%;
+}
+#estate > main #slider-view .estat-feed .estat header{
+    background-color: darkgray;
+    color: white;
+    text-transform: uppercase;
+    width: 102%;
+    display: block;
+    font-size: 100%;
+    float: left;
+    margin-left: -1%;
+}
+#estate > main #slider-view .estat-feed .estat:hover{
+    cursor: pointer;
+}
+#estate > main #slider-view .estat-feed .estat:hover header{
+    background-color: dodgerblue;
+}
+#estate > main #slider-view .estat-feed .estat header h3{
+    margin-left: 2%;
+}
+#estate > main #slider-view .estat-feed .estat main{
+    width: 100%;
+    float: left;
+}
+#estate > main #slider-view .estat-feed .estat main img{
+    width: 100%;
+    object-fit: cover;
+    height: 153px;
+}
+#estate > main #slider-view .estat-feed .estat:hover main img{
+    transform: scale(1.2);
+}
+#estate > main #slider-view .estat-feed .estat footer{
+	display: block;
+	padding-top: 2%;
+	padding-bottom: 2%;
+	width: 100%;
+}
+#estate > main #slider-view .estat-feed .estat footer .info, #estate > main #slider-view .estat-feed .estat footer .raiting{
+	display: block;
+	margin-left: 2%;
+	padding-top: 0%;
+	padding-bottom: 0%;
+}
+#estate > main #slider-view .estat-feed .estat footer .info span{
+    padding-top: 2%;
+    padding-bottom: 2%;
+    font-size: 108%;
+    color: darkgray;
+    display: block;
+}
+#estate > main #slider-view .estat-feed .estat footer .info span:nth-child(1){
+    font-size: 121%;
+    color:black;
+    font-weight: bold;
+}
+
+.raiting > span{
+    display: block;
+    margin-top: 2%;
+    color: dodgerblue;
+    font-size: 92%;
+    text-transform: uppercase;
+}
+
+.rating-mini {
+	display: block;
+    font-size: 0;
+    margin-top: 2%;
+}
+.rating-mini span {
+	padding: 0;
+	font-size: 20px;
+	line-height: 1;
+	color: lightgrey;
+}
+.rating-mini > span:before {
+	content: '★';
+}
+.rating-mini > span.active {
+	color: gold;
+}
+
+
+#reviews > header{
+    width: 20%;
+    float: left;
+    display: inline-table;
+}
+#reviews > main{
+    width: 70%;
+    float: right;
+    display: inline-table;
+}
+#reviews > main #slider-controller{
+    width: 10%;
+    display: inline-table;
+}
+#reviews > main #slider-controller img{
+    width: 30%;
+    position: relative;
+    top: 60px;
+}
+#reviews > main #slider-view{
+    width: 70%;
+    display: inline-table;
+}
+#reviews > main #slider-view .review-feed{
+   display: block;
+   margin-left: -11%;
+}
+#reviews > main #slider-view .review-feed .review{
+    width: 25%;
+    height: 204px;
+    display: inline-table;
+    box-shadow: 3px -1px 11px 3px darkgray;
+    margin-left: 7%;
+    padding-bottom: 2%;
+}
+#reviews > main #slider-view .review-feed .review main h3{
+    display: block;
+    margin-left: 1%;
+    margin-top: 1%;
+    color:dodgerblue;
+    font-size: 140%;
+    text-align: left;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    height: 147px;
+}
+#reviews > main #slider-view .review-feed .review footer a{
+    margin-left: 1%;
+    margin-top: 1%;
+    color: dodgerblue;
+    font-size: 140%;
+}
+
+.footer{
+    width: 100%;
+    height: calc(248px * 2);
+    background-color:#9da5a7;
+    color: white;
+}
+.footer > header #contact a, .footer > main #category_menu .catname{
+    text-decoration: none;
+    color: white;
+}
+.footer > header {
+    float: left;
+    display: inline;
+    margin-left: 8%;
+    width: 20%;
+    position: relative;
+    top: 50px;
+    font-size: 140%;
+}
+.footer > header .logo{
+    display: block;
+}
+.footer > header main{
+    display: block;
+    position: relative;
+    top: 80px;
+    left: -15px;
+}
+.footer > header main a{
+    width: 10%;
+    height: 10%;
+    border: solid 2px white;
+    padding: 2%;
+    margin-left: 3%;
+}
+.footer > header main a img{
+    width: calc(10% / 2);
+    height: calc(10% / 2);
+    vertical-align: middle;
+}
+.footer > main {
+    float: right;
+    display: inline-table;
+    margin-right: -13%;
+    width: 80%;
+    position: relative;
+    top: 128px;
+}
+.footer > main #category_menu {
+	display: inline-block;
+	padding-left: 10px;
+	padding-right: 5%;
+}
+.footer > main #category_menu .catname {
+	font-size: 134%;
+	font-weight: 700;
+}
+.footer > main #category_menu ul {
+	display: block;
+	margin-top: 20px;
+	font-size: 100%;
+	margin-left: -28px;
+	list-style-type: square;
+}
+.footer > main #category_menu ul li {
+	padding-bottom: 13px;
+}
+.footer > main #category_menu ul li a {
+	color: white;
+	text-decoration: none;
+}
+@media all and (min-width:1024px) and (max-width: 1280px){
+    .header > #header_top .ht_header {
+        margin-left: -28%;
+        margin-top: -11%;
+    }
+    .header > #header_top .ht_header span {
+        font-size: 97%;
+        color: darkgray;
+        display: block;
+        width: 71%;
+        float: left;
+        margin-top: 31%;
+        margin-left: -64%;
+    }
+    .header > #header_bottom {
+        float: right;
+        width: 84%;
+        margin-top: -14%;
+        margin-right: 0%;
+    }
+    .header > #header_bottom .hb_bottom header .header-informer footer {
+        display: inline;
+        float: right;
+        margin-top: 7px;
+        padding-left: 44px;
+        width: 53%;
+        margin-right: -9%;
+    }
+    .header > #header_bottom .hb_bottom header .header-informer main {
+        display: inline-block;
+        margin-left: -4%;
+        position: relative;
+        top: 14px;
+    }
+    .header > #header_bottom .hb_bottom footer nav {
+        font-size: 97%;
+    }
+    #promo {
+        height: 531px;
+    }
+    #promo > main .promo-feed .promoblock header {
+        height: 34px;
+    }
+    #promo > main .promo-feed .promoblock main {
+        display: none;
+    }
+    #promo > main .promo-feed .promoblock footer {
+        margin-top: 4%;
+    }
+    #promo > main .promo-feed .promoblock footer .info span {
+        font-size: 101%;
+    }
+    #investsearch {
+        height: 554px;
+        padding-top: 26%;
+        padding-bottom: 0%;
+    }
+    #investsearch > main .popular-objects .popular-object header {
+        height: 24px;
+    }
+    #investsearch > main .popular-objects .popular-object header h3 {
+        font-size: 58%;
+    }
+    #investsearch > main .popular-objects .popular-object main {
+        display: none;
+    }
+    #investsearch > main .popular-objects .popular-object footer .info span:nth-child(2) {
+        font-size: 102%;
+    }
+    #investsearch > main .popular-objects .popular-object footer a {
+        font-size: 73%;
+    }
+    #services {
+        height: 250px;
+        padding-top: 19%;
+    }
+    #services > main #slider-controller img {
+        width: 44%;
+        top: 2px;
+    }
+    #services > main #slider-view .service-feed .service header {
+        font-size: 64%;
+    }
+    .service-feed .service main {
+        display: none;
+    }
+    #services > main #slider-view .service-feed .service footer .title {
+        font-size: 81%;
+    }
+    #services > main #slider-view .service-feed .service footer .location {
+        font-size: 89%;
+    }
+    #services > main #slider-view .service-feed .service footer .descr {
+        font-size: 81%;
+    }
+    #analytics > main #slider-view .analytic-feed .analytic {
+        height: 137px;
+    }
+    #analytics > main #slider-controller img {
+        width: 40%;
+        top: 27px;
+    }
+    #analytics > main #slider-view .analytic-feed .analytic h2 {
+        font-size: 123%;
+    }
+    #analytics > main #slider-view .analytic-feed .analytic .descr {
+        display: none;
+    }
+    #estate {
+        height: 249px;
+    }
+    #estate > main #slider-controller img {
+        width: 42%;
+        top: -27px;
+    }
+    #estate > main #slider-view .estat-feed .estat {
+        height: 181px;
+    }
+    #estate > main #slider-view .estat-feed .estat header {
+        font-size: 85%;
+    }
+    #estate > main #slider-view .estat-feed .estat main {
+        display: none;
+    }
+    #estate > main #slider-view .estat-feed .estat main {
+        display: none;
+    }
+    #reviews > main #slider-view .review-feed .review main h3 {
+        font-size: 121%;
+    }
+    #reviews > main #slider-controller img {
+        width: 48%;
+        top: 34px;
+    }
+}
+@media all and (min-width:1280px) and (max-width: 1366px){
+    .header > #header_top .ht_header {
+        margin-left: -28%;
+        margin-top: -11%;
+    }
+    .header > #header_top .ht_header span {
+        font-size: 115%;
+        color: darkgray;
+        display: block;
+        width: 53%;
+        float: left;
+        margin-top: 28%;
+        margin-left: -51%;
+    }
+    .header > #header_bottom {
+        float: right;
+        width: 81%;
+        margin-top: -12%;
+        margin-right: 0%;
+    }
+    #promo {
+        height: 531px;
+    }
+    #promo > main .promo-feed .promoblock header {
+        height: 34px;
+    }
+    #promo > main .promo-feed .promoblock main {
+        display: none;
+    }
+    #promo > main .promo-feed .promoblock footer {
+        margin-top: 4%;
+    }
+    #promo > main .promo-feed .promoblock footer .info span {
+        font-size: 101%;
+    }
+    #investsearch {
+        height: 554px;
+        padding-top: 26%;
+        padding-bottom: 0%;
+    }
+    #investsearch > main .popular-objects .popular-object header {
+        height: 24px;
+    }
+    #investsearch > main .popular-objects .popular-object header h3 {
+        font-size: 58%;
+    }
+    #investsearch > main .popular-objects .popular-object main {
+        display: none;
+    }
+    #investsearch > main .popular-objects .popular-object footer .info span:nth-child(2) {
+        font-size: 102%;
+    }
+    #investsearch > main .popular-objects .popular-object footer a {
+        font-size: 73%;
+    }
+    #promo {
+        height: 531px;
+    }
+    #promo > main .promo-feed .promoblock header {
+        height: 34px;
+    }
+    #promo > main .promo-feed .promoblock main {
+        display: none;
+    }
+    #promo > main .promo-feed .promoblock footer {
+        margin-top: 4%;
+    }
+    #promo > main .promo-feed .promoblock footer .info span {
+        font-size: 101%;
+    }
+    #investsearch {
+        height: 554px;
+        padding-top: 26%;
+        padding-bottom: 0%;
+    }
+    #investsearch > main .popular-objects .popular-object header {
+        height: 24px;
+    }
+    #investsearch > main .popular-objects .popular-object header h3 {
+        font-size: 58%;
+    }
+    #investsearch > main .popular-objects .popular-object main {
+        display: none;
+    }
+    #investsearch > main .popular-objects .popular-object footer .info span:nth-child(2) {
+        font-size: 102%;
+    }
+    #investsearch > main .popular-objects .popular-object footer a {
+        font-size: 73%;
+    }
+    #services {
+        height: 250px;
+        padding-top: 19%;
+    }
+    #services > main #slider-controller img {
+        width: 44%;
+        top: 2px;
+    }
+    #services > main #slider-view .service-feed .service header {
+        font-size: 64%;
+    }
+    .service-feed .service main {
+        display: none;
+    }
+    #services > main #slider-view .service-feed .service footer .title {
+        font-size: 81%;
+    }
+    #services > main #slider-view .service-feed .service footer .location {
+        font-size: 89%;
+    }
+    #services > main #slider-view .service-feed .service footer .descr {
+        font-size: 81%;
+    }
+    #analytics > main #slider-view .analytic-feed .analytic {
+        height: 137px;
+    }
+    #analytics > main #slider-controller img {
+        width: 40%;
+        top: 27px;
+    }
+    #analytics > main #slider-view .analytic-feed .analytic h2 {
+        font-size: 123%;
+    }
+    #analytics > main #slider-view .analytic-feed .analytic .descr {
+        display: none;
+    }
+    #estate {
+        height: 249px;
+    }
+    #estate > main #slider-controller img {
+        width: 42%;
+        top: -27px;
+    }
+    #estate > main #slider-view .estat-feed .estat {
+        height: 181px;
+    }
+    #estate > main #slider-view .estat-feed .estat header {
+        font-size: 85%;
+    }
+    #estate > main #slider-view .estat-feed .estat main {
+        display: none;
+    }
+    #estate > main #slider-view .estat-feed .estat main {
+        display: none;
+    }
+    #reviews > main #slider-view .review-feed .review main h3 {
+        font-size: 121%;
+    }
+    #reviews > main #slider-controller img {
+        width: 48%;
+        top: 34px;
+    }
+}
+@media all and (min-width:1366px) and (max-width: 1400px){
+    .header > #header_top .ht_header {
+        margin-left: -22%;
+    }
+    .header > #header_top .ht_header h1 {
+        font-size: 156%;
+        width: 50%;
+        float: left;
+        margin-top: 15%;
+        margin-left: -5%;
+    }
+    .header > #header_top .ht_header span {
+        font-size: 95%;
+        width: 60%;
+        float: right;
+        margin-top: -15%;
+    }
+    .header > #header_bottom {
+        float: right;
+        width: 80%;
+        margin-top: -9%;
+        margin-right: -5%;
+    }
+    #promo {
+        height: 541px;
+    }
+    #promo > main .promo-feed .promoblock main img {
+        height: 109px;
+    }
+    #promo > main .promo-feed .promoblock footer {
+        margin-top: 46%;
+    }
+    #promo > main .promo-feed .promoblock footer .info span {
+        font-size: 104%;
+    }
+    #investsearch {
+        height: 450px;
+    }
+    #investsearch > main .popular-objects .popular-object header {
+        height: 27px;
+    }
+    #investsearch > main .popular-objects .popular-object header h3 {
+        font-size: 79%;
+    }
+}
+@media all and (min-width:1400px) and (max-width: 1600px){
+    .header > #header_top .ht_header {
+        margin-left: -28%;
+    }
+    .header > #header_top .ht_header span {
+        font-size: 107%;
+        width: 53%;
+        float: right;
+        margin-top: 13%;
+        margin-right: 2%;
+    }
+    .header > #header_bottom {
+        float: right;
+        width: 74%;
+        margin-top: -9%;
+        margin-right: -1%;
+    }
+    #promo {
+        height: 561px;
+    }
+    #promo > main .promo-feed .promoblock main img {
+        height: 133px;
+    }
+    #promo > main .promo-feed .promoblock footer {
+        margin-top: 46%;
+    }
+    #promo > main .promo-feed .promoblock footer .info span {
+        font-size: 125%;
+    }
+    #investsearch {
+        height: 450px;
+    }
+    #investsearch > main .popular-objects .popular-object header {
+        height: 27px;
+    }
+    #investsearch > main .popular-objects .popular-object header h3 {
+        font-size: 79%;
+    }
+}
+@media all and (min-width:1600px) and (max-width: 1800px){
+    .header > #header_top .ht_header span {
+        margin-top: 10%;
+    }
+    #promo {
+        height: 601px;
+    }
+    #promo > main .promo-feed .promoblock main img {
+        height: 148px;
+    }
+    #promo > main .promo-feed .promoblock footer {
+        margin-top: 46%;
+    }
+    #promo > main .promo-feed .promoblock footer .info span {
+        font-size: 138%;
+    }
+    #investsearch {
+        height: 450px;
+    }
+    #investsearch > main .popular-objects .popular-object header {
+        height: 27px;
+    }
+    #investsearch > main .popular-objects .popular-object header h3 {
+        font-size: 79%;
+    }
+}
