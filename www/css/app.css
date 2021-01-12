@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@600&family=Roboto&display=swap');
+@import url('../css/fontawesome/css/all.css');
 html{
     overflow-x: hidden;
     font-family: 'Roboto', sans-serif;
@@ -9,29 +10,30 @@ h1, h2, h3, h4, h5, h6, strong{
 }
 .header{
     width: 100%;
-    height: 172px;
+    height: 132px;
     background-color: rgb(236, 234, 234);
     /* position: fixed;
     top: 0;
     z-index: 1; */
+    padding-top: 2%;
 }
 .header > #header_top{
     float: left;
     width: 21%;
     margin-top: 0px;
-    margin-left: 8%;
+    margin-left: 7%;
 }
 .header > #header_top .ht_header{
     margin-left: 1%;
 }
 .header > #header_top .ht_header h1{
-    font-size: 190%;
+    font-size: 142%;
     color: dodgerblue;
     display: inline-table;
     width: 50%;
     float: left;
     margin-top: 15%;
-    margin-left: -5%;
+    margin-left: -6%;
 }
 .header > #header_top .ht_header span{
     font-size: 115%;
@@ -48,8 +50,8 @@ h1, h2, h3, h4, h5, h6, strong{
     margin-right: 0%;
 }
 .header > #header_bottom .hb_bottom{
-    float: left;
-    margin-left: 1%;
+    float: right;
+    margin-right: 18%;
 }
 .header > #header_bottom .hb_bottom header{
     display: block;
@@ -60,13 +62,12 @@ h1, h2, h3, h4, h5, h6, strong{
 .header > #header_bottom .hb_bottom header .welcome-link {
 	float: left;
 	display: inline-block;
-	font-size: 120%;
-	position: relative;
-	top: 42px;
-	margin-left: 24px;
+	font-size: 86%;
+	margin-top: 5%;
+	margin-left: 10px;
 }
 .header > #header_bottom .hb_bottom header .welcome-link a{
-    color: dodgerblue;
+    color: gray;
     text-decoration: none;
 }
 .header > #header_bottom .hb_bottom header .header-informer{
@@ -82,9 +83,6 @@ h1, h2, h3, h4, h5, h6, strong{
 .header > #header_bottom .hb_bottom header .header-informer main a {
 	display: inline;
 	margin-left: 11px;
-}
-.header > #header_bottom .hb_bottom header .header-informer main a img {
-	width: 35px;
 }
 .header > #header_bottom .hb_bottom header .header-informer footer {
 	display: inline;
@@ -104,49 +102,38 @@ h1, h2, h3, h4, h5, h6, strong{
     display: inline;
 }
 .header > #header_bottom .hb_bottom header .header-informer footer .user-services a {
-	color: dodgerblue;
-	font-size: 120%;
+	color: gray;
+	font-size: 97%;
 	text-decoration: none;
-	position: relative;
-	top: -9px;
-}
-.header > #header_bottom .hb_bottom header .header-informer footer .user-services img{
-    width: 35px;
+	margin-left: 3%;
 }
 .header > #header_bottom .hb_bottom header .header-informer footer .menu-show{
     display: inline;
     position: relative;
     left: -8px;
 }
-.header > #header_bottom .hb_bottom header .header-informer footer .menu-show img{
-    width: 35px;
-}
 .header > #header_bottom .hb_bottom footer{
     display: block;
     padding-top: 6px;
     padding-bottom: 6px;
-    margin-top: 63px;
+    margin-top: 9%;
+    width: 100%;
 }
 .header > #header_bottom .hb_bottom footer nav{
-    font-size: 125%;
+    font-size: 101%;
 }
 .header > #header_bottom .hb_bottom footer nav a{
     display: inline;
-    color: dodgerblue;
+    color: gray;
     text-transform: uppercase;
     text-decoration: none;
     font-weight: 700;
-    margin-left: 21px;
-    margin-right: 8px;
-    padding-bottom: 17px;
+    margin-left: 11px;
+    margin-right: 4px;
+    padding-bottom: 1%;
 }
 .header > #header_bottom .hb_bottom footer nav #active{
     border-bottom: solid 2px dodgerblue;
-}
-.header > #header_bottom .hb_bottom footer nav img{
-    width: 35px;
-    position: relative;
-    top: 10px;
 }
 .main{
     width: 100%;
@@ -907,36 +894,35 @@ h1, h2, h3, h4, h5, h6, strong{
         margin-top: -11%;
     }
     .header > #header_top .ht_header span {
-        font-size: 97%;
+        font-size: 77%;
         color: darkgray;
         display: block;
         width: 71%;
         float: left;
         margin-top: 31%;
-        margin-left: -64%;
+        margin-left: -50%;
     }
     .header > #header_bottom {
         float: right;
-        width: 84%;
+        width: 79%;
         margin-top: -14%;
         margin-right: 0%;
     }
     .header > #header_bottom .hb_bottom header .header-informer footer {
         display: inline;
         float: right;
-        margin-top: 7px;
+        margin-top: 21%;
         padding-left: 44px;
-        width: 53%;
+        width: 50%;
         margin-right: -9%;
     }
     .header > #header_bottom .hb_bottom header .header-informer main {
         display: inline-block;
-        margin-left: -4%;
-        position: relative;
-        top: 14px;
+        margin-left: -11%;
+        margin-top: 19%;
     }
     .header > #header_bottom .hb_bottom footer nav {
-        font-size: 97%;
+        font-size: 78%;
     }
     #promo {
         height: 567px;
@@ -1055,10 +1041,10 @@ h1, h2, h3, h4, h5, h6, strong{
 @media all and (min-width:1280px) and (max-width: 1366px){
     .header > #header_top .ht_header {
         margin-left: -28%;
-        margin-top: -11%;
+        margin-top: -22%;
     }
     .header > #header_top .ht_header span {
-        font-size: 115%;
+        font-size: 88%;
         color: darkgray;
         display: block;
         width: 53%;
@@ -1068,8 +1054,8 @@ h1, h2, h3, h4, h5, h6, strong{
     }
     .header > #header_bottom {
         float: right;
-        width: 81%;
-        margin-top: -12%;
+        width: 83%;
+        margin-top: -10%;
         margin-right: 0%;
     }
     #promo {
@@ -1217,6 +1203,8 @@ h1, h2, h3, h4, h5, h6, strong{
 @media all and (min-width:1366px) and (max-width: 1400px){
     .header > #header_top .ht_header {
         margin-left: -22%;
+        top: -30%;
+        position: relative;
     }
     .header > #header_top .ht_header h1 {
         font-size: 156%;
@@ -1229,12 +1217,12 @@ h1, h2, h3, h4, h5, h6, strong{
         font-size: 95%;
         width: 60%;
         float: right;
-        margin-top: -15%;
+        margin-top: -17%;
     }
     .header > #header_bottom {
         float: right;
         width: 80%;
-        margin-top: -9%;
+        margin-top: -11%;
         margin-right: -5%;
     }
     #promo {
@@ -1273,7 +1261,9 @@ h1, h2, h3, h4, h5, h6, strong{
 }
 @media all and (min-width:1400px) and (max-width: 1600px){
     .header > #header_top .ht_header {
-        margin-left: -28%;
+        margin-left: -21%;
+        position: relative;
+        top: -32%;
     }
     .header > #header_top .ht_header span {
         font-size: 107%;
@@ -1285,7 +1275,7 @@ h1, h2, h3, h4, h5, h6, strong{
     .header > #header_bottom {
         float: right;
         width: 74%;
-        margin-top: -9%;
+        margin-top: -11%;
         margin-right: -1%;
     }
     #promo {
@@ -1343,5 +1333,13 @@ h1, h2, h3, h4, h5, h6, strong{
     }
     #investsearch > main .popular-objects .popular-object header h3 {
         font-size: 79%;
+    }
+    .header > #header_top{
+        margin-top: -2%;
+        margin-left: 13%;
+    }
+    .header > #header_bottom{
+        margin-top: -8%;
+        margin-right: 6%;
     }
 }

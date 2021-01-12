@@ -6,22 +6,23 @@
     <title>InvestPortal</title>
     <link rel="stylesheet" href="css/app.css" />
     <script src="https://yastatic.net/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://kit.fontawesome.com/97c3285af2.js" crossorigin="anonymous"></script>
     <style>
-        .exchange-selector {
+       .exchange-selector {
             position: relative;
-            top: 37px;
+            top: 31px;
             left: 33%;
         }
         #regexchange {
-            position: relative;
             display: inline-block;
-            font-size: 110%;
-            color: dodgerblue;
+            font-size: 98%;
+            color: gray;
             background-color: transparent;
             border: none;
             -webkit-appearance: none;
             -moz-appearance: none;
             appearance: none;
+            position: relative;
         }
         #regexchange:after {
             content: "▼";
@@ -81,9 +82,10 @@
         }
         @media all and (min-width:1024px) and (max-width: 1280px){
             .exchange-selector {
+                margin-top: 5%;
+                left: 24%;
                 position: relative;
-                top: 44px;
-                left: 27%;
+                display: inline-block;
             }
             #promo > header .links {
                 margin-left: 15%;
@@ -187,10 +189,10 @@
                     </div>
                     <div class="header-informer">
                         <main>
-                            <a href="" target="_blank" ><img src="images/icons/socials/1.png" alt="SN" /></a>
-                            <a href="" target="_blank" ><img src="images/icons/socials/2.png" alt="SN" /></a>
-                            <a href="" target="_blank" ><img src="images/icons/socials/3.png" alt="SN" /></a>
-                            <a href="" target="_blank" ><img src="images/icons/socials/4.png" alt="SN" /></a>
+                            <a href="" target="_blank" style="font-size: 142%;"><i class="fab fa-facebook-f" style="color: gray;"></i></a>
+                            <a href="" target="_blank" style="font-size: 142%;"><i class="fab fa-youtube" style="color: gray;"></i></a>
+                            <a href="" target="_blank" style="font-size: 142%;"><i class="fab fa-instagram" style="color: gray;"></i></a>
+                            <a href="" target="_blank" style="font-size: 142%;"><i class="fab fa-telegram" style="color: gray;"></i></a>
                         </main>
                         <footer>
                             <div class="user-services">
@@ -198,11 +200,11 @@
                                     <a href="">Join/Login</a>
                                 </div>
                                 <div>
-                                    <img src="images/icons/user.png" alt="user" />
+                                    <a href=""><i class="fas fa-user-check" style="color: dodgerblue;"></i></a>
                                 </div>
                             </div>
                             <div class="menu-show">
-                                <img src="images/icons/menu.png" alt="">
+                                <a href=""><i class="fas fa-bars" style="color: dodgerblue;"></i></a>
                             </div>
                         </footer>
                     </div>
@@ -215,8 +217,8 @@
                         <a href="">Experts</a>
                         <a href="">Analytics</a>
                         <a href="">About</a>
-                        <a href="" class="more"><img src="images/icons/morelinks.png" alt="Ещё разделы"></a>
-                        <a href="" class="search"><img src="images/icons/search.png" alt="Поиск"></a>
+                        <a href=""><i class="fas fa-ellipsis-h" style="color: dodgerblue;font-size: 160%;"></i></a>
+                        <a href=""><i class="fas fa-search" style="font-size: 160%;"></i></a>
                     </nav>
                     
                 </footer>
