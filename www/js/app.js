@@ -18,7 +18,7 @@ const MarketingHeadBannerAdaptive = () => {
     }
     else{ margin = "5%"; }
 
-    $('.marketing-info > header').css("margin-left", margin);
+    $('.banner-block').css("margin-left", margin);
     
 }
 
