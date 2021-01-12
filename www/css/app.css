@@ -866,8 +866,8 @@ h1, h2, h3, h4, h5, h6, strong{
     margin-left: 3%;
 }
 .footer > header main a img{
-    width: calc(10% / 2);
-    height: calc(10% / 2);
+    width: 9%;
+    height: auto;
     vertical-align: middle;
 }
 .footer > main {
@@ -1044,6 +1044,13 @@ h1, h2, h3, h4, h5, h6, strong{
     #investsearch > main .popular-objects .popular-object main img {
         height: 149px;
     }
+    .footer > main #category_menu .catname {
+        font-size: 100%;
+    }
+    .footer > main #category_menu ul {
+        font-size: 63%;
+    }
+
 }
 @media all and (min-width:1280px) and (max-width: 1366px){
     .header > #header_top .ht_header {
@@ -1200,6 +1207,12 @@ h1, h2, h3, h4, h5, h6, strong{
     #investsearch > main .popular-objects .popular-object main img {
         height: 149px;
     }
+    .footer > main #category_menu .catname {
+        font-size: 100%;
+    }
+    .footer > main #category_menu ul {
+        font-size: 63%;
+    }
 }
 @media all and (min-width:1366px) and (max-width: 1400px){
     .header > #header_top .ht_header {
@@ -1250,6 +1263,12 @@ h1, h2, h3, h4, h5, h6, strong{
     }
     #investsearch > main .popular-objects .popular-object main img {
         height: 194px;
+    }
+    .footer > main #category_menu .catname {
+        font-size: 110%;
+    }
+    .footer > main #category_menu ul {
+        font-size: 83%;
     }
 }
 @media all and (min-width:1400px) and (max-width: 1600px){
