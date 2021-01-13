@@ -176,7 +176,7 @@ h1, h2, h3, h4, h5, h6, strong{
 #analytics{ height: 245px; }
 #estate{ height: 200px;}
 #reviews{ height: 252px; }
-#promo, #news, #investsearch, #analytics, #reviews{ background-color: #ece2e2; }
+#news, #investsearch, #eventcalendar, #analytics, #reviews{ background-color: #ece2e2; }
 
 #promo{
     background-color: #21214b;
