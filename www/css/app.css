@@ -20,20 +20,17 @@ h1, h2, h3, h4, h5, h6, strong{
 .header > #header_top{
     float: left;
     width: 21%;
-    margin-top: -2%;
-    margin-left: 8%;
+    top: 12%;
+    left: 8%;
+    position: relative;
 }
 .header > #header_top .ht_header{
-    margin-left: 1%;
+    left: 1%;
+    position: relative;
 }
-.header > #header_top .ht_header h1{
-    font-size: 142%;
-    color: dodgerblue;
-    display: inline-table;
-    width: 50%;
+.header > #header_top .ht_header img{
+    width: 30%;
     float: left;
-    margin-top: 15%;
-    margin-left: 11%;
 }
 .header > #header_top .ht_header span{
     font-size: 115%;
@@ -51,8 +48,6 @@ h1, h2, h3, h4, h5, h6, strong{
 }
 .header > #header_bottom .hb_bottom{
     float: right;
-    margin-right: 18%;
-    margin-top: -3%;
 }
 .header > #header_bottom .hb_bottom header{
     display: block;
@@ -827,7 +822,7 @@ h1, h2, h3, h4, h5, h6, strong{
 
 .footer{
     width: 100%;
-    height: calc(248px * 2);
+    height: calc(154px * 2);
     background-color:#9da5a7;
     color: white;
 }
@@ -842,28 +837,36 @@ h1, h2, h3, h4, h5, h6, strong{
     width: 20%;
     position: relative;
     top: 50px;
-    font-size: 140%;
+    font-size: 98%;
 }
 .footer > header .logo{
-    display: block;
+    float: left;
+}
+.footer > header .logo img{
+    width: 79%;
+ }
+.footer > header span{
+    float: right;
+    font-size: 64%;
+    display: contents;
 }
 .footer > header main{
     display: block;
     position: relative;
-    top: 80px;
-    left: -2%;
+    top: 68px;
+    left: -111px;
+    width: 129%;
 }
 .footer > header main a{
-    width: 10%;
-    height: 10%;
     border: solid 2px white;
-    padding: 2%;
-    margin-left: 3%;
+    padding: 3px;
+    margin-left: 1%;
     background-color: black;
+    display: inline;
 }
 .footer > header main a img{
-    width: 9%;
-    height: auto;
+    width: 20px;
+    height: 20px;
     vertical-align: middle;
 }
 .footer > main {
@@ -872,7 +875,7 @@ h1, h2, h3, h4, h5, h6, strong{
     margin-right: -13%;
     width: 80%;
     position: relative;
-    top: 128px;
+    top: 5%;
 }
 .footer > main #category_menu {
 	display: inline-block;
@@ -899,23 +902,27 @@ h1, h2, h3, h4, h5, h6, strong{
 }
 @media all and (min-width:1024px) and (max-width: 1280px){
     .header > #header_top .ht_header {
-        margin-left: -11%;
-        margin-top: -8%;
+        left: -3%;
+        top: -8%;
+        position: relative;
+        float: left;
     }
     .header > #header_top .ht_header span {
         font-size: 77%;
         color: darkgray;
         display: block;
         width: 71%;
-        float: left;
-        margin-top: 31%;
-        margin-left: -57%;
+        float: right;
+        margin-top: -21%;
+        left: 25%;
+        position: relative;
     }
     .header > #header_bottom {
         float: right;
         width: 79%;
-        margin-top: -12%;
-        margin-right: -3%;
+        top: -51%;
+        right: 4%;
+        position: relative;
     }
     .header > #header_bottom .hb_bottom header .header-informer footer {
         display: inline;
@@ -1042,23 +1049,26 @@ h1, h2, h3, h4, h5, h6, strong{
 }
 @media all and (min-width:1280px) and (max-width: 1366px){
     .header > #header_top .ht_header {
-        margin-left: -11%;
-        margin-top: -6%;
+        left: -2%;
+        top: -12%;
+        position: relative;
     }
     .header > #header_top .ht_header span {
         font-size: 88%;
         color: darkgray;
         display: block;
         width: 53%;
-        float: left;
-        margin-top: 28%;
-        margin-left: -51%;
+        float: right;
+        top: -19px;
+        left: 5%;
+        position: relative;
     }
     .header > #header_bottom {
         float: right;
         width: 83%;
-        margin-top: -7%;
-        margin-right: 0%;
+        top: -88%;
+        right: 8%;
+        position: relative;
     }
     #promo {
         height: 531px;
@@ -1198,28 +1208,23 @@ h1, h2, h3, h4, h5, h6, strong{
 }
 @media all and (min-width:1366px) and (max-width: 1400px){
     .header > #header_top .ht_header {
-        margin-left: -22%;
-        top: -30%;
+        margin-left: -7%;
+        top: 14%;
         position: relative;
-    }
-    .header > #header_top .ht_header h1 {
-        font-size: 156%;
-        width: 50%;
-        float: left;
-        margin-top: 15%;
-        margin-left: -5%;
     }
     .header > #header_top .ht_header span {
         font-size: 95%;
         width: 60%;
         float: right;
-        margin-top: -17%;
+        top: -31px;
+        position: relative;
     }
     .header > #header_bottom {
         float: right;
         width: 80%;
-        margin-top: -5%;
-        margin-right: 3%;
+        top: -87%;
+        right: 9%;
+        position: relative;
     }
     #promo {
         height: 594px;
@@ -1260,7 +1265,7 @@ h1, h2, h3, h4, h5, h6, strong{
 }
 @media all and (min-width:1400px) and (max-width: 1600px){
     .header > #header_top .ht_header {
-        margin-left: -11%;
+        left: 2%;
         position: relative;
         top: 11%;
     }
@@ -1268,14 +1273,16 @@ h1, h2, h3, h4, h5, h6, strong{
         font-size: 107%;
         width: 53%;
         float: right;
-        margin-top: -13%;
-        margin-right: 2%;
+        top: -39px;
+        right: 14%;
+        position: relative;
     }
     .header > #header_bottom {
         float: right;
         width: 74%;
-        margin-top: -6%;
-        margin-right: 7%;
+        top: -27%;
+        right: 12%;
+        position: relative;
     }
     #promo {
         height: 622px;
@@ -1310,8 +1317,9 @@ h1, h2, h3, h4, h5, h6, strong{
 }
 @media all and (min-width:1600px) and (max-width: 1800px){
     .header > #header_top .ht_header span {
-        margin-top: -21%;
-        margin-right: -5%;
+        top: -44px;
+        right: 16%;
+        position: relative;
     }
     #promo {
         height: 656px;
@@ -1338,12 +1346,14 @@ h1, h2, h3, h4, h5, h6, strong{
         font-size: 79%;
     }
     .header > #header_top{
-        margin-top: -1%;
-        margin-left: 5%;
+        top: 1%;
+        left: 7%;
+        position: relative;
     }
     .header > #header_bottom{
-        margin-top: -6%;
-        margin-right: 10%;
+        top: -31%;
+        right: 17%;
+        position: relative;
     }
     .header > #header_bottom .hb_bottom header .welcome-link {
         margin-top: 5%;
