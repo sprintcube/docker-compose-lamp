@@ -139,7 +139,7 @@ h1, h2, h3, h4, h5, h6, strong{
     width: 100%;
     height: 880px;
     display: block;
-    padding-bottom: 5%;
+    padding-bottom: 9%;
     padding-top: 5%;
 }
 .main > .section header{
@@ -175,7 +175,8 @@ h1, h2, h3, h4, h5, h6, strong{
 #services{ height: 250px; }
 #analytics{ height: 245px; }
 #estate{ height: 200px;}
-#reviews{ height: 235px; }
+#reviews{ height: 252px; }
+#promo, #news, #investsearch, #analytics, #reviews{ background-color: #ece2e2; }
 
 #promo{
     background-color: #21214b;
