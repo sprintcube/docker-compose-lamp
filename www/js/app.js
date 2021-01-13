@@ -5,13 +5,13 @@ const MarketingHeadBannerAdaptive = () => {
         margin = "7%";
     }
     else if(vw == 1280 || vw == 1366 || vw < 1366){
-        margin = "7%";
+        margin = "6%";
     }
     else if(vw == 1366 || vw == 1400 || vw < 1400){
         margin = "6%";
     }
     else if(vw == 1400 || vw == 1600 || vw < 1600){
-        margin = "6%";
+        margin = "5%";
     }
     else if(vw == 1600 || vw == 1800 || vw < 1800){
         margin = "5%";

@@ -20,8 +20,8 @@ h1, h2, h3, h4, h5, h6, strong{
 .header > #header_top{
     float: left;
     width: 21%;
-    margin-top: 0px;
-    margin-left: 7%;
+    margin-top: -2%;
+    margin-left: 8%;
 }
 .header > #header_top .ht_header{
     margin-left: 1%;
@@ -33,7 +33,7 @@ h1, h2, h3, h4, h5, h6, strong{
     width: 50%;
     float: left;
     margin-top: 15%;
-    margin-left: -6%;
+    margin-left: 11%;
 }
 .header > #header_top .ht_header span{
     font-size: 115%;
@@ -52,6 +52,7 @@ h1, h2, h3, h4, h5, h6, strong{
 .header > #header_bottom .hb_bottom{
     float: right;
     margin-right: 18%;
+    margin-top: -3%;
 }
 .header > #header_bottom .hb_bottom header{
     display: block;
@@ -120,7 +121,7 @@ h1, h2, h3, h4, h5, h6, strong{
     width: 100%;
 }
 .header > #header_bottom .hb_bottom footer nav{
-    font-size: 101%;
+    font-size: 89%;
 }
 .header > #header_bottom .hb_bottom footer nav a{
     display: inline;
@@ -155,10 +156,15 @@ h1, h2, h3, h4, h5, h6, strong{
 .main > .section header hr{
     display: block;
 }
-.main > .section header h2, .main > .section header strong{
+.main > .section header h2{
     display: block;
     margin-top: 2%;
-    font-size: 106%;
+    font-size: 136%;
+}
+.main > .section header strong{
+    display: block;
+    margin-top: -1%;
+    font-size: 77%;
 }
 .main > .section header a{
     color: darkblue;
@@ -173,7 +179,7 @@ h1, h2, h3, h4, h5, h6, strong{
 #investsearch{ height: 470px; }
 #services{ height: 250px; }
 #analytics{ height: 245px; }
-#estate{ height: 335px;}
+#estate{ height: 200px;}
 #reviews{ height: 235px; }
 
 #promo{
@@ -336,9 +342,9 @@ h1, h2, h3, h4, h5, h6, strong{
     display: inline-block;
     text-decoration: none;
     text-transform: uppercase;
-    margin-left: 10%;
+    margin-left: 6%;
     position: relative;
-    top: -51px;
+    top: -47px;
 }
 #investsearch > header a strong{
     text-decoration: underline;
@@ -845,7 +851,7 @@ h1, h2, h3, h4, h5, h6, strong{
     display: block;
     position: relative;
     top: 80px;
-    left: -15px;
+    left: -2%;
 }
 .footer > header main a{
     width: 10%;
@@ -853,6 +859,7 @@ h1, h2, h3, h4, h5, h6, strong{
     border: solid 2px white;
     padding: 2%;
     margin-left: 3%;
+    background-color: black;
 }
 .footer > header main a img{
     width: 9%;
@@ -892,8 +899,8 @@ h1, h2, h3, h4, h5, h6, strong{
 }
 @media all and (min-width:1024px) and (max-width: 1280px){
     .header > #header_top .ht_header {
-        margin-left: -28%;
-        margin-top: -11%;
+        margin-left: -11%;
+        margin-top: -8%;
     }
     .header > #header_top .ht_header span {
         font-size: 77%;
@@ -902,13 +909,13 @@ h1, h2, h3, h4, h5, h6, strong{
         width: 71%;
         float: left;
         margin-top: 31%;
-        margin-left: -50%;
+        margin-left: -57%;
     }
     .header > #header_bottom {
         float: right;
         width: 79%;
-        margin-top: -14%;
-        margin-right: 0%;
+        margin-top: -12%;
+        margin-right: -3%;
     }
     .header > #header_bottom .hb_bottom header .header-informer footer {
         display: inline;
@@ -943,7 +950,7 @@ h1, h2, h3, h4, h5, h6, strong{
     }
     #investsearch {
         height: 554px;
-        padding-top: 26%;
+        padding-top: 6%;
         padding-bottom: 0%;
     }
     #investsearch > main .popular-objects .popular-object header {
@@ -960,7 +967,7 @@ h1, h2, h3, h4, h5, h6, strong{
     }
     #services {
         height: 250px;
-        padding-top: 19%;
+        padding-top: 1%;
     }
     #services > main #slider-controller img {
         width: 44%;
@@ -968,8 +975,6 @@ h1, h2, h3, h4, h5, h6, strong{
     }
     #services > main #slider-view .service-feed .service header {
         font-size: 53%;
-    }
-    .service-feed .service main {
     }
     #services > main #slider-view .service-feed .service footer .title {
         font-size: 85%;
@@ -1006,10 +1011,6 @@ h1, h2, h3, h4, h5, h6, strong{
     #estate > main #slider-view .estat-feed .estat header {
         font-size: 68%;
     }
-    #estate > main #slider-view .estat-feed .estat main {
-    }
-    #estate > main #slider-view .estat-feed .estat main {
-    }
     #reviews > main #slider-view .review-feed .review main h3 {
         font-size: 84%;
     }
@@ -1035,12 +1036,14 @@ h1, h2, h3, h4, h5, h6, strong{
     .footer > main #category_menu ul {
         font-size: 63%;
     }
-
+    .header > #header_bottom .hb_bottom header .welcome-link {
+        margin-top: 12%;
+    }
 }
 @media all and (min-width:1280px) and (max-width: 1366px){
     .header > #header_top .ht_header {
         margin-left: -11%;
-        margin-top: -17%;
+        margin-top: -6%;
     }
     .header > #header_top .ht_header span {
         font-size: 88%;
@@ -1054,7 +1057,7 @@ h1, h2, h3, h4, h5, h6, strong{
     .header > #header_bottom {
         float: right;
         width: 83%;
-        margin-top: -10%;
+        margin-top: -7%;
         margin-right: 0%;
     }
     #promo {
@@ -1129,8 +1132,6 @@ h1, h2, h3, h4, h5, h6, strong{
     #services > main #slider-view .service-feed .service header {
         font-size: 64%;
     }
-    .service-feed .service main {
-    }
     #services > main #slider-view .service-feed .service footer .title {
         font-size: 74%;
     }
@@ -1166,10 +1167,6 @@ h1, h2, h3, h4, h5, h6, strong{
     #estate > main #slider-view .estat-feed .estat header {
         font-size: 64%;
     }
-    #estate > main #slider-view .estat-feed .estat main {
-    }
-    #estate > main #slider-view .estat-feed .estat main {
-    }
     #reviews > main #slider-view .review-feed .review main h3 {
         font-size: 95%;
     }
@@ -1195,6 +1192,9 @@ h1, h2, h3, h4, h5, h6, strong{
     .footer > main #category_menu ul {
         font-size: 63%;
     }
+    .header > #header_bottom .hb_bottom header .welcome-link {
+        margin-top: 5%;
+    }
 }
 @media all and (min-width:1366px) and (max-width: 1400px){
     .header > #header_top .ht_header {
@@ -1218,8 +1218,8 @@ h1, h2, h3, h4, h5, h6, strong{
     .header > #header_bottom {
         float: right;
         width: 80%;
-        margin-top: -11%;
-        margin-right: -5%;
+        margin-top: -5%;
+        margin-right: 3%;
     }
     #promo {
         height: 594px;
@@ -1254,25 +1254,28 @@ h1, h2, h3, h4, h5, h6, strong{
     .footer > main #category_menu ul {
         font-size: 83%;
     }
+    .header > #header_bottom .hb_bottom header .welcome-link {
+        margin-top: 5%;
+    }
 }
 @media all and (min-width:1400px) and (max-width: 1600px){
     .header > #header_top .ht_header {
-        margin-left: -21%;
+        margin-left: -11%;
         position: relative;
-        top: -32%;
+        top: 11%;
     }
     .header > #header_top .ht_header span {
         font-size: 107%;
         width: 53%;
         float: right;
-        margin-top: 13%;
+        margin-top: -13%;
         margin-right: 2%;
     }
     .header > #header_bottom {
         float: right;
         width: 74%;
-        margin-top: -11%;
-        margin-right: -1%;
+        margin-top: -6%;
+        margin-right: 7%;
     }
     #promo {
         height: 622px;
@@ -1301,10 +1304,14 @@ h1, h2, h3, h4, h5, h6, strong{
     #investsearch > main .popular-objects .popular-object main img {
         height: 194px;
     }
+    .header > #header_bottom .hb_bottom header .welcome-link {
+        margin-top: 5%;
+    }
 }
 @media all and (min-width:1600px) and (max-width: 1800px){
     .header > #header_top .ht_header span {
-        margin-top: 10%;
+        margin-top: -21%;
+        margin-right: -5%;
     }
     #promo {
         height: 656px;
@@ -1331,11 +1338,14 @@ h1, h2, h3, h4, h5, h6, strong{
         font-size: 79%;
     }
     .header > #header_top{
-        margin-top: -2%;
-        margin-left: 13%;
+        margin-top: -1%;
+        margin-left: 5%;
     }
     .header > #header_bottom{
-        margin-top: -8%;
-        margin-right: 6%;
+        margin-top: -6%;
+        margin-right: 10%;
+    }
+    .header > #header_bottom .hb_bottom header .welcome-link {
+        margin-top: 5%;
     }
 }
