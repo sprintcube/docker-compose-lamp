@@ -1,0 +1,55 @@
+#passport{
+    height: 300px;
+}
+.passport-page{
+    width: 78%;
+    height: calc(245px * 2);
+    background-color: white;
+    position: relative;
+    float: left;
+    left: 7%;
+}
+.passport-page > header, .passport-page > footer{
+    width: 100%;
+    height: calc((300px * 2) / 20);
+    padding-top: 3%;
+    padding-bottom: 3%;
+    display: block;
+}
+.passport-page > main{
+    width: 100%;
+    height: calc((300px * 2) / 2);
+    padding-top: 1%;
+    padding-bottom: 1%;
+    display: block;
+}
+.passport-page > header #left-content, .passport-page > main #left-content, .passport-page > footer #left-content{
+    float: left;
+    display: inline-table;
+    margin-left: 2%;
+}
+.passport-page > header #right-content, .passport-page > main #right-content{
+    float: right;
+    display: inline-table;
+    margin-right: 2%;
+}
+.passport-page > header{
+    background-color: dodgerblue;
+    left: -8%;
+    position: relative;
+}
+.passport-page > header #left-content, .passport-page > header #right-content{
+   margin-top: 1%;
+}
+.passport-page > header #left-content span, .passport-page > header #right-content a{
+    color: white;
+}
+.passport-page > header #left-content span{
+    font-size: 94%;
+}
+.passport-page > header #right-content a{
+    text-decoration: none;
+}
+.passport-page > header #right-content a:hover{
+    text-decoration: underline;
+}

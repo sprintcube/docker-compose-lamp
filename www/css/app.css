@@ -176,6 +176,29 @@ h1, h2, h3, h4, h5, h6, strong{
 #analytics{ height: 245px; }
 #estate{ height: 200px;}
 #reviews{ height: 252px; }
+#link-switcher{
+    width: 100%;
+    background-color: white;
+    color: dodgerblue;
+    height: 7px;
+    padding-top: 1%;
+    padding-bottom: 2%;
+}
+#link-switcher > a{
+    margin-left: 7%;
+    color: dodgerblue;
+    font-size: 90%;
+    text-decoration: none;
+    padding-right: 1%;
+}
+#link-switcher > a:not(:nth-child(1)){
+    margin-left: 0%;
+    padding-left: 1%;
+}
+#link-switcher > a.active{ font-weight: bold; }
+#link-switcher > a:hover{
+    text-decoration: underline;
+}
 #news, #investsearch, #eventcalendar, #analytics, #reviews{ background-color: #ece2e2; }
 
 #promo{
@@ -823,7 +846,7 @@ h1, h2, h3, h4, h5, h6, strong{
 
 .footer{
     width: 100%;
-    height: calc(154px * 2);
+    height: calc(197px * 2);
     background-color:#9da5a7;
     color: white;
 }
