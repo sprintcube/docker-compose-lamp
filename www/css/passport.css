@@ -33,6 +33,13 @@
     display: inline-table;
     margin-right: 2%;
 }
+.passport-page > main #left-content{
+    width: 70%;
+}
+.passport-page > main #right-content{
+    width: 22%;
+    margin-right: 4%;
+}
 .passport-page > header{
     background-color: dodgerblue;
     left: -8%;
@@ -53,3 +60,72 @@
 .passport-page > header #right-content a:hover{
     text-decoration: underline;
 }
+.passport-page > main #left-content #table-list{
+    width: 100%;
+    border-bottom: solid 2px darkgray;
+    font-size: 86%;
+    border-spacing: 0px;
+}
+.passport-page > main #left-content #table-list .header{
+    height: 35px;
+}
+.passport-page > main #left-content #table-list .header th{
+    background-color: white;
+    text-align: left;
+    font-weight: normal;
+}
+.passport-page > main #left-content #table-list .header th:nth-child(1), .passport-page > main #left-content #table-list .header th:nth-child(4), .passport-page > main #left-content #table-list .content td:nth-child(1), .passport-page > main #left-content #table-list .content td:nth-child(4){
+    text-align: center;
+}
+.passport-page > main #left-content #table-list .header th:nth-child(2), .passport-page > main #left-content #table-list .header th:nth-child(3), .passport-page > main #left-content #table-list .content td:nth-child(2), .passport-page > main #left-content #table-list .content td:nth-child(3){
+    padding-left: 1%;
+}
+.passport-page > main #left-content #table-list .content{
+    height: 40px;
+}
+.passport-page > main #left-content #table-list .content td{
+    border-top: solid 2px darkgray;
+}
+.passport-page > main #left-content #table-list .content td:nth-child(2){
+    border-left: solid 2px darkgray;
+    border-right: solid 2px darkgray;
+    font-weight: bold;
+}
+.passport-page > main #left-content #table-list .content td .status{
+    background-color: lightgray;
+    color: white;
+    width: 100%;
+    padding-top: 9px;
+    padding-bottom: 9px;
+    text-transform: uppercase;
+}
+.passport-page > main #right-content .nav{
+    list-style-type: none;
+    border-bottom: solid 2px dodgerblue;
+    width: 100%;
+}
+.passport-page > main #right-content .nav li{
+    border-top: solid 2px dodgerblue;
+    margin-left: -14%;
+    padding-top: 2%;
+    padding-bottom: 2%;
+    font-size: 100%;
+}
+.passport-page > main #right-content .nav li .fas{
+    font-size: 78%;
+    margin-left: 2%;
+    color: dodgerblue;
+    visibility: hidden;
+}
+.passport-page > main #right-content .nav li.active .fas{
+    visibility: visible;
+}
+.passport-page > main #right-content .nav li a{
+    color: dodgerblue;
+    text-decoration: none;
+    margin-left: 10%;
+}
+.passport-page > main #right-content .nav li:hover, .passport-page > main #right-content .nav li.active{
+    background-color: rgba(30, 143, 255, 0.137);
+}
+
