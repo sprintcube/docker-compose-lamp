@@ -1,5 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@600&family=Roboto&display=swap');
-@import url('../css/fontawesome/css/all.css');
+@import url('fontawesome/css/all.css');
+@import url('addons/lightbox.css');
 html{
     overflow-x: hidden;
     font-family: 'Roboto', sans-serif;
