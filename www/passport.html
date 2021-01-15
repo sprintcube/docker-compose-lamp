@@ -291,13 +291,50 @@
     <main id="lightbox" class="lightbox-closed">
         <div class="lightwin-passport lightbox-closed">
             <header>
-                
+                <div id="left-content">
+                    <span>New investment object</span>
+                </div>
+                <div id="right-content">
+                    <a href="" class="close"><img src="https://img.icons8.com/material-sharp/24/ffffff/delete-sign.png"/></a>
+                </div>
             </header>
             <main>
-
+                <form action="#" method="post">
+                    <label for="object">Name of the investment object</label>
+                    <input type="text" name="object" id="textput">
+                    <label for="type">Type of investment object</label>
+                    <select name="type" id="selector-form"></select>
+                    <label for="country">Country</label>
+                    <select name="country" id="selector-form"></select>
+                    <div id="from-to">
+                        <div class="left">
+                            <label for="cost-from">The cost of</label>
+                            <select name="cost-from" id="selector-form-add"></select>
+                        </div>
+                        <span>-</span>
+                        <div class="right">
+                            <label for="cost-to">Cost up to</label>
+                            <select name="cost-to" id="selector-form-add"></select>
+                        </div>
+                    </div>
+                </form>
             </main>
             <footer>
-
+                <div id="left-content">
+                    <div class="selectors">
+                        <div id="selector">
+                            <input type="checkbox" name="actively" id="selector-check" checked>
+                            <span>Actively</span>
+                        </div>
+                        <div id="selector">
+                            <input type="checkbox" name="mail-notify" id="selector-check" checked>
+                            <span>Notify by e-mail suitable objects appear</span>
+                        </div>
+                    </div>
+                </div>
+                <div id="left-content-plus">
+                    <button class="add-but">Add Request</button>
+                </div>
             </footer>
         </div>
     </main>

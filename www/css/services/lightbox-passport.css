@@ -1,0 +1,117 @@
+.lightwin-passport{
+    width: 30%;
+    height: 56%;
+    background-color: white;
+    position: absolute;
+    top: 2%;
+    left: 33%;
+    padding-bottom: 4%;
+}
+.lightwin-passport > header{
+    width: 100%;
+    height: calc(100% / 8);
+    background-color: dodgerblue;
+}
+.lightwin-passport > main{
+    width: 100%;
+    height: calc(137% / 2);
+    overflow: auto;
+}
+.lightwin-passport > footer{
+    width: 100%;
+    height: calc(100% / 4);
+    background-color: white;
+}
+.lightwin-passport > header #left-content, .lightwin-passport > footer #left-content{
+    float: left;
+    margin-left: 2%;
+}
+.lightwin-passport > footer #left-content, .lightwin-passport > footer #left-content-plus{
+   width: 100%;
+   height: calc(100% / 2);
+   display: block;
+   padding-top: 2%;
+   padding-bottom: 2%;
+   float: left;
+   margin-left: 2%;
+}
+.lightwin-passport > header #left-content{
+    margin-top: 3%;
+    color: white;
+}
+.lightwin-passport > header #left-content span{
+    font-size: 130%;
+}
+.lightwin-passport > header #right-content{
+    float: right;
+    margin-right: 2%;
+    margin-top: 3%;
+}
+.lightwin-passport > header #right-content:hover{
+    cursor: pointer;
+}
+.lightwin-passport > header #right-content img{
+    width: 80%;
+}
+.lightwin-passport > main form{
+    width: 95%;
+    margin-left: 3%;
+    margin-top: 1%;
+}
+.lightwin-passport > main form label{
+    font-weight: bold;
+    padding-top: 1%;
+    padding-bottom: 1%;
+    display: block;
+    font-size: 80%;
+}
+.lightwin-passport > main form #textput{
+    display: block;
+    margin-top: 1%;
+    width: 95%;
+    border: none;
+    padding-top: 2%;
+    padding-bottom: 2%;
+    font-size: 80%;
+}
+.lightwin-passport > main form #selector-form{
+    width: 95%;
+    background-color: white;
+    border: none;
+    padding-top: 2%;
+    padding-bottom: 2%;
+    font-size: 80%;
+    margin-top: 1%;
+}
+.lightwin-passport > main form #from-to{
+    display: block;
+    margin-top: 2%;
+}
+.lightwin-passport > main form #from-to #selector-form-add{
+    display: block;
+    width: 100%;
+    padding-top: 2%;
+    padding-bottom: 2%;
+    border: none;
+    background-color: white;
+    font-size: 80%;
+}
+.lightwin-passport > main form #from-to .left{
+    float: left;
+    width: 40%;
+}
+.lightwin-passport > main form #from-to span{
+    margin-left: 7%;
+    font-size: 185%;
+    position: relative;
+    top: 62%;
+}
+.lightwin-passport > main form #from-to .right{
+    float: right;
+    margin-right: 5%;
+    width: 40%;
+}
+.lightwin-passport > footer #left-content .selectors #selector{
+    font-size: 100%;
+}
+.lightwin-passport > main form #textput:focus, .lightwin-passport > main form #selector-form:focus, .lightwin-passport > main form #from-to #selector-form-add:focus{ border: solid 2px darkgray;}
