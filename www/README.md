@@ -4,3 +4,4 @@
 
 - [Home Page](http://zolotaryow.aplex.ru/invest/)
 - [Passport](http://zolotaryow.aplex.ru/invest/passport.html)
+- [Investment Objects and Projects](http://zolotaryow.aplex.ru/invest/objects.html)

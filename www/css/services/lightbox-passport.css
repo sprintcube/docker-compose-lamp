@@ -51,7 +51,7 @@
 .lightwin-passport > header #right-content:hover{
     cursor: pointer;
 }
-.lightwin-passport > header #right-content img{
+.lightwin-passport > header #right-content .close{
     width: 80%;
 }
 .lightwin-passport > main form{

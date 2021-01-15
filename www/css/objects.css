@@ -1,0 +1,74 @@
+.window-closed{ display: none; }
+#objects{ height: auto; }
+#objects > .projects-search-form{
+    width: 75%;
+    height: auto;
+    margin-left: 13%;
+    background-color: white;
+}
+#objects > .projects-search-form header, #objects > .projects-search-form footer{
+    height: 100px;
+}
+#objects > .projects-search-form header{
+   color: black;
+}
+#objects > .projects-search-form header .title{
+    margin-left: -24%;
+    font-size: 90%;
+ }
+#objects > .projects-search-form header #left-content, #objects > .projects-search-form footer #left-content, #objects > .projects-search-form footer #left-content-add{
+    margin-left: 2%;
+    float: left;
+    margin-top: 3%;
+}
+#objects > .projects-search-form header #right-content{
+    float: right;
+    margin-right: 2%;
+    margin-top: 3%;
+}
+#objects > .projects-search-form header #right-content .close{
+    width: 90%;
+}
+#objects > .objects-list{
+    width: 80%;
+    margin-left: 13%;
+}
+#objects > .objects-list header{
+    color: black;
+}
+#objects > .objects-list header h2{
+    margin-left: -8%;
+}
+#objects > .objects-list main table{
+    width: 91%;
+    border-bottom: solid 2px gray;
+    border-spacing: initial;
+}
+#objects > .objects-list main table .header{
+    color: gray;
+    font-size: 80%;
+    text-align: left;
+}
+#objects > .objects-list main table .header th{
+    font-weight: normal;
+}
+#objects > .objects-list main table .content{
+    height: 39px;
+}
+#objects > .objects-list main table .content td{
+    font-size: 100%;
+    border-top: solid 2px gray;
+}
+#objects > .objects-list main table .content td:nth-child(2){
+    font-weight: bold;
+}
+#objects > .objects-list main table .content td:nth-child(2) a{
+    color: dodgerblue;
+    text-decoration: none;
+}
+#objects > .objects-list main table .content td:nth-child(2) a:hover{
+    text-decoration: underline;
+}
+#objects > .objects-list main table .content td:nth-child(3){
+    font-weight: bold;
+}

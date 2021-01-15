@@ -34,7 +34,7 @@
     margin-right: 2%;
     margin-top: 3%;
 }
-.lightwin-passport-regional > header #right-content img{
+.lightwin-passport-regional > header #right-content .close{
     width: 80%;
 }
 .lightwin-passport-regional > main form .countries-part{
