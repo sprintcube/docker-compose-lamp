@@ -36,6 +36,9 @@
     display: block;
     margin-top: 15px;
 }
+.passport-page > main .profile-settings .editor #control:hover{
+    cursor: pointer;
+}
 .passport-page > main .profile-settings .editor #control .inputing{
     color: dodgerblue;
 }
