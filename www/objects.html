@@ -131,11 +131,144 @@
                     </div>
                 </header>
                 <main>
-
+                    <form action="" method="get">
+                        <h4>Object Type</h4>
+                        <div class="selectors" for="types">
+                            <div class="selector">
+                                <input type="checkbox" name="types" id="type-selector" value="1" checked>
+                                <span>Residential real estate for resale or rent</span>
+                            </div>
+                            <div class="selector">
+                                <input type="checkbox" name="types" id="type-selector" value="2" checked>
+                                <span>Office and warehouse real estate</span>
+                            </div>
+                            <div class="selector">
+                                <input type="checkbox" name="types" id="type-selector" value="3">
+                                <span>Student real estate</span>
+                            </div>
+                            <div class="selector">
+                                <input type="checkbox" name="types" id="type-selector" value="4">
+                                <span>Retail, stores, shopping centers</span>
+                            </div>
+                            <div class="selector">
+                                <input type="checkbox" name="types" id="type-selector" value="5">
+                                <span>Franchise</span>
+                            </div>
+                            <div class="selector">
+                                <input type="checkbox" name="types" id="type-selector" value="6">
+                                <span>HoReCa (Hotels, restaurants, cafes)</span>
+                            </div>
+                            <div class="selector">
+                                <input type="checkbox" name="types" id="type-selector" value="7">
+                                <span>Health resorts, recreation centers and other tourist facilities</span>
+                            </div>
+                            <div class="selector">
+                                <input type="checkbox" name="types" id="type-selector" value="8">
+                                <span>Education</span>
+                            </div>
+                            <div class="selector">
+                                <input type="checkbox" name="types" id="type-selector" value="9">
+                                <span>Children’s institutions and projects</span>
+                            </div>
+                            <div class="selector">
+                                <input type="checkbox" name="types" id="type-selector" value="10">
+                                <span>Sports facilities and projects</span>
+                            </div>
+                            <div class="selector">
+                                <input type="checkbox" name="types" id="type-selector" value="11">
+                                <span>Exhibitions, congresses, concerts, entertainment, media</span>
+                            </div>
+                            <div class="selector">
+                                <input type="checkbox" name="types" id="type-selector" value="12">
+                                <span>Platforms for events</span>
+                            </div>
+                        </div>
+                        <div class="selectors" for="types">
+                            <div class="selector">
+                                <input type="checkbox" name="types" id="type-selector" value="13" disabled>
+                                <span>Objects of household services</span>
+                            </div>
+                            <div class="selector">
+                                <input type="checkbox" name="types" id="type-selector" value="14"disabled>
+                                <span>Transport, logistics</span>
+                            </div>
+                            <div class="selector">
+                                <input type="checkbox" name="types" id="type-selector" value="15">
+                                <span>IT, digital, online projects, robotics, innovations, startups</span>
+                            </div>
+                            <div class="selector">
+                                <input type="checkbox" name="types" id="type-selector" value="16" checked>
+                                <span>Energy, ecology</span>
+                            </div>
+                            <div class="selector">
+                                <input type="checkbox" name="types" id="type-selector" value="17">
+                                <span>Construction</span>
+                            </div>
+                            <div class="selector">
+                                <input type="checkbox" name="types" id="type-selector" value="18">
+                                <span>Industrial production</span>
+                            </div>
+                            <div class="selector">
+                                <input type="checkbox" name="types" id="type-selector" value="19">
+                                <span>Healthcare and pharmaceuticals</span>
+                            </div>
+                            <div class="selector">
+                                <input type="checkbox" name="types" id="type-selector" value="20">
+                                <span>Agricultural objects, food products</span>
+                            </div>
+                            <div class="selector">
+                                <input type="checkbox" name="types" id="type-selector" value="21">
+                                <span>Alternative investments: paintings, jewelry, yachting, etc.</span>
+                            </div>
+                            <div class="selector">
+                                <input type="checkbox" name="types" id="type-selector" value="22">
+                                <span>Regional and municipal investment projects</span>
+                            </div>
+                            <div class="selector">
+                                <input type="checkbox" name="types" id="type-selector" value="23">
+                                <span>Collective investment</span>
+                            </div>
+                        </div>
+                    </form>
                 </main>
                 <footer>
                     <div id="left-content">
-
+                        <div class="filter">
+                            <div class="option">
+                                <span>Country</span>
+                                <select name="country" id="option-selector">
+                                    <option value="">All Countries</option>
+                                </select>
+                            </div>
+                            <div class="option">
+                                <span>Country</span>
+                                <select name="region" id="option-selector">
+                                    <option value="">All Regions</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="filter">
+                            <div class="parameters">
+                                <span>Profitability</span>
+                                <div class="parameter-form">
+                                    Profitability from 
+                                    <input type="text" name="profitability-from" id="text-from" value="0%">
+                                    to
+                                    <input type="text" name="profitability-to" id="text-to" value="100%">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="filter">
+                            <div class="parameters">
+                                <span>Cost</span>
+                                <div class="parameter-form">
+                                    Cost from 
+                                    <input type="text" name="cost-from" id="text-from" value="$100">
+                                    to
+                                    <input type="text" name="cost-to" id="text-to" value="$10 000 000">
+                                </div>
+                            </div>
+                        </div>
                     </div>
                     <div id="left-content-add">
                         <button class="add-but">Show objects(27)</button>

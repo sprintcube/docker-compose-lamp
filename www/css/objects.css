@@ -1,3 +1,4 @@
+@import url('../css/services/objects-searchform-content.css');
 .window-closed{ display: none; }
 #objects{ height: auto; }
 #objects > .projects-search-form{
@@ -6,11 +7,9 @@
     margin-left: 13%;
     background-color: white;
 }
-#objects > .projects-search-form header, #objects > .projects-search-form footer{
-    height: 100px;
-}
 #objects > .projects-search-form header{
    color: black;
+   height: 72px;
 }
 #objects > .projects-search-form header .title{
     margin-left: -24%;
@@ -21,6 +20,13 @@
     float: left;
     margin-top: 3%;
 }
+#objects > .projects-search-form footer #left-content, #objects > .projects-search-form footer #left-content-add{
+    display: block;
+    width: 90%;
+    margin-left: 4%;
+    float: left;
+    margin-top: 3%;
+}
 #objects > .projects-search-form header #right-content{
     float: right;
     margin-right: 2%;
@@ -28,6 +34,13 @@
 }
 #objects > .projects-search-form header #right-content .close{
     width: 90%;
+}
+#objects > .projects-search-form main{
+    height: calc(72px * 5);
+}
+#objects > .projects-search-form footer{
+    height: calc(72px * 4);
+    padding-bottom: 2%;
 }
 #objects > .objects-list{
     width: 80%;
@@ -56,8 +69,10 @@
     height: 39px;
 }
 #objects > .objects-list main table .content td{
-    font-size: 100%;
+    font-size: 90%;
     border-top: solid 2px gray;
+    padding-top: 10px;
+    padding-bottom: 10px;
 }
 #objects > .objects-list main table .content td:nth-child(2){
     font-weight: bold;
