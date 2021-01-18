@@ -1,4 +1,39 @@
 @import url('../../css/passport.css');
+#passport {
+    height: 576px;
+}
+.passport-page {
+    height: calc(366px * 2);
+}
+.passport-page > main #left-content {
+    overflow: auto;
+    height: 598px;
+}
 .passport-page > header {
     background-color: rgb(211, 19, 19);
+}
+.passport-page > main #left-content .cart-data{
+    width: 100%;
+}
+.passport-page > main #left-content .cart-data h3{
+    font-weight: normal;
+}
+.passport-page > main #left-content .cart-data #table-list{
+    width: 90%;
+}
+.passport-page > main #left-content .cart-data #table-list .header th{
+    text-align: left;
+}
+.passport-page > main #left-content .cart-data #table-list .content{
+    padding-left: 2%;
+}
+.passport-page > main #left-content .cart-data #table-list .content td{
+    text-align: left;
+}
+.passport-page > main #left-content .cart-data #table-list .content td:nth-child(4){
+    border-left: solid 2px gray;
+    text-indent: 2%;
+}
+.passport-page > main #left-content .cart-data #table-list .content td:nth-child(5), .passport-page > main #left-content .cart-data #table-list .content td:nth-child(1){
+    text-align: center;
 }
