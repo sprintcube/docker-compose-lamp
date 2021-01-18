@@ -1,0 +1,4 @@
+@import url('../../css/passport.css');
+.passport-page > header {
+    background-color: rgb(211, 19, 19);
+}

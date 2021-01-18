@@ -1,4 +1,5 @@
 @import url('services/lightbox-passport.css');
+@import url('passport/cart.css');
 #passport{
     height: 300px;
 }
