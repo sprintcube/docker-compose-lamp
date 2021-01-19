@@ -1,0 +1,21 @@
+@import url('../passport.css');
+.passport-page > main #left-content #table-list .header th:nth-child(4), .passport-page > main #left-content #table-list .content td:nth-child(4){
+    text-align: left;
+}
+.passport-page > main #left-content #table-list .content td:nth-child(3){
+    border-right: solid 2px gray;
+}
+.passport-page > main #left-content #table-list .content td:nth-child(4){
+    text-indent: 2%;
+}
+.passport-page > main #left-content #table-list .content td:nth-child(5){
+    text-align: center;
+}
+.passport-page > main #left-content #table-list .header th:nth-child(4), .passport-page > main #left-content #table-list .content td:nth-child(4){
+    text-align: left;
+}
+.passport-page > footer #left-content{
+    position: relative;
+    top: -43%;
+    left: -72%;
+}
