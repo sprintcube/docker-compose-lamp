@@ -9,3 +9,7 @@
    + [Offers](http://zolotaryow.aplex.ru/invest/passport/offers.html)
    + [Profile](http://zolotaryow.aplex.ru/invest/passport/profile.html)
 - [Investment Objects and Projects](http://zolotaryow.aplex.ru/invest/objects.html)
+   + [Hotels](http://zolotaryow.aplex.ru/invest/objects/hotels.html)
+   + [Object viewer](http://zolotaryow.aplex.ru/invest/objects/view.html)
+- [News](http://zolotaryow.aplex.ru/invest/news.html)
+   + [News viewer](http://zolotaryow.aplex.ru/invest/news/view.html)

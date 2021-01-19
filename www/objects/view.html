@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>InvestPortal</title>
+    <link rel="stylesheet" href="../css/app.css" />
+    <link rel="stylesheet" href="../css/objects/view.css" />
+    <script src="https://yastatic.net/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://kit.fontawesome.com/97c3285af2.js" crossorigin="anonymous"></script>
+    <style>
+       .exchange-selector {
+            position: relative;
+            top: 31px;
+            left: 30%;
+        }
+        #regexchange {
+            display: inline-block;
+            font-size: 98%;
+            color: gray;
+            background-color: transparent;
+            border: none;
+            -webkit-appearance: none;
+            -moz-appearance: none;
+            appearance: none;
+            position: relative;
+        }
+        #regexchange:after {
+            content: "▼";
+        }
+        .add-but{
+            text-align: center;
+            color:white;
+            background-color:dodgerblue;
+            border: none;
+            font-size: 90%;
+            padding: 10px;
+        }
+        @media all and (min-width:1024px) and (max-width: 1280px){
+            .exchange-selector {
+                margin-top: 6%;
+                left: 24%;
+                position: relative;
+                display: inline-block;
+            }
+        }
+        @media all and (min-width:1280px) and (max-width: 1366px){
+            
+        }
+        @media all and (min-width:1366px) and (max-width: 1400px){
+            
+        }
+        @media all and (min-width:1400px) and (max-width: 1600px){
+        
+        }
+        @media all and (min-width:1600px) and (max-width: 1800px){
+            
+        }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <div id="header_top">
+            <div class="ht_header">
+                <img src="../images/icons/investportal.png" alt="InvestPortal" />
+                <span>International Platform for Investors and Investment Projects</span>
+            </div>
+        </div>
+        <div id="header_bottom">
+            <div class="hb_bottom">
+                <header>
+                    <div class="welcome-link">
+                        <a href="">How the start</a>
+                    </div>
+                    <div class="exchange-selector">
+                        <select name="regexchange" id="regexchange">
+                            <option value="usd">USD</option>
+                            <option value="eur">EUR</option>
+                        </select>
+                    </div>
+                    <div class="header-informer">
+                        <main>
+                            <a href="" target="_blank" style="font-size: 142%;"><i class="fab fa-facebook-f" style="color: gray;"></i></a>
+                            <a href="" target="_blank" style="font-size: 142%;"><i class="fab fa-youtube" style="color: gray;"></i></a>
+                            <a href="" target="_blank" style="font-size: 142%;"><i class="fab fa-instagram" style="color: gray;"></i></a>
+                            <a href="" target="_blank" style="font-size: 142%;"><i class="fab fa-telegram" style="color: gray;"></i></a>
+                        </main>
+                        <footer>
+                            <div class="user-services">
+                                <div>
+                                    <a href="">Join/Login</a>
+                                </div>
+                                <div>
+                                    <a href=""><i class="fas fa-user-check" style="color: dodgerblue;"></i></a>
+                                </div>
+                            </div>
+                            <div class="menu-show">
+                                <a href=""><i class="fas fa-bars" style="color: dodgerblue;"></i></a>
+                            </div>
+                        </footer>
+                    </div>
+                </header>
+                <footer>
+                    <nav>
+                        <a href="" id="active">Investment objects</a>
+                        <a href="">Investors</a>
+                        <a href="">Services</a>
+                        <a href="">Experts</a>
+                        <a href="">Analytics</a>
+                        <a href="">About</a>
+                        <a href=""><i class="fas fa-ellipsis-h" style="color: dodgerblue;font-size: 160%;"></i></a>
+                        <a href=""><i class="fas fa-search" style="font-size: 160%;"></i></a>
+                    </nav>
+                    
+                </footer>
+            </div>
+        </div>
+    </header>
+    <main class="main" style="background-color:   rgb(236, 234, 234);">
+        <section class="section" id="link-switcher">
+            <a href="../index.html">Main</a> / <a href="#">Investment Objects</a> / <a href="hotels.html">Hotels</a> /<a href="view.html" class="active">Hotel Raddison</a>
+        </section>
+        <section class="section" id="objects">
+            
+        </section>
+
+    </main>
+    <footer class="footer">
+        <header>
+            <div class="logo">
+                <img src="../images/icons/investportal-light.png" alt="InvestPortal" />
+            </div>
+            <span>International Platform for Investors and Investment Projects</span>
+            <main>
+                <a href="" target="_blank" ><img src="../images/icons/socials/1-foot.png" alt="SN" /></a>
+                <a href="" target="_blank" ><img src="../images/icons/socials/2-foot.png" alt="SN" /></a>
+                <a href="" target="_blank" ><img src="../images/icons/socials/3-foot.png" alt="SN" /></a>
+                <a href="" target="_blank" ><img src="../images/icons/socials/4-foot.png" alt="SN" /></a>
+            </main>
+        </header>
+        <main>
+            <div id="category_menu">
+                <a href="#" class="catname">Low</a>
+                <ul>
+                    <li><a href="">Commercial Law</a></li>
+                    <li><a href="">Civil and Family Law</a></li>
+                    <li><a href="">Administrative Law</a></li>
+                    <li><a href="">Employment Law</a></li>
+                    <li><a href="">Criminal Law</a></li>
+                    <li><a href="">Immigration Law</a></li>
+                    <li><a href="">Accounting Services</a></li>
+                </ul>
+            </div>
+            <div id="category_menu">
+                <a href="#" class="catname">Search for Investors</a>
+                <ul>
+                    <li><a href="">Commercial Law</a></li>
+                    <li><a href="">Civil and Family Law</a></li>
+                    <li><a href="">Administrative Law</a></li>
+                    <li><a href="">Employment Law</a></li>
+                    <li><a href="">Criminal Law</a></li>
+                    <li><a href="">Immigration Law</a></li>
+                    <li><a href="">Accounting Services</a></li>
+                </ul>
+            </div>
+            <div id="category_menu">
+                <a href="#" class="catname">Analytics</a>
+                <ul>
+                    <li><a href="">Commercial Law</a></li>
+                    <li><a href="">Civil and Family Law</a></li>
+                    <li><a href="">Administrative Law</a></li>
+                    <li><a href="">Employment Law</a></li>
+                    <li><a href="">Criminal Law</a></li>
+                    <li><a href="">Immigration Law</a></li>
+                    <li><a href="">Accounting Services</a></li>
+                </ul>
+            </div>
+            <div id="category_menu">
+                <a href="#" class="catname">Evaluation and Audit</a>
+                <ul>
+                    <li><a href="">Commercial Law</a></li>
+                    <li><a href="">Civil and Family Law</a></li>
+                    <li><a href="">Administrative Law</a></li>
+                    <li><a href="">Employment Law</a></li>
+                    <li><a href="">Criminal Law</a></li>
+                    <li><a href="">Immigration Law</a></li>
+                    <li><a href="">Accounting Services</a></li>
+                </ul>
+            </div>
+        </main>
+    </footer>
+    <script src="../js/app.js"></script>
+    <script src="../js/objects/view.js"></script>
+</body>
+</html>
