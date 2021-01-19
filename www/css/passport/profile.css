@@ -6,7 +6,7 @@
     height: calc(284px * 2);
 }
 .passport-page > main .profile-settings{
-    width: 27%;
+    width: 32%;
 }
 .passport-page > main .profile-settings .editor{
     display: block;
@@ -26,20 +26,17 @@
     font-weight: bold;
     text-indent: 1%;
     margin-top: 12px;
-    display: block;
-    float: left;
     width: 86%;
 }
 .passport-page > main .profile-settings .editor #control{
-    float: right;
     font-size: 100%;
-    display: block;
+    display: inline-table;
     margin-top: 15px;
 }
 .passport-page > main .profile-settings .editor #control:hover{
     cursor: pointer;
 }
-.passport-page > main .profile-settings .editor #control .inputing{
+.passport-page > main .profile-settings .editor #control i.inputing{
     color: dodgerblue;
 }
 .passport-page > main .profile-settings .editor input:focus{
