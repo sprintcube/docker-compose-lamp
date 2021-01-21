@@ -1,0 +1,32 @@
+.label, span.title-form{
+    color: gray;
+    font-size: 50%;
+    text-transform: uppercase;
+    font-weight: bold;
+}
+.label{ font-size: 55%;}
+.range-form{
+    margin-top: 8%;
+}
+.range-form > input[type=range]{
+
+}
+.input-from-to{
+    margin-top: 2%;
+}
+.input-from-to > span.content-form{
+    font-size: 76%;
+    display: block;
+}
+.input-from-to > span.content-form input{
+    border: none;
+    background-color: lightgray;
+    padding: 5px;
+    font-size: 75%;
+}
+.input-from-to > span.content-form input#from{
+    width: 20%;
+}
+.input-from-to > span.content-form input#to{
+    width: 25%;
+}
