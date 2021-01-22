@@ -1,6 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@600&family=Roboto&display=swap');
 @import url('fontawesome/css/all.css');
 @import url('addons/lightbox.css');
+@import url('addons/docsicon.css');
 html{
     overflow-x: hidden;
     font-family: 'Roboto', sans-serif;
@@ -163,7 +164,7 @@ h1, h2, h3, h4, h5, h6, strong{
     font-size: 77%;
 }
 .main > .section header a{
-    color: darkblue;
+    color: dodgerblue;
     font-size: 56%;
 }
 .main > .section header a strong{
@@ -342,7 +343,7 @@ h1, h2, h3, h4, h5, h6, strong{
 #news > main #slider-view .news-feed .news a{
     display: block;
     margin-top: 2px;
-    color: darkblue;
+    color: dodgerblue;
     font-size: 109%;
     text-decoration: none;
 }
@@ -493,7 +494,7 @@ h1, h2, h3, h4, h5, h6, strong{
 }
 #eventcalendar > main .calendar a{
     text-decoration: none;
-    color: darkblue;
+    color: dodgerblue;
     font-size: 152%;
     display: block;
 }
@@ -668,7 +669,7 @@ h1, h2, h3, h4, h5, h6, strong{
     display: block;
     margin-left: 1%;
     margin-top: 1%;
-    color: darkblue;
+    color: dodgerblue;
     font-size: 100%;
 }
 

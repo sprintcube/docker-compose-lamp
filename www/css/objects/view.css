@@ -1,1 +1,94 @@
-@import url('../objects.css');
+@import url('hotels.css');
+h2.view-title{
+    color: black;
+    font-size: 80%;
+}
+span.view-title{
+    font-size: 60%;
+    text-transform: uppercase;
+    font-weight: bold;
+}
+.object-viewer{
+    width: 80%;
+    margin-left: 10%;
+}
+.object-viewer > .left-content, .object-viewer > .right-content{
+    display: inline-table;
+    width: 50%;
+}
+.object-viewer > .left-content header{
+    margin-top: 2%;
+}
+.object-viewer > .left-content header .title{
+    padding-top: 1%;
+    padding-bottom: 1%;
+}
+.object-viewer > .left-content header .metadata{
+    margin-top: 2%;
+    padding-bottom: 1%;
+    border-bottom: solid 2px dodgerblue;
+}
+.object-viewer > .left-content header .metadata div{
+    font-size: 71%;
+    padding-top: 2%;
+    padding-bottom: 2%;
+    border-top: solid 2px dodgerblue;
+}
+.object-viewer > .left-content header .metadata div span{
+    color: black;
+    font-weight: bold;
+}
+.object-viewer > .left-content header .object-contacts{
+    margin-top: 4%;
+    width: 120%;
+}
+.object-viewer > .left-content header .object-contacts .contact{
+    width: 27%;
+    display: inline-table;
+    margin-left: 0%;
+    border-bottom: solid 3px dodgerblue;
+    height: 74px;
+    padding-bottom: 18px;
+}
+.object-viewer > .left-content header .object-contacts .contact img{
+    width: 35px;
+}
+.object-viewer > .left-content header .object-contacts .contact span{
+    display: block;
+    font-size: 61%;
+    margin-top: 11%;
+    color: black;
+    font-weight: bold;
+}
+.object-viewer > .left-content header .object-contacts .contact a{
+    display: block;
+    font-size: 61%;
+    margin-top: 11%;
+    color: dodgerblue;
+    font-weight: bold;
+}
+.object-viewer > .left-content main{
+    margin-left: 8%;
+    margin-top: 2%;
+}
+.object-viewer > .left-content main .view-title{
+    color: gray;
+    font-size: 80%;
+}
+.object-viewer > .left-content footer{
+    margin-left: 8%;
+    margin-top: 2%;
+}
+.object-viewer > .left-content footer #more{
+    color: dodgerblue;
+    font-size: 80%;
+    text-decoration: none;
+    border-bottom: dashed 2px dodgerblue;
+}
+
+#objects > .objects-list main table {
+    border-top: solid 2px gray;
+}
+#objects > .objects-list main table .header {
+    height: 60px;
+}
