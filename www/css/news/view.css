@@ -1,4 +1,3 @@
-@import url('../news.css');
 #news{ height: 1500px;}
 #news > .news-viewer #left-content{
   width: 55%;
