@@ -1,121 +1,196 @@
 #news{ height: 2000px; }
 .news-feed{
-
+  width: 80%;
+  margin-left: 7%;
 }
 .news-feed > header{
-    
+  position: relative;
+  left: -5%;
+  width: 100%;
 }
 .news-feed > header h2.title{
-    
+  color: black;
+  font-size: 120%;
 }
 .news-feed > header #top-feed{
-    
+  padding-top: 2px;
+  padding-bottom: 2px;
 }
 .news-feed > header #top-feed .left-content{
-    
+  float: left;
+  margin-left: -8%;
+  width: 62%;
 }
 .news-feed > header #top-feed .left-content header{
-    
+  margin-top: 3%;
+  margin-left: 13%;
 }
 .news-feed > header #top-feed .left-content header img{
-    
+  width: 70%;
+  object-fit: cover;
+  height: 264px;
 }
 .news-feed > header #top-feed .left-content main{
-    
+  display: block;
+  padding-top: 5px;
+  width: 72%;
+  text-align: justify;
+  margin-left: 13%;
 }
 .news-feed > header #top-feed .left-content main #title{
-    
+  display: block;
+  color: dodgerblue;
+  font-weight: bold;
+  text-decoration: none;
+  font-size: 90%;
 }
 .news-feed > header #top-feed .left-content main #descript{
-    
+  display: block;
+  margin-top: 2%;
+  font-size: 70%;
+  color: black;
 }
-.news-feed > header #top-feed .left-content footer{
-    
+.news-feed > header #top-feed .left-content footer{ 
+  display: block;
+  margin-top: 6%;
+  margin-left: 13%;
 }
 .news-feed >  header #top-feed .left-content footer #more{
-    
+  color: dodgerblue;
+  font-size: 70%;
+  text-decoration: none;
+  border-bottom: 1px dashed dodgerblue;
 }
 .news-feed >  header #top-feed .right-content{
-    
+  float: right;
+  width: 45%;
 }
 .news-feed >  header #top-feed .right-content .last-feed-cont{
-    
+  padding-top: 2px;
+  padding-bottom: 2px;
 }
 .news-feed >  header #top-feed .right-content .last-feed-cont #cont-content{
-    
+  margin-top: 1%;
 }
 .news-feed >  header #top-feed .right-content .last-feed-cont #cont-content ul{
-    
+  list-style-type: none;
 }
 .news-feed >  header #top-feed .right-content .last-feed-cont #cont-content ul li{
-    
+  width: 48%;
+  display: inline-table;
+  padding-bottom: 4%;
 }
-.news-feed >  header #top-feed .right-content .last-feed-cont #cont-content ul li img{
-    
+.news-feed >  header #top-feed .right-content .last-feed-cont #cont-content ul li img{ 
+  width: 80%;
+  object-fit: cover;
+  height: 110px;
 }
 .news-feed >  header #top-feed .right-content .last-feed-cont #cont-content ul li a{
-    
+  color: dodgerblue;
+  font-weight: bold;
+  text-decoration: none;
+  font-size: 69%;
+  display: block;
+  padding-top: 3%;
 }
-.news-feed >  header #top-feed .right-content .last-feed-cont #cont-content ul li span{
-    
+.news-feed >  header #top-feed .right-content .last-feed-cont #cont-content ul li span{ 
+  color: black;
+  font-size: 66%;
+  height: 54px;
+  overflow: hidden;
+  display: block;
+  padding-top: 3%;
 }
 .news-feed > main{
-
+  margin-top: 46%;
 }
 .news-feed > main #light-feed{
-
+  padding-top: 2%;
+  padding-bottom: 2%;
 }
 .news-feed > main #light-feed .light-feed-cont{
-
+  display: block;
+  padding-top: 2%;
 }
 .news-feed > main #light-feed .light-feed-cont #cont-header{
-
-}
-.news-feed > main #light-feed .light-feed-cont #cont-header hr{
-
+  color: gray;
+  text-transform: uppercase;
+  font-weight: bold;
 }
 .news-feed > main #light-feed .light-feed-cont #cont-header span#cont-title{
-
+  font-size: 110%;
+  background-color: rgb(240, 226, 226);
+  position: relative;
+  top: -19px;
+  padding-left: 3%;
+  padding-right: 1%;
 }
 .news-feed > main #light-feed .light-feed-cont #cont-content{
-
+  padding-top: 5px;
+  padding-bottom: 5px;
+  width: 100%;
 }
 .news-feed > main #light-feed .light-feed-cont #cont-content ul{
-
+  list-style-type: none;
 }
 .news-feed > main #light-feed .light-feed-cont #cont-content ul li{
-
+  width: 20%;
+  display: inline-table;
+  margin-left: 3%;
 }
 .news-feed > main #light-feed .light-feed-cont #cont-content ul li a{
-
+  color: dodgerblue;
+  font-weight: bold;
+  display: block;
+  text-decoration: none;
+  font-size: 110%;
 }
 .news-feed > main #light-feed .light-feed-cont #cont-content ul li span{
-
+  font-size: 90%;
+  overflow: hidden;
+  height: 54px;
+  display: block;
+  margin-top: 3%;
 }
 .news-feed > footer{
-
+  margin-top: 5%;
 }
 .news-feed > footer #down-feed{
-
+  padding-top: 1%;
+  padding-bottom: 1%;
 }
 .news-feed > footer #down-feed .down-feed-cont{
-
+  display: block;
+  padding-bottom: 1%;
 }
 .news-feed > footer #down-feed .down-feed-cont #cont-content{
-
+  padding-top: 5px;
 }
 .news-feed > footer #down-feed .down-feed-cont #cont-content ul{
-
+  list-style-type: none;
 }
 .news-feed > footer #down-feed .down-feed-cont #cont-content ul li{
-
+  width: 20%;
+  display: inline-table;
+  margin-left: 3%;
 }
 .news-feed > footer #down-feed .down-feed-cont #cont-content ul li img{
-
+  width: 80%;
+  object-fit: cover;
+  height: 130px;
 }
 .news-feed > footer #down-feed .down-feed-cont #cont-content ul li a{
-
+  display: block;
+  color: dodgerblue;
+  font-size: 100%;
+  text-decoration: none;
+  font-weight: bold;
+  margin-top: 3%;
 }
 .news-feed > footer #down-feed .down-feed-cont #cont-content ul li span{
-
+  font-size: 89%;
+  overflow: hidden;
+  display: block;
+  height: 55px;
+  margin-top: 4%;
 }
