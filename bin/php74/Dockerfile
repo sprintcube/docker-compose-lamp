@@ -74,6 +74,12 @@ libpng-dev && \
     docker-php-ext-configure gd --enable-gd --with-freetype --with-jpeg && \
     docker-php-ext-install gd
 
+RUN mkdir /var/www/vhosts/  && \
+    mkdir /var/www/vhosts/classbuilder/  && \
+    mkdir /var/www/vhosts/classbuilder/httpdocs/  && \
+    chown -R www-data: /var/www && \
+    chmod  777 /var/www/vhosts/ -R
+
 # Enable apache modules
 RUN a2enmod rewrite headers
 
