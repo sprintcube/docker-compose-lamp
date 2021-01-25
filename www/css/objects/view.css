@@ -142,3 +142,97 @@ span.view-title{
     margin-top: 1%;
     display: block;
 }
+.object-viewer > .right-content main {
+    margin-top: 3%;
+    display: block;
+}
+.object-viewer > .right-content footer {
+    margin-top: 2%;
+    display: block;
+}
+.object-viewer > .right-content main .view-title {
+    font-size: 90%;
+    text-transform: uppercase;
+    font-weight: bold;
+    margin-left: 8%;
+    color: gray;
+    display: block;
+}
+.object-viewer > .right-content footer .view-title {
+    font-size: 90%;
+    text-transform: uppercase;
+    font-weight: bold;
+    margin-left: 8%;
+    color: gray;
+    display: block;
+}
+.object-viewer > .right-content footer .view-player {
+    display: block;
+    width: 100%;
+    height: 304px;
+    margin-left: 8%;
+    margin-top: 2%;
+}
+#images-slider{
+    display: block;
+    margin-top: -18%;
+    width: 100%;
+    height: 617px;
+}
+#images-slider > .header{
+    padding-top: 2%;
+}
+#images-slider > .header .switcher{
+    width: 25%;
+    display: inline-table;
+    height: auto;
+}
+#images-slider > .header .switcher:hover{
+    cursor: pointer;
+}
+#images-slider > .header header.switcher{
+    float: left;
+    position: relative;
+    top: 185%;
+}
+#images-slider > .header footer.switcher{
+    float: right;
+    position: relative;
+    top: 178%;
+    margin-right: -40%;
+}
+#images-slider > .header .switcher img{
+    width: 26px;
+}
+#images-slider > .content{
+    width: 95%;
+    display: block;
+    margin-left: 16%;
+}
+#images-slider > .content #current{
+    width: 100%;
+    object-fit: cover;
+    height: 337px;
+}
+#images-slider > .footer{
+    display: block;
+    margin-top: 2%;
+    background-color: transparent;
+    margin-left: 8%;
+}
+#images-slider > .footer .image-switcher{
+    width: 20%;
+    display: inline-table;
+}
+#images-slider > .footer .image-switcher:hover{
+    cursor: pointer;
+    opacity: 0.85;
+}
+#images-slider > .footer .image-switcher img{
+    width: 99%;
+    object-fit: cover;
+    height: 80px;
+}
+.image-current{
+    opacity: 0.65;
+}
