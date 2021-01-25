@@ -16,6 +16,9 @@ span.view-title{
     display: inline-table;
     width: 50%;
 }
+.object-viewer > .right-content{
+    width: 48%;
+}
 .object-viewer > .left-content header{
     margin-top: 2%;
 }
@@ -91,4 +94,51 @@ span.view-title{
 }
 #objects > .objects-list main table .header {
     height: 60px;
+}
+.specifications{
+    width: 100%;
+    margin-top: 2%;
+    font-size: 96%;
+    border-collapse: collapse;
+}
+.specifications > tbody tr{
+    height: 35px;
+}
+.specifications > tbody tr:nth-child(2n){
+    background-color: white;
+}
+.specifications > tbody tr td{
+    color: gray;
+}
+.specifications > tbody tr td:nth-child(2){
+    color: black;
+    font-weight: bold;
+}
+.object-viewer > .right-content header .add-to-favorite{
+    font-size: 120%;
+    padding-bottom: 3%;
+}
+.object-viewer > .right-content header .add-to-favorite i{
+    color: dodgerblue;
+    vertical-align: middle;
+}
+.object-viewer > .right-content header .add-to-favorite a{
+    font-size: 60%;
+    color: black;
+    text-decoration: none;
+}
+.object-viewer > .right-content header .description{
+    font-size: 100%;
+}
+.object-viewer > .right-content header .description span{
+    height: 44px;
+    overflow: auto;
+    text-overflow: ellipsis;
+    color: black;
+    font-size: 67%;
+    display: block;
+}
+.object-viewer > .right-content header .description a{
+    margin-top: 1%;
+    display: block;
 }
