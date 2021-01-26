@@ -2,11 +2,17 @@
 @import url('fontawesome/css/all.css');
 @import url('addons/lightbox.css');
 @import url('addons/docsicon.css');
-html{
+html{ 
     overflow-x: hidden;
+    overflow-y: scroll;
     font-family: 'Roboto', sans-serif;
 }
-html,body{ margin: 0; padding: 0;}
+body{
+    margin: 0;
+    padding: 0;
+    width: 102%;
+    height: 100%;
+}
 h1, h2, h3, h4, h5, h6, strong{
     font-family: 'Open Sans', sans-serif;
 }
