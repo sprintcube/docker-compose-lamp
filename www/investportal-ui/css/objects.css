@@ -87,3 +87,61 @@
 #objects > .objects-list main table .content td:nth-child(3){
     font-weight: bold;
 }
+
+#objects > .projects-search-form main form .selectors .selector #type-selector:checked, 
+#objects > .projects-search-form main form .selectors .selector #type-selector:not(:checked){
+    position: absolute;
+    left: -9999px;
+}
+
+#objects > .projects-search-form main form .selectors .selector #type-selector:checked + span, 
+#objects > .projects-search-form main form .selectors .selector #type-selector:not(:checked) + span{
+    display: inline-block;
+    position: relative;
+    padding-left: 28px;
+    line-height: 20px;
+    cursor: pointer;
+}
+
+#objects > .projects-search-form main form .selectors .selector #type-selector:checked + span:before, 
+#objects > .projects-search-form main form .selectors .selector #type-selector:not(:checked) + span:before{
+    content: "";
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    width: 18px;
+    height: 18px;
+    border: 1px solid lightgray;
+    background-color: lightgray;
+}
+
+#objects > .projects-search-form main form .selectors .selector #type-selector:checked + span:before, 
+#objects > .projects-search-form main form .selectors .selector #type-selector:not(:checked) + span:before{
+    border-radius: 2px;
+}
+
+#objects > .projects-search-form main form .selectors .selector #type-selector:checked + span:after, 
+#objects > .projects-search-form main form .selectors .selector #type-selector:not(:checked) + span:after{
+    content: "";
+    position: absolute;
+    -webkit-transition: all 0.2s ease;
+    -moz-transition: all 0.2s ease;
+    -o-transition: all 0.2s ease;
+    transition: all 0.2s ease;
+}
+
+#objects > .projects-search-form main form .selectors .selector #type-selector:checked + span:after, 
+#objects > .projects-search-form main form .selectors .selector #type-selector:not(:checked) + span:after{
+    left: 3px;
+    top: 4px;
+    width: 10px;
+    height: 5px;
+    border-radius: 1px;
+    border-left: 4px solid dodgerblue;
+    border-bottom: 4px solid dodgerblue;
+    -webkit-transform: rotate(-45deg);
+    -moz-transform: rotate(-45deg);
+    -o-transform: rotate(-45deg);
+    -ms-transform: rotate(-45deg);
+    transform: rotate(-45deg);
+}

@@ -114,5 +114,77 @@
 }
 .lightwin-passport > footer #left-content .selectors #selector{
     font-size: 100%;
+    margin-top: 2%;
 }
+
+
+
+.lightwin-passport > footer #left-content .selectors #selector #selector-check:checked, 
+.lightwin-passport > footer #left-content .selectors #selector #selector-check:not(:checked){
+    position: absolute;
+    left: -9999px;
+}
+
+.lightwin-passport > footer #left-content .selectors #selector #selector-check:checked + span, 
+.lightwin-passport > footer #left-content .selectors #selector #selector-check:not(:checked) + span{
+    display: inline-block;
+    position: relative;
+    padding-left: 28px;
+    line-height: 20px;
+    cursor: pointer;
+}
+
+.lightwin-passport > footer #left-content .selectors #selector #selector-check:checked + span:before, 
+.lightwin-passport > footer #left-content .selectors #selector #selector-check:not(:checked) + span:before{
+    content: "";
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    width: 18px;
+    height: 18px;
+    border: 1px solid lightgray;
+    background-color: lightgray;
+}
+
+.lightwin-passport > footer #left-content .selectors #selector #selector-check:checked + span:before, 
+.lightwin-passport > footer #left-content .selectors #selector #selector-check:not(:checked) + span:before{
+    border-radius: 2px;
+}
+
+.lightwin-passport > footer #left-content .selectors #selector #selector-check:checked + span:after, 
+.lightwin-passport > footer #left-content .selectors #selector #selector-check:not(:checked) + span:after{
+    content: "";
+    position: absolute;
+    -webkit-transition: all 0.2s ease;
+    -moz-transition: all 0.2s ease;
+    -o-transition: all 0.2s ease;
+    transition: all 0.2s ease;
+}
+
+.lightwin-passport > footer #left-content .selectors #selector #selector-check:checked + span:after, 
+.lightwin-passport > footer #left-content .selectors #selector #selector-check:not(:checked) + span:after{
+    left: 3px;
+    top: 4px;
+    width: 10px;
+    height: 5px;
+    border-radius: 1px;
+    border-left: 4px solid dodgerblue;
+    border-bottom: 4px solid dodgerblue;
+    -webkit-transform: rotate(-45deg);
+    -moz-transform: rotate(-45deg);
+    -o-transform: rotate(-45deg);
+    -ms-transform: rotate(-45deg);
+    transform: rotate(-45deg);
+}
+
+.lightwin-passport > footer #left-content .selectors #selector #selector-check:not(:checked) + span:after{
+    opacity: 0;
+}
+
+.lightwin-passport > footer #left-content .selectors #selector #selector-check:checked + span:after{
+    opacity: 1;
+}
+
+
 .lightwin-passport > main form #textput:focus, .lightwin-passport > main form #selector-form:focus, .lightwin-passport > main form #from-to #selector-form-add:focus{ border: solid 2px darkgray;}
+
