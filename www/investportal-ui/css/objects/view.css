@@ -1,4 +1,5 @@
 @import url('hotels.css');
+@import url('../services/objects-services-cont.css');
 h2.view-title{
     color: black;
     font-size: 80%;

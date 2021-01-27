@@ -6,10 +6,8 @@
 }
 .label{ font-size: 55%;}
 .range-form{
-    margin-top: 8%;
-}
-.range-form > input[type=range]{
-
+    margin-top: 6%;
+    padding-top: 10px;
 }
 .input-from-to{
     margin-top: 2%;

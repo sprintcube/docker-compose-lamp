@@ -539,7 +539,7 @@ h1, h2, h3, h4, h5, h6, strong{
 #services > main #slider-controller img{
     width: 30%;
     position: relative;
-    top: -120px;
+    top: -11px;
 }
 #services > main #slider-view{
     width: 70%;
@@ -629,7 +629,7 @@ h1, h2, h3, h4, h5, h6, strong{
 #analytics > main #slider-controller img{
     width: 30%;
     position: relative;
-    top: 80px;
+    top: 125px;
 }
 #analytics > main #slider-view{
     width: 70%;
@@ -646,6 +646,7 @@ h1, h2, h3, h4, h5, h6, strong{
     box-shadow: 3px -1px 11px 3px darkgray;
     margin-left: 6%;
     padding-bottom: 2%;
+    background-color: white;
 }
 #analytics > main #slider-view .analytic-feed .analytic:hover {
     background-color: dodgerblue;
@@ -696,7 +697,7 @@ h1, h2, h3, h4, h5, h6, strong{
 #estate > main #slider-controller img{
     width: 30%;
     position: relative;
-    top: -177px;
+    top: -58px;
 }
 #estate > main #slider-view{
     width: 70%;
@@ -816,7 +817,7 @@ h1, h2, h3, h4, h5, h6, strong{
 #reviews > main #slider-controller img{
     width: 30%;
     position: relative;
-    top: 60px;
+    top: 97px;
 }
 #reviews > main #slider-view{
     width: 70%;
@@ -833,6 +834,7 @@ h1, h2, h3, h4, h5, h6, strong{
     box-shadow: 3px -1px 11px 3px darkgray;
     margin-left: 7%;
     padding-bottom: 2%;
+    background-color: white;
 }
 #reviews > main #slider-view .review-feed .review main h3{
     display: block;

@@ -1,5 +1,7 @@
 @import url('../objects.css');
 @import url('../services/hotels-input-services.css');
+@import url('../services/objects-services-cont.css');
+
 #objects > .projects-search-form {
     height: 1780px;
 }
@@ -218,3 +220,90 @@
 .objects-adding-search > main footer .radio-selectors div input:checked + span:after {
     opacity: 1;
 }
+
+.range-form > input[type="range"] {
+    -webkit-appearance: none;
+}
+.range-form > input[type="range"]:focus {
+    outline: none;
+}
+.range-form > input[type="range"]::-webkit-slider-runnable-track {
+    width: 100%;
+    height: 12.8px;
+    cursor: pointer;
+    animate: 0.2s;
+    box-shadow: 1px 1px 1px darkgray, 1px 1px 1px darkgray;
+    background: dodgerblue;
+    border-radius: 25px;
+    border: 0px solid #000101;
+}
+.range-form > input[type="range"]::-webkit-slider-thumb {
+    box-shadow: 1px 1px 1px darkgray, 1px 1px 1px darkgray;
+    border: 2px solid lightgray;
+    height: 20px;
+    width: 39px;
+    border-radius: 7px;
+    background:white;
+    cursor: pointer;
+    -webkit-appearance: none;
+    margin-top: -3.6px;
+}
+.range-form > input[type="range"]:focus::-webkit-slider-runnable-track {
+    background: dodgerblue;
+}
+.range-form > input[type="range"]::-moz-range-track {
+    width: 100%;
+    height: 12.8px;
+    cursor: pointer;
+    animate: 0.2s;
+    box-shadow: 1px 1px 1px darkgray, 1px 1px 1px darkgray;
+    background: dodgerblue;
+    border-radius: 25px;
+    border: 0px solid #000101;
+}
+.range-form > input[type="range"]::-moz-range-thumb {
+    box-shadow: 1px 1px 1px darkgray, 1px 1px 1px darkgray;
+    border: 2px solid lightgray;
+    height: 20px;
+    width: 39px;
+    border-radius: 7px;
+    background:white;
+    cursor: pointer;
+}
+.range-form > input[type="range"]::-ms-track {
+    width: 100%;
+    height: 12.8px;
+    cursor: pointer;
+    animate: 0.2s;
+    background: transparent;
+    border-color: transparent;
+    border-width: 39px 0;
+    color: transparent;
+}
+.range-form > input[type="range"]::-ms-fill-lower {
+    background: dodgerblue;
+    border: 0px solid #000101;
+    border-radius: 50px;
+    box-shadow: 1px 1px 1px darkgray, 1px 1px 1px darkgray;
+}
+.range-form > input[type="range"]::-ms-fill-upper {
+    background: dodgerblue;
+    border: 0px solid #000101;
+    border-radius: 50px;
+    box-shadow: 1px 1px 1px darkgray, 1px 1px 1px darkgray;
+}
+.range-form > input[type="range"]::-ms-thumb {
+    box-shadow: 1px 1px 1px darkgray, 1px 1px 1px darkgray;
+    border: 2px solid lightgray;
+    height: 20px;
+    width: 39px;
+    border-radius: 7px;
+    background:white;
+    cursor: pointer;
+}
+.range-form > input[type="range"]:focus::-ms-fill-lower {
+    background: dodgerblue;
+}
+.range-form > input[type="range"]:focus::-ms-fill-upper {
+    background: dodgerblue;
+ }
