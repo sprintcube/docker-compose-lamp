@@ -14,6 +14,7 @@
 }
 #objects > .projects-search-form main form .selectors .selector{
     margin-top: 2px;
+    display: block;
 }
 #objects > .projects-search-form main form .selectors .selector span{
    font-size: 90%;

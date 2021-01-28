@@ -44,14 +44,12 @@
 .lightwin-passport-regional > main form .countries-part .country-name{
     font-size: 80%;
 }
-.lightwin-passport-regional > main form .countries-part div #country-selector:checked, 
-.lightwin-passport-regional > main form .countries-part div #country-selector:not(:checked){
+.lightwin-passport-regional > main form .countries-part label #country-selector{
     position: absolute;
     left: -9999px;
 }
 
-.lightwin-passport-regional > main form .countries-part div #country-selector:checked + span.country-name, 
-.lightwin-passport-regional > main form .countries-part div #country-selector:not(:checked) + span.country-name{
+.lightwin-passport-regional > main form .countries-part label #country-selector + span.country-name{
     display: inline-block;
     position: relative;
     padding-left: 28px;
@@ -59,8 +57,7 @@
     cursor: pointer;
 }
 
-.lightwin-passport-regional > main form .countries-part div #country-selector:checked + span.country-name:before, 
-.lightwin-passport-regional > main form .countries-part div #country-selector:not(:checked) + span.country-name:before{
+.lightwin-passport-regional > main form .countries-part label #country-selector + span.country-name:before{
     content: "";
     position: absolute;
     left: 0px;
@@ -71,13 +68,11 @@
     background-color: lightgray;
 }
 
-.lightwin-passport-regional > main form .countries-part div #country-selector:checked + span.country-name:before, 
-.lightwin-passport-regional > main form .countries-part div #country-selector:not(:checked) + span.country-name:before{
+.lightwin-passport-regional > main form .countries-part label #country-selector + span.country-name:before{
     border-radius: 2px;
 }
 
-.lightwin-passport-regional > main form .countries-part div #country-selector:checked + span.country-name:after, 
-.lightwin-passport-regional > main form .countries-part div #country-selector:not(:checked) + span.country-name:after{
+.lightwin-passport-regional > main form .countries-part label #country-selector:checked + span.country-name:after{
     content: "";
     position: absolute;
     -webkit-transition: all 0.2s ease;
@@ -86,8 +81,7 @@
     transition: all 0.2s ease;
 }
 
-.lightwin-passport-regional > main form .countries-part div #country-selector:checked + span.country-name:after, 
-.lightwin-passport-regional > main form .countries-part div #country-selector:not(:checked) + span.country-name:after{
+.lightwin-passport-regional > main form .countries-part label #country-selector:checked + span.country-name:after{
     left: 3px;
     top: 4px;
     width: 10px;

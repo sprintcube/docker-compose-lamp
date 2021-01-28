@@ -88,14 +88,12 @@
     font-weight: bold;
 }
 
-#objects > .projects-search-form main form .selectors .selector #type-selector:checked, 
-#objects > .projects-search-form main form .selectors .selector #type-selector:not(:checked){
+#objects > .projects-search-form main form .selectors .selector #type-selector{
     position: absolute;
     left: -9999px;
 }
 
-#objects > .projects-search-form main form .selectors .selector #type-selector:checked + span, 
-#objects > .projects-search-form main form .selectors .selector #type-selector:not(:checked) + span{
+#objects > .projects-search-form main form .selectors .selector #type-selector + span{
     display: inline-block;
     position: relative;
     padding-left: 28px;
@@ -103,8 +101,7 @@
     cursor: pointer;
 }
 
-#objects > .projects-search-form main form .selectors .selector #type-selector:checked + span:before, 
-#objects > .projects-search-form main form .selectors .selector #type-selector:not(:checked) + span:before{
+#objects > .projects-search-form main form .selectors .selector #type-selector + span:before{
     content: "";
     position: absolute;
     left: 0px;
@@ -115,13 +112,11 @@
     background-color: lightgray;
 }
 
-#objects > .projects-search-form main form .selectors .selector #type-selector:checked + span:before, 
-#objects > .projects-search-form main form .selectors .selector #type-selector:not(:checked) + span:before{
+#objects > .projects-search-form main form .selectors .selector #type-selector + span:before{
     border-radius: 2px;
 }
 
-#objects > .projects-search-form main form .selectors .selector #type-selector:checked + span:after, 
-#objects > .projects-search-form main form .selectors .selector #type-selector:not(:checked) + span:after{
+#objects > .projects-search-form main form .selectors .selector #type-selector:checked + span:after{
     content: "";
     position: absolute;
     -webkit-transition: all 0.2s ease;
@@ -130,8 +125,7 @@
     transition: all 0.2s ease;
 }
 
-#objects > .projects-search-form main form .selectors .selector #type-selector:checked + span:after, 
-#objects > .projects-search-form main form .selectors .selector #type-selector:not(:checked) + span:after{
+#objects > .projects-search-form main form .selectors .selector #type-selector:checked + span:after{
     left: 3px;
     top: 4px;
     width: 10px;

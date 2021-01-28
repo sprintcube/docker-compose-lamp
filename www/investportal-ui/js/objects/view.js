@@ -8,7 +8,7 @@ const SliderControlUI = () => {
             const switcher = imglib.eq(index);
             
             if(switcher.hasClass('image-current')){
-                if(index == 0){ eli = imglib.length; }
+                if(index == 0){ eli = imglib.length - 1; }
                 else{ eli = index - 1; }
                 break;
             }
@@ -31,7 +31,7 @@ const SliderControlUI = () => {
             const switcher = imglib.eq(index);
             
             if(switcher.hasClass('image-current')){
-                if(index == imglib.length){ eli = 0; }
+                if(index == (imglib.length - 1)){ eli = 0; }
                 else{ eli = index + 1; }
                 break;
             }

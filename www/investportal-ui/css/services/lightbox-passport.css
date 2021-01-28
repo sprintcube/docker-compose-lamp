@@ -115,18 +115,17 @@
 .lightwin-passport > footer #left-content .selectors #selector{
     font-size: 100%;
     margin-top: 2%;
+    display: block;
 }
 
 
 
-.lightwin-passport > footer #left-content .selectors #selector #selector-check:checked, 
-.lightwin-passport > footer #left-content .selectors #selector #selector-check:not(:checked){
+.lightwin-passport > footer #left-content .selectors #selector #selector-check{
     position: absolute;
     left: -9999px;
 }
 
-.lightwin-passport > footer #left-content .selectors #selector #selector-check:checked + span, 
-.lightwin-passport > footer #left-content .selectors #selector #selector-check:not(:checked) + span{
+.lightwin-passport > footer #left-content .selectors #selector #selector-check + span{
     display: inline-block;
     position: relative;
     padding-left: 28px;
@@ -134,8 +133,7 @@
     cursor: pointer;
 }
 
-.lightwin-passport > footer #left-content .selectors #selector #selector-check:checked + span:before, 
-.lightwin-passport > footer #left-content .selectors #selector #selector-check:not(:checked) + span:before{
+.lightwin-passport > footer #left-content .selectors #selector #selector-check + span:before{
     content: "";
     position: absolute;
     left: 0px;
@@ -146,13 +144,11 @@
     background-color: lightgray;
 }
 
-.lightwin-passport > footer #left-content .selectors #selector #selector-check:checked + span:before, 
-.lightwin-passport > footer #left-content .selectors #selector #selector-check:not(:checked) + span:before{
+.lightwin-passport > footer #left-content .selectors #selector #selector-check + span:before{
     border-radius: 2px;
 }
 
-.lightwin-passport > footer #left-content .selectors #selector #selector-check:checked + span:after, 
-.lightwin-passport > footer #left-content .selectors #selector #selector-check:not(:checked) + span:after{
+.lightwin-passport > footer #left-content .selectors #selector #selector-check:checked + span:after{
     content: "";
     position: absolute;
     -webkit-transition: all 0.2s ease;
@@ -161,8 +157,7 @@
     transition: all 0.2s ease;
 }
 
-.lightwin-passport > footer #left-content .selectors #selector #selector-check:checked + span:after, 
-.lightwin-passport > footer #left-content .selectors #selector #selector-check:not(:checked) + span:after{
+.lightwin-passport > footer #left-content .selectors #selector #selector-check:checked + span:after{
     left: 3px;
     top: 4px;
     width: 10px;
@@ -177,7 +172,7 @@
     transform: rotate(-45deg);
 }
 
-.lightwin-passport > footer #left-content .selectors #selector #selector-check:not(:checked) + span:after{
+.lightwin-passport > footer #left-content .selectors #selector #selector-check + span:after{
     opacity: 0;
 }
 

@@ -54,15 +54,16 @@
 .objects-adding-search > main footer .check-selectors .title-form, .objects-adding-search > main footer .radio-selectors .title-form{
     font-size: 70%;
 }
-.objects-adding-search > main footer .check-selectors div, .objects-adding-search > main footer .radio-selectors div{
+.objects-adding-search > main footer .check-selectors label, .objects-adding-search > main footer .radio-selectors label{
     font-size: 90%;
     margin-top: 2px;
+    display: block;
 }
-.objects-adding-search > main footer .check-selectors div input, .objects-adding-search > main footer .radio-selectors div input{
+.objects-adding-search > main footer .check-selectors label input, .objects-adding-search > main footer .radio-selectors label input{
     top: 13%;
     position: relative;
 }
-.objects-adding-search > main footer .check-selectors div span, .objects-adding-search > main footer .radio-selectors div span{
+.objects-adding-search > main footer .check-selectors label span, .objects-adding-search > main footer .radio-selectors label span{
     padding-left: 2px;
 }
 .objects-adding-search > footer{
@@ -129,19 +130,14 @@
     margin-left: 8%;
 }
 
-.objects-adding-search > main footer .check-selectors div input:checked, 
-.objects-adding-search > main footer .check-selectors div input:not(:checked), 
-.objects-adding-search > main footer .radio-selectors div input:checked, 
-.objects-adding-search > main footer .radio-selectors div input:not(:checked) 
-{
+.objects-adding-search > main footer .check-selectors label input, 
+.objects-adding-search > main footer .radio-selectors label input {
     position: absolute;
     left: -9999px;
 }
 
-.objects-adding-search > main footer .check-selectors div input:checked + span, 
-.objects-adding-search > main footer .check-selectors div input:not(:checked) + span, 
-.objects-adding-search > main footer .radio-selectors div input:checked + span, 
-.objects-adding-search > main footer .radio-selectors div input:not(:checked) + span {
+.objects-adding-search > main footer .check-selectors label input + span, 
+.objects-adding-search > main footer .radio-selectors label input + span {
     display: inline-block;
     position: relative;
     padding-left: 28px;
@@ -149,10 +145,8 @@
     cursor: pointer;
 }
 
-.objects-adding-search > main footer .check-selectors div input:checked + span:before, 
-.objects-adding-search > main footer .check-selectors div input:not(:checked) + span:before,
-.objects-adding-search > main footer .radio-selectors div input:checked + span:before, 
-.objects-adding-search > main footer .radio-selectors div input:not(:checked) + span:before {
+.objects-adding-search > main footer .check-selectors label input + span:before, 
+.objects-adding-search > main footer .radio-selectors label input + span:before {
     content: "";
     position: absolute;
     left: 0px;
@@ -163,20 +157,16 @@
     background-color: darkgray;
 }
 
-.objects-adding-search > main footer .check-selectors div input:checked + span:before, 
-.objects-adding-search > main footer .check-selectors div input:not(:checked) + span:before {
+.objects-adding-search > main footer .check-selectors label input + span:before {
     border-radius: 2px;
 }
 
-.objects-adding-search > main footer .radio-selectors div input:checked + span:before, 
-.objects-adding-search > main footer .radio-selectors div input:not(:checked) + span:before {
+.objects-adding-search > main footer .radio-selectors label input + span:before {
     border-radius: 100%;
 }
 
-.objects-adding-search > main footer .check-selectors div input:checked + span:after, 
-.objects-adding-search > main footer .check-selectors div input:not(:checked) + span:after, 
-.objects-adding-search > main footer .radio-selectors div input:checked + span:after, 
-.objects-adding-search > main footer .radio-selectors div input:not(:checked) + span:after {
+.objects-adding-search > main footer .check-selectors label input + span:after, 
+.objects-adding-search > main footer .radio-selectors label input + span:after {
     content: "";
     position: absolute;
     -webkit-transition: all 0.2s ease;
@@ -185,8 +175,7 @@
     transition: all 0.2s ease;
 }
 
-.objects-adding-search > main footer .check-selectors div input:checked + span:after, 
-.objects-adding-search > main footer .check-selectors div input:not(:checked) + span:after {
+.objects-adding-search > main footer .check-selectors label input:checked + span:after{
     left: 3px;
     top: 4px;
     width: 10px;
@@ -201,8 +190,7 @@
     transform: rotate(-45deg);
 }
 
-.objects-adding-search > main footer .radio-selectors div input:checked + span:after, 
-.objects-adding-search > main footer .radio-selectors div input:not(:checked) + span:after {
+.objects-adding-search > main footer .radio-selectors label input:checked + span:after{
     left: 5px;
     top: 5px;
     width: 10px;
@@ -211,13 +199,13 @@
     background-color: dodgerblue;
 }
 
-.objects-adding-search > main footer .check-selectors div input:not(:checked) + span:after, 
-.objects-adding-search > main footer .radio-selectors div input:not(:checked) + span:after {
+.objects-adding-search > main footer .check-selectors label input + span:after, 
+.objects-adding-search > main footer .radio-selectors label input + span:after {
     opacity: 0;
 }
 
-.objects-adding-search > main footer .check-selectors div input:checked + span:after, 
-.objects-adding-search > main footer .radio-selectors div input:checked + span:after {
+.objects-adding-search > main footer .check-selectors label input:checked + span:after, 
+.objects-adding-search > main footer .radio-selectors label input:checked + span:after {
     opacity: 1;
 }
 

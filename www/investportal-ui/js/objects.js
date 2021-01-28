@@ -4,5 +4,4 @@ const searchwinclose = (e,t) => {
 }
 $(document).ready(function () {
     $('#objects > .projects-search-form header #right-content .close').click(searchwinclose);
-    
 });

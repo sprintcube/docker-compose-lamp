@@ -25,6 +25,7 @@
 }
 .passport-page > main .services-settings footer .services-selectors .selector{
   margin-top: 4%;
+  display: block;
 }
 .passport-page > main .services-settings footer .services-selectors .selector span{
   font-size: 88%;
@@ -34,14 +35,12 @@
     margin-top: -23%;
     margin-left: 14px;
 }
-.passport-page > main .services-settings footer .services-selectors .selector input:checked, 
-.passport-page > main .services-settings footer .services-selectors .selector input:not(:checked){
+.passport-page > main .services-settings footer .services-selectors .selector input{
     position: absolute;
     left: -9999px;
 }
 
-.passport-page > main .services-settings footer .services-selectors .selector input:checked + span, 
-.passport-page > main .services-settings footer .services-selectors .selector input:not(:checked) + span{
+.passport-page > main .services-settings footer .services-selectors .selector input + span{
     display: inline-block;
     position: relative;
     padding-left: 28px;
@@ -49,8 +48,7 @@
     cursor: pointer;
 }
 
-.passport-page > main .services-settings footer .services-selectors .selector input:checked + span:before, 
-.passport-page > main .services-settings footer .services-selectors .selector input:not(:checked) + span:before{
+.passport-page > main .services-settings footer .services-selectors .selector input + span:before{
     content: "";
     position: absolute;
     left: 0px;
@@ -61,13 +59,11 @@
     background-color: lightgray;
 }
 
-.passport-page > main .services-settings footer .services-selectors .selector input:checked + span:before, 
-.passport-page > main .services-settings footer .services-selectors .selector input:not(:checked) + span:before{
+.passport-page > main .services-settings footer .services-selectors .selector input + span:before{
     border-radius: 2px;
 }
 
-.passport-page > main .services-settings footer .services-selectors .selector input:checked + span:after, 
-.passport-page > main .services-settings footer .services-selectors .selector input:not(:checked) + span:after{
+.passport-page > main .services-settings footer .services-selectors .selector input:checked + span:after{
     content: "";
     position: absolute;
     -webkit-transition: all 0.2s ease;
@@ -76,8 +72,7 @@
     transition: all 0.2s ease;
 }
 
-.passport-page > main .services-settings footer .services-selectors .selector input:checked + span:after, 
-.passport-page > main .services-settings footer .services-selectors .selector input:not(:checked) + span:after{
+.passport-page > main .services-settings footer .services-selectors .selector input:checked + span:after{
     left: 3px;
     top: 4px;
     width: 10px;
