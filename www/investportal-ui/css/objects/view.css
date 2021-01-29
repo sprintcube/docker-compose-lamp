@@ -173,6 +173,7 @@ span.view-title{
     height: 304px;
     margin-left: 8%;
     margin-top: 2%;
+    object-fit: cover;
 }
 #images-slider{
     display: block;

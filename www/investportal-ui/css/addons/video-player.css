@@ -1,0 +1,39 @@
+.video-player > .play{
+    display: block;
+    position: relative;
+    top: -200px;
+    left: 42%;
+}
+.video-player > .play img{
+    width: 90px;
+    height: 90px;
+    transition: all 1s ease-out;
+    -moz-transition: all 1s ease-out;
+    -o-transition: all 1s ease-out;
+    -webkit-transition: all 1s ease-out;
+}
+.video-player > .play img:hover{
+    cursor: pointer;
+    transform: scale(1.1);
+    -webkit-transform: scale(1.1);
+    -moz-transform: scale(1.1);
+    -o-transform: scale(1.1);
+}
+.watching{
+    display: none;
+}
+.video-player > .controls{
+    display: block;
+    position: relative;
+    top: -4px;
+    left: 8%;
+    width: 100%;
+}
+.video-player > .controls *, {
+    width: 34px;
+    height: 34px;
+    display: inline-block;
+}
+.video-player > .controls *:hover{
+    cursor: pointer;
+}

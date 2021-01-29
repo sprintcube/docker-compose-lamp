@@ -43,10 +43,50 @@ const HomePageHorizontalAdaptiveLine = () => {
 
     $('#promo > header hr').css({"position": "relative", "top": margin});
 }
+const VideoPlayerUI = (player) => {
+    var video = $(player).get(0);
+    var watch = $('.video-player > .play img');
+    var pause = $('.video-player .controls .pause');
+    var sc = [$('.video-player .controls .sound'), $('.video-player .controls .nosound')];
+    watch.click(function () { 
+        var scc;
+        $(this).addClass('watching');
+        video.play();
+        pause.removeClass('watching');
+        sc[0].removeClass('watching');
 
+        video.volume = 1;
+
+        sc[0].removeClass('watching');
+    });
+
+    
+    pause.click(function () { 
+        watch.removeClass('watching');
+        video.pause(); 
+        pause.addClass('watching');
+        sc[0].addClass('watching');
+        sc[1].addClass('watching');
+    });
+
+    sc[1].click(function () { 
+        $(this).addClass('watching');
+        sc[0].removeClass('watching');
+
+        video.volume = 1;
+    });
+    sc[0].click(function () { 
+        $(this).addClass('watching');
+        sc[1].removeClass('watching');
+
+        video.volume = 0;
+        
+    });
+}
 $(document).ready(function () {
     MarketingHeadBannerAdaptive();
     HomePageHorizontalAdaptiveLine();
+
 
     $(window).resize(MarketingHeadBannerAdaptive);
     $(window).resize(HomePageHorizontalAdaptiveLine);

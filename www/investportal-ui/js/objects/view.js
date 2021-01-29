@@ -66,4 +66,5 @@ const SliderCurrentImageLoad = () => {
 $(document).ready(function () {
     SliderControlUI();
     SliderCurrentImageLoad();
+    VideoPlayerUI('.object-viewer > .right-content footer .view-player');
 });
