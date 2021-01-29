@@ -34,12 +34,12 @@ const HomePageHorizontalAdaptiveLine = () => {
         margin = "-8%";
     }
     else if(vw == 1400 || vw == 1600 || vw < 1600){
-        margin = "-8%";
+        margin = "-12%";
     }
     else if(vw == 1600 || vw == 1800 || vw < 1800){
-        margin = "-8%";
+        margin = "2%";
     }
-    else{ margin = "-8%"; }
+    else{ margin = "2%"; }
 
     $('#promo > header hr').css({"position": "relative", "top": margin});
 }
