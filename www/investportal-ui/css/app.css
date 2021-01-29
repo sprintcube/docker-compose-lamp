@@ -1388,3 +1388,7 @@ h1, h2, h3, h4, h5, h6, strong{
         margin-top: 5%;
     }
 }
+.promo-header{
+    top: -2%;
+    position: relative;
+}
