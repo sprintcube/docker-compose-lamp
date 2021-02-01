@@ -3,10 +3,13 @@
 @import url('addons/lightbox.css');
 @import url('addons/docsicon.css');
 @import url('addons/video-player.css');
-body{
+
+html,body{
     margin: 0;
     padding: 0;
     font-family: 'Roboto', sans-serif;
+    width:100%; 
+    overflow-x:hidden;
 }
 h1, h2, h3, h4, h5, h6, strong{
     font-family: 'Open Sans', sans-serif;
@@ -156,12 +159,12 @@ h1, h2, h3, h4, h5, h6, strong{
 }
 .main > .section header h2{
     display: block;
-    margin-top: 2%;
+    margin-top: -1px;
     font-size: 136%;
 }
 .main > .section header strong{
     display: block;
-    margin-top: -1%;
+    margin-top: -27px;
     font-size: 77%;
 }
 .main > .section header a{
@@ -219,11 +222,12 @@ h1, h2, h3, h4, h5, h6, strong{
     display: -webkit-box;
     display: -webkit-flex;
     display: -ms-flexbox;
+    flex-wrap: wrap;
     float: left;
     margin-left: -23%;
 }
 #promo > main .promo-feed .promoblock{
-    width: 20%;
+    width: 17%;
     display: inline-table;
     background-color: white;
     box-shadow: 3px -1px 11px 3px darkgray;
@@ -312,7 +316,7 @@ h1, h2, h3, h4, h5, h6, strong{
 }
 #news > header a{
     display: inline;
-    margin-left: 2%;
+    margin-left: 13px;
 }
 #news > main{
     width: 90%;
@@ -377,11 +381,12 @@ h1, h2, h3, h4, h5, h6, strong{
     display: -webkit-box;
     display: -webkit-flex;
     display: -ms-flexbox;
+    flex-wrap: wrap;
     float: left;
     margin-left: -17%;
 }
 #investsearch > main .popular-objects .popular-object{
-    width: 19%;
+    width: 17%;
     display: inline-table;
     background-color: white;
     box-shadow: 3px -1px 11px 3px darkgray;
@@ -1389,6 +1394,6 @@ h1, h2, h3, h4, h5, h6, strong{
     }
 }
 .promo-header{
-    top: -2%;
+    top: -1px;
     position: relative;
 }

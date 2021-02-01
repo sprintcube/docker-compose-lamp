@@ -210,7 +210,7 @@
 }
 
 .range-form > input[type="range"] {
-    -webkit-appearance: none;
+    appearance: none;
 }
 .range-form > input[type="range"]:focus {
     outline: none;
@@ -233,7 +233,7 @@
     border-radius: 7px;
     background:white;
     cursor: pointer;
-    -webkit-appearance: none;
+    appearance: none;
     margin-top: -3.6px;
 }
 .range-form > input[type="range"]:focus::-webkit-slider-runnable-track {
@@ -295,3 +295,8 @@
 .range-form > input[type="range"]:focus::-ms-fill-upper {
     background: dodgerblue;
  }
+ @media all and (max-width: 1500px){
+    .objects-adding-search > main footer {
+        display: none;
+    }
+}

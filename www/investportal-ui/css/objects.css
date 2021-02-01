@@ -45,6 +45,7 @@
 #objects > .objects-list{
     width: 80%;
     margin-left: 13%;
+    margin-top: 3%;
 }
 #objects > .objects-list header{
     color: black;

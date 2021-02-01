@@ -1,27 +1,28 @@
 const RangeLoad = () => {
     var rangetext = [
-        $('#left-content > .input-from-to .content-form input#from,  header > .input-from-to .content-form input#from'), 
-        $('#left-content > .input-from-to .content-form input#to,  header > .input-from-to .content-form input#to')
+        $('.input-from-to > .content-form input#from'), 
+        $('input-from-to > .content-form input#to')
     ];
-    var range = $('#right-content > .range-form input[type="range"], footer > .range-form input[type="range"]');
+    var range = $('.range-form > input[type="range"]');
 
     for (let i = 0; i < range.length; i++) {
         var min,max,step,res;
         var f,t;
+        var level;
         
-        if(rangetext[0].eq(i).val().indexOf('m2') && rangetext[1].eq(i).val().indexOf('m2')){
-            f = rangetext[0].eq(i).val().substring(0,rangetext[0].eq(i).val().length - 3);
-            t = rangetext[1].eq(i).val().substring(0,rangetext[1].eq(i).val().length - 3); 
+        if(i == 0 || i % 2 == 0){
+            f = 100;
+            t = 10000;
+            level = t / f;
         }
         else{
-            f = rangetext[0].eq(i).val();
-            t = rangetext[1].eq(i).val();
+            f = 1;
+            t = 565;
+            level = 15;
         }
-    
-        var maxv = t;
-        var level = t / f;
         
-
+        var maxv = t;
+        
         min = f;
         max = t;
         step = level;
@@ -37,24 +38,22 @@ const RangeLoad = () => {
 }
 const RangeInput = () => {
     var rangetext = [
-        $('#left-content > .input-from-to .content-form input#from,  header > .input-from-to .content-form input#from'), 
-        $('#left-content > .input-from-to .content-form input#to,  header > .input-from-to .content-form input#to')
+        $('.input-from-to > .content-form input#from'), 
+        $('input-from-to > .content-form input#to')
     ];
-    var range = $('#right-content > .range-form input[type="range"], footer > .range-form input[type="range"]');
+    var range = $('.range-form > input[type="range"]');
 
+    range.bind('input', function (e) {
+        
+    });
+    range.bind('change', function (e) {
+        
+    });
 
-}
-const RangeChange = () => {
-    var rangetext = [
-        $('#left-content > .input-from-to .content-form input#from,  header > .input-from-to .content-form input#from'), 
-        $('#left-content > .input-from-to .content-form input#to,  header > .input-from-to .content-form input#to')
-    ];
-    var range = $('#right-content > .range-form input[type="range"], footer > .range-form input[type="range"]');
 
 
 }
 $(document).ready(function () {
     RangeLoad();
     RangeInput();
-    RangeChange();
 });

@@ -1,4 +1,4 @@
-#news{ height: 1500px;}
+#news{ height: 1545px;}
 #news > .news-viewer #left-content{
   width: 55%;
   float: left;
@@ -129,6 +129,10 @@
     padding-bottom: 2%;
     font-size: 96%;
 }
-  
+@media all and (max-width: 1280px){
+  #news {
+    height: 1736px;
+  }
+} 
   
 

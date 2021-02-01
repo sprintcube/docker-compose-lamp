@@ -2,15 +2,13 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0">
     <title>InvestPortal</title>
     <link rel="stylesheet" href="css/app.css" />
     <script src="https://yastatic.net/jquery/3.3.1/jquery.min.js"></script>
     <script src="https://kit.fontawesome.com/97c3285af2.js" crossorigin="anonymous"></script>
     <style>
-       
-       
-       .exchange-selector {
+              .exchange-selector {
             position: relative;
             top: 31px;
             left: 30%;
@@ -21,7 +19,7 @@
             color: gray;
             background-color: transparent;
             border: none;
-            -webkit-appearance: none;
+            appearance: none;
             -moz-appearance: none;
             appearance: none;
             position: relative;
@@ -42,9 +40,8 @@
             margin-top: 2%; 
         }
         #promo > header .add-but{
-           border: solid 2px #ffffff; 
-           color: white;
-           background-color: transparent;
+           color: gray;
+           background-color: lightgray;
         }
         #services > header .add-but, #estate > header .add-but{
             display: block;
@@ -53,8 +50,8 @@
         #promo > header .links{
             display: inline-table;
             position: relative;
-            top: -52px;
-            margin-left: 6%;
+            top: -44px;
+            margin-left: 105px;
         }
         #promo > header a{
             text-decoration: none;
@@ -93,8 +90,8 @@
                 display: inline-block;
             }
             #promo > header .links {
-                margin-left: 11%;
-                margin-top: 2%;
+                margin-left: 103px;
+                top: -44px;
             }
             #promo > header .marketing-info {
                 margin-top: -18%;
@@ -105,8 +102,8 @@
                 width:72%;
             }
             #investsearch > header a {
-                margin-left: 11%;
-                margin-top: 1%;
+                margin-left: 108px;
+                margin-top: 19px;
             }
             #eventcalendar > main .calendar footer {
                 margin-top: 1%;
@@ -115,16 +112,16 @@
         }
         @media all and (min-width:1280px) and (max-width: 1366px){
             #promo > header .links {
-                margin-left: 9%;
-                margin-top: 1%;
+                margin-left: 101px;
+                top: -46px;
             }
             #promo > header .marketing-info {
-                margin-top: -20%;
+                margin-top: -205px;
                 margin-right: -10%;
             }
             #investsearch > header a {
-                margin-left: 10%;
-                margin-top: 1%;
+                margin-left: 111px;
+                margin-top: 20px;
             }
             #eventcalendar > main .calendar footer {
                 margin-top: 0%;
@@ -136,16 +133,16 @@
         }
         @media all and (min-width:1366px) and (max-width: 1400px){
             #promo > header .links {
-                margin-left: 8%;
-                margin-top: 1%;
+                margin-left: 101px;
+                top: -43px;
             }
             #promo > header .marketing-info {
-                margin-top: -19%;
+                margin-top: -214px;
                 margin-right: -13%;
             }
             #investsearch > header a {
-                margin-left: 9%;
-                margin-top: 1%;
+                margin-left: 111px;
+                margin-top: 18px;
             }
             #eventcalendar > main .calendar footer {
                 margin-top: 1%;
@@ -157,14 +154,16 @@
         }
         @media all and (min-width:1400px) and (max-width: 1600px){
             #promo > header .links {
-                margin-left: 11%;
+                margin-left: 103px;
+                top: -44px;
             }
             #promo > header .marketing-info {
-                margin-top: -17%;
+                margin-top: -218px;
                 margin-right: -18%;
             }
             #investsearch > header a {
-                margin-left: 11%;
+                margin-left: 112px;
+                margin-top: 20px;
             }
             #eventcalendar > main .calendar footer {
                 margin-top: 1%;
@@ -176,16 +175,16 @@
         }
         @media all and (min-width:1600px) and (max-width: 1800px){
             #promo > header .links {
-                margin-left: 7%;
-                margin-top: 1%;
+                margin-left: 104px;
+                top: -44px;
             }
             #promo > header .marketing-info {
-                margin-top: -15%;
+                margin-top: -200px;
                 margin-right: -23%;
             }
             #investsearch > header a {
-                margin-left: 7%;
-                margin-top: 1%;
+                margin-left: 114px;
+                margin-top: 19px;
             }
             #eventcalendar > main .calendar footer {
                 margin-top: 1%;
@@ -199,7 +198,7 @@
             #promo > header .marketing-info {
                 width: 82%;
                 margin-right: -10%;
-                margin-top: -24%;
+                margin-top: -200px;
             }
             #promo > header .marketing-info header img {
                 width: 82%;
@@ -209,7 +208,7 @@
             #promo > header .marketing-info {
                 width: 82%;
                 margin-right: -13%;
-                margin-top: -22%;
+                margin-top: -200px;
             }
             #promo > header .marketing-info header img {
                 width: 79%;
@@ -219,7 +218,7 @@
             #promo > header .marketing-info {
                 width: 82%;
                 margin-right: -17%;
-                margin-top: -20%;
+                margin-top: -206px;
             }
             #promo > header .marketing-info header img {
                 width: 74%;
@@ -289,16 +288,16 @@
         <section id="promo" class="section">
             <header>
                 
-              <div class="promo-header">
-                <hr color="dodgerblue" width="5%" align="left"/>
-                <h2 style="color: #ffffff;">Investments</h2>
-                <strong style="color: #ffffff;">objects and projects</strong>
-                <button class="add-but">Add Object</button>
-                <div class="links">
-                    <a href=""><strong>Entire Offer</strong>(17 214)</a>
-                    <a href=""><strong>Type Object</strong>(37)</a>
-                </div>
-              </div>
+                <div class="promo-header">
+                    <hr style="position: relative; top: -12%;" width="52px" color="dodgerblue" align="left">
+                    <h2 style="color: #ffffff;font-size: 160%;">Investments</h2>
+                    <strong style="color: #ffffff;font-size: calc(160%/2);">objects and projects</strong>
+                    <button class="add-but">Add Object</button>
+                    <div class="links">
+                        <a href=""><strong>Entire Offer</strong>(17 214)</a>
+                        <a href=""><strong>Type Object</strong>(37)</a>
+                    </div>
+                  </div>
                 <div class="marketing-info">
                     <header class="banner-block">
                         <img src="images/advbanner.jpg" alt="Реклама">
@@ -481,7 +480,7 @@
         </section>
         <section id="news" class="section">
             <header>
-                <hr color="dodgerblue" width="5%" align="left"/>
+                <hr color="dodgerblue" width="52px" align="left"/>
                 <h2>News</h2>
                 <a href="">All news</a>
             </header>
@@ -527,7 +526,7 @@
         </section>
         <section id="investsearch" class="section">
             <header>
-                <hr color="dodgerblue" width="5%" align="left"/>
+                <hr color="dodgerblue" width="52px" align="left"/>
                 <h2>Investors in Search...</h2>
                 <button class="add-but">Add Request</button>
                 <a href=""><strong>Entire Offer</strong>(17 214)</a>
@@ -619,7 +618,7 @@
         </section>
         <section id="eventcalendar" class="section">
             <header>
-                <hr color="dodgerblue" width="5%" align="left"/>
+                <hr color="dodgerblue" width="52px" align="left"/>
                 <h2>Upcoming Events</h2>
             </header>
             <main>
@@ -679,7 +678,7 @@
         </section>
         <section id="services" class="section">
             <header>
-                <hr color="dodgerblue" width="5%" align="left"/>
+                <hr color="dodgerblue" width="52px" align="left"/>
                 <h2>Services</h2>
                 <strong>& Collaborations</strong>
                 <a href=""><strong>All Services</strong>(12 029)</a>
@@ -739,7 +738,7 @@
         </section>
         <section id="analytics" class="section">
             <header>
-                <hr color="dodgerblue" width="5%" align="left"/>
+                <hr color="dodgerblue" width="52px" align="left"/>
                 <h2>Analytics</h2>
                 <a href="">All material</a>
             </header>
@@ -773,7 +772,7 @@
         </section>
         <section id="estate" class="section">
             <header>
-                <hr color="dodgerblue" width="5%" align="left"/>
+                <hr color="dodgerblue" width="52px" align="left"/>
                 <h2>Real Estate</h2>
                 <strong>as Investment</strong>
                 <a href="">Entire Offer</a>
@@ -881,7 +880,7 @@
         </section>
         <section id="reviews" class="section">
             <header>
-                <hr color="dodgerblue" width="5%" align="left"/>
+                <hr color="dodgerblue" width="52px" align="left"/>
                 <h2>Reviews</h2>
                 <strong>and countries</strong>
                 <a href="">All material</a>

@@ -194,3 +194,18 @@
   height: 55px;
   margin-top: 4%;
 }
+@media all and (max-width: 1280px){
+  #news {
+    height: 2120px;
+  }
+  .news-feed > main {
+    margin-top: 66%;
+  }
+  .news-feed > header #top-feed .left-content header img, .news-feed > header #top-feed .right-content .last-feed-cont #cont-content ul li img{
+    width: 97%;
+  }
+  .news-feed > footer #down-feed .down-feed-cont #cont-content ul li img {
+    width: 106%;
+  }
+
+}

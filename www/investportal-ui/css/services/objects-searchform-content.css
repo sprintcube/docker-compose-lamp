@@ -61,3 +61,14 @@
     border: none;
     padding: 8px;
 }
+@media all and (max-width: 1400px){
+    #objects > .projects-search-form footer .filter {
+        width: 60%;
+    }
+    #objects > .projects-search-form main form .selectors {
+        width: 45%;
+    }
+    #objects > .projects-search-form main form .selectors .selector #type-selector + span {
+        font-size: 69%;
+    }
+}
