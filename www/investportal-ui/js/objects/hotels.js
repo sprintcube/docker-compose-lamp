@@ -1,8 +1,4 @@
 const RangeLoad = () => {
-    var rangetext = [
-        $('.input-from-to > .content-form input#from'), 
-        $('input-from-to > .content-form input#to')
-    ];
     var range = $('.range-form > input[type="range"]');
 
     for (let i = 0; i < range.length; i++) {
@@ -35,21 +31,29 @@ const RangeLoad = () => {
             'value': res
         });
     }
+
+    
 }
 const RangeInput = () => {
-    var rangetext = [
-        $('.input-from-to > .content-form input#from'), 
-        $('input-from-to > .content-form input#to')
-    ];
-    var range = $('.range-form > input[type="range"]');
+    var rangetext = $('.input-from-to:nth-child(odd) > .content-form input#to');
+    var rangeeventext = $('.input-from-to:nth-child(even) > .content-form input#to');
+    var range = $('.range-form:nth-child(odd) > input[type="range"]');
+    var evenrange = $('.range-form:nth-child(even) > input[type="range"]');
 
     range.bind('input', function (e) {
-        
+        var val = $(this).val();
+        var curmax = rangetext.eq(range.index(this));
+        var query;
+        query = val + " m2";
+        curmax.val(query);
     });
-    range.bind('change', function (e) {
-        
+    evenrange.bind('input', function (e) {
+        var val = $(this).val();
+        var curmax = rangeeventext.eq(evenrange.index(this));
+        var query;
+        query = val;
+        curmax.val(query);
     });
-
 
 
 }

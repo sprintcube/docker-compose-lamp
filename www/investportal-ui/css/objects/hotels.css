@@ -19,11 +19,12 @@
     display: block;
     position: relative;
     left: 2%;
+    margin-top: 21%;
 }
 .objects-adding-search > main footer{
     display: block;
     margin-left: 10%;
-    margin-top: 31%;
+    margin-top: 13%;
 }
 .objects-adding-search > main header form div{
     display: block;
@@ -67,8 +68,8 @@
     padding-left: 2px;
 }
 .objects-adding-search > footer{
-    margin-top: 18%;
-    margin-left: 7%;
+    margin-top: 0%;
+    margin-left: 6%;
 }
 .objects-adding-search > footer #left-content{
     position: relative;
@@ -87,7 +88,7 @@
     float: right;
     width: 35%;
     display: inline-table;
-    margin-top: -77%;
+    margin-top: -70%;
 }
 .objects-adding-search > header #left-content{
     width: 46%;
@@ -95,6 +96,8 @@
 }
 .objects-adding-search > header #left-content header{
     margin-left: -1%;
+    height: auto;
+    margin-top: 2%;
 }
 .objects-adding-search > header #left-content header form div .label{
     font-size: 40%;
@@ -114,19 +117,21 @@
 }
 .objects-adding-search > header #left-content footer{
     display: block;
-    margin-top: 19%;
+    margin-top: 9%;
+    height: auto;
 }
 .objects-adding-search > header #right-content{
     width: 50%;
     font-size: 80%;
-    height: 300px;
+    height: auto;
     background-color: white;
 }
 .objects-adding-search > header #right-content header{
+    height: auto;
 }
 .objects-adding-search > header #right-content footer{
     display: block;
-    margin-top: 20%;
+    margin-top: 9%;
     margin-left: 8%;
 }
 
@@ -208,7 +213,14 @@
 .objects-adding-search > main footer .radio-selectors label input:checked + span:after {
     opacity: 1;
 }
-
+#objects > .projects-search-form footer #left-content {
+    width: 63%;
+    margin-top: 5%;
+}
+#objects > .projects-search-form footer #left-content-add {
+    width: 50%;
+    margin-top: 2%;
+}
 .range-form > input[type="range"] {
     appearance: none;
 }
