@@ -28,7 +28,7 @@ const HomePageHorizontalAdaptiveLine = () => {
         margin = "0%";
     }
     else if(vw == 1280 || vw == 1366 || vw < 1366){
-        margin = "-5%";
+        margin = "17px";
     }
     else if(vw == 1366 || vw == 1400 || vw < 1400){
         margin = "-8%";

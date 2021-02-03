@@ -146,7 +146,7 @@ h1, h2, h3, h4, h5, h6, strong{
     height: 880px;
     display: block;
     padding-bottom: 9%;
-    padding-top: 5%;
+    padding-top: 7%;
 }
 .main > .section header{
     color:darkgray;
@@ -169,13 +169,13 @@ h1, h2, h3, h4, h5, h6, strong{
 }
 .main > .section header a{
     color: dodgerblue;
-    font-size: 56%;
+    font-size: 70%;
 }
 .main > .section header a strong{
     display: inline-table;
 }
 
-#promo{ height: 760px; }
+#promo{ height: 378px; }
 #news{ height:251px; }
 #investsearch{ height: 470px; }
 #services{ height: 250px; }
@@ -975,7 +975,7 @@ h1, h2, h3, h4, h5, h6, strong{
         font-size: 78%;
     }
     #promo {
-        height: 567px;
+        height: 317px;
     }
     #promo > main .promo-feed,  #investsearch > main .popular-objects{
         margin-left: -11%;
@@ -1104,9 +1104,6 @@ h1, h2, h3, h4, h5, h6, strong{
         right: 8%;
         position: relative;
     }
-    #promo {
-        height: 531px;
-    }
     #promo > main .promo-feed,  #investsearch > main .popular-objects{
         margin-left: -11%;
     }
@@ -1137,7 +1134,7 @@ h1, h2, h3, h4, h5, h6, strong{
         font-size: 73%;
     }
     #promo {
-        height: 557px;
+        height: 354px;
     }
     #promo > main .promo-feed .promoblock header {
         height: 34px;
@@ -1261,7 +1258,7 @@ h1, h2, h3, h4, h5, h6, strong{
         position: relative;
     }
     #promo {
-        height: 594px;
+        height: 361px;
     }
     #promo > main .promo-feed,  #investsearch > main .popular-objects{
         margin-left: -20%;
@@ -1319,7 +1316,7 @@ h1, h2, h3, h4, h5, h6, strong{
         position: relative;
     }
     #promo {
-        height: 622px;
+        height: 336px;
     }
     #promo > main .promo-feed,  #investsearch > main .popular-objects{
         margin-left: -12%;
@@ -1356,7 +1353,7 @@ h1, h2, h3, h4, h5, h6, strong{
         position: relative;
     }
     #promo {
-        height: 656px;
+        height: 346px;
     }
     #promo > main .promo-feed,  #investsearch > main .popular-objects{
         margin-left: -18%;
@@ -1394,6 +1391,6 @@ h1, h2, h3, h4, h5, h6, strong{
     }
 }
 .promo-header{
-    top: -1px;
+    top: -10px;
     position: relative;
 }
