@@ -71,6 +71,10 @@ _**DOCUMENT_ROOT**_
 
 It is a document root for Apache server. The default value for this is `./www`. All your sites will go here and will be synced automatically.
 
+_**APACHE_DOCUMENT_ROOT**_
+
+Apache config file value. The default value for this is /var/www/html.
+
 _**VHOSTS_DIR**_
 
 This is for virtual hosts. The default value for this is `./config/vhosts`. You can place your virtual hosts conf files here.
