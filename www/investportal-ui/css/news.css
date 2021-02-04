@@ -39,7 +39,7 @@
 }
 .news-feed > header #top-feed .left-content main #title{
   display: block;
-  color: dodgerblue;
+  color: #0079bf;
   font-weight: bold;
   text-decoration: none;
   font-size: 90%;
@@ -56,10 +56,10 @@
   margin-left: 13%;
 }
 .news-feed >  header #top-feed .left-content footer #more{
-  color: dodgerblue;
+  color: #0079bf;
   font-size: 70%;
   text-decoration: none;
-  border-bottom: 1px dashed dodgerblue;
+  border-bottom: 1px dashed #0079bf;
 }
 .news-feed >  header #top-feed .right-content{
   float: right;
@@ -86,7 +86,7 @@
   height: 110px;
 }
 .news-feed >  header #top-feed .right-content .last-feed-cont #cont-content ul li a{
-  color: dodgerblue;
+  color: #0079bf;
   font-weight: bold;
   text-decoration: none;
   font-size: 69%;
@@ -139,7 +139,7 @@
   margin-left: 3%;
 }
 .news-feed > main #light-feed .light-feed-cont #cont-content ul li a{
-  color: dodgerblue;
+  color: #0079bf;
   font-weight: bold;
   display: block;
   text-decoration: none;
@@ -181,7 +181,7 @@
 }
 .news-feed > footer #down-feed .down-feed-cont #cont-content ul li a{
   display: block;
-  color: dodgerblue;
+  color: #0079bf;
   font-size: 100%;
   text-decoration: none;
   font-weight: bold;

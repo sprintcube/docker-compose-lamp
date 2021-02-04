@@ -1,5 +1,5 @@
 const RangeLoad = () => {
-    var range = $('.range-form > input[type="range"]');
+    var range = $('.objects-adding-search > footer #right-content .range-form input[type="range"]');
 
     for (let i = 0; i < range.length; i++) {
         var min,max,step,res;
@@ -35,21 +35,21 @@ const RangeLoad = () => {
     
 }
 const RangeInput = () => {
-    var rangetext = $('.input-from-to:nth-child(odd) > .content-form input#to');
-    var rangeeventext = $('.input-from-to:nth-child(even) > .content-form input#to');
-    var range = $('.range-form:nth-child(odd) > input[type="range"]');
-    var evenrange = $('.range-form:nth-child(even) > input[type="range"]');
+    var rangetext = $('.objects-adding-search > footer #left-content .input-from-to:nth-child(1) .content-form input#to');
+    var rangeeventext = $('.objects-adding-search > footer #left-content .input-from-to:nth-child(2) .content-form input#to');
+    var range = $('.objects-adding-search > footer #right-content .range-form:nth-child(1) input[type="range"]');
+    var evenrange = $('.objects-adding-search > footer #right-content .range-form:nth-child(2) input[type="range"]');
 
     range.bind('input', function (e) {
         var val = $(this).val();
-        var curmax = rangetext.eq(range.index(this));
+        var curmax = rangetext;
         var query;
         query = val + " m2";
         curmax.val(query);
     });
     evenrange.bind('input', function (e) {
         var val = $(this).val();
-        var curmax = rangeeventext.eq(evenrange.index(this));
+        var curmax = rangeeventext;
         var query;
         query = val;
         curmax.val(query);

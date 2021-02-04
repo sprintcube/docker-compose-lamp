@@ -11,7 +11,7 @@
 .lightwin-passport > header{
     width: 100%;
     height: calc(100% / 8);
-    background-color: dodgerblue;
+    background-color: #0079bf;
 }
 .lightwin-passport > main{
     width: 100%;
@@ -163,8 +163,8 @@
     width: 10px;
     height: 5px;
     border-radius: 1px;
-    border-left: 4px solid dodgerblue;
-    border-bottom: 4px solid dodgerblue;
+    border-left: 4px solid #0079bf;
+    border-bottom: 4px solid #0079bf;
     -webkit-transform: rotate(-45deg);
     -moz-transform: rotate(-45deg);
     -o-transform: rotate(-45deg);

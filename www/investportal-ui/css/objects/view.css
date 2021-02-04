@@ -30,13 +30,13 @@ span.view-title{
 .object-viewer > .left-content header .metadata{
     margin-top: 2%;
     padding-bottom: 1%;
-    border-bottom: solid 2px dodgerblue;
+    border-bottom: solid 2px #0079bf;
 }
 .object-viewer > .left-content header .metadata div{
     font-size: 71%;
     padding-top: 2%;
     padding-bottom: 2%;
-    border-top: solid 2px dodgerblue;
+    border-top: solid 2px #0079bf;
 }
 .object-viewer > .left-content header .metadata div span{
     color: black;
@@ -50,7 +50,7 @@ span.view-title{
     width: 27%;
     display: inline-table;
     margin-left: 0%;
-    border-bottom: solid 3px dodgerblue;
+    border-bottom: solid 3px #0079bf;
     height: 74px;
     padding-bottom: 18px;
 }
@@ -68,7 +68,7 @@ span.view-title{
     display: block;
     font-size: 61%;
     margin-top: 11%;
-    color: dodgerblue;
+    color: #0079bf;
     font-weight: bold;
 }
 .object-viewer > .left-content main{
@@ -84,10 +84,10 @@ span.view-title{
     margin-top: 2%;
 }
 .object-viewer > .left-content footer #more{
-    color: dodgerblue;
+    color: #0079bf;
     font-size: 80%;
     text-decoration: none;
-    border-bottom: dashed 2px dodgerblue;
+    border-bottom: dashed 2px #0079bf;
 }
 
 #objects > .objects-list main table {
@@ -120,7 +120,7 @@ span.view-title{
     padding-bottom: 3%;
 }
 .object-viewer > .right-content header .add-to-favorite i{
-    color: dodgerblue;
+    color: #0079bf;
     vertical-align: middle;
 }
 .object-viewer > .right-content header .add-to-favorite a{

@@ -39,12 +39,14 @@ h1, h2, h3, h4, h5, h6, strong{
     float: left;
 }
 .header > #header_top .ht_header span{
-    font-size: 115%;
+    font-size: 88%;
     color: darkgray;
     display: inline-table;
     width: 49%;
     float: right;
-    margin-top: 12%;
+    top: -3px;
+    right: 70px;
+    position: relative;
 }
 .header > #header_bottom{
     float: right;
@@ -135,7 +137,7 @@ h1, h2, h3, h4, h5, h6, strong{
     padding-bottom: 1%;
 }
 .header > #header_bottom .hb_bottom footer nav #active{
-    border-bottom: solid 2px dodgerblue;
+    border-bottom: solid 2px #0079bf;
 }
 .main{
     width: 100%;
@@ -168,7 +170,7 @@ h1, h2, h3, h4, h5, h6, strong{
     font-size: 77%;
 }
 .main > .section header a{
-    color: dodgerblue;
+    color: #0079bf;
     font-size: 70%;
 }
 .main > .section header a strong{
@@ -185,14 +187,14 @@ h1, h2, h3, h4, h5, h6, strong{
 #link-switcher{
     width: 100%;
     background-color: white;
-    color: dodgerblue;
+    color: #0079bf;
     height: 7px;
     padding-top: 1%;
     padding-bottom: 2%;
 }
 #link-switcher > a{
     margin-left: 7%;
-    color: dodgerblue;
+    color: #0079bf;
     font-size: 90%;
     text-decoration: none;
     padding-right: 1%;
@@ -208,13 +210,68 @@ h1, h2, h3, h4, h5, h6, strong{
 #news, #investsearch, #eventcalendar, #analytics, #reviews{ background-color: #ece2e2; }
 
 #promo{
-    background-color: #21214b;
+    background-image: url('../images/homepage-bg.jpg');
+    background-size: cover;
 }
-#promo > .section header h2, #promo > .section header strong{
+#promo > header h2, #promo > header strong{
     color: white;
 }
-#promo > .section header a{
+#promo > header a{
     color: white;
+}
+#promo > header .add-but, #investsearch > header .add-but{
+    display: block;
+    margin-top: 2%; 
+    width: 9%;
+}
+#promo > header .add-but{
+   color: gray;
+   background-color: white;
+}
+#services > header .add-but, #estate > header .add-but{
+    display: block;
+    margin-top: 10%;
+    width: 39%;
+}
+#promo > header .links{
+    display: inline-table;
+    position: relative;
+    top: -44px;
+    margin-left: 105px;
+}
+#promo > header a{
+    text-decoration: none;
+    display: block;
+    text-transform: uppercase;
+    color: white;
+}
+#promo > header a strong{
+    text-decoration: underline;
+    display: inline-table;
+}
+#promo > header .marketing-info{
+    display: inline-table;
+    float:right;
+    width: 80%;
+    margin-right: -2%;
+    margin-top: -12%;
+}
+#promo > header .marketing-info footer{
+    margin-top: 34px;
+    margin-left: 0%;
+}
+#promo > header .marketing-info footer ul{
+    color: white;
+    list-style-type: none;
+    font-size: 60%;
+}
+#promo > header .marketing-info footer ul li{
+    display: inline-block;
+    margin-left: 2%;
+}
+#promo > header .marketing-info header img{
+        width:59%;
+        border-radius: 10px 10px 10px 10px;
 }
 #promo > main .promo-feed{
     width: 126%;
@@ -237,7 +294,7 @@ h1, h2, h3, h4, h5, h6, strong{
     cursor: pointer;
 }
 #promo > main .promo-feed .promoblock:hover header{
-    background-color: dodgerblue;
+    background-color: #0079bf;
 }
 #promo > main .promo-feed .promoblock header{
     width: 100%;
@@ -348,7 +405,7 @@ h1, h2, h3, h4, h5, h6, strong{
 #news > main #slider-view .news-feed .news a{
     display: block;
     margin-top: 2px;
-    color: dodgerblue;
+    color: #0079bf;
     font-size: 109%;
     text-decoration: none;
 }
@@ -397,7 +454,7 @@ h1, h2, h3, h4, h5, h6, strong{
 }
 #investsearch > main .popular-objects .popular-object header{
     width: 100%;
-    background-color: dodgerblue;
+    background-color: #0079bf;
     color: white;
     height: 37px;
     margin-left: 0%;
@@ -500,7 +557,7 @@ h1, h2, h3, h4, h5, h6, strong{
 }
 #eventcalendar > main .calendar a{
     text-decoration: none;
-    color: dodgerblue;
+    color: #0079bf;
     font-size: 152%;
     display: block;
 }
@@ -570,7 +627,7 @@ h1, h2, h3, h4, h5, h6, strong{
     cursor: pointer;
 }
 #services > main #slider-view .service-feed .service:hover header{
-    background-color: dodgerblue;
+    background-color: #0079bf;
 }
 #services > main #slider-view .service-feed .service header h3{
     margin-left: 2%;
@@ -649,7 +706,7 @@ h1, h2, h3, h4, h5, h6, strong{
     background-color: white;
 }
 #analytics > main #slider-view .analytic-feed .analytic:hover {
-    background-color: dodgerblue;
+    background-color: #0079bf;
     cursor: pointer;
 }
 #analytics > main #slider-view .analytic-feed .analytic:hover *, #analytics > main #slider-view .analytic-feed .analytic:hover .descr{
@@ -659,7 +716,7 @@ h1, h2, h3, h4, h5, h6, strong{
     display: block;
     margin-left: 1%;
     margin-top: 1%;
-    color: dodgerblue;
+    color: #0079bf;
     font-size: 122%;
     overflow: hidden;
     text-overflow: ellipsis;
@@ -676,7 +733,7 @@ h1, h2, h3, h4, h5, h6, strong{
     display: block;
     margin-left: 1%;
     margin-top: 1%;
-    color: dodgerblue;
+    color: #0079bf;
     font-size: 100%;
 }
 
@@ -728,7 +785,7 @@ h1, h2, h3, h4, h5, h6, strong{
     cursor: pointer;
 }
 #estate > main #slider-view .estat-feed .estat:hover header{
-    background-color: dodgerblue;
+    background-color: #0079bf;
 }
 #estate > main #slider-view .estat-feed .estat header h3{
     margin-left: 2%;
@@ -776,7 +833,7 @@ h1, h2, h3, h4, h5, h6, strong{
 .raiting > span{
     display: block;
     margin-top: 2%;
-    color: dodgerblue;
+    color: #0079bf;
     font-size: 80%;
     text-transform: uppercase;
 }
@@ -840,7 +897,7 @@ h1, h2, h3, h4, h5, h6, strong{
     display: block;
     margin-left: 1%;
     margin-top: 1%;
-    color:dodgerblue;
+    color:#0079bf;
     font-size: 113%;
     text-align: left;
     overflow: hidden;
@@ -850,7 +907,7 @@ h1, h2, h3, h4, h5, h6, strong{
 #reviews > main #slider-view .review-feed .review footer a{
     margin-left: 1%;
     margin-top: 1%;
-    color: dodgerblue;
+    color: #0079bf;
     font-size: 100%;
 }
 
@@ -937,19 +994,18 @@ h1, h2, h3, h4, h5, h6, strong{
 @media all and (min-width:1024px) and (max-width: 1280px){
     .header > #header_top .ht_header {
         left: -3%;
-        top: -8%;
+        top: 26%;
         position: relative;
         float: left;
     }
     .header > #header_top .ht_header span {
-        font-size: 77%;
+        font-size: 73%;
         color: darkgray;
         display: block;
         width: 71%;
         float: right;
-        margin-top: -21%;
-        left: 25%;
-        position: relative;
+        top: -56px;
+        right: -20px;
     }
     .header > #header_bottom {
         float: right;
@@ -1080,6 +1136,26 @@ h1, h2, h3, h4, h5, h6, strong{
     .header > #header_bottom .hb_bottom header .welcome-link {
         margin-top: 12%;
     }
+    #promo > header .links {
+        margin-left: 103px;
+        top: -44px;
+    }
+    #promo > header .marketing-info {
+        margin-top: -18%;
+        width: 81%;
+        margin-right: -11%;
+    }
+    #promo > header .marketing-info header img{
+        width:72%;
+    }
+    #investsearch > header a {
+        margin-left: 108px;
+        margin-top: 19px;
+    }
+    #eventcalendar > main .calendar footer {
+        margin-top: 1%;
+        font-size: 83%;
+    }
 }
 @media all and (min-width:1280px) and (max-width: 1366px){
     .header > #header_top .ht_header {
@@ -1088,14 +1164,13 @@ h1, h2, h3, h4, h5, h6, strong{
         position: relative;
     }
     .header > #header_top .ht_header span {
-        font-size: 88%;
+        font-size: 79%;
         color: darkgray;
         display: block;
         width: 53%;
         float: right;
-        top: -19px;
-        left: 5%;
-        position: relative;
+        top: -3px;
+        right: 26px;
     }
     .header > #header_bottom {
         float: right;
@@ -1236,6 +1311,25 @@ h1, h2, h3, h4, h5, h6, strong{
     .header > #header_bottom .hb_bottom header .welcome-link {
         margin-top: 5%;
     }
+    #promo > header .links {
+        margin-left: 125px;
+        top: -46px;
+    }
+    #promo > header .marketing-info {
+        margin-top: -226px;
+        margin-right: -10%;
+    }
+    #investsearch > header a {
+        margin-left: 111px;
+        margin-top: 20px;
+    }
+    #eventcalendar > main .calendar footer {
+        margin-top: 0%;
+        font-size: 87%;
+    }
+    #promo > header .marketing-info header img{
+        width:74%;
+    }
 }
 @media all and (min-width:1366px) and (max-width: 1400px){
     .header > #header_top .ht_header {
@@ -1244,11 +1338,11 @@ h1, h2, h3, h4, h5, h6, strong{
         position: relative;
     }
     .header > #header_top .ht_header span {
-        font-size: 95%;
+        font-size: 90%;
         width: 60%;
         float: right;
-        top: -31px;
-        position: relative;
+        top: -1px;
+        right: 7px;
     }
     .header > #header_bottom {
         float: right;
@@ -1293,6 +1387,25 @@ h1, h2, h3, h4, h5, h6, strong{
     .header > #header_bottom .hb_bottom header .welcome-link {
         margin-top: 5%;
     }
+    #promo > header .links {
+        margin-left: 134px;
+        top: -47px;
+    }
+    #promo > header .marketing-info {
+        margin-top: -214px;
+        margin-right: -13%;
+    }
+    #investsearch > header a {
+        margin-left: 111px;
+        margin-top: 18px;
+    }
+    #eventcalendar > main .calendar footer {
+        margin-top: 1%;
+        font-size: 92%;
+    }
+    #promo > header .marketing-info header img{
+        width:70%;
+    }
 }
 @media all and (min-width:1400px) and (max-width: 1600px){
     .header > #header_top .ht_header {
@@ -1301,12 +1414,11 @@ h1, h2, h3, h4, h5, h6, strong{
         top: 11%;
     }
     .header > #header_top .ht_header span {
-        font-size: 107%;
+        font-size: 82%;
         width: 53%;
         float: right;
-        top: -39px;
-        right: 14%;
-        position: relative;
+        top: -3px;
+        right: 28px;
     }
     .header > #header_bottom {
         float: right;
@@ -1345,12 +1457,32 @@ h1, h2, h3, h4, h5, h6, strong{
     .header > #header_bottom .hb_bottom header .welcome-link {
         margin-top: 5%;
     }
+    #promo > header .links {
+        margin-left: 140px;
+        top: -44px;
+    }
+    #promo > header .marketing-info {
+        margin-top: -199px;
+        margin-right: -18%;
+    }
+    #investsearch > header a {
+        margin-left: 112px;
+        margin-top: 20px;
+    }
+    #eventcalendar > main .calendar footer {
+        margin-top: 1%;
+        font-size: 92%;
+    }
+    #promo > header .marketing-info header img {
+        width: 67%;
+    }
 }
 @media all and (min-width:1600px) and (max-width: 1800px){
     .header > #header_top .ht_header span {
-        top: -44px;
-        right: 16%;
-        position: relative;
+        top: -1px;
+        right: 46px;
+        font-size: 90%;
+        float: right;
     }
     #promo {
         height: 346px;
@@ -1388,6 +1520,55 @@ h1, h2, h3, h4, h5, h6, strong{
     }
     .header > #header_bottom .hb_bottom header .welcome-link {
         margin-top: 5%;
+    }
+    #promo > header .links {
+        margin-left: 149px;
+        top: -46px;
+    }
+    #promo > header .marketing-info {
+        margin-top: -200px;
+        margin-right: -23%;
+    }
+    #investsearch > header a {
+        margin-left: 145px;
+        margin-top: 6px;
+    }
+    #eventcalendar > main .calendar footer {
+        margin-top: 1%;
+        font-size: 100%;
+    }
+    #promo > header .marketing-info header img {
+        width: 61%;
+    }
+}
+@media all and (min-width:1024px) and (max-width: 1100px){
+    #promo > header .marketing-info {
+        width: 82%;
+        margin-right: -10%;
+        margin-top: -189px;
+    }
+    #promo > header .marketing-info header img {
+        width: 82%;
+    }
+}
+@media all and (min-width:1100px) and (max-width: 1181px){
+    #promo > header .marketing-info {
+        width: 82%;
+        margin-right: -13%;
+        margin-top: -192px;
+    }
+    #promo > header .marketing-info header img {
+        width: 79%;
+    }
+}
+@media all and (min-width:1181px) and (max-width: 1280px){
+    #promo > header .marketing-info {
+        width: 82%;
+        margin-right: -17%;
+        margin-top: -193px;
+    }
+    #promo > header .marketing-info header img {
+        width: 74%;
     }
 }
 .promo-header{

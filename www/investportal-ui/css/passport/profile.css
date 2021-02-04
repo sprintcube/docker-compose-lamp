@@ -37,10 +37,10 @@
     cursor: pointer;
 }
 .passport-page > main .profile-settings .editor #control i.inputing{
-    color: dodgerblue;
+    color: #0079bf;
 }
 .passport-page > main .profile-settings .editor input:focus{
-    border-color:dodgerblue;
+    border-color:#0079bf;
 }
 .passport-page > main .profile-settings .editor input:disabled{
     font-weight: normal;

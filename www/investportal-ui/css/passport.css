@@ -43,7 +43,7 @@
     margin-right: 4%;
 }
 .passport-page > header{
-    background-color: dodgerblue;
+    background-color: #0079bf;
     left: -8%;
     position: relative;
 }
@@ -103,11 +103,11 @@
 }
 .passport-page > main #right-content .nav{
     list-style-type: none;
-    border-bottom: solid 2px dodgerblue;
+    border-bottom: solid 2px #0079bf;
     width: 100%;
 }
 .passport-page > main #right-content .nav li{
-    border-top: solid 2px dodgerblue;
+    border-top: solid 2px #0079bf;
     margin-left: -14%;
     padding-top: 2%;
     padding-bottom: 2%;
@@ -116,14 +116,14 @@
 .passport-page > main #right-content .nav li .fas{
     font-size: 78%;
     margin-left: 2%;
-    color: dodgerblue;
+    color: #0079bf;
     visibility: hidden;
 }
 .passport-page > main #right-content .nav li.active .fas{
     visibility: visible;
 }
 .passport-page > main #right-content .nav li a{
-    color: dodgerblue;
+    color: #0079bf;
     text-decoration: none;
     margin-left: 10%;
 }

@@ -3,7 +3,7 @@
 @import url('../services/objects-services-cont.css');
 
 #objects > .projects-search-form {
-    height: 1780px;
+    height: 852px;
 }
 .objects-adding-search{
     width: 100%;
@@ -27,8 +27,11 @@
     margin-top: 13%;
 }
 .objects-adding-search > main header form div{
-    display: block;
-    margin-top: 2%;
+    display: inline;
+    margin-top: -10%;
+    height: auto;
+    float: left;
+    width: 22%;
 }
 .objects-adding-search > main header form div .label{
     font-size: 60%;
@@ -44,9 +47,7 @@
     color: black;
 }
 .objects-adding-search > main header form div input:focus{
-    border: solid 2px dodgerblue;
-}
-.objects-adding-search > main footer{
+    border: solid 2px #0079bf;
 }
 .objects-adding-search > main footer .check-selectors, .objects-adding-search > main footer .radio-selectors{
     display: block;
@@ -68,7 +69,7 @@
     padding-left: 2px;
 }
 .objects-adding-search > footer{
-    margin-top: 0%;
+    margin-top: -15%;
     margin-left: 6%;
 }
 .objects-adding-search > footer #left-content{
@@ -88,11 +89,11 @@
     float: right;
     width: 35%;
     display: inline-table;
-    margin-top: -70%;
+    margin-top: -7%;
 }
 .objects-adding-search > header #left-content{
     width: 46%;
-    height: 300px;
+    height: auto;
 }
 .objects-adding-search > header #left-content header{
     margin-left: -1%;
@@ -114,11 +115,6 @@
 .objects-adding-search > header #left-content header form div:not(:nth-child(1)){
     display: inline-table;
     width: 46%;
-}
-.objects-adding-search > header #left-content footer{
-    display: block;
-    margin-top: 9%;
-    height: auto;
 }
 .objects-adding-search > header #right-content{
     width: 50%;
@@ -186,8 +182,8 @@
     width: 10px;
     height: 5px;
     border-radius: 1px;
-    border-left: 4px solid dodgerblue;
-    border-bottom: 4px solid dodgerblue;
+    border-left: 4px solid #0079bf;
+    border-bottom: 4px solid #0079bf;
     -webkit-transform: rotate(-45deg);
     -moz-transform: rotate(-45deg);
     -o-transform: rotate(-45deg);
@@ -201,7 +197,7 @@
     width: 10px;
     height: 10px;
     border-radius: 100%;
-    background-color: dodgerblue;
+    background-color: #0079bf;
 }
 
 .objects-adding-search > main footer .check-selectors label input + span:after, 
@@ -215,7 +211,7 @@
 }
 #objects > .projects-search-form footer #left-content {
     width: 63%;
-    margin-top: 5%;
+    margin-top: 3%;
 }
 #objects > .projects-search-form footer #left-content-add {
     width: 50%;
@@ -233,7 +229,7 @@
     cursor: pointer;
     animate: 0.2s;
     box-shadow: 1px 1px 1px darkgray, 1px 1px 1px darkgray;
-    background: dodgerblue;
+    background: #0079bf;
     border-radius: 25px;
     border: 0px solid #000101;
 }
@@ -249,7 +245,7 @@
     margin-top: -3.6px;
 }
 .range-form > input[type="range"]:focus::-webkit-slider-runnable-track {
-    background: dodgerblue;
+    background: #0079bf;
 }
 .range-form > input[type="range"]::-moz-range-track {
     width: 100%;
@@ -257,7 +253,7 @@
     cursor: pointer;
     animate: 0.2s;
     box-shadow: 1px 1px 1px darkgray, 1px 1px 1px darkgray;
-    background: dodgerblue;
+    background: #0079bf;
     border-radius: 25px;
     border: 0px solid #000101;
 }
@@ -281,13 +277,13 @@
     color: transparent;
 }
 .range-form > input[type="range"]::-ms-fill-lower {
-    background: dodgerblue;
+    background: #0079bf;
     border: 0px solid #000101;
     border-radius: 50px;
     box-shadow: 1px 1px 1px darkgray, 1px 1px 1px darkgray;
 }
 .range-form > input[type="range"]::-ms-fill-upper {
-    background: dodgerblue;
+    background: #0079bf;
     border: 0px solid #000101;
     border-radius: 50px;
     box-shadow: 1px 1px 1px darkgray, 1px 1px 1px darkgray;
@@ -302,10 +298,10 @@
     cursor: pointer;
 }
 .range-form > input[type="range"]:focus::-ms-fill-lower {
-    background: dodgerblue;
+    background: #0079bf;
 }
 .range-form > input[type="range"]:focus::-ms-fill-upper {
-    background: dodgerblue;
+    background: #0079bf;
  }
  @media all and (max-width: 1500px){
     .objects-adding-search > main footer {
