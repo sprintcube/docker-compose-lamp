@@ -994,7 +994,7 @@ h1, h2, h3, h4, h5, h6, strong{
 @media all and (min-width:1024px) and (max-width: 1280px){
     .header > #header_top .ht_header {
         left: -3%;
-        top: 26%;
+        top: -7%;
         position: relative;
         float: left;
     }
@@ -1160,7 +1160,7 @@ h1, h2, h3, h4, h5, h6, strong{
 @media all and (min-width:1280px) and (max-width: 1366px){
     .header > #header_top .ht_header {
         left: -2%;
-        top: -12%;
+        top: -45%;
         position: relative;
     }
     .header > #header_top .ht_header span {
@@ -1334,7 +1334,7 @@ h1, h2, h3, h4, h5, h6, strong{
 @media all and (min-width:1366px) and (max-width: 1400px){
     .header > #header_top .ht_header {
         margin-left: -7%;
-        top: 14%;
+        top: -21%;
         position: relative;
     }
     .header > #header_top .ht_header span {
@@ -1411,14 +1411,14 @@ h1, h2, h3, h4, h5, h6, strong{
     .header > #header_top .ht_header {
         left: 2%;
         position: relative;
-        top: 11%;
+        top: -15%;
     }
     .header > #header_top .ht_header span {
         font-size: 82%;
         width: 53%;
         float: right;
         top: -3px;
-        right: 28px;
+        right: 47px;
     }
     .header > #header_bottom {
         float: right;
