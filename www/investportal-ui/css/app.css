@@ -27,7 +27,7 @@ h1, h2, h3, h4, h5, h6, strong{
     float: left;
     width: 21%;
     top: -3%;
-    left: 8%;
+    left: 14%;
     position: relative;
 }
 .header > #header_top .ht_header{
@@ -71,7 +71,7 @@ h1, h2, h3, h4, h5, h6, strong{
 	margin-left: 10px;
 }
 .header > #header_bottom .hb_bottom header .welcome-link a{
-    color: gray;
+    color: #0079bf;
     text-decoration: none;
 }
 .header > #header_bottom .hb_bottom header .header-informer{
@@ -106,7 +106,7 @@ h1, h2, h3, h4, h5, h6, strong{
     display: inline;
 }
 .header > #header_bottom .hb_bottom header .header-informer footer .user-services a {
-	color: gray;
+	color: #0079bf;
 	font-size: 97%;
 	text-decoration: none;
 	margin-left: 3%;
@@ -128,7 +128,7 @@ h1, h2, h3, h4, h5, h6, strong{
 }
 .header > #header_bottom .hb_bottom footer nav a{
     display: inline;
-    color: gray;
+    color: #0079bf;
     text-transform: uppercase;
     text-decoration: none;
     font-weight: 700;
@@ -1013,7 +1013,7 @@ h1, h2, h3, h4, h5, h6, strong{
         float: right;
         width: 79%;
         top: -81%;
-        right: 4%;
+        right: 11%;
         position: relative;
     }
     .header > #header_bottom .hb_bottom header .header-informer footer {
@@ -1178,7 +1178,7 @@ h1, h2, h3, h4, h5, h6, strong{
         float: right;
         width: 83%;
         top: -112%;
-        right: 8%;
+        right: 12%;
         position: relative;
     }
     #promo > main .promo-feed,  #investsearch > main .popular-objects{
@@ -1350,7 +1350,7 @@ h1, h2, h3, h4, h5, h6, strong{
         float: right;
         width: 80%;
         top: -120%;
-        right: 9%;
+        right: 13%;
         position: relative;
     }
     #promo {
@@ -1426,7 +1426,7 @@ h1, h2, h3, h4, h5, h6, strong{
         float: right;
         width: 74%;
         top: -47%;
-        right: 7%;
+        right: 15%;
         position: relative;
     }
     #promo {
@@ -1483,7 +1483,7 @@ h1, h2, h3, h4, h5, h6, strong{
     .header > #header_top .ht_header span {
         top: -1px;
         right: 46px;
-        font-size: 90%;
+        font-size: 92%;
         float: right;
     }
     #promo {
@@ -1512,12 +1512,12 @@ h1, h2, h3, h4, h5, h6, strong{
     }
     .header > #header_top{
         top: -4%;
-        left: 7%;
+        left: 16%;
         position: relative;
     }
     .header > #header_bottom{
         top: -47%;
-        right: 8%;
+        right: 17%;
         position: relative;
     }
     .header > #header_bottom .hb_bottom header .welcome-link {
