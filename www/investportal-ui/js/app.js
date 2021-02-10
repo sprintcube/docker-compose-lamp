@@ -1,3 +1,31 @@
+var host;
+if (location.hostname === "investportal-ui.aplex"){ host = "http://investportal-ui.aplex"; }
+else{ host = "http://zolotaryow.aplex.ru/invest";}
+
+let notiaudio = [
+    new Audio(host + '/audios/chat_open.mp3'),
+    new Audio(host + '/audios/chat_close.mp3')
+];
+const OpenChat = () => {
+    window.setTimeout(function(){
+      $('#chat-lightbox').removeClass('lightbox-closed');
+      notiaudio[0].play();
+    },10000);
+}
+const CloseChat = () => {
+    var close = $('#chat-lightbox header img');
+    
+    close.click(function(){
+      $('#chat-lightbox').addClass('lightbox-closed');
+      notiaudio[1].play();
+    });
+}
+  
+const OnlineChat = () => {
+    OpenChat();
+    CloseChat();
+}
+
 const MarketingHeadBannerAdaptive = () => {
     let vw = $(this).width();
     let margin;
@@ -84,10 +112,12 @@ const VideoPlayerUI = (player) => {
     });
 }
 $(document).ready(function () {
+    OnlineChat();
     MarketingHeadBannerAdaptive();
     HomePageHorizontalAdaptiveLine();
 
-
     $(window).resize(MarketingHeadBannerAdaptive);
     $(window).resize(HomePageHorizontalAdaptiveLine);
+
+
 });

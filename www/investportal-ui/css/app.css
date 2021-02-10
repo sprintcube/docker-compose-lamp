@@ -3,6 +3,7 @@
 @import url('addons/lightbox.css');
 @import url('addons/docsicon.css');
 @import url('addons/video-player.css');
+@import url('addons/chat.css');
 
 html,body{
     margin: 0;
