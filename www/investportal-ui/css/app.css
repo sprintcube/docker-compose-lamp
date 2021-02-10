@@ -27,7 +27,7 @@ h1, h2, h3, h4, h5, h6, strong{
 .header > #header_top{
     float: left;
     width: 21%;
-    top: -3%;
+    top: -6%;
     left: 14%;
     position: relative;
 }
@@ -51,12 +51,13 @@ h1, h2, h3, h4, h5, h6, strong{
 }
 .header > #header_bottom{
     float: right;
-    width: 69%;
-    margin-top: 0px;
-    margin-right: 0%;
+    width: 67%;
+    top: -51%;
+    right: 0%;
+    position: relative;
 }
 .header > #header_bottom .hb_bottom{
-    float: right;
+    float: left;
 }
 .header > #header_bottom .hb_bottom header{
     display: block;
@@ -136,6 +137,7 @@ h1, h2, h3, h4, h5, h6, strong{
     margin-left: 11px;
     margin-right: 4px;
     padding-bottom: 1%;
+    font-family: 'Open Sans', sans-serif;
 }
 .header > #header_bottom .hb_bottom footer nav #active{
     border-bottom: solid 2px #0079bf;
@@ -996,8 +998,8 @@ h1, h2, h3, h4, h5, h6, strong{
 }
 @media all and (min-width:1024px) and (max-width: 1280px){
     .header > #header_top .ht_header {
-        left: -3%;
-        top: -7%;
+        left: -24%;
+        top: 25%;
         position: relative;
         float: left;
     }
@@ -1012,9 +1014,9 @@ h1, h2, h3, h4, h5, h6, strong{
     }
     .header > #header_bottom {
         float: right;
-        width: 79%;
+        width: 63%;
         top: -81%;
-        right: 11%;
+        right: 3%;
         position: relative;
     }
     .header > #header_bottom .hb_bottom header .header-informer footer {
@@ -1163,7 +1165,7 @@ h1, h2, h3, h4, h5, h6, strong{
 @media all and (min-width:1280px) and (max-width: 1366px){
     .header > #header_top .ht_header {
         left: -2%;
-        top: -45%;
+        top: 33%;
         position: relative;
     }
     .header > #header_top .ht_header span {
@@ -1177,9 +1179,9 @@ h1, h2, h3, h4, h5, h6, strong{
     }
     .header > #header_bottom {
         float: right;
-        width: 83%;
-        top: -112%;
-        right: 12%;
+        width: 54%;
+        top: -51%;
+        right: 11%;
         position: relative;
     }
     #promo > main .promo-feed,  #investsearch > main .popular-objects{
@@ -1337,7 +1339,7 @@ h1, h2, h3, h4, h5, h6, strong{
 @media all and (min-width:1366px) and (max-width: 1400px){
     .header > #header_top .ht_header {
         margin-left: -7%;
-        top: -21%;
+        top: 22%;
         position: relative;
     }
     .header > #header_top .ht_header span {
@@ -1351,7 +1353,7 @@ h1, h2, h3, h4, h5, h6, strong{
         float: right;
         width: 80%;
         top: -120%;
-        right: 13%;
+        right: -19%;
         position: relative;
     }
     #promo {
@@ -1412,9 +1414,9 @@ h1, h2, h3, h4, h5, h6, strong{
 }
 @media all and (min-width:1400px) and (max-width: 1600px){
     .header > #header_top .ht_header {
-        left: 2%;
+        left: 14%;
         position: relative;
-        top: -15%;
+        top: 27%;
     }
     .header > #header_top .ht_header span {
         font-size: 82%;
@@ -1427,7 +1429,7 @@ h1, h2, h3, h4, h5, h6, strong{
         float: right;
         width: 74%;
         top: -47%;
-        right: 15%;
+        right: -12%;
         position: relative;
     }
     #promo {
@@ -1512,13 +1514,13 @@ h1, h2, h3, h4, h5, h6, strong{
         font-size: 79%;
     }
     .header > #header_top{
-        top: -4%;
+        top: -6%;
         left: 16%;
         position: relative;
     }
     .header > #header_bottom{
         top: -47%;
-        right: 17%;
+        right: -14%;
         position: relative;
     }
     .header > #header_bottom .hb_bottom header .welcome-link {
