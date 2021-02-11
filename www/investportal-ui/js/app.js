@@ -1,3 +1,4 @@
+//Works
 var host;
 if (location.hostname === "investportal-ui.aplex"){ host = "http://investportal-ui.aplex"; }
 else{ host = "http://zolotaryow.aplex.ru/invest";}
@@ -120,4 +121,26 @@ $(document).ready(function () {
     $(window).resize(HomePageHorizontalAdaptiveLine);
 
 
+});
+
+
+//Paths
+const ESAdaptivePath = () => {
+    var es = $('.exchange-selector');
+    var hi = $('.header > #header_bottom .hb_bottom header .header-informer');
+    var vw = $(window).width();
+
+    if (vw == 1280 || vw == 1400 || vw < 1400) { 
+        es.addClass('exchange-adaptive-path'); 
+        hi.addClass('header-informer-path'); 
+    }
+    else { 
+        es.removeClass('exchange-adaptive-path'); 
+        hi.removeClass('header-informer-path'); 
+    }
+}
+
+$(document).ready(function () {
+    ESAdaptivePath();
+    $(window).resize(ESAdaptivePath);
 });

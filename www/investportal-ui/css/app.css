@@ -4,7 +4,7 @@
 @import url('addons/docsicon.css');
 @import url('addons/video-player.css');
 @import url('addons/chat.css');
-
+@import url('addons/adaptive_paths.css');
 html,body{
     margin: 0;
     padding: 0;
@@ -28,7 +28,7 @@ h1, h2, h3, h4, h5, h6, strong{
     float: left;
     width: 21%;
     top: -6%;
-    left: 14%;
+    left: 13%;
     position: relative;
 }
 .header > #header_top .ht_header{
@@ -84,7 +84,7 @@ h1, h2, h3, h4, h5, h6, strong{
 	display: inline-block;
 	margin-left: -12%;
 	position: relative;
-	top: 9px;
+	top: 18px;
 }
 .header > #header_bottom .hb_bottom header .header-informer main a {
 	display: inline;
@@ -93,10 +93,10 @@ h1, h2, h3, h4, h5, h6, strong{
 .header > #header_bottom .hb_bottom header .header-informer footer {
 	display: inline;
 	float: right;
-	margin-top: 3%;
+	margin-top: 5%;
 	padding-left: 44px;
     width: 53%;
-    margin-right: -9%;
+    margin-right: -3%;
 }
 .header > #header_bottom .hb_bottom header .header-informer footer .user-services{
     display: inline;
@@ -126,7 +126,7 @@ h1, h2, h3, h4, h5, h6, strong{
     width: 100%;
 }
 .header > #header_bottom .hb_bottom footer nav{
-    font-size: 89%;
+    font-size: 92%;
 }
 .header > #header_bottom .hb_bottom footer nav a{
     display: inline;
@@ -134,8 +134,8 @@ h1, h2, h3, h4, h5, h6, strong{
     text-transform: uppercase;
     text-decoration: none;
     font-weight: 700;
-    margin-left: 11px;
-    margin-right: 4px;
+    margin-left: 12px;
+    margin-right: 22px;
     padding-bottom: 1%;
     font-family: 'Open Sans', sans-serif;
 }
@@ -997,9 +997,12 @@ h1, h2, h3, h4, h5, h6, strong{
 	text-decoration: none;
 }
 @media all and (min-width:1024px) and (max-width: 1280px){
+    .header > #header_top {
+        top: 4%;
+    }
     .header > #header_top .ht_header {
         left: -24%;
-        top: 25%;
+        top: 19%;
         position: relative;
         float: left;
     }
@@ -1016,16 +1019,20 @@ h1, h2, h3, h4, h5, h6, strong{
         float: right;
         width: 63%;
         top: -81%;
-        right: 3%;
+        right: 1%;
         position: relative;
+    }
+    .header > #header_bottom .hb_bottom footer nav a {
+        margin-left: 12px;
+        margin-right: 8px;
     }
     .header > #header_bottom .hb_bottom header .header-informer footer {
         display: inline;
         float: right;
-        margin-top: 22%;
+        margin-top: 24%;
         padding-left: 44px;
         width: 50%;
-        margin-right: -9%;
+        margin-right: -6%;
     }
     .header > #header_bottom .hb_bottom header .header-informer main {
         display: inline-block;
@@ -1033,7 +1040,7 @@ h1, h2, h3, h4, h5, h6, strong{
         margin-top: 19%;
     }
     .header > #header_bottom .hb_bottom footer nav {
-        font-size: 78%;
+        font-size: 73%;
     }
     #promo {
         height: 317px;
@@ -1139,7 +1146,7 @@ h1, h2, h3, h4, h5, h6, strong{
         font-size: 63%;
     }
     .header > #header_bottom .hb_bottom header .welcome-link {
-        margin-top: 12%;
+        margin-top: 14%;
     }
     #promo > header .links {
         margin-left: 103px;
@@ -1164,8 +1171,8 @@ h1, h2, h3, h4, h5, h6, strong{
 }
 @media all and (min-width:1280px) and (max-width: 1366px){
     .header > #header_top .ht_header {
-        left: -2%;
-        top: 33%;
+        left: -28%;
+        top: 9%;
         position: relative;
     }
     .header > #header_top .ht_header span {
@@ -1181,8 +1188,25 @@ h1, h2, h3, h4, h5, h6, strong{
         float: right;
         width: 54%;
         top: -51%;
-        right: 11%;
+        right: 2%;
         position: relative;
+    }
+    .header > #header_bottom .hb_bottom footer nav a {
+        margin-left: 6px;
+        margin-right: 15px;
+    }
+    .header > #header_bottom .hb_bottom header .header-informer footer {
+        margin-top: 2%;
+        padding-left: 44px;
+        margin-right: -9%;
+    }
+    .header > #header_bottom .hb_bottom header .header-informer main {
+        display: inline-block;
+        margin-left: -12%;
+        top: 8px;
+    }
+    .header > #header_bottom .hb_bottom footer nav {
+        font-size: 79%;
     }
     #promo > main .promo-feed,  #investsearch > main .popular-objects{
         margin-left: -11%;
@@ -1321,8 +1345,8 @@ h1, h2, h3, h4, h5, h6, strong{
         top: -46px;
     }
     #promo > header .marketing-info {
-        margin-top: -226px;
-        margin-right: -10%;
+        margin-top: -15%;
+        margin-right: -15%;
     }
     #investsearch > header a {
         margin-left: 111px;
@@ -1333,12 +1357,12 @@ h1, h2, h3, h4, h5, h6, strong{
         font-size: 87%;
     }
     #promo > header .marketing-info header img{
-        width:74%;
+        width:71%;
     }
 }
 @media all and (min-width:1366px) and (max-width: 1400px){
     .header > #header_top .ht_header {
-        margin-left: -7%;
+        margin-left: -26%;
         top: 22%;
         position: relative;
     }
@@ -1351,10 +1375,24 @@ h1, h2, h3, h4, h5, h6, strong{
     }
     .header > #header_bottom {
         float: right;
-        width: 80%;
-        top: -120%;
-        right: -19%;
+        width: 50%;
+        top: -47%;
+        right: 9%;
         position: relative;
+    }
+    .header > #header_bottom .hb_bottom footer nav a {
+        margin-left: 5px;
+        margin-right: 15px;
+    }
+    .header > #header_bottom .hb_bottom header .header-informer footer {
+        margin-top: 2%;
+        padding-left: 44px;
+        margin-right: -9%;
+    }
+    .header > #header_bottom .hb_bottom header .header-informer main {
+        display: inline-block;
+        margin-left: -12%;
+        top: 8px;
     }
     #promo {
         height: 361px;
@@ -1398,7 +1436,7 @@ h1, h2, h3, h4, h5, h6, strong{
     }
     #promo > header .marketing-info {
         margin-top: -214px;
-        margin-right: -13%;
+        margin-right: -11%;
     }
     #investsearch > header a {
         margin-left: 111px;
@@ -1409,14 +1447,14 @@ h1, h2, h3, h4, h5, h6, strong{
         font-size: 92%;
     }
     #promo > header .marketing-info header img{
-        width:70%;
+        width:72%;
     }
 }
 @media all and (min-width:1400px) and (max-width: 1600px){
     .header > #header_top .ht_header {
-        left: 14%;
+        left: -25%;
         position: relative;
-        top: 27%;
+        top: 10%;
     }
     .header > #header_top .ht_header span {
         font-size: 82%;
@@ -1427,10 +1465,27 @@ h1, h2, h3, h4, h5, h6, strong{
     }
     .header > #header_bottom {
         float: right;
-        width: 74%;
-        top: -47%;
-        right: -12%;
+        width: 50%;
+        top: -59%;
+        right: 6%;
         position: relative;
+    }
+    .header > #header_bottom .hb_bottom footer nav a {
+        margin-left: 6px;
+        margin-right: 17px;
+    }
+    .header > #header_bottom .hb_bottom header .header-informer footer {
+        margin-top: 6%;
+        padding-left: 44px;
+        margin-right: -5%;
+    }
+    .header > #header_bottom .hb_bottom header .header-informer main {
+        display: inline-block;
+        margin-left: -12%;
+        top: 19px;
+    }
+    .header > #header_bottom .hb_bottom footer nav {
+        font-size: 92%;
     }
     #promo {
         height: 336px;
@@ -1460,7 +1515,7 @@ h1, h2, h3, h4, h5, h6, strong{
         height: 194px;
     }
     .header > #header_bottom .hb_bottom header .welcome-link {
-        margin-top: 5%;
+        margin-top: 6%;
     }
     #promo > header .links {
         margin-left: 140px;
@@ -1468,7 +1523,7 @@ h1, h2, h3, h4, h5, h6, strong{
     }
     #promo > header .marketing-info {
         margin-top: -199px;
-        margin-right: -18%;
+        margin-right: -15%;
     }
     #investsearch > header a {
         margin-left: 112px;
@@ -1479,7 +1534,7 @@ h1, h2, h3, h4, h5, h6, strong{
         font-size: 92%;
     }
     #promo > header .marketing-info header img {
-        width: 67%;
+        width: 65%;
     }
 }
 @media all and (min-width:1600px) and (max-width: 1800px){
@@ -1515,16 +1570,16 @@ h1, h2, h3, h4, h5, h6, strong{
     }
     .header > #header_top{
         top: -6%;
-        left: 16%;
+        left: 13%;
         position: relative;
     }
     .header > #header_bottom{
-        top: -47%;
-        right: -14%;
+        top: -58%;
+        right: 4%;
         position: relative;
     }
     .header > #header_bottom .hb_bottom header .welcome-link {
-        margin-top: 5%;
+        margin-top: 6%;
     }
     #promo > header .links {
         margin-left: 149px;
@@ -1532,7 +1587,7 @@ h1, h2, h3, h4, h5, h6, strong{
     }
     #promo > header .marketing-info {
         margin-top: -200px;
-        margin-right: -23%;
+        margin-right: -17%;
     }
     #investsearch > header a {
         margin-left: 145px;
@@ -1543,13 +1598,13 @@ h1, h2, h3, h4, h5, h6, strong{
         font-size: 100%;
     }
     #promo > header .marketing-info header img {
-        width: 61%;
+        width: 68%;
     }
 }
 @media all and (min-width:1024px) and (max-width: 1100px){
     #promo > header .marketing-info {
         width: 82%;
-        margin-right: -10%;
+        margin-right: -8%;
         margin-top: -189px;
     }
     #promo > header .marketing-info header img {
