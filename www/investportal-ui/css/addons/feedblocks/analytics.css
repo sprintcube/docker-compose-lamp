@@ -1,0 +1,13 @@
+#analytics > main #slider-view .analytic-feed .analytic#with-title-image{
+    margin-top: -4%;
+    position: relative;
+    top: 56px;
+}
+#analytics > main #slider-view .analytic-feed .analytic#with-title-image img{
+    width: 100%;
+    object-fit: cover;
+    height: 78px;
+}
+#analytics > main #slider-view .analytic-feed .analytic#with-title-image h2{
+    height: 45px;
+}

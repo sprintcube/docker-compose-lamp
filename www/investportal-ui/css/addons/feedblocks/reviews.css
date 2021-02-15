@@ -1,0 +1,13 @@
+#reviews > main #slider-view .review-feed .review#with-title-image{
+    margin-top: -3%;
+    position: relative;
+    top: 52px;
+}
+#reviews > main #slider-view .review-feed .review#with-title-image header img{
+    width: 60%;
+    object-fit: cover;
+    height: 78px;
+}
+#reviews > main #slider-view .review-feed .review#with-title-image main h3 {
+    height: 90px;
+}
