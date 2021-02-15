@@ -1019,7 +1019,7 @@ h1, h2, h3, h4, h5, h6, strong{
         float: right;
         width: 63%;
         top: -81%;
-        right: 1%;
+        right: -6%;
         position: relative;
     }
     .header > #header_bottom .hb_bottom footer nav a {
@@ -1029,15 +1029,15 @@ h1, h2, h3, h4, h5, h6, strong{
     .header > #header_bottom .hb_bottom header .header-informer footer {
         display: inline;
         float: right;
-        margin-top: 24%;
+        margin-top: 19%;
         padding-left: 44px;
         width: 50%;
-        margin-right: -6%;
+        margin-right: -9%;
     }
     .header > #header_bottom .hb_bottom header .header-informer main {
         display: inline-block;
-        margin-left: -11%;
-        margin-top: 19%;
+        margin-left: -6%;
+        margin-top: 13%;
     }
     .header > #header_bottom .hb_bottom footer nav {
         font-size: 73%;
@@ -1149,8 +1149,8 @@ h1, h2, h3, h4, h5, h6, strong{
         margin-top: 14%;
     }
     #promo > header .links {
-        margin-left: 103px;
-        top: -44px;
+        margin-left: 10%;
+        top: -46px;
     }
     #promo > header .marketing-info {
         margin-top: -18%;
@@ -1624,7 +1624,7 @@ h1, h2, h3, h4, h5, h6, strong{
 @media all and (min-width:1181px) and (max-width: 1280px){
     #promo > header .marketing-info {
         width: 82%;
-        margin-right: -17%;
+        margin-right: -15%;
         margin-top: -193px;
     }
     #promo > header .marketing-info header img {
