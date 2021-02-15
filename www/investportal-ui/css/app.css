@@ -552,6 +552,11 @@ h1, h2, h3, h4, h5, h6, strong{
     display: inline;
     width: 5%;
 }
+#eventcalendar > main .calendar main img{
+    margin-left: 2%;
+    margin-top: 3%;
+    width: 130px;
+}
 #eventcalendar > main .calendar footer{
     float: right;
     display: inline;
@@ -1168,6 +1173,11 @@ h1, h2, h3, h4, h5, h6, strong{
         margin-top: 1%;
         font-size: 83%;
     }
+    #eventcalendar > main .calendar main img {
+        margin-left: 4%;
+        margin-top: 6%;
+        width: 87px;
+    }
 }
 @media all and (min-width:1280px) and (max-width: 1366px){
     .header > #header_top .ht_header {
@@ -1353,11 +1363,20 @@ h1, h2, h3, h4, h5, h6, strong{
         margin-top: 20px;
     }
     #eventcalendar > main .calendar footer {
-        margin-top: 0%;
+        margin-top: 2%;
         font-size: 87%;
     }
     #promo > header .marketing-info header img{
+        margin-top: 5%;
         width:71%;
+    }
+    #eventcalendar > main .calendar .date {
+        top: 48px;
+    }
+    #eventcalendar > main .calendar main img {
+        margin-left: 5%;
+        margin-top: 4%;
+        width: 88px;
     }
 }
 @media all and (min-width:1366px) and (max-width: 1400px){
@@ -1449,6 +1468,18 @@ h1, h2, h3, h4, h5, h6, strong{
     #promo > header .marketing-info header img{
         width:72%;
     }
+    #promo > header .marketing-info header img{
+        margin-top: 5%;
+        width:71%;
+    }
+    #eventcalendar > main .calendar .date {
+        top: 45px;
+    }
+    #eventcalendar > main .calendar main img {
+        margin-left: 4%;
+        margin-top: 3%;
+        width: 100px;
+    }
 }
 @media all and (min-width:1400px) and (max-width: 1600px){
     .header > #header_top .ht_header {
@@ -1536,6 +1567,14 @@ h1, h2, h3, h4, h5, h6, strong{
     #promo > header .marketing-info header img {
         width: 65%;
     }
+    #eventcalendar > main .calendar main img {
+        margin-left: 4%;
+        margin-top: 3%;
+        width: 106px;
+    }
+    #eventcalendar > main .calendar .date {
+        top: 44px;
+    }
 }
 @media all and (min-width:1600px) and (max-width: 1800px){
     .header > #header_top .ht_header span {
@@ -1599,6 +1638,14 @@ h1, h2, h3, h4, h5, h6, strong{
     }
     #promo > header .marketing-info header img {
         width: 68%;
+    }
+    #eventcalendar > main .calendar main img {
+        margin-left: 4%;
+        margin-top: 3%;
+        width: 110px;
+    }
+    #eventcalendar > main .calendar .date {
+        top: 48px;
     }
 }
 @media all and (min-width:1024px) and (max-width: 1100px){
