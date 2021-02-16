@@ -140,7 +140,17 @@ const ESAdaptivePath = () => {
     }
 }
 
+const LastMenuLists = () => {
+    let els = [$('#menu-image'), $('.header > #header_bottom .hb_bottom footer nav')];
+
+    var menufont = els[1].css("font-size");
+
+    els[0].css("font-size", menufont);
+}
+
 $(document).ready(function () {
+    LastMenuLists();
     ESAdaptivePath();
     $(window).resize(ESAdaptivePath);
+    $(window).resize(LastMenuLists);
 });

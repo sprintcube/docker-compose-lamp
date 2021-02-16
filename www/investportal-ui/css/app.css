@@ -85,7 +85,7 @@ h1, h2, h3, h4, h5, h6, strong{
 	display: inline-block;
 	margin-left: -12%;
 	position: relative;
-	top: 18px;
+	top: 33px;
 }
 .header > #header_bottom .hb_bottom header .header-informer main a {
 	display: inline;
@@ -94,7 +94,7 @@ h1, h2, h3, h4, h5, h6, strong{
 .header > #header_bottom .hb_bottom header .header-informer footer {
 	display: inline;
 	float: right;
-	margin-top: 5%;
+	margin-top: 10%;
 	padding-left: 44px;
     width: 53%;
     margin-right: -3%;
@@ -1044,7 +1044,7 @@ h1, h2, h3, h4, h5, h6, strong{
     .header > #header_bottom .hb_bottom header .header-informer main {
         display: inline-block;
         margin-left: -6%;
-        margin-top: 11%;
+        margin-top: 6%;
     }
     .header > #header_bottom .hb_bottom footer nav {
         font-size: 73%;
@@ -1406,14 +1406,14 @@ h1, h2, h3, h4, h5, h6, strong{
         margin-right: 15px;
     }
     .header > #header_bottom .hb_bottom header .header-informer footer {
-        margin-top: 2%;
+        margin-top: 3%;
         padding-left: 44px;
         margin-right: -9%;
     }
     .header > #header_bottom .hb_bottom header .header-informer main {
         display: inline-block;
         margin-left: -12%;
-        top: 8px;
+        top: 11px;
     }
     #promo {
         height: 361px;
@@ -1500,7 +1500,7 @@ h1, h2, h3, h4, h5, h6, strong{
         float: right;
         width: 62%;
         top: -64%;
-        right: 6%;
+        right: 3%;
         position: relative;
     }
     .header > #header_bottom .hb_bottom footer nav a {
@@ -1508,14 +1508,14 @@ h1, h2, h3, h4, h5, h6, strong{
         margin-right: 17px;
     }
     .header > #header_bottom .hb_bottom header .header-informer footer {
-        margin-top: 6%;
+        margin-top: 8%;
         padding-left: 44px;
         margin-right: -5%;
     }
     .header > #header_bottom .hb_bottom header .header-informer main {
         display: inline-block;
         margin-left: -12%;
-        top: 19px;
+        top: 27px;
     }
     .header > #header_bottom .hb_bottom footer nav {
         font-size: 87%;
@@ -1615,8 +1615,8 @@ h1, h2, h3, h4, h5, h6, strong{
         position: relative;
     }
     .header > #header_bottom{
-        top: -64%;
-        right: 0%;
+        top: -66%;
+        right: -2%;
         position: relative;
     }
     .header > #header_bottom .hb_bottom header .welcome-link {
