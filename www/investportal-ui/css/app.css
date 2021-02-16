@@ -291,7 +291,6 @@ h1, h2, h3, h4, h5, h6, strong{
     width: 17%;
     display: inline-table;
     background-color: white;
-    box-shadow: 3px -1px 11px 3px darkgray;
     margin-left: 2%;
 }
 #promo > main .promo-feed .promoblock:hover{
@@ -309,6 +308,7 @@ h1, h2, h3, h4, h5, h6, strong{
     text-transform: uppercase;
     padding-top: 3%;
     padding-bottom: 3%;
+    padding-right: 1px;
 }
 #promo > main .promo-feed .promoblock header a{
     margin-left: 2%;
@@ -464,6 +464,7 @@ h1, h2, h3, h4, h5, h6, strong{
     margin-left: 0%;
     padding-top: 4%;
     padding-bottom: 4%;
+    padding-right: 1px;
 }
 #investsearch > main .popular-objects .popular-object header h3{
     margin-left: 4%;
@@ -1023,8 +1024,8 @@ h1, h2, h3, h4, h5, h6, strong{
     }
     .header > #header_bottom {
         float: right;
-        width: 63%;
-        top: -81%;
+        width: 77%;
+        top: -86%;
         right: -6%;
         position: relative;
     }
@@ -1035,7 +1036,7 @@ h1, h2, h3, h4, h5, h6, strong{
     .header > #header_bottom .hb_bottom header .header-informer footer {
         display: inline;
         float: right;
-        margin-top: 19%;
+        margin-top: 16%;
         padding-left: 44px;
         width: 50%;
         margin-right: -9%;
@@ -1043,7 +1044,7 @@ h1, h2, h3, h4, h5, h6, strong{
     .header > #header_bottom .hb_bottom header .header-informer main {
         display: inline-block;
         margin-left: -6%;
-        margin-top: 13%;
+        margin-top: 11%;
     }
     .header > #header_bottom .hb_bottom footer nav {
         font-size: 73%;
@@ -1152,7 +1153,7 @@ h1, h2, h3, h4, h5, h6, strong{
         font-size: 63%;
     }
     .header > #header_bottom .hb_bottom header .welcome-link {
-        margin-top: 14%;
+        margin-top: 11%;
     }
     #promo > header .links {
         margin-left: 10%;
@@ -1197,7 +1198,7 @@ h1, h2, h3, h4, h5, h6, strong{
     }
     .header > #header_bottom {
         float: right;
-        width: 54%;
+        width: 61%;
         top: -51%;
         right: 2%;
         position: relative;
@@ -1395,9 +1396,9 @@ h1, h2, h3, h4, h5, h6, strong{
     }
     .header > #header_bottom {
         float: right;
-        width: 50%;
-        top: -47%;
-        right: 9%;
+        width: 63%;
+        top: -53%;
+        right: 2%;
         position: relative;
     }
     .header > #header_bottom .hb_bottom footer nav a {
@@ -1497,8 +1498,8 @@ h1, h2, h3, h4, h5, h6, strong{
     }
     .header > #header_bottom {
         float: right;
-        width: 50%;
-        top: -59%;
+        width: 62%;
+        top: -64%;
         right: 6%;
         position: relative;
     }
@@ -1558,8 +1559,8 @@ h1, h2, h3, h4, h5, h6, strong{
         margin-right: -15%;
     }
     #investsearch > header a {
-        margin-left: 112px;
-        margin-top: 20px;
+        margin-left: 10%;
+        margin-top: 10px;
     }
     #eventcalendar > main .calendar footer {
         margin-top: 1%;
@@ -1614,8 +1615,8 @@ h1, h2, h3, h4, h5, h6, strong{
         position: relative;
     }
     .header > #header_bottom{
-        top: -58%;
-        right: 4%;
+        top: -64%;
+        right: 0%;
         position: relative;
     }
     .header > #header_bottom .hb_bottom header .welcome-link {
