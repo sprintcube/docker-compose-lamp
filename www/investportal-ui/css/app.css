@@ -19,7 +19,7 @@ h1, h2, h3, h4, h5, h6, strong{
 .header{
     width: 100%;
     height: 99px;
-    background-color: rgb(236, 234, 234);
+    background-color: #eff3f4;
     /* position: fixed;
     top: 0;
     z-index: 1; */
@@ -152,7 +152,7 @@ h1, h2, h3, h4, h5, h6, strong{
     height: 880px;
     display: block;
     padding-bottom: 9%;
-    padding-top: 7%;
+    padding-top: 6%;
 }
 .main > .section header{
     color:darkgray;
@@ -182,7 +182,7 @@ h1, h2, h3, h4, h5, h6, strong{
 }
 
 #promo{ height: 378px; }
-#news{ height:251px; }
+#news{ height:128px; }
 #investsearch{ height: 470px; }
 #services{ height: 250px; }
 #analytics{ height: 245px; }
@@ -197,11 +197,17 @@ h1, h2, h3, h4, h5, h6, strong{
     padding-bottom: 2%;
 }
 #link-switcher > a{
-    margin-left: 7%;
+    margin-left: 2%;
     color: #0079bf;
     font-size: 90%;
     text-decoration: none;
     padding-right: 1%;
+    position: relative;
+    left: 6%;
+}
+#link-switcher > #delimeter{
+    position: relative;
+    left: 6%;
 }
 #link-switcher > a:not(:nth-child(1)){
     margin-left: 0%;
@@ -211,7 +217,7 @@ h1, h2, h3, h4, h5, h6, strong{
 #link-switcher > a:hover{
     text-decoration: underline;
 }
-#news, #investsearch, #eventcalendar, #analytics, #reviews{ background-color: #ece2e2; }
+#news, #investsearch, #eventcalendar, #analytics, #reviews{ background-color: #eff3f4; }
 
 #promo{
     background-image: url('../images/homepage-bg.jpg');
@@ -292,6 +298,7 @@ h1, h2, h3, h4, h5, h6, strong{
     display: inline-table;
     background-color: white;
     margin-left: 2%;
+    padding-right: 1%;
 }
 #promo > main .promo-feed .promoblock:hover{
     cursor: pointer;
@@ -307,22 +314,23 @@ h1, h2, h3, h4, h5, h6, strong{
     margin-left: 0%;
     text-transform: uppercase;
     padding-top: 3%;
-    padding-bottom: 3%;
-    padding-right: 1px;
+    padding-right: 7px;
+    padding-left: 4%;
 }
 #promo > main .promo-feed .promoblock header a{
-    margin-left: 2%;
+    margin-left: 13px;
     margin-top: 13px;
     color: white;
     text-decoration: none;
-    margin-left: 4%;
+    margin-left: ;
+    top: ;
 }
 #promo > main .promo-feed .promoblock header strong{
     display: inline-table;
 }
 #promo > main .promo-feed .promoblock main .location{
     float: left;
-    margin-left: 2%;
+    margin-left: 5%;
     font-size: 112%;
     color: darkgray;
     font-style: italic;
@@ -331,24 +339,28 @@ h1, h2, h3, h4, h5, h6, strong{
     font-family: Times New Roman, serif;
 }
 #promo > main .promo-feed .promoblock main img{
-    width: 50%;
+    width: 36%;
     height: 150px;
     float: right;
     margin-right: 7%;
     display: inline-table;
     object-fit: cover;
-    margin-top: 5%;
+    margin-top: 9%;
 }
 #promo > main .promo-feed .promoblock main{
     display: block;
     width: 100%;
     padding-top: 0%;
     padding-bottom: 0%;
-    margin-left: 2%;
+    margin-left: 4%;
 }
 #promo > main .promo-feed .promoblock footer{
     width: 100%;
     margin-top: 45%;
+    padding-right: 1px;
+    padding-left: 4%;
+    padding-top: 3%;
+    padding-bottom: 2%;
 }
 #promo > main .promo-feed .promoblock footer .info{
     display: block;
@@ -377,7 +389,9 @@ h1, h2, h3, h4, h5, h6, strong{
 }
 #news > header a{
     display: inline;
-    margin-left: 13px;
+    margin-left: 1%;
+    top: -10px;
+    position: relative;
 }
 #news > main{
     width: 90%;
@@ -460,11 +474,11 @@ h1, h2, h3, h4, h5, h6, strong{
     width: 100%;
     background-color: #0079bf;
     color: white;
-    height: 37px;
     margin-left: 0%;
-    padding-top: 4%;
     padding-bottom: 4%;
-    padding-right: 1px;
+    padding-top: 3%;
+    padding-right: 3%;
+    padding-left: 4%;
 }
 #investsearch > main .popular-objects .popular-object header h3{
     margin-left: 4%;
@@ -478,10 +492,16 @@ h1, h2, h3, h4, h5, h6, strong{
 }
 #investsearch > main .popular-objects .popular-object main{
     display: block;
-    width: 100%;
+    width: 107%;
 }
 #investsearch > main .popular-objects .popular-object footer{
-    width: 100%;
+    width: 97%;
+    padding-left: 2%;
+    padding-right: 8%;
+    background-color: white;
+    margin-top: -2%;
+    padding-bottom: 4%;
+    padding-top: 4%;
 }
 #investsearch > main .popular-objects .popular-object footer .info{
     display: block;
@@ -513,7 +533,7 @@ h1, h2, h3, h4, h5, h6, strong{
 }
 #investsearch > main .popular-objects .popular-object footer a{
     display: block;
-    padding-top: 2%;
+    padding-top: 5%;
     padding-bottom: 3%;
     text-decoration: none;
     color: darkgray;
@@ -1141,7 +1161,7 @@ h1, h2, h3, h4, h5, h6, strong{
         font-size: 23px;
     }
     #promo > main .promo-feed .promoblock main img {
-        height: 99px;
+        height: 61px;
     }
     #investsearch > main .popular-objects .popular-object main img {
         height: 149px;
@@ -1169,7 +1189,8 @@ h1, h2, h3, h4, h5, h6, strong{
     }
     #investsearch > header a {
         margin-left: 108px;
-        margin-top: 19px;
+        top: -60px;
+        position: relative;
     }
     #eventcalendar > main .calendar footer {
         margin-top: 1%;
@@ -1263,7 +1284,7 @@ h1, h2, h3, h4, h5, h6, strong{
     }
     #investsearch {
         height: 521px;
-        padding-top: 4%;
+        padding-top: 8%;
         padding-bottom: 0%;
     }
     #investsearch > main .popular-objects .popular-object header {
@@ -1338,7 +1359,7 @@ h1, h2, h3, h4, h5, h6, strong{
         font-size: 23px;
     }
     #promo > main .promo-feed .promoblock main img {
-        height: 99px;
+        height: 74px;
     }
     #investsearch > main .popular-objects .popular-object main img {
         height: 149px;
@@ -1361,8 +1382,8 @@ h1, h2, h3, h4, h5, h6, strong{
         margin-right: -15%;
     }
     #investsearch > header a {
-        margin-left: 111px;
-        margin-top: 20px;
+        margin-left: 126px;
+        margin-top: 9px;
     }
     #eventcalendar > main .calendar footer {
         margin-top: 2%;
@@ -1422,7 +1443,7 @@ h1, h2, h3, h4, h5, h6, strong{
         margin-left: -20%;
     }
     #promo > main .promo-feed .promoblock main img {
-        height: 109px;
+        height: 75px;
     }
     #promo > main .promo-feed .promoblock footer {
         margin-top: 46%;
@@ -1431,7 +1452,7 @@ h1, h2, h3, h4, h5, h6, strong{
         font-size: 104%;
     }
     #investsearch {
-        height: 514px;
+        height: 417px;
     }
     #investsearch > main .popular-objects .popular-object header {
         height: 27px;
@@ -1460,8 +1481,8 @@ h1, h2, h3, h4, h5, h6, strong{
         margin-right: -11%;
     }
     #investsearch > header a {
-        margin-left: 111px;
-        margin-top: 18px;
+        margin-left: 133px;
+        margin-top: 8px;
     }
     #eventcalendar > main .calendar footer {
         margin-top: 1%;
@@ -1527,7 +1548,7 @@ h1, h2, h3, h4, h5, h6, strong{
         margin-left: -12%;
     }
     #promo > main .promo-feed .promoblock main img {
-        height: 133px;
+        height: 79px;
     }
     #promo > main .promo-feed .promoblock footer {
         margin-top: 46%;
@@ -1536,7 +1557,7 @@ h1, h2, h3, h4, h5, h6, strong{
         font-size: 106%;
     }
     #investsearch {
-        height: 519px;
+        height: 430px;
     }
     #investsearch > main .popular-objects .popular-object header {
         height: 27px;
@@ -1592,7 +1613,7 @@ h1, h2, h3, h4, h5, h6, strong{
         margin-left: -18%;
     }
     #promo > main .promo-feed .promoblock main img {
-        height: 148px;
+        height: 85px;
     }
     #promo > main .promo-feed .promoblock footer {
         margin-top: 46%;
@@ -1601,7 +1622,7 @@ h1, h2, h3, h4, h5, h6, strong{
         font-size: 116%;
     }
     #investsearch {
-        height: 537px;
+        height: 450px;
     }
     #investsearch > main .popular-objects .popular-object header {
         height: 27px;
@@ -1631,8 +1652,8 @@ h1, h2, h3, h4, h5, h6, strong{
         margin-right: -17%;
     }
     #investsearch > header a {
-        margin-left: 145px;
-        margin-top: 6px;
+        margin-left: 150px;
+        margin-top: 9px;
     }
     #eventcalendar > main .calendar footer {
         margin-top: 1%;
