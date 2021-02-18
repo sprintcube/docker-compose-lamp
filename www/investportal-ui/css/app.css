@@ -3,6 +3,7 @@
 @import url('addons/docsicon.css');
 @import url('addons/video-player.css');
 @import url('addons/chat.css');
+@import url('addons/threedetalization.css');
 @import url('addons/adaptive_paths.css');
 @import url('addons/feedblocks/analytics.css');
 @import url('addons/feedblocks/reviews.css');
@@ -182,7 +183,7 @@ h1, h2, h3, h4, h5, h6, strong{
 }
 
 #promo{ height: 378px; }
-#news{ height:128px; }
+#news{ height:128px; padding-top: 7%; }
 #investsearch{ height: 470px; }
 #services{ height: 250px; }
 #analytics{ height: 245px; }
@@ -284,7 +285,7 @@ h1, h2, h3, h4, h5, h6, strong{
         border-radius: 10px 10px 10px 10px;
 }
 #promo > main .promo-feed{
-    width: 126%;
+    width: 127%;
     display: flex;
     display: -webkit-box;
     display: -webkit-flex;
@@ -297,8 +298,9 @@ h1, h2, h3, h4, h5, h6, strong{
     width: 17%;
     display: inline-table;
     background-color: white;
-    margin-left: 2%;
+    margin-left: -29%;
     padding-right: 1%;
+    margin-top: 2%;
 }
 #promo > main .promo-feed .promoblock:hover{
     cursor: pointer;
@@ -322,8 +324,6 @@ h1, h2, h3, h4, h5, h6, strong{
     margin-top: 13px;
     color: white;
     text-decoration: none;
-    margin-left: ;
-    top: ;
 }
 #promo > main .promo-feed .promoblock header strong{
     display: inline-table;
@@ -381,6 +381,7 @@ h1, h2, h3, h4, h5, h6, strong{
 }
 #promo > main .promo-feed .promoblock footer .info span:nth-child(2){
     font-size: 102%;
+    margin-top: -4%;
 }
 
 
@@ -403,9 +404,9 @@ h1, h2, h3, h4, h5, h6, strong{
     display: inline-table;
 }
 #news > main #slider-controller img{
-    width: 30%;
+    width: 26%;
     position: relative;
-    top: 80px;
+    top: 18px;
 }
 #news > main #slider-view{
     width: 65%;
@@ -426,17 +427,20 @@ h1, h2, h3, h4, h5, h6, strong{
     color: #0079bf;
     font-size: 109%;
     text-decoration: none;
+    font-weight: bold;
 }
 #news > main #slider-view .news-feed .news .descr{
     display: block;
-    margin-top: 4px;
+    margin-top: 8%;
     font-size: 88%;
 }
 #news > main #slider-view .news-feed .news .date{
     display: block;
-    margin-top: 4px;
+    margin-top: 11%;
     font-size: 85%;
     font-style: italic;
+    color: gray;
+    font-family: 'Times New Roman',serif;
 }
 
 #investsearch > header a{
@@ -451,7 +455,7 @@ h1, h2, h3, h4, h5, h6, strong{
     text-decoration: underline;
 }
 #investsearch > main .popular-objects{
-    width: 119%;
+    width: 114%;
     display: flex;
     display: -webkit-box;
     display: -webkit-flex;
@@ -465,7 +469,7 @@ h1, h2, h3, h4, h5, h6, strong{
     display: inline-table;
     background-color: white;
     box-shadow: 3px -1px 11px 3px darkgray;
-    margin-left: 3%;
+    margin-left: -31%;
 }
 #investsearch > main .popular-objects .popular-object:hover{
     cursor: pointer;
@@ -624,9 +628,9 @@ h1, h2, h3, h4, h5, h6, strong{
     display: inline-table;
 }
 #services > main #slider-controller img{
-    width: 30%;
+    width: 26%;
     position: relative;
-    top: -11px;
+    top: -45px;
 }
 #services > main #slider-view{
     width: 70%;
@@ -714,9 +718,9 @@ h1, h2, h3, h4, h5, h6, strong{
     display: inline-table;
 }
 #analytics > main #slider-controller img{
-    width: 30%;
+    width: 26%;
     position: relative;
-    top: 125px;
+    top: calc(45px * 2);
 }
 #analytics > main #slider-view{
     width: 70%;
@@ -782,9 +786,9 @@ h1, h2, h3, h4, h5, h6, strong{
     display: inline-table;
 }
 #estate > main #slider-controller img{
-    width: 30%;
+    width: 26%;
     position: relative;
-    top: -58px;
+    top: -116px;
 }
 #estate > main #slider-view{
     width: 70%;
@@ -858,7 +862,8 @@ h1, h2, h3, h4, h5, h6, strong{
 }
 .raiting{
     margin-left: 2%;
-    padding-bottom: 3%;
+    padding-bottom: 6%;
+    padding-top: 9%;
 }
 .raiting > span{
     display: block;
@@ -902,9 +907,9 @@ h1, h2, h3, h4, h5, h6, strong{
     display: inline-table;
 }
 #reviews > main #slider-controller img{
-    width: 30%;
+    width: 26%;
     position: relative;
-    top: 97px;
+    top: 45px;
 }
 #reviews > main #slider-view{
     width: 70%;
@@ -1073,20 +1078,21 @@ h1, h2, h3, h4, h5, h6, strong{
         height: 317px;
     }
     #promo > main .promo-feed,  #investsearch > main .popular-objects{
-        margin-left: -11%;
+        margin-left: 7%;
+        margin-top: 2%;
     }
     #promo > main .promo-feed .promoblock header {
         height: 34px;
     }
     #promo > main .promo-feed .promoblock footer {
-        margin-top: 4%;
+        margin-top: -10%;
     }
     #promo > main .promo-feed .promoblock footer .info span {
         font-size: 95%;
     }
     #investsearch {
         height: 554px;
-        padding-top: 6%;
+        padding-top: 12%;
         padding-bottom: 0%;
     }
     #investsearch > main .popular-objects .popular-object header {
@@ -1242,7 +1248,8 @@ h1, h2, h3, h4, h5, h6, strong{
         font-size: 79%;
     }
     #promo > main .promo-feed,  #investsearch > main .popular-objects{
-        margin-left: -11%;
+        margin-left: 5%;
+        margin-top: 2%;
     }
     #promo > main .promo-feed .promoblock header {
         height: 34px;
@@ -1277,7 +1284,7 @@ h1, h2, h3, h4, h5, h6, strong{
         height: 34px;
     }
     #promo > main .promo-feed .promoblock footer {
-        margin-top: 4%;
+        margin-top: -12%;
     }
     #promo > main .promo-feed .promoblock footer .info span {
         font-size: 101%;
@@ -1378,7 +1385,7 @@ h1, h2, h3, h4, h5, h6, strong{
         top: -46px;
     }
     #promo > header .marketing-info {
-        margin-top: -15%;
+        margin-top: -19%;
         margin-right: -15%;
     }
     #investsearch > header a {
@@ -1440,13 +1447,14 @@ h1, h2, h3, h4, h5, h6, strong{
         height: 361px;
     }
     #promo > main .promo-feed,  #investsearch > main .popular-objects{
-        margin-left: -20%;
+        margin-left: 4%;
+        margin-top: 4%;
     }
     #promo > main .promo-feed .promoblock main img {
         height: 75px;
     }
     #promo > main .promo-feed .promoblock footer {
-        margin-top: 46%;
+        margin-top: 33%;
     }
     #promo > main .promo-feed .promoblock footer .info span {
         font-size: 104%;
@@ -1477,7 +1485,7 @@ h1, h2, h3, h4, h5, h6, strong{
         top: -47px;
     }
     #promo > header .marketing-info {
-        margin-top: -214px;
+        margin-top: -18%;
         margin-right: -11%;
     }
     #investsearch > header a {
@@ -1545,13 +1553,14 @@ h1, h2, h3, h4, h5, h6, strong{
         height: 336px;
     }
     #promo > main .promo-feed,  #investsearch > main .popular-objects{
-        margin-left: -12%;
+        margin-left: 5%;
+        margin-top: 2%;
     }
     #promo > main .promo-feed .promoblock main img {
         height: 79px;
     }
     #promo > main .promo-feed .promoblock footer {
-        margin-top: 46%;
+        margin-top: 33%;
     }
     #promo > main .promo-feed .promoblock footer .info span {
         font-size: 106%;
@@ -1576,7 +1585,7 @@ h1, h2, h3, h4, h5, h6, strong{
         top: -44px;
     }
     #promo > header .marketing-info {
-        margin-top: -199px;
+        margin-top: -15%;
         margin-right: -15%;
     }
     #investsearch > header a {
@@ -1610,13 +1619,17 @@ h1, h2, h3, h4, h5, h6, strong{
         height: 346px;
     }
     #promo > main .promo-feed,  #investsearch > main .popular-objects{
-        margin-left: -18%;
+        margin-left: 7%;
+        margin-top: 0%;
+    }
+    #investsearch > main .popular-objects{
+        margin-top: 3%;
     }
     #promo > main .promo-feed .promoblock main img {
         height: 85px;
     }
     #promo > main .promo-feed .promoblock footer {
-        margin-top: 46%;
+        margin-top: 33%;
     }
     #promo > main .promo-feed .promoblock footer .info span {
         font-size: 116%;
@@ -1648,7 +1661,7 @@ h1, h2, h3, h4, h5, h6, strong{
         top: -46px;
     }
     #promo > header .marketing-info {
-        margin-top: -200px;
+        margin-top: -13%;
         margin-right: -17%;
     }
     #investsearch > header a {
@@ -1702,6 +1715,6 @@ h1, h2, h3, h4, h5, h6, strong{
     }
 }
 .promo-header{
-    top: -10px;
+    top: 10%;
     position: relative;
 }

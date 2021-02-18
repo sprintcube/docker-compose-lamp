@@ -1,0 +1,202 @@
+CSS-код:
+
+/* Псевдо в промо */
+
+#promo > main .promo-feed .promoblock::before, #investsearch > main .popular-objects .popular-object::before{
+    content: '';
+    position: absolute;
+}
+#promo > main .promo-feed .promoblock::after, #investsearch > main .popular-objects .popular-object::after{
+    content: '';
+    position: absolute;
+}
+
+
+/*Внутрений див*/
+
+#threedetal-left{
+    left: -190px;
+}
+#threedetal-right{
+    right: 292px;
+    top: 15px;
+}
+#threedetal-left, #threedetal-right{
+    float: right;
+    position: relative;
+    background-color: white;
+    display: flex;
+    -webkit-box-shadow: 6px -7px 4px 0px rgba(130, 130, 130, 0.74);
+    -moz-box-shadow: 6px -7px 4px 0px rgba(130, 130, 130, 0.74);
+    box-shadow: 6px -7px 4px 0px rgba(130, 130, 130, 0.74);
+}
+#promo > main .promo-feed .promoblock, #investsearch > main .popular-objects .popular-object{
+    position: relative;
+    z-index: 99;
+    -webkit-box-shadow: 6px 6px 4px 0px rgba(130, 130, 130, 0.74);
+    -moz-box-shadow: 6px 6px 4px 0px rgba(130, 130, 130, 0.74);
+    box-shadow: 6px 6px 4px 0px rgba(130, 130, 130, 0.74);
+}
+#investsearch > main .popular-objects #threedetal-left{
+    left: -216px;
+    top: -26px;
+}
+#investsearch > main .popular-objects #threedetal-right{
+    right: 281px;
+    top: -9px;
+}
+@media all and (min-width:1024px) and (max-width: 1100px){
+    #threedetal-left {
+        left: -123px;
+    }
+    #threedetal-right {
+        right: 188px;
+        top: 15px;
+    }
+    #investsearch > main .popular-objects #threedetal-left {
+        left: -137px;
+        top: -26px;
+    }
+    #investsearch > main .popular-objects #threedetal-right {
+        right: 433px;
+        top: -9px;
+    }
+}
+@media all and (min-width:1100px) and (max-width: 1181px){
+    #threedetal-left {
+        left: -136px;
+    }
+    #threedetal-right {
+        right: 204px;
+        top: 15px;
+    }
+    #investsearch > main .popular-objects #threedetal-left {
+        left: -148px;
+        top: -26px;
+    }
+    #investsearch > main .popular-objects #threedetal-right {
+        right: 199px;
+        top: -9px;
+    }
+}
+@media all and (min-width:1181px) and (max-width: 1280px){
+    #threedetal-left {
+        left: -148px;
+    }
+    #threedetal-right {
+        right: 223px;
+        top: 15px;
+    }
+    #investsearch > main .popular-objects #threedetal-left {
+        left: 120px;
+        top: -26px;
+    }
+    #investsearch > main .popular-objects #threedetal-right {
+        right: 219px;
+        top: -9px;
+    }
+}
+@media all and (min-width:1280px) and (max-width: 1366px){
+    #threedetal-left {
+        left: -165px;
+    }
+    #threedetal-right {
+        right: 247px;
+        top: 15px;
+    }
+    #investsearch > main .popular-objects #threedetal-left {
+        left: 128px;
+        top: -26px;
+    }
+    #investsearch > main .popular-objects #threedetal-right {
+        right: 219px;
+        top: -9px;
+    }
+}
+@media all and (min-width:1366px) and (max-width: 1400px){
+    #threedetal-left {
+        left: -170px;
+    }
+    #threedetal-right {
+        right: 256px;
+        top: 15px;
+    }
+    #investsearch > main .popular-objects #threedetal-left {
+        left: -178px;
+        top: -26px;
+    }
+    #investsearch > main .popular-objects #threedetal-right {
+        right: 239px;
+        top: -9px;
+    }
+}
+@media all and (min-width:1400px) and (max-width: 1600px){
+    #threedetal-left {
+        left: -184px;
+    }
+    #threedetal-right {
+        right: 274px;
+        top: 20px;
+    }
+    #investsearch > main .popular-objects #threedetal-left {
+        left: -188px;
+        top: -26px;
+    }
+    #investsearch > main .popular-objects #threedetal-right {
+        right: 249px;
+        top: -9px;
+    }
+}
+@media all and (min-width:1600px) and (max-width: 1800px){
+    #threedetal-left {
+        left: -197px;
+    }
+    #threedetal-right {
+        right: 296px;
+        top: 15px;
+    }
+    #investsearch > main .popular-objects #threedetal-left {
+        left: -212px;
+        top: -26px;
+    }
+    #investsearch > main .popular-objects #threedetal-right {
+        right: 279px;
+        top: -9px;
+    }
+}
+
+
+JavaScript-код:
+
+const PromoBlocksThreeDetals = () => {
+    let promos = [$('#promo > main .promo-feed .promoblock'),$('main .popular-objects .popular-object')];
+    let threed = $('#threedetal-left, #threedetal-right');
+
+
+    for (let index = 0; index < promos.length; index++) {
+        const el_size = promos[index];
+
+        threed.width(el_size.width());
+        threed.height(el_size.height() - 20);  
+    }
+
+}
+const PromoBlocksThreeDetalsAppend = () => {
+    let promos = [$('#promo > main .promo-feed .promoblock'),$('main .popular-objects .popular-object')];
+
+
+    for (let index = 0; index < promos.length; index++) {
+        const el_size = promos[index];
+
+        el_size.before('<div id="threedetal-left">&nbsp;</div>');
+        el_size.after('<div id="threedetal-right">&nbsp;</div>');
+
+    }
+}
+$(document).ready(function () {
+    PromoBlocksThreeDetalsAppend();
+    PromoBlocksThreeDetals();
+
+    $(window).resize(PromoBlocksThreeDetals);
+
+});

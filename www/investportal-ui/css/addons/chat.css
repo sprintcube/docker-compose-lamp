@@ -3,6 +3,7 @@
     position: fixed;
     bottom: 1%;
     right: 2%;
+    z-index: 99;
 }
 .lightbox-closed{
     visibility: hidden;

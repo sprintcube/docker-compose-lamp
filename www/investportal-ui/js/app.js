@@ -50,14 +50,39 @@ const MarketingHeadBannerAdaptive = () => {
     $('.banner-block').css("margin-left", margin);
     
 }
+const PromoBlocksThreeDetals = () => {
+    let promos = [$('#promo > main .promo-feed .promoblock'),$('main .popular-objects .popular-object')];
+    let threed = $('#threedetal-left, #threedetal-right');
+
+
+    for (let index = 0; index < promos.length; index++) {
+        const el_size = promos[index];
+
+        threed.width(el_size.width());
+        threed.height(el_size.height() - 20);  
+    }
+
+}
+const PromoBlocksThreeDetalsAppend = () => {
+    let promos = [$('#promo > main .promo-feed .promoblock'),$('main .popular-objects .popular-object')];
+
+
+    for (let index = 0; index < promos.length; index++) {
+        const el_size = promos[index];
+
+        el_size.before('<div id="threedetal-left">&nbsp;</div>');
+        el_size.after('<div id="threedetal-right">&nbsp;</div>');
+
+    }
+}
 const HomePageHorizontalAdaptiveLine = () => {
     let vw = $(this).width();
     let margin;
     if(vw == 1024 || vw == 1280 || vw < 1280){
-        margin = "0%";
+        margin = "27px";
     }
     else if(vw == 1280 || vw == 1366 || vw < 1366){
-        margin = "17px";
+        margin = "4%";
     }
     else if(vw == 1366 || vw == 1400 || vw < 1400){
         margin = "-8%";
@@ -114,10 +139,13 @@ const VideoPlayerUI = (player) => {
 }
 $(document).ready(function () {
     OnlineChat();
+    PromoBlocksThreeDetalsAppend();
+    PromoBlocksThreeDetals();
     MarketingHeadBannerAdaptive();
     HomePageHorizontalAdaptiveLine();
 
     $(window).resize(MarketingHeadBannerAdaptive);
+    $(window).resize(PromoBlocksThreeDetals);
     $(window).resize(HomePageHorizontalAdaptiveLine);
 
 
