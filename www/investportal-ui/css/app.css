@@ -425,10 +425,12 @@ h1, h2, h3, h4, h5, h6, strong{
 }
 #news > main #slider-view .news-feed .news{
     display: inline-block;
-    width: 32%;
+    width: 26%;
     margin-left: 1%;
     height: 227px;
 }
+#news > main #slider-view .news-feed .news:nth-child(2){ padding-left: 8%; }
+#news > main #slider-view .news-feed .news:nth-child(3){ padding-left: 10%; }
 #news > main #slider-view .news-feed .news a{
     display: block;
     margin-top: 2px;
@@ -1603,7 +1605,7 @@ h1, h2, h3, h4, h5, h6, strong{
         top: -44px;
     }
     #promo > header .marketing-info {
-        margin-top: -15%;
+        margin-top: -14%;
         margin-right: -15%;
     }
     #investsearch > header a {

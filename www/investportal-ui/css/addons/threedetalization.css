@@ -21,7 +21,7 @@
 }
 #threedetal-left, #threedetal-right{
     width: 17%;
-    float: right;
+
     position: relative;
     background-color: white;
     display: flex;
@@ -46,120 +46,127 @@
 }
 @media all and (min-width:1024px) and (max-width: 1100px){
     #threedetal-left {
-        left: -170px;
+        left: 10vw;
+        top: 1vw;
     }
     #threedetal-right {
-        right: 223px;
-        top: 15px;
+        right: -5vw;
+        top: 2vw;
     }
     #investsearch > main .popular-objects #threedetal-left {
-        left: -137px;
-        top: -26px;
+        left: 9vw;
+        top: -2vw;
     }
     #investsearch > main .popular-objects #threedetal-right {
-        right: 433px;
-        top: -9px;
+        right: -5vw;
+        top: -1vw;
     }
 }
 @media all and (min-width:1100px) and (max-width: 1181px){
     #threedetal-left {
-        left: -173px;
+        left: 10vw;
+        top: 1vw;
     }
     #threedetal-right {
-        right: 229px;
-        top: 15px;
+        right: -5vw;
+        top: 2vw;
     }
     #investsearch > main .popular-objects #threedetal-left {
-        left: -148px;
-        top: -26px;
+        left: 9vw;
+        top: -2vw;
     }
     #investsearch > main .popular-objects #threedetal-right {
-        right: 199px;
-        top: -9px;
+        right: -5vw;
+        top: -1vw;
     }
 }
 @media all and (min-width:1181px) and (max-width: 1280px){
     #threedetal-left {
-        left: -183px;
+        left: 10vw;
+        top: 1vw;
     }
     #threedetal-right {
-        right: 240px;
-        top: 15px;
+        right: -5vw;
+        top: 2vw;
     }
     #investsearch > main .popular-objects #threedetal-left {
-        left: 106px;
-        top: -26px;
+        left: 9vw;
+        top: -2vw;
     }
     #investsearch > main .popular-objects #threedetal-right {
-        right: 219px;
-        top: -9px;
+        right: -5vw;
+        top: -1vw;
     }
 }
 @media all and (min-width:1280px) and (max-width: 1366px){
     #threedetal-left {
-        left: -202px;
+        left: 10vw;
+        top: 1vw;
     }
     #threedetal-right {
-        right: 264px;
-        top: 15px;
+        right: -5vw;
+        top: 2vw;
     }
     #investsearch > main .popular-objects #threedetal-left {
-        left: 128px;
-        top: -26px;
+        left: 9vw;
+        top: -2vw;
     }
     #investsearch > main .popular-objects #threedetal-right {
-        right: 219px;
-        top: -9px;
+        right: -5vw;
+        top: -1vw;
     }
 }
 @media all and (min-width:1366px) and (max-width: 1400px){
     #threedetal-left {
-        left: -212px;
+        left: 10vw;
+        top: 1vw;
     }
     #threedetal-right {
-        right: 278px;
-        top: 18px;
+        right: -5vw;
+        top: 2vw;
     }
     #investsearch > main .popular-objects #threedetal-left {
-        left: -178px;
-        top: -26px;
+        left: 9vw;
+        top: -2vw;
     }
     #investsearch > main .popular-objects #threedetal-right {
-        right: 239px;
-        top: -9px;
+        right: -5vw;
+        top: -1vw;
     }
 }
 @media all and (min-width:1400px) and (max-width: 1600px){
     #threedetal-left {
-        left: -257px;
+        left: 9vw;
+        top: 1vw;
     }
     #threedetal-right {
-        right: 330px;
-        top: 20px;
+        right: -71px;
+        top: 2vw;
     }
     #investsearch > main .popular-objects #threedetal-left {
-        left: -206px;
-        top: -26px;
+        left: 9vw;
+        top: -2vw;
     }
     #investsearch > main .popular-objects #threedetal-right {
-        right: 273px;
-        top: -9px;
+        right: -81px;
+        top: -1vw;
     }
 }
 @media all and (min-width:1600px) and (max-width: 1800px){
     #threedetal-left {
-        left: -257px;
+        left: 9vw;
+        top: 1vw;
     }
     #threedetal-right {
-        right: 331px;
-        top: 15px;
+        right: -72px;
+        top: 2vw;
     }
     #investsearch > main .popular-objects #threedetal-left {
-        left: -212px;
-        top: -26px;
+        left: 9vw;
+        top: -2vw;
     }
     #investsearch > main .popular-objects #threedetal-right {
-        right: 279px;
-        top: -9px;
+        right: -5vw;
+        top: -1vw;
     }
 }

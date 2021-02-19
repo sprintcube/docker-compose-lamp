@@ -133,10 +133,10 @@ CSS-код:
 }
 @media all and (min-width:1400px) and (max-width: 1600px){
     #threedetal-left {
-        left: -257px;
+        left: 10vw;
     }
     #threedetal-right {
-        right: 330px;
+        right: -5vw;
         top: 20px;
     }
     #investsearch > main .popular-objects #threedetal-left {

@@ -57,7 +57,7 @@ const PromoBlocksThreeDetals = () => {
 
     for (let index = 0; index < promos.length; index++) {
         const el_size = promos[index];
-        threed.height(el_size.height() - 40);
+        threed.height(el_size.height() - 60);
           
     }
 
