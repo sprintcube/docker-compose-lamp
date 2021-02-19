@@ -298,7 +298,7 @@ h1, h2, h3, h4, h5, h6, strong{
     width: 17%;
     display: inline-table;
     background-color: white;
-    margin-left: -29%;
+    margin-left: -32%;
     padding-right: 1%;
     margin-top: 2%;
 }
@@ -395,31 +395,39 @@ h1, h2, h3, h4, h5, h6, strong{
     position: relative;
 }
 #news > main{
-    width: 90%;
-    margin-left: 6%;
+    width: 100%;
     margin-top: 2%;
 }
 #news > main #slider-controller{
     width: 10%;
-    display: inline-table;
+    display: inline-block;
+    position: relative;
+}
+#news > main header#slider-controller{
+    left: -5%;
+}
+#news > main footer#slider-controller{
+    right: -5%;
 }
 #news > main #slider-controller img{
     width: 26%;
     position: relative;
-    top: 18px;
+    top: -190px;
 }
 #news > main #slider-view{
-    width: 65%;
-    display: inline-table;
+    width: 70%;
+    display: inline-block;
 }
 #news > main #slider-view .news-feed{
    display: block; 
-   margin-left: -8%;
+   margin-left: -16%;
+   margin-top: 1%;
 }
 #news > main #slider-view .news-feed .news{
-    display: inline-table;
-    width: 30%;
-    margin-left: 2%;
+    display: inline-block;
+    width: 32%;
+    margin-left: 1%;
+    height: 227px;
 }
 #news > main #slider-view .news-feed .news a{
     display: block;
@@ -428,11 +436,19 @@ h1, h2, h3, h4, h5, h6, strong{
     font-size: 109%;
     text-decoration: none;
     font-weight: bold;
+    height: 64px;
+    overflow: hidden;
+    text-overflow: ellipsis;
 }
 #news > main #slider-view .news-feed .news .descr{
     display: block;
     margin-top: 8%;
     font-size: 88%;
+    height: 108px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    margin-top: 5%;
+    text-align: justify;
 }
 #news > main #slider-view .news-feed .news .date{
     display: block;
@@ -441,6 +457,8 @@ h1, h2, h3, h4, h5, h6, strong{
     font-style: italic;
     color: gray;
     font-family: 'Times New Roman',serif;
+    height: 20px;
+    margin-top: 6%;
 }
 
 #investsearch > header a{
@@ -1636,6 +1654,7 @@ h1, h2, h3, h4, h5, h6, strong{
     }
     #investsearch {
         height: 450px;
+        padding-top: 10%;
     }
     #investsearch > main .popular-objects .popular-object header {
         height: 27px;

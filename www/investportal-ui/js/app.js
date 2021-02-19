@@ -57,10 +57,10 @@ const PromoBlocksThreeDetals = () => {
 
     for (let index = 0; index < promos.length; index++) {
         const el_size = promos[index];
-
-        threed.width(el_size.width());
-        threed.height(el_size.height() - 20);  
+        threed.height(el_size.height() - 40);
+          
     }
+
 
 }
 const PromoBlocksThreeDetalsAppend = () => {

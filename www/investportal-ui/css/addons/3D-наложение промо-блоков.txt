@@ -15,13 +15,14 @@ CSS-код:
 /*Внутрений див*/
 
 #threedetal-left{
-    left: -190px;
+    left: -304px;
 }
 #threedetal-right{
-    right: 292px;
+    right: 390px;
     top: 15px;
 }
 #threedetal-left, #threedetal-right{
+    width: 17%;
     float: right;
     position: relative;
     background-color: white;
@@ -38,19 +39,19 @@ CSS-код:
     box-shadow: 6px 6px 4px 0px rgba(130, 130, 130, 0.74);
 }
 #investsearch > main .popular-objects #threedetal-left{
-    left: -216px;
+    left: -246px;
     top: -26px;
 }
 #investsearch > main .popular-objects #threedetal-right{
-    right: 281px;
+    right: 326px;
     top: -9px;
 }
 @media all and (min-width:1024px) and (max-width: 1100px){
     #threedetal-left {
-        left: -123px;
+        left: -170px;
     }
     #threedetal-right {
-        right: 188px;
+        right: 223px;
         top: 15px;
     }
     #investsearch > main .popular-objects #threedetal-left {
@@ -64,10 +65,10 @@ CSS-код:
 }
 @media all and (min-width:1100px) and (max-width: 1181px){
     #threedetal-left {
-        left: -136px;
+        left: -173px;
     }
     #threedetal-right {
-        right: 204px;
+        right: 229px;
         top: 15px;
     }
     #investsearch > main .popular-objects #threedetal-left {
@@ -81,14 +82,14 @@ CSS-код:
 }
 @media all and (min-width:1181px) and (max-width: 1280px){
     #threedetal-left {
-        left: -148px;
+        left: -183px;
     }
     #threedetal-right {
-        right: 223px;
+        right: 240px;
         top: 15px;
     }
     #investsearch > main .popular-objects #threedetal-left {
-        left: 120px;
+        left: 106px;
         top: -26px;
     }
     #investsearch > main .popular-objects #threedetal-right {
@@ -98,10 +99,10 @@ CSS-код:
 }
 @media all and (min-width:1280px) and (max-width: 1366px){
     #threedetal-left {
-        left: -165px;
+        left: -202px;
     }
     #threedetal-right {
-        right: 247px;
+        right: 264px;
         top: 15px;
     }
     #investsearch > main .popular-objects #threedetal-left {
@@ -115,11 +116,11 @@ CSS-код:
 }
 @media all and (min-width:1366px) and (max-width: 1400px){
     #threedetal-left {
-        left: -170px;
+        left: -212px;
     }
     #threedetal-right {
-        right: 256px;
-        top: 15px;
+        right: 278px;
+        top: 18px;
     }
     #investsearch > main .popular-objects #threedetal-left {
         left: -178px;
@@ -132,27 +133,27 @@ CSS-код:
 }
 @media all and (min-width:1400px) and (max-width: 1600px){
     #threedetal-left {
-        left: -184px;
+        left: -257px;
     }
     #threedetal-right {
-        right: 274px;
+        right: 330px;
         top: 20px;
     }
     #investsearch > main .popular-objects #threedetal-left {
-        left: -188px;
+        left: -206px;
         top: -26px;
     }
     #investsearch > main .popular-objects #threedetal-right {
-        right: 249px;
+        right: 273px;
         top: -9px;
     }
 }
 @media all and (min-width:1600px) and (max-width: 1800px){
     #threedetal-left {
-        left: -197px;
+        left: -257px;
     }
     #threedetal-right {
-        right: 296px;
+        right: 331px;
         top: 15px;
     }
     #investsearch > main .popular-objects #threedetal-left {
@@ -175,9 +176,7 @@ const PromoBlocksThreeDetals = () => {
 
     for (let index = 0; index < promos.length; index++) {
         const el_size = promos[index];
-
-        threed.width(el_size.width());
-        threed.height(el_size.height() - 20);  
+        threed.height(el_size.height() - 40);  
     }
 
 }
