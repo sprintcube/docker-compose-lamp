@@ -285,7 +285,7 @@ h1, h2, h3, h4, h5, h6, strong{
         border-radius: 10px 10px 10px 10px;
 }
 #promo > main .promo-feed{
-    width: 127%;
+    width: 134%;
     display: flex;
     display: -webkit-box;
     display: -webkit-flex;
@@ -410,9 +410,9 @@ h1, h2, h3, h4, h5, h6, strong{
     right: -5%;
 }
 #news > main #slider-controller img{
-    width: 26%;
+    width: 18%;
     position: relative;
-    top: -190px;
+    top: -155px;
 }
 #news > main #slider-view{
     width: 70%;
@@ -427,7 +427,7 @@ h1, h2, h3, h4, h5, h6, strong{
     display: inline-block;
     width: 26%;
     margin-left: 1%;
-    height: 227px;
+    height: 183px;
 }
 #news > main #slider-view .news-feed .news:nth-child(2){ padding-left: 8%; }
 #news > main #slider-view .news-feed .news:nth-child(3){ padding-left: 10%; }
@@ -449,7 +449,7 @@ h1, h2, h3, h4, h5, h6, strong{
     height: 108px;
     overflow: hidden;
     text-overflow: ellipsis;
-    margin-top: 5%;
+    margin-top: 2%;
     text-align: justify;
 }
 #news > main #slider-view .news-feed .news .date{
@@ -460,7 +460,7 @@ h1, h2, h3, h4, h5, h6, strong{
     color: gray;
     font-family: 'Times New Roman',serif;
     height: 20px;
-    margin-top: 6%;
+    margin-top: -6%;
 }
 
 #investsearch > header a{
@@ -1097,7 +1097,7 @@ h1, h2, h3, h4, h5, h6, strong{
         height: 317px;
     }
     #promo > main .promo-feed,  #investsearch > main .popular-objects{
-        margin-left: 7%;
+        margin-left: 1%;
         margin-top: 2%;
     }
     #promo > main .promo-feed .promoblock header {
@@ -1267,7 +1267,7 @@ h1, h2, h3, h4, h5, h6, strong{
         font-size: 79%;
     }
     #promo > main .promo-feed,  #investsearch > main .popular-objects{
-        margin-left: 5%;
+        margin-left: 1%;
         margin-top: 2%;
     }
     #promo > main .promo-feed .promoblock header {
@@ -1404,7 +1404,7 @@ h1, h2, h3, h4, h5, h6, strong{
         top: -46px;
     }
     #promo > header .marketing-info {
-        margin-top: -19%;
+        margin-top: -18%;
         margin-right: -15%;
     }
     #investsearch > header a {
@@ -1466,7 +1466,7 @@ h1, h2, h3, h4, h5, h6, strong{
         height: 361px;
     }
     #promo > main .promo-feed,  #investsearch > main .popular-objects{
-        margin-left: 4%;
+        margin-left: 1%;
         margin-top: 4%;
     }
     #promo > main .promo-feed .promoblock main img {
@@ -1572,7 +1572,7 @@ h1, h2, h3, h4, h5, h6, strong{
         height: 336px;
     }
     #promo > main .promo-feed,  #investsearch > main .popular-objects{
-        margin-left: 5%;
+        margin-left: 1%;
         margin-top: 2%;
     }
     #promo > main .promo-feed .promoblock main img {
@@ -1604,7 +1604,7 @@ h1, h2, h3, h4, h5, h6, strong{
         top: -44px;
     }
     #promo > header .marketing-info {
-        margin-top: -14%;
+        margin-top: -11%;
         margin-right: -15%;
     }
     #investsearch > header a {
@@ -1638,7 +1638,7 @@ h1, h2, h3, h4, h5, h6, strong{
         height: 346px;
     }
     #promo > main .promo-feed,  #investsearch > main .popular-objects{
-        margin-left: 7%;
+        margin-left: 1%;
         margin-top: 0%;
     }
     #investsearch > main .popular-objects{
@@ -1718,7 +1718,7 @@ h1, h2, h3, h4, h5, h6, strong{
     #promo > header .marketing-info {
         width: 82%;
         margin-right: -13%;
-        margin-top: -192px;
+        margin-top: -17%;
     }
     #promo > header .marketing-info header img {
         width: 79%;
@@ -1728,13 +1728,13 @@ h1, h2, h3, h4, h5, h6, strong{
     #promo > header .marketing-info {
         width: 82%;
         margin-right: -15%;
-        margin-top: -193px;
+        margin-top: -16%;
     }
     #promo > header .marketing-info header img {
         width: 74%;
     }
 }
 .promo-header{
-    top: 10%;
+    top: 3vw;
     position: relative;
 }

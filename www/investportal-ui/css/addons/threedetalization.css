@@ -18,7 +18,9 @@
 #threedetal-right{
     right: 390px;
     top: 15px;
-    
+    -webkit-box-shadow: 8px -6px 6px 0px rgba(50, 50, 50, 0.75);
+    -moz-box-shadow:    8px -6px 6px 0px rgba(50, 50, 50, 0.75);
+    box-shadow:         8px -6px 6px 0px rgba(50, 50, 50, 0.75);
 }
 #threedetal-left, #threedetal-right{
     width: 17%;
@@ -41,37 +43,37 @@
 }
 @media all and (min-width:1024px) and (max-width: 1100px){
     #threedetal-left {
-        left: 8vw;
+        left: 86px;
         top: 1vw;
     }
     #threedetal-right {
-        right: -3vw;
+        right: -44px;
         top: 2vw;
     }
     #investsearch > main .popular-objects #threedetal-left {
-        left: 9vw;
+        left: 89px;
         top: -2vw;
     }
     #investsearch > main .popular-objects #threedetal-right {
-        right: -4vw;
-        top: -1vw;
+        right: -5vw;
+        top: -6px;
     }
 }
 @media all and (min-width:1100px) and (max-width: 1181px){
     #threedetal-left {
-        left: 9vw;
+        left: -206px;
         top: 1vw;
     }
     #threedetal-right {
-        right: -3vw;
+        right: -4vw;
         top: 2vw;
     }
     #investsearch > main .popular-objects #threedetal-left {
-        left: 9vw;
+        left: 8vw;
         top: -2vw;
     }
     #investsearch > main .popular-objects #threedetal-right {
-        right: -4vw;
+        right: -53px;
         top: -1vw;
     }
 }
@@ -81,39 +83,21 @@
         top: 1vw;
     }
     #threedetal-right {
-        right: -3vw;
+        right: -4vw;
         top: 2vw;
     }
     #investsearch > main .popular-objects #threedetal-left {
-        left: 9vw;
+        left: 8vw;
         top: -2vw;
     }
     #investsearch > main .popular-objects #threedetal-right {
-        right: -4vw;
+        right: -56px;
         top: -1vw;
     }
 }
 @media all and (min-width:1280px) and (max-width: 1366px){
     #threedetal-left {
-        left: 8vw;
-        top: 1vw;
-    }
-    #threedetal-right {
-        right: -3vw;
-        top: 2vw;
-    }
-    #investsearch > main .popular-objects #threedetal-left {
-        left: 9vw;
-        top: -2vw;
-    }
-    #investsearch > main .popular-objects #threedetal-right {
-        right: -4vw;
-        top: -1vw;
-    }
-}
-@media all and (min-width:1366px) and (max-width: 1400px){
-    #threedetal-left {
-        left: 9vw;
+        left: 104px;
         top: 1vw;
     }
     #threedetal-right {
@@ -121,25 +105,7 @@
         top: 2vw;
     }
     #investsearch > main .popular-objects #threedetal-left {
-        left: 9vw;
-        top: -2vw;
-    }
-    #investsearch > main .popular-objects #threedetal-right {
-        right: -4vw;
-        top: -1vw;
-    }
-}
-@media all and (min-width:1400px) and (max-width: 1600px){
-    #threedetal-left {
-        left: 8vw;
-        top: 1vw;
-    }
-    #threedetal-right {
-        right: -51px;
-        top: 2vw;
-    }
-    #investsearch > main .popular-objects #threedetal-left {
-        left: 9vw;
+        left: -190px;
         top: -2vw;
     }
     #investsearch > main .popular-objects #threedetal-right {
@@ -147,21 +113,57 @@
         top: -1vw;
     }
 }
-@media all and (min-width:1600px) and (max-width: 1800px){
+@media all and (min-width:1366px) and (max-width: 1400px){
     #threedetal-left {
         left: 8vw;
         top: 1vw;
     }
     #threedetal-right {
-        right: -52px;
+        right: -4vw;
         top: 2vw;
     }
     #investsearch > main .popular-objects #threedetal-left {
-        left: 9vw;
+        left: 8vw;
         top: -2vw;
     }
     #investsearch > main .popular-objects #threedetal-right {
-        right: -4vw;
+        right: -64px;
+        top: -1vw;
+    }
+}
+@media all and (min-width:1400px) and (max-width: 1600px){
+    #threedetal-left {
+        left: 124px;
+        top: 1vw;
+    }
+    #threedetal-right {
+        right: -62px;
+        top: 2vw;
+    }
+    #investsearch > main .popular-objects #threedetal-left {
+        left: 8vw;
+        top: -2vw;
+    }
+    #investsearch > main .popular-objects #threedetal-right {
+        right: -68px;
+        top: -1vw;
+    }
+}
+@media all and (min-width:1600px) and (max-width: 1800px){
+    #threedetal-left {
+        left: 129px;
+        top: 1vw;
+    }
+    #threedetal-right {
+        right: -65px;
+        top: 2vw;
+    }
+    #investsearch > main .popular-objects #threedetal-left {
+        left: 133px;
+        top: -2vw;
+    }
+    #investsearch > main .popular-objects #threedetal-right {
+        right: -78px;
         top: -1vw;
     }
 }
