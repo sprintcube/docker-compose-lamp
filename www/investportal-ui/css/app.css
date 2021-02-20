@@ -488,7 +488,6 @@ h1, h2, h3, h4, h5, h6, strong{
     width: 17%;
     display: inline-table;
     background-color: white;
-    box-shadow: 3px -1px 11px 3px darkgray;
     margin-left: -31%;
 }
 #investsearch > main .popular-objects .popular-object:hover{

@@ -27,16 +27,12 @@ CSS-код:
     position: relative;
     background-color: white;
     display: flex;
-    -webkit-box-shadow: 6px -7px 4px 0px rgba(130, 130, 130, 0.74);
-    -moz-box-shadow: 6px -7px 4px 0px rgba(130, 130, 130, 0.74);
-    box-shadow: 6px -7px 4px 0px rgba(130, 130, 130, 0.74);
+    
 }
 #promo > main .promo-feed .promoblock, #investsearch > main .popular-objects .popular-object{
     position: relative;
     z-index: 99;
-    -webkit-box-shadow: 6px 6px 4px 0px rgba(130, 130, 130, 0.74);
-    -moz-box-shadow: 6px 6px 4px 0px rgba(130, 130, 130, 0.74);
-    box-shadow: 6px 6px 4px 0px rgba(130, 130, 130, 0.74);
+    
 }
 #investsearch > main .popular-objects #threedetal-left{
     left: -246px;
