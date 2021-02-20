@@ -57,7 +57,8 @@ const PromoBlocksThreeDetals = () => {
 
     for (let index = 0; index < promos.length; index++) {
         const el_size = promos[index];
-        threed.height(el_size.height() - 60);
+        threed.height(el_size.height() - 80);
+
           
     }
 
@@ -70,8 +71,8 @@ const PromoBlocksThreeDetalsAppend = () => {
     for (let index = 0; index < promos.length; index++) {
         const el_size = promos[index];
 
-        el_size.before('<div id="threedetal-left">&nbsp;</div>');
-        el_size.after('<div id="threedetal-right">&nbsp;</div>');
+        el_size.before('<div id="threedetal-left"><span style="width: 95%;height: 100%;background-color: white;margin-left: 5%;">&nbsp;</span></div>');
+        el_size.after('<div id="threedetal-right"><span style="width: 95%;height: 100%;background-color: white;margin-left: 5%;">&nbsp;</span></div>');
 
     }
 }

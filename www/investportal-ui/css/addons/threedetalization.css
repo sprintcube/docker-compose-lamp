@@ -25,13 +25,11 @@
 #threedetal-left, #threedetal-right{
     width: 17%;
     position: relative;
-    background-color: white;
     display: flex;
 }
 #promo > main .promo-feed .promoblock, #investsearch > main .popular-objects .popular-object{
     position: relative;
     z-index: 99;
-    
 }
 #investsearch > main .popular-objects #threedetal-left{
     left: -246px;
@@ -43,97 +41,7 @@
 }
 @media all and (min-width:1024px) and (max-width: 1100px){
     #threedetal-left {
-        left: 86px;
-        top: 1vw;
-    }
-    #threedetal-right {
-        right: -44px;
-        top: 2vw;
-    }
-    #investsearch > main .popular-objects #threedetal-left {
-        left: 89px;
-        top: -2vw;
-    }
-    #investsearch > main .popular-objects #threedetal-right {
-        right: -5vw;
-        top: -6px;
-    }
-}
-@media all and (min-width:1100px) and (max-width: 1181px){
-    #threedetal-left {
-        left: -206px;
-        top: 1vw;
-    }
-    #threedetal-right {
-        right: -4vw;
-        top: 2vw;
-    }
-    #investsearch > main .popular-objects #threedetal-left {
-        left: 8vw;
-        top: -2vw;
-    }
-    #investsearch > main .popular-objects #threedetal-right {
-        right: -53px;
-        top: -1vw;
-    }
-}
-@media all and (min-width:1181px) and (max-width: 1280px){
-    #threedetal-left {
-        left: 8vw;
-        top: 1vw;
-    }
-    #threedetal-right {
-        right: -4vw;
-        top: 2vw;
-    }
-    #investsearch > main .popular-objects #threedetal-left {
-        left: 8vw;
-        top: -2vw;
-    }
-    #investsearch > main .popular-objects #threedetal-right {
-        right: -56px;
-        top: -1vw;
-    }
-}
-@media all and (min-width:1280px) and (max-width: 1366px){
-    #threedetal-left {
-        left: 104px;
-        top: 1vw;
-    }
-    #threedetal-right {
-        right: -4vw;
-        top: 2vw;
-    }
-    #investsearch > main .popular-objects #threedetal-left {
-        left: -190px;
-        top: -2vw;
-    }
-    #investsearch > main .popular-objects #threedetal-right {
-        right: -61px;
-        top: -1vw;
-    }
-}
-@media all and (min-width:1366px) and (max-width: 1400px){
-    #threedetal-left {
-        left: 8vw;
-        top: 1vw;
-    }
-    #threedetal-right {
-        right: -4vw;
-        top: 2vw;
-    }
-    #investsearch > main .popular-objects #threedetal-left {
-        left: 8vw;
-        top: -2vw;
-    }
-    #investsearch > main .popular-objects #threedetal-right {
-        right: -64px;
-        top: -1vw;
-    }
-}
-@media all and (min-width:1400px) and (max-width: 1600px){
-    #threedetal-left {
-        left: 124px;
+        left: 109px;
         top: 1vw;
     }
     #threedetal-right {
@@ -141,17 +49,56 @@
         top: 2vw;
     }
     #investsearch > main .popular-objects #threedetal-left {
-        left: 8vw;
+        left: 104px;
+        top: -3vw;
+    }
+    #investsearch > main .popular-objects #threedetal-right {
+        right: -55px;
+        top: -1vw;
+    }
+    #promo > main .promo-feed .promoblock{left: 11px;}
+}
+@media all and (min-width:1100px) and (max-width: 1181px){
+    #threedetal-left {
+        left: 108px;
+        top: 1vw;
+    }
+    #threedetal-right {
+        right: -57px;
+        top: 2vw;
+    }
+    #investsearch > main .popular-objects #threedetal-left {
+        left: 130px;
+        top: -3vw;
+    }
+    #investsearch > main .popular-objects #threedetal-right {
+        right: -70px;
+        top: -1vw;
+    }
+    #promo > main .promo-feed .promoblock{left: 3px;}
+}
+@media all and (min-width:1181px) and (max-width: 1280px){
+    #threedetal-left {
+        left: 114px;
+        top: 1vw;
+    }
+    #threedetal-right {
+        right: -59px;
+        top: 2vw;
+    }
+    #investsearch > main .popular-objects #threedetal-left {
+        left: 135px;
         top: -2vw;
     }
     #investsearch > main .popular-objects #threedetal-right {
-        right: -68px;
+        right: -72px;
         top: -1vw;
     }
+    #promo > main .promo-feed .promoblock{left: 4px;}
 }
-@media all and (min-width:1600px) and (max-width: 1800px){
-    #threedetal-left {
-        left: 129px;
+@media all and (min-width:1280px) and (max-width: 1366px){
+   #threedetal-left {
+        left: 126px;
         top: 1vw;
     }
     #threedetal-right {
@@ -159,11 +106,69 @@
         top: 2vw;
     }
     #investsearch > main .popular-objects #threedetal-left {
-        left: 133px;
+        left: 145px;
         top: -2vw;
     }
     #investsearch > main .popular-objects #threedetal-right {
         right: -78px;
         top: -1vw;
     }
+    #promo > main .promo-feed .promoblock{left: 6px;}
+}
+@media all and (min-width:1366px) and (max-width: 1400px){
+    #threedetal-left {
+        left: 129px;
+        top: 16px;
+    }
+    #threedetal-right {
+        right: -67px;
+        top: 2vw;
+    }
+    #investsearch > main .popular-objects #threedetal-left {
+        left: 154px;
+        top: -2vw;
+    }
+    #investsearch > main .popular-objects #threedetal-right {
+        right: -85px;
+        top: -1vw;
+    }
+    #promo > main .promo-feed .promoblock{left: 5px;}
+}
+@media all and (min-width:1400px) and (max-width: 1600px){
+    #threedetal-left {
+        left: 138px;
+        top: 18px;
+    }
+    #threedetal-right {
+        right: -70px;
+        top: 2vw;
+    }
+    #investsearch > main .popular-objects #threedetal-left {
+        left: 160px;
+        top: -21px;
+    }
+    #investsearch > main .popular-objects #threedetal-right {
+        right: -88px;
+        top: -8px;
+    }
+    #promo > main .promo-feed .promoblock{left: 4px;}
+}
+@media all and (min-width:1600px) and (max-width: 1800px){
+    #threedetal-left {
+        left: 147px;
+        top: 25px;
+    }
+    #threedetal-right {
+        right: -74px;
+        top: 2vw;
+    }
+    #investsearch > main .popular-objects #threedetal-left {
+        left: 104px;
+        top: -3vw;
+    }
+    #investsearch > main .popular-objects #threedetal-right {
+        right: -55px;
+        top: -1vw;
+    }
+    #promo > main .promo-feed .promoblock{left: 4px;}
 }

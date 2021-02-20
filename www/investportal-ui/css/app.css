@@ -183,7 +183,7 @@ h1, h2, h3, h4, h5, h6, strong{
 }
 
 #promo{ height: 378px; }
-#news{ height:174px; padding-top: 7%; }
+#news{ height:174px; padding-top: 9%; }
 #investsearch{ height: 470px; }
 #services{ height: 250px; }
 #analytics{ height: 245px; }
@@ -285,7 +285,7 @@ h1, h2, h3, h4, h5, h6, strong{
         border-radius: 10px 10px 10px 10px;
 }
 #promo > main .promo-feed{
-    width: 134%;
+    width: 135%;
     display: flex;
     display: -webkit-box;
     display: -webkit-flex;
@@ -295,12 +295,15 @@ h1, h2, h3, h4, h5, h6, strong{
     margin-left: -23%;
 }
 #promo > main .promo-feed .promoblock{
-    width: 17%;
+    width: 16%;
     display: inline-table;
     background-color: white;
-    margin-left: -32%;
+    margin-left: -31%;
     padding-right: 1%;
     margin-top: 2%;
+    -webkit-box-shadow: 8px -6px 6px 0px rgba(50, 50, 50, 0.75);
+    -moz-box-shadow: 8px -6px 6px 0px rgba(50, 50, 50, 0.75);
+    box-shadow: 8px -6px 6px 0px rgba(50, 50, 50, 0.75);
 }
 #promo > main .promo-feed .promoblock:hover{
     cursor: pointer;
@@ -316,7 +319,7 @@ h1, h2, h3, h4, h5, h6, strong{
     margin-left: 0%;
     text-transform: uppercase;
     padding-top: 3%;
-    padding-right: 7px;
+    padding-right: 8px;
     padding-left: 4%;
 }
 #promo > main .promo-feed .promoblock header a{
@@ -475,7 +478,7 @@ h1, h2, h3, h4, h5, h6, strong{
     text-decoration: underline;
 }
 #investsearch > main .popular-objects{
-    width: 114%;
+    width: 139%;
     display: flex;
     display: -webkit-box;
     display: -webkit-flex;
@@ -489,6 +492,9 @@ h1, h2, h3, h4, h5, h6, strong{
     display: inline-table;
     background-color: white;
     margin-left: -31%;
+    -webkit-box-shadow: 8px -6px 6px 0px rgba(50, 50, 50, 0.75);
+    -moz-box-shadow: 8px -6px 6px 0px rgba(50, 50, 50, 0.75);
+    box-shadow: 8px -6px 6px 0px rgba(50, 50, 50, 0.75);
 }
 #investsearch > main .popular-objects .popular-object:hover{
     cursor: pointer;
@@ -525,6 +531,9 @@ h1, h2, h3, h4, h5, h6, strong{
     margin-top: -2%;
     padding-bottom: 4%;
     padding-top: 4%;
+    -webkit-box-shadow: 8px -6px 6px 0px rgba(50, 50, 50, 0.75);
+    -moz-box-shadow: 8px -6px 6px 0px rgba(50, 50, 50, 0.75);
+    box-shadow: 8px -6px 6px 0px rgba(50, 50, 50, 0.75);
 }
 #investsearch > main .popular-objects .popular-object footer .info{
     display: block;
@@ -1097,8 +1106,8 @@ h1, h2, h3, h4, h5, h6, strong{
         height: 317px;
     }
     #promo > main .promo-feed,  #investsearch > main .popular-objects{
-        margin-left: 1%;
-        margin-top: 2%;
+        margin-left: -2%;
+        margin-top: 1%;
     }
     #promo > main .promo-feed .promoblock header {
         height: 34px;
@@ -1573,7 +1582,7 @@ h1, h2, h3, h4, h5, h6, strong{
     }
     #promo > main .promo-feed,  #investsearch > main .popular-objects{
         margin-left: 1%;
-        margin-top: 2%;
+        margin-top: 0%;
     }
     #promo > main .promo-feed .promoblock main img {
         height: 79px;
