@@ -31,144 +31,84 @@
     position: relative;
     z-index: 99;
 }
-#investsearch > main .popular-objects #threedetal-left{
-    left: -246px;
-    top: -26px;
-}
-#investsearch > main .popular-objects #threedetal-right{
-    right: 326px;
-    top: -9px;
+#investsearch > main .popular-objects #threedetal-left, #investsearch > main .popular-objects #threedetal-right{
+    visibility: hidden;
 }
 @media all and (min-width:1024px) and (max-width: 1100px){
     #threedetal-left {
         left: 109px;
-        top: 1vw;
+        top: 15px;
     }
     #threedetal-right {
         right: -62px;
         top: 2vw;
     }
-    #investsearch > main .popular-objects #threedetal-left {
-        left: 104px;
-        top: -3vw;
-    }
-    #investsearch > main .popular-objects #threedetal-right {
-        right: -55px;
-        top: -1vw;
-    }
+   
     #promo > main .promo-feed .promoblock{left: 11px;}
 }
 @media all and (min-width:1100px) and (max-width: 1181px){
     #threedetal-left {
         left: 108px;
-        top: 1vw;
+        top: 20px;
     }
     #threedetal-right {
         right: -57px;
-        top: 2vw;
-    }
-    #investsearch > main .popular-objects #threedetal-left {
-        left: 130px;
-        top: -3vw;
-    }
-    #investsearch > main .popular-objects #threedetal-right {
-        right: -70px;
-        top: -1vw;
+        top: 25px;
     }
     #promo > main .promo-feed .promoblock{left: 3px;}
 }
 @media all and (min-width:1181px) and (max-width: 1280px){
     #threedetal-left {
         left: 114px;
-        top: 1vw;
+        top: 22px;
     }
     #threedetal-right {
         right: -59px;
-        top: 2vw;
-    }
-    #investsearch > main .popular-objects #threedetal-left {
-        left: 135px;
-        top: -2vw;
-    }
-    #investsearch > main .popular-objects #threedetal-right {
-        right: -72px;
-        top: -1vw;
+        top: 27px;
     }
     #promo > main .promo-feed .promoblock{left: 4px;}
 }
 @media all and (min-width:1280px) and (max-width: 1366px){
    #threedetal-left {
-        left: 126px;
-        top: 1vw;
+        left: 124px;
+        top: 25px;
     }
     #threedetal-right {
         right: -65px;
-        top: 2vw;
-    }
-    #investsearch > main .popular-objects #threedetal-left {
-        left: 145px;
-        top: -2vw;
-    }
-    #investsearch > main .popular-objects #threedetal-right {
-        right: -78px;
-        top: -1vw;
+        top: 30px;
     }
     #promo > main .promo-feed .promoblock{left: 6px;}
 }
 @media all and (min-width:1366px) and (max-width: 1400px){
     #threedetal-left {
         left: 129px;
-        top: 16px;
+        top: 26px;
     }
     #threedetal-right {
         right: -67px;
-        top: 2vw;
-    }
-    #investsearch > main .popular-objects #threedetal-left {
-        left: 154px;
-        top: -2vw;
-    }
-    #investsearch > main .popular-objects #threedetal-right {
-        right: -85px;
-        top: -1vw;
+        top: 32px;
     }
     #promo > main .promo-feed .promoblock{left: 5px;}
 }
 @media all and (min-width:1400px) and (max-width: 1600px){
     #threedetal-left {
         left: 138px;
-        top: 18px;
+        top: 28px;
     }
     #threedetal-right {
         right: -70px;
-        top: 2vw;
-    }
-    #investsearch > main .popular-objects #threedetal-left {
-        left: 160px;
-        top: -21px;
-    }
-    #investsearch > main .popular-objects #threedetal-right {
-        right: -88px;
-        top: -8px;
+        top: 33px;
     }
     #promo > main .promo-feed .promoblock{left: 4px;}
 }
 @media all and (min-width:1600px) and (max-width: 1800px){
     #threedetal-left {
         left: 147px;
-        top: 25px;
+        top: 29px;
     }
     #threedetal-right {
         right: -74px;
-        top: 2vw;
-    }
-    #investsearch > main .popular-objects #threedetal-left {
-        left: 104px;
-        top: -3vw;
-    }
-    #investsearch > main .popular-objects #threedetal-right {
-        right: -55px;
-        top: -1vw;
+        top: 36px;
     }
     #promo > main .promo-feed .promoblock{left: 4px;}
 }
