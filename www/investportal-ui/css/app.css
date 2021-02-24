@@ -151,7 +151,7 @@ h1, h2, h3, h4, h5, h6, strong{
 }
 .main > .section{
     width: 100%;
-    height: 880px;
+    height: 764px;
     display: block;
     padding-bottom: 9%;
     padding-top: 6%;
@@ -184,12 +184,12 @@ h1, h2, h3, h4, h5, h6, strong{
 }
 
 #promo{ height: 378px; }
-#news{ height:174px; padding-top: 9%; }
+#news{ height:106px; padding-top: 10%; }
 #investsearch{ height: 470px; }
-#services{ height: 250px; }
-#analytics{ height: 245px; }
-#estate{ height: 200px;}
-#reviews{ height: 252px; }
+#services{ height: 108px; padding-top: 41px;}
+#analytics{ height: 263px; padding-top: 77px;}
+#estate{ height: 124px;padding-top: 37px;}
+#reviews{ height: 208px; padding-top: 113px;}
 #link-switcher{
     width: 100%;
     background-color: white;
@@ -235,6 +235,7 @@ h1, h2, h3, h4, h5, h6, strong{
     display: block;
     margin-top: 2%; 
     width: 9%;
+    background-color: transparent;
 }
 #promo > header .add-but{
    color: gray;
@@ -588,11 +589,11 @@ h1, h2, h3, h4, h5, h6, strong{
 }
 #eventcalendar > main .calendar header{
     float: left;
-    font-size: calc(114% * 2);
+    font-size: calc(152% * 2);
     font-weight: bold;
     display: inline;
     width: 10%;
-    color: black;
+    margin-left: 4%;
 }
 #eventcalendar > main .calendar .date{
     position: relative;
@@ -601,6 +602,7 @@ h1, h2, h3, h4, h5, h6, strong{
 #eventcalendar > main .calendar main{
     display: inline;
     width: 5%;
+    margin-left: 3%;
 }
 #eventcalendar > main .calendar main img{
     margin-left: 2%;
@@ -670,6 +672,7 @@ h1, h2, h3, h4, h5, h6, strong{
     display: inline-table;
     box-shadow: 3px -1px 11px 3px darkgray;
     margin-left: 6%;
+    background-color: white;
 }
 #services > main #slider-view .service-feed .service header{
     background-color: darkgray;
@@ -704,7 +707,7 @@ h1, h2, h3, h4, h5, h6, strong{
 #services > main #slider-view .service-feed .service footer{
     display: block;
     width: 100%;
-    font-size: 86%;
+    font-size: 87%;
     margin-left: 2%;
     padding-top: 2%;
     padding-bottom: 2%;
@@ -721,11 +724,9 @@ h1, h2, h3, h4, h5, h6, strong{
 }
 #services > main #slider-view .service-feed .service footer .descr{
     display: block;
+    text-align: justify;
+    width: 92%;
 }
-
-
-
-
 
 #analytics > header{
     width: 20%;
@@ -828,6 +829,7 @@ h1, h2, h3, h4, h5, h6, strong{
     display: inline-table;
     box-shadow: 3px -1px 11px 3px darkgray;
     margin-left: 6%;
+    background-color: white;
 }
 #estate > main #slider-view .estat-feed .estat header{
     background-color: darkgray;
@@ -944,11 +946,11 @@ h1, h2, h3, h4, h5, h6, strong{
    margin-left: -11%;
 }
 #reviews > main #slider-view .review-feed .review{
-    width: 25%;
+    width: 27%;
     height: 204px;
     display: inline-table;
     box-shadow: 3px -1px 11px 3px darkgray;
-    margin-left: 7%;
+    margin-left: 5%;
     padding-bottom: 2%;
     background-color: white;
 }
@@ -1115,8 +1117,8 @@ h1, h2, h3, h4, h5, h6, strong{
         font-size: 95%;
     }
     #investsearch {
-        height: 554px;
-        padding-top: 12%;
+        height: 527px;
+        padding-top: 8%;
         padding-bottom: 0%;
     }
     #investsearch > main .popular-objects .popular-object header {
@@ -1132,8 +1134,8 @@ h1, h2, h3, h4, h5, h6, strong{
         font-size: 73%;
     }
     #services {
-        height: 250px;
-        padding-top: 1%;
+        height: 109px;
+        padding-top: 3%;
     }
     #services > main #slider-controller img {
         width: 44%;
@@ -1165,7 +1167,7 @@ h1, h2, h3, h4, h5, h6, strong{
         display: none;
     }
     #estate {
-        height: 249px;
+        height: 187px;
     }
     #estate > main #slider-controller img {
         width: 42%;
@@ -1219,7 +1221,7 @@ h1, h2, h3, h4, h5, h6, strong{
     }
     #investsearch > header a {
         margin-left: 108px;
-        top: -60px;
+        top: -42px;
         position: relative;
     }
     #eventcalendar > main .calendar footer {
@@ -1315,7 +1317,7 @@ h1, h2, h3, h4, h5, h6, strong{
     }
     #investsearch {
         height: 521px;
-        padding-top: 8%;
+        padding-top: 3%;
         padding-bottom: 0%;
     }
     #investsearch > main .popular-objects .popular-object header {
@@ -1331,8 +1333,8 @@ h1, h2, h3, h4, h5, h6, strong{
         font-size: 73%;
     }
     #services {
-        height: 250px;
-        padding-top: 3%;
+        height: 84px;
+        padding-top: 4%;
     }
     #services > main #slider-controller img {
         width: 44%;
@@ -1364,7 +1366,7 @@ h1, h2, h3, h4, h5, h6, strong{
         display: none;
     }
     #estate {
-        height: 249px;
+        height: 163px;
     }
     #estate > main #slider-controller img {
         width: 42%;
@@ -1414,7 +1416,7 @@ h1, h2, h3, h4, h5, h6, strong{
     }
     #investsearch > header a {
         margin-left: 126px;
-        margin-top: 9px;
+        margin-top: 20px;
     }
     #eventcalendar > main .calendar footer {
         margin-top: 2%;
@@ -1484,7 +1486,7 @@ h1, h2, h3, h4, h5, h6, strong{
         font-size: 104%;
     }
     #investsearch {
-        height: 417px;
+        height: 475px;
     }
     #investsearch > main .popular-objects .popular-object header {
         height: 27px;
@@ -1514,7 +1516,7 @@ h1, h2, h3, h4, h5, h6, strong{
     }
     #investsearch > header a {
         margin-left: 133px;
-        margin-top: 8px;
+        margin-top: 19px;
     }
     #eventcalendar > main .calendar footer {
         margin-top: 1%;
@@ -1614,7 +1616,7 @@ h1, h2, h3, h4, h5, h6, strong{
     }
     #investsearch > header a {
         margin-left: 10%;
-        margin-top: 10px;
+        margin-top: 18px;
     }
     #eventcalendar > main .calendar footer {
         margin-top: 1%;
@@ -1659,8 +1661,8 @@ h1, h2, h3, h4, h5, h6, strong{
         font-size: 116%;
     }
     #investsearch {
-        height: 450px;
-        padding-top: 10%;
+        height: 509px;
+        padding-top: 4%;
     }
     #investsearch > main .popular-objects .popular-object header {
         height: 27px;
@@ -1694,7 +1696,7 @@ h1, h2, h3, h4, h5, h6, strong{
     }
     #investsearch > header a {
         margin-left: 150px;
-        margin-top: 9px;
+        margin-top: 18px;
     }
     #eventcalendar > main .calendar footer {
         margin-top: 1%;
