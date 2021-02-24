@@ -35,90 +35,114 @@
     visibility: hidden;
 }
 @media all and (min-width:1024px) and (max-width: 1100px){
+    #promo > main .promo-feed .promoblock header {
+        padding-right: 8px;
+    }
     #threedetal-left {
-        left: 109px;
+        left: -201px;
         top: 18px;
     }
     #threedetal-right {
-        right: -62px;
-        top: 22px;
+        right: 254px;
+        top: 24px;
     }
    
     #promo > main .promo-feed .promoblock{left: 11px;}
 }
 @media all and (min-width:1100px) and (max-width: 1181px){
+    #promo > main .promo-feed .promoblock header {
+        padding-right: 8px;
+    }
     #threedetal-left {
-        left: 108px;
+        left: -215px;
         top: 22px;
     }
     #threedetal-right {
-        right: -57px;
-        top: 26px;
+        right: 270px;
+        top: 27px;
     }
     #promo > main .promo-feed .promoblock{left: 3px;}
 }
 @media all and (min-width:1181px) and (max-width: 1280px){
+    #promo > main .promo-feed .promoblock header {
+        padding-right: 8px;
+    }
     #threedetal-left {
-        left: 114px;
+        left: -231px;
         top: 24px;
     }
     #threedetal-right {
-        right: -59px;
-        top: 28px;
+        right: 290px;
+        top: 29px;
     }
     #promo > main .promo-feed .promoblock{left: 4px;}
 }
 @media all and (min-width:1280px) and (max-width: 1366px){
+   #promo > main .promo-feed .promoblock header {
+        padding-right: 8px;
+   }
    #threedetal-left {
-        left: 124px;
+        left: -253px;
         top: 27px;
     }
     #threedetal-right {
-        right: -65px;
-        top: 31px;
+        right: 317px;
+        top: 33px;
     }
     #promo > main .promo-feed .promoblock{left: 6px;}
 }
 @media all and (min-width:1366px) and (max-width: 1400px){
+    #promo > main .promo-feed .promoblock header {
+        padding-right: 8px;
+    }
     #threedetal-left {
-        left: 129px;
-        top: 26px;
+        left: -267px;
+        top: 29px;
     }
     #threedetal-right {
-        right: -67px;
-        top: 32px;
+        right: 335px;
+        top: 34px;
     }
     #promo > main .promo-feed .promoblock{left: 5px;}
 }
 @media all and (min-width:1400px) and (max-width: 1600px){
+    #promo > main .promo-feed .promoblock header {
+        padding-right: 8px;
+    }
     #threedetal-left {
-        left: 138px;
-        top: 31px;
+        left: -298px;
+        top: 34px;
     }
     #threedetal-right {
-        right: -70px;
-        top: 35px;
+        right: 372px;
+        top: 39px;
     }
     #promo > main .promo-feed .promoblock{left: 4px;}
 }
-@media all and (min-width:1600px) and (max-width: 1800px){
+@media all and (min-width:1600px) and (max-width: 1680px){
+    #promo > main .promo-feed .promoblock header {
+        padding-right: 8px;
+    }
     #threedetal-left {
-        left: 147px;
-        top: 31px;
+        left: -319px;
+        top: 37px;
     }
     #threedetal-right {
-        right: -75px;
-        top: 36px;
+        right: 397px;
+        top: 42px;
     }
     #promo > main .promo-feed .promoblock{left: 4px;}
 }
-@media all and (min-width:1680px){
+@media all and (min-width:1680px) and (max-width: 1800px){
+    #promo > main .promo-feed .promoblock header {
+        padding-right: 9px;
+    }
     #threedetal-left {
-        left: 149px;
-        top: 35px;
+        left: -331px;
+        top: 39px;
     }
     #threedetal-right {
-        right: -75px;
-        top: 41px;
+        right: 412px;
+        top: 44px;
     }
 }

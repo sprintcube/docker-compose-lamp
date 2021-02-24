@@ -285,7 +285,7 @@ h1, h2, h3, h4, h5, h6, strong{
         border-radius: 10px 10px 10px 10px;
 }
 #promo > main .promo-feed{
-    width: 135%;
+    width: 147%;
     display: flex;
     display: -webkit-box;
     display: -webkit-flex;
@@ -319,7 +319,6 @@ h1, h2, h3, h4, h5, h6, strong{
     margin-left: 0%;
     text-transform: uppercase;
     padding-top: 3%;
-    padding-right: 8px;
     padding-left: 4%;
 }
 #promo > main .promo-feed .promoblock header a{
@@ -438,12 +437,13 @@ h1, h2, h3, h4, h5, h6, strong{
     display: block;
     margin-top: 2px;
     color: #0079bf;
-    font-size: 109%;
+    font-size: 106%;
     text-decoration: none;
     font-weight: bold;
     height: 64px;
     overflow: hidden;
     text-overflow: ellipsis;
+    word-spacing: 0.1em;
 }
 #news > main #slider-view .news-feed .news .descr{
     display: block;
