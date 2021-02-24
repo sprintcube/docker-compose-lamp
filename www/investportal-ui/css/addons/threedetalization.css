@@ -37,7 +37,7 @@
 @media all and (min-width:1024px) and (max-width: 1100px){
     #threedetal-left {
         left: 109px;
-        top: 15px;
+        top: 18px;
     }
     #threedetal-right {
         right: -62px;
@@ -49,7 +49,7 @@
 @media all and (min-width:1100px) and (max-width: 1181px){
     #threedetal-left {
         left: 108px;
-        top: 20px;
+        top: 22px;
     }
     #threedetal-right {
         right: -57px;
@@ -60,7 +60,7 @@
 @media all and (min-width:1181px) and (max-width: 1280px){
     #threedetal-left {
         left: 114px;
-        top: 22px;
+        top: 24px;
     }
     #threedetal-right {
         right: -59px;
@@ -71,7 +71,7 @@
 @media all and (min-width:1280px) and (max-width: 1366px){
    #threedetal-left {
         left: 124px;
-        top: 25px;
+        top: 27px;
     }
     #threedetal-right {
         right: -65px;
@@ -93,7 +93,7 @@
 @media all and (min-width:1400px) and (max-width: 1600px){
     #threedetal-left {
         left: 138px;
-        top: 28px;
+        top: 31px;
     }
     #threedetal-right {
         right: -70px;
@@ -104,11 +104,21 @@
 @media all and (min-width:1600px) and (max-width: 1800px){
     #threedetal-left {
         left: 147px;
-        top: 29px;
+        top: 31px;
     }
     #threedetal-right {
         right: -75px;
         top: 36px;
     }
     #promo > main .promo-feed .promoblock{left: 4px;}
+}
+@media all and (min-width:1680px){
+    #threedetal-left {
+        left: 149px;
+        top: 35px;
+    }
+    #threedetal-right {
+        right: -75px;
+        top: 41px;
+    }
 }

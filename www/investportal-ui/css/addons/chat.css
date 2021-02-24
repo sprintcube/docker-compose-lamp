@@ -70,6 +70,7 @@ main.chat > #footer #message{
     margin-top: 4px;
     font-size: 100%;
     border-radius: 5px;
+    resize: none;
 }
 main.chat > #footer #message:focus{
     border: solid 2px lightgray;

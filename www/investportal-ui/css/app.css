@@ -200,7 +200,7 @@ h1, h2, h3, h4, h5, h6, strong{
 #link-switcher > a{
     margin-left: 2%;
     color: #0079bf;
-    font-size: 90%;
+    font-size: 79%;
     text-decoration: none;
     padding-right: 1%;
     position: relative;
@@ -855,7 +855,7 @@ h1, h2, h3, h4, h5, h6, strong{
     object-fit: cover;
     height: 153px;
 }
-#estate > main #slider-view .estat-feed .estat:hover main img{
+#estate > main #slider-view .estat-feed .estat:hover main img, #investsearch > main .popular-objects .popular-object:hover main img{
     transform: scale(1.2);
 }
 #estate > main #slider-view .estat-feed .estat footer{
@@ -1670,6 +1670,9 @@ h1, h2, h3, h4, h5, h6, strong{
         top: -6%;
         left: 13%;
         position: relative;
+    }
+    .header > #header_top .ht_header {
+        left: -24%;
     }
     .header > #header_bottom{
         top: -74%;
