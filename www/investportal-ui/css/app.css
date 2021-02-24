@@ -7,12 +7,13 @@
 @import url('addons/adaptive_paths.css');
 @import url('addons/feedblocks/analytics.css');
 @import url('addons/feedblocks/reviews.css');
-html,body{
-    margin: 0;
-    padding: 0;
+body{
     font-family: 'Roboto', sans-serif;
-    width:100%; 
     overflow-x:hidden;
+    margin-left: -1%;
+    width: 102%;
+    margin-top: 0%;
+    margin-bottom: 0%;
 }
 h1, h2, h3, h4, h5, h6, strong{
     font-family: 'Open Sans', sans-serif;
@@ -414,51 +415,52 @@ h1, h2, h3, h4, h5, h6, strong{
 #news > main #slider-controller img{
     width: 18%;
     position: relative;
-    top: -155px;
+    top: -137px;
 }
 #news > main #slider-view{
-    width: 70%;
+    width: 71%;
     display: inline-block;
 }
 #news > main #slider-view .news-feed{
-   display: block; 
-   margin-left: -16%;
+   display: inline-block; 
+   margin-left: -17%;
    margin-top: 1%;
 }
 #news > main #slider-view .news-feed .news{
     display: inline-block;
-    width: 26%;
-    margin-left: 1%;
+    width: 31%;
     height: 183px;
+    margin-left: 1%;
 }
-#news > main #slider-view .news-feed .news:nth-child(2){ padding-left: 8%; }
-#news > main #slider-view .news-feed .news:nth-child(3){ padding-left: 10%; }
+#news > main #slider-view .news-feed .news:nth-child(2){  width: 34%;left: 4%;position: relative;}
+#news > main #slider-view .news-feed .news:nth-child(3){  left: 5%;position: relative;width: 31%;}
 #news > main #slider-view .news-feed .news a{
     display: block;
     margin-top: 2px;
     color: #0079bf;
-    font-size: 106%;
+    font-size: 102%;
     text-decoration: none;
     font-weight: bold;
     height: 64px;
     overflow: hidden;
     text-overflow: ellipsis;
     word-spacing: 0.1em;
+    letter-spacing: 0.06em;
 }
 #news > main #slider-view .news-feed .news .descr{
     display: block;
     margin-top: 8%;
-    font-size: 88%;
+    font-size: 90%;
     height: 108px;
     overflow: hidden;
     text-overflow: ellipsis;
-    margin-top: 2%;
+    margin-top: -2%;
     text-align: justify;
 }
 #news > main #slider-view .news-feed .news .date{
     display: block;
     margin-top: 11%;
-    font-size: 85%;
+    font-size: 96%;
     font-style: italic;
     color: gray;
     font-family: 'Times New Roman',serif;

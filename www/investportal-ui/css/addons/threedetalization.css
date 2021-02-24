@@ -107,7 +107,7 @@
 }
 @media all and (min-width:1400px) and (max-width: 1600px){
     #promo > main .promo-feed .promoblock header {
-        padding-right: 8px;
+        padding-right: 9px;
     }
     #threedetal-left {
         left: -298px;
@@ -121,14 +121,14 @@
 }
 @media all and (min-width:1600px) and (max-width: 1680px){
     #promo > main .promo-feed .promoblock header {
-        padding-right: 8px;
+        padding-right: 9px;
     }
     #threedetal-left {
-        left: -319px;
+        left: -312px;
         top: 37px;
     }
     #threedetal-right {
-        right: 397px;
+        right: 389px;
         top: 42px;
     }
     #promo > main .promo-feed .promoblock{left: 4px;}
