@@ -1,13 +1,18 @@
+#analytics > main #slider-view .analytic-feed .analytic:nth-child(1), #analytics > main #slider-view .analytic-feed .analytic:nth-child(1) *, #analytics > main #slider-view .analytic-feed .analytic:nth-child(1) .descr{
+    background-color: #0079bf;
+    color: white;
+}
 #analytics > main #slider-view .analytic-feed .analytic#with-title-image{
-    margin-top: -4%;
+    margin-top: -3%;
     position: relative;
-    top: 44px;
+    top: 107px;
 }
 #analytics > main #slider-view .analytic-feed .analytic#with-title-image img{
     width: 100%;
     object-fit: cover;
-    height: 78px;
+    height: 146px;
 }
-#analytics > main #slider-view .analytic-feed .analytic#with-title-image h2{
-    font-size: 102%;
+#analytics > main #slider-view .analytic-feed .analytic:nth-last-child(1){
+    top: -7px;
+    position: relative;
 }

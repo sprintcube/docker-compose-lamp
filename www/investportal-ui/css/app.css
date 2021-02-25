@@ -737,6 +737,7 @@ h1, h2, h3, h4, h5, h6, strong{
     width: 70%;
     float: right;
     display: inline-table;
+    margin-top: -5%;
 }
 #analytics > main #slider-controller{
     width: 10%;
@@ -757,7 +758,7 @@ h1, h2, h3, h4, h5, h6, strong{
 }
 #analytics > main #slider-view .analytic-feed .analytic{
     width: 28%;
-    height: 329px;
+    height: 336px;
     display: inline-table;
     box-shadow: 3px -1px 11px 3px darkgray;
     margin-left: 4%;
@@ -777,9 +778,12 @@ h1, h2, h3, h4, h5, h6, strong{
     margin-left: 3%;
     margin-top: 5%;
     color: #0079bf;
-    font-size: 110%;
+    font-size: 102%;
     overflow: hidden;
     text-overflow: ellipsis;
+}
+#analytics > main #slider-view .analytic-feed .analytic:nth-child(1) h2{
+    font-size: 147%;
 }
 #analytics > main #slider-view .analytic-feed .analytic .descr{
     display: block;
