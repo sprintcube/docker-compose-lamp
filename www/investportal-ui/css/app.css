@@ -186,7 +186,7 @@ h1, h2, h3, h4, h5, h6, strong{
 #promo{ height: 378px; }
 #news{ height:106px; padding-top: 10%; }
 #investsearch{ height: 470px; }
-#services{ height: 108px; padding-top: 41px;}
+#services{ height: 154px; padding-top: 41px;}
 #analytics{ height: 263px; padding-top: 77px;}
 #estate{ height: 124px;padding-top: 37px;}
 #reviews{ height: 208px; padding-top: 113px;}
@@ -556,9 +556,10 @@ h1, h2, h3, h4, h5, h6, strong{
     height: 38px;
 }
 #investsearch > main .popular-objects .popular-object footer .info span:nth-child(3){
-    font-size: 84%;
+    font-size: 96%;
     color: darkgray;
     font-style: italic;
+    font-family: 'Times New Roman', serif;
 }
 #investsearch > main .popular-objects .popular-object footer a{
     display: block;
@@ -625,10 +626,13 @@ h1, h2, h3, h4, h5, h6, strong{
     font-size: 109%;
     display: block;
     font-style: italic;
+    color: gray;
+    font-family: 'Times New Roman', serif;
 }
 #eventcalendar > main .calendar .descr{
-    font-size: 116%;
+    font-size: 108%;
     display: block;
+    color: gray;
 }
 
 #services > header{
@@ -667,12 +671,13 @@ h1, h2, h3, h4, h5, h6, strong{
     margin-left: -12%;
 }
 #services > main #slider-view .service-feed .service{
-    width: 26%;
+    width: 30%;
     height: 230px;
     display: inline-table;
     box-shadow: 3px -1px 11px 3px darkgray;
-    margin-left: 6%;
+    margin-left: 3%;
     background-color: white;
+    padding-bottom: 5%;
 }
 #services > main #slider-view .service-feed .service header{
     background-color: darkgray;
@@ -691,7 +696,7 @@ h1, h2, h3, h4, h5, h6, strong{
     background-color: #0079bf;
 }
 #services > main #slider-view .service-feed .service header h3{
-    margin-left: 2%;
+    margin-left: 7%;
 }
 #services > main #slider-view .service-feed .service main{
     width: 100%;
@@ -702,7 +707,7 @@ h1, h2, h3, h4, h5, h6, strong{
 #services > main #slider-view .service-feed .service main img{
     width: 50%;
     object-fit: cover;
-    margin-left: 2%;
+    margin-left: 7%;
 }
 #services > main #slider-view .service-feed .service footer{
     display: block;
@@ -711,6 +716,7 @@ h1, h2, h3, h4, h5, h6, strong{
     margin-left: 2%;
     padding-top: 2%;
     padding-bottom: 2%;
+    margin-left: 7%;
 }
 #services > main #slider-view .service-feed .service footer .title{
     font-weight: bold;
@@ -719,13 +725,14 @@ h1, h2, h3, h4, h5, h6, strong{
 #services > main #slider-view .service-feed .service footer .location{
     color: darkgray;
     font-style: italic;
-    font-size: 110%;
+    font-size: 101%;
     display: block;
+    font-family: 'Times New Roman', serif;
 }
 #services > main #slider-view .service-feed .service footer .descr{
     display: block;
     text-align: justify;
-    width: 92%;
+    width: 77%;
 }
 
 #analytics > header{
@@ -757,11 +764,11 @@ h1, h2, h3, h4, h5, h6, strong{
    margin-left: -12%;
 }
 #analytics > main #slider-view .analytic-feed .analytic{
-    width: 28%;
-    height: 336px;
+    width: 30%;
+    height: 342px;
     display: inline-table;
     box-shadow: 3px -1px 11px 3px darkgray;
-    margin-left: 4%;
+    margin-left: 3%;
     padding-bottom: 2%;
     background-color: white;
     padding-right: -1px;
@@ -775,29 +782,34 @@ h1, h2, h3, h4, h5, h6, strong{
 }
 #analytics > main #slider-view .analytic-feed .analytic h2{
     display: block;
-    margin-left: 3%;
+    margin-left: 7%;
     margin-top: 5%;
     color: #0079bf;
-    font-size: 102%;
+    font-size: 99%;
     overflow: hidden;
     text-overflow: ellipsis;
+    position: relative;
+    top: 0mm;
+    width: 81%;
 }
 #analytics > main #slider-view .analytic-feed .analytic:nth-child(1) h2{
-    font-size: 147%;
+    font-size: 153%;
 }
 #analytics > main #slider-view .analytic-feed .analytic .descr{
     display: block;
-    margin-left: 3%;
-    margin-top: 2%;
-    font-size: 87%;
+    margin-left: 7%;
+    margin-top: 7%;
+    font-size: 86%;
     color: darkgray;
+    width: 86%;
+    text-align: justify;
 }
 #analytics > main #slider-view .analytic-feed .analytic a{
     display: block;
-    margin-left: 3%;
+    margin-left: 8%;
     margin-top: 1%;
     color: #0079bf;
-    font-size: 100%;
+    font-size: 101%;
 }
 
 #estate > header{
@@ -828,11 +840,11 @@ h1, h2, h3, h4, h5, h6, strong{
     margin-left: -12%;
 }
 #estate > main #slider-view .estat-feed .estat{
-    width: 26%;
+    width: 30%;
     height: 181px;
     display: inline-table;
     box-shadow: 3px -1px 11px 3px darkgray;
-    margin-left: 6%;
+    margin-left: 3%;
     background-color: white;
 }
 #estate > main #slider-view .estat-feed .estat header{
@@ -950,11 +962,11 @@ h1, h2, h3, h4, h5, h6, strong{
    margin-left: -11%;
 }
 #reviews > main #slider-view .review-feed .review{
-    width: 27%;
+    width: 30%;
     height: 204px;
     display: inline-table;
     box-shadow: 3px -1px 11px 3px darkgray;
-    margin-left: 5%;
+    margin-left: 2%;
     padding-bottom: 2%;
     background-color: white;
 }
