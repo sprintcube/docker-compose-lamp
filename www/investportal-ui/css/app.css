@@ -678,11 +678,11 @@ h1, h2, h3, h4, h5, h6, strong{
     background-color: darkgray;
     color: white;
     text-transform: uppercase;
-    width: 102%;
+    width: 100%;
     display: block;
-    font-size: 94%;
+    font-size: 72%;
     float: left;
-    margin-left: -1%;
+    margin-left: 0;
 }
 #services > main #slider-view .service-feed .service:hover{
     cursor: pointer;
@@ -835,11 +835,11 @@ h1, h2, h3, h4, h5, h6, strong{
     background-color: darkgray;
     color: white;
     text-transform: uppercase;
-    width: 102%;
+    width: 100%;
     display: block;
     font-size: 78%;
     float: left;
-    margin-left: -1%;
+    margin-left: 0;
 }
 #estate > main #slider-view .estat-feed .estat:hover{
     cursor: pointer;
