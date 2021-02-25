@@ -481,7 +481,7 @@ h1, h2, h3, h4, h5, h6, strong{
     text-decoration: underline;
 }
 #investsearch > main .popular-objects{
-    width: 139%;
+    width: 146%;
     display: flex;
     display: -webkit-box;
     display: -webkit-flex;
@@ -506,7 +506,7 @@ h1, h2, h3, h4, h5, h6, strong{
     margin-left: 0%;
     padding-bottom: 4%;
     padding-top: 3%;
-    padding-right: 3%;
+    padding-right: 2%;
     padding-left: 4%;
 }
 #investsearch > main .popular-objects .popular-object header h3{
@@ -756,13 +756,14 @@ h1, h2, h3, h4, h5, h6, strong{
    margin-left: -12%;
 }
 #analytics > main #slider-view .analytic-feed .analytic{
-    width: 26%;
-    height: 137px;
+    width: 28%;
+    height: 329px;
     display: inline-table;
     box-shadow: 3px -1px 11px 3px darkgray;
-    margin-left: 6%;
+    margin-left: 4%;
     padding-bottom: 2%;
     background-color: white;
+    padding-right: -1px;
 }
 #analytics > main #slider-view .analytic-feed .analytic:hover {
     background-color: #0079bf;
@@ -773,24 +774,23 @@ h1, h2, h3, h4, h5, h6, strong{
 }
 #analytics > main #slider-view .analytic-feed .analytic h2{
     display: block;
-    margin-left: 1%;
-    margin-top: 1%;
+    margin-left: 3%;
+    margin-top: 5%;
     color: #0079bf;
-    font-size: 100%;
+    font-size: 110%;
     overflow: hidden;
     text-overflow: ellipsis;
-    height: 118px;
 }
 #analytics > main #slider-view .analytic-feed .analytic .descr{
     display: block;
-    margin-left: 1%;
-    margin-top: 1%;
+    margin-left: 3%;
+    margin-top: 2%;
     font-size: 87%;
     color: darkgray;
 }
 #analytics > main #slider-view .analytic-feed .analytic a{
     display: block;
-    margin-left: 1%;
+    margin-left: 3%;
     margin-top: 1%;
     color: #0079bf;
     font-size: 100%;
@@ -859,7 +859,7 @@ h1, h2, h3, h4, h5, h6, strong{
     object-fit: cover;
     height: 153px;
 }
-#estate > main #slider-view .estat-feed .estat:hover main img, #investsearch > main .popular-objects .popular-object:hover main img{
+#estate > main #slider-view .estat-feed .estat:hover main img{
     transform: scale(1.2);
 }
 #estate > main #slider-view .estat-feed .estat footer{
@@ -1153,18 +1153,12 @@ h1, h2, h3, h4, h5, h6, strong{
     #services > main #slider-view .service-feed .service footer .descr {
         font-size: 68%;
     }
-    #analytics > main #slider-view .analytic-feed .analytic {
-        height: 137px;
-    }
     #analytics > main #slider-controller img {
         width: 40%;
         top: 27px;
     }
     #analytics > main #slider-view .analytic-feed .analytic h2 {
         font-size: 93%;
-    }
-    #analytics > main #slider-view .analytic-feed .analytic .descr {
-        display: none;
     }
     #estate {
         height: 187px;
@@ -1352,18 +1346,12 @@ h1, h2, h3, h4, h5, h6, strong{
     #services > main #slider-view .service-feed .service footer .descr {
         font-size: 70%;
     }
-    #analytics > main #slider-view .analytic-feed .analytic {
-        height: 137px;
-    }
     #analytics > main #slider-controller img {
         width: 40%;
         top: 27px;
     }
     #analytics > main #slider-view .analytic-feed .analytic h2 {
         font-size: 97%;
-    }
-    #analytics > main #slider-view .analytic-feed .analytic .descr {
-        display: none;
     }
     #estate {
         height: 163px;
