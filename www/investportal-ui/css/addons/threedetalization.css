@@ -27,7 +27,7 @@
     -moz-box-shadow:    2px 0px 5px 0px rgba(50, 50, 50, 0.75);
     box-shadow:         2px 0px 5px 0px rgba(50, 50, 50, 0.75);
     width: 16%;
-    padding-right: 14px;
+    padding-right: 11px;
 }
 #threedetal-left, #threedetal-right{
     width: 17%;
@@ -51,11 +51,11 @@
         top: 24px;
     }
     #investsearch > main .popular-objects #threedetal-left {
-        left: -188px;
-        top: -9px;
+        left: -190px;
+        top: -10px;
     }
     #investsearch > main .popular-objects #threedetal-right {
-        right: 241px;
+        right: 238px;
         top: -4px;
     }
    
@@ -74,11 +74,11 @@
         top: 28px;
     }
     #investsearch > main .popular-objects #threedetal-left {
-        left: -214px;
-        top: -9px;
+        left: -206px;
+        top: -11px;
     }
     #investsearch > main .popular-objects #threedetal-right {
-        right: 259px;
+        right: 258px;
         top: -4px;
     }
     #promo > main .promo-feed .promoblock{left: 3px;}
@@ -96,11 +96,11 @@
         top: 29px;
     }
     #investsearch > main .popular-objects #threedetal-left {
-        left: -230px;
+        left: -225px;
         top: -10px;
     }
     #investsearch > main .popular-objects #threedetal-right {
-        right: 279px;
+        right: 282px;
         top: -4px;
     }
     #promo > main .promo-feed .promoblock{left: 4px;}
@@ -140,11 +140,11 @@
         top: 34px;
     }
     #investsearch > main .popular-objects #threedetal-left {
-        left: -263px;
-        top: -9px;
+        left: -257px;
+        top: -10px;
     }
     #investsearch > main .popular-objects #threedetal-right {
-        right: 319px;
+        right: 316px;
         top: -4px;
     }
     #promo > main .promo-feed .promoblock{left: 5px;}
@@ -162,11 +162,11 @@
         top: 39px;
     }
     #investsearch > main .popular-objects #threedetal-left {
-        left: -287px;
-        top: -9px;
+        left: -283px;
+        top: -11px;
     }
     #investsearch > main .popular-objects #threedetal-right {
-        right: 352px;
+        right: 346px;
         top: -5px;
     }
     #promo > main .promo-feed .promoblock{left: 4px;}
@@ -184,11 +184,11 @@
         top: 42px;
     }
     #investsearch > main .popular-objects #threedetal-left {
-        left: -299px;
-        top: -8px;
+        left: -298px;
+        top: -9px;
     }
     #investsearch > main .popular-objects #threedetal-right {
-        right: 366px;
+        right: 363px;
         top: -3px;
     }
     #promo > main .promo-feed .promoblock{left: 4px;}
@@ -206,8 +206,8 @@
         top: 44px;
     }
     #investsearch > main .popular-objects #threedetal-left {
-        left: -320px;
-        top: -9px;
+        left: -318px;
+        top: -11px;
     }
     #investsearch > main .popular-objects #threedetal-right {
         right: 385px;
