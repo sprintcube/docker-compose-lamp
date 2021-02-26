@@ -142,7 +142,7 @@ const VideoPlayerUI = (player) => {
     });
 }
 $(document).ready(function () {
-    OnlineChat();
+    //OnlineChat();
     PromoBlocksThreeDetalsAppend();
     PromoBlocksThreeDetals();
     MarketingHeadBannerAdaptive();

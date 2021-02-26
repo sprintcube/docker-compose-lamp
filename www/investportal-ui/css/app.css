@@ -188,8 +188,8 @@ h1, h2, h3, h4, h5, h6, strong{
 #investsearch{ height: 470px; }
 #services{ height: 154px; padding-top: 41px;}
 #analytics{ height: 263px; padding-top: 77px;}
-#estate{ height: 124px;padding-top: 37px;}
-#reviews{ height: 208px; padding-top: 113px;}
+#estate{ height: 185px;padding-top: 37px;}
+#reviews{ height: 208px; padding-top: 48px;}
 #link-switcher{
     width: 100%;
     background-color: white;
@@ -224,6 +224,9 @@ h1, h2, h3, h4, h5, h6, strong{
 #promo{
     background-image: url('../images/homepage-bg.jpg');
     background-size: cover;
+}
+#news > header, #investsearch > header, #eventcalendar > header{
+    margin-left: 11vw;
 }
 #promo > header h2, #promo > header strong{
     color: white;
@@ -408,15 +411,15 @@ h1, h2, h3, h4, h5, h6, strong{
     position: relative;
 }
 #news > main header#slider-controller{
-    left: -5%;
+    left: -1%;
 }
 #news > main footer#slider-controller{
-    right: -5%;
+    right: 0%;
 }
 #news > main #slider-controller img{
     width: 18%;
     position: relative;
-    top: -153px;
+    top: -150px;
 }
 #news > main #slider-view{
     width: 71%;
@@ -424,17 +427,17 @@ h1, h2, h3, h4, h5, h6, strong{
 }
 #news > main #slider-view .news-feed{
    display: inline-block; 
-   margin-left: -17%;
+   margin-left: -13%;
    margin-top: 1%;
 }
 #news > main #slider-view .news-feed .news{
     display: inline-block;
-    width: 29%;
+    width: 31%;
     height: 183px;
     margin-left: 1%;
 }
-#news > main #slider-view .news-feed .news:nth-child(2){  width: 30%;left: 5%;position: relative;}
-#news > main #slider-view .news-feed .news:nth-child(3){  left: 10%;position: relative;}
+#news > main #slider-view .news-feed .news:nth-child(2){  width: 30%;left: 0%;position: relative;}
+#news > main #slider-view .news-feed .news:nth-child(3){  left: 2%;position: relative;}
 #news > main #slider-view .news-feed .news a{
     display: block;
     margin-top: 2px;
@@ -580,13 +583,13 @@ h1, h2, h3, h4, h5, h6, strong{
 
 
 #eventcalendar > main{
-    width: 90%;
-    margin-left: 4%;
+    width: 87%;
+    margin-left: 10%;
     margin-top: 2%;
 }
 #eventcalendar > main .calendar{
     border-top: solid 1px black;
-    width: 100%;
+    width: 90%;
     height: 180px;
     padding-top: 10px;
     padding-bottom: 10px;
@@ -643,6 +646,8 @@ h1, h2, h3, h4, h5, h6, strong{
     width: 20%;
     float: left;
     display: inline-table;
+    position: relative;
+    left: 4vw;
 }
 #services > header a{
    text-decoration: none;
@@ -743,6 +748,8 @@ h1, h2, h3, h4, h5, h6, strong{
     width: 20%;
     float: left;
     display: inline-table;
+    position: relative;
+    left: 4vw;
 }
 #analytics > main{
     width: 70%;
@@ -820,6 +827,8 @@ h1, h2, h3, h4, h5, h6, strong{
     width: 20%;
     float: left;
     display: inline-table;
+    position: relative;
+    left: 4vw;
 }
 #estate > main{
     width: 70%;
@@ -844,11 +853,11 @@ h1, h2, h3, h4, h5, h6, strong{
     margin-left: -12%;
 }
 #estate > main #slider-view .estat-feed .estat{
-    width: 29%;
+    width: 26%;
     height: 181px;
     display: inline-table;
     box-shadow: 3px -1px 11px 3px darkgray;
-    margin-left: 3%;
+    margin-left: 6%;
     background-color: white;
 }
 #estate > main #slider-view .estat-feed .estat header{
@@ -940,6 +949,9 @@ h1, h2, h3, h4, h5, h6, strong{
     width: 20%;
     float: left;
     display: inline-table;
+    position: relative;
+    left: 4vw;
+    top: 11%;
 }
 #reviews > main{
     width: 70%;
@@ -964,11 +976,11 @@ h1, h2, h3, h4, h5, h6, strong{
    margin-left: -11%;
 }
 #reviews > main #slider-view .review-feed .review{
-    width: 30%;
+    width: 28%;
     height: 238px;
     display: inline-table;
     box-shadow: 3px -1px 11px 3px darkgray;
-    margin-left: 2%;
+    margin-left: 4%;
     padding-bottom: 2%;
     background-color: white;
     padding-top: 1%;
@@ -1439,7 +1451,7 @@ h1, h2, h3, h4, h5, h6, strong{
     }
     #promo > header .marketing-info {
         margin-top: -18%;
-        margin-right: -7%;
+        margin-right: -6%;
     }
     #investsearch > header a {
         margin-left: 126px;
@@ -1559,7 +1571,7 @@ h1, h2, h3, h4, h5, h6, strong{
     }
     #promo > header .marketing-info {
         margin-top: -16%;
-        margin-right: -5%;
+        margin-right: -4%;
     }
     #investsearch > header a {
         margin-left: 133px;
@@ -1679,7 +1691,7 @@ h1, h2, h3, h4, h5, h6, strong{
     }
     #promo > header .marketing-info {
         margin-top: -11%;
-        margin-right: -8%;
+        margin-right: -6%;
     }
     #investsearch > header a {
         margin-left: 10%;
@@ -1759,7 +1771,7 @@ h1, h2, h3, h4, h5, h6, strong{
     }
     #promo > header .marketing-info {
         margin-top: -10%;
-        margin-right: -11%;
+        margin-right: -9%;
     }
     #investsearch > header a {
         margin-left: 150px;
@@ -1784,17 +1796,17 @@ h1, h2, h3, h4, h5, h6, strong{
 @media all and (min-width:1024px) and (max-width: 1100px){
     #promo > header .marketing-info {
         width: 82%;
-        margin-right: -5%;
+        margin-right: -4%;
         margin-top: -15%;
     }
     #promo > header .marketing-info header img {
-        width: 82%;
+        width: 96%;
     }
 }
 @media all and (min-width:1100px) and (max-width: 1181px){
     #promo > header .marketing-info {
         width: 87%;
-        margin-right: -10%;
+        margin-right: -13%;
         margin-top: -14%;
     }
     #promo > header .marketing-info header img {
@@ -1804,7 +1816,7 @@ h1, h2, h3, h4, h5, h6, strong{
 @media all and (min-width:1181px) and (max-width: 1280px){
     #promo > header .marketing-info {
         width: 100%;
-        margin-right: -23%;
+        margin-right: -22%;
         margin-top: -14%;
     }
     #promo > header .marketing-info header img {
@@ -1814,4 +1826,5 @@ h1, h2, h3, h4, h5, h6, strong{
 .promo-header{
     top: 3vw;
     position: relative;
+    left: 2vw;
 }
