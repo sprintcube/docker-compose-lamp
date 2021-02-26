@@ -1247,6 +1247,25 @@ h1, h2, h3, h4, h5, h6, strong{
         margin-top: 6%;
         width: 87px;
     }
+    #services > main #slider-view .service-feed .service, #analytics > main #slider-view .analytic-feed .analytic, #estate > main #slider-view .estat-feed .estat{ width: 29%; }
+    #reviews > main #slider-view .review-feed .review#with-title-image header img {
+        left: 0%;
+    }
+    #analytics > main #slider-view .analytic-feed .analytic#with-title-image {
+        top: 96px;
+    }
+    #analytics > main #slider-view .analytic-feed .analytic#with-title-image img {
+        height: 125px;
+    }
+    #analytics > main #slider-view .analytic-feed .analytic:nth-child(1) h2 {
+        font-size: 111%;
+    }
+    #analytics > main #slider-view .analytic-feed .analytic .descr {
+        font-size: 74%;
+    }
+    #analytics > main #slider-view .analytic-feed .analytic a {
+        font-size: 87%;
+    }
 }
 @media all and (min-width:1280px) and (max-width: 1366px){
     .header > #header_top .ht_header {
@@ -1442,6 +1461,25 @@ h1, h2, h3, h4, h5, h6, strong{
         margin-top: 4%;
         width: 88px;
     }
+    #services > main #slider-view .service-feed .service, #analytics > main #slider-view .analytic-feed .analytic, #estate > main #slider-view .estat-feed .estat{ width: 29%; }
+    #reviews > main #slider-view .review-feed .review#with-title-image header img {
+        left: 0%;
+    }
+    #analytics > main #slider-view .analytic-feed .analytic#with-title-image {
+        top: 96px;
+    }
+    #analytics > main #slider-view .analytic-feed .analytic#with-title-image img {
+        height: 125px;
+    }
+    #analytics > main #slider-view .analytic-feed .analytic:nth-child(1) h2 {
+        font-size: 111%;
+    }
+    #analytics > main #slider-view .analytic-feed .analytic .descr {
+        font-size: 74%;
+    }
+    #analytics > main #slider-view .analytic-feed .analytic a {
+        font-size: 87%;
+    }
 }
 @media all and (min-width:1366px) and (max-width: 1400px){
     .header > #header_top .ht_header {
@@ -1545,6 +1583,25 @@ h1, h2, h3, h4, h5, h6, strong{
         margin-left: 4%;
         margin-top: 3%;
         width: 100px;
+    }
+    #services > main #slider-view .service-feed .service, #analytics > main #slider-view .analytic-feed .analytic, #estate > main #slider-view .estat-feed .estat{ width: 29%; }
+    #reviews > main #slider-view .review-feed .review#with-title-image header img {
+        left: 0%;
+    }
+    #analytics > main #slider-view .analytic-feed .analytic#with-title-image {
+        top: 96px;
+    }
+    #analytics > main #slider-view .analytic-feed .analytic#with-title-image img {
+        height: 125px;
+    }
+    #analytics > main #slider-view .analytic-feed .analytic:nth-child(1) h2 {
+        font-size: 111%;
+    }
+    #analytics > main #slider-view .analytic-feed .analytic .descr {
+        font-size: 74%;
+    }
+    #analytics > main #slider-view .analytic-feed .analytic a {
+        font-size: 87%;
     }
 }
 @media all and (min-width:1400px) and (max-width: 1600px){
