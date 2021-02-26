@@ -74,8 +74,8 @@ const PromoBlocksThreeDetalsAppend = () => {
             el_size.after('<div id="threedetal-right"><span style="width: 100%;height: 100%;background-color: white;">&nbsp;</span></div>');
         }
         else{
-            el_size.before('<div id="threedetal-left"><span style="width: 113%;height: 100%;background-color: white;margin-left: -5%;">&nbsp;</span></div>');
-            el_size.after('<div id="threedetal-right"><span style="width: 100%;height: 100%;background-color: white;margin-left: -8%;">&nbsp;</span></div>');
+            el_size.before('<div id="threedetal-left"><span style="width: 116%;height: 100%;background-color: white;margin-left: -5%;padding-right: 4px;">&nbsp;</span></div>');
+            el_size.after('<div id="threedetal-right"><span style="width: 103%;height: 100%;background-color: white;margin-left: -8%;padding-right: 6px;">&nbsp;</span></div>');
         }
     }
 }
