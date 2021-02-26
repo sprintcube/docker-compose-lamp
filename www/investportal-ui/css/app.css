@@ -416,7 +416,7 @@ h1, h2, h3, h4, h5, h6, strong{
 #news > main #slider-controller img{
     width: 18%;
     position: relative;
-    top: -137px;
+    top: -153px;
 }
 #news > main #slider-view{
     width: 71%;
@@ -429,17 +429,17 @@ h1, h2, h3, h4, h5, h6, strong{
 }
 #news > main #slider-view .news-feed .news{
     display: inline-block;
-    width: 31%;
+    width: 29%;
     height: 183px;
     margin-left: 1%;
 }
-#news > main #slider-view .news-feed .news:nth-child(2){  width: 34%;left: 4%;position: relative;}
-#news > main #slider-view .news-feed .news:nth-child(3){  left: 5%;position: relative;width: 31%;}
+#news > main #slider-view .news-feed .news:nth-child(2){  width: 30%;left: 5%;position: relative;}
+#news > main #slider-view .news-feed .news:nth-child(3){  left: 10%;position: relative;}
 #news > main #slider-view .news-feed .news a{
     display: block;
     margin-top: 2px;
     color: #0079bf;
-    font-size: 102%;
+    font-size: 104%;
     text-decoration: none;
     font-weight: bold;
     height: 64px;
@@ -447,6 +447,7 @@ h1, h2, h3, h4, h5, h6, strong{
     text-overflow: ellipsis;
     word-spacing: 0.1em;
     letter-spacing: 0.06em;
+    margin-left: 4%;
 }
 #news > main #slider-view .news-feed .news .descr{
     display: block;
@@ -455,8 +456,10 @@ h1, h2, h3, h4, h5, h6, strong{
     height: 108px;
     overflow: hidden;
     text-overflow: ellipsis;
-    margin-top: -2%;
+    margin-top: 1%;
     text-align: justify;
+    color: gray;
+    margin-left: 4%;
 }
 #news > main #slider-view .news-feed .news .date{
     display: block;
@@ -467,6 +470,7 @@ h1, h2, h3, h4, h5, h6, strong{
     font-family: 'Times New Roman',serif;
     height: 20px;
     margin-top: -6%;
+    margin-left: 4%;
 }
 
 #investsearch > header a{
@@ -840,7 +844,7 @@ h1, h2, h3, h4, h5, h6, strong{
     margin-left: -12%;
 }
 #estate > main #slider-view .estat-feed .estat{
-    width: 30%;
+    width: 29%;
     height: 181px;
     display: inline-table;
     box-shadow: 3px -1px 11px 3px darkgray;
@@ -864,7 +868,7 @@ h1, h2, h3, h4, h5, h6, strong{
     background-color: #0079bf;
 }
 #estate > main #slider-view .estat-feed .estat header h3{
-    margin-left: 2%;
+    margin-left: 7%;
 }
 #estate > main #slider-view .estat-feed .estat main{
     width: 100%;
@@ -875,20 +879,18 @@ h1, h2, h3, h4, h5, h6, strong{
     object-fit: cover;
     height: 153px;
 }
-#estate > main #slider-view .estat-feed .estat:hover main img{
-    transform: scale(1.2);
-}
 #estate > main #slider-view .estat-feed .estat footer{
 	display: block;
-	padding-top: 2%;
-	padding-bottom: 2%;
+	padding-top: 0%;
+	padding-bottom: 13%;
 	width: 100%;
 }
 #estate > main #slider-view .estat-feed .estat footer .info, #estate > main #slider-view .estat-feed .estat footer .raiting{
 	display: block;
-	margin-left: 2%;
-	padding-top: 0%;
+	margin-left: 8%;
 	padding-bottom: 0%;
+	position: relative;
+	top: 15px;
 }
 #estate > main #slider-view .estat-feed .estat footer .info span{
     padding-top: 2%;
@@ -963,29 +965,31 @@ h1, h2, h3, h4, h5, h6, strong{
 }
 #reviews > main #slider-view .review-feed .review{
     width: 30%;
-    height: 204px;
+    height: 238px;
     display: inline-table;
     box-shadow: 3px -1px 11px 3px darkgray;
     margin-left: 2%;
     padding-bottom: 2%;
     background-color: white;
+    padding-top: 1%;
 }
 #reviews > main #slider-view .review-feed .review main h3{
     display: block;
-    margin-left: 1%;
-    margin-top: 1%;
+    margin-left: 5%;
+    margin-top: 6%;
     color:#0079bf;
     font-size: 100%;
     text-align: left;
     overflow: hidden;
     text-overflow: ellipsis;
-    height: 147px;
+    width: 90%;
 }
 #reviews > main #slider-view .review-feed .review footer a{
-    margin-left: 1%;
+    margin-left: 5%;
     margin-top: 1%;
     color: #0079bf;
-    font-size: 100%;
+    font-size: 95%;
+    display: block;
 }
 
 .footer{
@@ -1134,7 +1138,7 @@ h1, h2, h3, h4, h5, h6, strong{
     }
     #investsearch {
         height: 527px;
-        padding-top: 8%;
+        padding-top: 15%;
         padding-bottom: 0%;
     }
     #investsearch > main .popular-objects .popular-object header {
@@ -1327,7 +1331,7 @@ h1, h2, h3, h4, h5, h6, strong{
     }
     #investsearch {
         height: 521px;
-        padding-top: 3%;
+        padding-top: 13%;
         padding-bottom: 0%;
     }
     #investsearch > main .popular-objects .popular-object header {
@@ -1491,6 +1495,7 @@ h1, h2, h3, h4, h5, h6, strong{
     }
     #investsearch {
         height: 475px;
+        padding-top: 8%;
     }
     #investsearch > main .popular-objects .popular-object header {
         height: 27px;
@@ -1597,6 +1602,7 @@ h1, h2, h3, h4, h5, h6, strong{
     }
     #investsearch {
         height: 430px;
+        padding-top: 7%;
     }
     #investsearch > main .popular-objects .popular-object header {
         height: 27px;
@@ -1666,7 +1672,7 @@ h1, h2, h3, h4, h5, h6, strong{
     }
     #investsearch {
         height: 509px;
-        padding-top: 4%;
+        padding-top: 7%;
     }
     #investsearch > main .popular-objects .popular-object header {
         height: 27px;
