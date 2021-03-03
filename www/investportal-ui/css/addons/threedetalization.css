@@ -13,11 +13,12 @@
 /*Внутрений див*/
 
 #threedetal-left{
-    left: -304px;
+    left: -414px;
+    top: 45px;
 }
 #threedetal-right{
-    right: 390px;
-    top: 15px;
+    right: 483px;
+    top: 52px;
     -webkit-box-shadow: 2px 0px 5px 0px rgba(50, 50, 50, 0.75);
     -moz-box-shadow:    2px 0px 5px 0px rgba(50, 50, 50, 0.75);
     box-shadow:         2px 0px 5px 0px rgba(50, 50, 50, 0.75);
@@ -30,9 +31,17 @@
     padding-right: 11px;
 }
 #threedetal-left, #threedetal-right{
-    width: 17%;
+    width: 25vw;
     position: relative;
     display: flex;
+}
+#investsearch > main .popular-objects #threedetal-left {
+    left: -365px;
+    top: -12px;
+}
+#investsearch > main .popular-objects #threedetal-right {
+    right: 448px;
+    top: -5px;
 }
 #promo > main .promo-feed .promoblock, #investsearch > main .popular-objects .popular-object{
     position: relative;
@@ -43,20 +52,20 @@
         padding-right: 8px;
     }
     #threedetal-left {
-        left: -192px;
-        top: 18px;
+        left: -204px;
+        top: 21px;
     }
     #threedetal-right {
-        right: 244px;
-        top: 24px;
+        right: 240px;
+        top: 26px;
     }
     #investsearch > main .popular-objects #threedetal-left {
-        left: -185px;
-        top: -12px;
+        left: -187px;
+        top: -10px;
     }
     #investsearch > main .popular-objects #threedetal-right {
-        right: 236px;
-        top: -5px;
+        right: 237px;
+        top: -4px;
     }
    
     #promo > main .promo-feed .promoblock{left: 11px;}
@@ -66,16 +75,16 @@
         padding-right: 8px;
     }
     #threedetal-left {
-        left: -219px;
-        top: 22px;
+        left: -234px;
+        top: 24px;
     }
     #threedetal-right {
-        right: 275px;
+        right: 271px;
         top: 28px;
     }
     #investsearch > main .popular-objects #threedetal-left {
         left: -202px;
-        top: -12px;
+        top: -11px;
     }
     #investsearch > main .popular-objects #threedetal-right {
         right: 256px;
@@ -88,20 +97,20 @@
         padding-right: 8px;
     }
     #threedetal-left {
-        left: -235px;
+        left: -246px;
         top: 24px;
     }
     #threedetal-right {
-        right: 295px;
+        right: 287px;
         top: 29px;
     }
     #investsearch > main .popular-objects #threedetal-left {
         left: -215px;
-        top: -16px;
+        top: -11px;
     }
     #investsearch > main .popular-objects #threedetal-right {
-        right: 270px;
-        top: -7px;
+        right: 272px;
+        top: -5px;
     }
     #promo > main .promo-feed .promoblock{left: 4px;}
 }
@@ -110,20 +119,20 @@
         padding-right: 8px;
    }
    #threedetal-left {
-        left: -253px;
-        top: 27px;
+        left: -262px;
+        top: 29px;
     }
     #threedetal-right {
-        right: 317px;
+        right: 306px;
         top: 33px;
     }
     #investsearch > main .popular-objects #threedetal-left {
-        left: -239px;
-        top: -17px;
+        left: -233px;
+        top: -12px;
     }
     #investsearch > main .popular-objects #threedetal-right {
-        right: 297px;
-        top: -8px;
+        right: 294px;
+        top: -5px;
     }
     #promo > main .promo-feed .promoblock{left: 6px;}
 }
@@ -132,20 +141,20 @@
         padding-right: 8px;
     }
     #threedetal-left {
-        left: -267px;
-        top: 29px;
+        left: -286px;
+        top: 32px;
     }
     #threedetal-right {
-        right: 335px;
-        top: 34px;
+        right: 333px;
+        top: 36px;
     }
     #investsearch > main .popular-objects #threedetal-left {
-        left: -251px;
-        top: -16px;
+        left: -254px;
+        top: -13px;
     }
     #investsearch > main .popular-objects #threedetal-right {
-        right: 312px;
-        top: -7px;
+        right: 316px;
+        top: -5px;
     }
     #promo > main .promo-feed .promoblock{left: 5px;}
 }
@@ -154,20 +163,20 @@
         padding-right: 9px;
     }
     #threedetal-left {
-        left: -301px;
-        top: 34px;
+        left: -315px;
+        top: 33px;
     }
     #threedetal-right {
-        right: 377px;
+        right: 367px;
         top: 39px;
     }
     #investsearch > main .popular-objects #threedetal-left {
-        left: -278px;
-        top: -17px;
+        left: -274px;
+        top: -16px;
     }
     #investsearch > main .popular-objects #threedetal-right {
-        right: 343px;
-        top: -8px;
+        right: 344px;
+        top: -6px;
     }
     #promo > main .promo-feed .promoblock{left: 4px;}
 }
@@ -176,19 +185,19 @@
         padding-right: 9px;
     }
     #threedetal-left {
-        left: -318px;
+        left: -324px;
         top: 37px;
     }
     #threedetal-right {
-        right: 395px;
+        right: 385px;
         top: 42px;
     }
     #investsearch > main .popular-objects #threedetal-left {
         left: -290px;
-        top: -16px;
+        top: -17px;
     }
     #investsearch > main .popular-objects #threedetal-right {
-        right: 357px;
+        right: 362px;
         top: -7px;
     }
     #promo > main .promo-feed .promoblock{left: 4px;}
@@ -198,19 +207,19 @@
         padding-right: 9px;
     }
     #threedetal-left {
-        left: -331px;
+        left: -349px;
         top: 39px;
     }
     #threedetal-right {
-        right: 412px;
+        right: 406px;
         top: 44px;
     }
     #investsearch > main .popular-objects #threedetal-left {
         left: -309px;
-        top: -17px;
+        top: -12px;
     }
     #investsearch > main .popular-objects #threedetal-right {
-        right: 379px;
-        top: -8px;
+        right: 382px;
+        top: -5px;
     }
 }

@@ -1,0 +1,27 @@
+feature:
+  title:        Деление чисел
+  keyword:      Функционал
+  language:     ru
+  line:         2
+  description:  |-
+    Поскольку деление сложный процесс и люди часто допускают ошибки
+    Нужно дать им возможность делить на калькуляторе
+
+  scenarios:
+    -
+      type:     outline
+      keyword:  Структура сценария
+      title:    Целочисленное деление
+      line:     6
+      steps:
+        - { keyword_type: Given, type: 'Допустим', text: 'я ввожу число <делимое>',                  line: 7 }
+        - { keyword_type: Given, type: 'И',        text: 'затем ввожу число <делитель>',             line: 8 }
+        - { keyword_type: Then,  type: 'Если',     text: 'я нажимаю "/"',                            line: 9 }
+        - { keyword_type: When,  type: 'То',       text: 'результатом должно быть число <частное>',  line: 10 }
+
+      examples:
+        keyword: Примеры
+        13: [делимое, делитель, частное]
+        14: [100, 2, 50]
+        15: [28, 7, 4]
+        16: [0, 5, 0]

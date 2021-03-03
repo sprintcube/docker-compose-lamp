@@ -30,7 +30,7 @@ h1, h2, h3, h4, h5, h6, strong{
 .header > #header_top{
     float: left;
     width: 21%;
-    top: -6%;
+    top: -18%;
     left: 13%;
     position: relative;
 }
@@ -55,8 +55,8 @@ h1, h2, h3, h4, h5, h6, strong{
 .header > #header_bottom{
     float: right;
     width: 67%;
-    top: -51%;
-    right: 0%;
+    top: -79%;
+    right: -11%;
     position: relative;
 }
 .header > #header_bottom .hb_bottom{
@@ -72,7 +72,7 @@ h1, h2, h3, h4, h5, h6, strong{
 	float: left;
 	display: inline-block;
 	font-size: 86%;
-	margin-top: 5%;
+	margin-top: 6%;
 	margin-left: 10px;
 }
 .header > #header_bottom .hb_bottom header .welcome-link a{
@@ -253,7 +253,7 @@ h1, h2, h3, h4, h5, h6, strong{
     display: inline-table;
     position: relative;
     top: -44px;
-    margin-left: 105px;
+    margin-left: 10%;
 }
 #promo > header a{
     text-decoration: none;
@@ -269,7 +269,7 @@ h1, h2, h3, h4, h5, h6, strong{
     display: inline-table;
     float:right;
     width: 80%;
-    margin-right: -2%;
+    margin-right: -16%;
     margin-top: -12%;
 }
 #promo > header .marketing-info footer{
@@ -286,7 +286,7 @@ h1, h2, h3, h4, h5, h6, strong{
     margin-left: 2%;
 }
 #promo > header .marketing-info header img{
-        width:59%;
+        width:70%;
         border-radius: 10px 10px 10px 10px;
 }
 #promo > main .promo-feed{
@@ -297,13 +297,13 @@ h1, h2, h3, h4, h5, h6, strong{
     display: -ms-flexbox;
     flex-wrap: nowrap;
     float: left;
-    margin-left: -23%;
+    margin-left: -18%;
 }
 #promo > main .promo-feed .promoblock{
-    width: 16%;
+    width: 23vw;
     display: inline-table;
     background-color: white;
-    margin-left: 1%;
+    margin-left: -31%;
     padding-right: 1%;
     margin-top: 2%;
     -webkit-box-shadow: 8px -6px 6px 0px rgba(50, 50, 50, 0.75);
@@ -480,9 +480,9 @@ h1, h2, h3, h4, h5, h6, strong{
     display: inline-block;
     text-decoration: none;
     text-transform: uppercase;
-    margin-left: 6%;
+    margin-left: 10%;
     position: relative;
-    top: -47px;
+    top: -37px;
 }
 #investsearch > header a strong{
     text-decoration: underline;
@@ -495,13 +495,13 @@ h1, h2, h3, h4, h5, h6, strong{
     display: -ms-flexbox;
     flex-wrap: nowrap;
     float: left;
-    margin-left: -17%;
+    margin-left: -24%;
 }
 #investsearch > main .popular-objects .popular-object{
-    width: 15%;
+    width: 24vw;
     display: inline-table;
     background-color: white;
-    margin-left: 2%;
+    margin-left: -30%;
 }
 #investsearch > main .popular-objects .popular-object:hover{
     cursor: pointer;
@@ -1090,6 +1090,9 @@ h1, h2, h3, h4, h5, h6, strong{
     .header > #header_top {
         top: 4%;
     }
+    .header > #header_bottom .hb_bottom footer {
+        margin-top: 13%;
+    }
     .header > #header_top .ht_header {
         left: -24%;
         top: 19%;
@@ -1306,20 +1309,21 @@ h1, h2, h3, h4, h5, h6, strong{
         margin-right: 15px;
     }
     .header > #header_bottom .hb_bottom header .header-informer footer {
-        margin-top: 2%;
+        margin-top: 5%;
         padding-left: 44px;
         margin-right: -9%;
     }
     .header > #header_bottom .hb_bottom header .header-informer main {
         display: inline-block;
         margin-left: -12%;
-        top: 8px;
+        top: 0px;
     }
     .header > #header_bottom .hb_bottom footer nav {
         font-size: 79%;
+        margin-top: -5%;
     }
     #promo > main .promo-feed,  #investsearch > main .popular-objects{
-        margin-left: -19%;
+        margin-left: -22%;
         margin-top: 2%;
     }
     #promo > main .promo-feed .promoblock header {
@@ -1443,7 +1447,7 @@ h1, h2, h3, h4, h5, h6, strong{
         font-size: 63%;
     }
     .header > #header_bottom .hb_bottom header .welcome-link {
-        margin-top: 5%;
+        margin-top: 6%;
     }
     #promo > header .links {
         margin-left: 125px;
@@ -1454,8 +1458,8 @@ h1, h2, h3, h4, h5, h6, strong{
         margin-right: -6%;
     }
     #investsearch > header a {
-        margin-left: 126px;
-        margin-top: 20px;
+        margin-left: 11%;
+        margin-top: -2px;
     }
     #eventcalendar > main .calendar footer {
         margin-top: 2%;
@@ -1473,7 +1477,7 @@ h1, h2, h3, h4, h5, h6, strong{
         margin-top: 4%;
         width: 88px;
     }
-    #services > main #slider-view .service-feed .service, #analytics > main #slider-view .analytic-feed .analytic, #estate > main #slider-view .estat-feed .estat{ width: 29%; }
+    #services > main #slider-view .service-feed .service, #analytics > main #slider-view .analytic-feed .analytic, #estate > main #slider-view .estat-feed .estat{ width: 27%; margin-left: 5%;}
     #reviews > main #slider-view .review-feed .review#with-title-image header img {
         left: 0%;
     }
@@ -1729,6 +1733,7 @@ h1, h2, h3, h4, h5, h6, strong{
     }
     #investsearch > main .popular-objects{
         margin-top: 3%;
+        margin-left: -22%;
     }
     #promo > main .promo-feed .promoblock main img {
         height: 85px;
@@ -1775,7 +1780,7 @@ h1, h2, h3, h4, h5, h6, strong{
     }
     #investsearch > header a {
         margin-left: 150px;
-        margin-top: 18px;
+        margin-top: 1px;
     }
     #eventcalendar > main .calendar footer {
         margin-top: 1%;
@@ -1816,15 +1821,49 @@ h1, h2, h3, h4, h5, h6, strong{
 @media all and (min-width:1181px) and (max-width: 1280px){
     #promo > header .marketing-info {
         width: 100%;
-        margin-right: -22%;
-        margin-top: -14%;
+        margin-right: -25%;
+        margin-top: -19%;
     }
     #promo > header .marketing-info header img {
-        width: 67%;
+        width: 68%;
     }
 }
-.promo-header{
-    top: 3vw;
-    position: relative;
-    left: 2vw;
+@media all and (aspect-ratio: 5/4){
+    .header > #header_bottom {
+        top: -78%;
+        right: 5%;
+    }
+    .header > #header_bottom .hb_bottom header .welcome-link {
+        margin-top: 10%;
+    }
+    .exchange-selector {
+        margin-top: 3%;
+    }
+    .header > #header_bottom .hb_bottom header .header-informer main {
+        top: 29px;
+    }
+    .header > #header_bottom .hb_bottom header .header-informer footer {
+        margin-top: 16%;
+    }
+    #promo > header .marketing-info {
+        margin-top: -20%;
+    }
+    #promo > header .marketing-info footer {
+        margin-top: 2px;
+        margin-left: 2%;
+    }
+    #estate > main #slider-view .estat-feed .estat {
+        margin-left: 24px;
+    }
+    #reviews {
+        height: 241px;
+    }
+}
+@media all and (min-width: 1800px){
+    #promo > main .promo-feed .promoblock header {
+        padding-right: 2.5%;
+    }
+    .header > #header_top {
+        left: 8%;
+    }
 }

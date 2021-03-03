@@ -1,0 +1,34 @@
+{
+    "name":"codeception/module-yii2",
+    "description":"Codeception module for Yii2 framework",
+    "keywords":["codeception", "yii2"],
+    "homepage":"http://codeception.com/",
+    "type":"library",
+    "license":"MIT",
+    "authors":[
+        {
+            "name":"Alexander Makarov"
+        },
+        {
+            "name":"Sam Mouse"
+        },
+        {
+            "name":"Michael Bodnarchuk"
+        }
+    ],
+    "minimum-stability": "RC",
+    "require": {
+        "php": ">=5.6.0 <8.0",
+        "codeception/lib-innerbrowser": "^1.0",
+        "codeception/codeception": "^4.0"
+    },
+    "require-dev": {
+        "codeception/util-robohelpers": "dev-master"
+    },
+    "autoload":{
+        "classmap": ["src/"]
+    },
+    "config": {
+        "classmap-authoritative": true
+    }
+}

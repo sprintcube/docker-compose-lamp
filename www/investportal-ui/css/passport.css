@@ -1,15 +1,16 @@
 @import url('services/lightbox-passport.css');
 @import url('passport/cart.css');
 #passport{
-    height: 300px;
+    height: 418px;
 }
 .passport-page{
-    width: 78%;
-    height: calc(245px * 2);
+    width: 85%;
+    height: calc(315px * 2);
     background-color: white;
     position: relative;
     float: left;
-    left: 7%;
+    left: 8%;
+    top: -9%;
 }
 .passport-page > header, .passport-page > footer{
     width: 100%;
@@ -28,19 +29,19 @@
 .passport-page > header #left-content, .passport-page > main #left-content, .passport-page > footer #left-content{
     float: left;
     display: inline-table;
-    margin-left: 2%;
+    margin-left: 3%;
 }
 .passport-page > header #right-content, .passport-page > main #right-content{
     float: right;
     display: inline-table;
-    margin-right: 2%;
+    margin-right: 4%;
 }
 .passport-page > main #left-content{
     width: 70%;
 }
 .passport-page > main #right-content{
     width: 22%;
-    margin-right: 4%;
+    margin-right: 2%;
 }
 .passport-page > header{
     background-color: #0079bf;
@@ -48,7 +49,8 @@
     position: relative;
 }
 .passport-page > header #left-content, .passport-page > header #right-content{
-   margin-top: 1%;
+   margin-top: 18px;
+   font-size: 103%;
 }
 .passport-page > header #left-content span, .passport-page > header #right-content a{
     color: white;
@@ -65,7 +67,7 @@
 .passport-page > main #left-content #table-list{
     width: 100%;
     border-bottom: solid 2px darkgray;
-    font-size: 86%;
+    font-size: 96%;
     border-spacing: 0px;
 }
 .passport-page > main #left-content #table-list .header{
@@ -83,7 +85,7 @@
     padding-left: 1%;
 }
 .passport-page > main #left-content #table-list .content{
-    height: 40px;
+    height: 39px;
 }
 .passport-page > main #left-content #table-list .content td{
     border-top: solid 2px darkgray;
@@ -92,26 +94,30 @@
     border-left: solid 2px darkgray;
     border-right: solid 2px darkgray;
     font-weight: bold;
+    width: 41%;
 }
-.passport-page > main #left-content #table-list .content td .status{
+.passport-page > main #left-content #table-list .content td .status {
     background-color: lightgray;
     color: white;
-    width: 100%;
-    padding-top: 9px;
-    padding-bottom: 9px;
+    width: 78%;
+    padding-top: 20px;
+    padding-bottom: 20px;
     text-transform: uppercase;
+    font-size: 61%;
+    text-align: center;
+    margin-left: 13%;
 }
 .passport-page > main #right-content .nav{
     list-style-type: none;
     border-bottom: solid 2px #0079bf;
-    width: 100%;
+    width: 84%;
 }
 .passport-page > main #right-content .nav li{
     border-top: solid 2px #0079bf;
     margin-left: -14%;
-    padding-top: 2%;
-    padding-bottom: 2%;
-    font-size: 100%;
+    padding-top: 12px;
+    padding-bottom: 12px;
+    font-size: 86%;
 }
 .passport-page > main #right-content .nav li .fas{
     font-size: 78%;
@@ -125,9 +131,8 @@
 .passport-page > main #right-content .nav li a{
     color: #0079bf;
     text-decoration: none;
-    margin-left: 10%;
+    margin-left: 5%;
 }
 .passport-page > main #right-content .nav li:hover, .passport-page > main #right-content .nav li.active{
     background-color: rgba(30, 143, 255, 0.137);
 }
-

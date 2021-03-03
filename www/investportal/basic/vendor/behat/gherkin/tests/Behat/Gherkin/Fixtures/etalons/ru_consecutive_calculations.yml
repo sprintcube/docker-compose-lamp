@@ -1,0 +1,34 @@
+feature:
+  title:        Последовательные вычисления
+  keyword:      Функционал
+  language:     ru
+  line:         2
+  description:  |-
+    Чтобы вычислять сложные выражения
+    Пользователи хотят проводить вычисления над результатом предыдущей операций
+
+  background:
+    keyword:    Предыстория
+    line:       6
+    steps:
+      - { keyword_type: Given, type: Допустим, text: я сложил 3 и 5, line: 7 }
+
+  scenarios:
+    -
+      type:     scenario
+      keyword:  Сценарий
+      title:    сложение с результатом последней операций
+      line:     9
+      steps:
+        - { keyword_type: Then, type: Если, text: 'я ввожу число 4',                  line: 10 }
+        - { keyword_type: Then, type: И,    text: 'нажимаю "+"',                      line: 11 }
+        - { keyword_type: When, type: То,   text: 'результатом должно быть число 12', line: 12 }
+    -
+      type:     scenario
+      keyword:  Сценарий
+      title:    деление результата последней операции
+      line:     14
+      steps:
+        - { keyword_type: Then, type: Если, text: 'я ввожу число 2',                  line: 15 }
+        - { keyword_type: Then, type: И,    text: 'нажимаю "/"',                      line: 16 }
+        - { keyword_type: When, type: То,   text: 'результатом должно быть число 4',  line: 17 }

@@ -1,21 +1,44 @@
 @import url('../passport.css');
-.passport-page > main #left-content #table-list .header th:nth-child(4), .passport-page > main #left-content #table-list .content td:nth-child(4){
-    text-align: left;
+#passport {
+    height: 445px;
+}
+.passport-page {
+    height: calc(329px * 2);
+}
+.passport-page > main #left-content #table-list .header th{
+    color: gray;
+}
+.passport-page > main #left-content #table-list .content td:nth-child(1){
+    color: gray;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+.passport-page > main #left-content #table-list .content td:nth-child(2){
+    width: 39%;
+    padding-top: 10px;
+    padding-bottom: 10px;
 }
 .passport-page > main #left-content #table-list .content td:nth-child(3){
     border-right: solid 2px gray;
+    width: 23%;
+    padding-top: 10px;
+    padding-bottom: 10px;
 }
 .passport-page > main #left-content #table-list .content td:nth-child(4){
     text-indent: 2%;
+    padding-top: 10px;
+    padding-bottom: 10px;
 }
 .passport-page > main #left-content #table-list .content td:nth-child(5){
-    text-align: center;
+    padding-top: 10px;
+    padding-bottom: 10px;
 }
 .passport-page > main #left-content #table-list .header th:nth-child(4), .passport-page > main #left-content #table-list .content td:nth-child(4){
     text-align: left;
+    width: 28%;
 }
 .passport-page > footer #left-content{
     position: relative;
-    top: -43%;
-    left: -72%;
+    top: 499%;
+    left: -73%;
 }

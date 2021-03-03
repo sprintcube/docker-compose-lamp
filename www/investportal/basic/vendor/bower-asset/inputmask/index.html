@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<input id="test1" name="test1"/>
+<br/>
+<script type="text/javascript" src="node_modules/jquery/dist/jquery.js" charset="utf-8"></script>
+<script type="text/javascript" src="dist/jquery.inputmask.bundle.js" charset="utf-8"></script>
+<script>
+	console.log(navigator.userAgent);
+	$("#test1").inputmask("currency", {
+	    colorMask: true
+	});
+</script>
+</body>
+</html>

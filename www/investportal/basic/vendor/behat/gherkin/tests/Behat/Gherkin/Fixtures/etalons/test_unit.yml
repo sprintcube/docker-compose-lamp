@@ -1,0 +1,18 @@
+feature:
+  title:        Test::Unit
+  language:     en
+  line:         1
+  description:  |-
+    In order to please people who like Test::Unit
+    As a Cucumber user
+    I want to be able to use assert* in my step definitions
+
+  scenarios:
+    -
+      type:     scenario
+      title:    assert_equal
+      line:     6
+      steps:
+        - { keyword_type: 'Given', type: 'Given',  text: 'x = 5',                    line: 7 }
+        - { keyword_type: 'Given', type: 'And',    text: 'y = 5',                    line: 8 }
+        - { keyword_type: 'Then',  type: 'Then',   text: 'I can assert that x == y', line: 9 }

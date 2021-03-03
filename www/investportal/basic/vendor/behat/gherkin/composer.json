@@ -1,0 +1,47 @@
+{
+    "name":         "behat/gherkin",
+    "description":  "Gherkin DSL parser for PHP 5.3",
+    "keywords":     ["BDD", "parser", "DSL", "Behat", "Gherkin", "Cucumber"],
+    "homepage":     "http://behat.org/",
+    "type":         "library",
+    "license":      "MIT",
+    "authors":      [
+        {
+            "name":      "Konstantin Kudryashov",
+            "email":     "ever.zet@gmail.com",
+            "homepage":  "http://everzet.com"
+        }
+    ],
+
+    "require": {
+        "php": ">=5.3.1"
+    },
+
+    "require-dev": {
+        "symfony/yaml": "~2.3|~3|~4",
+        "symfony/phpunit-bridge": "~2.7|~3|~4",
+        "phpunit/phpunit": "~4.5|~5"
+    },
+
+    "suggest": {
+        "symfony/yaml":   "If you want to parse features, represented in YAML files"
+    },
+
+    "autoload": {
+        "psr-0": {
+            "Behat\\Gherkin":   "src/"
+        }
+    },
+
+    "autoload-dev": {
+        "psr-4": {
+            "Tests\\Behat\\": "tests/Behat/"
+        }
+    },
+
+    "extra": {
+        "branch-alias": {
+            "dev-master": "4.4-dev"
+        }
+    }
+}

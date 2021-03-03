@@ -1,0 +1,13 @@
+feature:
+  title:        https://rspec.lighthouseapp.com/projects/16211/tickets/246-distorted-console-output-for-slightly-complicated-step-regexp-match
+  language:     en
+  line:         1
+  description:  ~
+
+  scenarios:
+    -
+      type:     scenario
+      title:    See "No Record(s) Found" for Zero Existing
+      line:     3
+      steps:
+        - { keyword_type: Given, type: Given, text: no public holiday exists in the system, line: 4 }

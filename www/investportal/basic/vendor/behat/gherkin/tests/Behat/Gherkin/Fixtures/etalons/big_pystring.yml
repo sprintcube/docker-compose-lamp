@@ -1,0 +1,18 @@
+feature:
+  line:         1
+  title:        Big PyString
+
+  scenarios:
+    -
+      type:     scenario
+      line:     2
+      steps:
+        -
+          keyword_type: Then
+          type:         Then
+          text:         it should fail with:
+          line:         3
+          arguments:
+            -
+              type:     pystring
+              text:     "\n# language: ru\n\nUUUUUU\n\n2 scenarios (2 undefined)\n6 steps (6 undefined)\n\nYou can implement step definitions for undefined steps with these snippets:\n\n$steps->Given('/^I have entered (\\d+)$/', function($world, $arg1) {\n    throw new \\Everzet\\Behat\\Exception\\Pending();\n});\n\n$steps->Then('/^I must have (\\d+)$/', function($world, $arg1) {\n    throw new \\Everzet\\Behat\\Exception\\Pending();\n});\n\n$steps->Then('/^String must be \\'([^\\']*)\\'$/', function($world, $arg1) {\n    throw new \\Everzet\\Behat\\Exception\\Pending();\n});"

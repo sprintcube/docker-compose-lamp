@@ -1,0 +1,7 @@
+feature:
+  title:        Some feature
+  language:     en
+  line:         1
+  description:  ~
+
+  scenarios: []

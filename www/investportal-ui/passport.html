@@ -11,8 +11,8 @@
     <style>
              .exchange-selector {
             position: relative;
-            top: 49px;
-            left: 45%;
+            top: 50px;
+            left: 44%;
         }
         #regexchange {
             display: inline-block;
@@ -36,12 +36,30 @@
             font-size: 90%;
             padding: 10px;
         }
+        .passport-page > main #left-content #table-list .header th {
+            color: gray;
+        }
+        .passport-page > main #left-content #table-list .content td {
+            padding-top: 5px;
+            padding-bottom: 5px;
+        }
+        .passport-page > main #left-content #table-list .content td:nth-child(1) {
+            color: gray;
+            width: 4%;
+        }
+        .passport-page > main #left-content #table-list .content td:nth-child(2) {
+            width: 62%;
+        }
+        .passport-page > main #left-content #table-list .content td:nth-child(3) {
+            width: 27%;
+        }
         @media all and (min-width:1024px) and (max-width: 1280px){
             .exchange-selector {
-                margin-top: 4%;
-                left: 34%;
-                position: relative;
-                display: inline-block;
+                    margin-top: 0%;
+                    left: 34%;
+                    position: relative;
+                    display: inline-block;
+                    top: 43px;
             }
         }
         
@@ -138,7 +156,7 @@
                                     <td>Private boarding house on the beach, high-quality service and high profitability</td>
                                     <td>Hotel</td>
                                     <td>
-                                        <div class="status" style="background-color: darkgreen;">
+                                        <div class="status" style="background-color: #2EC18F;">
                                             Active
                                         </div>
                                     </td>
@@ -158,7 +176,7 @@
                                     <td>Rabbit farm</td>
                                     <td>Rabbit farm</td>
                                     <td>
-                                        <div class="status" style="background-color: darkgreen;">
+                                        <div class="status" style="background-color: #2EC18F;">
                                             Active
                                         </div>
                                     </td>
@@ -168,7 +186,7 @@
                                     <td>Soccer club, Mexicco</td>
                                     <td>Soccer club</td>
                                     <td>
-                                        <div class="status" style="background-color: darkgreen;">
+                                        <div class="status" style="background-color: #2EC18F;">
                                             Active
                                         </div>
                                     </td>
@@ -207,7 +225,7 @@
                     </div>
                 </main>
                 <footer>
-                    <div id="left-content" style="margin-left: -70%;">
+                    <div id="left-content" style="margin-left: -70%;margin-top: 10%;">
                         <button class="add-but">Add Request</button>
                     </div>
                 </footer>

@@ -1,0 +1,26 @@
+feature:
+  title:        Complex descriptions
+  language:     en
+  line:         7
+  description:  |-
+    Some description with
+    | table |   row|
+
+      and
+
+    """
+    """
+
+  scenarios:
+    -
+      type:     scenario
+      title:    |-
+        Some
+         | complex |  description     |
+
+        """
+        hell yeah
+        """
+      line:     16
+      steps:
+        - { keyword_type: 'Given', type: 'Given',  text: 'one two three',  line: 22 }

@@ -1,16 +1,19 @@
 @import url('../../css/passport.css');
 #passport {
-    height: 576px;
+    height: 626px;
 }
 .passport-page {
-    height: calc(366px * 2);
+    height: calc(424px * 2);
 }
 .passport-page > main #left-content {
     overflow: auto;
     height: 598px;
 }
 .passport-page > header {
-    background-color: rgb(211, 19, 19);
+    background: #EF0E0A;
+    background: -webkit-linear-gradient(left, #EF0E0A, #61C2EF);
+    background: -moz-linear-gradient(left, #EF0E0A, #61C2EF);
+    background: linear-gradient(to right, #EF0E0A, #61C2EF);
 }
 .passport-page > main #left-content .cart-data{
     width: 100%;
@@ -19,21 +22,55 @@
     font-weight: normal;
 }
 .passport-page > main #left-content .cart-data #table-list{
-    width: 90%;
+    width: 100%;
 }
 .passport-page > main #left-content .cart-data #table-list .header th{
     text-align: left;
+    color: gray;
+    padding-left: 2%;
 }
 .passport-page > main #left-content .cart-data #table-list .content{
     padding-left: 2%;
 }
 .passport-page > main #left-content .cart-data #table-list .content td{
     text-align: left;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    padding-left: 2%;
+    font-size: 102%;
+}
+.passport-page > main #left-content .cart-data:not(:nth-child(1)) #table-list .content td{
+    padding-top: 15px;
+    padding-bottom: 15px;
+}
+.passport-page > main #left-content .cart-data #table-list .content td:nth-child(1){
+    text-indent: 16%;
+    color: gray;
 }
 .passport-page > main #left-content .cart-data #table-list .content td:nth-child(4){
     border-left: solid 2px gray;
     text-indent: 2%;
 }
+.passport-page > main #left-content .cart-data:nth-child(1) #table-list .content td:nth-child(1) {
+    width: 6%;
+}
+.passport-page > main #left-content .cart-data:nth-child(1) #table-list .content td:nth-child(2) {
+    width: 36%;
+}
+.passport-page > main #left-content .cart-data:nth-child(1) #table-list .content td:nth-child(3){
+    width: 18%;
+}
+.passport-page > main #left-content .cart-data:nth-child(1) #table-list .content td:nth-child(4){
+    width: 19%;
+}
+.passport-page > main #left-content .cart-data:nth-child(2) #table-list .content td:nth-child(2){
+    width: 21%;
+}
+.passport-page > main #left-content .cart-data:nth-child(3) #table-list .content td:nth-child(2){
+    width: 63%;
+}
 .passport-page > main #left-content .cart-data #table-list .content td:nth-child(5), .passport-page > main #left-content .cart-data #table-list .content td:nth-child(1){
-    text-align: center;
+    text-align: left;
+    padding-left: 1%;
+    width: 7%;
 }

@@ -57,7 +57,9 @@ const PromoBlocksThreeDetals = () => {
 
     for (let index = 0; index < promos.length; index++) {
         const el_size = promos[index];
-        threed.height(el_size.height() - 100);
+        if(window.chrome){ threed.height(el_size.height() - 110); }
+        else{ threed.height(el_size.height() - 100); }
+        
     }
 
 
@@ -70,19 +72,24 @@ const PromoBlocksThreeDetalsAppend = () => {
     for (let index = 0; index < promos.length; index++) {
         const el_size = promos[index];
         if(!index == 1){
-            el_size.before('<div id="threedetal-left"><span style="width: 113%;height: 100%;background-color: white;margin-left: -1%;">&nbsp;</span></div>');
-            el_size.after('<div id="threedetal-right"><span style="width: 100%;height: 100%;background-color: white;">&nbsp;</span></div>');
+            
+                el_size.before('<div id="threedetal-left"><span style="width: 113vw;height: 100%;background-color: white;margin-left: -1%;">&nbsp;</span></div>');
+                el_size.after('<div id="threedetal-right"><span style="width: 100vw;height: 100%;background-color: white;">&nbsp;</span></div>');
+            
         }
         else{
-            el_size.before('<div id="threedetal-left"><span style="width: 116%;height: 100%;background-color: white;margin-left: -5%;padding-right: 4px;">&nbsp;</span></div>');
-            el_size.after('<div id="threedetal-right"><span style="width: 103%;height: 100%;background-color: white;margin-left: -8%;padding-right: 6px;">&nbsp;</span></div>');
+            el_size.before('<div id="threedetal-left"><span style="width: 116vw;height: 100%;background-color: white;margin-left: -5%;padding-right: 4px;">&nbsp;</span></div>');
+            el_size.after('<div id="threedetal-right"><span style="width: 103vw;height: 100%;background-color: white;margin-left: -4%;padding-right: 2px;">&nbsp;</span></div>');
         }
     }
 }
 const HomePageHorizontalAdaptiveLine = () => {
     let vw = $(this).width();
     let margin;
-    if(vw == 1024 || vw == 1280 || vw < 1280){
+    if(vw == 1280){
+        margin = "5px";
+    }
+    else if(vw == 1024 || vw == 1280 || vw < 1280){
         margin = "27px";
     }
     else if(vw == 1280 || vw == 1366 || vw < 1366){

@@ -1,0 +1,287 @@
+// Customize BS4 variables here
+
+$primary: #0a73bb;
+$success: #82c140;
+
+$table-cell-padding: .25rem .5rem;
+
+$font-size-base: .9rem;
+
+$h1-font-size: 1.5rem;
+$h3-font-size: 1.125rem;
+
+
+@import "bs-4.3.1/functions";
+@import "bs-4.3.1/variables";
+@import "bs-4.3.1/mixins";
+
+@import "bs-4.3.1/reboot";
+@import "bs-4.3.1/type";
+@import "bs-4.3.1/grid";
+@import "bs-4.3.1/tables";
+@import "bs-4.3.1/forms";
+@import "bs-4.3.1/input-group";
+@import "bs-4.3.1/buttons";
+@import "bs-4.3.1/transitions";
+@import "bs-4.3.1/dropdown";
+@import "bs-4.3.1/button-group";
+@import "bs-4.3.1/nav";
+@import "bs-4.3.1/badge";
+@import "bs-4.3.1/pagination";
+@import "bs-4.3.1/tooltip";
+@import "bs-4.3.1/list-group";
+@import "bs-4.3.1/utilities";
+
+// Yii Debug variables
+$icon-angle-right:                  str-replace(url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 256 512'%3e%3cpath fill='#{$link-color}' d='M224.3 273l-136 136c-9.4 9.4-24.6 9.4-33.9 0l-22.6-22.6c-9.4-9.4-9.4-24.6 0-33.9l96.4-96.4-96.4-96.4c-9.4-9.4-9.4-24.6 0-33.9L54.3 103c9.4-9.4 24.6-9.4 33.9 0l136 136c9.5 9.4 9.5 24.6.1 34z'/%3e%3c/svg%3e"), "#", "%23") !default;
+$icon-angle-right-active:           str-replace(url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 256 512'%3e%3cpath fill='#{$list-group-active-color}' d='M224.3 273l-136 136c-9.4 9.4-24.6 9.4-33.9 0l-22.6-22.6c-9.4-9.4-9.4-24.6 0-33.9l96.4-96.4-96.4-96.4c-9.4-9.4-9.4-24.6 0-33.9L54.3 103c9.4-9.4 24.6-9.4 33.9 0l136 136c9.5 9.4 9.5 24.6.1 34z'/%3e%3c/svg%3e"), "#", "%23") !default;
+
+$icon-sort-asc:                     str-replace(url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 512 512'%3e%3cpath fill='#{$link-color}' d='M187.298 395.314l-79.984 80.002c-6.248 6.247-16.383 6.245-22.627 0L4.705 395.314C-5.365 385.244 1.807 368 16.019 368H64V48c0-8.837 7.163-16 16-16h32c8.837 0 16 7.163 16 16v320h47.984c14.241 0 21.363 17.264 11.314 27.314zM240 96h256c8.837 0 16-7.163 16-16V48c0-8.837-7.163-16-16-16H240c-8.837 0-16 7.163-16 16v32c0 8.837 7.163 16 16 16zm-16 112v-32c0-8.837 7.163-16 16-16h192c8.837 0 16 7.163 16 16v32c0 8.837-7.163 16-16 16H240c-8.837 0-16-7.163-16-16zm0 256v-32c0-8.837 7.163-16 16-16h64c8.837 0 16 7.163 16 16v32c0 8.837-7.163 16-16 16h-64c-8.837 0-16-7.163-16-16zm0-128v-32c0-8.837 7.163-16 16-16h128c8.837 0 16 7.163 16 16v32c0 8.837-7.163 16-16 16H240c-8.837 0-16-7.163-16-16z'/%3e%3c/svg%3e"), "#", "%23") !default;
+$icon-sort-desc:                    str-replace(url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 512 512'%3e%3cpath fill='#{$link-color}' d='M4.702 116.686l79.984-80.002c6.248-6.247 16.383-6.245 22.627 0l79.981 80.002c10.07 10.07 2.899 27.314-11.314 27.314H128v320c0 8.837-7.163 16-16 16H80c-8.837 0-16-7.163-16-16V144H16.016c-14.241 0-21.363-17.264-11.314-27.314zM240 96h256c8.837 0 16-7.163 16-16V48c0-8.837-7.163-16-16-16H240c-8.837 0-16 7.163-16 16v32c0 8.837 7.163 16 16 16zm-16 112v-32c0-8.837 7.163-16 16-16h192c8.837 0 16 7.163 16 16v32c0 8.837-7.163 16-16 16H240c-8.837 0-16-7.163-16-16zm0 256v-32c0-8.837 7.163-16 16-16h64c8.837 0 16 7.163 16 16v32c0 8.837-7.163 16-16 16h-64c-8.837 0-16-7.163-16-16zm0-128v-32c0-8.837 7.163-16 16-16h128c8.837 0 16 7.163 16 16v32c0 8.837-7.163 16-16 16H240c-8.837 0-16-7.163-16-16z'/%3e%3c/svg%3e"), "#", "%23") !default;
+
+$icon-sort-numeric-asc:             str-replace(url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 448 512'%3e%3cpath fill='#{$link-color}' d='M308.811 113.787l-19.448-20.795c-4.522-4.836-4.274-12.421.556-16.95l43.443-40.741a11.999 11.999 0 0 1 8.209-3.247h31.591c6.627 0 12 5.373 12 12v127.07h25.66c6.627 0 12 5.373 12 12v28.93c0 6.627-5.373 12-12 12H301.649c-6.627 0-12-5.373-12-12v-28.93c0-6.627 5.373-12 12-12h25.414v-57.938c-7.254 6.58-14.211 4.921-18.252.601zm-30.57 238.569c0-32.653 23.865-67.356 68.094-67.356 38.253 0 79.424 28.861 79.424 92.228 0 51.276-32.237 105.772-91.983 105.772-17.836 0-30.546-3.557-38.548-6.781-5.79-2.333-8.789-8.746-6.922-14.703l9.237-29.48c2.035-6.496 9.049-9.983 15.467-7.716 13.029 4.602 27.878 5.275 38.103-4.138-38.742 5.072-72.872-25.36-72.872-67.826zm92.273 19.338c0-22.285-15.302-36.505-25.835-36.505-8.642 0-13.164 7.965-13.164 15.832 0 5.669 1.815 24.168 25.168 24.168 9.973 0 13.377-2.154 13.744-2.731.021-.046.087-.291.087-.764zM175.984 368H128V48c0-8.837-7.163-16-16-16H80c-8.837 0-16 7.163-16 16v320H16.019c-14.212 0-21.384 17.244-11.314 27.314l79.981 80.002c6.245 6.245 16.38 6.247 22.627 0l79.984-80.002c10.05-10.05 2.928-27.314-11.313-27.314z'/%3e%3c/svg%3e"), "#", "%23") !default;
+$icon-sort-numeric-desc:            str-replace(url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 448 512'%3e%3cpath fill='#{$link-color}' d='M308.811 113.787l-19.448-20.795c-4.522-4.836-4.274-12.421.556-16.95l43.443-40.741a11.999 11.999 0 0 1 8.209-3.247h31.591c6.627 0 12 5.373 12 12v127.07h25.66c6.627 0 12 5.373 12 12v28.93c0 6.627-5.373 12-12 12H301.649c-6.627 0-12-5.373-12-12v-28.93c0-6.627 5.373-12 12-12h25.414v-57.938c-7.254 6.58-14.211 4.921-18.252.601zm-30.57 238.569c0-32.653 23.865-67.356 68.094-67.356 38.253 0 79.424 28.861 79.424 92.228 0 51.276-32.237 105.772-91.983 105.772-17.836 0-30.546-3.557-38.548-6.781-5.79-2.333-8.789-8.746-6.922-14.703l9.237-29.48c2.035-6.496 9.049-9.983 15.467-7.716 13.029 4.602 27.878 5.275 38.103-4.138-38.742 5.072-72.872-25.36-72.872-67.826zm92.273 19.338c0-22.285-15.302-36.505-25.835-36.505-8.642 0-13.164 7.965-13.164 15.832 0 5.669 1.815 24.168 25.168 24.168 9.973 0 13.377-2.154 13.744-2.731.021-.046.087-.291.087-.764zM16.016 144H64v320c0 8.837 7.163 16 16 16h32c8.837 0 16-7.163 16-16V144h47.981c14.212 0 21.384-17.244 11.314-27.314l-79.981-80.002c-6.245-6.245-16.38-6.247-22.627 0L4.702 116.686C-5.347 126.736 1.775 144 16.016 144z'/%3e%3c/svg%3e"), "#", "%23") !default;
+
+$icon-sort-alpha-asc:               str-replace(url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 448 512'%3e%3cpath fill='#{$link-color}' d='M187.298 395.314l-79.984 80.002c-6.248 6.247-16.383 6.245-22.627 0L4.705 395.314C-5.365 385.244 1.807 368 16.019 368H64V48c0-8.837 7.163-16 16-16h32c8.837 0 16 7.163 16 16v320h47.984c14.241 0 21.363 17.264 11.314 27.314zm119.075-180.007A12 12 0 0 1 294.838 224h-35.717c-8.22 0-14.007-8.078-11.362-15.861l57.096-168A12 12 0 0 1 316.217 32h39.566c5.139 0 9.708 3.273 11.362 8.139l57.096 168C426.886 215.922 421.1 224 412.879 224h-35.735a12 12 0 0 1-11.515-8.622l-8.301-28.299h-42.863l-8.092 28.228zm22.857-78.697h13.367l-6.6-22.937-6.767 22.937zm12.575 287.323l67.451-95.698a12 12 0 0 0 2.192-6.913V300c0-6.627-5.373-12-12-12H274.522c-6.627 0-12 5.373-12 12v28.93c0 6.627 5.373 12 12 12h56.469c-.739.991-1.497 2.036-2.27 3.133l-67.203 95.205a12.001 12.001 0 0 0-2.196 6.92V468c0 6.627 5.373 12 12 12h129.355c6.627 0 12-5.373 12-12v-28.93c0-6.627-5.373-12-12-12h-61.146c.74-.993 1.5-2.039 2.274-3.137z'/%3e%3c/svg%3e"), "#", "%23") !default;
+$icon-sort-alpha-desc:              str-replace(url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 448 512'%3e%3cpath fill='#{$link-color}' d='M4.702 116.686l79.984-80.002c6.248-6.247 16.383-6.245 22.627 0l79.981 80.002c10.07 10.07 2.899 27.314-11.314 27.314H128v320c0 8.837-7.163 16-16 16H80c-8.837 0-16-7.163-16-16V144H16.016c-14.241 0-21.363-17.264-11.314-27.314zm301.671 98.621A12 12 0 0 1 294.838 224h-35.717c-8.22 0-14.007-8.078-11.362-15.861l57.096-168A12 12 0 0 1 316.217 32h39.566c5.139 0 9.708 3.273 11.362 8.139l57.096 168C426.886 215.922 421.1 224 412.879 224h-35.735a12 12 0 0 1-11.515-8.622l-8.301-28.299h-42.863l-8.092 28.228zm22.857-78.697h13.367l-6.6-22.937-6.767 22.937zm12.575 287.323l67.451-95.698a12 12 0 0 0 2.192-6.913V300c0-6.627-5.373-12-12-12H274.522c-6.627 0-12 5.373-12 12v28.93c0 6.627 5.373 12 12 12h56.469c-.739.991-1.497 2.036-2.27 3.133l-67.203 95.205a12.001 12.001 0 0 0-2.196 6.92V468c0 6.627 5.373 12 12 12h129.355c6.627 0 12-5.373 12-12v-28.93c0-6.627-5.373-12-12-12h-61.146c.74-.993 1.5-2.039 2.274-3.137z'/%3e%3c/svg%3e"), "#", "%23") !default;
+
+.tab-pane {
+    padding: $list-group-item-padding-y 0;
+}
+
+.main-container {
+    width: auto;
+}
+
+span.indent {
+    color: gray("400");
+}
+
+ul.trace {
+    font-size: 12px;
+    color: gray("600");;
+    margin: 2px 0 0 0;
+    padding: 0;
+    list-style: none;
+    white-space: normal;
+}
+
+#db-panel-detailed-grid table tbody tr td {
+    position: relative;
+}
+
+.db-explain {
+    position: absolute;
+    bottom: 4px;
+    right: 4px;
+    font-size: 10px;
+}
+
+.db-explain-text {
+    display: none;
+    margin: 10px 0 0 0;
+    font-size: 13px;
+    width: 100%;
+    word-break: break-all;
+}
+
+#db-explain-all {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    font-size: 12px;
+    margin-right: 15px;
+}
+
+ul.assets {
+    margin: 2px 0 0 0;
+    padding: 0;
+    list-style: none;
+    white-space: normal;
+}
+
+.callout {
+    margin: 0 0 10px 0;
+    padding: 5px;
+    border: $border-width solid;
+    border-radius: $border-radius;
+}
+
+@each $color, $value in $theme-colors {
+    .callout-#{$color} {
+        background-color: theme-color-level($color, -10);
+        border-color: theme-color-level($color, -9);
+        color: theme-color-level($color, 6);
+    }
+}
+
+.list-group {
+    .active {
+        .icon::after {
+            background-image: $icon-angle-right-active;
+        }
+    }
+
+    .icon {
+        float: right;
+
+        &::after {
+            background: $icon-angle-right no-repeat;
+            background-size: contain;
+            content: "";
+            display: inline-block;
+            height: 1em;
+            line-height: 1;
+            position: relative;
+            top: 2px;
+            width: 1em;
+        }
+    }
+}
+
+.request-table td {
+    font-family: Menlo, Monaco, Consolas, "Courier New", monospace;
+    word-break: break-all;
+}
+
+.request-table tr > th:first-child {
+    width: 25%;
+}
+
+.config-php-info-table td.v,
+.logs-messages-table td {
+    white-space: pre-wrap;
+    word-break: break-all;
+}
+
+.word-break-keep {
+    white-space: nowrap !important;
+    word-break: keep-all !important;
+}
+
+.since-previous {
+    @extend .word-break-keep;
+
+    .button {
+        padding: 0 10px;
+        font-weight: bold;
+    }
+}
+
+.not-set {
+    color: color("red");
+    font-style: italic;
+}
+
+.detail-grid-view th {
+    white-space: nowrap;
+}
+
+/* add sorting icons to gridview sort links */
+a.asc:after, a.desc:after {
+    background-repeat: no-repeat;
+    background-size: contain;
+    content: "";
+    display: inline-block;
+    height: $font-size-base;
+    line-height: 1;
+    margin-left: 5px;
+    position: relative;
+    top: 3px;
+    width: $font-size-base;
+}
+
+a.asc:after {
+    background-image: $icon-sort-alpha-asc;
+}
+
+a.desc:after {
+    background-image: $icon-sort-alpha-desc;
+}
+
+.sort-numerical a.asc:after {
+    background-image: $icon-sort-numeric-asc;
+}
+
+.sort-numerical a.desc:after {
+    background-image: $icon-sort-numeric-desc;
+}
+
+.sort-ordinal a.asc:after {
+    background-image: $icon-sort-asc;
+}
+
+.sort-ordinal a.desc:after {
+    background-image: $icon-sort-desc;
+}
+
+.mail-sorter {
+    margin-top: 7px;
+}
+
+.mail-sorter li {
+    list-style: none;
+    float: left;
+    width: 12%;
+    font-weight: bold;
+}
+
+.nowrap {
+    white-space: nowrap;
+}
+
+.table-pointer tbody tr {
+    cursor: pointer;
+}
+
+.summary {
+    margin-bottom: $paragraph-margin-bottom;
+}
+
+
+table {
+    h3 {
+        margin: 0.5em 0;
+    }
+    td {
+        white-space: pre-wrap;
+        &.ws-normal {
+            white-space: normal;
+        }
+    }
+}
+
+.phpinfo {
+    h1, h2 {
+        text-align: center;
+    }
+}
+.config-php-info-table {
+    tr {
+        &.h:nth-of-type(odd) {
+            background-color: #99c;
+            font-weight: bold;
+            td {
+                display: flex;
+                align-items: center;
+                flex-direction: row-reverse;
+                justify-content: space-between;
+            }
+        }
+        &.v {
+            img {
+                float: right;
+            }
+        }
+        &:not(.h):not(.v) td:first-child {
+            width: 28%;
+            background-color: #ccf;
+            font-weight: bold;
+        }
+        td:not(:first-child) + td {
+            width: 36%;
+        }
+
+    }
+
+}

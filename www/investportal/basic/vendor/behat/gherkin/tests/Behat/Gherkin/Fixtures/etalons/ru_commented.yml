@@ -1,0 +1,11 @@
+feature:
+  title:        Тест комментов
+  keyword:      Функционал
+  language:     ru
+  line:         7
+  description:  |-
+    i18n должен правильно считываться
+    Даже если в начале файла 1000
+    комментов!
+
+  scenarios:    ~

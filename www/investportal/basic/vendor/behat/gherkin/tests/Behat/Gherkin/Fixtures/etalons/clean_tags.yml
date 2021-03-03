@@ -1,0 +1,20 @@
+feature:
+  title:        Feature N4
+  line:         1
+  description:  ~
+
+  scenarios:
+    -
+      type:     scenario
+      tags:     [normal]
+      line:     4
+      steps:
+        - { keyword_type: 'Given', type: 'Given',  text: 'Some normal step N41',   line: 5 }
+        - { keyword_type: 'Given',   type: 'And',    text: 'Some fast step N42',     line: 6 }
+
+    -
+      type:     scenario
+      tags:     [fast]
+      line:     9
+      steps:
+        - { keyword_type: 'Given', type: 'Given',  text: 'Some slow step N43',     line: 10 }

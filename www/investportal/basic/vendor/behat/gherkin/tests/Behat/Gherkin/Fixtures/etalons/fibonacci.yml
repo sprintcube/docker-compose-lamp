@@ -1,0 +1,27 @@
+feature:
+  title:        Fibonacci
+  language:     en
+  line:         1
+  description:  |-
+    In order to calculate super fast fibonacci series
+    As a pythonista
+    I want to use Python for that
+
+  scenarios:
+    -
+      type:     outline
+      title:    Series
+      line:     6
+      steps:
+        - { keyword_type: 'When', type: 'When',  text: 'I ask python to calculate fibonacci up to <n>', line: 7 }
+        - { keyword_type: 'Then', type: 'Then',  text: 'it should give me <series>',                    line: 8 }
+
+      examples:
+        11: [ n   , series                                   ]
+        12: [ 1   , '[]'                                     ]
+        13: [ 2   , '[1, 1]'                                 ]
+        14: [ 3   , '[1, 1, 2]'                              ]
+        15: [ 4   , '[1, 1, 2, 3]'                           ]
+        16: [ 6   , '[1, 1, 2, 3, 5]'                        ]
+        17: [ 9   , '[1, 1, 2, 3, 5, 8]'                     ]
+        18: [ 100 , '[1, 1, 2, 3, 5, 8, 13, 21, 34, 55, 89]' ]

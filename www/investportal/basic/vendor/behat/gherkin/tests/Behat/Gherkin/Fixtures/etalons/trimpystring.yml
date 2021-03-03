@@ -1,0 +1,29 @@
+feature:
+  title:        A py string feature
+  language:     en
+  line:         1
+  description:  ~
+
+  scenarios:
+    -
+      type:     scenario
+      title:    ~
+      line:     3
+      steps:
+        -
+          keyword_type: Then
+          type:         Then
+          text:         String must be
+          line:         4
+          arguments:
+            -
+              type:     pystring
+              text:     |-
+                -
+                   a string
+                  with something
+                be
+                a
+                u
+                  ti
+                    ful

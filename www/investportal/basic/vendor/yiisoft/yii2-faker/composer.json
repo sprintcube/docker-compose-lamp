@@ -1,0 +1,52 @@
+{
+    "name": "yiisoft/yii2-faker",
+    "description": "Fixture generator. The Faker integration for the Yii framework.",
+    "keywords": ["yii2", "faker", "fixture"],
+    "type": "yii2-extension",
+    "license": "BSD-3-Clause",
+    "support": {
+        "issues": "https://github.com/yiisoft/yii2-faker/issues",
+        "forum": "http://www.yiiframework.com/forum/",
+        "wiki": "http://www.yiiframework.com/wiki/",
+        "irc": "irc://irc.freenode.net/yii",
+        "source": "https://github.com/yiisoft/yii2-faker"
+    },
+    "authors": [
+        {
+            "name": "Mark Jebri",
+            "email": "mark.github@yandex.ru"
+        }
+    ],
+    "require": {
+        "yiisoft/yii2": "~2.0.0",
+        "fakerphp/faker": "~1.9|~1.10"
+    },
+    "require-dev": {
+        "cweagans/composer-patches": "^1.7",
+        "phpunit/phpunit": "4.8.34"
+    },
+    "autoload": {
+        "psr-4": {"yii\\faker\\": "src"}
+    },
+    "extra": {
+        "branch-alias": {
+            "dev-master": "2.0.x-dev"
+        },
+        "composer-exit-on-patch-failure": true,
+        "patches": {
+            "phpunit/phpunit-mock-objects": {
+                "Fix PHP 7 and 8 compatibility": "https://yiisoft.github.io/phpunit-patches/phpunit_mock_objects.patch"
+            },
+            "phpunit/phpunit": {
+                "Fix PHP 7 compatibility": "https://yiisoft.github.io/phpunit-patches/phpunit_php7.patch",
+                "Fix PHP 8 compatibility": "https://yiisoft.github.io/phpunit-patches/phpunit_php8.patch"
+            }
+        }
+    },
+    "repositories": [
+        {
+            "type": "composer",
+            "url": "https://asset-packagist.org"
+        }
+    ]
+}

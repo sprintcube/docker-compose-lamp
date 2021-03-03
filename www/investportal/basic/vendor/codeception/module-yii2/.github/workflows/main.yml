@@ -1,0 +1,47 @@
+name: CI
+
+on: [push, pull_request]
+
+jobs:
+  tests:
+    runs-on: ubuntu-latest
+
+    strategy:
+      matrix:
+        php: [5.6, 7.0, 7.1, 7.2, 7.3, 7.4]
+
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v2
+
+    - name: Setup PHP
+      uses: shivammathur/setup-php@v2
+      with:
+        php-version: ${{ matrix.php }}
+        extensions: pdo, sqlite, imagick
+        coverage: none
+
+    - name: Validate composer.json and composer.lock
+      run: composer validate
+
+    - name: Install dependencies
+      run: composer install --prefer-dist --no-progress --no-interaction --no-suggest
+
+    - name: Checkout Yii2
+      uses: actions/checkout@v2
+      with:
+        repository: Codeception/yii2-tests
+        path: framework-tests
+
+    - name: Install Yii2
+      run: |
+        composer require --no-update codeception/module-asserts
+        composer require --no-update codeception/module-filesystem
+        composer require --no-update codeception/codeception
+        composer update --no-dev --prefer-dist --no-interaction
+      working-directory: framework-tests
+
+    - name: Run test suite
+      run: |
+        php vendor/bin/codecept build -c framework-tests
+        php vendor/bin/codecept run -c framework-tests

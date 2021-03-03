@@ -1,0 +1,373 @@
+@import "bs4/functions";
+@import "bs4/variables";
+@import "bs4/mixins";
+
+@import "bs4/reboot";
+@import "bs4/type";
+@import "bs4/code";
+@import "bs4/grid";
+@import "bs4/tables";
+@import "bs4/forms";
+@import "bs4/buttons";
+@import "bs4/transitions";
+@import "bs4/dropdown";
+@import "bs4/button-group";
+@import "bs4/nav";
+@import "bs4/navbar";
+@import "bs4/pagination";
+@import "bs4/badge";
+@import "bs4/list-group";
+@import "bs4/close";
+@import "bs4/modal";
+@import "bs4/tooltip";
+@import "bs4/popover";
+@import "bs4/utilities";
+
+.tab-pane {
+    padding: $list-group-item-padding-y 0;
+}
+
+html,
+body {
+    height: 100%;
+}
+
+.page-container {
+    min-height: 100%;
+}
+
+.content-container {
+    padding-top: 90px;
+}
+
+.footer-fix {
+    height: 100px;
+}
+
+.footer {
+    margin-top: -60px;
+    height: 59px;
+    line-height: 59px;
+    box-sizing: border-box;
+
+    p {
+        margin: 0;
+    }
+}
+
+.navbar {
+    position: fixed;
+    width: 100%;
+    z-index: $zindex-fixed;
+}
+
+.navbar-brand {
+    padding: 0;
+    margin: 0;
+}
+
+.default-index .generator {
+    min-height: 200px;
+    margin-bottom: 20px;
+}
+
+.list-group {
+    .active {
+        .icon::after {
+            background-image: $icon-angle-right-active;
+        }
+    }
+
+    .icon {
+        float: right;
+
+        &::after {
+            background: $icon-angle-right no-repeat;
+            background-size: contain;
+            content: "";
+            display: inline-block;
+            height: 1em;
+            line-height: 1;
+            position: relative;
+            top: 2px;
+            width: 1em;
+        }
+    }
+}
+
+.popover {
+    max-width: 400px;
+    width: 400px;
+}
+
+.hint-block {
+    display: none;
+}
+
+.error-summary {
+    color: #a94442;
+    background: gray("100");
+    border-left: 3px solid #eed3d7;
+    padding: 10px 20px;
+    margin: 0 0 15px 0;
+}
+
+.default-view {
+    .sticky-value {
+        @include text-truncate;
+
+        padding: $input-padding-x $input-padding-y;
+        background: lightyellow;
+        white-space: pre;
+        word-wrap: break-word;
+    }
+    .form-group label.help {
+        border-bottom: 1px dashed gray("600");
+        cursor: help;
+    }
+    .modal-dialog {
+        .modal-header {
+            .btn-group {
+                .icon {
+                    &::after {
+                        background-repeat: no-repeat;
+                        background-size: contain;
+                        content: "";
+                        display: inline-block;
+                        height: 1.2em;
+                        line-height: 1;
+                        position: relative;
+                        top: 2px;
+                        width: 1.2em;
+                    }
+                }
+
+                .modal-previous {
+                    .icon::after {
+                        background-image: $icon-long-arrow-left;
+                    }
+
+                    @include hover {
+                        .icon::after {
+                            background-image: $icon-long-arrow-left-hover;
+                        }
+                    }
+                }
+                .modal-next {
+                    .icon::after {
+                        background-image: $icon-long-arrow-right;
+                    }
+
+                    @include hover {
+                        .icon::after {
+                            background-image: $icon-long-arrow-right-hover;
+                        }
+                    }
+                }
+                .modal-refresh {
+                    .icon::after {
+                        background-image: $icon-refresh;
+                    }
+
+                    @include hover {
+                        .icon::after {
+                            background-image: $icon-refresh-hover;
+                        }
+                    }
+                }
+                .modal-checkbox {
+                    .icon::after, &.checked .icon::after {
+                        background-image: $icon-check-square;
+                    }
+                    &.unchecked .icon::after {
+                        background-image: $icon-square;
+                    }
+
+                    @include hover {
+                        .icon::after, &.checked .icon::after {
+                            background-image: $icon-check-square-hover;
+                        }
+                        &.unchecked .icon::after {
+                            background-image: $icon-square-hover;
+                        }
+                    }
+                }
+            }
+        }
+
+        .error {
+            color: theme-color("red");
+        }
+        .content {
+            background: gray("100");
+            border-left: gray("200") 5px solid;
+            padding: 5px 10px;
+            overflow: auto;
+        }
+        code {
+            background: transparent;
+        }
+        .modal-copy-hint {
+            margin-right: 10px;
+
+            kbd {
+                margin: 0 2px;
+            }
+        }
+    }
+}
+
+.default-view-files {
+    table {
+        .action {
+            width: 100px;
+        }
+        .check {
+            width: 25px;
+            text-align: center;
+        }
+    }
+}
+
+.default-view-results {
+    pre {
+        overflow: auto;
+        background-color: gray("800");
+        max-height: 300px;
+        color: $white;
+        padding: 10px;
+        border-radius: 0;
+        white-space: nowrap;
+
+        .error {
+            background: #FFE0E1;
+            color: $black;
+            padding: 1px;
+        }
+    }
+    .alert pre {
+        background: white;
+    }
+}
+
+.default-diff {
+    pre {
+        padding: 0;
+        margin: 0;
+        background: transparent;
+        border: none;
+
+        del {
+            background: pink;
+        }
+        ins {
+            background: lightgreen;
+            text-decoration: none;
+        }
+    }
+}
+
+.Differences {
+    width: 100%;
+    border-collapse: collapse;
+    border-spacing: 0;
+    empty-cells: show;
+
+    thead {
+        display: none;
+    }
+    tbody th {
+        text-align: right;
+        background: gray("100");
+        padding: 1px 2px;
+        border-right: 1px solid gray("200");
+        vertical-align: top;
+        font-size: 13px;
+        font-family: Monaco, Menlo, Consolas, 'Courier New', monospace;
+        font-weight: normal;
+        color: gray("500");
+        width: 5px;
+    }
+    td {
+        padding: 1px 2px;
+        font-size: 13px;
+        font-family: Monaco, Menlo, Consolas, 'Courier New', monospace;
+    }
+    ins, del {
+        text-decoration: none;
+    }
+    .Skipped {
+        background: gray("100");
+    }
+}
+
+.DifferencesSideBySide {
+    .ChangeInsert td {
+        &.Left {
+            background: #dfd;
+        }
+        &.Right {
+            background: #cfc;
+        }
+    }
+    .ChangeDelete td {
+        &.Left {
+            background: #f88;
+        }
+        &.Right {
+            background: #faa;
+        }
+    }
+    .ChangeReplace {
+        td {
+            &.Left {
+                background: #fe9;
+            }
+            &.Right {
+                background: #fd8;
+            }
+        }
+        ins, del {
+            background: #fc0;
+        }
+    }
+}
+
+.DifferencesInline {
+    .ChangeReplace, .ChangeDelete, .ChangeInsert {
+        .Left {
+            background: #fdd;
+        }
+        .Right {
+            background: #dfd;
+        }
+    }
+
+    .ChangeReplace {
+        ins {
+            background: #9e9;
+        }
+        del {
+            background: #e99;
+        }
+    }
+    th[data-line-number]:before {
+        content: attr(data-line-number);
+    }
+}
+
+#clipboard-container {
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 0;
+    height: 0;
+    z-index: 100;
+    /*display: none;*/
+    opacity: 0;
+}
+#clipboard {
+    width: 1px;
+    height: 1px;
+    padding: 0;
+}

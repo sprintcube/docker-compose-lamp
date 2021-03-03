@@ -1,14 +1,15 @@
-#news{ height: 1545px;}
+#news{ height: 1618px;}
 #news > .news-viewer #left-content{
   width: 55%;
   float: left;
-  margin-left: 3%;
+  margin-left: 6%;
 }
 #news > .news-viewer #left-content header{
   width: 100%;
 }
 #news > .news-viewer #left-content header h2{
-  font-size: 105%;
+  font-size: 168%;
+  color: black;
 }
 #news > .news-viewer #left-content header .public-date{
   border-top: solid 2px gray;
@@ -111,28 +112,40 @@
 #news > .news-viewer #right-content .realted-news .realted{
     display: block;
     margin-top: 1%;
+    padding-bottom: 12%;
 }
 #news > .news-viewer #right-content .realted-news .realted #header{ 
     width: 100%;
 }
 #news > .news-viewer #right-content .realted-news .realted #content{
     display: block;
-    margin-top: 2%;
+    margin-top: 6%;
     color: #0079bf;
     font-weight: bold;
     text-decoration: none;
-    font-size: 105%;
+    font-size: 106%;
 }
 #news > .news-viewer #right-content .realted-news .realted #footer{
     display: block;
-    padding-top: 2%;
+    padding-top: 6%;
     padding-bottom: 2%;
-    font-size: 96%;
+    font-size: 93%;
+    color: gray;
+}
+#news > .news-viewer #right-content .realted-news .realted #date{
+  color: gray;
+  font-family: Times New Roman, serif;
+  font-style: italic;
+  font-size: 90%;
+  padding-top: 6%;
+  display: block;
 }
 @media all and (max-width: 1280px){
   #news {
     height: 1736px;
   }
 } 
-  
+#news > .news-viewer #left-content{
+  margin-top: -8%;
+} 
 

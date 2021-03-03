@@ -1,0 +1,33 @@
+feature:
+  title:        Login
+  language:     en
+  line:         1
+  description:  |-
+    To ensure the safety of the application
+    A regular user of the system
+    Must authenticate before using the app
+
+  scenarios:
+    -
+      type:     outline
+      title:    Failed Login
+      line:     7
+      steps:
+        - { keyword_type: 'Given', type: 'Given',  text: 'the user "known_user"',                  line: 8 }
+        - { keyword_type: 'When',  type: 'When',   text: 'I go to the main page',                  line: 10 }
+        - { keyword_type: 'Then',  type: 'Then',   text: 'I should see the login form',            line: 11 }
+        - { keyword_type: 'When',  type: 'When',   text: 'I fill in "login" with "<login>"',       line: 13 }
+        - { keyword_type: 'When',  type: 'And',    text: 'I fill in "password" with "<password>"', line: 14 }
+        - { keyword_type: 'When',  type: 'And',    text: 'I press "Log In"',                       line: 15 }
+        - { keyword_type: 'Then',  type: 'Then',   text: 'the login request should fail',          line: 16 }
+        - { keyword_type: 'Then',  type: 'And',    text: 'I should see the error message "Login or Password incorrect"',  line: 17 }
+      examples:
+        20: [login, password]
+        21: ['', '']
+        22: [unknown_user, '']
+        23: [known_user, '']
+        24: ['', wrong_password]
+        25: ['', known_userpass]
+        26: [unknown_user, wrong_password]
+        27: [unknown_user, known_userpass]
+        28: [known_user, wrong_password]
