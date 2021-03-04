@@ -70,22 +70,22 @@ const PromoBlocksThreeDetalsAppend = () => {
         const el_size = promos[index];
         if(!index == 1){
             if(window.chrome){
-                el_size.before('<div id="threedetal-left-chromium"><span style="width: 103vw;height: 100%;background-color: white;margin-left: 1%;margin-right: 2vw;">&nbsp;</span></div>');
-                el_size.after('<div id="threedetal-right-chromium"><span style="width: 90vw;height: 100%;background-color: white;margin-right: 3vw;">&nbsp;</span></div>');
+                el_size.before('<div id="threedetal-left-chromium"><span style="width: 113vw;height: 100%;background-color: white;margin-left: -4%;">&nbsp;</span></div>');
+                el_size.after('<div id="threedetal-right-chromium"><span style="width: 90vw;height: 100%;background-color: white;margin-left: -1vw;">&nbsp;</span></div>');
             }
             else{
-                el_size.before('<div id="threedetal-left"><span style="width: 113vw;height: 100%;background-color: white;margin-left: -1%;">&nbsp;</span></div>');
-                el_size.after('<div id="threedetal-right"><span style="width: 100vw;height: 100%;background-color: white;">&nbsp;</span></div>'); 
+                el_size.before('<div id="threedetal-left"><span style="width: 123vw;height: 100%;background-color: white;margin-left: -2vw;">&nbsp;</span></div>');
+                el_size.after('<div id="threedetal-right"><span style="width: 100vw;height: 100%;background-color: white;margin-left: -2vw;">&nbsp;</span></div>'); 
             }
         }
         else{
             if(window.chrome){
-                el_size.before('<div id="threedetal-left-chromium"><span style="width: 106vw;height: 100%;background-color: white;margin-left: -5%;padding-right: 4px;">&nbsp;</span></div>');
-                el_size.after('<div id="threedetal-right-chromium"><span style="width: 93vw;height: 100%;background-color: white;margin-left: -4%;padding-right: 2px;">&nbsp;</span></div>');
+                el_size.before('<div id="threedetal-left-chromium"><span style="width: 116vw;height: 100%;background-color: white;margin-left: -7%;">&nbsp;</span></div>');
+                el_size.after('<div id="threedetal-right-chromium"><span style="width: 93vw;height: 100%;background-color: white;margin-left: -14%;">&nbsp;</span></div>');
             }
             else{
-                el_size.before('<div id="threedetal-left"><span style="width: 116vw;height: 100%;background-color: white;margin-left: -5%;padding-right: 4px;">&nbsp;</span></div>');
-                el_size.after('<div id="threedetal-right"><span style="width: 103vw;height: 100%;background-color: white;margin-left: -4%;padding-right: 2px;">&nbsp;</span></div>');
+                el_size.before('<div id="threedetal-left"><span style="width: 103vw;height: 100%;background-color: white;margin-left: -15%;padding-right: 2px;">&nbsp;</span></div>');
+                el_size.after('<div id="threedetal-right"><span style="width: 103vw;height: 100%;background-color: white;margin-left: -11%;padding-right: 2px;">&nbsp;</span></div>');
             }
         }
     }
