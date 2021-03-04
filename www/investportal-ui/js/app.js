@@ -52,7 +52,7 @@ const MarketingHeadBannerAdaptive = () => {
 }
 const PromoBlocksThreeDetals = () => {
     let promos = [$('#promo > main .promo-feed .promoblock'),$('main .popular-objects .popular-object')];
-    let threed = $('#threedetal-left, #threedetal-right');
+    let threed = $('#threedetal-left, #threedetal-right, #threedetal-left-chromium, #threedetal-right-chromium');
 
 
     for (let index = 0; index < promos.length; index++) {
@@ -61,9 +61,6 @@ const PromoBlocksThreeDetals = () => {
         else{ threed.height(el_size.height() - 100); }
         
     }
-
-
-
 }
 const PromoBlocksThreeDetalsAppend = () => {
     let promos = [$('#promo > main .promo-feed .promoblock'),$('main .popular-objects .popular-object')];
@@ -72,14 +69,24 @@ const PromoBlocksThreeDetalsAppend = () => {
     for (let index = 0; index < promos.length; index++) {
         const el_size = promos[index];
         if(!index == 1){
-            
+            if(window.chrome){
+                el_size.before('<div id="threedetal-left-chromium"><span style="width: 103vw;height: 100%;background-color: white;margin-left: 1%;margin-right: 2vw;">&nbsp;</span></div>');
+                el_size.after('<div id="threedetal-right-chromium"><span style="width: 90vw;height: 100%;background-color: white;margin-right: 3vw;">&nbsp;</span></div>');
+            }
+            else{
                 el_size.before('<div id="threedetal-left"><span style="width: 113vw;height: 100%;background-color: white;margin-left: -1%;">&nbsp;</span></div>');
-                el_size.after('<div id="threedetal-right"><span style="width: 100vw;height: 100%;background-color: white;">&nbsp;</span></div>');
-            
+                el_size.after('<div id="threedetal-right"><span style="width: 100vw;height: 100%;background-color: white;">&nbsp;</span></div>'); 
+            }
         }
         else{
-            el_size.before('<div id="threedetal-left"><span style="width: 116vw;height: 100%;background-color: white;margin-left: -5%;padding-right: 4px;">&nbsp;</span></div>');
-            el_size.after('<div id="threedetal-right"><span style="width: 103vw;height: 100%;background-color: white;margin-left: -4%;padding-right: 2px;">&nbsp;</span></div>');
+            if(window.chrome){
+                el_size.before('<div id="threedetal-left-chromium"><span style="width: 106vw;height: 100%;background-color: white;margin-left: -5%;padding-right: 4px;">&nbsp;</span></div>');
+                el_size.after('<div id="threedetal-right-chromium"><span style="width: 93vw;height: 100%;background-color: white;margin-left: -4%;padding-right: 2px;">&nbsp;</span></div>');
+            }
+            else{
+                el_size.before('<div id="threedetal-left"><span style="width: 116vw;height: 100%;background-color: white;margin-left: -5%;padding-right: 4px;">&nbsp;</span></div>');
+                el_size.after('<div id="threedetal-right"><span style="width: 103vw;height: 100%;background-color: white;margin-left: -4%;padding-right: 2px;">&nbsp;</span></div>');
+            }
         }
     }
 }

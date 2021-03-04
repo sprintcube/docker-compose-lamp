@@ -1067,15 +1067,16 @@ h1, h2, h3, h4, h5, h6, strong{
 	display: inline-block;
 	padding-left: 10px;
 	padding-right: 5%;
+	margin-top: 2%;
 }
 .footer > main #category_menu .catname {
-	font-size: 134%;
-	font-weight: 700;
+	font-size: 95%;
+	font-weight: bold;
 }
 .footer > main #category_menu ul {
 	display: block;
 	margin-top: 20px;
-	font-size: 100%;
+	font-size: 80%;
 	margin-left: -28px;
 	list-style-type: square;
 }
@@ -1262,7 +1263,7 @@ h1, h2, h3, h4, h5, h6, strong{
         margin-top: 6%;
         width: 87px;
     }
-    #services > main #slider-view .service-feed .service, #analytics > main #slider-view .analytic-feed .analytic, #estate > main #slider-view .estat-feed .estat{ width: 29%; }
+    #services > main #slider-view .service-feed .service, #analytics > main #slider-view .analytic-feed .analytic, #estate > main #slider-view .estat-feed .estat{ width: 29%; margin-left: 2%;}
     #reviews > main #slider-view .review-feed .review#with-title-image header img {
         left: 0%;
     }
@@ -1600,7 +1601,7 @@ h1, h2, h3, h4, h5, h6, strong{
         margin-top: 3%;
         width: 100px;
     }
-    #services > main #slider-view .service-feed .service, #analytics > main #slider-view .analytic-feed .analytic, #estate > main #slider-view .estat-feed .estat{ width: 29%; }
+    #services > main #slider-view .service-feed .service, #analytics > main #slider-view .analytic-feed .analytic, #estate > main #slider-view .estat-feed .estat{ width: 29%; margin-left: 3%;}
     #reviews > main #slider-view .review-feed .review#with-title-image header img {
         left: 0%;
     }
