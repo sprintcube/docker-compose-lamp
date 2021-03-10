@@ -9,25 +9,7 @@
     <script src="https://yastatic.net/jquery/3.3.1/jquery.min.js"></script>
     <script src="https://kit.fontawesome.com/97c3285af2.js" crossorigin="anonymous"></script>
     <style>
-             .exchange-selector {
-            position: relative;
-            top: 50px;
-            left: 44%;
-        }
-        #regexchange {
-            display: inline-block;
-            font-size: 98%;
-            color: gray;
-            background-color: transparent;
-            border: none;
-            appearance: none;
-            -moz-appearance: none;
-            appearance: none;
-            position: relative;
-        }
-        #regexchange:after {
-            content: "▼";
-        }
+             
         .add-but{
             text-align: center;
             color:white;
@@ -36,15 +18,7 @@
             font-size: 70%;
             padding: 10px;
         }
-        @media all and (min-width:1024px) and (max-width: 1280px){
-            .exchange-selector {
-                    margin-top: 0%;
-                    left: 34%;
-                    position: relative;
-                    display: inline-block;
-                    top: 43px;
-            }
-        }
+        
         
     </style>
 </head>
@@ -53,7 +27,7 @@
         <div id="header_top">
             <div class="ht_header">
                 <img src="../images/icons/investportal.png" alt="InvestPortal" />
-                <span>International Platform for Investors and Investment Projects</span>
+                <span>International Platform <br />for Investors and<br /> Investment Projects</span>
             </div>
         </div>
         <div id="header_bottom">
@@ -62,13 +36,15 @@
                     <div class="welcome-link">
                         <a href="">How the start</a>
                     </div>
-                    <div class="exchange-selector">
-                        <select name="regexchange" id="regexchange" style="color: #0079bf;">
-                            <option value="usd">USD</option>
-                            <option value="eur">EUR</option>
-                        </select>
-                    </div>
                     <div class="header-informer">
+                        <header>
+                               <div class="exchange-selector">
+                                 <select name="regexchange" id="regexchange" style="color: #0079bf;">
+                                   <option value="usd">USD</option>
+                                   <option value="eur">EUR</option>
+                                </select>
+                               </div>
+                        </header>
                         <main>
                             <a href="" target="_blank" style="font-size: 142%;"><i class="fab fa-facebook-f" style="color: gray;"></i></a>
                             <a href="" target="_blank" style="font-size: 142%;"><i class="fab fa-youtube" style="color: gray;"></i></a>
@@ -646,7 +622,7 @@
             <div class="logo">
                 <img src="../images/icons/investportal-light.png" alt="InvestPortal" />
             </div>
-            <span>International Platform for Investors and Investment Projects</span>
+            <span>International Platform <br />for Investors and<br /> Investment Projects</span>
             <main>
                 <a href="" target="_blank"><img src="../images/icons/socials/1-foot.png" alt="SN" /></a>
                 <a href="" target="_blank"><img src="../images/icons/socials/2-foot.png" alt="SN" /></a>

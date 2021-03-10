@@ -4,10 +4,9 @@
 @import url('addons/video-player.css');
 @import url('addons/chat.css');
 @import url('addons/threedetalization.css');
-@import url('addons/adaptive_paths.css');
 @import url('addons/feedblocks/analytics.css');
 @import url('addons/feedblocks/reviews.css');
-body{
+html,body{
     font-family: 'Roboto', sans-serif;
     overflow-x:hidden;
     margin-left: -1%;
@@ -29,51 +28,39 @@ h1, h2, h3, h4, h5, h6, strong{
 }
 .header > #header_top{
     float: left;
-    width: 21%;
-    top: -18%;
-    left: 13%;
-    position: relative;
+    margin-left: 8vw;
+    width: 19%;
+    margin-top: -1%;
 }
-.header > #header_top .ht_header{
-    left: 1%;
-    position: relative;
-}
-.header > #header_top .ht_header img{
-    width: 30%;
+.header > #header_top .ht_header img {
+    width: 107px;
     float: left;
-}
-.header > #header_top .ht_header span{
-    font-size: 88%;
-    color: darkgray;
     display: inline-table;
-    width: 49%;
-    float: right;
-    top: -3px;
-    right: 70px;
+}
+.header > #header_top .ht_header span {
+    font-size: 101%;
+    color: darkgray;
+    display: inline;
+    text-align: left;
     position: relative;
+    left: 17px;
 }
 .header > #header_bottom{
     float: right;
-    width: 67%;
-    top: -79%;
-    right: -11%;
-    position: relative;
-}
-.header > #header_bottom .hb_bottom{
-    float: left;
+    margin-right: 7vw;
 }
 .header > #header_bottom .hb_bottom header{
     display: block;
-    padding-top: 6px;
-    padding-bottom: 6px;
     width: 100%;
+    height: 50px;
+    margin-top: -2%;
 }
 .header > #header_bottom .hb_bottom header .welcome-link {
 	float: left;
 	display: inline-block;
 	font-size: 86%;
-	margin-top: 6%;
-	margin-left: 10px;
+	margin-left: 1%;
+	margin-top: 1%;
 }
 .header > #header_bottom .hb_bottom header .welcome-link a{
     color: #0079bf;
@@ -82,24 +69,42 @@ h1, h2, h3, h4, h5, h6, strong{
 .header > #header_bottom .hb_bottom header .header-informer{
     display: inline;
     float: right;
+    width: 30%;
+    margin-top: -6%;
+}
+.header > #header_bottom .hb_bottom header .header-informer header{
+	display: inline-block;
+    float: left;
+	width: 26%;
+	margin-left: -44%;
+	margin-top: 20%;
 }
 .header > #header_bottom .hb_bottom header .header-informer main {
 	display: inline-block;
-	margin-left: -12%;
-	position: relative;
-	top: 33px;
+	margin-left: -23%;
+	margin-top: 21%;
 }
 .header > #header_bottom .hb_bottom header .header-informer main a {
 	display: inline;
-	margin-left: 11px;
+	margin-left: 17px;
 }
 .header > #header_bottom .hb_bottom header .header-informer footer {
 	display: inline;
 	float: right;
-	margin-top: 10%;
+	margin-top: -10%;
 	padding-left: 44px;
     width: 53%;
     margin-right: -3%;
+}
+#regexchange {
+    font-size: 98%;
+    color: gray;
+    background-color: transparent;
+    border: none;
+    appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    margin-top: 7%;
 }
 .header > #header_bottom .hb_bottom header .header-informer footer .user-services{
     display: inline;
@@ -123,10 +128,9 @@ h1, h2, h3, h4, h5, h6, strong{
 }
 .header > #header_bottom .hb_bottom footer{
     display: block;
-    padding-top: 6px;
-    padding-bottom: 6px;
-    margin-top: 9%;
     width: 100%;
+    margin-top: 2%;
+    height: 50px;
 }
 .header > #header_bottom .hb_bottom footer nav{
     font-size: 92%;
@@ -137,8 +141,8 @@ h1, h2, h3, h4, h5, h6, strong{
     text-transform: uppercase;
     text-decoration: none;
     font-weight: 700;
-    margin-left: 12px;
-    margin-right: 22px;
+    margin-left: 11px;
+    margin-right: 12px;
     padding-bottom: 1%;
     font-family: 'Open Sans', sans-serif;
 }
@@ -225,8 +229,20 @@ h1, h2, h3, h4, h5, h6, strong{
     background-image: url('../images/homepage-bg.jpg');
     background-size: cover;
 }
-#news > header, #investsearch > header, #eventcalendar > header{
-    margin-left: 11vw;
+#promo > header{
+    margin-top: -5%;
+    margin-left: 8vw;
+}
+#promo > header .promo-header{
+    display: inline-table;
+ }
+#promo > header .marketing-info{
+   float: right;
+   display: inline-table;
+}
+#promo > header .marketing-info header img {
+    width: 70%;
+    border-radius: 10px 10px 10px 10px;
 }
 #promo > header h2, #promo > header strong{
     color: white;
@@ -243,6 +259,8 @@ h1, h2, h3, h4, h5, h6, strong{
 #promo > header .add-but{
    color: gray;
    background-color: white;
+   width: 56%;
+   margin-top: 14%;
 }
 #services > header .add-but, #estate > header .add-but{
     display: block;
@@ -252,8 +270,8 @@ h1, h2, h3, h4, h5, h6, strong{
 #promo > header .links{
     display: inline-table;
     position: relative;
-    top: -44px;
-    margin-left: 10%;
+    top: -46px;
+    left: 9vw;
 }
 #promo > header a{
     text-decoration: none;
@@ -269,8 +287,8 @@ h1, h2, h3, h4, h5, h6, strong{
     display: inline-table;
     float:right;
     width: 80%;
-    margin-right: -16%;
-    margin-top: -12%;
+    margin-top: 3%;
+    margin-right: -7vw;
 }
 #promo > header .marketing-info footer ul{
     color: white;
@@ -281,38 +299,26 @@ h1, h2, h3, h4, h5, h6, strong{
     display: inline-block;
     margin-left: 2%;
 }
-#promo > header .marketing-info header img{
-        width:70%;
-        border-radius: 10px 10px 10px 10px;
+#promo > main.swiper-container{
+    width: 100vw;
 }
-#promo > main .promo-feed{
-    width: 147%;
-    display: flex;
-    display: -webkit-box;
-    display: -webkit-flex;
-    display: -ms-flexbox;
-    flex-wrap: nowrap;
-    float: left;
-    margin-left: 1vw;
-}
-#promo > main .promo-feed .promoblock{
-    width: 26vw;
-    display: inline-table;
+#promo > main.swiper-container .promo-feed .promoblock{
+    width: 27vw;
+    display: inline-flexbox;
     background-color: white;
-    margin-left: -48vw;
     padding-right: 1%;
     margin-top: 2%;
     -webkit-box-shadow: 8px -6px 6px 0px rgba(50, 50, 50, 0.75);
     -moz-box-shadow: 8px -6px 6px 0px rgba(50, 50, 50, 0.75);
     box-shadow: 8px -6px 6px 0px rgba(50, 50, 50, 0.75);
 }
-#promo > main .promo-feed .promoblock:hover{
+#promo > main.swiper-container .promo-feed .promoblock:hover{
     cursor: pointer;
 }
-#promo > main .promo-feed .promoblock:hover header{
+#promo > main.swiper-container .promo-feed .promoblock:hover header{
     background-color: #0079bf;
 }
-#promo > main .promo-feed .promoblock header{
+#promo > main.swiper-container .promo-feed .promoblock header{
     width: 100%;
     background-color: darkgray;
     color: white;
@@ -320,19 +326,19 @@ h1, h2, h3, h4, h5, h6, strong{
     margin-left: 0%;
     text-transform: uppercase;
     padding-top: 3%;
-    padding-left: 3%;
-    padding-right: 3%;
+    padding-left: 1vw;
+    padding-right: 0vw;
 }
-#promo > main .promo-feed .promoblock header a{
+#promo > main.swiper-container .promo-feed .promoblock header a{
     margin-left: 13px;
     margin-top: 13px;
     color: white;
     text-decoration: none;
 }
-#promo > main .promo-feed .promoblock header strong{
+#promo > main.swiper-container .promo-feed .promoblock header strong{
     display: inline-table;
 }
-#promo > main .promo-feed .promoblock main .location{
+#promo > main.swiper-container .promo-feed .promoblock main .location{
     float: left;
     margin-left: 5%;
     font-size: 112%;
@@ -342,50 +348,64 @@ h1, h2, h3, h4, h5, h6, strong{
     margin-top: 19%;
     font-family: Times New Roman, serif;
 }
-#promo > main .promo-feed .promoblock main img{
+#promo > main.swiper-container .promo-feed .promoblock main img{
     width: 36%;
-    height: 150px;
+    height: 85px;
     float: right;
     margin-right: 7%;
     display: inline-table;
     object-fit: cover;
     margin-top: 9%;
 }
-#promo > main .promo-feed .promoblock main{
+#promo > main.swiper-container .promo-feed .promoblock main{
     display: block;
     width: 100%;
     padding-top: 0%;
     padding-bottom: 0%;
     margin-left: 4%;
 }
-#promo > main .promo-feed .promoblock footer{
+#promo > main.swiper-container .promo-feed .promoblock footer{
     width: 100%;
-    margin-top: 45%;
+    margin-top: 33%;
     padding-right: 1px;
     padding-left: 4%;
-    padding-top: 3%;
     padding-bottom: 2%;
 }
-#promo > main .promo-feed .promoblock footer .info{
+#promo > main.swiper-container .promo-feed .promoblock footer .info{
     display: block;
     padding-top: 0%;
     padding-bottom: 0%;
     margin-left: 2%;
 }
-#promo > main .promo-feed .promoblock footer .info span{
+#promo > main.swiper-container .promo-feed .promoblock footer .info span{
     display: block;
     padding-top: 3%;
     padding-bottom: 3%;
-    font-size: 150%;
+    font-size: 116%;
     font-weight: bold;
     color: darkgray;
 }
-#promo > main .promo-feed .promoblock footer .info span:nth-child(1){
+#promo > main.swiper-container .promo-feed .promoblock footer .info span:nth-child(1){
     color: black;
+    font-size: 110%;
 }
-#promo > main .promo-feed .promoblock footer .info span:nth-child(2){
+#promo > main.swiper-container .promo-feed .promoblock footer .info span:nth-child(2){
+    font-size: 100%;
+    font-weight: normal;
+    margin-top: -4%;
+}
+#promo > main.swiper-container .promo-feed .promoblock footer .info span:nth-child(3){
     font-size: 102%;
     margin-top: -4%;
+}
+#news > header, #investsearch > header, #eventcalendar > header{
+    margin-left: 11vw;
+}
+
+#services > header .add-but, #estate > header .add-but{
+    display: block;
+    margin-top: 10%;
+    width: 39%;
 }
 
 
@@ -484,50 +504,48 @@ h1, h2, h3, h4, h5, h6, strong{
 #investsearch > header a strong{
     text-decoration: underline;
 }
-#investsearch > main .popular-objects{
-    width: 146%;
-    display: flex;
-    display: -webkit-box;
-    display: -webkit-flex;
-    display: -ms-flexbox;
-    flex-wrap: nowrap;
-    float: left;
-    margin-left: 1vw;
+#investsearch > main.swiper-container{
+    width: 100vw;
 }
-#investsearch > main .popular-objects .popular-object{
-    width: 27vw;
-    display: inline-table;
+#investsearch > main.swiper-container .popular-objects#objects-chromium{
+    margin-left: 8vw;
+}
+#investsearch > main.swiper-container .popular-objects .popular-object{
+    width: 24vw;
+    display: inline-flexbox;
     background-color: white;
-    margin-left: -47vw;
 }
-#investsearch > main .popular-objects .popular-object:hover{
+#investsearch > main.swiper-container .popular-objects .popular-object#object-chromium{
+   margin-left: 1vw;
+}
+#investsearch > main.swiper-container .popular-objects .popular-object:hover{
     cursor: pointer;
 }
-#investsearch > main .popular-objects .popular-object header{
-    width: 99%;
+#investsearch > main.swiper-container .popular-objects .popular-object header {
+    width: 103%;
     background-color: #0079bf;
     color: white;
     margin-left: 0%;
     padding-bottom: 4%;
     padding-top: 3%;
-    padding-right: 1vw;
+    padding-right: 0vw;
     padding-left: 4%;
 }
-#investsearch > main .popular-objects .popular-object header h3{
+#investsearch > main.swiper-container .popular-objects .popular-object header h3{
     margin-left: 4%;
     margin-top: -2px;
     font-size: 93%;
 }
-#investsearch > main .popular-objects .popular-object main img{
+#investsearch > main.swiper-container .popular-objects .popular-object main img{
     width: 101%;
     height: 228px;
     object-fit: cover;
 }
-#investsearch > main .popular-objects .popular-object main{
+#investsearch > main.swiper-container .popular-objects .popular-object main{
     display: block;
     width: 106%;
 }
-#investsearch > main .popular-objects .popular-object footer{
+#investsearch > main.swiper-container .popular-objects .popular-object footer{
     width: 97%;
     padding-left: 2%;
     padding-right: 8%;
@@ -536,22 +554,22 @@ h1, h2, h3, h4, h5, h6, strong{
     padding-bottom: 4%;
     padding-top: 4%;
 }
-#investsearch > main .popular-objects .popular-object footer .info{
+#investsearch > main.swiper-container .popular-objects .popular-object footer .info{
     display: block;
     padding-top: 0%;
     padding-bottom: 0%;
     margin-left: 2%;
 }
-#investsearch > main .popular-objects .popular-object footer .info span{
+#investsearch > main.swiper-container .popular-objects .popular-object footer .info span{
     display: block;
     padding-top: 3%;
     padding-bottom: 3%;
     font-size: 150%;
 }
-#investsearch > main .popular-objects .popular-object footer .info span:nth-child(1){
+#investsearch > main.swiper-container .popular-objects .popular-object footer .info span:nth-child(1){
     font-size: calc(170% / 2);
 }
-#investsearch > main .popular-objects .popular-object footer .info span:nth-child(2){
+#investsearch > main.swiper-container .popular-objects .popular-object footer .info span:nth-child(2){
     text-transform: uppercase;
     font-weight: bold;
     font-size: 84%;
@@ -559,13 +577,13 @@ h1, h2, h3, h4, h5, h6, strong{
     text-overflow: ellipsis;
     height: 38px;
 }
-#investsearch > main .popular-objects .popular-object footer .info span:nth-child(3){
+#investsearch > main.swiper-container .popular-objects .popular-object footer .info span:nth-child(3){
     font-size: 96%;
     color: darkgray;
     font-style: italic;
     font-family: 'Times New Roman', serif;
 }
-#investsearch > main .popular-objects .popular-object footer a{
+#investsearch > main.swiper-container .popular-objects .popular-object footer a{
     display: block;
     padding-top: 5%;
     padding-bottom: 3%;
@@ -575,10 +593,6 @@ h1, h2, h3, h4, h5, h6, strong{
     margin-left: 2%;
     font-size: 78%;
 }
-
-
-
-
 #eventcalendar > main{
     width: 87%;
     margin-left: 10%;
@@ -1086,84 +1100,39 @@ h1, h2, h3, h4, h5, h6, strong{
 }
 @media all and (min-width:1024px) and (max-width: 1280px){
     .header > #header_top {
-        top: 4%;
+        width: 28%;
     }
-    .header > #header_bottom .hb_bottom footer {
-        margin-top: 13%;
-    }
-    .header > #header_top .ht_header {
-        left: -24%;
-        top: 19%;
-        position: relative;
-        float: left;
-    }
-    .header > #header_top .ht_header span {
-        font-size: 73%;
-        color: darkgray;
-        display: block;
-        width: 71%;
-        float: right;
-        top: -56px;
-        right: -20px;
+    #promo > header .links {
+        left: 14vw;
     }
     .header > #header_bottom {
-        float: right;
-        width: 77%;
-        top: -86%;
-        right: -10%;
-        position: relative;
-    }
-    .header > #header_bottom .hb_bottom footer nav a {
-        margin-left: 12px;
-        margin-right: 8px;
-    }
-    .header > #header_bottom .hb_bottom header .header-informer footer {
-        display: inline;
-        float: right;
-        margin-top: 16%;
-        padding-left: 44px;
-        width: 50%;
-        margin-right: -9%;
-    }
-    .header > #header_bottom .hb_bottom header .header-informer main {
-        display: inline-block;
-        margin-left: -6%;
-        margin-top: 6%;
-    }
-    .header > #header_bottom .hb_bottom footer nav {
-        font-size: 73%;
+        display: none;
     }
     #promo {
         height: 317px;
     }
-    #promo > main .promo-feed,  #investsearch > main .popular-objects{
-        margin-left: 0vw;
-        margin-top: 1%;
+    #promo > header .marketing-info {
+        margin-top: 5%;
+        margin-right: -11vw;
     }
-    #promo > main .promo-feed .promoblock header {
-        height: 34px;
-    }
-    #promo > main .promo-feed .promoblock footer {
-        margin-top: -10%;
-    }
-    #promo > main .promo-feed .promoblock footer .info span {
-        font-size: 95%;
+    #promo > header .marketing-info header img {
+        width: 76%;
     }
     #investsearch {
         height: 527px;
         padding-top: 15%;
         padding-bottom: 0%;
     }
-    #investsearch > main .popular-objects .popular-object header {
+    #investsearch > main.swiper-container .popular-objects .popular-object header {
         height: 24px;
     }
-    #investsearch > main .popular-objects .popular-object header h3 {
+    #investsearch > main.swiper-container .popular-objects .popular-object header h3 {
         font-size: 58%;
     }
-    #investsearch > main .popular-objects .popular-object footer .info span:nth-child(2) {
+    #investsearch > main.swiper-container .popular-objects .popular-object footer .info span:nth-child(2) {
         font-size: 75%;
     }
-    #investsearch > main .popular-objects .popular-object footer a {
+    #investsearch > main.swiper-container .popular-objects .popular-object footer a {
         font-size: 73%;
     }
     #services {
@@ -1213,16 +1182,16 @@ h1, h2, h3, h4, h5, h6, strong{
         width: 48%;
         top: 34px;
     }
-    #promo > main .promo-feed .promoblock footer .info {
+    #promo > main.swiper-container .promo-feed .promoblock footer .info {
         margin-top: 47%;
     }
     .rating-mini span {
         font-size: 23px;
     }
-    #promo > main .promo-feed .promoblock main img {
+    #promo > main.swiper-container .promo-feed .promoblock main img {
         height: 61px;
     }
-    #investsearch > main .popular-objects .popular-object main img {
+    #investsearch > main.swiper-container .popular-objects .popular-object main img {
         height: 149px;
     }
     .footer > main #category_menu .catname {
@@ -1231,21 +1200,7 @@ h1, h2, h3, h4, h5, h6, strong{
     .footer > main #category_menu ul {
         font-size: 63%;
     }
-    .header > #header_bottom .hb_bottom header .welcome-link {
-        margin-top: 11%;
-    }
-    #promo > header .links {
-        margin-left: 10%;
-        top: -46px;
-    }
-    #promo > header .marketing-info {
-        margin-top: -18%;
-        width: 81%;
-        margin-right: -11%;
-    }
-    #promo > header .marketing-info header img{
-        width:72%;
-    }
+    
     #investsearch > header a {
         margin-left: 108px;
         top: -42px;
@@ -1281,102 +1236,54 @@ h1, h2, h3, h4, h5, h6, strong{
     }
 }
 @media all and (min-width:1280px) and (max-width: 1366px){
-    .header > #header_top .ht_header {
-        left: -28%;
-        top: 34%;
-        position: relative;
-    }
-    .header > #header_top .ht_header span {
-        font-size: 79%;
-        color: darkgray;
-        display: block;
-        width: 53%;
-        float: right;
-        top: -3px;
-        right: 26px;
-    }
     .header > #header_bottom {
-        float: right;
-        width: 61%;
-        top: -54%;
-        right: 5%;
-        position: relative;
+        display: none;
     }
-    .header > #header_bottom .hb_bottom footer nav a {
-        margin-left: 6px;
-        margin-right: 15px;
+    #promo > header .links {
+        left: 11vw;
     }
-    .header > #header_bottom .hb_bottom header .header-informer footer {
+    #promo > header .marketing-info {
         margin-top: 5%;
-        padding-left: 44px;
-        margin-right: -9%;
+        margin-right: -10vw;
     }
-    .header > #header_bottom .hb_bottom header .header-informer main {
-        display: inline-block;
-        margin-left: -12%;
-        top: 39%;
-    }
-    .header > #header_bottom .hb_bottom footer nav {
-        font-size: 79%;
-        margin-top: -4%;
-    }
-    #promo > main .promo-feed,  #investsearch > main .popular-objects{
-        margin-left: 0vw;
-        margin-top: 2%;
-    }
-    #promo > main .promo-feed .promoblock header {
-        height: 34px;
-    }
-    #promo > main .promo-feed .promoblock footer {
-        margin-top: 4%;
-    }
-    #promo > main .promo-feed .promoblock footer .info span {
-        font-size: 101%;
+    #promo > header .marketing-info header img {
+        width: 76%;
     }
     #investsearch {
         height: 554px;
         padding-top: 26%;
         padding-bottom: 0%;
     }
-    #investsearch > main .popular-objects .popular-object header {
+    #investsearch > main.swiper-container .popular-objects .popular-object header {
         height: 24px;
     }
-    #investsearch > main .popular-objects .popular-object header h3 {
+    #investsearch > main.swiper-container .popular-objects .popular-object header h3 {
         font-size: 58%;
     }
-    #investsearch > main .popular-objects .popular-object footer .info span:nth-child(2) {
+    #investsearch > main.swiper-container .popular-objects .popular-object footer .info span:nth-child(2) {
         font-size: 102%;
     }
-    #investsearch > main .popular-objects .popular-object footer a {
+    #investsearch > main.swiper-container .popular-objects .popular-object footer a {
         font-size: 73%;
     }
     #promo {
         height: 354px;
-    }
-    #promo > main .promo-feed .promoblock header {
-        height: 34px;
-    }
-    #promo > main .promo-feed .promoblock footer {
-        margin-top: -12%;
-    }
-    #promo > main .promo-feed .promoblock footer .info span {
-        font-size: 101%;
     }
     #investsearch {
         height: 521px;
         padding-top: 13%;
         padding-bottom: 0%;
     }
-    #investsearch > main .popular-objects .popular-object header {
+    #investsearch > main.swiper-container .popular-objects .popular-object header {
         height: 24px;
     }
-    #investsearch > main .popular-objects .popular-object header h3 {
+    #investsearch > main.swiper-container .popular-objects .popular-object header h3 {
         font-size: 58%;
     }
-    #investsearch > main .popular-objects .popular-object footer .info span:nth-child(2) {
+    #investsearch > main.swiper-container .popular-objects .popular-object footer .info span:nth-child(2) {
         font-size: 74%;
     }
-    #investsearch > main .popular-objects .popular-object footer a {
+    #investsearch > main.swiper-container .popular-objects .popular-object footer a {
         font-size: 73%;
     }
     #services {
@@ -1426,16 +1333,10 @@ h1, h2, h3, h4, h5, h6, strong{
         width: 48%;
         top: 34px;
     }
-    #promo > main .promo-feed .promoblock footer .info {
-        margin-top: 47%;
-    }
     .rating-mini span {
         font-size: 23px;
     }
-    #promo > main .promo-feed .promoblock main img {
-        height: 74px;
-    }
-    #investsearch > main .popular-objects .popular-object main img {
+    #investsearch > main.swiper-container .popular-objects .popular-object main img {
         height: 149px;
     }
     .footer > main #category_menu .catname {
@@ -1447,14 +1348,6 @@ h1, h2, h3, h4, h5, h6, strong{
     .header > #header_bottom .hb_bottom header .welcome-link {
         margin-top: 6%;
     }
-    #promo > header .links {
-        margin-left: 125px;
-        top: -46px;
-    }
-    #promo > header .marketing-info {
-        margin-top: -18%;
-        margin-right: -4%;
-    }
     #investsearch > header a {
         margin-left: 11%;
         margin-top: -2px;
@@ -1462,10 +1355,6 @@ h1, h2, h3, h4, h5, h6, strong{
     #eventcalendar > main .calendar footer {
         margin-top: 2%;
         font-size: 87%;
-    }
-    #promo > header .marketing-info header img{
-        margin-top: 5%;
-        width:81%;
     }
     #eventcalendar > main .calendar .date {
         top: 48px;
@@ -1496,66 +1385,30 @@ h1, h2, h3, h4, h5, h6, strong{
     }
 }
 @media all and (min-width:1366px) and (max-width: 1400px){
-    .header > #header_top .ht_header {
-        margin-left: -26%;
-        top: 22%;
-        position: relative;
-    }
-    .header > #header_top .ht_header span {
-        font-size: 90%;
-        width: 60%;
-        float: right;
-        top: -1px;
-        right: 7px;
-    }
     .header > #header_bottom {
-        float: right;
-        width: 63%;
-        top: -53%;
-        right: 2%;
-        position: relative;
+        display: none;
     }
-    .header > #header_bottom .hb_bottom footer nav a {
-        margin-left: 5px;
-        margin-right: 15px;
+    #promo > header .links {
+        left: 11vw;
     }
-    .header > #header_bottom .hb_bottom header .header-informer footer {
-        margin-top: 3%;
-        padding-left: 44px;
-        margin-right: -9%;
-    }
-    .header > #header_bottom .hb_bottom header .header-informer main {
-        display: inline-block;
-        margin-left: -12%;
-        top: 11px;
-    }
-    #promo {
-        height: 361px;
-    }
-    #promo > main .promo-feed,  #investsearch > main .popular-objects{
-        margin-left: 1vw;
+    #promo > header .marketing-info {
         margin-top: 4%;
+        margin-right: -6vw;
     }
-    #promo > main .promo-feed .promoblock main img {
-        height: 75px;
-    }
-    #promo > main .promo-feed .promoblock footer {
-        margin-top: 33%;
-    }
-    #promo > main .promo-feed .promoblock footer .info span {
-        font-size: 104%;
+    #promo > header .marketing-info header img {
+        width: 81%;
     }
     #investsearch {
         height: 475px;
         padding-top: 8%;
     }
-    #investsearch > main .popular-objects .popular-object header {
+    #investsearch > main.swiper-container .popular-objects .popular-object header {
         height: 27px;
     }
-    #investsearch > main .popular-objects .popular-object header h3 {
+    #investsearch > main.swiper-container .popular-objects .popular-object header h3 {
         font-size: 64%;
     }
-    #investsearch > main .popular-objects .popular-object main img {
+    #investsearch > main.swiper-container .popular-objects .popular-object main img {
         height: 194px;
     }
     .footer > main #category_menu .catname {
@@ -1564,17 +1417,6 @@ h1, h2, h3, h4, h5, h6, strong{
     .footer > main #category_menu ul {
         font-size: 83%;
     }
-    .header > #header_bottom .hb_bottom header .welcome-link {
-        margin-top: 5%;
-    }
-    #promo > header .links {
-        margin-left: 134px;
-        top: -47px;
-    }
-    #promo > header .marketing-info {
-        margin-top: -16%;
-        margin-right: -4%;
-    }
     #investsearch > header a {
         margin-left: 133px;
         margin-top: 19px;
@@ -1582,13 +1424,6 @@ h1, h2, h3, h4, h5, h6, strong{
     #eventcalendar > main .calendar footer {
         margin-top: 1%;
         font-size: 92%;
-    }
-    #promo > header .marketing-info header img{
-        width:72%;
-    }
-    #promo > header .marketing-info header img{
-        margin-top: 5%;
-        width:87%;
     }
     #eventcalendar > main .calendar .date {
         top: 45px;
@@ -1619,81 +1454,21 @@ h1, h2, h3, h4, h5, h6, strong{
     }
 }
 @media all and (min-width:1400px) and (max-width: 1600px){
-    .header > #header_top .ht_header {
-        left: -25%;
-        position: relative;
-        top: 10%;
-    }
-    .header > #header_top .ht_header span {
-        font-size: 82%;
-        width: 53%;
-        float: right;
-        top: -3px;
-        right: 47px;
-    }
-    .header > #header_bottom {
-        float: right;
-        width: 62%;
-        top: -64%;
-        right: 1%;
-        position: relative;
-    }
-    .header > #header_bottom .hb_bottom footer nav a {
-        margin-left: 6px;
-        margin-right: 17px;
-    }
-    .header > #header_bottom .hb_bottom header .header-informer footer {
-        margin-top: 8%;
-        padding-left: 44px;
-        margin-right: -5%;
-    }
-    .header > #header_bottom .hb_bottom header .header-informer main {
-        display: inline-block;
-        margin-left: -12%;
-        top: 27px;
-    }
-    .header > #header_bottom .hb_bottom footer nav {
-        font-size: 87%;
-    }
     #promo {
         height: 336px;
-    }
-    #promo > main .promo-feed,  #investsearch > main .popular-objects{
-        margin-left: 1vw;
-        margin-top: 0%;
-    }
-    #promo > main .promo-feed .promoblock main img {
-        height: 79px;
-    }
-    #promo > main .promo-feed .promoblock footer {
-        margin-top: 33%;
-    }
-    #promo > main .promo-feed .promoblock footer .info span {
-        font-size: 106%;
     }
     #investsearch {
         height: 430px;
         padding-top: 7%;
     }
-    #investsearch > main .popular-objects .popular-object header {
+    #investsearch > main.swiper-container .popular-objects .popular-object header {
         height: 27px;
     }
-    #investsearch > main .popular-objects .popular-object header h3 {
+    #investsearch > main.swiper-container .popular-objects .popular-object header h3 {
         font-size: 79%;
     }
-    #investsearch > main .popular-objects .popular-object main img {
+    #investsearch > main.swiper-container .popular-objects .popular-object main img {
         height: 194px;
-    }
-    .header > #header_bottom .hb_bottom header .welcome-link {
-        margin-top: 6%;
-    }
-    #promo > header .links {
-        margin-left: 140px;
-        top: -44px;
-    }
-    #promo > header .marketing-info {
-        margin-top: -11%;
-        margin-right: -6%;
     }
     #investsearch > header a {
         margin-left: 10%;
@@ -1704,7 +1479,7 @@ h1, h2, h3, h4, h5, h6, strong{
         font-size: 92%;
     }
     #promo > header .marketing-info header img {
-        width: 79%;
+        width: 80%;
     }
     #eventcalendar > main .calendar main img {
         margin-left: 4%;
@@ -1714,67 +1489,24 @@ h1, h2, h3, h4, h5, h6, strong{
     #eventcalendar > main .calendar .date {
         top: 44px;
     }
+
 }
 @media all and (min-width:1600px) and (max-width: 1800px){
-    .header > #header_top .ht_header span {
-        top: -1px;
-        right: 46px;
-        font-size: 92%;
-        float: right;
+    #promo > header .marketing-info {
+        margin-right: -7vw;
     }
     #promo {
         height: 346px;
-    }
-    #promo > main .promo-feed,  #investsearch > main .popular-objects{
-        margin-left: 3vw;
-        margin-top: 0%;
-    }
-    #investsearch > main .popular-objects{
-        margin-top: 3%;
-        margin-left: -1vw;
-    }
-    #promo > main .promo-feed .promoblock main img {
-        height: 85px;
-    }
-    #promo > main .promo-feed .promoblock footer {
-        margin-top: 33%;
-    }
-    #promo > main .promo-feed .promoblock footer .info span {
-        font-size: 116%;
     }
     #investsearch {
         height: 509px;
         padding-top: 7%;
     }
-    #investsearch > main .popular-objects .popular-object header {
+    #investsearch > main.swiper-container .popular-objects .popular-object header {
         height: 27px;
     }
-    #investsearch > main .popular-objects .popular-object header h3 {
+    #investsearch > main.swiper-container .popular-objects .popular-object header h3 {
         font-size: 79%;
-    }
-    .header > #header_top{
-        top: -6%;
-        left: 13%;
-        position: relative;
-    }
-    .header > #header_top .ht_header {
-        left: -24%;
-    }
-    .header > #header_bottom{
-        top: -74%;
-        right: -2%;
-        position: relative;
-    }
-    .header > #header_bottom .hb_bottom header .welcome-link {
-        margin-top: 6%;
-    }
-    #promo > header .links {
-        margin-left: 149px;
-        top: -46px;
-    }
-    #promo > header .marketing-info {
-        margin-top: -10%;
-        margin-right: -9%;
     }
     #investsearch > header a {
         margin-left: 150px;
@@ -1783,9 +1515,6 @@ h1, h2, h3, h4, h5, h6, strong{
     #eventcalendar > main .calendar footer {
         margin-top: 1%;
         font-size: 100%;
-    }
-    #promo > header .marketing-info header img {
-        width: 75%;
     }
     #eventcalendar > main .calendar main img {
         margin-left: 4%;
@@ -1796,73 +1525,24 @@ h1, h2, h3, h4, h5, h6, strong{
         top: 48px;
     }
 }
-@media all and (min-width:1024px) and (max-width: 1100px){
+@media all and (min-width:1680px) and (max-width: 1800px){
     #promo > header .marketing-info {
-        width: 82%;
-        margin-right: -4%;
-        margin-top: -15%;
-    }
-    #promo > header .marketing-info header img {
-        width: 96%;
+        margin-right: -9vw;
     }
 }
-@media all and (min-width:1100px) and (max-width: 1181px){
+@media all and (min-width: 1800px){
     #promo > header .marketing-info {
-        width: 87%;
-        margin-right: -13%;
-        margin-top: -14%;
+        margin-right: -20vw;
     }
     #promo > header .marketing-info header img {
-        width: 79%;
-    }
-}
-@media all and (min-width:1181px) and (max-width: 1280px){
-    #promo > header .marketing-info {
-        width: 100%;
-        margin-right: -23%;
-        margin-top: -17%;
-    }
-    #promo > header .marketing-info header img {
-        width: 68%;
-        margin-left: -2%;
+        width: 63%;
     }
 }
 @media all and (aspect-ratio: 5/4){
-    .header > #header_bottom {
-        top: -78%;
-        right: 5%;
-    }
-    .header > #header_bottom .hb_bottom header .welcome-link {
-        margin-top: 10%;
-    }
-    .exchange-selector {
-        margin-top: 3%;
-    }
-    .header > #header_bottom .hb_bottom header .header-informer main {
-        top: 29px;
-    }
-    .header > #header_bottom .hb_bottom header .header-informer footer {
-        margin-top: 16%;
-    }
-    #promo > header .marketing-info {
-        margin-top: -20%;
-    }
-    #promo > header .marketing-info footer {
-        margin-top: 2px;
-        margin-left: 2%;
-    }
     #estate > main #slider-view .estat-feed .estat {
         margin-left: 24px;
     }
     #reviews {
         height: 241px;
-    }
-}
-@media all and (min-width: 1800px){
-    #promo > main .promo-feed .promoblock header {
-        padding-right: 2.5%;
-    }
-    .header > #header_top {
-        left: 8%;
     }
 }

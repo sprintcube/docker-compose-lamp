@@ -5,30 +5,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0">
     <title>InvestPortal</title>
     <link rel="stylesheet" href="css/app.css" />
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
     <script src="https://yastatic.net/jquery/3.3.1/jquery.min.js"></script>
-    <script src="https://unpkg.com/flickity@2/dist/flickity.pkgd.min.js"></script>
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
     <script src="https://kit.fontawesome.com/97c3285af2.js" crossorigin="anonymous"></script>
     <style>
-        @import url('https://unpkg.com/flickity@2/dist/flickity.min.css');
-        .exchange-selector {
-            position: relative;
-            top: 50px;
-            left: 44%;
-        }
-        #regexchange {
-            display: inline-block;
-            font-size: 98%;
-            color: gray;
-            background-color: transparent;
-            border: none;
-            appearance: none;
-            -moz-appearance: none;
-            appearance: none;
-            position: relative;
-        }
-        #regexchange:after {
-            content: "▼";
-        }
+        
+        
         .add-but{
             text-align: center;
             color: gray;
@@ -44,15 +27,16 @@
             position: relative;
             top: 40px;
         }
-        @media all and (min-width:1024px) and (max-width: 1280px){
-            .exchange-selector {
-                    margin-top: 0%;
-                    left: 34%;
-                    position: relative;
-                    display: inline-block;
-                    top: 43px;
-            }
+
+        .swiper-button-prev, .swiper-button-next, .swiper-pagination, .swiper-scrollbar{ opacity: 0;}
+        .swiper-button-prev, .swiper-button-next{ 
+            width: 5vw;
         }
+        .swiper-button-prev::after, .swiper-button-next::after{ 
+            width: 6vw;
+        }
+        #promo > main.swiper-container .promo-feed{ margin-left: 6vw;}
+        #investsearch > main.swiper-container .popular-objects{ margin-left: 10vw; }
     </style>
 </head>
 <body>
@@ -60,7 +44,7 @@
         <div id="header_top">
             <div class="ht_header">
                 <img src="images/icons/investportal.png" alt="InvestPortal" />
-                <span>International Platform for Investors and Investment Projects</span>
+                <span>International Platform <br />for Investors and<br /> Investment Projects</span>
             </div>
         </div>
         <div id="header_bottom">
@@ -69,13 +53,15 @@
                     <div class="welcome-link">
                         <a href="">How the start</a>
                     </div>
-                    <div class="exchange-selector">
-                        <select name="regexchange" id="regexchange" style="color: #0079bf;">
-                            <option value="usd">USD</option>
-                            <option value="eur">EUR</option>
-                        </select>
-                    </div>
                     <div class="header-informer">
+                        <header>
+                               <div class="exchange-selector">
+                                 <select name="regexchange" id="regexchange" style="color: #0079bf;">
+                                   <option value="usd">USD</option>
+                                   <option value="eur">EUR</option>
+                                </select>
+                               </div>
+                        </header>
                         <main>
                             <a href="" target="_blank" style="font-size: 142%;"><i class="fab fa-facebook-f" style="color: gray;"></i></a>
                             <a href="" target="_blank" style="font-size: 142%;"><i class="fab fa-youtube" style="color: gray;"></i></a>
@@ -117,7 +103,7 @@
     </header>
     <main class="main">
         <section id="promo" class="section">
-            <header style="margin-top: -5%;">
+            <header>
                 <div class="promo-header">
                     <hr style="position: relative; top: -12%;" width="45px" color="#0079bf" align="left">
                     <h2 style="color: #ffffff;font-size: 160%;">Investments</h2>
@@ -142,22 +128,23 @@
                     </footer>
                 </div>
             </header>
-            <main>
-                <div class="promo-feed">
-                    <div class="promoblock">
+            <main class="swiper-container">
+                <div class="promo-feed swiper-wrapper">
+                    <div class="promoblock swiper-slide">
                         <header>
                             <a href=""><strong>Hotels</strong>(56)</a>
                         </header>
                         <main>
                             <span class="location">
-                                Portugal
+                                Spain
                             </span>
                             <img src="https://q-xx.bstatic.com/images/hotel/max500/140/140054948.jpg" alt="Place">
                         </main>
                         <footer>
                             <div class="info">
-                                <span>Austria, a plant for the production of sausages the proceeds of 3 million euros</span>
-                                <span>&dollar; 10 300 000</span>
+                                <span>Hotel, Spain, with 56 rooms, 4 stars/</span>
+                                <span>Goif-hotel</span>
+                                <span>&dollar; 4 000 000</span>
                             </div>
                             <div class="raiting">
                                 <span>Expert Raiting</span>
@@ -176,19 +163,20 @@
                             </div>
                         </footer>
                     </div>
-                    <div class="promoblock">
+                    <div class="promoblock swiper-slide">
                         <header>
-                            <a href=""><strong>Hotels</strong>(56)</a>
+                            <a href=""><strong>Factorys</strong>(92)</a>
                         </header>
                         <main>
                             <span class="location">
-                                Portugal
+                                Austria
                             </span>
-                            <img src="https://q-xx.bstatic.com/images/hotel/max500/140/140054948.jpg" alt="Place">
+                            <img src="https://lyubimiigorod.ru/web/v2assets/img/noImg_2-1.jpg" alt="Not image">
                         </main>
                         <footer>
-                            <div class="info">
-                                <span>Austria, a plant for the production of sausages the proceeds of 3 million euros</span>
+                           <div class="info">
+                                <span>Austria, a plant for the production of sausages...</span>
+                                <span>&nbsp;</span>
                                 <span>&dollar; 10 300 000</span>
                             </div>
                             <div class="raiting">
@@ -201,238 +189,251 @@
                                     <span class="active"></span>    
                                     <span class="active"></span>
                                     <span class="active"></span>    
-                                    <span class="active"></span>
-                                    <span></span>    
                                     <span></span>
-                                </div>
-                            </div>
-                        </footer>
-                    </div>
-                    <div class="promoblock">
-                        <header>
-                            <a href=""><strong>Hotels</strong>(56)</a>
-                        </header>
-                        <main>
-                            <span class="location">
-                                Portugal
-                            </span>
-                            <img src="https://q-xx.bstatic.com/images/hotel/max500/140/140054948.jpg" alt="Place">
-                        </main>
-                        <footer>
-                            <div class="info">
-                                <span>Austria, a plant for the production of sausages the proceeds of 3 million euros</span>
-                                <span>&dollar; 10 300 000</span>
-                            </div>
-                            <div class="raiting">
-                                <span>Expert Raiting</span>
-                                <div class="rating-mini">
-                                    <span class="active"></span>	
-                                    <span class="active"></span>    
-                                    <span class="active"></span> 
-                                    <span class="active"></span>	
-                                    <span class="active"></span>    
-                                    <span class="active"></span>
-                                    <span class="active"></span>    
-                                    <span class="active"></span>
-                                    <span></span>    
-                                    <span></span>
-                                </div>
-                            </div>
-                        </footer>
-                    </div>
-                    <div class="promoblock">
-                        <header>
-                            <a href=""><strong>Hotels</strong>(56)</a>
-                        </header>
-                        <main>
-                            <span class="location">
-                                Portugal
-                            </span>
-                            <img src="https://q-xx.bstatic.com/images/hotel/max500/140/140054948.jpg" alt="Place">
-                        </main>
-                        <footer>
-                            <div class="info">
-                                <span>Austria, a plant for the production of sausages the proceeds of 3 million euros</span>
-                                <span>&dollar; 10 300 000</span>
-                            </div>
-                            <div class="raiting">
-                                <span>Expert Raiting</span>
-                                <div class="rating-mini">
-                                    <span class="active"></span>	
-                                    <span class="active"></span>    
-                                    <span class="active"></span> 
-                                    <span class="active"></span>	
-                                    <span class="active"></span>    
-                                    <span class="active"></span>
-                                    <span class="active"></span>    
-                                    <span class="active"></span>
-                                    <span></span>    
-                                    <span></span>
-                                </div>
-                            </div>
-                        </footer>
-                    </div>
-                    <div class="promoblock">
-                        <header>
-                            <a href=""><strong>Hotels</strong>(56)</a>
-                        </header>
-                        <main>
-                            <span class="location">
-                                Portugal
-                            </span>
-                            <img src="https://q-xx.bstatic.com/images/hotel/max500/140/140054948.jpg" alt="Place">
-                        </main>
-                        <footer>
-                            <div class="info">
-                                <span>Austria, a plant for the production of sausages the proceeds of 3 million euros</span>
-                                <span>&dollar; 10 300 000</span>
-                            </div>
-                            <div class="raiting">
-                                <span>Expert Raiting</span>
-                                <div class="rating-mini">
-                                    <span class="active"></span>	
-                                    <span class="active"></span>    
-                                    <span class="active"></span> 
-                                    <span class="active"></span>	
-                                    <span class="active"></span>    
-                                    <span class="active"></span>
-                                    <span class="active"></span>    
-                                    <span class="active"></span>
-                                    <span></span>    
-                                    <span></span>
-                                </div>
-                            </div>
-                        </footer>
-                    </div>
-                    <div class="promoblock">
-                        <header>
-                            <a href=""><strong>Hotels</strong>(56)</a>
-                        </header>
-                        <main>
-                            <span class="location">
-                                Portugal
-                            </span>
-                            <img src="https://q-xx.bstatic.com/images/hotel/max500/140/140054948.jpg" alt="Place">
-                        </main>
-                        <footer>
-                            <div class="info">
-                                <span>Austria, a plant for the production of sausages the proceeds of 3 million euros</span>
-                                <span>&dollar; 10 300 000</span>
-                            </div>
-                            <div class="raiting">
-                                <span>Expert Raiting</span>
-                                <div class="rating-mini">
-                                    <span class="active"></span>	
-                                    <span class="active"></span>    
-                                    <span class="active"></span> 
-                                    <span class="active"></span>	
-                                    <span class="active"></span>    
-                                    <span class="active"></span>
-                                    <span class="active"></span>    
-                                    <span class="active"></span>
-                                    <span></span>    
-                                    <span></span>
-                                </div>
-                            </div>
-                        </footer>
-                    </div>
-                    <div class="promoblock">
-                        <header>
-                            <a href=""><strong>Hotels</strong>(56)</a>
-                        </header>
-                        <main>
-                            <span class="location">
-                                Portugal
-                            </span>
-                            <img src="https://q-xx.bstatic.com/images/hotel/max500/140/140054948.jpg" alt="Place">
-                        </main>
-                        <footer>
-                            <div class="info">
-                                <span>Austria, a plant for the production of sausages the proceeds of 3 million euros</span>
-                                <span>&dollar; 10 300 000</span>
-                            </div>
-                            <div class="raiting">
-                                <span>Expert Raiting</span>
-                                <div class="rating-mini">
-                                    <span class="active"></span>	
-                                    <span class="active"></span>    
-                                    <span class="active"></span> 
-                                    <span class="active"></span>	
-                                    <span class="active"></span>    
-                                    <span class="active"></span>
-                                    <span class="active"></span>    
-                                    <span class="active"></span>
-                                    <span></span>    
-                                    <span></span>
-                                </div>
-                            </div>
-                        </footer>
-                    </div>
-                    <div class="promoblock">
-                        <header>
-                            <a href=""><strong>Hotels</strong>(56)</a>
-                        </header>
-                        <main>
-                            <span class="location">
-                                Portugal
-                            </span>
-                            <img src="https://q-xx.bstatic.com/images/hotel/max500/140/140054948.jpg" alt="Place">
-                        </main>
-                        <footer>
-                            <div class="info">
-                                <span>Austria, a plant for the production of sausages the proceeds of 3 million euros</span>
-                                <span>&dollar; 10 300 000</span>
-                            </div>
-                            <div class="raiting">
-                                <span>Expert Raiting</span>
-                                <div class="rating-mini">
-                                    <span class="active"></span>	
-                                    <span class="active"></span>    
-                                    <span class="active"></span> 
-                                    <span class="active"></span>	
-                                    <span class="active"></span>    
-                                    <span class="active"></span>
-                                    <span class="active"></span>    
-                                    <span class="active"></span>
-                                    <span></span>    
-                                    <span></span>
-                                </div>
-                            </div>
-                        </footer>
-                    </div>
-                    <div class="promoblock">
-                        <header>
-                            <a href=""><strong>Hotels</strong>(56)</a>
-                        </header>
-                        <main>
-                            <span class="location">
-                                Portugal
-                            </span>
-                            <img src="https://q-xx.bstatic.com/images/hotel/max500/140/140054948.jpg" alt="Place">
-                        </main>
-                        <footer>
-                            <div class="info">
-                                <span>Austria, a plant for the production of sausages the proceeds of 3 million euros</span>
-                                <span>&dollar; 10 300 000</span>
-                            </div>
-                            <div class="raiting">
-                                <span>Expert Raiting</span>
-                                <div class="rating-mini">
-                                    <span class="active"></span>	
-                                    <span class="active"></span>    
-                                    <span class="active"></span> 
-                                    <span class="active"></span>	
-                                    <span class="active"></span>    
-                                    <span class="active"></span>
-                                    <span class="active"></span>    
-                                    <span class="active"></span>
                                     <span></span>    
                                     <span></span>
                                 </div>
                             </div>
                         </footer>
                     </div> 
+                    <div class="promoblock swiper-slide">
+                        <header>
+                            <a href=""><strong>Restuarants</strong>(18)</a>
+                        </header>
+                        <main>
+                            <span class="location">
+                                Portugal
+                            </span>
+                            <img src="https://i.pinimg.com/originals/0f/e2/45/0fe2453c1991d9ef1c44642f6a9e199e.jpg" alt="Place">
+                        </main>
+                        <footer>
+                            <div class="info">
+                                <span>Restuarant, Portugal, revenue &dollar; 25 000 per month</span>
+                                <span>&nbsp;</span>
+                                <span>&dollar; 2 800 000</span>
+                            </div>
+                            <div class="raiting">
+                                <span>Expert Raiting</span>
+                                <div class="rating-mini">
+                                    <span class="active"></span>	
+                                    <span class="active"></span>    
+                                    <span class="active"></span> 
+                                    <span class="active"></span>	
+                                    <span class="active"></span>    
+                                    <span class="active"></span>
+                                    <span class="active"></span>    
+                                    <span class="active"></span>
+                                    <span class="active"></span>    
+                                    <span></span>
+                                </div>
+                            </div>
+                        </footer>
+                    </div>
+                    <div class="promoblock swiper-slide">
+                        <header>
+                            <a href=""><strong>Hotels</strong>(56)</a>
+                        </header>
+                        <main>
+                            <span class="location">
+                                Spain
+                            </span>
+                            <img src="https://q-xx.bstatic.com/images/hotel/max500/140/140054948.jpg" alt="Place">
+                        </main>
+                        <footer>
+                            <div class="info">
+                                <span>Hotel, Spain, with 56 rooms, 4 stars/</span>
+                                <span>Goif-hotel</span>
+                                <span>&dollar; 4 000 000</span>
+                            </div>
+                            <div class="raiting">
+                                <span>Expert Raiting</span>
+                                <div class="rating-mini">
+                                    <span class="active"></span>	
+                                    <span class="active"></span>    
+                                    <span class="active"></span> 
+                                    <span class="active"></span>	
+                                    <span class="active"></span>    
+                                    <span class="active"></span>
+                                    <span class="active"></span>    
+                                    <span class="active"></span>
+                                    <span></span>    
+                                    <span></span>
+                                </div>
+                            </div>
+                        </footer>
+                    </div>
+                    <div class="promoblock swiper-slide">
+                        <header>
+                            <a href=""><strong>Factorys</strong>(92)</a>
+                        </header>
+                        <main>
+                            <span class="location">
+                                Austria
+                            </span>
+                            <img src="https://lyubimiigorod.ru/web/v2assets/img/noImg_2-1.jpg" alt="Not image">
+                        </main>
+                        <footer>
+                            <div class="info">
+                                <span>Austria, a plant for the production of sausages...</span>
+                                <span>&nbsp;</span>
+                                <span>&dollar; 10 300 000</span>
+                            </div>
+                            <div class="raiting">
+                                <span>Expert Raiting</span>
+                                <div class="rating-mini">
+                                    <span class="active"></span>	
+                                    <span class="active"></span>    
+                                    <span class="active"></span> 
+                                    <span class="active"></span>	
+                                    <span class="active"></span>    
+                                    <span class="active"></span>
+                                    <span class="active"></span>    
+                                    <span></span>
+                                    <span></span>    
+                                    <span></span>
+                                </div>
+                            </div>
+                        </footer>
+                    </div>
+                    <div class="promoblock swiper-slide">
+                        <header>
+                            <a href=""><strong>Restuarants</strong>(18)</a>
+                        </header>
+                        <main>
+                            <span class="location">
+                                Portugal
+                            </span>
+                            <img src="https://i.pinimg.com/originals/0f/e2/45/0fe2453c1991d9ef1c44642f6a9e199e.jpg" alt="Place">
+                        </main>
+                        <footer>
+                            <div class="info">
+                                <span>Restuarant, Portugal, revenue &dollar; 25 000 per month</span>
+                                <span>&nbsp;</span>
+                                <span>&dollar; 2 800 000</span>
+                            </div>
+                            <div class="raiting">
+                                <span>Expert Raiting</span>
+                                <div class="rating-mini">
+                                    <span class="active"></span>	
+                                    <span class="active"></span>    
+                                    <span class="active"></span> 
+                                    <span class="active"></span>	
+                                    <span class="active"></span>    
+                                    <span class="active"></span>
+                                    <span class="active"></span>    
+                                    <span class="active"></span>
+                                    <span class="active"></span>    
+                                    <span></span>
+                                </div>
+                            </div>
+                        </footer>
+                    </div>
+                    <div class="promoblock swiper-slide">
+                        <header>
+                            <a href=""><strong>Hotels</strong>(56)</a>
+                        </header>
+                        <main>
+                            <span class="location">
+                                Spain
+                            </span>
+                            <img src="https://q-xx.bstatic.com/images/hotel/max500/140/140054948.jpg" alt="Place">
+                        </main>
+                        <footer>
+                            <div class="info">
+                                <span>Hotel, Spain, with 56 rooms, 4 stars/</span>
+                                <span>Goif-hotel</span>
+                                <span>&dollar; 4 000 000</span>
+                            </div>
+                            <div class="raiting">
+                                <span>Expert Raiting</span>
+                                <div class="rating-mini">
+                                    <span class="active"></span>	
+                                    <span class="active"></span>    
+                                    <span class="active"></span> 
+                                    <span class="active"></span>	
+                                    <span class="active"></span>    
+                                    <span class="active"></span>
+                                    <span class="active"></span>    
+                                    <span class="active"></span>
+                                    <span></span>    
+                                    <span></span>
+                                </div>
+                            </div>
+                        </footer>
+                    </div>
+                    <div class="promoblock swiper-slide">
+                        <header>
+                            <a href=""><strong>Factorys</strong>(92)</a>
+                        </header>
+                        <main>
+                            <span class="location">
+                                Austria
+                            </span>
+                            <img src="https://lyubimiigorod.ru/web/v2assets/img/noImg_2-1.jpg" alt="Not image">
+                        </main>
+                        <footer>
+                           <div class="info">
+                                <span>Austria, a plant for the production of sausages...</span>
+                                <span>&nbsp;</span>
+                                <span>&dollar; 10 300 000</span>
+                            </div>
+                            <div class="raiting">
+                                <span>Expert Raiting</span>
+                                <div class="rating-mini">
+                                    <span class="active"></span>	
+                                    <span class="active"></span>    
+                                    <span class="active"></span> 
+                                    <span class="active"></span>	
+                                    <span class="active"></span>    
+                                    <span class="active"></span>
+                                    <span class="active"></span>    
+                                    <span></span>
+                                    <span></span>    
+                                    <span></span>
+                                </div>
+                            </div>
+                        </footer>
+                    </div>
+                    <div class="promoblock swiper-slide">
+                        <header>
+                            <a href=""><strong>Restuarants</strong>(18)</a>
+                        </header>
+                        <main>
+                            <span class="location">
+                                Portugal
+                            </span>
+                            <img src="https://i.pinimg.com/originals/0f/e2/45/0fe2453c1991d9ef1c44642f6a9e199e.jpg" alt="Place">
+                        </main>
+                        <footer>
+                            <div class="info">
+                                <span>Restuarant, Portugal, revenue &dollar; 25 000 per month</span>
+                                <span>&nbsp;</span>
+                                <span>&dollar; 2 800 000</span>
+                            </div>
+                            <div class="raiting">
+                                <span>Expert Raiting</span>
+                                <div class="rating-mini">
+                                    <span class="active"></span>	
+                                    <span class="active"></span>    
+                                    <span class="active"></span> 
+                                    <span class="active"></span>	
+                                    <span class="active"></span>    
+                                    <span class="active"></span>
+                                    <span class="active"></span>    
+                                    <span class="active"></span>
+                                    <span class="active"></span>    
+                                    <span></span>
+                                </div>
+                            </div>
+                        </footer>
+                    </div>
                 </div>
+                <div class="swiper-pagination"></div>
+
+                <div class="swiper-button-prev"></div>
+                <div class="swiper-button-next"></div>
+
+                <div class="swiper-scrollbar"></div>
             </main>
         </section>
         <section id="news" class="section">
@@ -488,25 +489,9 @@
                 <button class="add-but" style="border: solid 2px gray;">Add Request</button>
                 <a href=""><strong>Entire Offer</strong>(17 214)</a>
             </header>
-            <main>
-                <div class="popular-objects">
-                    <div class="popular-object">
-                        <header style="background-color: #b15e87;">
-                            <h3>&dollar; 500 000 - &dollar; 1 000 000</h3>
-                        </header>
-                        <main>
-                            <img src="https://shopandmall.ru/photo/AFIMOLL_600.jpg" alt="Place">
-                        </main>
-                        <footer>
-                            <div class="info">
-                                <span>ID 675992</span>
-                                <span>Shopping Center, Parking, Restaurant, Gas Station Network...(30)</span>
-                                <span>Spain, Italy, Portgugal</span>
-                            </div>
-                            <a href="">+ Services for Investors</a>
-                        </footer>
-                    </div>
-                    <div class="popular-object">
+            <main class="swiper-container">
+                <div class="popular-objects swiper-wrapper">
+                    <div class="popular-object swiper-slide">
                         <header style="background-color: #4d93a7;">
                             <h3>&dollar; 500 000</h3>
                         </header>
@@ -522,7 +507,7 @@
                             <a href="">+ Services for Investors</a>
                         </footer>
                     </div>
-                    <div class="popular-object">
+                    <div class="popular-object swiper-slide">
                         <header style="background-color: #92bd99;">
                             <h3>&dollar; 500 000 - &dollar; 1 000 000</h3>
                         </header>
@@ -538,7 +523,7 @@
                             <a href="">+ Services for Investors</a>
                         </footer>
                     </div>
-                    <div class="popular-object">
+                    <div class="popular-object swiper-slide">
                         <header style="background-color: #7c7fae;">
                             <h3>&dollar; 1 000 000 - &dollar; 3 000 000</h3>
                         </header>
@@ -554,7 +539,7 @@
                             <a href="">+ Residence</a>
                         </footer>
                     </div>
-                    <div class="popular-object">
+                    <div class="popular-object swiper-slide">
                         <header style="background-color: #e19780;">
                             <h3>&lt;&dollar; 550 000</h3>
                         </header>
@@ -570,7 +555,7 @@
                             <a href="">+ Services for Investors</a>
                         </footer>
                     </div>
-                    <div class="popular-object">
+                    <div class="popular-object swiper-slide">
                         <header style="background-color: #b15e87;">
                             <h3>&dollar; 500 000 - &dollar; 1 000 000</h3>
                         </header>
@@ -586,7 +571,7 @@
                             <a href="">+ Services for Investors</a>
                         </footer>
                     </div>
-                    <div class="popular-object">
+                    <div class="popular-object swiper-slide">
                         <header style="background-color: #4d93a7;">
                             <h3>&dollar; 500 000</h3>
                         </header>
@@ -602,8 +587,24 @@
                             <a href="">+ Services for Investors</a>
                         </footer>
                     </div>
-                    <div class="popular-object">
-                        <header style="background-color: #92bd99;">
+                    <div class="popular-object swiper-slide">
+                        <header style="background-color: #e19780;">
+                            <h3>&lt;&dollar; 550 000</h3>
+                        </header>
+                        <main>
+                            <img src="https://www.dnevno.hr/wp-content/uploads/2018/07/radisson-e1530709797130.png" alt="Place">
+                        </main>
+                        <footer>
+                            <div class="info">
+                                <span>ID 487651</span>
+                                <span>Hotel, Olive Grove, Spa-Center</span>
+                                <span>Russia, Belarus</span>
+                            </div>
+                            <a href="">+ Services for Investors</a>
+                        </footer>
+                    </div>
+                    <div class="popular-object swiper-slide">
+                        <header style="background-color: #b15e87;">
                             <h3>&dollar; 500 000 - &dollar; 1 000 000</h3>
                         </header>
                         <main>
@@ -618,23 +619,30 @@
                             <a href="">+ Services for Investors</a>
                         </footer>
                     </div>
-                    <div class="popular-object">
-                        <header style="background-color: #7c7fae;">
-                            <h3>&dollar; 1 000 000 - &dollar; 3 000 000</h3>
+                    <div class="popular-object swiper-slide">
+                        <header style="background-color: #4d93a7;">
+                            <h3>&dollar; 500 000</h3>
                         </header>
                         <main>
-                            <img src="http://radver.ru/img/data/normal/c807/c807bd57f0904402b427033b20e9db7b.jpg" alt="Place">
+                            <img src="http://www.form-at.ru/assets/images/Project/62-Neva_Towers/4.jpg" alt="Place">
                         </main>
                         <footer>
                             <div class="info">
                                 <span>ID 487651</span>
                                 <span>Residential Real Estate Europe</span>
-                                <span>Austria</span>
+                                <span>Spain, Italy, Portgugal</span>
                             </div>
-                            <a href="">+ Residence</a>
+                            <a href="">+ Services for Investors</a>
                         </footer>
                     </div>
                 </div>
+
+                <div class="swiper-pagination"></div>
+
+                <div class="swiper-button-prev"></div>
+                <div class="swiper-button-next"></div>
+
+                <div class="swiper-scrollbar"></div>
             </main>
         </section>
         <section id="eventcalendar" class="section">
@@ -959,7 +967,7 @@
             <div class="logo">
                 <img src="images/icons/investportal-light.png" alt="InvestPortal" />
             </div>
-            <span>International Platform for Investors and Investment Projects</span>
+            <span>International Platform <br />for Investors and<br /> Investment Projects</span>
             <main>
                 <a href="" target="_blank"><img src="images/icons/socials/1-foot.png" alt="SN" /></a>
                 <a href="" target="_blank"><img src="images/icons/socials/2-foot.png" alt="SN" /></a>
@@ -1050,6 +1058,35 @@
         </main>
       </div>
     <script src="js/app.js"></script>
-    <!--<script src="js/addons/homesliders.js"></script>-->
+    <script>
+        let sliders = ['#promo > main.swiper-container','#investsearch > main.swiper-container'];
+
+        for (let index = 0; index < sliders.length; index++) {
+            const slider = sliders[index];
+
+            var swiper = new Swiper(slider, {
+                slidesPerView: 3,
+                spaceBetween: 30,
+                slidesPerGroup: 3,
+                slidesPerView: 'auto',
+                loop: true,
+                loopFillGroupWithBlank: true,
+                pagination: {
+                    el: '.swiper-pagination',
+                    clickable: true,
+                },
+                navigation: {
+                    nextEl: '.swiper-button-next',
+                    prevEl: '.swiper-button-prev',
+                },
+            });
+            
+        }
+
+        if(window.chrome){
+            $('#investsearch > main.swiper-container .popular-objects .popular-object').attr('id','object-chromium');
+            $('#investsearch > main.swiper-container .popular-objects').attr('id','objects-chromium');
+        }
+    </script>
 </body>
 </html>

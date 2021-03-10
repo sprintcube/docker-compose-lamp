@@ -2,11 +2,11 @@ CSS-код:
 
 /* Псевдо в промо */
 
-#promo > main .promo-feed .promoblock::before, #investsearch > main .popular-objects .popular-object::before{
+#promo > main.swiper-container .promo-feed .promoblock::before, #investsearch > main.swiper-container .popular-objects .popular-object::before{
     content: '';
     position: absolute;
 }
-#promo > main .promo-feed .promoblock::after, #investsearch > main .popular-objects .popular-object::after{
+#promo > main.swiper-container .promo-feed .promoblock::after, #investsearch > main.swiper-container .popular-objects .popular-object::after{
     content: '';
     position: absolute;
 }
@@ -14,149 +14,149 @@ CSS-код:
 
 /*Внутрений див*/
 
-#threedetal-left{
+#promo > main.swiper-container .promo-feed .promoblock::before{
     left: -304px;
 }
-#threedetal-right{
+#promo > main.swiper-container .promo-feed .promoblock::after{
     right: 390px;
     top: 15px;
 }
-#threedetal-left, #threedetal-right{
+#promo > main.swiper-container .promo-feed .promoblock::before, #promo > main.swiper-container .promo-feed .promoblock::after{
     width: 17%;
     float: right;
     position: relative;
     background-color: white;
-    display: flex;
+    display: inline-table;
     
 }
-#promo > main .promo-feed .promoblock, #investsearch > main .popular-objects .popular-object{
+#promo > main.swiper-container .promo-feed .promoblock, #investsearch > main.swiper-container .popular-objects .popular-object{
     position: relative;
     z-index: 99;
     
 }
-#investsearch > main .popular-objects #threedetal-left{
+#investsearch > main.swiper-container .popular-objects .popular-object::before{
     left: -246px;
     top: -26px;
 }
-#investsearch > main .popular-objects #threedetal-right{
+#investsearch > main.swiper-container .popular-objects .popular-object::after{
     right: 326px;
     top: -9px;
 }
 @media all and (min-width:1024px) and (max-width: 1100px){
-    #threedetal-left {
+    #promo > main.swiper-container .promo-feed .promoblock::before {
         left: -170px;
     }
-    #threedetal-right {
+    #promo > main.swiper-container .promo-feed .promoblock::after {
         right: 223px;
         top: 15px;
     }
-    #investsearch > main .popular-objects #threedetal-left {
+    #investsearch > main.swiper-container .popular-objects .popular-object::before {
         left: -137px;
         top: -26px;
     }
-    #investsearch > main .popular-objects #threedetal-right {
+    #investsearch > main.swiper-container .popular-objects .popular-object::after {
         right: 433px;
         top: -9px;
     }
 }
 @media all and (min-width:1100px) and (max-width: 1181px){
-    #threedetal-left {
+    #promo > main.swiper-container .promo-feed .promoblock::before {
         left: -173px;
     }
-    #threedetal-right {
+    #promo > main.swiper-container .promo-feed .promoblock::after {
         right: 229px;
         top: 15px;
     }
-    #investsearch > main .popular-objects #threedetal-left {
+    #investsearch > main.swiper-container .popular-objects .popular-object::before {
         left: -148px;
         top: -26px;
     }
-    #investsearch > main .popular-objects #threedetal-right {
+    #investsearch > main.swiper-container .popular-objects .popular-object::after {
         right: 199px;
         top: -9px;
     }
 }
 @media all and (min-width:1181px) and (max-width: 1280px){
-    #threedetal-left {
+    #promo > main.swiper-container .promo-feed .promoblock::before {
         left: -183px;
     }
-    #threedetal-right {
+    #promo > main.swiper-container .promo-feed .promoblock::after {
         right: 240px;
         top: 15px;
     }
-    #investsearch > main .popular-objects #threedetal-left {
+    #investsearch > main.swiper-container .popular-objects .popular-object::before {
         left: 106px;
         top: -26px;
     }
-    #investsearch > main .popular-objects #threedetal-right {
+    #investsearch > main.swiper-container .popular-objects .popular-object::after {
         right: 219px;
         top: -9px;
     }
 }
 @media all and (min-width:1280px) and (max-width: 1366px){
-    #threedetal-left {
+    #promo > main.swiper-container .promo-feed .promoblock::before {
         left: -202px;
     }
-    #threedetal-right {
+    #promo > main.swiper-container .promo-feed .promoblock::after {
         right: 264px;
         top: 15px;
     }
-    #investsearch > main .popular-objects #threedetal-left {
+    #investsearch > main.swiper-container .popular-objects .popular-object::before {
         left: 128px;
         top: -26px;
     }
-    #investsearch > main .popular-objects #threedetal-right {
+    #investsearch > main.swiper-container .popular-objects .popular-object::after {
         right: 219px;
         top: -9px;
     }
 }
 @media all and (min-width:1366px) and (max-width: 1400px){
-    #threedetal-left {
+    #promo > main.swiper-container .promo-feed .promoblock::before {
         left: -212px;
     }
-    #threedetal-right {
+    #promo > main.swiper-container .promo-feed .promoblock::after {
         right: 278px;
         top: 18px;
     }
-    #investsearch > main .popular-objects #threedetal-left {
+    #investsearch > main.swiper-container .popular-objects .popular-object::before {
         left: -178px;
         top: -26px;
     }
-    #investsearch > main .popular-objects #threedetal-right {
+    #investsearch > main.swiper-container .popular-objects .popular-object::after {
         right: 239px;
         top: -9px;
     }
 }
 @media all and (min-width:1400px) and (max-width: 1600px){
-    #threedetal-left {
+    #promo > main.swiper-container .promo-feed .promoblock::before {
         left: 10vw;
     }
-    #threedetal-right {
+    #promo > main.swiper-container .promo-feed .promoblock::after {
         right: -5vw;
         top: 20px;
     }
-    #investsearch > main .popular-objects #threedetal-left {
+    #investsearch > main.swiper-container .popular-objects .popular-object::before {
         left: -206px;
         top: -26px;
     }
-    #investsearch > main .popular-objects #threedetal-right {
+    #investsearch > main.swiper-container .popular-objects .popular-object::after {
         right: 273px;
         top: -9px;
     }
 }
 @media all and (min-width:1600px) and (max-width: 1800px){
-    #threedetal-left {
+    #promo > main.swiper-container .promo-feed .promoblock::before {
         left: -257px;
     }
-    #threedetal-right {
+    #promo > main.swiper-container .promo-feed .promoblock::after {
         right: 331px;
         top: 15px;
     }
-    #investsearch > main .popular-objects #threedetal-left {
+    #investsearch > main.swiper-container .popular-objects .popular-object::before {
         left: -212px;
         top: -26px;
     }
-    #investsearch > main .popular-objects #threedetal-right {
+    #investsearch > main.swiper-container .popular-objects .popular-object::after {
         right: 279px;
         top: -9px;
     }
@@ -166,8 +166,8 @@ CSS-код:
 JavaScript-код:
 
 const PromoBlocksThreeDetals = () => {
-    let promos = [$('#promo > main .promo-feed .promoblock'),$('main .popular-objects .popular-object')];
-    let threed = $('#threedetal-left, #threedetal-right');
+    let promos = [$('#promo > main.swiper-container .promo-feed .promoblock'),$('main .popular-objects .popular-object')];
+    let threed = $('#promo > main.swiper-container .promo-feed .promoblock::before, #promo > main.swiper-container .promo-feed .promoblock::after');
 
 
     for (let index = 0; index < promos.length; index++) {
@@ -177,7 +177,7 @@ const PromoBlocksThreeDetals = () => {
 
 }
 const PromoBlocksThreeDetalsAppend = () => {
-    let promos = [$('#promo > main .promo-feed .promoblock'),$('main .popular-objects .popular-object')];
+    let promos = [$('#promo > main.swiper-container .promo-feed .promoblock'),$('main .popular-objects .popular-object')];
 
 
     for (let index = 0; index < promos.length; index++) {
