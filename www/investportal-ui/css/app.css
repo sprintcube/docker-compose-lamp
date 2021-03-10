@@ -861,14 +861,14 @@ h1, h2, h3, h4, h5, h6, strong{
 }
 #estate > main #slider-view .estat-feed{
     display: block;
-    margin-left: -12%;
+    margin-left: -10%;
 }
 #estate > main #slider-view .estat-feed .estat{
-    width: 26%;
+    width: 28%;
     height: 181px;
     display: inline-table;
     box-shadow: 3px -1px 11px 3px darkgray;
-    margin-left: 6%;
+    margin-left: 4%;
     background-color: white;
 }
 #estate > main #slider-view .estat-feed .estat header{
@@ -984,7 +984,7 @@ h1, h2, h3, h4, h5, h6, strong{
 }
 #reviews > main #slider-view .review-feed{
    display: block;
-   margin-left: -11%;
+   margin-left: -10%;
 }
 #reviews > main #slider-view .review-feed .review{
     width: 28%;
@@ -1215,7 +1215,7 @@ h1, h2, h3, h4, h5, h6, strong{
         margin-top: 6%;
         width: 87px;
     }
-    #services > main #slider-view .service-feed .service, #analytics > main #slider-view .analytic-feed .analytic, #estate > main #slider-view .estat-feed .estat{ width: 29%; margin-left: 2%;}
+    #services > main #slider-view .service-feed .service, #analytics > main #slider-view .analytic-feed .analytic, #estate > main #slider-view .estat-feed .estat{ width: 30%; margin-left: 2%;}
     #reviews > main #slider-view .review-feed .review#with-title-image header img {
         left: 0%;
     }
@@ -1237,7 +1237,20 @@ h1, h2, h3, h4, h5, h6, strong{
 }
 @media all and (min-width:1280px) and (max-width: 1366px){
     .header > #header_bottom {
-        display: none;
+        display: inherit;
+    }
+    .header > #header_top {
+        margin-left: 5vw;
+    }
+    .header > #header_bottom .hb_bottom header .welcome-link {
+        margin-top: -7%;
+        margin-left: 1%;
+    }
+    .header > #header_bottom .hb_bottom header .header-informer {
+        margin-top: -14%;
+    }
+    .header > #header_bottom .hb_bottom footer {
+        margin-top: -6%;
     }
     #promo > header .links {
         left: 11vw;
@@ -1346,7 +1359,7 @@ h1, h2, h3, h4, h5, h6, strong{
         font-size: 63%;
     }
     .header > #header_bottom .hb_bottom header .welcome-link {
-        margin-top: 6%;
+        margin-top: -7%;
     }
     #investsearch > header a {
         margin-left: 11%;
@@ -1364,7 +1377,7 @@ h1, h2, h3, h4, h5, h6, strong{
         margin-top: 4%;
         width: 88px;
     }
-    #services > main #slider-view .service-feed .service, #analytics > main #slider-view .analytic-feed .analytic, #estate > main #slider-view .estat-feed .estat{ width: 27%; margin-left: 5%;}
+    #services > main #slider-view .service-feed .service, #analytics > main #slider-view .analytic-feed .analytic, #estate > main #slider-view .estat-feed .estat{ width: 28%; margin-left: 4%;}
     #reviews > main #slider-view .review-feed .review#with-title-image header img {
         left: 0%;
     }
@@ -1386,7 +1399,21 @@ h1, h2, h3, h4, h5, h6, strong{
 }
 @media all and (min-width:1366px) and (max-width: 1400px){
     .header > #header_bottom {
-        display: none;
+        display: inherit;
+        margin-top: 5vw;
+    }
+    .header > #header_top {
+        margin-left: 5vw;
+    }
+    .header > #header_bottom .hb_bottom header .welcome-link {
+        margin-top: -7%;
+        margin-left: 1%;
+    }
+    .header > #header_bottom .hb_bottom header .header-informer {
+        margin-top: -14%;
+    }
+    .header > #header_bottom .hb_bottom footer {
+        margin-top: -6%;
     }
     #promo > header .links {
         left: 11vw;
@@ -1433,7 +1460,7 @@ h1, h2, h3, h4, h5, h6, strong{
         margin-top: 3%;
         width: 100px;
     }
-    #services > main #slider-view .service-feed .service, #analytics > main #slider-view .analytic-feed .analytic, #estate > main #slider-view .estat-feed .estat{ width: 29%; margin-left: 3%;}
+    #services > main #slider-view .service-feed .service, #analytics > main #slider-view .analytic-feed .analytic, #estate > main #slider-view .estat-feed .estat{ width: 28%; margin-left: 4%;}
     #reviews > main #slider-view .review-feed .review#with-title-image header img {
         left: 0%;
     }
@@ -1539,6 +1566,9 @@ h1, h2, h3, h4, h5, h6, strong{
     }
 }
 @media all and (aspect-ratio: 5/4){
+    .header > #header_bottom {
+        display: inherit;
+    }
     #estate > main #slider-view .estat-feed .estat {
         margin-left: 24px;
     }

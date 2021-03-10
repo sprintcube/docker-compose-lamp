@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0">
     <title>InvestPortal</title>
     <link rel="stylesheet" href="../css/app.css" />
-    <link rel="stylesheet" href="../css/objects/view.css" />
+    <link rel="stylesheet" href="../css/objects/hotels.css" />
     <script src="https://yastatic.net/jquery/3.3.1/jquery.min.js"></script>
     <script src="https://kit.fontawesome.com/97c3285af2.js" crossorigin="anonymous"></script>
     <style>
@@ -15,7 +15,7 @@
             color:white;
             background-color:#0079bf;
             border: none;
-            font-size: 70%;
+            font-size: 90%;
             padding: 10px;
         }
         
@@ -86,169 +86,147 @@
     </header>
     <main class="main" style="background-color:   #eff3f4;">
         <section class="section" id="link-switcher">
-            <a href="../index.html">Main</a> <span id="delimeter"> / </span> <a href="#">Investment Objects</a> <span id="delimeter"> / </span> <a href="hotels.html">Hotels</a> <span id="delimeter"> / </span><a href="view.html" class="active">Hotel Raddison</a>
+            <a href="../index.html">Main</a> <span id="delimeter"> / </span> <a href="#">Investment Objects</a> <span id="delimeter"> / </span> <a href="hotels.html" class="active">Hotels</a>
         </section>
         <section class="section" id="objects">
-            <div class="object-viewer">
-                <div class="left-content">
-                    <header>
-                        <button class="add-but">
-                            <img src="https://img.icons8.com/windows/32/000000/horizontal-settings-mixer--v1.png" style="width:20%;vertical-align:middle;"/>
-                            Object filter
-                        </button>
-                        <h2 class="view-title">Hotel Reddison</h2>
-                        <div id="object-meta">
-                            <div class="title">
-                                <span class="view-title">Object</span>
-                                <div class="docs">
-                                    <img src="../images/icons/pdf.svg" alt="" class="doc-icon">
-                                    <a href="" download="">Download prensetation</a>
-                                </div>
-                            </div>
-                            <div class="metadata">
-                                <div>COUNTRY — <span>SPAIN, ANDALUSIA</span></div>
-                                <div>COST, USD — <span>12.000 000</span></div>
-                                <div>PROFITABLENESS — <span>4%</span></div>
-                            </div>
-                        </div>
-                        <div class="object-contacts">
-                            <div class="contact">
-                                <img src="../images/icons/user.svg" alt="">
-                                <span>Jack Daniels</span>
-                            </div>
-                            <div class="contact">
-                                <img src="../images/icons/phone.svg" alt="">
-                                <span>+43 (172) 278-99-37</span>
-                            </div>
-                            <div class="contact">
-                                <img src="../images/icons/mail.svg" alt="">
-                                <a href="mailto:info@gmail.ru">info@gmail.ru</a>
-                            </div>
-                        </div>
-                    </header>
-                    <main>
-                        <span class="view-title">Specifications</span> 
-                        <table class="specifications">
-                            <tbody>
-                                <tr>
-                                    <td>Total area</td>
-                                    <td>400 m</td>
-                                </tr>
-                                <tr>
-                                    <td>Number of rooms</td>
-                                    <td>72</td>
-                                </tr>
-                                <tr>
-                                    <td>Land area</td>
-                                    <td>2800 m</td>
-                                </tr>
-                                <tr>
-                                    <td>Number of staff</td>
-                                    <td>44</td>
-                                </tr>
-                                <tr>
-                                    <td>Annual profit</td>
-                                    <td>$ 500 000</td>
-                                </tr>
-                                <tr>
-                                    <td>Number of rooms</td>
-                                    <td>72</td>
-                                </tr>
-                                <tr>
-                                    <td>Land area</td>
-                                    <td>2800 m</td>
-                                </tr>
-                                <tr>
-                                    <td>Number of staff</td>
-                                    <td>44</td>
-                                </tr>
-                                <tr>
-                                    <td>Annual profit</td>
-                                    <td>$ 500 000</td>
-                                </tr>
-                                <tr>
-                                    <td>Number of rooms</td>
-                                    <td>72</td>
-                                </tr>
-                                <tr>
-                                    <td>Land area</td>
-                                    <td>2800 m</td>
-                                </tr>
-                                <tr>
-                                    <td>Number of staff</td>
-                                    <td>44</td>
-                                </tr>
-                                <tr>
-                                    <td>Annual profit</td>
-                                    <td>$ 500 000</td>
-                                </tr>
-                            </tbody>
-                        </table>
-                    </main>
-                    <footer>
-                        <a href="" id="more">Show more</a>
-                    </footer>
-                </div>
-                <div class="right-content">
-                    <header>
-                        <div class="add-to-favorite">
-                            <i class="far fa-star"></i>
-                            <a href="">Add to Favorites</a>
-                        </div>
-                        <div class="description">
-                            <span>
-                                This highly profitable hotel ts located In the city of Malaga, Andalusia on the beach. 
-                                It has a pronounced seasonal demand.
-                            </span>
-                            <a href="">Show more</a>
-                        </div>
-                    </header>
-                    <main>
-                        <span class="view-title">Photos</span>
-                        <div id="images-slider">
-                            <div class="header">
-                                <header class="switcher">
-                                    <img src="../images/icons/slider-contorls/back.png" alt="">
+            <div class="projects-search-form">
+                <header>
+                    <div id="left-content">
+                        <span class="title">Selection of the object</span>
+                    </div>
+                    <div id="right-content">
+                        <a href="" class="close"><img src="https://img.icons8.com/material-sharp/24/000000/delete-sign.png"/></a>
+                    </div>
+                </header>
+                <main>
+                    <section class="objects-adding-search">
+                        <header>
+                            <div id="left-content">
+                                <header>
+                                    <form action="" method="get">
+                                        <div>
+                                            <label class="label" for="type">Objects type</label>
+                                            <select name="type" id="selector">
+                                                <option value="0">Hotels</option>
+                                            </select>
+                                        </div>
+                                        <div>
+                                            <label class="label" for="country">Country</label>
+                                            <select name="country" id="selector">
+                                                <option value="">All countries</option>
+                                            </select>
+                                        </div>
+                                        <div>
+                                            <label class="label" for="region">Region</label>
+                                            <select name="region" id="selector">
+                                                <option value="">All regions</option>
+                                            </select>
+                                        </div>
+                                    </form>
                                 </header>
-                                <footer class="switcher">
-                                    <img src="../images/icons/slider-contorls/go.png" alt="">
-                                </footer>
                             </div>
-                            <div class="content">
-                                <img src="" alt="Current Image" id="current">
+                            <div id="right-content">
+                                <header>
+                                    <label class="input-from-to">
+                                        <span class="title-form">Profabillity</span>
+                                        <span class="content-form">
+                                            Profabillity from
+                                            <input type="text" id="from" value="0%">
+                                            to
+                                            <input type="text" id="to" value="100%">
+                                        </span>
+                                    </label>
+                                    <label class="input-from-to">
+                                        <span class="title-form">Cost</span>
+                                        <span class="content-form">
+                                            Cost from
+                                            <input type="text" id="from" value="$ 100">
+                                            to
+                                            <input type="text" id="to" value="$ 10000000">
+                                        </span>
+                                    </label>
+                                </header>
                             </div>
-                            <div class="footer">
-                                <div class="image-switcher">
-                                    <img src="https://uploads2.stells.info/storage/jpg/2/25/225afbe00bce69a87b770806f62f3918.jpg" alt="Switcher image" class="image-current">
-                                </div>
-                                <div class="image-switcher">
-                                    <img src="https://im0-tub-ru.yandex.net/i?id=5478b06e5b8d9fb49c5c6535f32d5cca&n=13" alt="Switcher image">
-                                </div>
-                                <div class="image-switcher">
-                                    <img src="https://www.multitour.ru/files/imgs/hotel_7815_53674_STZ_5189.jpg" alt="Switcher image">
-                                </div>
-                            </div>
-                        </div>
-                    </main>
-                    <footer>
-                        <span class="view-title">Video</span>
-                        <video class="view-player" poster="../images/videocaptures/capture.jpg" loop>
-                            <source src="../videos/test/video.mp4" type="video/mp4">
-                            <source src="../videos/test/video.webm" type="video/webm">
-                            <source src="../videos/test/video.ogv" type="video/ogg">
-                        </video>
-                        <div class="video-player">
-                            <header class="play">
-                                <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAABmJLR0QA/wD/AP+gvaeTAAAD2UlEQVRYhe2WTWwbVRDHf/PsOEEipUQ9pCQRkNppFQRI2fiQG5z4aIkb9dgLqlScRCU9pG24AOaWRkK0BX8hPi5FHCqauCgIxAFuqMSmBdQKx06rqoGChApRODT2eodDTFTFXm8CiAv5X3a1b3bmN7Ozbx5s6f8u2YxxOF7sUkME0b3AQ0BXdekmynUMsz5D5uLh0OK/CjCQzHeURV4BOQT4PcwdgY9s23f80pHuG/8YoD9RGMRwFmgFSsA0KjOofal078oiQOCP5k6M6QOJAENAAFgWODg3HPr4bwNYqeKLgp4CjMA58VUmvj6853qjd8KJ+W71yRTKAcBB5Wh2JPjWpgGqmU8DinI8OxJ6o1HgGvh0cVxUTwIisN+tEqbew4FkvqNadrM+uJUqxAfeudLmBZCLBl9XkQnAKJy10ld3bhigLOY1oFXg3PrMBUbLdqBgpefHrHS2yQsC5DywTdQf2xBAOF7sAp4HSuKrTLj4bhOV06L3fdefWni2EYSKngBKIIcGkvkOTwA1RAAfMN2o4RSuAnvAmQ2nCp+G3y48Us8uFw0tCGQAvy0m4gkAWs1IM27BAVp/XnxckTHgtsJT6nDZShXiVjq/ow5tZvUiNdWqrYAQBHAqZq4RwJexJ+3ccPDNFScQFDjJ6gY0KmoKVqowETxTaF7zqZVs9TboCSDQDnBPi/1LI4C/9P3og7/NDYdeEkMf8DmwXWBye4C1/mhu5qcqygOeAP+16u3rt4DWcqVpJ7Ds5eDRxI37W6QcU0dHq/5+V5hcKnGqOLZrBeCOLR0CINQMqVoAZQGhx3EqFjDvFviJ2Bf+5fauEaEUU2gDbIUE4ryai+7+9W5b4xhLBVC55g1gmEV5pjpYPnQDWG7v/FbQ3tXE+AzDePaF0JW6xkIEQEVna8Otk8+QAWxgKJyY73YDEOgFfgCzd2449PScS/C+eDGoEAHsgONc8AS4eDi0qPA+EFCfTLnEv62iR1WWHssO7/rEDRJAfM4UEEDk3a9Gdv/oCQDglCsxYBnlgJUujt+9ppBo8pdCuWjPmVy0v9woeDhVPCbIELAktq/uLHAdx+FU4TmFGUBVZGJ1sGxc4VTxmKKTgKjoYC7aU/P9GwIA9CeLRxA9DRiQ8yp6IhcNLTR6py9eDIrPmapm7iCMZaOhuJu955GsLzm/z4h8AGwDSgIZR3QG9Js7tr0I0OL3d1Z/tf2sNlwTsKSiB90y3zAAgJXO7zCO72WVtc2mkWzQ91TsWC7ae8vL96aO5QPJfEfJmEFR3YfIw2j1WC7cROWais4GHOdCvW7f0pbc9CfcInoOOTgJHQAAAABJRU5ErkJggg==" alt="Нажмите для воспроизведения видеоролика" />
+                        </header>
+                        <main>
+                            <header>
+                                <form action="" method="get">
+                                    <div>
+                                        <label class="label" for="company">Company name</label>
+                                        <input type="search" name="company" placeholder="Enter the company name" />
+                                    </div>
+                                </form>
                             </header>
-                            <main class="controls">
-                                <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAABmJLR0QA/wD/AP+gvaeTAAAC8ElEQVRYhe2WTW9TRxSGn3euMUglrNi0IVKJ7BJ1GceL/AVAmIjusqmQIpMWWonPFVXYFVREK9Wx00VX7QqRYKr8hqqN3SyrJDcgRIBu+ZAgzvUcFjaqFDu5ie0deTczunNm3mfuPXfmwJ4+dGk3wdlCOGCOHLITwKfAQHPoCcYjHPOBo/zXRHqtpwCjxaX+Dek70FkgERPuBfeiKLiyeH7wcdcAI9Mrp3D8BvQBNWAO030sWqwdXF8DSL7efwTnhkE5YAxIAq8E4wvn0n90DJAphReE/Qg4wV0F9Wt/Tww92m5Odnp50ALdwjgDeEzfViZTP+8aoLnzOcAwrlQm03e2M26BnwkvyewmIMHprd5EW4DGN3f/An0YF3drvgniB+ClaWOomv/8+eYY127ihtwNoE9wt1NzgGo+dRs0CxySJabaxbQAZAvhAPAlUFNQv7Z5fKS0YiOlFdvpc5NdBWqgs6PFpf5YAHPkgACYi0u4naiaT68KykAiksvFAoAdb7blbs3/X5Jyo9HxWAATKQBfdws987d6pdlNxQIIPgZYZ/2/XgG8sfrTJkp8DgAtidStDtaT7338TgCeA3y078AnvQKI9vvGWuJpPICxCuB9PdMrAOddYy3Tw3gAx3yjo5ZfpmOJXMPf5mMBAkcZiICx7PTyYLfew4UwZZADoqT3D1rZ2ihTWvlFMIG4V8mnv+gGIFNanhUaQ5qp5FPnNo+3vQv8Rn0KeIVxJjMTXurUPFsKLwuNAS8UBTu7CwAWLww9E4wDXmY3O4HIlsLLhn0PeJONL3x9tO25sm1BMlIMzyP7qQGqWZNdrebTq9vNGS6EKQX+VnPnHvFNJZ8ubBUfW5INF5dPOul34BBQE5S97D7YP2+jaA3gQCJxxHmXMXGaRsLtA16YbLya/6wl83cFAJCZWTrsfHDdZF8RX5RGYL+aoql2BUhHAO81Wlzqrzl3SmYnkY5izbJcPMH00GTzSe8f/Dl5rOXE29OettI73qkbdiAWJz4AAAAASUVORK5CYII=" alt="Поставить на паузу" class="pause watching">
-                                <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAABmJLR0QA/wD/AP+gvaeTAAACK0lEQVRYhe1XwWoTURQ9N28S+wOTbBNNxAQbCLZ0W5LWP/ADLEgaKvULhKJ/UMSxFFLX/YS0qW6lkUBa0uKMTXfaDrhyYeNMr4vOQBOnLy+ZBBF6VsPjvnvOPXfmvjfALf535A0rHmZ/JCx5lLgWJocWhjxGXAeQDSNgJAeukT8MQz6SgHGSDy1gbvMkESX+4JEfymLzhhWfNaxXWGMph7KAuc2ThOO6ewTkAByQqy3KyGPEdSZ+OZv4uhZaQN6w4q7r7hKQA+GIXO1xUk/aQbGFqqnHiHdx5dIxLsVbWe6/voIn2yw6Pyynd5X9hwM3ilKznLKT2yz6985vdaZ+Xjh7Hvlhl6nUWkmdywSovwNe5c2lTGDlAPDxaeoXmN94sYutSlpKDsjngNtYzgw9JxqV+xvpdfO9tZq6UIkPNQlvgrWaUSIHQkzCQZh5Z3L/WmM5Q/1rE3FgGEzMgaBqgzARB9Lr5h3VWJkDoqePhCNytOL+Suq7LOGM8aWMCF482miXPpdz3wYJUHeAkWXh1ApVU78pZH6rMwWi52BkiaM1lcuKUp96TkDPiaSetL2J2TMvClVTF13UAUwDOGb6XZQ5oeRAq5I+F0IsMND2nTi1TwOdaC5l7C7TAq5OyweRy1hFllu5BZ+e3T3ThCgy0AYwzcLZkQnuMpWI6fX+2T3paajUgusIuJCMNLJ9DP0Z+tVhwIVkYgLGLWLkQeSL4DE5MTLC/pjc4p/jD3Qb2ri+v6ADAAAAAElFTkSuQmCC" alt="Выключить звук" class="sound watching">
-                                <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAABmJLR0QA/wD/AP+gvaeTAAAB7UlEQVRYhe2Wz2rbQBDGv80qBoOvTXw1xMVlIVCQyLEo7Tv4FWpE38EP0OuiQCD3vENc9y5DoWWJW4XoVDA5GwKKhu3BUpAV+Y/UjU/+TtKi2fkx880gYK+9aur9VfjGxD0HdYJO/bsjHmNkAsCqGuDIqK1ZMgbQMwFQqQJnl/fHmic3ppJXAji7vD8mohEAYSr51gCOjNpE9D1NPt0pwHLZ2W96oo8mAV6Y0L4Idf6diLLHKSPu/vhyMrMvwpUXCqlayhPzTWeZtvMAwy0jyw28zmzdZ7YfDpu8ETgyamdnjozaTd4IbD8clsWsHMPJ5y7bCi6VkKoFhj6AnubJ2JGRCwCapyPL0BdSfS1WotYiKpPyxJyR5WJh0p7myfg5OTBlZLllbTAGAACB15nFmn0AoNLEz8Zd1T6jAADQtA4KrdNrW2kUoGRfTAG85Yd8lDfmqwAIqVrFnhc9IaRqFeNWTsHSPmC4ZYl1vm4MlSfmth9eg6GfH1lHRq7myRga1/VNqPEuHa3SMmaaDLrDR4qdPGjgdWaPFDuTQbd0D2yc9VP/7qjB9Dcs+vqHnsjlh/wvUH1XlGljBX4OTh4YWZ+QM9T/Jq0EAJTO924BgEUlYs3OU4jdA2QQuXbsHgBYascvUxC1ZOq3fK+9/gG08dndgzF6CAAAAABJRU5ErkJggg==" alt="Включить звук" class="nosound watching">
-                            </main>
-                        </div>
-                    </footer>
-                </div>
+                            <footer style="margin-top: -7%;">
+                                <div class="check-selectors">
+                                    <span class="title-form">FORM OF OWNERSHIP</span>
+                                    <label>
+                                        <input type="checkbox" value="" checked>
+                                        <span>checkbox on</span>
+                                    </label>
+                                    <label>
+                                        <input type="checkbox" value="" checked>
+                                        <span>checkbox on</span>
+                                    </label>
+                                    <label>
+                                        <input type="checkbox" value="">
+                                        <span>checkbox off</span>
+                                    </label>
+                                </div>
+                                <div class="radio-selectors">
+                                    <span class="title-form">AVAILABILITY OF PARKING, SWIMMING POOL, RESTAURANT</span>
+                                    <label>
+                                        <input type="radio" value="" name="radio" checked>
+                                        <span>radiobutton on</span>
+                                    </label>
+                                    <label>
+                                        <input type="radio" value="" name="radio">
+                                        <span>radiobutton off</span>
+                                    </label>
+                                    <label>
+                                        <input type="radio" value="" name="radio">
+                                        <span>radiobutton off</span>
+                                    </label>
+                                </div>
+                        </footer>
+                        </main>
+                        <footer>
+                            <div id="left-content">
+                                <label class="input-from-to">
+                                    <span class="title-form">Total area</span>
+                                    <span class="content-form">
+                                        Total area from
+                                        <input type="text" id="from" value="100 m2">
+                                        to
+                                        <input type="text" id="to" value="10000 m2">
+                                    </span>
+                                </label>
+                                <label class="input-from-to">
+                                    <span class="title-form">Number of rooms</span>
+                                    <span class="content-form">
+                                        Number of rooms
+                                        <input type="text" id="from" value="1">
+                                        to
+                                        <input type="text" id="to" value="565">
+                                    </span>
+                                </label>
+                            </div>
+                            <div id="right-content">
+                                <label class="range-form">
+                                     <input type="range"  min="" max="" value=""  step="" />
+                                </label>
+                                <label class="range-form">
+                                     <input type="range"  min="" max="" value=""  step="" />
+                                </label>
+                            </div>
+                        </footer>
+                    </section>
+                </main>
+                <footer>
+                    <div id="left-content">
+                        <button class="add-but" style="margin-left: 4%;margin-top: 3%;">Show objects(27)</button>
+                    </div>
+                </footer>
             </div>
             <div class="objects-list">
                 <header>
@@ -557,7 +535,7 @@
         </section>
         <section id="services" class="section">
             <header>
-                <hr width="45px" color="#0079bf" align="left">
+                <hr width="45px" color="#0079bf" size="2" align="left">
                 <h2>Services</h2>
                 <strong>&amp; Collaborations</strong>
                 <a href=""><strong>All Services</strong>(12 029)</a>
@@ -624,10 +602,10 @@
             </div>
             <span>International Platform <br />for Investors and<br /> Investment Projects</span>
             <main>
-                <a href="" target="_blank"><img src="../images/icons/socials/1-foot.png" alt="SN" /></a>
-                <a href="" target="_blank"><img src="../images/icons/socials/2-foot.png" alt="SN" /></a>
-                <a href="" target="_blank"><img src="../images/icons/socials/3-foot.png" alt="SN" /></a>
-                <a href="" target="_blank"><img src="../images/icons/socials/4-foot.png" alt="SN" /></a>
+                <a href="" target="_blank" ><img src="../images/icons/socials/1-foot.png" alt="SN" /></a>
+                <a href="" target="_blank" ><img src="../images/icons/socials/2-foot.png" alt="SN" /></a>
+                <a href="" target="_blank" ><img src="../images/icons/socials/3-foot.png" alt="SN" /></a>
+                <a href="" target="_blank" ><img src="../images/icons/socials/4-foot.png" alt="SN" /></a>
             </main>
         </header>
         <main>
@@ -713,6 +691,7 @@
         </main>
       </div>
     <script src="../js/app.js"></script>
-    <script src="../js/objects/view.js"></script>
+    <script src="../js/objects.js"></script>
+    <script src="../js/objects/hotels.js"></script>
 </body>
 </html>
