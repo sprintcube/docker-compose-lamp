@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@600&family=Roboto&display=swap');
+@import url('addons/feedblocks/services2estate.css');
 @import url('addons/lightbox.css');
 @import url('addons/docsicon.css');
 @import url('addons/video-player.css');
@@ -47,7 +48,7 @@ h1, h2, h3, h4, h5, h6, strong{
 }
 .header > #header_bottom{
     float: right;
-    margin-right: 12vw;
+    margin-right: 14vw;
 }
 .header > #header_bottom .hb_bottom header{
     display: block;
@@ -158,7 +159,7 @@ h1, h2, h3, h4, h5, h6, strong{
     height: 764px;
     display: block;
     padding-bottom: 9%;
-    padding-top: 6%;
+    padding-top: 4%;
 }
 .main > .section header{
     color:darkgray;
@@ -188,8 +189,8 @@ h1, h2, h3, h4, h5, h6, strong{
 }
 
 #promo{ height: 378px; }
-#news{ height:106px; padding-top: 10%; }
-#investsearch{ height: 470px; }
+#news{ height:106px; padding-top: 8%; }
+#investsearch{ height: 412px; }
 #services{ height: 154px; padding-top: 41px;}
 #analytics{ height: 263px; padding-top: 77px;}
 #estate{ height: 185px;padding-top: 69px;}
@@ -241,7 +242,7 @@ h1, h2, h3, h4, h5, h6, strong{
    display: inline-table;
 }
 #promo > header .marketing-info header img {
-    width: 70%;
+    width: 69%;
     border-radius: 10px 10px 10px 10px;
 }
 #promo > header h2, #promo > header strong{
@@ -287,7 +288,7 @@ h1, h2, h3, h4, h5, h6, strong{
     display: inline-table;
     float:right;
     width: 80%;
-    margin-top: 3%;
+    margin-top: -11%;
     margin-right: -4vw;
 }
 #promo > header .marketing-info footer ul{
@@ -399,7 +400,7 @@ h1, h2, h3, h4, h5, h6, strong{
     margin-top: -4%;
 }
 #news > header, #investsearch > header, #eventcalendar > header{
-    margin-left: 11vw;
+    margin-left: 12vw;
 }
 
 #services > header .add-but, #estate > header .add-but{
@@ -533,7 +534,7 @@ h1, h2, h3, h4, h5, h6, strong{
 }
 #investsearch > main.swiper-container .popular-objects .popular-object header h3{
     margin-left: 4%;
-    margin-top: -2px;
+    margin-top: 1%;
     font-size: 93%;
 }
 #investsearch > main.swiper-container .popular-objects .popular-object main img{
@@ -658,7 +659,7 @@ h1, h2, h3, h4, h5, h6, strong{
     float: left;
     display: inline-table;
     position: relative;
-    left: 3vw;
+    left: 4vw;
 }
 #services > header a{
    text-decoration: none;
@@ -682,7 +683,7 @@ h1, h2, h3, h4, h5, h6, strong{
 #services > main #slider-controller img{
     width: 26%;
     position: relative;
-    top: -101px;
+    top: -6vw;
 }
 #services > main #slider-view{
     width: 70%;
@@ -762,7 +763,7 @@ h1, h2, h3, h4, h5, h6, strong{
     float: left;
     display: inline-table;
     position: relative;
-    left: 3vw;
+    left: 4vw;
 }
 #analytics > main{
     width: 70%;
@@ -779,7 +780,7 @@ h1, h2, h3, h4, h5, h6, strong{
 #analytics > main #slider-controller img{
     width: 26%;
     position: relative;
-    top: calc(45px * 2);
+    top: 6vw;
 }
 #analytics > main #slider-view{
     width: 70%;
@@ -790,11 +791,11 @@ h1, h2, h3, h4, h5, h6, strong{
    margin-left: -12%;
 }
 #analytics > main #slider-view .analytic-feed .analytic{
-    width: 30%;
+    width: 29%;
     height: 342px;
     display: inline-table;
     box-shadow: 3px -1px 11px 3px darkgray;
-    margin-left: 3%;
+    margin-left: 4%;
     padding-bottom: 2%;
     background-color: white;
     padding-right: -1px;
@@ -843,7 +844,7 @@ h1, h2, h3, h4, h5, h6, strong{
     float: left;
     display: inline-table;
     position: relative;
-    left: 3vw;
+    left: 4vw;
 }
 #estate > main{
     width: 70%;
@@ -859,7 +860,7 @@ h1, h2, h3, h4, h5, h6, strong{
 #estate > main #slider-controller img{
     width: 26%;
     position: relative;
-    top: -51px;
+    top: -6vw;
 }
 #estate > main #slider-view{
     width: 70%;
@@ -968,7 +969,7 @@ h1, h2, h3, h4, h5, h6, strong{
     float: left;
     display: inline-table;
     position: relative;
-    left: 3vw;
+    left: 4vw;
     top: 11%;
 }
 #reviews > main{
@@ -985,7 +986,7 @@ h1, h2, h3, h4, h5, h6, strong{
 #reviews > main #slider-controller img{
     width: 26%;
     position: relative;
-    top: 45px;
+    top: 5vw;
 }
 #reviews > main #slider-view{
     width: 70%;
@@ -1120,6 +1121,9 @@ h1, h2, h3, h4, h5, h6, strong{
     #promo {
         height: 317px;
     }
+    #promo > main.swiper-container .promo-feed .promoblock {
+        height: 364px;
+    }
     #promo > header .marketing-info {
         margin-top: 5%;
         margin-right: -5vw;
@@ -1128,12 +1132,12 @@ h1, h2, h3, h4, h5, h6, strong{
         width: 76%;
     }
     #news {
-        padding-top: 18vw;
+        padding-top: 17%;
     }
     #investsearch {
         height: 527px;
         padding-top: 15%;
-        padding-bottom: 0%;
+        padding-bottom: 9%;
     }
     #investsearch > main.swiper-container .popular-objects .popular-object header {
         height: 24px;
@@ -1152,8 +1156,8 @@ h1, h2, h3, h4, h5, h6, strong{
         padding-top: 3%;
     }
     #services > main #slider-controller img {
-        width: 38%;
-        top: -84px;
+        width: 28%;
+        top: -12vw;
     }
     #services > main #slider-view .service-feed .service header {
         font-size: 53%;
@@ -1178,8 +1182,8 @@ h1, h2, h3, h4, h5, h6, strong{
         height: 187px;
     }
     #estate > main #slider-controller img {
-        width: 38%;
-        top: -27px;
+        width: 31%;
+        top: -5vw;
     }
     #estate > main #slider-view .estat-feed .estat {
         height: 181px;
@@ -1191,8 +1195,8 @@ h1, h2, h3, h4, h5, h6, strong{
         font-size: 84%;
     }
     #reviews > main #slider-controller img {
-        width: 38%;
-        top: 90px;
+        width: 31%;
+        top: 7vw;
     }
     #promo > main.swiper-container .promo-feed .promoblock footer .info {
         margin-top: 47%;
@@ -1250,9 +1254,12 @@ h1, h2, h3, h4, h5, h6, strong{
 @media all and (min-width:1280px) and (max-width: 1366px){
     .header > #header_bottom {
         display: inherit;
+        right: -2%;
+        position: relative;
+        top: -8%;
     }
     .header > #header_top {
-        margin-left: 12vw;
+        margin-left: 11vw;
     }
     .header > #header_bottom .hb_bottom header .welcome-link {
         margin-top: -7%;
@@ -1267,12 +1274,15 @@ h1, h2, h3, h4, h5, h6, strong{
     #promo > header .links {
         left: 11vw;
     }
+    #promo > main.swiper-container .promo-feed .promoblock {
+        height: 410px;
+    }
     #promo > header .marketing-info {
-        margin-top: 5%;
-        margin-right: -4vw;
+        margin-top: 6%;
+        margin-right: -2vw;
     }
     #promo > header .marketing-info header img {
-        width: 76%;
+        width: 78%;
     }
     #investsearch {
         height: 554px;
@@ -1332,8 +1342,8 @@ h1, h2, h3, h4, h5, h6, strong{
         font-size: 70%;
     }
     #analytics > main #slider-controller img {
-        width: 40%;
-        top: 27px;
+        width: 31%;
+        top: 6vw;
     }
     #analytics > main #slider-view .analytic-feed .analytic h2 {
         font-size: 97%;
@@ -1408,11 +1418,15 @@ h1, h2, h3, h4, h5, h6, strong{
     #analytics > main #slider-view .analytic-feed .analytic a {
         font-size: 87%;
     }
+    #news {
+        padding-top: 10%;
+    }
 }
 @media all and (min-width:1366px) and (max-width: 1400px){
     .header > #header_bottom {
         display: inherit;
-        margin-top: 5vw;
+        margin-top: 0%;
+        margin-right: 13vw;
     }
     .header > #header_top {
         margin-left: 12vw;
@@ -1430,8 +1444,11 @@ h1, h2, h3, h4, h5, h6, strong{
     #promo > header .links {
         left: 11vw;
     }
+    #promo > main.swiper-container .promo-feed .promoblock {
+        height: 379px;
+    }
     #promo > header .marketing-info {
-        margin-top: 4%;
+        margin-top: -10vw;
         margin-right: 0vw;
     }
     #promo > header .marketing-info header img {
@@ -1491,14 +1508,21 @@ h1, h2, h3, h4, h5, h6, strong{
     #analytics > main #slider-view .analytic-feed .analytic a {
         font-size: 87%;
     }
+    #news {
+        padding-top: 7%;
+    }
 }
 @media all and (min-width:1400px) and (max-width: 1600px){
     #promo {
         height: 336px;
     }
+    #promo > main.swiper-container .promo-feed .promoblock {
+        height: 390px;
+    }
     #investsearch {
         height: 430px;
         padding-top: 7%;
+        padding-bottom: 11%;
     }
     #investsearch > main.swiper-container .popular-objects .popular-object header {
         height: 27px;
@@ -1518,7 +1542,7 @@ h1, h2, h3, h4, h5, h6, strong{
         font-size: 92%;
     }
     #promo > header .marketing-info header img {
-        width: 77%;
+        width: 73%;
     }
     #eventcalendar > main .calendar main img {
         margin-left: 4%;
@@ -1533,13 +1557,18 @@ h1, h2, h3, h4, h5, h6, strong{
 @media all and (min-width:1600px) and (max-width: 1800px){
     #promo > header .marketing-info {
         margin-right: -3vw;
+        margin-top: -9vw;
     }
     #promo {
         height: 346px;
     }
+    #promo > main.swiper-container .promo-feed .promoblock {
+        
+    }
     #investsearch {
         height: 509px;
         padding-top: 7%;
+        padding-bottom: 5%;
     }
     #investsearch > main.swiper-container .popular-objects .popular-object header {
         height: 27px;
@@ -1563,21 +1592,47 @@ h1, h2, h3, h4, h5, h6, strong{
     #eventcalendar > main .calendar .date {
         top: 48px;
     }
+    #news {
+        padding-top: 6%;
+    }
 }
 @media all and (min-width:1680px) and (max-width: 1800px){
+    .header > #header_bottom {
+        margin-right: 14vw;
+    }
     #promo > header .marketing-info {
-        margin-right: -9vw;
+        margin-right: -7vw;
+    }
+    #promo > main.swiper-container .promo-feed .promoblock {
+        height: 410px;
+    }
+    #news {
+        padding-top: 7%;
     }
 }
 @media all and (min-width: 1800px){
     #promo > header .marketing-info {
-        margin-right: -15vw;
+        margin-right: -13vw;
+        margin-top: -8vw;
     }
     #promo > header .marketing-info header img {
-        width: 63%;
+        width: 61%;
     }
+    #promo > main.swiper-container .promo-feed .promoblock {
+        height: 445px;
+    }
+    #news {
+        padding-top: 5vw;
+    }
+    #investsearch > main.swiper-container .popular-objects .popular-object {
+        height: 517px;
+    }
+    #eventcalendar{ padding-top: 8%; }
 }
 @media all and (aspect-ratio: 5/4){
+    #promo > main.swiper-container .promo-feed .promoblock {
+        height: 405px;
+    }
     .header > #header_bottom {
         display: none;
     }

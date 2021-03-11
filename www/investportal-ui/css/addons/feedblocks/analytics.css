@@ -15,4 +15,9 @@
 #analytics > main #slider-view .analytic-feed .analytic:nth-last-child(1){
     top: -7px;
     position: relative;
+    left: -2%;
+}
+#analytics > main #slider-view .analytic-feed .analytic:nth-last-child(2){
+    position: relative;
+    left: -1%;
 }
