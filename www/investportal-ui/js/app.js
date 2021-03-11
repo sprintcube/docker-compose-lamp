@@ -145,4 +145,6 @@ const LastMenuLists = () => {
 $(document).ready(function () {
     LastMenuLists();
     $(window).resize(LastMenuLists);
+
+    
 });

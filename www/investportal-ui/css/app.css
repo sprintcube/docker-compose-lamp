@@ -319,7 +319,7 @@ h1, h2, h3, h4, h5, h6, strong{
     background-color: #0079bf;
 }
 #promo > main.swiper-container .promo-feed .promoblock header{
-    width: 100%;
+    width: 95%;
     background-color: darkgray;
     color: white;
     height: 42px;
@@ -327,7 +327,7 @@ h1, h2, h3, h4, h5, h6, strong{
     text-transform: uppercase;
     padding-top: 3%;
     padding-left: 1vw;
-    padding-right: 0vw;
+    padding-right: 1vw;
 }
 #promo > main.swiper-container .promo-feed .promoblock header a{
     margin-left: 13px;
@@ -387,7 +387,7 @@ h1, h2, h3, h4, h5, h6, strong{
 }
 #promo > main.swiper-container .promo-feed .promoblock footer .info span:nth-child(1){
     color: black;
-    font-size: 110%;
+    font-size: 92%;
 }
 #promo > main.swiper-container .promo-feed .promoblock footer .info span:nth-child(2){
     font-size: 100%;
@@ -1118,6 +1118,9 @@ h1, h2, h3, h4, h5, h6, strong{
     #promo > header .marketing-info header img {
         width: 76%;
     }
+    #news {
+        padding-top: 22vw;
+    }
     #investsearch {
         height: 527px;
         padding-top: 15%;
@@ -1250,7 +1253,7 @@ h1, h2, h3, h4, h5, h6, strong{
         margin-top: -14%;
     }
     .header > #header_bottom .hb_bottom footer {
-        margin-top: -6%;
+        margin-top: -5%;
     }
     #promo > header .links {
         left: 11vw;
@@ -1570,7 +1573,8 @@ h1, h2, h3, h4, h5, h6, strong{
         display: inherit;
     }
     #estate > main #slider-view .estat-feed .estat {
-        margin-left: 24px;
+        margin-left: 3%;
+        width: 29%;
     }
     #reviews {
         height: 241px;
