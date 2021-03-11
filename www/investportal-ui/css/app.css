@@ -28,7 +28,7 @@ h1, h2, h3, h4, h5, h6, strong{
 }
 .header > #header_top{
     float: left;
-    margin-left: 8vw;
+    margin-left: 12vw;
     width: 19%;
     margin-top: -1%;
 }
@@ -38,7 +38,7 @@ h1, h2, h3, h4, h5, h6, strong{
     display: inline-table;
 }
 .header > #header_top .ht_header span {
-    font-size: 101%;
+    font-size: 80%;
     color: darkgray;
     display: inline;
     text-align: left;
@@ -47,7 +47,7 @@ h1, h2, h3, h4, h5, h6, strong{
 }
 .header > #header_bottom{
     float: right;
-    margin-right: 7vw;
+    margin-right: 12vw;
 }
 .header > #header_bottom .hb_bottom header{
     display: block;
@@ -58,7 +58,7 @@ h1, h2, h3, h4, h5, h6, strong{
 .header > #header_bottom .hb_bottom header .welcome-link {
 	float: left;
 	display: inline-block;
-	font-size: 86%;
+	font-size: 81%;
 	margin-left: 1%;
 	margin-top: 1%;
 }
@@ -117,7 +117,7 @@ h1, h2, h3, h4, h5, h6, strong{
 }
 .header > #header_bottom .hb_bottom header .header-informer footer .user-services a {
 	color: #0079bf;
-	font-size: 97%;
+	font-size: 90%;
 	text-decoration: none;
 	margin-left: 3%;
 }
@@ -133,7 +133,7 @@ h1, h2, h3, h4, h5, h6, strong{
     height: 50px;
 }
 .header > #header_bottom .hb_bottom footer nav{
-    font-size: 92%;
+    font-size: 85%;
 }
 .header > #header_bottom .hb_bottom footer nav a{
     display: inline;
@@ -192,7 +192,7 @@ h1, h2, h3, h4, h5, h6, strong{
 #investsearch{ height: 470px; }
 #services{ height: 154px; padding-top: 41px;}
 #analytics{ height: 263px; padding-top: 77px;}
-#estate{ height: 185px;padding-top: 37px;}
+#estate{ height: 185px;padding-top: 69px;}
 #reviews{ height: 208px; padding-top: 48px;}
 #link-switcher{
     width: 100%;
@@ -231,7 +231,7 @@ h1, h2, h3, h4, h5, h6, strong{
 }
 #promo > header{
     margin-top: -5%;
-    margin-left: 8vw;
+    margin-left: 12vw;
 }
 #promo > header .promo-header{
     display: inline-table;
@@ -288,7 +288,7 @@ h1, h2, h3, h4, h5, h6, strong{
     float:right;
     width: 80%;
     margin-top: 3%;
-    margin-right: -7vw;
+    margin-right: -4vw;
 }
 #promo > header .marketing-info footer ul{
     color: white;
@@ -303,7 +303,7 @@ h1, h2, h3, h4, h5, h6, strong{
     width: 100vw;
 }
 #promo > main.swiper-container .promo-feed .promoblock{
-    width: 27vw;
+    width: 24vw;
     display: inline-flexbox;
     background-color: white;
     padding-right: 1%;
@@ -511,7 +511,7 @@ h1, h2, h3, h4, h5, h6, strong{
     margin-left: 8vw;
 }
 #investsearch > main.swiper-container .popular-objects .popular-object{
-    width: 24vw;
+    width: 25vw;
     display: inline-flexbox;
     background-color: white;
 }
@@ -658,7 +658,7 @@ h1, h2, h3, h4, h5, h6, strong{
     float: left;
     display: inline-table;
     position: relative;
-    left: 4vw;
+    left: 3vw;
 }
 #services > header a{
    text-decoration: none;
@@ -672,6 +672,8 @@ h1, h2, h3, h4, h5, h6, strong{
     float: right;
     display: inline-table;
 
+    position: relative;
+    right: 3vw;
 }
 #services > main #slider-controller{
     width: 10%;
@@ -680,7 +682,7 @@ h1, h2, h3, h4, h5, h6, strong{
 #services > main #slider-controller img{
     width: 26%;
     position: relative;
-    top: -45px;
+    top: -101px;
 }
 #services > main #slider-view{
     width: 70%;
@@ -760,13 +762,15 @@ h1, h2, h3, h4, h5, h6, strong{
     float: left;
     display: inline-table;
     position: relative;
-    left: 4vw;
+    left: 3vw;
 }
 #analytics > main{
     width: 70%;
     float: right;
     display: inline-table;
     margin-top: -5%;
+    position: relative;
+    right: 3vw;
 }
 #analytics > main #slider-controller{
     width: 10%;
@@ -839,12 +843,14 @@ h1, h2, h3, h4, h5, h6, strong{
     float: left;
     display: inline-table;
     position: relative;
-    left: 4vw;
+    left: 3vw;
 }
 #estate > main{
     width: 70%;
     float: right;
     display: inline-table;
+    position: relative;
+    right: 3vw;
 }
 #estate > main #slider-controller{
     width: 10%;
@@ -853,7 +859,7 @@ h1, h2, h3, h4, h5, h6, strong{
 #estate > main #slider-controller img{
     width: 26%;
     position: relative;
-    top: -116px;
+    top: -51px;
 }
 #estate > main #slider-view{
     width: 70%;
@@ -867,9 +873,9 @@ h1, h2, h3, h4, h5, h6, strong{
     width: 28%;
     height: 181px;
     display: inline-table;
-    box-shadow: 3px -1px 11px 3px darkgray;
     margin-left: 4%;
     background-color: white;
+    box-shadow: 0 0 5px 1px grey;
 }
 #estate > main #slider-view .estat-feed .estat header{
     background-color: darkgray;
@@ -897,13 +903,14 @@ h1, h2, h3, h4, h5, h6, strong{
 #estate > main #slider-view .estat-feed .estat main img{
     width: 100%;
     object-fit: cover;
-    height: 153px;
+    height: 130px;
 }
 #estate > main #slider-view .estat-feed .estat footer{
 	display: block;
 	padding-top: 0%;
 	padding-bottom: 13%;
 	width: 100%;
+	background-color: white;
 }
 #estate > main #slider-view .estat-feed .estat footer .info, #estate > main #slider-view .estat-feed .estat footer .raiting{
 	display: block;
@@ -961,13 +968,15 @@ h1, h2, h3, h4, h5, h6, strong{
     float: left;
     display: inline-table;
     position: relative;
-    left: 4vw;
+    left: 3vw;
     top: 11%;
 }
 #reviews > main{
     width: 70%;
     float: right;
     display: inline-table;
+    position: relative;
+    right: 3vw;
 }
 #reviews > main #slider-controller{
     width: 10%;
@@ -1113,13 +1122,13 @@ h1, h2, h3, h4, h5, h6, strong{
     }
     #promo > header .marketing-info {
         margin-top: 5%;
-        margin-right: -11vw;
+        margin-right: -5vw;
     }
     #promo > header .marketing-info header img {
         width: 76%;
     }
     #news {
-        padding-top: 22vw;
+        padding-top: 18vw;
     }
     #investsearch {
         height: 527px;
@@ -1143,8 +1152,8 @@ h1, h2, h3, h4, h5, h6, strong{
         padding-top: 3%;
     }
     #services > main #slider-controller img {
-        width: 44%;
-        top: 2px;
+        width: 38%;
+        top: -84px;
     }
     #services > main #slider-view .service-feed .service header {
         font-size: 53%;
@@ -1159,8 +1168,8 @@ h1, h2, h3, h4, h5, h6, strong{
         font-size: 68%;
     }
     #analytics > main #slider-controller img {
-        width: 40%;
-        top: 27px;
+        width: 28%;
+        top: 92px;
     }
     #analytics > main #slider-view .analytic-feed .analytic h2 {
         font-size: 93%;
@@ -1169,7 +1178,7 @@ h1, h2, h3, h4, h5, h6, strong{
         height: 187px;
     }
     #estate > main #slider-controller img {
-        width: 42%;
+        width: 38%;
         top: -27px;
     }
     #estate > main #slider-view .estat-feed .estat {
@@ -1182,8 +1191,8 @@ h1, h2, h3, h4, h5, h6, strong{
         font-size: 84%;
     }
     #reviews > main #slider-controller img {
-        width: 48%;
-        top: 34px;
+        width: 38%;
+        top: 90px;
     }
     #promo > main.swiper-container .promo-feed .promoblock footer .info {
         margin-top: 47%;
@@ -1243,7 +1252,7 @@ h1, h2, h3, h4, h5, h6, strong{
         display: inherit;
     }
     .header > #header_top {
-        margin-left: 5vw;
+        margin-left: 12vw;
     }
     .header > #header_bottom .hb_bottom header .welcome-link {
         margin-top: -7%;
@@ -1260,7 +1269,7 @@ h1, h2, h3, h4, h5, h6, strong{
     }
     #promo > header .marketing-info {
         margin-top: 5%;
-        margin-right: -10vw;
+        margin-right: -4vw;
     }
     #promo > header .marketing-info header img {
         width: 76%;
@@ -1288,7 +1297,7 @@ h1, h2, h3, h4, h5, h6, strong{
     #investsearch {
         height: 521px;
         padding-top: 13%;
-        padding-bottom: 0%;
+        padding-bottom: 5%;
     }
     #investsearch > main.swiper-container .popular-objects .popular-object header {
         height: 24px;
@@ -1307,8 +1316,8 @@ h1, h2, h3, h4, h5, h6, strong{
         padding-top: 4%;
     }
     #services > main #slider-controller img {
-        width: 44%;
-        top: 2px;
+        width: 34%;
+        top: -84px;
     }
     #services > main #slider-view .service-feed .service header {
         font-size: 64%;
@@ -1333,8 +1342,8 @@ h1, h2, h3, h4, h5, h6, strong{
         height: 163px;
     }
     #estate > main #slider-controller img {
-        width: 42%;
-        top: -27px;
+        width: 34%;
+        top: -48px;
     }
     #estate > main #slider-view .estat-feed .estat {
         height: 181px;
@@ -1346,8 +1355,8 @@ h1, h2, h3, h4, h5, h6, strong{
         font-size: 95%;
     }
     #reviews > main #slider-controller img {
-        width: 48%;
-        top: 34px;
+        width: 34%;
+        top: 97px;
     }
     .rating-mini span {
         font-size: 23px;
@@ -1380,7 +1389,7 @@ h1, h2, h3, h4, h5, h6, strong{
         margin-top: 4%;
         width: 88px;
     }
-    #services > main #slider-view .service-feed .service, #analytics > main #slider-view .analytic-feed .analytic, #estate > main #slider-view .estat-feed .estat{ width: 28%; margin-left: 4%;}
+    #services > main #slider-view .service-feed .service, #analytics > main #slider-view .analytic-feed .analytic, #estate > main #slider-view .estat-feed .estat{ width: 27%; margin-left: 5%;}
     #reviews > main #slider-view .review-feed .review#with-title-image header img {
         left: 0%;
     }
@@ -1406,7 +1415,7 @@ h1, h2, h3, h4, h5, h6, strong{
         margin-top: 5vw;
     }
     .header > #header_top {
-        margin-left: 5vw;
+        margin-left: 12vw;
     }
     .header > #header_bottom .hb_bottom header .welcome-link {
         margin-top: -7%;
@@ -1423,7 +1432,7 @@ h1, h2, h3, h4, h5, h6, strong{
     }
     #promo > header .marketing-info {
         margin-top: 4%;
-        margin-right: -6vw;
+        margin-right: 0vw;
     }
     #promo > header .marketing-info header img {
         width: 81%;
@@ -1509,7 +1518,7 @@ h1, h2, h3, h4, h5, h6, strong{
         font-size: 92%;
     }
     #promo > header .marketing-info header img {
-        width: 80%;
+        width: 77%;
     }
     #eventcalendar > main .calendar main img {
         margin-left: 4%;
@@ -1523,7 +1532,7 @@ h1, h2, h3, h4, h5, h6, strong{
 }
 @media all and (min-width:1600px) and (max-width: 1800px){
     #promo > header .marketing-info {
-        margin-right: -7vw;
+        margin-right: -3vw;
     }
     #promo {
         height: 346px;
@@ -1562,7 +1571,7 @@ h1, h2, h3, h4, h5, h6, strong{
 }
 @media all and (min-width: 1800px){
     #promo > header .marketing-info {
-        margin-right: -20vw;
+        margin-right: -15vw;
     }
     #promo > header .marketing-info header img {
         width: 63%;
@@ -1570,11 +1579,11 @@ h1, h2, h3, h4, h5, h6, strong{
 }
 @media all and (aspect-ratio: 5/4){
     .header > #header_bottom {
-        display: inherit;
+        display: none;
     }
     #estate > main #slider-view .estat-feed .estat {
-        margin-left: 3%;
-        width: 29%;
+        margin-left: 4%;
+        width: 28%;
     }
     #reviews {
         height: 241px;

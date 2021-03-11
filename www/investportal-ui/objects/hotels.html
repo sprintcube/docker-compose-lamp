@@ -1,0 +1,703 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0">
+    <title>InvestPortal</title>
+    <link rel="stylesheet" href="../css/app.css" />
+    <link rel="stylesheet" href="../css/objects/hotels.css" />
+    <script src="https://yastatic.net/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://kit.fontawesome.com/97c3285af2.js" crossorigin="anonymous"></script>
+    <style>
+             
+        .add-but{
+            text-align: center;
+            color:white;
+            background-color:#0079bf;
+            border: none;
+            font-size: 90%;
+            padding: 10px;
+        }
+        
+        
+    </style>
+</head>
+<body>
+    <header class="header">
+        <div id="header_top">
+            <div class="ht_header">
+                <img src="../images/icons/investportal.png" alt="InvestPortal" />
+                <span>International Platform <br />for Investors and<br /> Investment Projects</span>
+            </div>
+        </div>
+        <div id="header_bottom">
+            <div class="hb_bottom">
+                <header>
+                    <div class="welcome-link">
+                        <a href="">How the start</a>
+                    </div>
+                    <div class="header-informer">
+                        <header>
+                               <div class="exchange-selector">
+                                 <select name="regexchange" id="regexchange" style="color: #0079bf;">
+                                   <option value="usd">USD</option>
+                                   <option value="eur">EUR</option>
+                                </select>
+                               </div>
+                        </header>
+                        <main>
+                            <a href="" target="_blank" style="font-size: 142%;"><i class="fab fa-facebook-f" style="color: gray;"></i></a>
+                            <a href="" target="_blank" style="font-size: 142%;"><i class="fab fa-youtube" style="color: gray;"></i></a>
+                            <a href="" target="_blank" style="font-size: 142%;"><i class="fab fa-instagram" style="color: gray;"></i></a>
+                            <a href="" target="_blank" style="font-size: 142%;"><i class="fab fa-telegram" style="color: gray;"></i></a>
+                        </main>
+                        <footer>
+                            <div class="user-services">
+                                <div>
+                                    <a href="">Join/Login</a>
+                                </div>
+                                <div>
+                                    <a href=""><i class="fas fa-user-check" style="color: #0079bf;"></i></a>
+                                </div>
+                            </div>
+                            <div class="menu-show">
+                                <a href=""><i class="fas fa-bars" style="color: #0079bf;"></i></a>
+                            </div>
+                        </footer>
+                    </div>
+                </header>
+                <footer>
+                    <nav>
+                        <a href="" id="active">Investment objects</a>
+                        <a href="">Investors</a>
+                        <a href="">Services</a>
+                        <a href="">Experts</a>
+                        <a href="">Analytics</a>
+                        <a href="">About</a>
+                        <a href="">News</a>
+                        <a href="">Events</a>
+                        <a href="" id="menu-image"><i class="fas fa-ellipsis-h" style="color: #0079bf;"></i></a>
+                        <a href="" id="menu-image"><i class="fas fa-search" style="color: #0079bf;"></i></a>
+                    </nav>
+                    
+                </footer>
+            </div>
+        </div>
+    </header>
+    <main class="main" style="background-color:   #eff3f4;">
+        <section class="section" id="link-switcher">
+            <a href="../index.html">Main</a> <span id="delimeter"> / </span> <a href="#">Investment Objects</a> <span id="delimeter"> / </span> <a href="hotels.html" class="active">Hotels</a>
+        </section>
+        <section class="section" id="objects">
+            <div class="projects-search-form">
+                <header>
+                    <div id="left-content">
+                        <span class="title">Selection of the object</span>
+                    </div>
+                    <div id="right-content">
+                        <a href="" class="close"><img src="https://img.icons8.com/material-sharp/24/000000/delete-sign.png"/></a>
+                    </div>
+                </header>
+                <main>
+                    <section class="objects-adding-search">
+                        <header>
+                            <div id="left-content">
+                                <header>
+                                    <form action="" method="get">
+                                        <div>
+                                            <label class="label" for="type">Objects type</label>
+                                            <select name="type" id="selector">
+                                                <option value="0">Hotels</option>
+                                            </select>
+                                        </div>
+                                        <div>
+                                            <label class="label" for="country">Country</label>
+                                            <select name="country" id="selector">
+                                                <option value="">All countries</option>
+                                            </select>
+                                        </div>
+                                        <div>
+                                            <label class="label" for="region">Region</label>
+                                            <select name="region" id="selector">
+                                                <option value="">All regions</option>
+                                            </select>
+                                        </div>
+                                    </form>
+                                </header>
+                            </div>
+                            <div id="right-content">
+                                <header>
+                                    <label class="input-from-to">
+                                        <span class="title-form">Profabillity</span>
+                                        <span class="content-form">
+                                            Profabillity from
+                                            <input type="text" id="from" value="0%">
+                                            to
+                                            <input type="text" id="to" value="100%">
+                                        </span>
+                                    </label>
+                                    <label class="input-from-to">
+                                        <span class="title-form">Cost</span>
+                                        <span class="content-form">
+                                            Cost from
+                                            <input type="text" id="from" value="$ 100">
+                                            to
+                                            <input type="text" id="to" value="$ 10000000">
+                                        </span>
+                                    </label>
+                                </header>
+                            </div>
+                        </header>
+                        <main>
+                            <header>
+                                <form action="" method="get">
+                                    <div>
+                                        <label class="label" for="company">Company name</label>
+                                        <input type="search" name="company" placeholder="Enter the company name" />
+                                    </div>
+                                </form>
+                            </header>
+                            <footer style="margin-top: -7%;">
+                                <div class="check-selectors">
+                                    <span class="title-form">FORM OF OWNERSHIP</span>
+                                    <label>
+                                        <input type="checkbox" value="" checked>
+                                        <span>checkbox on</span>
+                                    </label>
+                                    <label>
+                                        <input type="checkbox" value="" checked>
+                                        <span>checkbox on</span>
+                                    </label>
+                                    <label>
+                                        <input type="checkbox" value="">
+                                        <span>checkbox off</span>
+                                    </label>
+                                </div>
+                                <div class="radio-selectors">
+                                    <span class="title-form">AVAILABILITY OF PARKING, SWIMMING POOL, RESTAURANT</span>
+                                    <label>
+                                        <input type="radio" value="" name="radio" checked>
+                                        <span>radiobutton on</span>
+                                    </label>
+                                    <label>
+                                        <input type="radio" value="" name="radio">
+                                        <span>radiobutton off</span>
+                                    </label>
+                                    <label>
+                                        <input type="radio" value="" name="radio">
+                                        <span>radiobutton off</span>
+                                    </label>
+                                </div>
+                        </footer>
+                        </main>
+                        <footer>
+                            <div id="left-content">
+                                <label class="input-from-to">
+                                    <span class="title-form">Total area</span>
+                                    <span class="content-form">
+                                        Total area from
+                                        <input type="text" id="from" value="100 m2">
+                                        to
+                                        <input type="text" id="to" value="10000 m2">
+                                    </span>
+                                </label>
+                                <label class="input-from-to">
+                                    <span class="title-form">Number of rooms</span>
+                                    <span class="content-form">
+                                        Number of rooms
+                                        <input type="text" id="from" value="1">
+                                        to
+                                        <input type="text" id="to" value="565">
+                                    </span>
+                                </label>
+                            </div>
+                            <div id="right-content">
+                                <label class="range-form">
+                                     <input type="range"  min="" max="" value=""  step="" />
+                                </label>
+                                <label class="range-form">
+                                     <input type="range"  min="" max="" value=""  step="" />
+                                </label>
+                            </div>
+                        </footer>
+                    </section>
+                </main>
+                <footer>
+                    <div id="left-content">
+                        <button class="add-but" style="margin-left: 4%;margin-top: 3%;">Show objects(27)</button>
+                    </div>
+                </footer>
+            </div>
+            <div class="objects-list">
+                <header>
+                    <h2>Similar Offer</h2>
+                </header>
+                <main>
+                    <table>
+                        <thead>
+                            <tr class="header">
+                                <th>Location</th>
+                                <th>Name</th>
+                                <th>Price</th>
+                                <th>Expert Raiting</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr class="content">
+                                <td>Spain</td>
+                                <td><a href="">Apartamentos Central Park</a></td>
+                                <td>$ 15 000 000</td>
+                                <td>
+                                    <div class="rating-mini">
+                                        <span class="active"></span>	
+                                        <span class="active"></span>    
+                                        <span class="active"></span> 
+                                        <span class="active"></span>	
+                                        <span class="active"></span>    
+                                        <span class="active"></span>
+                                        <span class="active"></span>    
+                                        <span class="active"></span>
+                                        <span></span>    
+                                        <span></span>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr class="content">
+                                <td>Spain</td>
+                                <td><a href="">Apartamentos Central Park</a></td>
+                                <td>$ 15 000 000</td>
+                                <td>
+                                    <div class="rating-mini">
+                                        <span class="active"></span>	
+                                        <span class="active"></span>    
+                                        <span class="active"></span> 
+                                        <span class="active"></span>	
+                                        <span class="active"></span>    
+                                        <span class="active"></span>
+                                        <span class="active"></span>    
+                                        <span class="active"></span>
+                                        <span></span>    
+                                        <span></span>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr class="content">
+                                <td>Spain</td>
+                                <td><a href="">Apartamentos Central Park</a></td>
+                                <td>$ 15 000 000</td>
+                                <td>
+                                    <div class="rating-mini">
+                                        <span class="active"></span>	
+                                        <span class="active"></span>    
+                                        <span class="active"></span> 
+                                        <span class="active"></span>	
+                                        <span class="active"></span>    
+                                        <span class="active"></span>
+                                        <span class="active"></span>    
+                                        <span class="active"></span>
+                                        <span></span>    
+                                        <span></span>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr class="content">
+                                <td>Spain</td>
+                                <td><a href="">Apartamentos Central Park</a></td>
+                                <td>$ 15 000 000</td>
+                                <td>
+                                    <div class="rating-mini">
+                                        <span class="active"></span>	
+                                        <span class="active"></span>    
+                                        <span class="active"></span> 
+                                        <span class="active"></span>	
+                                        <span class="active"></span>    
+                                        <span class="active"></span>
+                                        <span class="active"></span>    
+                                        <span class="active"></span>
+                                        <span></span>    
+                                        <span></span>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr class="content">
+                                <td>Spain</td>
+                                <td><a href="">Apartamentos Central Park</a></td>
+                                <td>$ 15 000 000</td>
+                                <td>
+                                    <div class="rating-mini">
+                                        <span class="active"></span>	
+                                        <span class="active"></span>    
+                                        <span class="active"></span> 
+                                        <span class="active"></span>	
+                                        <span class="active"></span>    
+                                        <span class="active"></span>
+                                        <span class="active"></span>    
+                                        <span class="active"></span>
+                                        <span></span>    
+                                        <span></span>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr class="content">
+                                <td>Spain</td>
+                                <td><a href="">Apartamentos Central Park</a></td>
+                                <td>$ 15 000 000</td>
+                                <td>
+                                    <div class="rating-mini">
+                                        <span class="active"></span>	
+                                        <span class="active"></span>    
+                                        <span class="active"></span> 
+                                        <span class="active"></span>	
+                                        <span class="active"></span>    
+                                        <span class="active"></span>
+                                        <span class="active"></span>    
+                                        <span class="active"></span>
+                                        <span></span>    
+                                        <span></span>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr class="content">
+                                <td>Spain</td>
+                                <td><a href="">Apartamentos Central Park</a></td>
+                                <td>$ 15 000 000</td>
+                                <td>
+                                    <div class="rating-mini">
+                                        <span class="active"></span>	
+                                        <span class="active"></span>    
+                                        <span class="active"></span> 
+                                        <span class="active"></span>	
+                                        <span class="active"></span>    
+                                        <span class="active"></span>
+                                        <span class="active"></span>    
+                                        <span class="active"></span>
+                                        <span></span>    
+                                        <span></span>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr class="content">
+                                <td>Spain</td>
+                                <td><a href="">Apartamentos Central Park</a></td>
+                                <td>$ 15 000 000</td>
+                                <td>
+                                    <div class="rating-mini">
+                                        <span class="active"></span>	
+                                        <span class="active"></span>    
+                                        <span class="active"></span> 
+                                        <span class="active"></span>	
+                                        <span class="active"></span>    
+                                        <span class="active"></span>
+                                        <span class="active"></span>    
+                                        <span class="active"></span>
+                                        <span></span>    
+                                        <span></span>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr class="content">
+                                <td>Spain</td>
+                                <td><a href="">Apartamentos Central Park</a></td>
+                                <td>$ 15 000 000</td>
+                                <td>
+                                    <div class="rating-mini">
+                                        <span class="active"></span>	
+                                        <span class="active"></span>    
+                                        <span class="active"></span> 
+                                        <span class="active"></span>	
+                                        <span class="active"></span>    
+                                        <span class="active"></span>
+                                        <span class="active"></span>    
+                                        <span class="active"></span>
+                                        <span></span>    
+                                        <span></span>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr class="content">
+                                <td>Spain</td>
+                                <td><a href="">Apartamentos Central Park</a></td>
+                                <td>$ 15 000 000</td>
+                                <td>
+                                    <div class="rating-mini">
+                                        <span class="active"></span>	
+                                        <span class="active"></span>    
+                                        <span class="active"></span> 
+                                        <span class="active"></span>	
+                                        <span class="active"></span>    
+                                        <span class="active"></span>
+                                        <span class="active"></span>    
+                                        <span class="active"></span>
+                                        <span></span>    
+                                        <span></span>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr class="content">
+                                <td>Spain</td>
+                                <td><a href="">Apartamentos Central Park</a></td>
+                                <td>$ 15 000 000</td>
+                                <td>
+                                    <div class="rating-mini">
+                                        <span class="active"></span>	
+                                        <span class="active"></span>    
+                                        <span class="active"></span> 
+                                        <span class="active"></span>	
+                                        <span class="active"></span>    
+                                        <span class="active"></span>
+                                        <span class="active"></span>    
+                                        <span class="active"></span>
+                                        <span></span>    
+                                        <span></span>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr class="content">
+                                <td>Spain</td>
+                                <td><a href="">Apartamentos Central Park</a></td>
+                                <td>$ 15 000 000</td>
+                                <td>
+                                    <div class="rating-mini">
+                                        <span class="active"></span>	
+                                        <span class="active"></span>    
+                                        <span class="active"></span> 
+                                        <span class="active"></span>	
+                                        <span class="active"></span>    
+                                        <span class="active"></span>
+                                        <span class="active"></span>    
+                                        <span class="active"></span>
+                                        <span></span>    
+                                        <span></span>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr class="content">
+                                <td>Spain</td>
+                                <td><a href="">Apartamentos Central Park</a></td>
+                                <td>$ 15 000 000</td>
+                                <td>
+                                    <div class="rating-mini">
+                                        <span class="active"></span>	
+                                        <span class="active"></span>    
+                                        <span class="active"></span> 
+                                        <span class="active"></span>	
+                                        <span class="active"></span>    
+                                        <span class="active"></span>
+                                        <span class="active"></span>    
+                                        <span class="active"></span>
+                                        <span></span>    
+                                        <span></span>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr class="content">
+                                <td>Spain</td>
+                                <td><a href="">Apartamentos Central Park</a></td>
+                                <td>$ 15 000 000</td>
+                                <td>
+                                    <div class="rating-mini">
+                                        <span class="active"></span>	
+                                        <span class="active"></span>    
+                                        <span class="active"></span> 
+                                        <span class="active"></span>	
+                                        <span class="active"></span>    
+                                        <span class="active"></span>
+                                        <span class="active"></span>    
+                                        <span class="active"></span>
+                                        <span></span>    
+                                        <span></span>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr class="content">
+                                <td>Spain</td>
+                                <td><a href="">Apartamentos Central Park</a></td>
+                                <td>$ 15 000 000</td>
+                                <td>
+                                    <div class="rating-mini">
+                                        <span class="active"></span>	
+                                        <span class="active"></span>    
+                                        <span class="active"></span> 
+                                        <span class="active"></span>	
+                                        <span class="active"></span>    
+                                        <span class="active"></span>
+                                        <span class="active"></span>    
+                                        <span class="active"></span>
+                                        <span></span>    
+                                        <span></span>
+                                    </div>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </main>
+            </div>
+        </section>
+        <section id="services" class="section">
+            <header>
+                <hr width="45px" color="#0079bf" size="2" align="left">
+                <h2>Services</h2>
+                <strong>&amp; Collaborations</strong>
+                <a href=""><strong>All Services</strong>(12 029)</a>
+                <button class="add-but">Add services</button>
+            </header>
+            <main>
+                <header id="slider-controller">
+                    <img src="../images/icons/slider-contorls/back.png" alt="Назад">
+                </header>
+                <main id="slider-view">
+                    <div class="service-feed">
+                        <div class="service">
+                            <div class="service-content">
+                                <header>
+                                    <h3>Excursion Guidance</h3>
+                                </header>
+                                <main>
+                                    <img src="https://public-library.safetyculture.io/media/template_6BBB812FA3AC41FE8604CB38A242EDF9/dbaa7fe4-6fa4-4c69-9c79-4f0b75e8f59b" alt="Logo">
+                                </main>
+                                <footer>
+                                    <h4 class="title">Sightseeng tours and flights</h4>
+                                    <span class="location">Spain, Italy</span>
+                                    <p class="descr">All types for transportation, delivery and passenger services</p>
+                                </footer>
+                            </div>
+                        </div>
+                        <div class="service">
+                            <div class="service-content">
+                                <header>
+                                    <h3>Excursion Guidance</h3>
+                                </header>
+                                <main>
+                                    <img src="https://public-library.safetyculture.io/media/template_6BBB812FA3AC41FE8604CB38A242EDF9/dbaa7fe4-6fa4-4c69-9c79-4f0b75e8f59b" alt="Logo">
+                                </main>
+                                <footer>
+                                    <h4 class="title">Sightseeng tours and flights</h4>
+                                    <span class="location">Spain, Italy</span>
+                                    <p class="descr">All types for transportation, delivery and passenger services</p>
+                                </footer>
+                            </div>
+                        </div>
+                        <div class="service">
+                            <div class="service-content">
+                                <header>
+                                    <h3>Excursion Guidance</h3>
+                                </header>
+                                <main>
+                                    <img src="https://public-library.safetyculture.io/media/template_6BBB812FA3AC41FE8604CB38A242EDF9/dbaa7fe4-6fa4-4c69-9c79-4f0b75e8f59b" alt="Logo">
+                                </main>
+                                <footer>
+                                    <h4 class="title">Sightseeng tours and flights</h4>
+                                    <span class="location">Spain, Italy</span>
+                                    <p class="descr">All types for transportation, delivery and passenger services</p>
+                                </footer>
+                            </div>
+                        </div>
+                    </div>
+                </main>
+                <footer id="slider-controller">
+                    <img src="../images/icons/slider-contorls/go.png" alt="Вперёд">
+                </footer>
+            </main>
+        </section>
+
+    </main>
+    <footer class="footer">
+        <header>
+            <div class="logo">
+                <img src="../images/icons/investportal-light.png" alt="InvestPortal" />
+            </div>
+            <span>International Platform <br />for Investors and<br /> Investment Projects</span>
+            <main>
+                <a href="" target="_blank" ><img src="../images/icons/socials/1-foot.png" alt="SN" /></a>
+                <a href="" target="_blank" ><img src="../images/icons/socials/2-foot.png" alt="SN" /></a>
+                <a href="" target="_blank" ><img src="../images/icons/socials/3-foot.png" alt="SN" /></a>
+                <a href="" target="_blank" ><img src="../images/icons/socials/4-foot.png" alt="SN" /></a>
+            </main>
+        </header>
+        <main>
+            <div id="category_menu">
+                <a href="#" class="catname">Low</a>
+                <ul>
+                    <li><a href="">Commercial Law</a></li>
+                    <li><a href="">Civil and Family Law</a></li>
+                    <li><a href="">Administrative Law</a></li>
+                    <li><a href="">Employment Law</a></li>
+                    <li><a href="">Criminal Law</a></li>
+                    <li><a href="">Immigration Law</a></li>
+                    <li><a href="">Accounting Services</a></li>
+                </ul>
+            </div>
+            <div id="category_menu">
+                <a href="#" class="catname">Search for Investors</a>
+                <ul>
+                    <li><a href="">Commercial Law</a></li>
+                    <li><a href="">Civil and Family Law</a></li>
+                    <li><a href="">Administrative Law</a></li>
+                    <li><a href="">Employment Law</a></li>
+                    <li><a href="">Criminal Law</a></li>
+                    <li><a href="">Immigration Law</a></li>
+                    <li><a href="">Accounting Services</a></li>
+                </ul>
+            </div>
+            <div id="category_menu">
+                <a href="#" class="catname">Analytics</a>
+                <ul>
+                    <li><a href="">Commercial Law</a></li>
+                    <li><a href="">Civil and Family Law</a></li>
+                    <li><a href="">Administrative Law</a></li>
+                    <li><a href="">Employment Law</a></li>
+                    <li><a href="">Criminal Law</a></li>
+                    <li><a href="">Immigration Law</a></li>
+                    <li><a href="">Accounting Services</a></li>
+                </ul>
+            </div>
+            <div id="category_menu">
+                <a href="#" class="catname">Evaluation and Audit</a>
+                <ul>
+                    <li><a href="">Commercial Law</a></li>
+                    <li><a href="">Civil and Family Law</a></li>
+                    <li><a href="">Administrative Law</a></li>
+                    <li><a href="">Employment Law</a></li>
+                    <li><a href="">Criminal Law</a></li>
+                    <li><a href="">Immigration Law</a></li>
+                    <li><a href="">Accounting Services</a></li>
+                </ul>
+            </div>
+        </main>
+    </footer>
+    <div id="chat-lightbox" class="lightbox-closed">
+        <header>
+          <img src="https://img.icons8.com/windows/32/627182/macos-close.png" alt="Close"/>
+        </header>
+        <main class="chat">
+          <div id="header">
+            <div class="consultant-cont">
+              <img src="https://img.icons8.com/bubbles/50/000000/girl-with-compass.png" id="avatar" align="left"/>
+              <span id="firstname">Alise Kaminskaya</span>
+              <span id="staff">Caring consultant</span>
+            </div>
+          </div>
+          <div id="content">
+            <section id="message" data-eventer="sender">
+              <span>12:00</span>
+              <main>
+                Hello! On your portal, is it possible to issue a profitable loan for small businesses in electronic transactions with objects?
+              </main>
+            </section>
+            <section id="message" data-eventer="inbox">
+              <span>12:02</span>
+              <main>
+                Of course! In our database there are dozens of partner banks that are ready to help on our portal not only with obtaining a loan for SMEs, but with the introduction of a whole range of corporate banking services, depending on your business activity, for which you are going to buy an object;-)
+              </main>
+            </section>
+          </div>
+          <div id="footer">
+            <textarea id="message" placeholder="Input this message and but on Enter"></textarea>
+          </div>
+        </main>
+      </div>
+    <script src="../js/app.js"></script>
+    <script src="../js/objects.js"></script>
+    <script src="../js/objects/hotels.js"></script>
+</body>
+</html>
