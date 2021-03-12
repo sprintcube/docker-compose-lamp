@@ -1,0 +1,1653 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@600&family=Roboto&display=swap');
+@import url('addons/feedblocks/services2estate.css');
+@import url('addons/lightbox.css');
+@import url('addons/docsicon.css');
+@import url('addons/video-player.css');
+@import url('addons/chat.css');
+@import url('addons/threedetalization.css');
+@import url('addons/feedblocks/analytics.css');
+@import url('addons/feedblocks/reviews.css');
+html,body{
+    font-family: 'Roboto', sans-serif;
+    overflow-x:hidden;
+    margin-left: -1%;
+    width: 102%;
+    margin-top: 0%;
+    margin-bottom: 0%;
+}
+h1, h2, h3, h4, h5, h6, strong{
+    font-family: 'Open Sans', sans-serif;
+}
+.header{
+    width: 100%;
+    height: 99px;
+    background-color: #eff3f4;
+    /* position: fixed;
+    top: 0;
+    z-index: 1; */
+    padding-top: 2%;
+}
+.header > #header_top{
+    float: left;
+    margin-left: 12vw;
+    width: 19%;
+    margin-top: -1%;
+}
+.header > #header_top .ht_header img {
+    width: 107px;
+    float: left;
+    display: inline-table;
+}
+.header > #header_top .ht_header span {
+    font-size: 80%;
+    color: darkgray;
+    display: inline;
+    text-align: left;
+    position: relative;
+    left: 17px;
+}
+.header > #header_bottom{
+    float: right;
+    margin-right: 14vw;
+}
+.header > #header_bottom .hb_bottom header{
+    display: block;
+    width: 100%;
+    height: 50px;
+    margin-top: -2%;
+}
+.header > #header_bottom .hb_bottom header .welcome-link {
+	float: left;
+	display: inline-block;
+	font-size: 81%;
+	margin-left: 1%;
+	margin-top: 1%;
+}
+.header > #header_bottom .hb_bottom header .welcome-link a{
+    color: #0079bf;
+    text-decoration: none;
+}
+.header > #header_bottom .hb_bottom header .header-informer{
+    display: inline;
+    float: right;
+    width: 30%;
+    margin-top: -6%;
+}
+.header > #header_bottom .hb_bottom header .header-informer header{
+	display: inline-block;
+    float: left;
+	width: 26%;
+	margin-left: -44%;
+	margin-top: 20%;
+}
+.header > #header_bottom .hb_bottom header .header-informer main {
+	display: inline-block;
+	margin-left: -23%;
+	margin-top: 21%;
+}
+.header > #header_bottom .hb_bottom header .header-informer main a {
+	display: inline;
+	margin-left: 17px;
+}
+.header > #header_bottom .hb_bottom header .header-informer footer {
+	display: inline;
+	float: right;
+	margin-top: -10%;
+	padding-left: 44px;
+    width: 53%;
+    margin-right: -3%;
+}
+#regexchange {
+    font-size: 98%;
+    color: gray;
+    background-color: transparent;
+    border: none;
+    appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    margin-top: 7%;
+}
+.header > #header_bottom .hb_bottom header .header-informer footer .user-services{
+    display: inline;
+    position: relative;
+    left: -8%;
+}
+.header > #header_bottom .hb_bottom header .header-informer footer .user-services div{
+    padding-right: 2%;
+    display: inline;
+}
+.header > #header_bottom .hb_bottom header .header-informer footer .user-services a {
+	color: #0079bf;
+	font-size: 90%;
+	text-decoration: none;
+	margin-left: 3%;
+}
+.header > #header_bottom .hb_bottom header .header-informer footer .menu-show{
+    display: inline;
+    position: relative;
+    left: -8px;
+}
+.header > #header_bottom .hb_bottom footer{
+    display: block;
+    width: 100%;
+    margin-top: 2%;
+    height: 50px;
+}
+.header > #header_bottom .hb_bottom footer nav{
+    font-size: 85%;
+}
+.header > #header_bottom .hb_bottom footer nav a{
+    display: inline;
+    color: #0079bf;
+    text-transform: uppercase;
+    text-decoration: none;
+    font-weight: 700;
+    margin-left: 11px;
+    margin-right: 12px;
+    padding-bottom: 1%;
+    font-family: 'Open Sans', sans-serif;
+}
+.header > #header_bottom .hb_bottom footer nav #active{
+    border-bottom: solid 2px #0079bf;
+}
+.main{
+    width: 100%;
+    height: auto;
+}
+.main > .section{
+    width: 100%;
+    height: 764px;
+    display: block;
+    padding-bottom: 9%;
+    padding-top: 4%;
+}
+.main > .section header{
+    color:darkgray;
+    font-size: 140%;
+    margin-left: 8%;
+    padding-top: 2px;
+}
+.main > .section header hr{
+    display: block;
+}
+.main > .section header h2{
+    display: block;
+    margin-top: -1px;
+    font-size: 136%;
+}
+.main > .section header strong{
+    display: block;
+    margin-top: -27px;
+    font-size: 77%;
+}
+.main > .section header a{
+    color: #0079bf;
+    font-size: 70%;
+}
+.main > .section header a strong{
+    display: inline-table;
+}
+
+#promo{ height: 378px; }
+#news{ height:106px; padding-top: 8%; }
+#investsearch{ height: 412px; }
+#services{ height: 154px; padding-top: 41px;}
+#analytics{ height: 263px; padding-top: 77px;}
+#estate{ height: 185px;padding-top: 69px;}
+#reviews{ height: 208px; padding-top: 48px;}
+#link-switcher{
+    width: 100%;
+    background-color: white;
+    color: #0079bf;
+    height: 7px;
+    padding-top: 1%;
+    padding-bottom: 2%;
+}
+#link-switcher > a{
+    margin-left: 2%;
+    color: #0079bf;
+    font-size: 79%;
+    text-decoration: none;
+    padding-right: 1%;
+    position: relative;
+    left: 6%;
+}
+#link-switcher > #delimeter{
+    position: relative;
+    left: 6%;
+}
+#link-switcher > a:not(:nth-child(1)){
+    margin-left: 0%;
+    padding-left: 1%;
+}
+#link-switcher > a.active{ font-weight: bold; }
+#link-switcher > a:hover{
+    text-decoration: underline;
+}
+#news, #investsearch, #eventcalendar, #analytics, #reviews{ background-color: #eff3f4; }
+
+#promo{
+    background-image: url('../images/homepage-bg.jpg');
+    background-size: cover;
+}
+#promo > header{
+    margin-top: -5%;
+    margin-left: 12vw;
+}
+#promo > header .promo-header{
+    display: inline-table;
+ }
+#promo > header .marketing-info{
+   float: right;
+   display: inline-table;
+}
+#promo > header .marketing-info header img {
+    width: 69%;
+    border-radius: 10px 10px 10px 10px;
+}
+#promo > header h2, #promo > header strong{
+    color: white;
+}
+#promo > header a{
+    color: white;
+}
+#promo > header .add-but, #investsearch > header .add-but{
+    display: block;
+    margin-top: 2%; 
+    width: 9%;
+    background-color: transparent;
+}
+#promo > header .add-but{
+   color: gray;
+   background-color: white;
+   width: 56%;
+   margin-top: 14%;
+}
+#services > header .add-but, #estate > header .add-but{
+    display: block;
+    margin-top: 10%;
+    width: 39%;
+}
+#promo > header .links{
+    display: inline-table;
+    position: relative;
+    top: -46px;
+    left: 9vw;
+}
+#promo > header a{
+    text-decoration: none;
+    display: block;
+    text-transform: uppercase;
+    color: white;
+}
+#promo > header a strong{
+    text-decoration: underline;
+    display: inline-table;
+}
+#promo > header .marketing-info{
+    display: inline-table;
+    float:right;
+    width: 80%;
+    margin-top: -11%;
+    margin-right: -4vw;
+}
+#promo > header .marketing-info footer ul{
+    color: white;
+    list-style-type: none;
+    font-size: 60%;
+}
+#promo > header .marketing-info footer ul li{
+    display: inline-block;
+    margin-left: 2%;
+}
+#promo > main.swiper-container{
+    width: 100vw;
+}
+#promo > main.swiper-container .promo-feed .promoblock{
+    width: 24vw;
+    display: inline-flexbox;
+    background-color: white;
+    padding-right: 1%;
+    margin-top: 2%;
+    -webkit-box-shadow: 8px -6px 6px 0px rgba(50, 50, 50, 0.75);
+    -moz-box-shadow: 8px -6px 6px 0px rgba(50, 50, 50, 0.75);
+    box-shadow: 8px -6px 6px 0px rgba(50, 50, 50, 0.75);
+}
+#promo > main.swiper-container .promo-feed .promoblock:hover{
+    cursor: pointer;
+}
+#promo > main.swiper-container .promo-feed .promoblock:hover header{
+    background-color: #0079bf;
+}
+#promo > main.swiper-container .promo-feed .promoblock header{
+    width: 95%;
+    background-color: darkgray;
+    color: white;
+    height: 42px;
+    margin-left: 0%;
+    text-transform: uppercase;
+    padding-top: 3%;
+    padding-left: 1vw;
+    padding-right: 1vw;
+}
+#promo > main.swiper-container .promo-feed .promoblock header a{
+    margin-left: 13px;
+    margin-top: 13px;
+    color: white;
+    text-decoration: none;
+}
+#promo > main.swiper-container .promo-feed .promoblock header strong{
+    display: inline-table;
+}
+#promo > main.swiper-container .promo-feed .promoblock main .location{
+    float: left;
+    margin-left: 5%;
+    font-size: 112%;
+    color: darkgray;
+    font-style: italic;
+    display: inline-table;
+    margin-top: 19%;
+    font-family: Times New Roman, serif;
+}
+#promo > main.swiper-container .promo-feed .promoblock main img{
+    width: 36%;
+    height: 85px;
+    float: right;
+    margin-right: 7%;
+    display: inline-table;
+    object-fit: cover;
+    margin-top: 9%;
+}
+#promo > main.swiper-container .promo-feed .promoblock main{
+    display: block;
+    width: 100%;
+    padding-top: 0%;
+    padding-bottom: 0%;
+    margin-left: 4%;
+}
+#promo > main.swiper-container .promo-feed .promoblock footer{
+    width: 100%;
+    margin-top: 33%;
+    padding-right: 1px;
+    padding-left: 4%;
+    padding-bottom: 2%;
+}
+#promo > main.swiper-container .promo-feed .promoblock footer .info{
+    display: block;
+    padding-top: 0%;
+    padding-bottom: 0%;
+    margin-left: 2%;
+}
+#promo > main.swiper-container .promo-feed .promoblock footer .info span{
+    display: block;
+    padding-top: 3%;
+    padding-bottom: 3%;
+    font-size: 116%;
+    font-weight: bold;
+    color: darkgray;
+}
+#promo > main.swiper-container .promo-feed .promoblock footer .info span:nth-child(1){
+    color: black;
+    font-size: 92%;
+}
+#promo > main.swiper-container .promo-feed .promoblock footer .info span:nth-child(2){
+    font-size: 100%;
+    font-weight: normal;
+    margin-top: -4%;
+}
+#promo > main.swiper-container .promo-feed .promoblock footer .info span:nth-child(3){
+    font-size: 102%;
+    margin-top: -4%;
+}
+#news > header, #investsearch > header, #eventcalendar > header{
+    margin-left: 12vw;
+}
+
+#services > header .add-but, #estate > header .add-but{
+    display: block;
+    margin-top: 10%;
+    width: 39%;
+}
+
+
+#news > header h2{
+    display: inline;
+}
+#news > header a{
+    display: inline;
+    margin-left: 1%;
+    top: -10px;
+    position: relative;
+}
+#news > main{
+    width: 100%;
+    margin-top: 2%;
+}
+#news > main #slider-controller{
+    width: 10%;
+    display: inline-block;
+    position: relative;
+}
+#news > main header#slider-controller{
+    left: -1%;
+}
+#news > main footer#slider-controller{
+    right: 0%;
+}
+#news > main #slider-controller img{
+    width: 18%;
+    position: relative;
+    top: -150px;
+}
+#news > main #slider-view{
+    width: 71%;
+    display: inline-block;
+}
+#news > main #slider-view .news-feed{
+   display: inline-block; 
+   margin-left: -13%;
+   margin-top: 1%;
+}
+#news > main #slider-view .news-feed .news{
+    display: inline-block;
+    width: 31%;
+    height: 183px;
+    margin-left: 1%;
+}
+#news > main #slider-view .news-feed .news:nth-child(2){  width: 30%;left: 0%;position: relative;}
+#news > main #slider-view .news-feed .news:nth-child(3){  left: 2%;position: relative;}
+#news > main #slider-view .news-feed .news a{
+    display: block;
+    margin-top: 2px;
+    color: #0079bf;
+    font-size: 104%;
+    text-decoration: none;
+    font-weight: bold;
+    height: 64px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    word-spacing: 0.1em;
+    letter-spacing: 0.06em;
+    margin-left: 4%;
+}
+#news > main #slider-view .news-feed .news .descr{
+    display: block;
+    margin-top: 8%;
+    font-size: 90%;
+    height: 108px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    margin-top: 1%;
+    text-align: justify;
+    color: gray;
+    margin-left: 4%;
+}
+#news > main #slider-view .news-feed .news .date{
+    display: block;
+    margin-top: 11%;
+    font-size: 96%;
+    font-style: italic;
+    color: gray;
+    font-family: 'Times New Roman',serif;
+    height: 20px;
+    margin-top: -6%;
+    margin-left: 4%;
+}
+
+#investsearch > header a{
+    display: inline-block;
+    text-decoration: none;
+    text-transform: uppercase;
+    margin-left: 10%;
+    position: relative;
+    top: -37px;
+}
+#investsearch > header a strong{
+    text-decoration: underline;
+}
+#investsearch > main.swiper-container{
+    width: 100vw;
+}
+#investsearch > main.swiper-container .popular-objects#objects-chromium{
+    margin-left: 8vw;
+}
+#investsearch > main.swiper-container .popular-objects .popular-object{
+    width: 25vw;
+    display: inline-flexbox;
+    background-color: white;
+}
+#investsearch > main.swiper-container .popular-objects .popular-object#object-chromium{
+   margin-left: 1vw;
+}
+#investsearch > main.swiper-container .popular-objects .popular-object:hover{
+    cursor: pointer;
+}
+#investsearch > main.swiper-container .popular-objects .popular-object header {
+    width: 103%;
+    background-color: #0079bf;
+    color: white;
+    margin-left: 0%;
+    padding-bottom: 4%;
+    padding-top: 3%;
+    padding-right: 0vw;
+    padding-left: 4%;
+}
+#investsearch > main.swiper-container .popular-objects .popular-object header h3{
+    margin-left: 4%;
+    margin-top: 1%;
+    font-size: 93%;
+}
+#investsearch > main.swiper-container .popular-objects .popular-object main img{
+    width: 101%;
+    height: 228px;
+    object-fit: cover;
+}
+#investsearch > main.swiper-container .popular-objects .popular-object main{
+    display: block;
+    width: 106%;
+}
+#investsearch > main.swiper-container .popular-objects .popular-object footer{
+    width: 97%;
+    padding-left: 2%;
+    padding-right: 8%;
+    background-color: white;
+    margin-top: -2%;
+    padding-bottom: 4%;
+    padding-top: 4%;
+}
+#investsearch > main.swiper-container .popular-objects .popular-object footer .info{
+    display: block;
+    padding-top: 0%;
+    padding-bottom: 0%;
+    margin-left: 2%;
+}
+#investsearch > main.swiper-container .popular-objects .popular-object footer .info span{
+    display: block;
+    padding-top: 3%;
+    padding-bottom: 3%;
+    font-size: 150%;
+}
+#investsearch > main.swiper-container .popular-objects .popular-object footer .info span:nth-child(1){
+    font-size: calc(170% / 2);
+}
+#investsearch > main.swiper-container .popular-objects .popular-object footer .info span:nth-child(2){
+    text-transform: uppercase;
+    font-weight: bold;
+    font-size: 84%;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    height: 38px;
+}
+#investsearch > main.swiper-container .popular-objects .popular-object footer .info span:nth-child(3){
+    font-size: 96%;
+    color: darkgray;
+    font-style: italic;
+    font-family: 'Times New Roman', serif;
+}
+#investsearch > main.swiper-container .popular-objects .popular-object footer a{
+    display: block;
+    padding-top: 5%;
+    padding-bottom: 3%;
+    text-decoration: none;
+    color: darkgray;
+    text-transform: uppercase;
+    margin-left: 2%;
+    font-size: 78%;
+}
+#eventcalendar > main{
+    width: 87%;
+    margin-left: 10%;
+    margin-top: 2%;
+}
+#eventcalendar > main .calendar{
+    border-top: solid 1px black;
+    width: 90%;
+    height: 180px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    display: block;
+}
+#eventcalendar > main .calendar header{
+    float: left;
+    font-size: calc(152% * 2);
+    font-weight: bold;
+    display: inline;
+    width: 10%;
+    margin-left: 4%;
+}
+#eventcalendar > main .calendar .date{
+    position: relative;
+    top: 60px;
+}
+#eventcalendar > main .calendar main{
+    display: inline;
+    width: 5%;
+    margin-left: 3%;
+}
+#eventcalendar > main .calendar main img{
+    margin-left: 2%;
+    margin-top: 3%;
+    width: 130px;
+}
+#eventcalendar > main .calendar footer{
+    float: right;
+    display: inline;
+    width: 65%;
+    margin-top: 1%;
+}
+#eventcalendar > main .calendar a{
+    text-decoration: none;
+    color: #0079bf;
+    font-size: 152%;
+    display: block;
+}
+#eventcalendar > main .calendar .event-location{
+    font-size: 109%;
+    display: block;
+    font-style: italic;
+    color: gray;
+    font-family: 'Times New Roman', serif;
+}
+#eventcalendar > main .calendar .descr{
+    font-size: 108%;
+    display: block;
+    color: gray;
+}
+
+#services > header{
+    width: 20%;
+    float: left;
+    display: inline-table;
+    position: relative;
+    left: 4vw;
+}
+#services > header a{
+   text-decoration: none;
+   text-transform: uppercase;
+}
+#services > header a strong{
+    text-decoration: underline;
+ }
+#services > main{
+    width: 70%;
+    float: right;
+    display: inline-table;
+
+    position: relative;
+    right: 3vw;
+}
+#services > main #slider-controller{
+    width: 10%;
+    display: inline-table;
+}
+#services > main #slider-controller img{
+    width: 26%;
+    position: relative;
+    top: -6vw;
+}
+#services > main #slider-view{
+    width: 70%;
+    display: inline-table;
+}
+#services > main #slider-view .service-feed{
+    display: block;
+    margin-left: -12%;
+}
+#services > main #slider-view .service-feed .service{
+    width: 30%;
+    height: 230px;
+    display: inline-table;
+    box-shadow: 3px -1px 11px 3px darkgray;
+    margin-left: 3%;
+    background-color: white;
+    padding-bottom: 5%;
+}
+#services > main #slider-view .service-feed .service header{
+    background-color: darkgray;
+    color: white;
+    text-transform: uppercase;
+    width: 100%;
+    display: block;
+    font-size: 72%;
+    float: left;
+    margin-left: 0;
+}
+#services > main #slider-view .service-feed .service:hover{
+    cursor: pointer;
+}
+#services > main #slider-view .service-feed .service:hover header{
+    background-color: #0079bf;
+}
+#services > main #slider-view .service-feed .service header h3{
+    margin-left: 7%;
+}
+#services > main #slider-view .service-feed .service main{
+    width: 100%;
+    float: left;
+    padding-top: 1%;
+    padding-bottom: 1%;
+}
+#services > main #slider-view .service-feed .service main img{
+    width: 50%;
+    object-fit: cover;
+    margin-left: 7%;
+}
+#services > main #slider-view .service-feed .service footer{
+    display: block;
+    width: 100%;
+    font-size: 87%;
+    margin-left: 2%;
+    padding-top: 2%;
+    padding-bottom: 2%;
+    margin-left: 7%;
+}
+#services > main #slider-view .service-feed .service footer .title{
+    font-weight: bold;
+    display: block;
+}
+#services > main #slider-view .service-feed .service footer .location{
+    color: darkgray;
+    font-style: italic;
+    font-size: 101%;
+    display: block;
+    font-family: 'Times New Roman', serif;
+}
+#services > main #slider-view .service-feed .service footer .descr{
+    display: block;
+    text-align: justify;
+    width: 77%;
+}
+
+#analytics > header{
+    width: 20%;
+    float: left;
+    display: inline-table;
+    position: relative;
+    left: 4vw;
+}
+#analytics > main{
+    width: 70%;
+    float: right;
+    display: inline-table;
+    margin-top: -5%;
+    position: relative;
+    right: 3vw;
+}
+#analytics > main #slider-controller{
+    width: 10%;
+    display: inline-table;
+}
+#analytics > main #slider-controller img{
+    width: 26%;
+    position: relative;
+    top: 6vw;
+}
+#analytics > main #slider-view{
+    width: 70%;
+    display: inline-table;
+}
+#analytics > main #slider-view .analytic-feed{
+   display: block;
+   margin-left: -12%;
+}
+#analytics > main #slider-view .analytic-feed .analytic{
+    width: 29%;
+    height: 342px;
+    display: inline-table;
+    box-shadow: 3px -1px 11px 3px darkgray;
+    margin-left: 4%;
+    padding-bottom: 2%;
+    background-color: white;
+    padding-right: -1px;
+}
+#analytics > main #slider-view .analytic-feed .analytic:hover {
+    background-color: #0079bf;
+    cursor: pointer;
+}
+#analytics > main #slider-view .analytic-feed .analytic:hover *, #analytics > main #slider-view .analytic-feed .analytic:hover .descr{
+    color: white;
+}
+#analytics > main #slider-view .analytic-feed .analytic h2{
+    display: block;
+    margin-left: 7%;
+    margin-top: 5%;
+    color: #0079bf;
+    font-size: 99%;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    position: relative;
+    top: 0mm;
+    width: 81%;
+}
+#analytics > main #slider-view .analytic-feed .analytic:nth-child(1) h2{
+    font-size: 153%;
+}
+#analytics > main #slider-view .analytic-feed .analytic .descr{
+    display: block;
+    margin-left: 7%;
+    margin-top: 7%;
+    font-size: 86%;
+    color: darkgray;
+    width: 86%;
+    text-align: justify;
+}
+#analytics > main #slider-view .analytic-feed .analytic a{
+    display: block;
+    margin-left: 8%;
+    margin-top: 1%;
+    color: #0079bf;
+    font-size: 101%;
+}
+
+#estate > header{
+    width: 20%;
+    float: left;
+    display: inline-table;
+    position: relative;
+    left: 4vw;
+}
+#estate > main{
+    width: 70%;
+    float: right;
+    display: inline-table;
+    position: relative;
+    right: 3vw;
+}
+#estate > main #slider-controller{
+    width: 10%;
+    display: inline-table;
+}
+#estate > main #slider-controller img{
+    width: 26%;
+    position: relative;
+    top: -6vw;
+}
+#estate > main #slider-view{
+    width: 70%;
+    display: inline-table;
+}
+#estate > main #slider-view .estat-feed{
+    display: block;
+    margin-left: -10%;
+}
+#estate > main #slider-view .estat-feed .estat{
+    width: 28%;
+    height: 181px;
+    display: inline-table;
+    margin-left: 4%;
+    background-color: white;
+    box-shadow: 0 0 5px 1px grey;
+}
+#estate > main #slider-view .estat-feed .estat header{
+    background-color: darkgray;
+    color: white;
+    text-transform: uppercase;
+    width: 100%;
+    display: block;
+    font-size: 78%;
+    float: left;
+    margin-left: 0;
+}
+#estate > main #slider-view .estat-feed .estat:hover{
+    cursor: pointer;
+}
+#estate > main #slider-view .estat-feed .estat:hover header{
+    background-color: #0079bf;
+}
+#estate > main #slider-view .estat-feed .estat header h3{
+    margin-left: 7%;
+}
+#estate > main #slider-view .estat-feed .estat main{
+    width: 100%;
+    float: left;
+}
+#estate > main #slider-view .estat-feed .estat main img{
+    width: 100%;
+    object-fit: cover;
+    height: 130px;
+}
+#estate > main #slider-view .estat-feed .estat footer{
+	display: block;
+	padding-top: 0%;
+	padding-bottom: 13%;
+	width: 100%;
+	background-color: white;
+}
+#estate > main #slider-view .estat-feed .estat footer .info, #estate > main #slider-view .estat-feed .estat footer .raiting{
+	display: block;
+	margin-left: 8%;
+	padding-bottom: 0%;
+	position: relative;
+	top: 15px;
+}
+#estate > main #slider-view .estat-feed .estat footer .info span{
+    padding-top: 2%;
+    padding-bottom: 2%;
+    font-size: 94%;
+    color: darkgray;
+    display: block;
+}
+#estate > main #slider-view .estat-feed .estat footer .info span:nth-child(1){
+    font-size: 105%;
+    color:black;
+    font-weight: bold;
+}
+.raiting{
+    margin-left: 2%;
+    padding-bottom: 6%;
+    padding-top: 9%;
+}
+.raiting > span{
+    display: block;
+    margin-top: 2%;
+    color: #0079bf;
+    font-size: 80%;
+    text-transform: uppercase;
+}
+
+.rating-mini {
+	display: block;
+    font-size: 0;
+    margin-top: 2%;
+}
+.rating-mini span {
+	padding: 0;
+	font-size: 19px;
+	line-height: 1;
+	color: lightgrey;
+}
+.rating-mini > span:before {
+	content: '★';
+}
+.rating-mini > span.active {
+	color: gold;
+}
+
+
+#reviews > header{
+    width: 20%;
+    float: left;
+    display: inline-table;
+    position: relative;
+    left: 4vw;
+    top: 11%;
+}
+#reviews > main{
+    width: 70%;
+    float: right;
+    display: inline-table;
+    position: relative;
+    right: 3vw;
+}
+#reviews > main #slider-controller{
+    width: 10%;
+    display: inline-table;
+}
+#reviews > main #slider-controller img{
+    width: 26%;
+    position: relative;
+    top: 5vw;
+}
+#reviews > main #slider-view{
+    width: 70%;
+    display: inline-table;
+}
+#reviews > main #slider-view .review-feed{
+   display: block;
+   margin-left: -10%;
+}
+#reviews > main #slider-view .review-feed .review{
+    width: 28%;
+    height: 238px;
+    display: inline-table;
+    box-shadow: 3px -1px 11px 3px darkgray;
+    margin-left: 4%;
+    padding-bottom: 2%;
+    background-color: white;
+    padding-top: 1%;
+}
+#reviews > main #slider-view .review-feed .review main h3{
+    display: block;
+    margin-left: 5%;
+    margin-top: 6%;
+    color:#0079bf;
+    font-size: 100%;
+    text-align: left;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    width: 90%;
+}
+#reviews > main #slider-view .review-feed .review footer a{
+    margin-left: 5%;
+    margin-top: 1%;
+    color: #0079bf;
+    font-size: 95%;
+    display: block;
+}
+
+.footer{
+    width: 100%;
+    height: calc(197px * 2);
+    background-color:#9da5a7;
+    color: white;
+}
+.footer > header #contact a, .footer > main #category_menu .catname{
+    text-decoration: none;
+    color: white;
+}
+.footer > header {
+    float: left;
+    display: inline;
+    margin-left: 8%;
+    width: 20%;
+    position: relative;
+    top: 50px;
+    font-size: 98%;
+}
+.footer > header .logo{
+    float: left;
+}
+.footer > header .logo img{
+    width: 79%;
+ }
+.footer > header span{
+    float: right;
+    font-size: 64%;
+    display: contents;
+}
+.footer > header main{
+    display: block;
+    position: relative;
+    top: 68px;
+    left: -111px;
+    width: 129%;
+}
+.footer > header main a{
+    padding-top: 8px;
+    margin-left: 1%;
+    background-color: #65696b;
+    display: inline;
+    padding-bottom: 8px;
+    padding-left: 8px;
+    padding-right: 8px;
+}
+.footer > header main a img{
+    width: 20px;
+    height: 20px;
+    vertical-align: middle;
+}
+.footer > main {
+    float: right;
+    display: inline-table;
+    margin-right: -13%;
+    width: 80%;
+    position: relative;
+    top: 5%;
+}
+.footer > main #category_menu {
+	display: inline-block;
+	padding-left: 10px;
+	padding-right: 5%;
+	margin-top: 2%;
+}
+.footer > main #category_menu .catname {
+	font-size: 95%;
+	font-weight: bold;
+}
+.footer > main #category_menu ul {
+	display: block;
+	margin-top: 20px;
+	font-size: 80%;
+	margin-left: -28px;
+	list-style-type: square;
+}
+.footer > main #category_menu ul li {
+	padding-bottom: 13px;
+}
+.footer > main #category_menu ul li a {
+	color: white;
+	text-decoration: none;
+}
+@media all and (min-width:1024px) and (max-width: 1280px){
+    .header > #header_top {
+        width: 28%;
+    }
+    #promo > header .links {
+        left: 14vw;
+    }
+    .header > #header_bottom {
+        display: none;
+    }
+    #promo {
+        height: 317px;
+    }
+    #promo > main.swiper-container .promo-feed .promoblock {
+        height: 364px;
+    }
+    #promo > header .marketing-info {
+        margin-top: 5%;
+        margin-right: -5vw;
+    }
+    #promo > header .marketing-info header img {
+        width: 76%;
+    }
+    #news {
+        padding-top: 17%;
+    }
+    #investsearch {
+        height: 527px;
+        padding-top: 15%;
+        padding-bottom: 9%;
+    }
+    #investsearch > main.swiper-container .popular-objects .popular-object header {
+        height: 24px;
+    }
+    #investsearch > main.swiper-container .popular-objects .popular-object header h3 {
+        font-size: 58%;
+    }
+    #investsearch > main.swiper-container .popular-objects .popular-object footer .info span:nth-child(2) {
+        font-size: 75%;
+    }
+    #investsearch > main.swiper-container .popular-objects .popular-object footer a {
+        font-size: 73%;
+    }
+    #services {
+        height: 109px;
+        padding-top: 3%;
+    }
+    #services > main #slider-controller img {
+        width: 28%;
+        top: -12vw;
+    }
+    #services > main #slider-view .service-feed .service header {
+        font-size: 53%;
+    }
+    #services > main #slider-view .service-feed .service footer .title {
+        font-size: 85%;
+    }
+    #services > main #slider-view .service-feed .service footer .location {
+        font-size: 67%;
+    }
+    #services > main #slider-view .service-feed .service footer .descr {
+        font-size: 68%;
+    }
+    #analytics > main #slider-controller img {
+        width: 28%;
+        top: 92px;
+    }
+    #analytics > main #slider-view .analytic-feed .analytic h2 {
+        font-size: 93%;
+    }
+    #estate {
+        height: 187px;
+    }
+    #estate > main #slider-controller img {
+        width: 31%;
+        top: -5vw;
+    }
+    #estate > main #slider-view .estat-feed .estat {
+        height: 181px;
+    }
+    #estate > main #slider-view .estat-feed .estat header {
+        font-size: 68%;
+    }
+    #reviews > main #slider-view .review-feed .review main h3 {
+        font-size: 84%;
+    }
+    #reviews > main #slider-controller img {
+        width: 31%;
+        top: 7vw;
+    }
+    #promo > main.swiper-container .promo-feed .promoblock footer .info {
+        margin-top: 47%;
+    }
+    .rating-mini span {
+        font-size: 23px;
+    }
+    #promo > main.swiper-container .promo-feed .promoblock main img {
+        height: 61px;
+    }
+    #investsearch > main.swiper-container .popular-objects .popular-object main img {
+        height: 149px;
+    }
+    .footer > main #category_menu .catname {
+        font-size: 100%;
+    }
+    .footer > main #category_menu ul {
+        font-size: 63%;
+    }
+    
+    #investsearch > header a {
+        margin-left: 108px;
+        top: -42px;
+        position: relative;
+    }
+    #eventcalendar > main .calendar footer {
+        margin-top: 1%;
+        font-size: 83%;
+    }
+    #eventcalendar > main .calendar main img {
+        margin-left: 4%;
+        margin-top: 6%;
+        width: 87px;
+    }
+    #services > main #slider-view .service-feed .service, #analytics > main #slider-view .analytic-feed .analytic, #estate > main #slider-view .estat-feed .estat{ width: 30%; margin-left: 2%;}
+    #reviews > main #slider-view .review-feed .review#with-title-image header img {
+        left: 0%;
+    }
+    #analytics > main #slider-view .analytic-feed .analytic#with-title-image {
+        top: 96px;
+    }
+    #analytics > main #slider-view .analytic-feed .analytic#with-title-image img {
+        height: 125px;
+    }
+    #analytics > main #slider-view .analytic-feed .analytic:nth-child(1) h2 {
+        font-size: 111%;
+    }
+    #analytics > main #slider-view .analytic-feed .analytic .descr {
+        font-size: 74%;
+    }
+    #analytics > main #slider-view .analytic-feed .analytic a {
+        font-size: 87%;
+    }
+}
+@media all and (min-width:1280px) and (max-width: 1366px){
+    .header > #header_bottom {
+        display: inherit;
+        right: -2%;
+        position: relative;
+        top: -8%;
+    }
+    .header > #header_top {
+        margin-left: 11vw;
+    }
+    .header > #header_bottom .hb_bottom header .welcome-link {
+        margin-top: -7%;
+        margin-left: 1%;
+    }
+    .header > #header_bottom .hb_bottom header .header-informer {
+        margin-top: -14%;
+    }
+    .header > #header_bottom .hb_bottom footer {
+        margin-top: -5%;
+    }
+    #promo > header .links {
+        left: 11vw;
+    }
+    #promo > main.swiper-container .promo-feed .promoblock {
+        height: 410px;
+    }
+    #promo > header .marketing-info {
+        margin-top: 6%;
+        margin-right: -2vw;
+    }
+    #promo > header .marketing-info header img {
+        width: 78%;
+    }
+    #investsearch {
+        height: 554px;
+        padding-top: 26%;
+        padding-bottom: 0%;
+    }
+    #investsearch > main.swiper-container .popular-objects .popular-object header {
+        height: 24px;
+    }
+    #investsearch > main.swiper-container .popular-objects .popular-object header h3 {
+        font-size: 58%;
+    }
+    #investsearch > main.swiper-container .popular-objects .popular-object footer .info span:nth-child(2) {
+        font-size: 102%;
+    }
+    #investsearch > main.swiper-container .popular-objects .popular-object footer a {
+        font-size: 73%;
+    }
+    #promo {
+        height: 354px;
+    }
+    #investsearch {
+        height: 521px;
+        padding-top: 13%;
+        padding-bottom: 5%;
+    }
+    #investsearch > main.swiper-container .popular-objects .popular-object header {
+        height: 24px;
+    }
+    #investsearch > main.swiper-container .popular-objects .popular-object header h3 {
+        font-size: 58%;
+    }
+    #investsearch > main.swiper-container .popular-objects .popular-object footer .info span:nth-child(2) {
+        font-size: 74%;
+    }
+    #investsearch > main.swiper-container .popular-objects .popular-object footer a {
+        font-size: 73%;
+    }
+    #services {
+        height: 84px;
+        padding-top: 4%;
+    }
+    #services > main #slider-controller img {
+        width: 34%;
+        top: -84px;
+    }
+    #services > main #slider-view .service-feed .service header {
+        font-size: 64%;
+    }
+    #services > main #slider-view .service-feed .service footer .title {
+        font-size: 74%;
+    }
+    #services > main #slider-view .service-feed .service footer .location {
+        font-size: 76%;
+    }
+    #services > main #slider-view .service-feed .service footer .descr {
+        font-size: 70%;
+    }
+    #analytics > main #slider-controller img {
+        width: 31%;
+        top: 6vw;
+    }
+    #analytics > main #slider-view .analytic-feed .analytic h2 {
+        font-size: 97%;
+    }
+    #estate {
+        height: 163px;
+    }
+    #estate > main #slider-controller img {
+        width: 34%;
+        top: -48px;
+    }
+    #estate > main #slider-view .estat-feed .estat {
+        height: 181px;
+    }
+    #estate > main #slider-view .estat-feed .estat header {
+        font-size: 64%;
+    }
+    #reviews > main #slider-view .review-feed .review main h3 {
+        font-size: 95%;
+    }
+    #reviews > main #slider-controller img {
+        width: 34%;
+        top: 97px;
+    }
+    .rating-mini span {
+        font-size: 23px;
+    }
+    #investsearch > main.swiper-container .popular-objects .popular-object main img {
+        height: 149px;
+    }
+    .footer > main #category_menu .catname {
+        font-size: 100%;
+    }
+    .footer > main #category_menu ul {
+        font-size: 63%;
+    }
+    .header > #header_bottom .hb_bottom header .welcome-link {
+        margin-top: -7%;
+    }
+    #investsearch > header a {
+        margin-left: 11%;
+        margin-top: -2px;
+    }
+    #eventcalendar > main .calendar footer {
+        margin-top: 2%;
+        font-size: 87%;
+    }
+    #eventcalendar > main .calendar .date {
+        top: 48px;
+    }
+    #eventcalendar > main .calendar main img {
+        margin-left: 5%;
+        margin-top: 4%;
+        width: 88px;
+    }
+    #services > main #slider-view .service-feed .service, #analytics > main #slider-view .analytic-feed .analytic, #estate > main #slider-view .estat-feed .estat{ width: 27%; margin-left: 5%;}
+    #reviews > main #slider-view .review-feed .review#with-title-image header img {
+        left: 0%;
+    }
+    #analytics > main #slider-view .analytic-feed .analytic#with-title-image {
+        top: 96px;
+    }
+    #analytics > main #slider-view .analytic-feed .analytic#with-title-image img {
+        height: 125px;
+    }
+    #analytics > main #slider-view .analytic-feed .analytic:nth-child(1) h2 {
+        font-size: 111%;
+    }
+    #analytics > main #slider-view .analytic-feed .analytic .descr {
+        font-size: 74%;
+    }
+    #analytics > main #slider-view .analytic-feed .analytic a {
+        font-size: 87%;
+    }
+    #news {
+        padding-top: 10%;
+    }
+}
+@media all and (min-width:1366px) and (max-width: 1400px){
+    .header > #header_bottom {
+        display: inherit;
+        margin-top: 0%;
+        margin-right: 13vw;
+    }
+    .header > #header_top {
+        margin-left: 12vw;
+    }
+    .header > #header_bottom .hb_bottom header .welcome-link {
+        margin-top: -7%;
+        margin-left: 1%;
+    }
+    .header > #header_bottom .hb_bottom header .header-informer {
+        margin-top: -14%;
+    }
+    .header > #header_bottom .hb_bottom footer {
+        margin-top: -6%;
+    }
+    #promo > header .links {
+        left: 11vw;
+    }
+    #promo > main.swiper-container .promo-feed .promoblock {
+        height: 379px;
+    }
+    #promo > header .marketing-info {
+        margin-top: -10vw;
+        margin-right: 0vw;
+    }
+    #promo > header .marketing-info header img {
+        width: 81%;
+    }
+    #investsearch {
+        height: 475px;
+        padding-top: 8%;
+    }
+    #investsearch > main.swiper-container .popular-objects .popular-object header {
+        height: 27px;
+    }
+    #investsearch > main.swiper-container .popular-objects .popular-object header h3 {
+        font-size: 64%;
+    }
+    #investsearch > main.swiper-container .popular-objects .popular-object main img {
+        height: 194px;
+    }
+    .footer > main #category_menu .catname {
+        font-size: 110%;
+    }
+    .footer > main #category_menu ul {
+        font-size: 83%;
+    }
+    #investsearch > header a {
+        margin-left: 133px;
+        margin-top: 19px;
+    }
+    #eventcalendar > main .calendar footer {
+        margin-top: 1%;
+        font-size: 92%;
+    }
+    #eventcalendar > main .calendar .date {
+        top: 45px;
+    }
+    #eventcalendar > main .calendar main img {
+        margin-left: 4%;
+        margin-top: 3%;
+        width: 100px;
+    }
+    #services > main #slider-view .service-feed .service, #analytics > main #slider-view .analytic-feed .analytic, #estate > main #slider-view .estat-feed .estat{ width: 28%; margin-left: 4%;}
+    #reviews > main #slider-view .review-feed .review#with-title-image header img {
+        left: 0%;
+    }
+    #analytics > main #slider-view .analytic-feed .analytic#with-title-image {
+        top: 96px;
+    }
+    #analytics > main #slider-view .analytic-feed .analytic#with-title-image img {
+        height: 125px;
+    }
+    #analytics > main #slider-view .analytic-feed .analytic:nth-child(1) h2 {
+        font-size: 111%;
+    }
+    #analytics > main #slider-view .analytic-feed .analytic .descr {
+        font-size: 74%;
+    }
+    #analytics > main #slider-view .analytic-feed .analytic a {
+        font-size: 87%;
+    }
+    #news {
+        padding-top: 7%;
+    }
+}
+@media all and (min-width:1400px) and (max-width: 1600px){
+    #promo {
+        height: 336px;
+    }
+    #promo > main.swiper-container .promo-feed .promoblock {
+        height: 390px;
+    }
+    #investsearch {
+        height: 430px;
+        padding-top: 7%;
+        padding-bottom: 11%;
+    }
+    #investsearch > main.swiper-container .popular-objects .popular-object header {
+        height: 27px;
+    }
+    #investsearch > main.swiper-container .popular-objects .popular-object header h3 {
+        font-size: 79%;
+    }
+    #investsearch > main.swiper-container .popular-objects .popular-object main img {
+        height: 194px;
+    }
+    #investsearch > header a {
+        margin-left: 10%;
+        margin-top: 18px;
+    }
+    #eventcalendar > main .calendar footer {
+        margin-top: 1%;
+        font-size: 92%;
+    }
+    #promo > header .marketing-info header img {
+        width: 73%;
+    }
+    #eventcalendar > main .calendar main img {
+        margin-left: 4%;
+        margin-top: 3%;
+        width: 106px;
+    }
+    #eventcalendar > main .calendar .date {
+        top: 44px;
+    }
+
+}
+@media all and (min-width:1600px) and (max-width: 1800px){
+    #promo > header .marketing-info {
+        margin-right: -3vw;
+        margin-top: -9vw;
+    }
+    #promo {
+        height: 346px;
+    }
+    #promo > main.swiper-container .promo-feed .promoblock {
+        
+    }
+    #investsearch {
+        height: 509px;
+        padding-top: 7%;
+        padding-bottom: 5%;
+    }
+    #investsearch > main.swiper-container .popular-objects .popular-object header {
+        height: 27px;
+    }
+    #investsearch > main.swiper-container .popular-objects .popular-object header h3 {
+        font-size: 79%;
+    }
+    #investsearch > header a {
+        margin-left: 150px;
+        margin-top: 1px;
+    }
+    #eventcalendar > main .calendar footer {
+        margin-top: 1%;
+        font-size: 100%;
+    }
+    #eventcalendar > main .calendar main img {
+        margin-left: 4%;
+        margin-top: 3%;
+        width: 110px;
+    }
+    #eventcalendar > main .calendar .date {
+        top: 48px;
+    }
+    #news {
+        padding-top: 6%;
+    }
+}
+@media all and (min-width:1680px) and (max-width: 1800px){
+    .header > #header_bottom {
+        margin-right: 14vw;
+    }
+    #promo > header .marketing-info {
+        margin-right: -7vw;
+    }
+    #promo > main.swiper-container .promo-feed .promoblock {
+        height: 410px;
+    }
+    #news {
+        padding-top: 7%;
+    }
+}
+@media all and (min-width: 1800px){
+    #promo > header .marketing-info {
+        margin-right: -13vw;
+        margin-top: -8vw;
+    }
+    #promo > header .marketing-info header img {
+        width: 61%;
+    }
+    #promo > main.swiper-container .promo-feed .promoblock {
+        height: 445px;
+    }
+    #news {
+        padding-top: 5vw;
+    }
+    #investsearch > main.swiper-container .popular-objects .popular-object header {
+        padding-bottom: 1%;
+        padding-top: 1%;
+    }
+    #investsearch > main.swiper-container .popular-objects .popular-object header h3 {
+        margin-top: 3%;
+    }
+    #investsearch > main.swiper-container .popular-objects .popular-object {
+        height: 517px;
+    }
+    #eventcalendar{ padding-top: 8%; }
+}
+@media all and (aspect-ratio: 5/4){
+    #promo > main.swiper-container .promo-feed .promoblock {
+        height: 405px;
+    }
+    .header > #header_bottom {
+        display: none;
+    }
+    #estate > main #slider-view .estat-feed .estat {
+        margin-left: 4%;
+        width: 28%;
+    }
+    #reviews {
+        height: 241px;
+    }
+}

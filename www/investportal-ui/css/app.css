@@ -437,7 +437,7 @@ h1, h2, h3, h4, h5, h6, strong{
 #news > main #slider-controller img{
     width: 18%;
     position: relative;
-    top: -150px;
+    top: -139px;
 }
 #news > main #slider-view{
     width: 71%;
@@ -452,10 +452,10 @@ h1, h2, h3, h4, h5, h6, strong{
     display: inline-block;
     width: 31%;
     height: 183px;
-    margin-left: 1%;
+    margin-left: 2%;
 }
 #news > main #slider-view .news-feed .news:nth-child(2){  width: 30%;left: 0%;position: relative;}
-#news > main #slider-view .news-feed .news:nth-child(3){  left: 2%;position: relative;}
+#news > main #slider-view .news-feed .news:nth-child(3){  left: -1%;position: relative;}
 #news > main #slider-view .news-feed .news a{
     display: block;
     margin-top: 2px;
@@ -1623,6 +1623,13 @@ h1, h2, h3, h4, h5, h6, strong{
     }
     #news {
         padding-top: 5vw;
+    }
+    #investsearch > main.swiper-container .popular-objects .popular-object header {
+        padding-bottom: 1%;
+        padding-top: 1%;
+    }
+    #investsearch > main.swiper-container .popular-objects .popular-object header h3 {
+        margin-top: 3%;
     }
     #investsearch > main.swiper-container .popular-objects .popular-object {
         height: 517px;

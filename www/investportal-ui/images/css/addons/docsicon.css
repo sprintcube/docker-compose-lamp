@@ -1,0 +1,7 @@
+.docs{
+    float: right;
+}
+.docs > .doc-icon{
+    width: 23px;
+    vertical-align: middle;
+}
