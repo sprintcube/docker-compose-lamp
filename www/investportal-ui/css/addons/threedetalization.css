@@ -9,7 +9,7 @@
   position: absolute;
   top: 6px;
   left: 1px;
-  width: 100%;
+  width: 103%;
   height: 99%;
   background-color: white;
   z-index: 1;
@@ -25,7 +25,7 @@
   top: -1px;
   left: 0px;
   z-index: -2;
-  width: 100%;
+  width: 103%;
   height: 99%;
   background-color: white;
   box-shadow: inherit;
@@ -35,7 +35,7 @@
 #investsearch > main.swiper-container .popular-objects .popular-object {
   position: relative;
   z-index: 1;
-  height: 440px;
+  height: 460px;
   box-shadow: 0 0 5px 1px grey;
 }
 

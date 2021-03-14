@@ -48,7 +48,7 @@ h1, h2, h3, h4, h5, h6, strong{
 }
 .header > #header_bottom{
     float: right;
-    margin-right: 14vw;
+    margin-right: 12%;
 }
 .header > #header_bottom .hb_bottom header{
     display: block;
@@ -192,9 +192,9 @@ h1, h2, h3, h4, h5, h6, strong{
 #news{ height:106px; padding-top: 8%; }
 #investsearch{ height: 412px; }
 #services{ height: 154px; padding-top: 41px;}
-#analytics{ height: 263px; padding-top: 77px;}
-#estate{ height: 185px;padding-top: 69px;}
-#reviews{ height: 208px; padding-top: 48px;}
+#analytics{ height: 263px; padding-top: 87px;padding-bottom: 217px;}
+#estate{ height: 185px;padding-top: 36px;}
+#reviews{ height: 245px; padding-top: 113px;padding-bottom: 135px;}
 #link-switcher{
     width: 100%;
     background-color: white;
@@ -289,7 +289,7 @@ h1, h2, h3, h4, h5, h6, strong{
     float:right;
     width: 80%;
     margin-top: -11%;
-    margin-right: -4vw;
+    margin-right: -9%;
 }
 #promo > header .marketing-info footer ul{
     color: white;
@@ -304,7 +304,7 @@ h1, h2, h3, h4, h5, h6, strong{
     width: 100vw;
 }
 #promo > main.swiper-container .promo-feed .promoblock{
-    width: 24vw;
+    width: 23vw;
     display: inline-flexbox;
     background-color: white;
     padding-right: 1%;
@@ -312,6 +312,7 @@ h1, h2, h3, h4, h5, h6, strong{
     -webkit-box-shadow: 8px -6px 6px 0px rgba(50, 50, 50, 0.75);
     -moz-box-shadow: 8px -6px 6px 0px rgba(50, 50, 50, 0.75);
     box-shadow: 8px -6px 6px 0px rgba(50, 50, 50, 0.75);
+    margin-left: 30px;
 }
 #promo > main.swiper-container .promo-feed .promoblock:hover{
     cursor: pointer;
@@ -429,7 +430,7 @@ h1, h2, h3, h4, h5, h6, strong{
     position: relative;
 }
 #news > main header#slider-controller{
-    left: -1%;
+    left: 0%;
 }
 #news > main footer#slider-controller{
     right: 0%;
@@ -437,7 +438,7 @@ h1, h2, h3, h4, h5, h6, strong{
 #news > main #slider-controller img{
     width: 18%;
     position: relative;
-    top: -139px;
+    top: -165px;
 }
 #news > main #slider-view{
     width: 71%;
@@ -445,34 +446,31 @@ h1, h2, h3, h4, h5, h6, strong{
 }
 #news > main #slider-view .news-feed{
    display: inline-block; 
-   margin-left: -13%;
-   margin-top: 1%;
+   margin-left: -11%;
+   margin-top: -1%;
 }
 #news > main #slider-view .news-feed .news{
     display: inline-block;
-    width: 31%;
+    width: 33%;
     height: 183px;
-    margin-left: 2%;
 }
-#news > main #slider-view .news-feed .news:nth-child(2){  width: 30%;left: 0%;position: relative;}
-#news > main #slider-view .news-feed .news:nth-child(3){  left: -1%;position: relative;}
 #news > main #slider-view .news-feed .news a{
     display: block;
     margin-top: 2px;
     color: #0079bf;
-    font-size: 104%;
+    font-size: 120%;
     text-decoration: none;
     font-weight: bold;
-    height: 64px;
+    height: 73px;
     overflow: hidden;
     text-overflow: ellipsis;
     word-spacing: 0.1em;
     letter-spacing: 0.06em;
     margin-left: 4%;
+    width: 94%;
 }
 #news > main #slider-view .news-feed .news .descr{
     display: block;
-    margin-top: 8%;
     font-size: 90%;
     height: 108px;
     overflow: hidden;
@@ -481,6 +479,7 @@ h1, h2, h3, h4, h5, h6, strong{
     text-align: justify;
     color: gray;
     margin-left: 4%;
+    width: 89%;
 }
 #news > main #slider-view .news-feed .news .date{
     display: block;
@@ -490,7 +489,7 @@ h1, h2, h3, h4, h5, h6, strong{
     color: gray;
     font-family: 'Times New Roman',serif;
     height: 20px;
-    margin-top: -6%;
+    margin-top: -3%;
     margin-left: 4%;
 }
 
@@ -508,13 +507,11 @@ h1, h2, h3, h4, h5, h6, strong{
 #investsearch > main.swiper-container{
     width: 100vw;
 }
-#investsearch > main.swiper-container .popular-objects#objects-chromium{
-    margin-left: 8vw;
-}
 #investsearch > main.swiper-container .popular-objects .popular-object{
     width: 25vw;
     display: inline-flexbox;
     background-color: white;
+    margin-left: 16px;
 }
 #investsearch > main.swiper-container .popular-objects .popular-object#object-chromium{
    margin-left: 1vw;
@@ -660,6 +657,7 @@ h1, h2, h3, h4, h5, h6, strong{
     display: inline-table;
     position: relative;
     left: 4vw;
+    top: 2vw;
 }
 #services > header a{
    text-decoration: none;
@@ -683,7 +681,7 @@ h1, h2, h3, h4, h5, h6, strong{
 #services > main #slider-controller img{
     width: 26%;
     position: relative;
-    top: -6vw;
+    top: -127px;
 }
 #services > main #slider-view{
     width: 70%;
@@ -691,14 +689,14 @@ h1, h2, h3, h4, h5, h6, strong{
 }
 #services > main #slider-view .service-feed{
     display: block;
-    margin-left: -12%;
+    margin-left: -11%;
 }
 #services > main #slider-view .service-feed .service{
-    width: 30%;
-    height: 230px;
+    width: 16vw;
+    height: 250px;
     display: inline-table;
     box-shadow: 3px -1px 11px 3px darkgray;
-    margin-left: 3%;
+    margin-left: 4%;
     background-color: white;
     padding-bottom: 5%;
 }
@@ -780,7 +778,7 @@ h1, h2, h3, h4, h5, h6, strong{
 #analytics > main #slider-controller img{
     width: 26%;
     position: relative;
-    top: 6vw;
+    top: 89px;
 }
 #analytics > main #slider-view{
     width: 70%;
@@ -788,14 +786,14 @@ h1, h2, h3, h4, h5, h6, strong{
 }
 #analytics > main #slider-view .analytic-feed{
    display: block;
-   margin-left: -12%;
+   margin-left: -13%;
 }
 #analytics > main #slider-view .analytic-feed .analytic{
-    width: 29%;
-    height: 342px;
+    width: 15vw;
+    height: 358px;
     display: inline-table;
     box-shadow: 3px -1px 11px 3px darkgray;
-    margin-left: 4%;
+    margin-left: 6%;
     padding-bottom: 2%;
     background-color: white;
     padding-right: -1px;
@@ -845,6 +843,7 @@ h1, h2, h3, h4, h5, h6, strong{
     display: inline-table;
     position: relative;
     left: 4vw;
+    top: 2vw;
 }
 #estate > main{
     width: 70%;
@@ -860,7 +859,7 @@ h1, h2, h3, h4, h5, h6, strong{
 #estate > main #slider-controller img{
     width: 26%;
     position: relative;
-    top: -6vw;
+    top: -78px;
 }
 #estate > main #slider-view{
     width: 70%;
@@ -868,11 +867,11 @@ h1, h2, h3, h4, h5, h6, strong{
 }
 #estate > main #slider-view .estat-feed{
     display: block;
-    margin-left: -10%;
+    margin-left: -11%;
 }
 #estate > main #slider-view .estat-feed .estat{
-    width: 28%;
-    height: 181px;
+    width: 16vw;
+    height: 208px;
     display: inline-table;
     margin-left: 4%;
     background-color: white;
@@ -918,7 +917,7 @@ h1, h2, h3, h4, h5, h6, strong{
 	margin-left: 8%;
 	padding-bottom: 0%;
 	position: relative;
-	top: 15px;
+	top: 30px;
 }
 #estate > main #slider-view .estat-feed .estat footer .info span{
     padding-top: 2%;
@@ -986,7 +985,7 @@ h1, h2, h3, h4, h5, h6, strong{
 #reviews > main #slider-controller img{
     width: 26%;
     position: relative;
-    top: 5vw;
+    top: 84px;
 }
 #reviews > main #slider-view{
     width: 70%;
@@ -994,10 +993,10 @@ h1, h2, h3, h4, h5, h6, strong{
 }
 #reviews > main #slider-view .review-feed{
    display: block;
-   margin-left: -10%;
+   margin-left: -12%;
 }
 #reviews > main #slider-view .review-feed .review{
-    width: 28%;
+    width: 16vw;
     height: 238px;
     display: inline-table;
     box-shadow: 3px -1px 11px 3px darkgray;
@@ -1038,7 +1037,7 @@ h1, h2, h3, h4, h5, h6, strong{
 .footer > header {
     float: left;
     display: inline;
-    margin-left: 8%;
+    margin-left: 12vw;
     width: 20%;
     position: relative;
     top: 50px;
@@ -1079,7 +1078,7 @@ h1, h2, h3, h4, h5, h6, strong{
 .footer > main {
     float: right;
     display: inline-table;
-    margin-right: -13%;
+    margin-right: -16vw;
     width: 80%;
     position: relative;
     top: 5%;
@@ -1126,10 +1125,10 @@ h1, h2, h3, h4, h5, h6, strong{
     }
     #promo > header .marketing-info {
         margin-top: 5%;
-        margin-right: -5vw;
+        margin-right: -7%;
     }
     #promo > header .marketing-info header img {
-        width: 76%;
+        width: 79%;
     }
     #news {
         padding-top: 17%;
@@ -1173,7 +1172,7 @@ h1, h2, h3, h4, h5, h6, strong{
     }
     #analytics > main #slider-controller img {
         width: 28%;
-        top: 92px;
+        top: 15px;
     }
     #analytics > main #slider-view .analytic-feed .analytic h2 {
         font-size: 93%;
@@ -1231,7 +1230,10 @@ h1, h2, h3, h4, h5, h6, strong{
         margin-top: 6%;
         width: 87px;
     }
-    #services > main #slider-view .service-feed .service, #analytics > main #slider-view .analytic-feed .analytic, #estate > main #slider-view .estat-feed .estat{ width: 30%; margin-left: 2%;}
+    #services > main #slider-view .service-feed .service, #analytics > main #slider-view .analytic-feed .analytic, #estate > main #slider-view .estat-feed .estat{ width: 15vw; margin-left: 6%;}
+    #services > main #slider-view .service-feed .service {
+        height: 200px;
+    }
     #reviews > main #slider-view .review-feed .review#with-title-image header img {
         left: 0%;
     }
@@ -1250,6 +1252,9 @@ h1, h2, h3, h4, h5, h6, strong{
     #analytics > main #slider-view .analytic-feed .analytic a {
         font-size: 87%;
     }
+    #analytics > main #slider-view .analytic-feed {
+        margin-left: -11%;
+    }
 }
 @media all and (min-width:1280px) and (max-width: 1366px){
     .header > #header_bottom {
@@ -1257,6 +1262,9 @@ h1, h2, h3, h4, h5, h6, strong{
         right: -2%;
         position: relative;
         top: -8%;
+    }
+    #services > main #slider-view .service-feed .service {
+        height: 200px;
     }
     .header > #header_top {
         margin-left: 11vw;
@@ -1279,10 +1287,10 @@ h1, h2, h3, h4, h5, h6, strong{
     }
     #promo > header .marketing-info {
         margin-top: 6%;
-        margin-right: -2vw;
+        margin-right: -4%;
     }
     #promo > header .marketing-info header img {
-        width: 78%;
+        width: 79%;
     }
     #investsearch {
         height: 554px;
@@ -1324,10 +1332,11 @@ h1, h2, h3, h4, h5, h6, strong{
     #services {
         height: 84px;
         padding-top: 4%;
+        padding-bottom: 11%;
     }
     #services > main #slider-controller img {
         width: 34%;
-        top: -84px;
+        top: -108px;
     }
     #services > main #slider-view .service-feed .service header {
         font-size: 64%;
@@ -1343,7 +1352,7 @@ h1, h2, h3, h4, h5, h6, strong{
     }
     #analytics > main #slider-controller img {
         width: 31%;
-        top: 6vw;
+        top: 2vw;
     }
     #analytics > main #slider-view .analytic-feed .analytic h2 {
         font-size: 97%;
@@ -1353,7 +1362,7 @@ h1, h2, h3, h4, h5, h6, strong{
     }
     #estate > main #slider-controller img {
         width: 34%;
-        top: -48px;
+        top: -90px;
     }
     #estate > main #slider-view .estat-feed .estat {
         height: 181px;
@@ -1399,7 +1408,7 @@ h1, h2, h3, h4, h5, h6, strong{
         margin-top: 4%;
         width: 88px;
     }
-    #services > main #slider-view .service-feed .service, #analytics > main #slider-view .analytic-feed .analytic, #estate > main #slider-view .estat-feed .estat{ width: 27%; margin-left: 5%;}
+    #services > main #slider-view .service-feed .service, #analytics > main #slider-view .analytic-feed .analytic, #estate > main #slider-view .estat-feed .estat{ width: 15vw; margin-left: 6%;}
     #reviews > main #slider-view .review-feed .review#with-title-image header img {
         left: 0%;
     }
@@ -1421,12 +1430,19 @@ h1, h2, h3, h4, h5, h6, strong{
     #news {
         padding-top: 10%;
     }
+    #analytics > main #slider-view .analytic-feed {
+        margin-left: -11%;
+    }
 }
 @media all and (min-width:1366px) and (max-width: 1400px){
     .header > #header_bottom {
         display: inherit;
-        margin-top: 0%;
-        margin-right: 13vw;
+        top: -5%;
+        position: relative;
+        right: -3%;
+    }
+    #services > main #slider-view .service-feed .service {
+        height: 250px;
     }
     .header > #header_top {
         margin-left: 12vw;
@@ -1449,10 +1465,10 @@ h1, h2, h3, h4, h5, h6, strong{
     }
     #promo > header .marketing-info {
         margin-top: -10vw;
-        margin-right: 0vw;
+        margin-right: -3%;
     }
     #promo > header .marketing-info header img {
-        width: 81%;
+        width: 79%;
     }
     #investsearch {
         height: 475px;
@@ -1489,7 +1505,7 @@ h1, h2, h3, h4, h5, h6, strong{
         margin-top: 3%;
         width: 100px;
     }
-    #services > main #slider-view .service-feed .service, #analytics > main #slider-view .analytic-feed .analytic, #estate > main #slider-view .estat-feed .estat{ width: 28%; margin-left: 4%;}
+    #services > main #slider-view .service-feed .service, #analytics > main #slider-view .analytic-feed .analytic, #estate > main #slider-view .estat-feed .estat{ width: 16vw; margin-left: 4%;}
     #reviews > main #slider-view .review-feed .review#with-title-image header img {
         left: 0%;
     }
@@ -1511,8 +1527,17 @@ h1, h2, h3, h4, h5, h6, strong{
     #news {
         padding-top: 7%;
     }
+    #analytics > main #slider-view .analytic-feed {
+        margin-left: -10%;
+    }
 }
 @media all and (min-width:1400px) and (max-width: 1600px){
+    .header > #header_bottom {
+        display: inherit;
+        top: -5%;
+        position: relative;
+        right: -2%;
+    }
     #promo {
         height: 336px;
     }
@@ -1523,6 +1548,9 @@ h1, h2, h3, h4, h5, h6, strong{
         height: 430px;
         padding-top: 7%;
         padding-bottom: 11%;
+    }
+    #services > main #slider-view .service-feed .service {
+        height: 260px;
     }
     #investsearch > main.swiper-container .popular-objects .popular-object header {
         height: 27px;
@@ -1542,7 +1570,7 @@ h1, h2, h3, h4, h5, h6, strong{
         font-size: 92%;
     }
     #promo > header .marketing-info header img {
-        width: 73%;
+        width: 72%;
     }
     #eventcalendar > main .calendar main img {
         margin-left: 4%;
@@ -1552,11 +1580,13 @@ h1, h2, h3, h4, h5, h6, strong{
     #eventcalendar > main .calendar .date {
         top: 44px;
     }
-
+    #analytics > main #slider-view .analytic-feed {
+        margin-left: -12%;
+    }
 }
 @media all and (min-width:1600px) and (max-width: 1800px){
     #promo > header .marketing-info {
-        margin-right: -3vw;
+        margin-right: -7vw;
         margin-top: -9vw;
     }
     #promo {
@@ -1596,12 +1626,23 @@ h1, h2, h3, h4, h5, h6, strong{
         padding-top: 6%;
     }
 }
+@media all and (min-width:1600px) and (max-width: 1680px){
+    .header > #header_bottom {
+        display: inherit;
+        top: -5%;
+        position: relative;
+        right: -1%;
+    }
+}
 @media all and (min-width:1680px) and (max-width: 1800px){
     .header > #header_bottom {
-        margin-right: 14vw;
+        display: inherit;
+        top: -5%;
+        position: relative;
+        right: -1%;
     }
     #promo > header .marketing-info {
-        margin-right: -7vw;
+        margin-right: -10vw;
     }
     #promo > main.swiper-container .promo-feed .promoblock {
         height: 410px;
@@ -1611,12 +1652,18 @@ h1, h2, h3, h4, h5, h6, strong{
     }
 }
 @media all and (min-width: 1800px){
+    .header > #header_bottom {
+        display: inherit;
+        top: -5%;
+        position: relative;
+        right: 0%;
+    }
     #promo > header .marketing-info {
-        margin-right: -13vw;
+        margin-right: -16%;
         margin-top: -8vw;
     }
     #promo > header .marketing-info header img {
-        width: 61%;
+        width: 60%;
     }
     #promo > main.swiper-container .promo-feed .promoblock {
         height: 445px;
@@ -1645,7 +1692,7 @@ h1, h2, h3, h4, h5, h6, strong{
     }
     #estate > main #slider-view .estat-feed .estat {
         margin-left: 4%;
-        width: 28%;
+        width: 16vw;
     }
     #reviews {
         height: 241px;

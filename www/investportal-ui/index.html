@@ -10,18 +10,13 @@
     <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
     <script src="https://kit.fontawesome.com/97c3285af2.js" crossorigin="anonymous"></script>
     <style>
-        
-        
-        .add-but{
+         .add-but{
             text-align: center;
             color: gray;
             background-color: lightgray;
             border: none;
             font-size: 60%;
             padding: 10px;
-        }
-        .go-bugfix{
-            margin-left: 1%;
         }
         #promo > header .promo-header{
             position: relative;
@@ -35,9 +30,64 @@
         .swiper-button-prev::after, .swiper-button-next::after{ 
             width: 6vw;
         }
-        #promo > main.swiper-container .promo-feed{ margin-left: 10vw;}
-        #investsearch > main.swiper-container .popular-objects{ margin-left: -17vw; }
-    
+        #promo > main.swiper-container .promo-feed{ margin-left: 8vw;}
+        #investsearch > main.swiper-container .popular-objects{ margin-left: -18vw; }
+        @media all and (min-width: 1024px) and (max-width: 1280px){
+            #promo > main.swiper-container .promo-feed {
+                margin-left: 7vw;
+            }
+            #investsearch > main.swiper-container .popular-objects {
+                margin-left: 8vw;
+            }
+        }
+        @media all and (min-width: 1280px) and (max-width: 1366px){
+            #promo > main.swiper-container .promo-feed {
+                margin-left: 7vw;
+            }
+            #investsearch > main.swiper-container .popular-objects {
+                margin-left: -20vw;
+            }
+        }
+        @media all and (min-width: 1366px) and (max-width: 1400px){
+            #promo > main.swiper-container .promo-feed {
+                margin-left: 7vw;
+            }
+            #investsearch > main.swiper-container .popular-objects {
+                margin-left: -20vw;
+            }
+        }
+        @media all and (min-width: 1400px) and (max-width: 1600px){
+            #promo > main.swiper-container .promo-feed {
+                margin-left: 8vw;
+            }
+            #investsearch > main.swiper-container .popular-objects {
+                margin-left: -19vw;
+            }
+        }
+        @media all and (min-width: 1600px) and (max-width: 1680px){
+            #promo > main.swiper-container .promo-feed {
+                margin-left: 8vw;
+            }
+            #investsearch > main.swiper-container .popular-objects {
+                margin-left: -19vw;
+            }
+        }
+        @media all and (min-width: 1680px) and (max-width: 1800px){
+            #promo > main.swiper-container .promo-feed {
+                margin-left: 8vw;
+            }
+            #investsearch > main.swiper-container .popular-objects {
+                margin-left: -19vw;
+            }
+        }
+        @media all and (min-width: 1800px){
+            #promo > main.swiper-container .promo-feed {
+                margin-left: 8vw;
+            }
+            #investsearch > main.swiper-container .popular-objects {
+                margin-left: -19vw;
+            }
+        }
     </style>
 </head>
 <body>
@@ -802,7 +852,7 @@
                         </div>
                     </div>
                 </main>
-                <footer id="slider-controller" class="go-bugfix">
+                <footer id="slider-controller" >
                     <img src="images/icons/slider-contorls/go.png" alt="Вперёд">
                 </footer>
             </main>
@@ -837,7 +887,7 @@
                         </div>
                     </div>
                 </main>
-                <footer id="slider-controller" class="go-bugfix">
+                <footer id="slider-controller" >
                     <img src="images/icons/slider-contorls/go.png" alt="Вперёд">
                 </footer>
             </main>
