@@ -1655,7 +1655,7 @@ h1, h2, h3, h4, h5, h6, strong{
     }
     #analytics > main #slider-view .analytic-feed .analytic{
         width: 16vw;
-        margin-left: 5%;
+        margin-left: 4%;
     }
 }
 @media all and (min-width:1680px) and (max-width: 1800px){
