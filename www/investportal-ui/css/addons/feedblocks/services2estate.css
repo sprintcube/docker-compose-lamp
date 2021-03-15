@@ -1,8 +1,8 @@
 #services > main #slider-controller img.controls-chromium{
-    top: 8vw;
+    top: 111px;
 }
 #estate > main #slider-controller img.controls-chromium{
-    top: 10vw;
+    top: 116px;
 }
 @media all and (min-width: 1024px) and (max-width: 1280px){
     #services > main #slider-controller img.controls-chromium{

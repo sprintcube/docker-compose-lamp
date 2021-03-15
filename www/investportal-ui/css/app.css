@@ -193,7 +193,7 @@ h1, h2, h3, h4, h5, h6, strong{
 #investsearch{ height: 412px; }
 #services{ height: 154px; padding-top: 1vw;}
 #analytics{ height: 263px; padding-top: 87px;padding-bottom: 217px;}
-#estate{ height: 185px;padding-top: 36px;}
+#estate{ height: 185px;padding-top: 1vw;}
 #reviews{ height: 245px; padding-top: 113px;padding-bottom: 135px;}
 #link-switcher{
     width: 100%;
@@ -657,7 +657,7 @@ h1, h2, h3, h4, h5, h6, strong{
     display: inline-table;
     position: relative;
     left: 4vw;
-    top: 2vw;
+    padding-top: 2vw;
 }
 #services > header a{
    text-decoration: none;
@@ -681,7 +681,7 @@ h1, h2, h3, h4, h5, h6, strong{
 #services > main #slider-controller img{
     width: 26%;
     position: relative;
-    top: -127px;
+    top: -114px;
 }
 #services > main #slider-view{
     width: 70%;
@@ -778,7 +778,7 @@ h1, h2, h3, h4, h5, h6, strong{
 #analytics > main #slider-controller img{
     width: 26%;
     position: relative;
-    top: 89px;
+    top: 93px;
 }
 #analytics > main #slider-view{
     width: 70%;
@@ -843,7 +843,7 @@ h1, h2, h3, h4, h5, h6, strong{
     display: inline-table;
     position: relative;
     left: 4vw;
-    top: 2vw;
+    padding-top: 2vw;
 }
 #estate > main{
     width: 70%;
@@ -859,7 +859,7 @@ h1, h2, h3, h4, h5, h6, strong{
 #estate > main #slider-controller img{
     width: 26%;
     position: relative;
-    top: -78px;
+    top: -50px;
 }
 #estate > main #slider-view{
     width: 70%;
@@ -969,7 +969,7 @@ h1, h2, h3, h4, h5, h6, strong{
     display: inline-table;
     position: relative;
     left: 4vw;
-    top: 11%;
+    top: 1vw;
 }
 #reviews > main{
     width: 70%;
@@ -1155,7 +1155,6 @@ h1, h2, h3, h4, h5, h6, strong{
     }
     #services > main #slider-controller img {
         width: 28%;
-        top: -12vw;
     }
     #services > main #slider-view .service-feed .service header {
         font-size: 53%;
@@ -1171,7 +1170,6 @@ h1, h2, h3, h4, h5, h6, strong{
     }
     #analytics > main #slider-controller img {
         width: 28%;
-        top: 15px;
     }
     #analytics > main #slider-view .analytic-feed .analytic h2 {
         font-size: 93%;
@@ -1344,7 +1342,6 @@ h1, h2, h3, h4, h5, h6, strong{
     }
     #services > main #slider-controller img {
         width: 34%;
-        top: -108px;
     }
     #services > main #slider-view .service-feed .service header {
         font-size: 64%;
@@ -1360,7 +1357,6 @@ h1, h2, h3, h4, h5, h6, strong{
     }
     #analytics > main #slider-controller img {
         width: 31%;
-        top: 2vw;
     }
     #analytics > main #slider-view .analytic-feed .analytic h2 {
         font-size: 97%;
@@ -1370,7 +1366,6 @@ h1, h2, h3, h4, h5, h6, strong{
     }
     #estate > main #slider-controller img {
         width: 34%;
-        top: -90px;
     }
     #estate > main #slider-view .estat-feed .estat {
         height: 181px;
@@ -1383,7 +1378,6 @@ h1, h2, h3, h4, h5, h6, strong{
     }
     #reviews > main #slider-controller img {
         width: 34%;
-        top: 97px;
     }
     .rating-mini span {
         font-size: 23px;
