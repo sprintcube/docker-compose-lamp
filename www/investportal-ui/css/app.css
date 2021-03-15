@@ -191,7 +191,7 @@ h1, h2, h3, h4, h5, h6, strong{
 #promo{ height: 378px; }
 #news{ height:106px; padding-top: 8%; }
 #investsearch{ height: 412px; }
-#services{ height: 154px; padding-top: 41px;}
+#services{ height: 154px; padding-top: 1vw;}
 #analytics{ height: 263px; padding-top: 87px;padding-bottom: 217px;}
 #estate{ height: 185px;padding-top: 36px;}
 #reviews{ height: 245px; padding-top: 113px;padding-bottom: 135px;}
@@ -1152,7 +1152,6 @@ h1, h2, h3, h4, h5, h6, strong{
     }
     #services {
         height: 109px;
-        padding-top: 3%;
     }
     #services > main #slider-controller img {
         width: 28%;
@@ -1253,7 +1252,17 @@ h1, h2, h3, h4, h5, h6, strong{
         font-size: 87%;
     }
     #analytics > main #slider-view .analytic-feed {
-        margin-left: -11%;
+        margin-left: -12%;
+    }
+    #services > main {
+        right: 2vw;
+    }
+    #services > main #slider-view .service-feed {
+        margin-left: -14%;
+    }
+    #analytics > main #slider-view .analytic-feed .analytic{
+        width: 16vw;
+        margin-left: 4%;
     }
 }
 @media all and (min-width:1280px) and (max-width: 1366px){
@@ -1331,8 +1340,7 @@ h1, h2, h3, h4, h5, h6, strong{
     }
     #services {
         height: 84px;
-        padding-top: 4%;
-        padding-bottom: 11%;
+        padding-bottom: 10vw;
     }
     #services > main #slider-controller img {
         width: 34%;
@@ -1433,6 +1441,10 @@ h1, h2, h3, h4, h5, h6, strong{
     #analytics > main #slider-view .analytic-feed {
         margin-left: -11%;
     }
+    #analytics > main #slider-view .analytic-feed .analytic{
+        width: 16vw;
+        margin-left: 4%;
+    }
 }
 @media all and (min-width:1366px) and (max-width: 1400px){
     .header > #header_bottom {
@@ -1528,7 +1540,11 @@ h1, h2, h3, h4, h5, h6, strong{
         padding-top: 7%;
     }
     #analytics > main #slider-view .analytic-feed {
-        margin-left: -10%;
+        margin-left: -11%;
+    }
+    #analytics > main #slider-view .analytic-feed .analytic{
+        width: 16vw;
+        margin-left: 4%;
     }
 }
 @media all and (min-width:1400px) and (max-width: 1600px){
@@ -1581,7 +1597,11 @@ h1, h2, h3, h4, h5, h6, strong{
         top: 44px;
     }
     #analytics > main #slider-view .analytic-feed {
-        margin-left: -12%;
+        margin-left: -11%;
+    }
+    #analytics > main #slider-view .analytic-feed .analytic{
+        width: 16vw;
+        margin-left: 4%;
     }
 }
 @media all and (min-width:1600px) and (max-width: 1800px){
@@ -1633,6 +1653,10 @@ h1, h2, h3, h4, h5, h6, strong{
         position: relative;
         right: -1%;
     }
+    #analytics > main #slider-view .analytic-feed .analytic{
+        width: 16vw;
+        margin-left: 5%;
+    }
 }
 @media all and (min-width:1680px) and (max-width: 1800px){
     .header > #header_bottom {
@@ -1649,6 +1673,10 @@ h1, h2, h3, h4, h5, h6, strong{
     }
     #news {
         padding-top: 7%;
+    }
+    #analytics > main #slider-view .analytic-feed .analytic{
+        width: 16vw;
+        margin-left: 5%;
     }
 }
 @media all and (min-width: 1800px){
@@ -1682,6 +1710,10 @@ h1, h2, h3, h4, h5, h6, strong{
         height: 517px;
     }
     #eventcalendar{ padding-top: 8%; }
+    #analytics > main #slider-view .analytic-feed .analytic{
+        width: 16vw;
+        margin-left: 5%;
+    }
 }
 @media all and (aspect-ratio: 5/4){
     #promo > main.swiper-container .promo-feed .promoblock {
