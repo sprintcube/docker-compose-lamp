@@ -7,6 +7,7 @@
 @import url('addons/threedetalization.css');
 @import url('addons/feedblocks/analytics.css');
 @import url('addons/feedblocks/reviews.css');
+@import url('addons/feedblocks/slidesshow.css');
 html,body{
     font-family: 'Roboto', sans-serif;
     overflow-x:hidden;
@@ -191,7 +192,7 @@ h1, h2, h3, h4, h5, h6, strong{
 #promo{ height: 378px; }
 #news{ height:106px; padding-top: 8%; }
 #investsearch{ height: 412px; }
-#services{ height: 154px; padding-top: 1vw;}
+#services{ height: 154px; padding-top: calc(1vw - 15px);}
 #analytics{ height: 263px; padding-top: 87px;padding-bottom: 217px;}
 #estate{ height: 185px;padding-top: 1vw;}
 #reviews{ height: 245px; padding-top: 113px;padding-bottom: 135px;}
@@ -767,7 +768,7 @@ h1, h2, h3, h4, h5, h6, strong{
     width: 70%;
     float: right;
     display: inline-table;
-    margin-top: -5%;
+    margin-top: -4%;
     position: relative;
     right: 3vw;
 }
@@ -1704,9 +1705,17 @@ h1, h2, h3, h4, h5, h6, strong{
         height: 517px;
     }
     #eventcalendar{ padding-top: 8%; }
+    #services{ height: 196px; }
+    #services > main #slider-view .service-feed .service {
+        height: 350px;
+        padding-bottom: 1%;
+    }
     #analytics > main #slider-view .analytic-feed .analytic{
         width: 16vw;
         margin-left: 5%;
+    }
+    #analytics > main{
+        margin-top: -3%;
     }
 }
 @media all and (aspect-ratio: 5/4){

@@ -1,0 +1,6 @@
+#news > main #slider-view .news-feed#hide, #services > main #slider-view .service-feed#hide, #analytics > main #slider-view .analytic-feed#hide, #estate > main #slider-view .estat-feed#hide, #reviews > main #slider-view .review-feed#hide{
+    display: none;
+}
+#slider-controller > img{
+    cursor: pointer;
+}
