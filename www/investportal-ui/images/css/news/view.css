@@ -3,6 +3,7 @@
   width: 55%;
   float: left;
   margin-left: 6%;
+  margin-top: -21%;
 }
 #news > .news-viewer #left-content header{
   width: 100%;
@@ -104,6 +105,7 @@
     display: inline-table;
     width: 20%;
     margin-right: 12%;
+    margin-top: -11%;
 }
 #news > .news-viewer #right-content .realted-news{ 
     padding-top: 2%;
@@ -140,12 +142,57 @@
   padding-top: 6%;
   display: block;
 }
-@media all and (max-width: 1280px){
+
+@media all and (min-width: 320px) and (max-width: 640px){
   #news {
-    height: 1736px;
+    height: 4300px;
   }
-} 
-#news > .news-viewer #left-content{
-  margin-top: -8%;
-} 
+  #news > .news-viewer #left-content {
+    width: 99%;
+    margin-left: -3%;
+    margin-top: -77%;
+    display: block;
+  }
+  #news > .news-viewer #right-content {
+    width: 85%;
+    margin-right: 11%;
+    display: block;
+  }
+}
+@media all and (min-width: 640px) and (max-width: 1280px){
+  #news {
+    height: 4085px;
+  }
+  #news > .news-viewer #left-content {
+    width: 91%;
+    margin-left: -3%;
+    margin-top: -38%;
+  }
+  #news > .news-viewer #right-content {
+    width: 84%;
+    margin-right: 12%;
+  }
+}
+@media all and (min-width: 1280px) and (max-width: 1400px){
+  #news {
+    height: 2000px;
+  }
+  #news > .news-viewer #left-content {
+    margin-top: -28%;
+  }
+  #news > .news-viewer #right-content {
+    margin-top: -18%;
+  }
+}
+@media all and (min-width: 1400px) and (max-width: 1600px){
+  #news {
+    height: 1963px;
+  }
+  #news > .news-viewer #left-content {
+    margin-top: -23%;
+  }
+  #news > .news-viewer #right-content {
+    margin-top: -13%;
+  }
+}
 
