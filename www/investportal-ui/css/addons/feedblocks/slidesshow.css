@@ -4,3 +4,69 @@
 #slider-controller > img{
     cursor: pointer;
 }
+
+#news:before, 
+#eventcalendar:before, 
+#services:before,
+#analytics:before,
+#estate:before,
+#reviews:before {
+    position: relative;
+    top: 0;
+    left: -7%;
+    font-size: 200px;
+    opacity: .5;
+    color: #eff3f4;
+    font-weight: bolder;
+}
+
+#news header,
+#news main,
+#eventcalendar header,
+#eventcalendar main,
+#services header,
+#services main,
+#analytics header,
+#analytics main,
+#estate header,
+#estate main,
+#reviews header,
+#reviews main {
+    position: relative;
+    z-index: 1;
+}
+
+#news:before {
+    content: 'NEWS';
+    color: white;
+}
+
+#eventcalendar:before {
+    content: 'EVENTS';
+    color: white;
+}
+
+#services:before {
+    content: 'SERVICES';
+    left: -39vw;
+}
+
+#analytics:before {
+    content: 'ANALYTICS';
+    left: -39vw;
+    top: -8vw;
+    color: white;
+}
+
+#estate:before {
+    content: 'INVEST';
+    left: -37vw;
+    top: -16vw;
+}
+
+#reviews:before {
+    content: 'REVIEWS';
+    left: -40vw;
+    top: -15vw;
+    color: white;
+}

@@ -1,45 +1,25 @@
+let currentSlide = 0,
+    n;
+
 const SliderSwitcher_Back = (cntl,slider) => {
     cntl.click(function (e) { 
         var sllib = slider;
-        var eli;
+        n = currentSlide - 1;
+        
+        sllib.eq(currentSlide).attr('id','hide');
+        currentSlide = (n+sllib.length)%sllib.length;
+        sllib.eq(currentSlide).attr('id','');
 
-        for (let index = 0; index < sllib.length; index++) {
-            const switcher = sllib.eq(index);
-            
-            if(switcher.attr('id') == 'hide'){
-                if(index == 0){ eli = sllib.length - 1; }
-                else{ eli = index - 1; }
-                break;
-            }
-        }
-
-        sllib.attr('id','hide');
-
-        var switching = sllib.eq(eli);
-
-        switching.attr('id','');
     });
 }
 const SliderSwitcher_Go = (cntl,slider) => {
     cntl.click(function (e) { 
         var sllib = slider;
-        var eli;
-
-        for (let index = 0; index < sllib.length; index++) {
-            const switcher = sllib.eq(index);
-            
-            if(switcher.attr('id') == 'hide'){
-                if(index == (sllib.length - 1)){ eli = 0; }
-                else{ eli = index + 1; }
-                break;
-            }
-        }
-
-        sllib.attr('id','hide');
-
-        var switching = sllib.eq(eli);
-
-        switching.attr('id','');
+        n = currentSlide + 1;
+        
+        sllib.eq(currentSlide).attr('id','hide');
+        currentSlide = (n+sllib.length)%sllib.length;
+        sllib.eq(currentSlide).attr('id','');
     });
 }
 
@@ -55,8 +35,8 @@ $(document).ready(function () {
         $('#news > main footer#slider-controller img'),
         $('#services > main footer#slider-controller img'),
         $('#analytics > main footer#slider-controller img'),
-        $('#estate > main header#slider-controller img'),
-        $('#reviews > main header#slider-controller img')
+        $('#estate > main footer#slider-controller img'),
+        $('#reviews > main footer#slider-controller img')
     ];
     let sliders = [
         $('#news > main #slider-view .news-feed'),
@@ -70,6 +50,7 @@ $(document).ready(function () {
         const e = sliders[i],
               g = controlsGo[i],
               b = controlsBack[i];
+
 
         SliderSwitcher_Back(b,e);
         SliderSwitcher_Go(g,e);

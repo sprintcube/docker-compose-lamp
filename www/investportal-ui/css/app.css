@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@600&family=Roboto&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,600;0,700;0,800;1,300;1,400;1,600;1,700;1,800&display=swap');
 @import url('addons/feedblocks/services2estate.css');
 @import url('addons/lightbox.css');
 @import url('addons/docsicon.css');
@@ -9,15 +9,12 @@
 @import url('addons/feedblocks/reviews.css');
 @import url('addons/feedblocks/slidesshow.css');
 html,body{
-    font-family: 'Roboto', sans-serif;
+    font-family: 'Open Sans', sans-serif;
     overflow-x:hidden;
     margin-left: -1%;
     width: 102%;
     margin-top: 0%;
     margin-bottom: 0%;
-}
-h1, h2, h3, h4, h5, h6, strong{
-    font-family: 'Open Sans', sans-serif;
 }
 .header{
     width: 100%;
@@ -157,7 +154,7 @@ h1, h2, h3, h4, h5, h6, strong{
 }
 .main > .section{
     width: 100%;
-    height: 764px;
+    height: 800px;
     display: block;
     padding-bottom: 9%;
     padding-top: 4%;
@@ -193,8 +190,8 @@ h1, h2, h3, h4, h5, h6, strong{
 #news{ height:106px; padding-top: 8%; }
 #investsearch{ height: 412px; }
 #services{ height: 154px; padding-top: calc(1vw - 15px);}
-#analytics{ height: 263px; padding-top: 87px;padding-bottom: 217px;}
-#estate{ height: 185px;padding-top: 1vw;}
+#analytics{ height: 380px; padding-top: 87px;padding-bottom: 217px;}
+#estate{ height: 257px;padding-top: 1vw;}
 #reviews{ height: 245px; padding-top: 113px;padding-bottom: 135px;}
 #link-switcher{
     width: 100%;
@@ -403,6 +400,7 @@ h1, h2, h3, h4, h5, h6, strong{
 }
 #news > header, #investsearch > header, #eventcalendar > header{
     margin-left: 12vw;
+    top: -15vw;
 }
 
 #services > header .add-but, #estate > header .add-but{
@@ -423,7 +421,7 @@ h1, h2, h3, h4, h5, h6, strong{
 }
 #news > main{
     width: 100%;
-    margin-top: 2%;
+    margin-top: -13%;
 }
 #news > main #slider-controller{
     width: 10%;
@@ -439,14 +437,13 @@ h1, h2, h3, h4, h5, h6, strong{
 #news > main #slider-controller img{
     width: 18%;
     position: relative;
-    top: -165px;
+    top: -174px;
 }
 #news > main #slider-view{
     width: 71%;
     display: inline-block;
 }
 #news > main #slider-view .news-feed{
-   display: inline-block; 
    margin-left: -11%;
    margin-top: -1%;
 }
@@ -462,7 +459,7 @@ h1, h2, h3, h4, h5, h6, strong{
     font-size: 120%;
     text-decoration: none;
     font-weight: bold;
-    height: 73px;
+    height: 85px;
     overflow: hidden;
     text-overflow: ellipsis;
     word-spacing: 0.1em;
@@ -595,7 +592,7 @@ h1, h2, h3, h4, h5, h6, strong{
 #eventcalendar > main{
     width: 87%;
     margin-left: 10%;
-    margin-top: 2%;
+    margin-top: -13%;
 }
 #eventcalendar > main .calendar{
     border-top: solid 1px black;
@@ -638,6 +635,7 @@ h1, h2, h3, h4, h5, h6, strong{
     color: #0079bf;
     font-size: 152%;
     display: block;
+    font-weight: bold;
 }
 #eventcalendar > main .calendar .event-location{
     font-size: 109%;
@@ -656,9 +654,9 @@ h1, h2, h3, h4, h5, h6, strong{
     width: 20%;
     float: left;
     display: inline-table;
-    position: relative;
     left: 4vw;
     padding-top: 2vw;
+    top: 0vw;
 }
 #services > header a{
    text-decoration: none;
@@ -672,8 +670,8 @@ h1, h2, h3, h4, h5, h6, strong{
     float: right;
     display: inline-table;
 
-    position: relative;
     right: 3vw;
+    top: -16vw;
 }
 #services > main #slider-controller{
     width: 10%;
@@ -689,7 +687,6 @@ h1, h2, h3, h4, h5, h6, strong{
     display: inline-table;
 }
 #services > main #slider-view .service-feed{
-    display: block;
     margin-left: -11%;
 }
 #services > main #slider-view .service-feed .service{
@@ -761,16 +758,16 @@ h1, h2, h3, h4, h5, h6, strong{
     width: 20%;
     float: left;
     display: inline-table;
-    position: relative;
     left: 4vw;
+    top: -7vw;
 }
 #analytics > main{
     width: 70%;
     float: right;
     display: inline-table;
     margin-top: -4%;
-    position: relative;
     right: 3vw;
+    top: -25vw;
 }
 #analytics > main #slider-controller{
     width: 10%;
@@ -786,12 +783,11 @@ h1, h2, h3, h4, h5, h6, strong{
     display: inline-table;
 }
 #analytics > main #slider-view .analytic-feed{
-   display: block;
    margin-left: -13%;
 }
 #analytics > main #slider-view .analytic-feed .analytic{
     width: 15vw;
-    height: 358px;
+    height: 360px;
     display: inline-table;
     box-shadow: 3px -1px 11px 3px darkgray;
     margin-left: 6%;
@@ -842,16 +838,16 @@ h1, h2, h3, h4, h5, h6, strong{
     width: 20%;
     float: left;
     display: inline-table;
-    position: relative;
     left: 4vw;
     padding-top: 2vw;
+    top: -16vw;
 }
 #estate > main{
     width: 70%;
     float: right;
     display: inline-table;
-    position: relative;
     right: 3vw;
+    top: -32vw;
 }
 #estate > main #slider-controller{
     width: 10%;
@@ -867,7 +863,6 @@ h1, h2, h3, h4, h5, h6, strong{
     display: inline-table;
 }
 #estate > main #slider-view .estat-feed{
-    display: block;
     margin-left: -11%;
 }
 #estate > main #slider-view .estat-feed .estat{
@@ -968,16 +963,15 @@ h1, h2, h3, h4, h5, h6, strong{
     width: 20%;
     float: left;
     display: inline-table;
-    position: relative;
     left: 4vw;
-    top: 1vw;
+    top: -13vw;
 }
 #reviews > main{
     width: 70%;
     float: right;
     display: inline-table;
-    position: relative;
     right: 3vw;
+    top: -32vw;
 }
 #reviews > main #slider-controller{
     width: 10%;
@@ -993,7 +987,6 @@ h1, h2, h3, h4, h5, h6, strong{
     display: inline-table;
 }
 #reviews > main #slider-view .review-feed{
-   display: block;
    margin-left: -12%;
 }
 #reviews > main #slider-view .review-feed .review{
@@ -1606,9 +1599,6 @@ h1, h2, h3, h4, h5, h6, strong{
     }
     #promo {
         height: 346px;
-    }
-    #promo > main.swiper-container .promo-feed .promoblock {
-        
     }
     #investsearch {
         height: 509px;
