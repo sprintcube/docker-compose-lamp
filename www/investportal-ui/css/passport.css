@@ -1,7 +1,7 @@
 @import url('services/lightbox-passport.css');
 @import url('passport/cart.css');
 #passport{
-    height: 632px;
+    height: 643px;
 }
 .passport-page {
     width: 76%;
@@ -9,7 +9,8 @@
     position: relative;
     float: left;
     left: 12%;
-    top: -9%;
+    top: -5%;
+    padding-bottom: 2%;
 }
 .passport-page > header, .passport-page > footer{
     width: 100%;
@@ -92,8 +93,6 @@
     border-top: solid 2px darkgray;
 }
 .passport-page > main #left-content #table-list .content td:nth-child(2){
-    border-left: solid 2px darkgray;
-    border-right: solid 2px darkgray;
     font-weight: bold;
     width: 41%;
 }

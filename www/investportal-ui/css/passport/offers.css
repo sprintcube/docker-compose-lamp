@@ -1,6 +1,6 @@
 @import url('../passport.css');
 #passport {
-    height: 445px;
+    height: 472px;
 }
 .passport-page {
     height: calc(329px * 2);
@@ -19,7 +19,6 @@
     padding-bottom: 10px;
 }
 .passport-page > main #left-content #table-list .content td:nth-child(3){
-    border-right: solid 2px gray;
     width: 23%;
     padding-top: 10px;
     padding-bottom: 10px;
@@ -39,6 +38,6 @@
 }
 .passport-page > footer #left-content{
     position: relative;
-    top: 499%;
+    top: 189px;
     left: -73%;
 }

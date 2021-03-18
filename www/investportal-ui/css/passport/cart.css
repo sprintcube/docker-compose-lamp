@@ -1,9 +1,6 @@
 @import url('../../css/passport.css');
 #passport {
-    height: 626px;
-}
-.passport-page {
-    height: calc(424px * 2);
+    height: 1510px;
 }
 .passport-page > main #left-content {
     overflow: auto;
@@ -42,7 +39,6 @@
     color: gray;
 }
 .passport-page > main #left-content .cart-data #table-list .content td:nth-child(4){
-    border-left: solid 2px gray;
     text-indent: 2%;
 }
 .passport-page > main #left-content .cart-data:nth-child(1) #table-list .content td:nth-child(1) {
