@@ -3,13 +3,13 @@
 #passport{
     height: 418px;
 }
-.passport-page{
-    width: 85%;
+.passport-page {
+    width: 76%;
     height: calc(315px * 2);
     background-color: white;
     position: relative;
     float: left;
-    left: 8%;
+    left: 12%;
     top: -9%;
 }
 .passport-page > header, .passport-page > footer{

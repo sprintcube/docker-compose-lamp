@@ -27,9 +27,11 @@ long_line_behaviour=1
 long_line_column=72
 
 [files]
-current_page=0
-FILE_NAME_0=852;PHP;0;EUTF-8;0;1;0;%2Fhome%2Fhead%2FРабочий%20стол%2FМладший%2FDocker%2Fdocker-compose-lamp%2Fwww%2Finvestportal%2Fbasic%2Fassets%2FAppAsset.php;0;4
+current_page=2
+FILE_NAME_0=860;PHP;0;EUTF-8;0;1;0;%2Fhome%2Fhead%2FРабочий%20стол%2FМладший%2FDocker%2Fdocker-compose-lamp%2Fwww%2Finvestportal%2Fbasic%2Fassets%2FAppAsset.php;0;4
 FILE_NAME_1=0;PHP;0;EUTF-8;0;1;0;%2Fhome%2Fhead%2FРабочий%20стол%2FМладший%2FDocker%2Fdocker-compose-lamp%2Fwww%2Finvestportal%2Fbasic%2Fcontrollers%2FSiteController.php;0;4
+FILE_NAME_2=2193;PHP;0;EUTF-8;0;1;0;%2Fhome%2Fhead%2FРабочий%20стол%2FМладший%2FDocker%2Fdocker-compose-lamp%2Fwww%2Finvestportal%2Fbasic%2Fconfig%2Fweb.php;0;4
+FILE_NAME_3=0;PHP;0;EUTF-8;0;1;0;%2Fhome%2Fhead%2FРабочий%20стол%2FМладший%2FDocker%2Fdocker-compose-lamp%2Fwww%2Finvestportal%2Fbasic%2Fweb%2Findex.php;0;4
 
 [VTE]
 last_dir=/home/head/Рабочий стол/Младший/Docker/docker-compose-lamp/www/investportal/basic/vendor/bower-asset
