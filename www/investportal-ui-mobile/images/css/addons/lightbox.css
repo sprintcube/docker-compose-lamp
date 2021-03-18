@@ -1,0 +1,10 @@
+#lightbox{
+    background-color: rgba(0, 0, 0, 0.377);
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    top: 0;
+    left: 0;
+}
+.lightbox-closed{ visibility: hidden; }

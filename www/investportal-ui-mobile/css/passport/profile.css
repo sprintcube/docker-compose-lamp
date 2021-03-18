@@ -1,0 +1,58 @@
+@import url('../passport.css');
+#passport {
+    height: 410px;
+}
+.passport-page {
+    height: calc(284px * 2);
+}
+.passport-page > main .profile-settings{
+    width: 32%;
+}
+.passport-page > main .profile-settings .editor{
+    display: block;
+    margin-top: 2%;
+}
+.passport-page > main .profile-settings .editor label{
+    display: block;
+    margin-top: 8px;
+    font-size: 80%;
+}
+.passport-page > main .profile-settings .editor input{
+    background-color: white;
+    font-size: 90%;
+    color:black;
+    border: solid 2px darkgray;
+    padding: 5px;
+    font-weight: bold;
+    text-indent: 1%;
+    margin-top: 12px;
+    width: 86%;
+}
+.passport-page > main .profile-settings .editor #control{
+    font-size: 100%;
+    display: inline-table;
+    margin-top: 15px;
+}
+.passport-page > main .profile-settings .editor #control:hover{
+    cursor: pointer;
+}
+.passport-page > main .profile-settings .editor #control i.inputing{
+    color: #0079bf;
+}
+.passport-page > main .profile-settings .editor input:focus{
+    border-color:#0079bf;
+}
+.passport-page > main .profile-settings .editor input:disabled{
+    font-weight: normal;
+    border: none;
+}
+.passport-page > main .profile-settings .editor input[type=password]:disabled{
+    color: gray;
+}
+.passport-page > footer{
+    position: relative;
+    top: -32%;
+}
+.passport-page > footer #left-content{
+    width: 100%;
+}

@@ -1,0 +1,30 @@
+#services > main #slider-controller img.controls-chromium{
+    top: 111px;
+}
+#estate > main #slider-controller img.controls-chromium{
+    top: 116px;
+}
+@media all and (min-width: 1024px) and (max-width: 1280px){
+    #services > main #slider-controller img.controls-chromium{
+        left: -22%;
+    }
+    #estate > main #slider-controller img.controls-chromium{
+        left: -6%;
+    }
+}
+@media all and (min-width: 1280px) and (max-width: 1366px){
+    #services > main #slider-controller img.controls-chromium{
+        left: -9%;
+    }
+    #estate > main #slider-controller img.controls-chromium{
+        left: -1%;
+    }
+}
+@media all and (min-width: 1366px) and (max-width: 1400px){
+    #services > main #slider-controller img.controls-chromium{
+        left: -6%;
+    }
+    #estate > main #slider-controller img.controls-chromium{
+        left: -6%;
+    }
+}

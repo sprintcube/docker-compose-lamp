@@ -1,2 +1,3 @@
 127.0.0.1 investportal-ui.aplex
 127.0.0.1 investportal.aplex
+127.0.0.1 investportal-ui.aplex.pda

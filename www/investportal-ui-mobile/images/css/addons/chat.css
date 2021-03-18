@@ -1,0 +1,117 @@
+#chat-lightbox{
+    width: 30%;
+    position: fixed;
+    bottom: 1%;
+    right: 2%;
+    z-index: 99;
+}
+.lightbox-closed{
+    visibility: hidden;
+}
+#chat-lightbox header{
+    display: inline-table;
+    width: 10%;
+    float: left;
+}
+#chat-lightbox header img{
+    width: 40px;
+    height: 40px;
+    position: realtive;
+    top: 80px;
+}
+#chat-lightbox header img:hover{
+    cursor: pointer;
+}
+#chat-lightbox main.chat{
+    display: inline-table;
+    width: 80%;
+    margin-left: 2%;
+    box-shadow: 0 0 10px dodgerblue;
+    border-radius: 10px;
+}
+main.chat > #header{
+    height: 60px;
+    background-color: dodgerblue;
+}
+main.chat > #footer{ 
+    height: 60px;
+    background-color: darkgray; 
+}
+main.chat > #content{
+    height: 260px;
+    overflow: auto;
+    background-color: white;
+}
+main.chat > #header .consultant-cont{
+    margin-left: 2%;
+}
+main.chat > #header .consultant-cont #avatar{
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+}
+main.chat > #header .consultant-cont span{
+    margin-left: 3%;
+    display: block;
+    padding-top: 5px;
+    color: white;
+}
+main.chat > #header .consultant-cont span#firstname{
+    font-weight:bold;
+    font-size: 120%;
+}
+main.chat > #header .consultant-cont span#staff{
+    font-size: 80%;
+}
+main.chat > #footer #message{
+    width: 95%;
+    height: 45px;
+    margin-left: 2%;
+    margin-top: 4px;
+    font-size: 100%;
+    border-radius: 5px;
+    resize: none;
+}
+main.chat > #footer #message:focus{
+    border: solid 2px lightgray;
+}
+main.chat > #content #message{
+    display: block;
+    margin-top: 2%;
+    width: 100%;
+    height: 130px;
+}
+main.chat > #content #message span{
+    display: inline-table;
+    width: 10%;
+    color: gray;
+    font-size: 90%;
+    text-align: center;
+    padding-top: 10px;
+}
+main.chat > #content #message main{
+    display: inline-table;
+    width: 70%;
+    font-size: 100%;
+    background-color: lightgray;
+    padding: 4%;
+    border-radius: 5px;
+}
+main.chat > #content #message[data-eventer='sender'] span{
+   float: left;
+   margin-left: 2%;
+}
+main.chat > #content #message[data-eventer='sender'] main{
+   float: right;
+   margin-right: 2%;
+}
+main.chat > #content #message[data-eventer='inbox'] span{
+   float: right;
+   margin-right: 2%;
+}
+main.chat > #content #message[data-eventer='inbox'] main{
+    float: left;
+    margin-left: 2%;
+    background-color: dodgerblue;
+    color: white;
+}

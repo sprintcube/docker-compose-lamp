@@ -1,0 +1,142 @@
+@import url('../css/services/objects-searchform-content.css');
+.window-closed{ display: none; }
+#objects{ height: auto; }
+#objects > .projects-search-form{
+    width: 75%;
+    height: auto;
+    margin-left: 13%;
+    background-color: white;
+}
+#objects > .projects-search-form header{
+   color: black;
+   height: 72px;
+}
+#objects > .projects-search-form header .title{
+    margin-left: -24%;
+    font-size: 90%;
+ }
+#objects > .projects-search-form header #left-content, #objects > .projects-search-form footer #left-content, #objects > .projects-search-form footer #left-content-add{
+    margin-left: 2%;
+    float: left;
+    margin-top: 3%;
+}
+#objects > .projects-search-form footer #left-content, #objects > .projects-search-form footer #left-content-add{
+    display: block;
+    width: 90%;
+    margin-left: 4%;
+    float: left;
+    margin-top: 3%;
+}
+#objects > .projects-search-form header #right-content{
+    float: right;
+    margin-right: 2%;
+    margin-top: 3%;
+}
+#objects > .projects-search-form header #right-content .close{
+    width: 90%;
+}
+#objects > .projects-search-form main{
+    height: calc(72px * 5);
+}
+#objects > .projects-search-form footer{
+    height: calc(72px * 4);
+    padding-bottom: 2%;
+}
+#objects > .objects-list{
+    width: 80%;
+    margin-left: 13%;
+    margin-top: 3%;
+}
+#objects > .objects-list header{
+    color: black;
+}
+#objects > .objects-list header h2{
+    margin-left: -8%;
+}
+#objects > .objects-list main table{
+    width: 91%;
+    border-bottom: solid 2px gray;
+    border-spacing: initial;
+}
+#objects > .objects-list main table .header{
+    color: gray;
+    font-size: 80%;
+    text-align: left;
+}
+#objects > .objects-list main table .header th{
+    font-weight: normal;
+}
+#objects > .objects-list main table .content{
+    height: 39px;
+}
+#objects > .objects-list main table .content td{
+    font-size: 90%;
+    border-top: solid 2px gray;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+#objects > .objects-list main table .content td:nth-child(2){
+    font-weight: bold;
+}
+#objects > .objects-list main table .content td:nth-child(2) a{
+    color: #0079bf;
+    text-decoration: none;
+}
+#objects > .objects-list main table .content td:nth-child(2) a:hover{
+    text-decoration: underline;
+}
+#objects > .objects-list main table .content td:nth-child(3){
+    font-weight: bold;
+}
+
+#objects > .projects-search-form main form .selectors .selector #type-selector{
+    position: absolute;
+    left: -9999px;
+}
+
+#objects > .projects-search-form main form .selectors .selector #type-selector + span{
+    display: inline-block;
+    position: relative;
+    padding-left: 28px;
+    line-height: 20px;
+    cursor: pointer;
+}
+
+#objects > .projects-search-form main form .selectors .selector #type-selector + span:before{
+    content: "";
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    width: 18px;
+    height: 18px;
+    border: 1px solid lightgray;
+    background-color: lightgray;
+}
+
+#objects > .projects-search-form main form .selectors .selector #type-selector + span:before{
+    border-radius: 2px;
+}
+
+#objects > .projects-search-form main form .selectors .selector #type-selector:checked + span:after{
+    content: "";
+    position: absolute;
+    -webkit-transition: all 0.2s ease;
+    -moz-transition: all 0.2s ease;
+    -o-transition: all 0.2s ease;
+    transition: all 0.2s ease;
+}
+
+#objects > .projects-search-form main form .selectors .selector #type-selector:checked + span:after{
+    left: 3px;
+    top: 4px;
+    width: 10px;
+    height: 5px;
+    border-radius: 1px;
+    border-left: 4px solid #0079bf;
+    border-bottom: 4px solid #0079bf;
+    -webkit-transform: rotate(-45deg);
+    -moz-transform: rotate(-45deg);
+    -o-transform: rotate(-45deg);
+    -ms-transform: rotate(-45deg);
+    transform: rotate(-45deg);
+}
