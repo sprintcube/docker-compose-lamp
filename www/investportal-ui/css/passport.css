@@ -1,11 +1,10 @@
 @import url('services/lightbox-passport.css');
 @import url('passport/cart.css');
 #passport{
-    height: 418px;
+    height: 632px;
 }
 .passport-page {
     width: 76%;
-    height: calc(315px * 2);
     background-color: white;
     position: relative;
     float: left;
@@ -67,8 +66,10 @@
 .passport-page > main #left-content #table-list{
     width: 100%;
     border-bottom: solid 2px darkgray;
-    font-size: 96%;
+    font-size: 87%;
     border-spacing: 0px;
+    overflow: auto;
+    height: 426px;
 }
 .passport-page > main #left-content #table-list .header{
     height: 35px;
@@ -85,7 +86,7 @@
     padding-left: 1%;
 }
 .passport-page > main #left-content #table-list .content{
-    height: 39px;
+    height: 38px;
 }
 .passport-page > main #left-content #table-list .content td{
     border-top: solid 2px darkgray;
@@ -99,13 +100,13 @@
 .passport-page > main #left-content #table-list .content td .status {
     background-color: lightgray;
     color: white;
-    width: 78%;
+    width: 53px;
     padding-top: 20px;
     padding-bottom: 20px;
     text-transform: uppercase;
-    font-size: 61%;
+    font-size: 67%;
     text-align: center;
-    margin-left: 13%;
+    margin-left: 1%;
 }
 .passport-page > main #right-content .nav{
     list-style-type: none;

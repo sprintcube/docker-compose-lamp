@@ -206,7 +206,7 @@ html,body{
     color: #0079bf;
     font-size: 79%;
     text-decoration: none;
-    padding-right: 1%;
+    padding-right: 12px;
     position: relative;
     left: 6%;
 }
@@ -216,7 +216,7 @@ html,body{
 }
 #link-switcher > a:not(:nth-child(1)){
     margin-left: 0%;
-    padding-left: 1%;
+    padding-left: 12px;
 }
 #link-switcher > a.active{ font-weight: bold; }
 #link-switcher > a:hover{
