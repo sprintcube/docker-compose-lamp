@@ -613,6 +613,7 @@ html,body{
 #eventcalendar > main .calendar .date{
     position: relative;
     top: 60px;
+    margin-left: -20%;
 }
 #eventcalendar > main .calendar main{
     display: inline;
