@@ -12,6 +12,7 @@
     color: gray;
     padding-top: 10px;
     padding-bottom: 10px;
+    width: 7%;
 }
 .passport-page > main #left-content #table-list .content td:nth-child(2){
     width: 39%;
@@ -40,4 +41,23 @@
     position: relative;
     top: 189px;
     left: -73%;
+}
+.passport-page > main #left-content #table-list .content td:nth-child(1)::after,  .passport-page > main #left-content #table-list .content td:nth-child(3)::before, .passport-page > main #left-content #table-list .content td:nth-child(4)::before{
+    content: url('../../images/icons/leftrightborder.png');
+}
+.passport-page > main #left-content #table-list .content td:nth-child(1)::after {
+    float: right;
+    height: 55px;
+    margin-top: -29px;
+    position: relative;
+    top: 16px;
+    left: -9%;
+}
+.passport-page > main #left-content #table-list .content td:nth-child(3)::before, .passport-page > main #left-content #table-list .content td:nth-child(4)::before{
+    float: left;
+    height: 55px;
+    margin-top: -36px;
+    position: relative;
+    top: 19px;
+    left: -5%;
 }

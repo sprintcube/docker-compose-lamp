@@ -9,6 +9,7 @@
     <script src="https://yastatic.net/jquery/3.3.1/jquery.min.js"></script>
     <script src="https://kit.fontawesome.com/97c3285af2.js" crossorigin="anonymous"></script>
     <style>
+        
         .add-but {
             text-align: center;
             color: white;
@@ -33,6 +34,26 @@
         }
         .passport-page > main #left-content #table-list .content td:nth-child(2) {
             width: 62%;
+        }
+        .passport-page > main #left-content #table-list .content td:nth-child(1)::after,  .passport-page > main #left-content #table-list .content td:nth-child(3)::before{
+            content: url('images/icons/leftrightborder.png');
+            overflow: hidden;
+        }
+        .passport-page > main #left-content #table-list .content td:nth-child(1)::after{
+            float: right;
+            height: 55px;
+            margin-top: -24px;
+            position: relative;
+            top: 11px;
+            left: 31%;
+        }
+        .passport-page > main #left-content #table-list .content td:nth-child(3)::before{
+            float: left;
+            height: 55px;
+            margin-top: -36px;
+            position: relative;
+            top: 19px;
+            left: -5%;
         }
         .passport-page > main #left-content #table-list .content td:nth-child(3) {
             width: 27%;

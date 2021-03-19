@@ -1,8 +1,8 @@
-#news{ height: 1985px; }
+#news{ height: 2020px; }
 .news-feed{
-  width: 80%;
-  margin-left: 10%;
-  margin-top: -21%;
+  width: 82%;
+  margin-left: 9%;
+  margin-top: -3%;
 }
 .news-feed > header{
   position: relative;

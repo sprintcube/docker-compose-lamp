@@ -400,7 +400,6 @@ html,body{
 }
 #news > header, #investsearch > header, #eventcalendar > header{
     margin-left: 12vw;
-    top: -15vw;
 }
 
 #services > header .add-but, #estate > header .add-but{
@@ -445,7 +444,7 @@ html,body{
 }
 #news > main #slider-view .news-feed{
    margin-left: -11%;
-   margin-top: -1%;
+   margin-top: 22%;
 }
 #news > main #slider-view .news-feed .news{
     display: inline-block;
@@ -592,7 +591,7 @@ html,body{
 #eventcalendar > main{
     width: 87%;
     margin-left: 10%;
-    margin-top: -13%;
+    margin-top: 1%;
 }
 #eventcalendar > main .calendar{
     border-top: solid 1px black;
@@ -657,7 +656,6 @@ html,body{
     display: inline-table;
     left: 4vw;
     padding-top: 2vw;
-    top: 0vw;
 }
 #services > header a{
    text-decoration: none;
@@ -671,8 +669,8 @@ html,body{
     float: right;
     display: inline-table;
 
-    right: 3vw;
-    top: -16vw;
+    margin-right: 3vw;
+    margin-top: -12vw;
 }
 #services > main #slider-controller{
     width: 10%;
@@ -760,15 +758,14 @@ html,body{
     float: left;
     display: inline-table;
     left: 4vw;
-    top: -7vw;
+    top: 2vw;
 }
 #analytics > main{
     width: 70%;
     float: right;
     display: inline-table;
-    margin-top: -4%;
-    right: 3vw;
-    top: -25vw;
+    margin-top: -10%;
+    margin-right: 3vw;
 }
 #analytics > main #slider-controller{
     width: 10%;
@@ -841,14 +838,13 @@ html,body{
     display: inline-table;
     left: 4vw;
     padding-top: 2vw;
-    top: -16vw;
 }
 #estate > main{
     width: 70%;
     float: right;
     display: inline-table;
-    right: 3vw;
-    top: -32vw;
+    margin-right: 3vw;
+    margin-top: -11vw;
 }
 #estate > main #slider-controller{
     width: 10%;
@@ -965,14 +961,14 @@ html,body{
     float: left;
     display: inline-table;
     left: 4vw;
-    top: -13vw;
+    top: 1vw;
 }
 #reviews > main{
     width: 70%;
     float: right;
     display: inline-table;
-    right: 3vw;
-    top: -32vw;
+    margin-right: 3vw;
+    margin-top: -8vw;
 }
 #reviews > main #slider-controller{
     width: 10%;
@@ -1248,7 +1244,7 @@ html,body{
         margin-left: -10%;
     }
     #services > main {
-        right: 2vw;
+        margin-right: 2vw;
     }
     #services > main #slider-view .service-feed {
         margin-left: -14%;
@@ -1263,7 +1259,20 @@ html,body{
         display: inherit;
         right: -2%;
         position: relative;
-        top: -8%;
+        top: -12%;
+    }
+    .header > #header_bottom .hb_bottom header .header-informer header {
+        margin-left: -55%;
+    }
+    .header > #header_bottom .hb_bottom header .header-informer main {
+        margin-left: -38%;
+    }
+    .header > #header_bottom .hb_bottom header .header-informer footer {
+        margin-top: -12%;
+        margin-right: 1%;
+    }
+    .header > #header_bottom .hb_bottom footer nav {
+        font-size: 76%;
     }
     #services > main #slider-view .service-feed .service {
         height: 200px;
@@ -1285,10 +1294,12 @@ html,body{
         left: 11vw;
     }
     #promo > main.swiper-container .promo-feed .promoblock {
-        height: 410px;
+        height: 430px;
+        margin-left: calc(30px / 2);
+        width: 24vw;
     }
     #promo > header .marketing-info {
-        margin-top: 6%;
+        margin-top: -14%;
         margin-right: -4%;
     }
     #promo > header .marketing-info header img {
@@ -1706,7 +1717,7 @@ html,body{
         margin-left: 5%;
     }
     #analytics > main{
-        margin-top: -3%;
+        margin-top: -9%;
     }
 }
 @media all and (aspect-ratio: 5/4){
