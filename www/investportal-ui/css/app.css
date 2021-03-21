@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,600;0,700;0,800;1,300;1,400;1,600;1,700;1,800&display=swap');
+@import url('addons/adaptiveheader.css');
 @import url('addons/feedblocks/services2estate.css');
 @import url('addons/lightbox.css');
 @import url('addons/docsicon.css');
@@ -1098,15 +1099,36 @@ html,body{
 	color: white;
 	text-decoration: none;
 }
+@media all and (min-width: 320px) and (max-width: 640px){
+    .header > #header_bottom, .header > #header_top .ht_header span, .footer > main{
+        display: none;
+    }
+    .footer{ height: calc(135px * 2); }
+    .footer > header {
+        width: 100%;
+        position: relative;
+    }
+}
+@media all and (min-width: 640px) and (max-width: 1024px){
+    .header > #header_bottom, .header > #header_top .ht_header span, .footer > main{
+        display: none;
+    }
+    .footer{ height: calc(135px * 2); }
+    .footer > header {
+        width: 50%;
+        position: relative;
+    }
+    .header > #header_bottom_adaptive footer #adaptive-window{ width: 50%; }
+}
 @media all and (min-width:1024px) and (max-width: 1280px){
     .header > #header_top {
         width: 28%;
     }
+    .header > #header_bottom{
+        display: none;
+    }
     #promo > header .links {
         left: 14vw;
-    }
-    .header > #header_bottom {
-        display: none;
     }
     #promo {
         height: 317px;
@@ -1197,6 +1219,9 @@ html,body{
     #investsearch > main.swiper-container .popular-objects .popular-object main img {
         height: 149px;
     }
+    .footer > main #category_menu {
+        padding-right: 2%;
+    }
     .footer > main #category_menu .catname {
         font-size: 100%;
     }
@@ -1261,6 +1286,7 @@ html,body{
         position: relative;
         top: -12%;
     }
+    .header > #header_bottom_adaptive{ display: none; }
     .header > #header_bottom .hb_bottom header .header-informer header {
         margin-left: -55%;
     }
@@ -1453,6 +1479,7 @@ html,body{
         position: relative;
         right: -3%;
     }
+    .header > #header_bottom_adaptive{ display: none; }
     #services > main #slider-view .service-feed .service {
         height: 250px;
     }
@@ -1554,6 +1581,7 @@ html,body{
         position: relative;
         right: -2%;
     }
+    .header > #header_bottom_adaptive{ display: none; }
     #promo {
         height: 336px;
     }
@@ -1605,6 +1633,7 @@ html,body{
     }
 }
 @media all and (min-width:1600px) and (max-width: 1800px){
+    .header > #header_bottom_adaptive{ display: none; }
     #promo > header .marketing-info {
         margin-right: -7vw;
         margin-top: -9vw;
@@ -1650,6 +1679,7 @@ html,body{
         position: relative;
         right: -1%;
     }
+    .header > #header_bottom_adaptive{ display: none; }
     #analytics > main #slider-view .analytic-feed .analytic{
         width: 16vw;
         margin-left: 4%;
@@ -1662,6 +1692,7 @@ html,body{
         position: relative;
         right: -1%;
     }
+    .header > #header_bottom_adaptive{ display: none; }
     #promo > header .marketing-info {
         margin-right: -10vw;
     }
@@ -1683,6 +1714,7 @@ html,body{
         position: relative;
         right: 0%;
     }
+    .header > #header_bottom_adaptive{ display: none; }
     #promo > header .marketing-info {
         margin-right: -16%;
         margin-top: -8vw;

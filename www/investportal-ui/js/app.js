@@ -150,3 +150,19 @@ $(document).ready(function () {
 
     
 });
+
+const AdaptiveButtonEventer = () => {
+    $('.header > #header_bottom_adaptive header ul.adaptive-buttons li').click(function () { 
+        let curwin = $('.header > #header_bottom_adaptive footer #adaptive-window').eq($(this).index());
+        if(curwin.css('display') == 'none'){
+            curwin.css('display','');
+        }
+        else{
+            curwin.css('display','none');
+        }
+    });
+}
+
+$(document).ready(function () {
+    AdaptiveButtonEventer();
+});

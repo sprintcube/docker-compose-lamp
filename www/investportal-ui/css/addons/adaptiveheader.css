@@ -1,0 +1,86 @@
+.header > #header_bottom_adaptive {
+    float: right;
+    margin-right: 6%;
+}
+.header > #header_bottom_adaptive header {
+    position: relative;
+    top: -2vw;
+}
+.header > #header_bottom_adaptive header ul.adaptive-buttons{
+    list-style-type: none;
+    font-size: 27px;
+}
+.header > #header_bottom_adaptive header ul.adaptive-buttons li{
+    display: inline-table;
+    padding-left: 10px;
+}
+.header > #header_bottom_adaptive header ul.adaptive-buttons li:hover{
+    cursor: pointer;
+}
+.header > #header_bottom_adaptive footer #adaptive-window{
+    position: absolute;
+    z-index: 2;
+    right: 0;
+    margin-top: 8px;
+    width: 100vw;
+    background-color: white;
+    height: 70%;
+    overflow: auto;
+    padding-bottom: 1%;
+    box-shadow: -8px 11px 10px 5px rgba(50, 50, 50, 0.75);
+}
+.menu > header{
+    width: 100%;
+    margin-top: 6%;
+    display: block;
+}
+.menu > header .welcome-link{
+    float: left;
+    margin-left: 2%;
+    font-size: 90%;
+}
+.menu > header .welcome-link a{
+    color: #0079bf;
+    text-decoration: none;
+}
+.menu > header .exchange-selector {
+    float: right;
+    margin-right: 2%;
+}
+.menu > header .exchange-selector #regexchange {
+    color: #0079bf;
+    margin-top: 0%;
+}
+.menu > main {
+    display: block;
+    margin-top: 16%;
+}
+.menu > main nav {
+    margin-left: 2%;
+    font-size: 110%;
+    text-transform: uppercase;
+    font-weight: 700;
+}
+.menu > main nav div{
+    display: block;
+    padding-top: 2px;
+    padding-bottom: 2px;
+}
+.menu > main nav div.active{
+    border-right: solid 12px #0079bf;
+}
+.menu > main nav div a{
+    color: #0079bf;
+    text-decoration: none;
+}
+.menu > footer{
+    display: block;
+    margin-top: 4%;
+}
+.menu >  footer a{
+    padding-right: 4%;
+}
+
+
+
+
