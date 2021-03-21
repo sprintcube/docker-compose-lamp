@@ -97,13 +97,14 @@
 .news-feed >  header #top-feed .right-content .last-feed-cont #cont-content ul li span{ 
   color: black;
   font-size: 60%;
-  height: 54px;
+  height: 98px;
   overflow: hidden;
   display: block;
   padding-top: 3%;
 }
 .news-feed > main{
-  margin-top: 46%;
+  margin-top: 44%;
+  display: block;
 }
 .news-feed > main #light-feed{
   padding-top: 2%;
@@ -155,6 +156,7 @@
 }
 .news-feed > footer{
   margin-top: 5%;
+  display: block;
 }
 .news-feed > footer #down-feed{
   padding-top: 1%;
@@ -195,18 +197,67 @@
   height: 55px;
   margin-top: 4%;
 }
-@media all and (max-width: 1280px){
+@media all and (min-width: 320px) and (max-width: 1024px){
+  .news-feed {
+    width: 100vw;
+    margin-left: 9%;
+  }
+  .news-feed > header #top-feed .left-content {
+    margin-left: -14%;
+    width: 100%;
+  }
+  .news-feed > header #top-feed .right-content {
+    width: 100%;
+    margin-right: 12%;
+  }
+  .news-feed > main #light-feed .light-feed-cont #cont-content ul li {
+    width: 99%;
+    margin-left: -10%;
+    padding-bottom: 20px;
+  }
+  .news-feed > footer #down-feed .down-feed-cont #cont-content ul li {
+    width: 91%;
+    display: block;
+    margin-left: -10%;
+    margin-top: 5%;
+  }
   #news {
-    height: 2120px;
+    height: 4966px;
   }
-  .news-feed > main {
-    margin-top: 66%;
-  }
-  .news-feed > header #top-feed .left-content header img, .news-feed > header #top-feed .right-content .last-feed-cont #cont-content ul li img{
-    width: 97%;
-  }
-  .news-feed > footer #down-feed .down-feed-cont #cont-content ul li img {
-    width: 106%;
+  .news-feed > main #light-feed .light-feed-cont #cont-header hr{
+    color: transparent;
   }
 
+}
+@media all and (min-width: 320px) and (max-width: 640px){
+  .news-feed > main #light-feed .light-feed-cont #cont-header span#cont-title {
+    padding-left: 3%;
+  }
+}
+@media all and (min-width: 400px) and (max-width: 640px){
+  .news-feed > main {
+    margin-top: 0%;
+  }
+}
+@media all and (min-width: 640px) and (max-width: 1024px){
+  
+  .news-feed > main #light-feed .light-feed-cont #cont-header {
+    margin-left: -1%;
+  }
+  .news-feed > main #light-feed .light-feed-cont #cont-content ul li {
+    width: 86%;
+    margin-left: -4%;
+  }
+  .news-feed > header #top-feed .right-content {
+    margin-right: 7%;
+  }
+  .news-feed > header #top-feed .right-content .last-feed-cont #cont-content ul li {
+    width: 46%;
+  }
+  #news {
+    height: 5225px;
+  }
+  .news-feed > footer #down-feed .down-feed-cont #cont-content ul li {
+    margin-left: -3%;
+  }
 }

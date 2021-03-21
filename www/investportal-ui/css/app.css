@@ -1103,6 +1103,9 @@ html,body{
     .header > #header_bottom, .header > #header_top .ht_header span, .footer > main{
         display: none;
     }
+    #link-switcher {
+        padding-bottom: 6%;
+    }
     .footer{ height: calc(135px * 2); }
     .footer > header {
         width: 100%;
@@ -1112,6 +1115,9 @@ html,body{
 @media all and (min-width: 640px) and (max-width: 1024px){
     .header > #header_bottom, .header > #header_top .ht_header span, .footer > main{
         display: none;
+    }
+    #link-switcher {
+        padding-bottom: 4%;
     }
     .footer{ height: calc(135px * 2); }
     .footer > header {
@@ -1127,6 +1133,7 @@ html,body{
     .header > #header_bottom{
         display: none;
     }
+    .header > #header_bottom_adaptive footer #adaptive-window{ width: 50%; }
     #promo > header .links {
         left: 14vw;
     }
