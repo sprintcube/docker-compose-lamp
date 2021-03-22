@@ -1106,6 +1106,8 @@ html,body{
     #link-switcher {
         padding-bottom: 6%;
     }
+    #link-switcher > a { font-size: 55%; }
+    #link-switcher > #delimeter { font-size: 52%; }
     .footer{ height: calc(135px * 2); }
     .footer > header {
         width: 100%;

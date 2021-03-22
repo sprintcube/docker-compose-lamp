@@ -60,15 +60,36 @@
     font-size: 93%;
     border: none;
     padding: 8px;
+    margin-top: 3%;
 }
-@media all and (max-width: 1400px){
-    #objects > .projects-search-form footer .filter {
-        width: 60%;
+@media all and (min-width: 320px) and (max-width: 640px){
+    #objects > .projects-search-form main form .selectors .selector {
+        padding-bottom: 4px;
     }
-    #objects > .projects-search-form main form .selectors {
-        width: 45%;
+    #objects > .projects-search-form footer .filter .parameters .parameter-form #text-from {
+        width: calc(20% * 3);
     }
-    #objects > .projects-search-form main form .selectors .selector #type-selector + span {
-        font-size: 69%;
+    #objects > .projects-search-form footer .filter .parameters .parameter-form #text-to {
+        display: block;
+        width: calc(20% * 4);
+        margin-top: 6%;
+    }
+}
+@media all and (min-width: 640px) and (max-width: 1024px){
+    #objects > .projects-search-form main form .selectors .selector {
+        padding-bottom: 4px;
+    }
+    #objects > .projects-search-form footer .filter .parameters .parameter-form #text-from {
+        width: calc(20% * 3);
+    }
+    #objects > .projects-search-form footer .filter .parameters .parameter-form #text-to {
+        display: block;
+        width: calc(20% * 4);
+        margin-top: 6%;
+    }
+}
+@media all and (min-width: 1024px) and (max-width: 1280px){
+    #objects > .projects-search-form footer .filter .parameters .parameter-form #text-to {
+        margin-top: 2%;
     }
 }

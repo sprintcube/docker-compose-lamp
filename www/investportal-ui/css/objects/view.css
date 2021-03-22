@@ -238,3 +238,45 @@ span.view-title{
 .image-current{
     opacity: 0.65;
 }
+@media all and (min-width: 320px) and (max-width: 1024px){
+    .object-viewer {
+        width: 80%;
+        margin-left: 4%;
+    }
+    .object-viewer > .left-content { width: 100%; }
+    .object-viewer > .right-content { width: 100%; }
+    .docs > a{ display: none; }
+}
+@media all and (min-width: 320px) and (max-width: 640px){
+    .object-viewer > .left-content header .object-contacts .contact {
+        width: 84%;
+        margin-top: 5%;
+    }
+    #images-slider {
+        margin-top: -28%;
+        height: 354px;
+    }
+    #images-slider > .content #current {
+        height: 151px;
+    }
+    #images-slider > .footer .image-switcher img {
+        height: 37px;
+    }
+    #images-slider > .header header.switcher,
+    #images-slider > .header footer.switcher { top: 157%; }
+    #images-slider > .header header.switcher{ left: -4%; }
+    .object-viewer > .right-content footer .view-player {
+        height: 165px;
+    }
+}
+@media all and (min-width: 1024px) and (max-width: 1280px){
+    #images-slider {
+        margin-top: -28%;
+        height: 616px;
+    }
+    #images-slider > .content #current {
+        width: 90%;
+        height: 337px;
+        transform: scaleY(0.8);
+    }
+}

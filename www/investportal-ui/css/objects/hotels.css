@@ -303,7 +303,36 @@
 .range-form > input[type="range"]:focus::-ms-fill-upper {
     background: #0079bf;
  }
- @media all and (max-width: 1500px){
+@media all and (min-width: 320px) and (max-width: 1024px){
+    #objects > .projects-search-form footer {
+        margin-top: -57px;
+    }
+    .objects-adding-search > header #left-content, .objects-adding-search > header #right-content {
+        width: 100%;
+    }
+    #objects > .projects-search-form main header #right-content {
+        float: left;
+        margin-left: -6%;
+    }
+    .objects-adding-search > main header form div {
+        margin-top: 15%;
+    }
+    #objects > .projects-search-form footer #left-content {
+        width: 100%;
+        margin-top: 3%;
+    }
+    .objects-adding-search > footer #right-content {
+        float: left;
+        width: 100%;
+        margin-top: 15%;
+        margin-left: 4%;
+    }
+}
+@media all and (min-width: 640px) and (max-width: 1024px){
+    #objects > .projects-search-form footer #left-content { width: 55%; }
+    .objects-adding-search > footer #right-content { width: 37%; }
+}
+@media all and (max-width: 1024px){
     .objects-adding-search > main footer {
         display: none;
     }

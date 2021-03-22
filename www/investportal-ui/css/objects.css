@@ -12,7 +12,7 @@
    height: 72px;
 }
 #objects > .projects-search-form header .title{
-    margin-left: -24%;
+    margin-left: -5vw;
     font-size: 90%;
  }
 #objects > .projects-search-form header #left-content, #objects > .projects-search-form footer #left-content, #objects > .projects-search-form footer #left-content-add{
@@ -39,7 +39,7 @@
     height: calc(72px * 5);
 }
 #objects > .projects-search-form footer{
-    height: calc(72px * 4);
+    height: calc(72px * 5);
     padding-bottom: 2%;
 }
 #objects > .objects-list{
@@ -139,4 +139,90 @@
     -o-transform: rotate(-45deg);
     -ms-transform: rotate(-45deg);
     transform: rotate(-45deg);
+}
+@media all and (min-width: 320px) and (max-width: 640px){
+    #objects > .projects-search-form {
+        width: 83%;
+        margin-left: 11%;
+    }
+    #objects > .projects-search-form header .title {
+        margin-left: -8%;
+        font-size: 64%;
+    }
+    #objects > .projects-search-form main form .selectors {
+        width: 90%;
+    }
+    #objects > .projects-search-form header #right-content {
+        margin-top: 6%;
+    }
+    #objects > .projects-search-form footer #left-content {
+        margin-top: 158%;
+    }
+    #objects > .projects-search-form footer #left-content-add {
+        margin-top: 5%;
+    }
+    #objects > .projects-search-form footer {
+        height: calc(72px * 13);
+    }
+    #objects > .objects-list header h2 {
+        margin-left: -19%;
+    }
+    #objects > .objects-list main table {
+        width: 114%;
+        margin-left: -11%;
+    }
+    #objects > .objects-list main table .header, #objects > .objects-list main table .content {
+        font-size: 83%;
+    }
+    #objects > .objects-list main table .header th {
+        padding-right: 16px;
+    }
+}
+@media all and (min-width: 640px) and (max-width: 1024px){
+    #objects > .projects-search-form {
+        width: 83%;
+        margin-left: 11%;
+    }
+    #objects > .projects-search-form header .title {
+        margin-left: -15%;
+        font-size: 76%;
+    }
+    #objects > .projects-search-form main form .selectors {
+        width: 90%;
+    }
+    #objects > .projects-search-form header #right-content {
+        margin-top: 4%;
+    }
+    #objects > .projects-search-form footer #left-content {
+        margin-top: 70%;
+    }
+    #objects > .projects-search-form footer #left-content-add {
+        margin-top: 5%;
+    }
+    #objects > .projects-search-form footer {
+        height: calc(72px * 11);
+    }
+    #objects > .objects-list header h2 {
+        margin-left: -19%;
+    }
+    #objects > .objects-list main table {
+        width: 114%;
+        margin-left: -11%;
+    }
+    #objects > .objects-list main table .header, #objects > .objects-list main table .content {
+        font-size: 83%;
+    }
+    #objects > .objects-list main table .header th {
+        padding-right: 16px;
+    }
+}
+@media all and (min-width: 1024px) and (max-width: 1280px){
+    #objects > .projects-search-form footer {
+        height: calc(72px * 5);
+    }
+}
+@media all and (min-width: 1280px) and (max-width: 1366px){
+    #objects > .projects-search-form footer {
+        height: calc(72px * 5);
+    }
 }

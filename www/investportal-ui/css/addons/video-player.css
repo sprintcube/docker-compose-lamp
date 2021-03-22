@@ -37,3 +37,13 @@
 .video-player > .controls *:hover{
     cursor: pointer;
 }
+@media all and (min-width: 320px) and (max-width: 640px){
+    .video-player > .controls {
+        top: -82px;
+        left: 8%;
+    }
+    .video-player > .play {
+        top: -135px;
+        left: 31%;
+    }
+}
