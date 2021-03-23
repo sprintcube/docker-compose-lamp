@@ -183,3 +183,31 @@
 
 .lightwin-passport > main form #textput:focus, .lightwin-passport > main form #selector-form:focus, .lightwin-passport > main form #from-to #selector-form-add:focus{ border: solid 2px darkgray;}
 
+@media all and (min-width: 320px) and (max-width: 1024px){
+    .lightwin-passport, .lightwin-passport-regional {
+        width: 98%;
+        left: 1%;
+    }
+    .lightwin-passport > main {
+        height: calc(110% / 2);
+    }
+    .lightwin-passport-regional {
+        height: calc(63% / 2);
+        padding-bottom: 5%;
+    }
+    .lightwin-passport-regional > main form .countries-part {
+        width: 17%;
+    }
+    .lightwin-passport > header #left-content { margin-top: 1%; }
+    .lightwin-passport > header #right-content { margin-top: 2%; }
+}
+@media all and (min-width: 1024px) and (max-width: 1280px){
+    
+    .lightwin-passport-regional {
+        height: calc(60% / 2);
+        bottom: 2%;
+    }
+    .lightwin-passport-regional > main { height: calc((247% / 2) / 2); }
+    
+    
+}

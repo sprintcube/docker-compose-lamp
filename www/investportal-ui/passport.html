@@ -58,6 +58,33 @@
         .passport-page > main #left-content #table-list .content td:nth-child(3) {
             width: 27%;
         }
+        @media all and (min-width: 320px) and (max-width: 640px){
+            #passport { height: 1074px; }
+            .passport-page > header #left-content { margin-top: 2px; }
+            .passport-page > header #left-content span { font-size: 75%; }
+            
+            .passport-page > main #left-content #table-list .header,  .passport-page > main #left-content #table-list .content td:nth-child(1), .passport-page > main #left-content #table-list .content td:nth-child(3)::before, .passport-page > footer, .passport-page > header #right-content a{ display: none; }
+            .passport-page > main #left-content #table-list .content td:nth-child(2) {
+                width: 136%;
+                display: block;
+                font-size: 115%;
+            }
+            .passport-page > main #left-content #table-list .content td:nth-child(3) {
+                width: 50%;
+                display: block;
+                float: left;
+            }
+            .passport-page > main #left-content #table-list .content td:nth-child(4) {
+                width: 47%;
+                display: inline-table;
+                position: relative;
+                left: 35vw;
+            }
+        }
+        @media all and (min-width: 640px) and (max-width: 1024px){
+            .passport-page > footer, .passport-page > header #right-content a{ display: none; }
+            .passport-page > header #left-content { margin-top: 6px; }
+        }
     </style>
 </head>
 <body>
@@ -179,6 +206,10 @@
                     </div>
                     <div id="right-content">
                         <a href="index.html">Exit</a>
+                        <nav>
+                            <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAABmJLR0QA/wD/AP+gvaeTAAABBklEQVRIid2TPQrCQBCFZ8UqCLYWWtt6Dn/wFh5DBBGsvIhn8OcA1oKolTbWESw/m1GjbrK7URsfLEmYt+/bTCYifyegCRxwa5AX4BO+yQ3xCAeoAGu9H38doL4qsA2G+AISkF0QJASg/loQJBSQgOxttaLXa1kO4est5AGE6OeAN7n6bfH3gQYQAdFr3dgATwZj3jwhcrYoZZCmQEHrXWAJnHUtgE5oYFInoKzecYZv5AXIOEjX5nvZ3v4EsPQAzJ0f2aLIGHMBYhEppQ2B5sS//g+wAY6OTXW9rkQeLbknPj+vbICeiBwyALcRnDgO4utJFzDKGNPhR+EJSBuYA7GuGdC61a/HQqNpY0K2UgAAAABJRU5ErkJggg==" id="newrequest" alt="Add Request" />
+                            <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAABmJLR0QA/wD/AP+gvaeTAAAAn0lEQVRIid2Uuw0CMRBER4jsWqAFCoEqLnJdJ5oix9RA+ohOOp0W2PUnMBNZq5kd78eW/g7AFcjEkYGLx6Ak+YqHxwCAgspN3SGaKIqhDBYXKzoDYLbOLQ0AbsAUEUQNAO7AucrA8Q5eQNpqum/Rx1tG+U1a9IXfdch913SjW1y6CgNTN9RfZOJoxJ6STiVtkpT3AauCZBGdydNP1nB4A5tWVezafhVfAAAAAElFTkSuQmCC" id="exit" alt="Exit" />
+                        </nav>
                     </div>
                 </header>
                 <main>

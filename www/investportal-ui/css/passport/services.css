@@ -1,4 +1,6 @@
 @import url('../passport.css');
+#passport{ height: 322px; }
+.passport-page{ height: 489px; }
 .passport-page > main .services-settings header{
   margin-left: 0%;
 }
@@ -85,4 +87,28 @@
     -o-transform: rotate(-45deg);
     -ms-transform: rotate(-45deg);
     transform: rotate(-45deg);
+}
+@media all and (min-width: 320px) and (max-width: 1024px){
+  .passport-page > header #left-content span { font-size: 77%; }
+  .passport-page > header #left-content{ margin-top: 0px; }
+  #passport { height: 699px; }
+  .passport-page > main .services-settings header select { width: 87vw; }
+  .passport-page { height: 757px; }
+  .passport-page > footer { display: none; }
+  .passport-page > main .services-settings footer .services-selectors {
+    display: block;
+    width: 100%;
+  }
+}
+@media all and (min-width: 640px) and (max-width: 1024px){
+  #passport { height: 750px; }
+  .passport-page { height: 837px;}
+}
+@media all and (min-width: 1024px) and (max-width: 1400px){
+  .passport-page > main .services-settings footer .services-selectors {
+    margin-left: 1%;
+  }
+  .passport-page > footer {
+    margin-top: -277px;
+  }
 }

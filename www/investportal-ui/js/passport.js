@@ -1,3 +1,11 @@
+const ExitToPage = (e,t) => {
+    window.location.assign($('.passport-page > header #right-content a').attr('href'));
+}
+
+$(document).ready(function () {
+    $('.passport-page > header #right-content nav img#exit').click(ExitToPage);
+});
+
 const lightboxopen = (e,t) => {
     $('#lightbox').removeClass('lightbox-closed');
     $('.lightwin-passport').removeClass('lightbox-closed');
@@ -16,7 +24,7 @@ const lightboxcloseRegional = (e,t) => {
     $('.lightwin-passport-regional').addClass('lightbox-closed');
 }
 $(document).ready(function () {
-    $('.add-but').click(lightboxopen);
+    $('.add-but, .passport-page > header #right-content nav img#newrequest').click(lightboxopen);
     $('.lightwin-passport > header #right-content').click(lightboxclose);
     $('.lightwin-passport-regional > header #right-content').click(lightboxcloseRegional);
 });

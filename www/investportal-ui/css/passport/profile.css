@@ -56,3 +56,17 @@
 .passport-page > footer #left-content{
     width: 100%;
 }
+@media all and (min-width: 320px) and (max-width: 1024px){
+    #passport { height: 510px; }
+    .passport-page > header #left-content span { font-size: 77%; }
+    .passport-page > header #left-content{ margin-top: 0px; }
+    .passport-page > main .profile-settings { width: 138%; }
+    .passport-page > footer { display: none; }
+}
+@media all and (min-width: 640px) and (max-width: 1024px){
+    .passport-page > footer { top: -29%; }
+    .passport-page > main .profile-settings { width: 80%; }
+}
+@media all and (min-width: 1024px) and (max-width: 1280px){
+    .passport-page > main .profile-settings { width: 50%; }
+}
