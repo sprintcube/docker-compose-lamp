@@ -1103,9 +1103,18 @@ html,body{
     .header > #header_bottom, .header > #header_top .ht_header span, .footer > main{
         display: none;
     }
+    #promo > header .links {
+        top: -50px;
+        left: 139px;
+    }
+    #promo > header .marketing-info {
+        display: none;
+    }
     #link-switcher {
         padding-bottom: 6%;
     }
+    #promo > main.swiper-container .promo-feed .promoblock, #investsearch > main.swiper-container .popular-objects .popular-object{ width: 95vw; }
+    #promo > main.swiper-container .promo-feed .promoblock::before, #promo > main.swiper-container .promo-feed .promoblock .promoblock-content{ width: 96%; }
     #link-switcher > a { font-size: 55%; }
     #link-switcher > #delimeter { font-size: 52%; }
     .footer{ height: calc(135px * 2); }
@@ -1121,6 +1130,27 @@ html,body{
     #link-switcher {
         padding-bottom: 4%;
     }
+    #promo > header .links {
+        top: -50px;
+        left: 139px;
+    }
+    #promo > header .marketing-info {
+        display: none;
+    }
+    #promo > main.swiper-container .promo-feed .promoblock, #investsearch > main.swiper-container .popular-objects .popular-object{ width: 44vw; }
+    #promo > main.swiper-container .promo-feed .promoblock::before, #promo > main.swiper-container .promo-feed .promoblock .promoblock-content{ width: 96%; }
+    
+    #news > header, 
+    #investsearch > header, 
+    #eventcalendar > header,
+    #services > header,
+    #analytics > header,
+    #estate > header,
+    #reviews > header{ 
+        display: block;
+        width: 100%; 
+    }
+
     .footer{ height: calc(135px * 2); }
     .footer > header {
         width: 50%;
@@ -1146,7 +1176,7 @@ html,body{
         height: 364px;
     }
     #promo > header .marketing-info {
-        margin-top: 5%;
+        margin-top: -16%;
         margin-right: -7%;
     }
     #promo > header .marketing-info header img {
@@ -1293,7 +1323,7 @@ html,body{
         display: inherit;
         right: -2%;
         position: relative;
-        top: -12%;
+        top: 61%;
     }
     .header > #header_bottom_adaptive{ display: none; }
     .header > #header_bottom .hb_bottom header .header-informer header {
@@ -1334,7 +1364,7 @@ html,body{
         width: 24vw;
     }
     #promo > header .marketing-info {
-        margin-top: -14%;
+        margin-top: 4%;
         margin-right: -4%;
     }
     #promo > header .marketing-info header img {
