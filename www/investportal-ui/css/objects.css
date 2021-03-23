@@ -170,12 +170,20 @@
     #objects > .objects-list main table {
         width: 114%;
         margin-left: -11%;
+        border-bottom: none;
     }
-    #objects > .objects-list main table .header, #objects > .objects-list main table .content {
+    #objects > .objects-list main table .content {
         font-size: 83%;
     }
-    #objects > .objects-list main table .header th {
-        padding-right: 16px;
+    #objects > .objects-list main table .header {
+        display: none;
+    }
+    #objects > .objects-list main table .content td {
+        border-top: none;
+        display: block;
+    }
+    #objects > .objects-list main table .content td:nth-child(4) {
+        float: right;
     }
 }
 @media all and (min-width: 640px) and (max-width: 1024px){

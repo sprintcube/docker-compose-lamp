@@ -268,6 +268,7 @@ span.view-title{
     .object-viewer > .right-content footer .view-player {
         height: 165px;
     }
+    #objects > .objects-list main table { border-top: none; }
 }
 @media all and (min-width: 1024px) and (max-width: 1280px){
     #images-slider {
