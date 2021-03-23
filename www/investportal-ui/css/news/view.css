@@ -157,6 +157,7 @@
   #news {
     height: 4343px;
   }
+  #news > .news-viewer #left-content header h2 { font-size: 113%; }
 }
 @media all and (min-width: 320px) and (max-width: 400px){
   #news {
