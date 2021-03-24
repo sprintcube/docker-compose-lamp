@@ -124,7 +124,7 @@ docker-compose exec webserver bash
 
 ## PHP
 
-The installed version of depends on your `.env`file. 
+The installed version of php depends on your `.env`file.
 
 #### Extensions
 
