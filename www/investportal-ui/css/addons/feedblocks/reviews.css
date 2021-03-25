@@ -3,13 +3,13 @@
     position: relative;
     top: 52px;
 }
-#reviews > main #slider-view .review-feed .review#with-title-image header{
+#reviews > main #slider-view .review-feed .review#with-title-image header, #reviews > main #slider-view-adaptive .review#with-title-image header{
     border-bottom: solid 2px gray;
     margin-left: 0%;
     width: 100%;
     padding-bottom: 5px;
 }
-#reviews > main #slider-view .review-feed .review#with-title-image header img{
+#reviews > main #slider-view .review-feed .review#with-title-image header img, #reviews > main #slider-view-adaptive .review#with-title-image header img{
     width: 60%;
     object-fit: contain;
     height: 76px;

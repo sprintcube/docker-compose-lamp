@@ -66,14 +66,14 @@
   padding-left: 6px;
 }
 
-#services > main #slider-view .service-feed .service {
+#services > main #slider-view .service-feed .service,  #services > main #slider-view-adaptive .service{
   position: relative;
   z-index: 1;
   height: 440px;
   box-shadow: 0 0 5px 1px grey;
 }
 
-#services > main #slider-view .service-feed .service .service-content {
+#services > main #slider-view .service-feed .service .service-content,  #services > main #slider-view-adaptive .service .service-content{
   position: absolute;
   top: 6px;
   left: -5px;
@@ -86,7 +86,7 @@
   box-shadow: inherit;
 }
 
-#services > main #slider-view .service-feed .service::before {
+#services > main #slider-view .service-feed .service::before,  #services > main #slider-view-adaptive .service::before {
   content: '';
   pointer-events: none;
   position: absolute;
@@ -99,14 +99,14 @@
   box-shadow: inherit;
 }
 
-#estate > main #slider-view .estat-feed .estat {
+#estate > main #slider-view .estat-feed .estat,  #estate > main #slider-view-adaptive .estat{
   position: relative;
   z-index: 1;
   height: 440px;
   box-shadow: 0 0 5px 1px grey;
 }
 
-#estate > main #slider-view .estat-feed .estat .estat-content {
+#estate > main #slider-view .estat-feed .estat .estat-content,  #estate > main #slider-view-adaptive .estat .estat-content{
   position: absolute;
   top: 6px;
   left: -5px;
@@ -119,7 +119,7 @@
   box-shadow: inherit;
 }
 
-#estate > main #slider-view .estat-feed .estat::before {
+#estate > main #slider-view .estat-feed .estat::before, #estate > main #slider-view-adaptive .estat::before {
   content: '';
   pointer-events: none;
   position: absolute;

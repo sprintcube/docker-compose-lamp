@@ -1,4 +1,4 @@
-#news > main #slider-view .news-feed#hide, #services > main #slider-view .service-feed#hide, #analytics > main #slider-view .analytic-feed#hide, #estate > main #slider-view .estat-feed#hide, #reviews > main #slider-view .review-feed#hide{
+#news > main #slider-view .news-feed#hide, #services > main #slider-view .service-feed#hide, #analytics > main #slider-view .analytic-feed#hide, #estate > main #slider-view .estat-feed#hide, #reviews > main #slider-view .review-feed#hide, #news > main #slider-view-adaptive .news#hide, #services > main #slider-view-adaptive .service#hide, #analytics > main #slider-view-adaptive .analytic.hide, #estate > main #slider-view-adaptive .estat#hide, #reviews > main #slider-view-adaptive .review.hide{
     display: none;
 }
 #slider-controller > img{

@@ -1,4 +1,5 @@
-#analytics > main #slider-view .analytic-feed .analytic:nth-child(1), #analytics > main #slider-view .analytic-feed .analytic:nth-child(1) *, #analytics > main #slider-view .analytic-feed .analytic:nth-child(1) .descr{
+#analytics > main #slider-view .analytic-feed .analytic:nth-child(1), #analytics > main #slider-view .analytic-feed .analytic:nth-child(1) *, #analytics > main #slider-view .analytic-feed .analytic:nth-child(1) .descr,
+#analytics > main #slider-view-adaptive .analytic:nth-child(3n+1), #analytics > main #slider-view-adaptive .analytic:nth-child(3n+1) *, #analytics > main #slider-view-adaptive .analytic:nth-child(3n+1) .descr{
     background-color: #0079bf;
     color: white;
 }
@@ -7,7 +8,7 @@
     position: relative;
     top: 107px;
 }
-#analytics > main #slider-view .analytic-feed .analytic#with-title-image img{
+#analytics > main #slider-view .analytic-feed .analytic#with-title-image img, #analytics > main #slider-view-adaptive .analytic#with-title-image img{
     width: 100%;
     object-fit: cover;
     height: 146px;

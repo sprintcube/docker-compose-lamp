@@ -439,9 +439,37 @@ html,body{
     position: relative;
     top: -174px;
 }
+#news > main #slider-controller-adaptive{
+    width: 8%;
+    height: 240px;
+    background: transparent;
+    border: none !important;
+    font-size:0;
+    position: absolute;
+}
+#news > main #slider-controller-adaptive img{
+    width: 76%;
+    margin-top: 27px;
+}
+#news > main header#slider-controller-adaptive{
+    left: -4%;
+}
+#news > main footer#slider-controller-adaptive{
+    right: 3%;
+    top: 0;
+}
+#news > main #slider-controller-adaptive img:hover{
+    cursor: pointer;
+}
 #news > main #slider-view{
     width: 71%;
     display: inline-block;
+}
+#news > main #slider-view-adaptive{
+    width: 80%;
+    display: block;
+    margin-left: 10%;
+    margin-top: 19%;
 }
 #news > main #slider-view .news-feed{
    margin-left: -11%;
@@ -452,7 +480,11 @@ html,body{
     width: 33%;
     height: 183px;
 }
-#news > main #slider-view .news-feed .news a{
+#news > main #slider-view-adaptive .news{
+    width: 100%;
+    height: 235px;
+}
+#news > main #slider-view .news-feed .news a, #news > main #slider-view-adaptive .news a{
     display: block;
     margin-top: 2px;
     color: #0079bf;
@@ -467,7 +499,7 @@ html,body{
     margin-left: 4%;
     width: 94%;
 }
-#news > main #slider-view .news-feed .news .descr{
+#news > main #slider-view .news-feed .news .descr, #news > main #slider-view-adaptive .news .descr{
     display: block;
     font-size: 90%;
     height: 108px;
@@ -479,7 +511,7 @@ html,body{
     margin-left: 4%;
     width: 89%;
 }
-#news > main #slider-view .news-feed .news .date{
+#news > main #slider-view .news-feed .news .date, #news > main #slider-view-adaptive .news .date{
     display: block;
     margin-top: 11%;
     font-size: 96%;
@@ -682,12 +714,45 @@ html,body{
     position: relative;
     top: -114px;
 }
+#services > main #slider-controller-adaptive{
+    width: 8%;
+    height: 240px;
+    background: transparent;
+    border: none !important;
+    font-size:0;
+    position: absolute;
+}
+#services > main #slider-controller-adaptive img{
+    width: 96%;
+    margin-top: 66px;
+}
+#services > main header#slider-controller-adaptive{
+    left: -17%;
+}
+#services > main footer#slider-controller-adaptive{
+    right: -3%;
+    top: 0;
+}
+#services > main #slider-controller-adaptive img:hover{
+    cursor: pointer;
+}
 #services > main #slider-view{
     width: 70%;
     display: inline-table;
 }
+#services > main #slider-view-adaptive{
+    width: 100%;
+}
 #services > main #slider-view .service-feed{
     margin-left: -11%;
+}
+#services > main #slider-view-adaptive .service{
+    width: 58vw;
+    height: 290px;
+    box-shadow: 3px -1px 11px 3px darkgray;
+    margin-left: calc(20vw / 2);
+    background-color: white;
+    padding-bottom: 4%;
 }
 #services > main #slider-view .service-feed .service{
     width: 16vw;
@@ -698,7 +763,7 @@ html,body{
     background-color: white;
     padding-bottom: 5%;
 }
-#services > main #slider-view .service-feed .service header{
+#services > main #slider-view .service-feed .service header, #services > main #slider-view-adaptive .service header{
     background-color: darkgray;
     color: white;
     text-transform: uppercase;
@@ -708,27 +773,27 @@ html,body{
     float: left;
     margin-left: 0;
 }
-#services > main #slider-view .service-feed .service:hover{
+#services > main #slider-view .service-feed .service:hover, #services > main #slider-view-adaptive .service:hover{
     cursor: pointer;
 }
-#services > main #slider-view .service-feed .service:hover header{
+#services > main #slider-view .service-feed .service:hover header, #services > main #slider-view-adaptive .service:hover header{
     background-color: #0079bf;
 }
-#services > main #slider-view .service-feed .service header h3{
+#services > main #slider-view .service-feed .service header h3, #services > main #slider-view-adaptive .service header h3{
     margin-left: 7%;
 }
-#services > main #slider-view .service-feed .service main{
+#services > main #slider-view .service-feed .service main, #services > main #slider-view-adaptive .service main{
     width: 100%;
     float: left;
     padding-top: 1%;
     padding-bottom: 1%;
 }
-#services > main #slider-view .service-feed .service main img{
+#services > main #slider-view .service-feed .service main img, #services > main #slider-view-adaptive .service main img{
     width: 50%;
     object-fit: cover;
     margin-left: 7%;
 }
-#services > main #slider-view .service-feed .service footer{
+#services > main #slider-view .service-feed .service footer, #services > main #slider-view-adaptive .service footer{
     display: block;
     width: 100%;
     font-size: 87%;
@@ -737,18 +802,18 @@ html,body{
     padding-bottom: 2%;
     margin-left: 7%;
 }
-#services > main #slider-view .service-feed .service footer .title{
+#services > main #slider-view .service-feed .service footer .title, #services > main #slider-view-adaptive .service footer .title{
     font-weight: bold;
     display: block;
 }
-#services > main #slider-view .service-feed .service footer .location{
+#services > main #slider-view .service-feed .service footer .location, #services > main #slider-view-adaptive .service footer .location{
     color: darkgray;
     font-style: italic;
     font-size: 101%;
     display: block;
     font-family: 'Times New Roman', serif;
 }
-#services > main #slider-view .service-feed .service footer .descr{
+#services > main #slider-view .service-feed .service footer .descr, #services > main #slider-view-adaptive .service footer .descr{
     display: block;
     text-align: justify;
     width: 77%;
@@ -777,12 +842,46 @@ html,body{
     position: relative;
     top: 93px;
 }
+#analytics > main #slider-controller-adaptive{
+    width: 10%;
+    height: 370px;
+    background: transparent;
+    border: none !important;
+    font-size:0;
+    position: absolute;
+}
+#analytics > main #slider-controller-adaptive img{
+    width: 82%;
+    margin-top: 109px;
+}
+#analytics > main header#slider-controller-adaptive{
+    left: -10%;
+}
+#analytics > main footer#slider-controller-adaptive{
+    right: -24%;
+    top: 0;
+}
+#analytics > main #slider-controller-adaptive img:hover{
+    cursor: pointer;
+}
 #analytics > main #slider-view{
     width: 70%;
     display: inline-table;
 }
+#analytics > main #slider-view-adaptive{
+    width: 100%;
+}
 #analytics > main #slider-view .analytic-feed{
    margin-left: -13%;
+}
+#analytics > main #slider-view-adaptive .analytic{
+    width: 58vw;
+    height: 412px;
+    box-shadow: 3px -1px 11px 3px darkgray;
+    margin-left: 11vw;
+    padding-bottom: 2%;
+    background-color: white;
+    margin-top: 14vw;
 }
 #analytics > main #slider-view .analytic-feed .analytic{
     width: 15vw;
@@ -798,10 +897,11 @@ html,body{
     background-color: #0079bf;
     cursor: pointer;
 }
-#analytics > main #slider-view .analytic-feed .analytic:hover *, #analytics > main #slider-view .analytic-feed .analytic:hover .descr{
+#analytics > main #slider-view .analytic-feed .analytic:hover *, #analytics > main #slider-view .analytic-feed .analytic:hover .descr,
+#analytics > main #slider-view-adaptive .analytic:hover *, #analytics > main #slider-view-adaptive .analytic:hover .descr{
     color: white;
 }
-#analytics > main #slider-view .analytic-feed .analytic h2{
+#analytics > main #slider-view .analytic-feed .analytic h2, #analytics > main #slider-view-adaptive .analytic h2{
     display: block;
     margin-left: 7%;
     margin-top: 5%;
@@ -813,10 +913,10 @@ html,body{
     top: 0mm;
     width: 81%;
 }
-#analytics > main #slider-view .analytic-feed .analytic:nth-child(1) h2{
+#analytics > main #slider-view .analytic-feed .analytic:nth-child(1) h2, #analytics > main #slider-view-adaptive .analytic:nth-child(3n+1) h2{
     font-size: 153%;
 }
-#analytics > main #slider-view .analytic-feed .analytic .descr{
+#analytics > main #slider-view .analytic-feed .analytic .descr, #analytics > main #slider-view-adaptive .analytic .descr{
     display: block;
     margin-left: 7%;
     margin-top: 7%;
@@ -825,7 +925,7 @@ html,body{
     width: 86%;
     text-align: justify;
 }
-#analytics > main #slider-view .analytic-feed .analytic a{
+#analytics > main #slider-view .analytic-feed .analytic a,  #analytics > main #slider-view-adaptive .analytic a{
     display: block;
     margin-left: 8%;
     margin-top: 1%;
@@ -856,9 +956,34 @@ html,body{
     position: relative;
     top: -50px;
 }
+#estate > main #slider-controller-adaptive{
+    width: 10%;
+    height: 240px;
+    background: transparent;
+    border: none !important;
+    font-size:0;
+    position: absolute;
+}
+#estate > main #slider-controller-adaptive img{
+    width: 82%;
+    margin-top: 174px;
+}
+#estate > main header#slider-controller-adaptive{
+    left: -37%;
+}
+#estate > main footer#slider-controller-adaptive{
+    right: 7%;
+    top: 0;
+}
+#estate > main #slider-controller-adaptive img:hover{
+    cursor: pointer;
+}
 #estate > main #slider-view{
     width: 70%;
     display: inline-table;
+}
+#estate > main #slider-view-adaptive{
+    width: 100%;
 }
 #estate > main #slider-view .estat-feed{
     margin-left: -11%;
@@ -871,7 +996,15 @@ html,body{
     background-color: white;
     box-shadow: 0 0 5px 1px grey;
 }
-#estate > main #slider-view .estat-feed .estat header{
+#estate > main #slider-view-adaptive .estat{
+    width: 63vw;
+    height: 194px;
+    margin-left: -8vw;
+    background-color: white;
+    box-shadow: 0 0 5px 1px grey;
+    margin-top: 18vw;
+}
+#estate > main #slider-view .estat-feed .estat header, #estate > main #slider-view-adaptive .estat header{
     background-color: darkgray;
     color: white;
     text-transform: uppercase;
@@ -881,46 +1014,46 @@ html,body{
     float: left;
     margin-left: 0;
 }
-#estate > main #slider-view .estat-feed .estat:hover{
+#estate > main #slider-view .estat-feed .estat:hover, #estate > main #slider-view-adaptive .estat:hover{
     cursor: pointer;
 }
-#estate > main #slider-view .estat-feed .estat:hover header{
+#estate > main #slider-view .estat-feed .estat:hover header, #estate > main #slider-view-adaptive .estat:hover header{
     background-color: #0079bf;
 }
-#estate > main #slider-view .estat-feed .estat header h3{
+#estate > main #slider-view .estat-feed .estat header h3, #estate > main #slider-view-adaptive .estat header h3{
     margin-left: 7%;
 }
-#estate > main #slider-view .estat-feed .estat main{
+#estate > main #slider-view .estat-feed .estat main, #estate > main #slider-view-adaptive .estat main{
     width: 100%;
     float: left;
 }
-#estate > main #slider-view .estat-feed .estat main img{
+#estate > main #slider-view .estat-feed .estat main img, #estate > main #slider-view-adaptive .estat main img{
     width: 100%;
     object-fit: cover;
     height: 130px;
 }
-#estate > main #slider-view .estat-feed .estat footer{
+#estate > main #slider-view .estat-feed .estat footer, #estate > main #slider-view-adaptive .estat footer{
 	display: block;
 	padding-top: 0%;
 	padding-bottom: 13%;
 	width: 100%;
 	background-color: white;
 }
-#estate > main #slider-view .estat-feed .estat footer .info, #estate > main #slider-view .estat-feed .estat footer .raiting{
+#estate > main #slider-view .estat-feed .estat footer .info, #estate > main #slider-view .estat-feed .estat footer .raiting, #estate > main #slider-view-adaptive .estat footer .info, #estate > main #slider-view-adaptive .estat footer .raiting{
 	display: block;
 	margin-left: 8%;
 	padding-bottom: 0%;
 	position: relative;
 	top: 30px;
 }
-#estate > main #slider-view .estat-feed .estat footer .info span{
+#estate > main #slider-view .estat-feed .estat footer .info span, #estate > main #slider-view-adaptive .estat footer .info span{
     padding-top: 2%;
     padding-bottom: 2%;
     font-size: 94%;
     color: darkgray;
     display: block;
 }
-#estate > main #slider-view .estat-feed .estat footer .info span:nth-child(1){
+#estate > main #slider-view .estat-feed .estat footer .info span:nth-child(1), #estate > main #slider-view-adaptive .estat footer .info span:nth-child(1){
     font-size: 105%;
     color:black;
     font-weight: bold;
@@ -980,12 +1113,46 @@ html,body{
     position: relative;
     top: 84px;
 }
+#reviews > main #slider-controller-adaptive{
+    width: 8%;
+    height: 240px;
+    background: transparent;
+    border: none !important;
+    font-size:0;
+    position: absolute;
+}
+#reviews > main #slider-controller-adaptive img{
+    width: 82%;
+    margin-top: 66px;
+}
+#reviews > main header#slider-controller-adaptive{
+    left: -11%;
+}
+#reviews > main footer#slider-controller-adaptive{
+    right: 18%;
+    top: 0;
+}
+#reviews > main #slider-controller-adaptive img:hover{
+    cursor: pointer;
+}
 #reviews > main #slider-view{
     width: 70%;
     display: inline-table;
 }
+#reviews > main #slider-view-adaptive{
+    width: 100%;
+}
 #reviews > main #slider-view .review-feed{
    margin-left: -12%;
+}
+#reviews > main #slider-view-adaptive .review{
+    width: 62vw;
+    height: 238px;
+    box-shadow: 3px -1px 11px 3px darkgray;
+    margin-left: 8%;
+    padding-bottom: calc(2% * 5);
+    background-color: white;
+    padding-top: 1%;
 }
 #reviews > main #slider-view .review-feed .review{
     width: 16vw;
@@ -997,7 +1164,7 @@ html,body{
     background-color: white;
     padding-top: 1%;
 }
-#reviews > main #slider-view .review-feed .review main h3{
+#reviews > main #slider-view .review-feed .review main h3, #reviews > main #slider-view-adaptive .review main h3{
     display: block;
     margin-left: 5%;
     margin-top: 6%;
@@ -1008,7 +1175,7 @@ html,body{
     text-overflow: ellipsis;
     width: 90%;
 }
-#reviews > main #slider-view .review-feed .review footer a{
+#reviews > main #slider-view .review-feed .review footer a, #reviews > main #slider-view-adaptive .review footer a{
     margin-left: 5%;
     margin-top: 1%;
     color: #0079bf;
@@ -1140,16 +1307,7 @@ html,body{
     #promo > main.swiper-container .promo-feed .promoblock, #investsearch > main.swiper-container .popular-objects .popular-object{ width: 44vw; }
     #promo > main.swiper-container .promo-feed .promoblock::before, #promo > main.swiper-container .promo-feed .promoblock .promoblock-content{ width: 96%; }
     
-    #news > header, 
-    #investsearch > header, 
-    #eventcalendar > header,
-    #services > header,
-    #analytics > header,
-    #estate > header,
-    #reviews > header{ 
-        display: block;
-        width: 100%; 
-    }
+   
 
     .footer{ height: calc(135px * 2); }
     .footer > header {
@@ -1282,9 +1440,12 @@ html,body{
         margin-top: 6%;
         width: 87px;
     }
-    #services > main #slider-view .service-feed .service, #analytics > main #slider-view .analytic-feed .analytic, #estate > main #slider-view .estat-feed .estat{ width: 15vw; margin-left: 6%;}
+    #services > main #slider-view .service-feed .service, #analytics > main #slider-view .analytic-feed .analytic, #estate > main #slider-view .estat-feed .estat{ width: 16vw; margin-left: 4%;}
     #services > main #slider-view .service-feed .service {
         height: 200px;
+    }
+    #estate > main #slider-view .estat-feed {
+        margin-top: -15%;
     }
     #reviews > main #slider-view .review-feed .review#with-title-image header img {
         left: 0%;
@@ -1305,17 +1466,19 @@ html,body{
         font-size: 87%;
     }
     #analytics > main #slider-view .analytic-feed {
-        margin-left: -10%;
+        margin-left: -12%;
+        margin-top: -9%;
     }
     #services > main {
         margin-right: 2vw;
     }
     #services > main #slider-view .service-feed {
-        margin-left: -14%;
+        margin-left: -12%;
+        margin-top: 28%;
     }
     #analytics > main #slider-view .analytic-feed .analytic{
-        width: 16vw;
-        margin-left: 4%;
+        width: 17vw;
+        margin-left: 3%;
     }
 }
 @media all and (min-width:1280px) and (max-width: 1366px){
