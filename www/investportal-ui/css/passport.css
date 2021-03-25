@@ -1,5 +1,6 @@
 @import url('services/lightbox-passport.css');
 @import url('passport/cart.css');
+@import url('addons/passportpagesadaptivemenu.css');
 #passport{
     height: 643px;
 }
@@ -158,7 +159,7 @@
     }
 }
 @media all and (min-width: 1024px){
-    .passport-page > header #right-content nav{ display: none; }
+    .passport-page > header #right-content nav, .passport-menu-adaptive{ display: none; }
 }
 @media all and (min-width: 1024px) and (max-width: 1400px){
     .passport-page > header #left-content, .passport-page > header #right-content { margin-top: 14px; }

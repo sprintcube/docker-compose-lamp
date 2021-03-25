@@ -1307,8 +1307,62 @@ html,body{
     #promo > main.swiper-container .promo-feed .promoblock, #investsearch > main.swiper-container .popular-objects .popular-object{ width: 44vw; }
     #promo > main.swiper-container .promo-feed .promoblock::before, #promo > main.swiper-container .promo-feed .promoblock .promoblock-content{ width: 96%; }
     
-   
-
+    #reviews > main #slider-view-adaptive .review {
+        width: 47vw;
+        margin-left: 15%;
+    }
+    #estate > main #slider-view-adaptive .estat {
+        width: 46vw;
+        margin-left: 0vw;
+        margin-top: 24vw;
+    }
+    #analytics > main #slider-view-adaptive .analytic {
+        width: 46vw;
+        margin-left: 19vw;
+    }
+    #services > main #slider-view-adaptive .service {
+        width: 39vw;
+        margin-left: calc(39vw / 2);
+    }
+    #estate > main #slider-controller-adaptive img {
+        width: 54%;
+        margin-top: 253px;
+    }
+    #estate > main header#slider-controller-adaptive {
+        left: -23%;
+    }
+    #estate > main footer#slider-controller-adaptive {
+        right: 19%;
+    }
+    #analytics > main #slider-controller-adaptive img {
+        width: 63%;
+        margin-top: 194px;
+    }
+    #analytics > main header#slider-controller-adaptive {
+        left: 7%;
+    }
+    #analytics > main footer#slider-controller-adaptive {
+        right: -19%;
+    }
+    #reviews > main #slider-controller-adaptive img {
+        width: 51%;
+    }
+    #reviews > main header#slider-controller-adaptive {
+        left: -2%;
+    }
+    #reviews > main footer#slider-controller-adaptive {
+        right: 27%;
+    }
+    #services > main #slider-controller-adaptive img {
+        width: 61%;
+    }
+    #services > main footer#slider-controller-adaptive {
+        right: 15%;
+        top: 0;
+    }
+    #services > main header#slider-controller-adaptive {
+        left: 2%;
+    }
     .footer{ height: calc(135px * 2); }
     .footer > header {
         width: 50%;
@@ -1969,3 +2023,5 @@ html,body{
         height: 241px;
     }
 }
+
+
