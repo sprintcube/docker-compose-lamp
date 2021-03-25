@@ -234,3 +234,21 @@
         height: calc(72px * 5);
     }
 }
+@media all and (min-width: 320px) and (max-width: 1024px) {
+    #services > main #slider-view, #services > main #slider-controller{ display: none; }
+    #services {
+        height: calc(154px * 3);
+        padding-top: calc(1vw - (15px * 2));
+    }
+    #service > header{ width: 39%; }
+    #services > main {
+        width: 80%;
+        float: left;
+        margin-left: 12vw;
+        margin-top: 5vw;
+    }
+    #services > header .add-but { width: 114%; }
+}
+@media all and (min-width: 1024px) {
+    #services > main #slider-view-adaptive, #services > main #slider-controller-adaptive{ display: none; }
+}
