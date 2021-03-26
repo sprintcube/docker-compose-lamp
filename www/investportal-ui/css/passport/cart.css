@@ -25,14 +25,8 @@
 }
 .passport-page > main #left-content .cart-data #table-list .content td{
     text-align: left;
-    padding-top: 10px;
-    padding-bottom: 10px;
     padding-left: 2%;
     font-size: 102%;
-}
-.passport-page > main #left-content .cart-data:not(:nth-child(1)) #table-list .content td{
-    padding-top: 15px;
-    padding-bottom: 15px;
 }
 .passport-page > main #left-content .cart-data #table-list .content td:nth-child(1){
     text-indent: 16%;

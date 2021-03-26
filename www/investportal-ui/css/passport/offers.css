@@ -43,7 +43,7 @@
     left: -73%;
 }
 .passport-page > main #left-content #table-list .content td:nth-child(1)::after,  .passport-page > main #left-content #table-list .content td:nth-child(3)::before, .passport-page > main #left-content #table-list .content td:nth-child(4)::before{
-    content: url('../../images/icons/leftrightborder.png');
+    content: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAQAAAA1CAYAAABm10p2AAAABmJLR0QA/wD/AP+gvaeTAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAB3RJTUUH5QMTCSMwGPDecgAAAB1pVFh0Q29tbWVudAAAAAAAQ3JlYXRlZCB3aXRoIEdJTVBkLmUHAAAAKUlEQVQoz2Os6+plQAZMSOw0dIGZ6AIMowKjAqMCRAvMQhdIZ2BgYAAAtnMD/8BCHfkAAAAASUVORK5CYII=');
 }
 .passport-page > main #left-content #table-list .content td:nth-child(1)::after {
     float: right;
