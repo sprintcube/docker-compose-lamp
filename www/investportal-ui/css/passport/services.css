@@ -34,8 +34,8 @@
 }
 .passport-page > footer {
     float: left;
-    margin-top: -23%;
-    margin-left: 14px;
+    margin-top: -19%;
+    margin-left: 22px;
 }
 .passport-page > main .services-settings footer .services-selectors .selector input{
     position: absolute;
@@ -108,6 +108,11 @@
   .passport-page > main .services-settings footer .services-selectors {
     margin-left: 1%;
   }
+  .passport-page > footer {
+    margin-top: -277px;
+  }
+}
+@media all and (min-width: 1400px) and (max-width: 1600px){
   .passport-page > footer {
     margin-top: -277px;
   }
