@@ -1278,7 +1278,7 @@ html,body{
         display: none;
     }
     #link-switcher {
-        padding-bottom: 6%;
+        display: none;
     }
     #promo > main.swiper-container .promo-feed .promoblock, #investsearch > main.swiper-container .popular-objects .popular-object{ width: 95vw; }
     #promo > main.swiper-container .promo-feed .promoblock::before, #promo > main.swiper-container .promo-feed .promoblock .promoblock-content{ width: 98%; }
@@ -1293,8 +1293,6 @@ html,body{
         width: 110%;
     }
 
-    #link-switcher > a { font-size: 55%; }
-    #link-switcher > #delimeter { font-size: 52%; }
     .footer{ height: calc(135px * 2); }
     .footer > header {
         width: 100%;
@@ -1306,7 +1304,7 @@ html,body{
         display: none;
     }
     #link-switcher {
-        padding-bottom: 4%;
+        display: none;
     }
     #promo > header .links {
         top: -50px;

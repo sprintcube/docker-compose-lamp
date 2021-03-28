@@ -57,7 +57,8 @@
     width: 100%;
 }
 @media all and (min-width: 320px) and (max-width: 1024px){
-    #passport { height: 510px; }
+    #passport { height: 539px; }
+    .passport-page { height: calc(245px * 2); }
     .passport-page > header #left-content span { font-size: 77%; }
     .passport-page > header #left-content{ margin-top: 0px; }
     .passport-page > main .profile-settings { width: 138%; }

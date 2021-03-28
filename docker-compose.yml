@@ -6,9 +6,6 @@ services:
       context: ./bin/php74
     container_name: php74
     restart: 'always'
-    ports:
-      - "80:80"
-      - "443:443"
     links: 
       - database
     volumes: 
@@ -16,13 +13,14 @@ services:
       - ${PHP_INI-./config/php/php.ini}:/usr/local/etc/php/php.ini
       - ${VHOSTS_DIR-./config/vhosts}:/etc/apache2/sites-enabled
       - ${LOG_DIR-./logs/apache2}:/var/log/apache2
+    ports:
+      - "80:80"
+      - "443:443"
   database:
     build:
       context: "./bin/mysql"
     container_name: 'database'
     restart: 'always'
-    ports:
-      - "127.0.0.1:3306:3306"
     volumes: 
       - ${MYSQL_DATA_DIR-./data/mysql}:/var/lib/mysql
       - ${MYSQL_LOG_DIR-./logs/mysql}:/var/log/mysql
@@ -31,6 +29,8 @@ services:
       MYSQL_DATABASE: aplex
       MYSQL_USER: developer
       MYSQL_PASSWORD: 19052000
+    ports:
+      - "127.0.0.1:3306:3306"
   phpmyadmin:
     image: phpmyadmin/phpmyadmin
     container_name: 'phpmyadmin'
@@ -44,11 +44,11 @@ services:
       MYSQL_ROOT_PASSWORD: coder
       MYSQL_USER: developer
       MYSQL_PASSWORD: 19052000
-    ports:
-      - '8080:80'
     volumes: 
       - /sessions
       - ${PHP_INI-./config/php/php.ini}:/usr/local/etc/php/conf.d/php-phpmyadmin.ini
+    ports:
+      - '8080:80'
   redis:
     container_name: 'redis'
     image: redis:latest

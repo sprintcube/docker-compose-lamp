@@ -91,7 +91,7 @@
 @media all and (min-width: 320px) and (max-width: 1024px){
   .passport-page > header #left-content span { font-size: 77%; }
   .passport-page > header #left-content{ margin-top: 0px; }
-  #passport { height: 699px; }
+  #passport { height: 644px; }
   .passport-page > main .services-settings header select { width: 87vw; }
   .passport-page { height: 757px; }
   .passport-page > footer { display: none; }
@@ -101,7 +101,7 @@
   }
 }
 @media all and (min-width: 640px) and (max-width: 1024px){
-  #passport { height: 750px; }
+  #passport { height: 931px; }
   .passport-page { height: 837px;}
 }
 @media all and (min-width: 1024px) and (max-width: 1400px){

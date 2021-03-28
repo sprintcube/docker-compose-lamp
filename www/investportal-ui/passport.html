@@ -9,7 +9,6 @@
     <script src="https://yastatic.net/jquery/3.3.1/jquery.min.js"></script>
     <script src="https://kit.fontawesome.com/97c3285af2.js" crossorigin="anonymous"></script>
     <style>
-        
         .add-but {
             text-align: center;
             color: white;
@@ -59,7 +58,7 @@
             width: 27%;
         }
         @media all and (min-width: 320px) and (max-width: 640px){
-            #passport { height: 1074px; }
+            #passport { height: calc(1074px * 1.1); }
             .passport-page > header #left-content { margin-top: 2px; }
             .passport-page > header #left-content span { font-size: 75%; }
             
@@ -82,6 +81,7 @@
             }
         }
         @media all and (min-width: 640px) and (max-width: 1024px){
+             #passport { height: calc(1074px * 0.8); }
             .passport-page > footer, .passport-page > header #right-content a{ display: none; }
             .passport-page > header #left-content { margin-top: 6px; }
         }

@@ -21,6 +21,9 @@
     opacity: .5;
     color: #eff3f4;
 }
+@media all and (min-width: 320px) and (max-width: 1024px){
+    [data-text]::before{ font-size: 26vw; }
+}
   
 [data-text] > *{
     position: relative;

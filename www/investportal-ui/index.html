@@ -10,7 +10,6 @@
     <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
     <script src="https://kit.fontawesome.com/97c3285af2.js" crossorigin="anonymous"></script>
     <style>
-         
          .add-but{
             text-align: center;
             color: gray;
@@ -80,85 +79,9 @@
                 display: block;
                 width: 100%; 
             }
-        }
-        @media all and (min-width: 640px) and (max-width: 1024px){
-            #promo > main.swiper-container .promo-feed {
-                margin-left: -4vw;
-            }
-            #investsearch > main.swiper-container .popular-objects {
-                margin-left: 0vw;
-            }
-            #news > header, 
-            #investsearch > header, 
-            #eventcalendar > header,
-            #services > header,
-            #analytics > header,
-            #estate > header,
-            #reviews > header { 
-                display: block;
-                width: 100%; 
-            }
-        }
-        @media all and (min-width: 1024px) and (max-width: 1280px){
-            #promo > main.swiper-container .promo-feed {
-                margin-left: 7vw;
-            }
-            #investsearch > main.swiper-container .popular-objects {
-                margin-left: 8vw;
-            }
-        }
-        @media all and (min-width: 1280px) and (max-width: 1366px){
-            #promo > main.swiper-container .promo-feed {
-                margin-left: 94vw;
-            }
-            #investsearch > main.swiper-container .popular-objects {
-                margin-left: -20vw;
-            }
-        }
-        @media all and (min-width: 1366px) and (max-width: 1400px){
-            #promo > main.swiper-container .promo-feed {
-                margin-left: 7vw;
-            }
-            #investsearch > main.swiper-container .popular-objects {
-                margin-left: -20vw;
-            }
-        }
-        @media all and (min-width: 1400px) and (max-width: 1600px){
-            #promo > main.swiper-container .promo-feed {
-                margin-left: 8vw;
-            }
-            #investsearch > main.swiper-container .popular-objects {
-                margin-left: -19vw;
-            }
-        }
-        @media all and (min-width: 1600px) and (max-width: 1680px){
-            #promo > main.swiper-container .promo-feed {
-                margin-left: 8vw;
-            }
-            #investsearch > main.swiper-container .popular-objects {
-                margin-left: -19vw;
-            }
-        }
-        @media all and (min-width: 1680px) and (max-width: 1800px){
-            #promo > main.swiper-container .promo-feed {
-                margin-left: 8vw;
-            }
-            #investsearch > main.swiper-container .popular-objects {
-                margin-left: -19vw;
-            }
-        }
-        @media all and (min-width: 1800px){
-            #promo > main.swiper-container .promo-feed {
-                margin-left: 8vw;
-            }
-            #investsearch > main.swiper-container .popular-objects {
-                margin-left: -19vw;
-            }
-        }
-        @media all and (min-width: 320px) and (max-width: 1024px) {
-            #news > main #slider-view, #news > main #slider-controller, #services > main #slider-view, #services > main #slider-controller, #eventcalendar > main .calendar main, #eventcalendar > main .calendar .descr, #analytics > main #slider-view, #analytics > main #slider-controller, #estate > main #slider-view, #estate > main #slider-controller, #reviews > main #slider-view, #reviews > main #slider-controller{ display: none; }
+
             #news {
-                padding-top: 57%;
+                padding-top: 69%;
                 padding-bottom: 55%;
             }
             #eventcalendar {
@@ -218,6 +141,169 @@
             #eventcalendar > main .calendar a { font-size: 119%; }
             #investsearch > header a { margin-left: 33%; }
             #investsearch > header .add-but { width: 31%; }
+        }
+        @media all and (min-width: 640px) and (max-width: 1024px){
+            #promo > main.swiper-container .promo-feed {
+                margin-left: -4vw;
+            }
+            #investsearch > main.swiper-container .popular-objects {
+                margin-left: 0vw;
+            }
+            #news > header, 
+            #investsearch > header, 
+            #eventcalendar > header,
+            #services > header,
+            #analytics > header,
+            #estate > header,
+            #reviews > header { 
+                display: block;
+                width: 100%; 
+            }
+
+            #news {
+                padding-top: 32%;
+                padding-bottom: 32%;
+            }
+            #eventcalendar {
+                padding-bottom: 16%;
+                padding-top: 28%;
+            }
+            #services {
+                height: calc(154px * 3);
+                padding-top: calc(1vw - (15px * 2));
+            }
+            #services > main {
+                width: 80%;
+                float: left;
+                margin-left: 12vw;
+                margin-top: 5vw;
+            }
+            #analytics {
+                height: calc(220px * 2);
+                padding-top: calc(87px / 2);
+                padding-bottom: calc(217px / 2);
+            }
+            #analytics > main {
+                width: 59%;
+                float: left;
+                display: inline-table;
+                margin-top: -10%;
+                margin-left: 9vw;
+            }
+            #estate {
+                height: calc(211px * 3);
+                padding-top: calc(1vw * 2);
+            }
+            #reviews {
+                height: calc(245px * 2);
+                padding-top: calc(113px / 2);
+                padding-bottom: calc(135px / 2);
+            }
+            #reviews > main{
+                width: 100%;
+                float: left;
+                margin-left: 10vw;
+                margin-top: 10vw;
+            }
+            #eventcalendar > main .calendar header {
+                float: left;
+                font-size: calc(109% * 2);
+                width: 27%;
+                margin-left: 4%;
+            }
+            #eventcalendar > main .calendar .date { top: 7px; }
+            #eventcalendar > main .calendar footer {
+                float: left;
+                width: 100%;
+                margin-top: 7%;
+            }
+            #eventcalendar > main .calendar .event-location { font-size: 90%; }
+            #eventcalendar > main .calendar a { font-size: 119%; }
+            #investsearch > header a { margin-left: 33%; }
+            #investsearch > header .add-but { width: 31%; }
+        }
+        @media all and (min-width: 1024px) and (max-width: 1280px){
+            #promo > main.swiper-container .promo-feed {
+                margin-left: 7vw;
+            }
+            #investsearch > main.swiper-container .popular-objects {
+                margin-left: 8vw;
+            }
+        }
+        @media all and (min-width: 1280px) and (max-width: 1366px){
+            #promo > main.swiper-container .promo-feed {
+                margin-left: 94vw;
+            }
+            #investsearch > main.swiper-container .popular-objects {
+                margin-left: -20vw;
+            }
+        }
+        @media all and (min-width: 1366px) and (max-width: 1400px){
+            #promo > main.swiper-container .promo-feed {
+                margin-left: 7vw;
+            }
+            #investsearch > main.swiper-container .popular-objects {
+                margin-left: -20vw;
+            }
+        }
+        @media all and (min-width: 1400px) and (max-width: 1600px){
+            #promo > main.swiper-container .promo-feed {
+                margin-left: 8vw;
+            }
+            #investsearch > main.swiper-container .popular-objects {
+                margin-left: -19vw;
+            }
+        }
+        @media all and (min-width: 1600px) and (max-width: 1680px){
+            #promo > main.swiper-container .promo-feed {
+                margin-left: 8vw;
+            }
+            #investsearch > main.swiper-container .popular-objects {
+                margin-left: -19vw;
+            }
+        }
+        @media all and (min-width: 1680px) and (max-width: 1800px){
+            #promo > main.swiper-container .promo-feed {
+                margin-left: 8vw;
+            }
+            #investsearch > main.swiper-container .popular-objects {
+                margin-left: -19vw;
+            }
+        }
+        @media all and (min-width: 1800px){
+            #promo > main.swiper-container .promo-feed {
+                margin-left: 8vw;
+            }
+            #investsearch > main.swiper-container .popular-objects {
+                margin-left: -19vw;
+            }
+        }
+        @media all and (min-width: 320px) and (max-width: 1024px) {
+            #news > main #slider-view, #news > main #slider-controller, #services > main #slider-view, #services > main #slider-controller, #eventcalendar > main .calendar main, #eventcalendar > main .calendar .descr, #analytics > main #slider-view, #analytics > main #slider-controller, #estate > main #slider-view, #estate > main #slider-controller, #reviews > main #slider-view, #reviews > main #slider-controller{ display: none; }
+            #news[data-text]::before {
+                left: 15vw;
+                top: 56%;
+            }
+            [data-text]:nth-last-child(5)::before {
+                left: 27vw;
+                top: 26%;
+            }
+            [data-text]:nth-last-child(4)::before {
+                left: 29vw;
+                top: 21%;
+            }
+            [data-text]:nth-last-child(3)::before {
+                left: 43vw;
+                top: 28%;
+            }
+            [data-text]:nth-last-child(2)::before {
+                left: 61vw;
+                top: 22%;
+            }
+            [data-text]:nth-last-child(1)::before {
+                left: 26vw;
+                top: 27%;
+            }
         }
         @media all and (min-width: 1024px) {
             #news > main #slider-view-adaptive, #news > main #slider-controller-adaptive, #services > main #slider-view-adaptive, #services > main #slider-controller-adaptive, #analytics > main #slider-view-adaptive,  #analytics > main #slider-controller-adaptive, #estate > main #slider-view-adaptive,  #estate > main #slider-controller-adaptive, #reviews > main #slider-view-adaptive,  #reviews > main #slider-controller-adaptive{ display: none; }

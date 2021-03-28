@@ -147,6 +147,7 @@
         top: 0%;
     }
     .passport-page > main #right-content { display: none; }
+    .footer{ display: none;}
 }
 @media all and (min-width: 320px) and (max-width: 640px){
     .passport-page > main #left-content #table-list, .passport-page > main #left-content #table-list .content td {
