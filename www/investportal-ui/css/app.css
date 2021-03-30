@@ -1451,6 +1451,10 @@ html,body{
     #services > main #slider-view .service-feed .service footer .descr {
         font-size: 68%;
     }
+    #analytics > main #slider-view .analytic-feed .analytic:nth-last-child(1) {
+        top: -373px;
+        left: 66%;
+    }
     #analytics > main #slider-controller img {
         width: 28%;
     }
