@@ -2,7 +2,7 @@
 .news-feed{
   width: 82%;
   margin-left: 9%;
-  margin-top: -3%;
+  margin-top: -5%;
 }
 .news-feed > header{
   position: relative;
@@ -21,6 +21,7 @@
   float: left;
   margin-left: -8%;
   width: 62%;
+  margin-top: -3%;
 }
 .news-feed > header #top-feed .left-content header{
   margin-top: 3%;
@@ -65,6 +66,7 @@
 .news-feed >  header #top-feed .right-content{
   float: right;
   width: 45%;
+  margin-top: -6%;
 }
 .news-feed >  header #top-feed .right-content .last-feed-cont{
   padding-top: 2px;
@@ -103,7 +105,7 @@
   padding-top: 3%;
 }
 .news-feed > main{
-  margin-top: 44%;
+  margin-top: 35%;
   display: block;
 }
 .news-feed > main #light-feed{
@@ -155,7 +157,7 @@
   margin-top: 3%;
 }
 .news-feed > footer{
-  margin-top: 5%;
+  margin-top: 0%;
   display: block;
 }
 .news-feed > footer #down-feed{
@@ -262,5 +264,58 @@
   }
   .news-feed > footer #down-feed .down-feed-cont #cont-content ul li {
     margin-left: -3%;
+  }
+}
+@media all and (min-width: 1024px) and (max-width: 1280px){
+  .news-feed {
+    margin-top: -15%;
+  }
+  .news-feed > main {
+    margin-top: 64%;
+  }
+}
+@media all and (min-width: 1280px) and (max-width: 1366px){
+  .news-feed {
+    margin-top: -8%;
+  }
+  .news-feed > main {
+    margin-top: 48%;
+  }
+}
+@media all and (min-width: 1366px) and (max-width: 1400px){
+  .news-feed > main {
+    margin-top: 42%;
+  }
+}
+@media all and (min-width: 1400px) and (max-width: 1600px){
+  .news-feed {
+    margin-top: -6%;
+  }
+  .news-feed > main {
+    margin-top: 39%;
+  }
+}
+@media all and (min-width: 1600px) and (max-width: 1680px){
+  .news-feed {
+    margin-top: -5%;
+  }
+  .news-feed > main {
+    margin-top: 34%;
+  }
+}
+@media all and (min-width: 1680px) and (max-width: 1800px){
+  .news-feed {
+    margin-top: -6%;
+  }
+  .news-feed > main {
+    margin-top: 31%;
+  }
+}
+@media all and (min-width: 1800px){
+  .news-feed {
+    margin-top: -3%;
+  }
+  .news-feed > main {
+    margin-top: 27%;
   }
 }
