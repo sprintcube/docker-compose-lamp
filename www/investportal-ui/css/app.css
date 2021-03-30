@@ -207,7 +207,7 @@ html,body{
     color: #0079bf;
     font-size: 79%;
     text-decoration: none;
-    padding-right: 12px;
+    padding-right: 3px;
     position: relative;
     left: 6%;
 }
@@ -217,7 +217,7 @@ html,body{
 }
 #link-switcher > a:not(:nth-child(1)){
     margin-left: 0%;
-    padding-left: 12px;
+    padding-left: 3px;
 }
 #link-switcher > a.active{ font-weight: bold; }
 #link-switcher > a:hover{
@@ -2031,12 +2031,15 @@ html,body{
         margin-top: -9%;
     }
 }
-@media all and (aspect-ratio: 5/4){
+@media all and (width: 1280px){
     #promo > main.swiper-container .promo-feed .promoblock {
         height: 405px;
     }
-    .header > #header_bottom {
+    .header > #header_bottom{
         display: none;
+    }
+    .header > #header_bottom_adaptive{
+        display: inherit;
     }
     #estate > main #slider-view .estat-feed .estat {
         margin-left: 4%;
