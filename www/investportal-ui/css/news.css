@@ -233,6 +233,9 @@
   .news-feed > main #light-feed .light-feed-cont #cont-header span#cont-title {
     padding-left: 3%;
   }
+  .news-feed > header #top-feed .left-content header img {
+    height: 139px;
+  }
 }
 @media all and (min-width: 400px) and (max-width: 640px){
   .news-feed > main {
