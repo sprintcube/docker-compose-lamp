@@ -195,6 +195,14 @@
     margin-top: -5%;
   }
 }
+@media all and (min-width: 1600px) and (max-width: 1680px){
+  #news > .news-viewer #left-content {
+    margin-top: -4%;
+  }
+  #news > .news-viewer #right-content {
+    margin-top: -2%;
+  }
+}
 @media all and (min-width: 1680px) and (max-width: 1800px){
   #news > .news-viewer #left-content {
     margin-top: -6%;
