@@ -17,11 +17,33 @@
             border: none;
             font-size: 70%;
             padding: 10px;
+            position: relative;
+            top: -37px;
         }
         .footer{ overflow: hidden;}
         #services[data-text]::before{
             left: 17%;
             top: 36%;
+        }
+        @media all and (min-width: 1024px) and (max-width: 1280px){
+            .add-but {
+                top: -22px;
+            }
+        }
+        @media all and (min-width: 1280px) and (max-width: 1600px){
+            .add-but {
+                top: -53px;
+            }
+        }
+        @media all and (min-width: 1280px) and (max-width: 1366px){
+            .add-but {
+                top: -37px;
+            }
+        }
+        @media all and (min-width: 1800px){
+            .add-but {
+                top: -55px;
+            }
         }
         
     </style>
@@ -142,7 +164,7 @@
                 <div class="left-content">
                     <header>
                         <button class="add-but">
-                            <img src="https://img.icons8.com/windows/32/000000/horizontal-settings-mixer--v1.png" style="width:20%;vertical-align:middle;"/>
+                            <img src="https://img.icons8.com/windows/32/ffffff/horizontal-settings-mixer--v1.png" style="width:20%;vertical-align:middle;"/>
                             Object filter
                         </button>
                         <h2 class="view-title">Hotel Reddison</h2>

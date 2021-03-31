@@ -8,6 +8,7 @@
   position: relative;
   left: -5%;
   width: 100%;
+  padding-bottom: 3%;
 }
 .news-feed > header h2.title{
   color: black;
@@ -66,7 +67,7 @@
 .news-feed >  header #top-feed .right-content{
   float: right;
   width: 45%;
-  margin-top: -6%;
+  margin-top: -3%;
 }
 .news-feed >  header #top-feed .right-content .last-feed-cont{
   padding-top: 2px;
