@@ -29,9 +29,9 @@
   margin-left: 13%;
 }
 .news-feed > header #top-feed .left-content header img{
-  width: 70%;
+  width: 100%;
   object-fit: cover;
-  height: 264px;
+  height: 345px;
 }
 .news-feed > header #top-feed .left-content main{
   display: block;
