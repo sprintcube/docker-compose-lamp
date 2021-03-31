@@ -340,3 +340,8 @@ span.view-title{
         margin-top: -8%;
     }
 }
+@media all and (width: 1280px) {
+    #images-slider > .content {
+        margin-top: 2%;
+    }
+}
