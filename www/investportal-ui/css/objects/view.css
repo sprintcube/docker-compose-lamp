@@ -223,7 +223,7 @@ span.view-title{
 }
 #images-slider > .footer{
     display: block;
-    margin-top: 2%;
+    margin-top: 8px;
     background-color: transparent;
     margin-left: 8%;
 }
