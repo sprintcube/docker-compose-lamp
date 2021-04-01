@@ -1557,6 +1557,9 @@ html,body{
         width: 17vw;
         margin-left: 3%;
     }
+    .header > #header_bottom_adaptive {
+        margin-right: 12%;
+    }
 }
 @media all and (min-width:1280px) and (max-width: 1366px){
     .header > #header_bottom {
@@ -2047,6 +2050,9 @@ html,body{
     }
     #reviews {
         height: 241px;
+    }
+    .header > #header_bottom_adaptive {
+        margin-right: 12%;
     }
 }
 
