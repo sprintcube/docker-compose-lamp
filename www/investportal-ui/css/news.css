@@ -22,7 +22,7 @@
   float: left;
   margin-left: -6vw;
   width: 50%;
-  margin-top: -2%;
+  margin-top: -41px;
 }
 .news-feed > header #top-feed .left-content header{
   margin-top: 3%;
@@ -71,7 +71,7 @@
 .news-feed >  header #top-feed .right-content{
   float: right;
   width: 50%;
-  margin-right: 4%;
+  margin-right: 3%;
 }
 .news-feed >  header #top-feed .right-content .last-feed-cont{
   padding-top: 2px;
@@ -84,7 +84,7 @@
   list-style-type: none;
 }
 .news-feed >  header #top-feed .right-content .last-feed-cont #cont-content ul li{
-  width: 48%;
+  width: calc(21% / 2);
   display: inline-table;
   padding-bottom: 2%;
 }
@@ -131,7 +131,7 @@
   background-color: #eff3f4;
   position: relative;
   top: -19px;
-  padding-left: 3%;
+  padding-left: 2vw;
   padding-right: 1%;
 }
 .news-feed > main #light-feed .light-feed-cont #cont-content{
@@ -154,7 +154,7 @@
   display: block;
   text-decoration: none;
   font-size: 97%;
-  width: 108%;
+  width: 101%;
 }
 .news-feed > main #light-feed .light-feed-cont #cont-content ul li span{
   font-size: 81%;
@@ -241,13 +241,23 @@
   .news-feed > footer #down-feed .down-feed-cont #cont-content ul li img {
     width: calc(17vw * 4);
   }
+  .news-feed > main #light-feed .light-feed-cont #cont-content ul li a {
+    width: 103%;
+  }
+  .news-feed > header #top-feed .left-content header img {
+    height: calc(139px * 2);
+    width: 100%;
+  }
+  .news-feed > main #light-feed .light-feed-cont #cont-header span#cont-title {
+    padding-left: 4vw;
+  }
+  .news-feed > header #top-feed .left-content main #title {
+    width: 122%;
+  }
 }
 @media all and (min-width: 320px) and (max-width: 640px){
   .news-feed > main #light-feed .light-feed-cont #cont-header span#cont-title {
     margin-left: -8%;
-  }
-  .news-feed > header #top-feed .left-content header img {
-    height: calc(139px * 2);
   }
 }
 @media all and (min-width: 400px) and (max-width: 640px){
