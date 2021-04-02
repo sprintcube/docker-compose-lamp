@@ -16,7 +16,6 @@
 }
 .news-feed > header #top-feed{
   padding-top: 2px;
-  padding-bottom: 54px;
 }
 .news-feed > header #top-feed .left-content{
   float: left;
@@ -25,15 +24,14 @@
   margin-top: -41px;
 }
 .news-feed > header #top-feed .left-content header{
-  margin-top: 3%;
+  margin-top: 21px;
   margin-left: 13%;
   padding-top: 7px;
   padding-bottom: 7px;
 }
 .news-feed > header #top-feed .left-content header img{
-  width: 106%;
-  object-fit: cover;
-  height: 420px;
+  width: 100%;
+  height: 340px;
 }
 .news-feed > header #top-feed .left-content main{
   display: block;
@@ -48,14 +46,12 @@
   font-weight: bold;
   text-decoration: none;
   font-size: 83%;
-  width: 130%;
 }
 .news-feed > header #top-feed .left-content main #descript{
   display: block;
   margin-top: 2%;
   font-size: 65%;
-  color: black;
-  width: 125%;
+  color: gray;
 }
 .news-feed > header #top-feed .left-content footer{ 
   display: block;
@@ -70,8 +66,8 @@
 }
 .news-feed >  header #top-feed .right-content{
   float: right;
-  width: 50%;
-  margin-right: 3%;
+  width: 47vw;
+  margin-right: 0%;
 }
 .news-feed >  header #top-feed .right-content .last-feed-cont{
   padding-top: 2px;
@@ -84,14 +80,14 @@
   list-style-type: none;
 }
 .news-feed >  header #top-feed .right-content .last-feed-cont #cont-content ul li{
-  width: calc(21% / 2);
+  width: 43%;
   display: inline-table;
   padding-bottom: 2%;
+  margin-left: 2%;
 }
 .news-feed >  header #top-feed .right-content .last-feed-cont #cont-content ul li img{ 
-  width: 19vw;
-  object-fit: cover;
-  height: 161px;
+  width: 100%;
+  height: 150px;
 }
 .news-feed >  header #top-feed .right-content .last-feed-cont #cont-content ul li a{
   color: #0079bf;
@@ -100,14 +96,12 @@
   font-size: 60%;
   display: block;
   padding-top: 3%;
-  width: 90%;
 }
 .news-feed >  header #top-feed .right-content .last-feed-cont #cont-content ul li span{ 
-  color: black;
+  color: gray;
   font-size: 60%;
   display: block;
   padding-top: 3%;
-  width: 94%;
 }
 .news-feed > main{
   margin-top: 35%;
@@ -144,7 +138,7 @@
   margin-left: -3%;
 }
 .news-feed > main #light-feed .light-feed-cont #cont-content ul li{
-  width: 21%;
+  width: 18vw;
   display: inline-table;
   margin-left: 3%;
 }
@@ -154,13 +148,12 @@
   display: block;
   text-decoration: none;
   font-size: 97%;
-  width: 101%;
 }
 .news-feed > main #light-feed .light-feed-cont #cont-content ul li span{
-  font-size: 81%;
+  font-size: 79%;
   display: block;
   margin-top: 3%;
-  width: 100%;
+  color: gray;
 }
 .news-feed > footer{
   margin-top: 0%;
@@ -182,13 +175,12 @@
   margin-left: -3%;
 }
 .news-feed > footer #down-feed .down-feed-cont #cont-content ul li{
-  width: 21%;
+  width: 18vw;
   display: inline-table;
   margin-left: 3%;
 }
 .news-feed > footer #down-feed .down-feed-cont #cont-content ul li img{
-  width: 17vw;
-  object-fit: cover;
+  width: 100%;
   height: 172px;
 }
 .news-feed > footer #down-feed .down-feed-cont #cont-content ul li a{
@@ -203,6 +195,7 @@
   font-size: 81%;
   display: block;
   margin-top: 4%;
+  color: gray;
 }
 @media all and (min-width: 320px) and (max-width: 1024px){
   .news-feed {
@@ -215,7 +208,7 @@
   }
   .news-feed > header #top-feed .right-content {
     width: 100%;
-    margin-right: 9%;
+    margin-right: 15%;
     margin-top: 7%;
   }
   .news-feed > main #light-feed .light-feed-cont #cont-content ul li {
@@ -230,16 +223,16 @@
     margin-top: 5%;
   }
   #news {
-    height: 5173px;
+    height: 5900px;
   }
   .news-feed > main #light-feed .light-feed-cont #cont-header hr{
     color: transparent;
   }
   .news-feed > header #top-feed .right-content .last-feed-cont #cont-content ul li img {
-    width: calc(19vw * 2);
+    width: 95%;
   }
   .news-feed > footer #down-feed .down-feed-cont #cont-content ul li img {
-    width: calc(17vw * 4);
+    width: 40%;
   }
   .news-feed > main #light-feed .light-feed-cont #cont-content ul li a {
     width: 103%;
@@ -275,13 +268,13 @@
     margin-left: -4%;
   }
   .news-feed > header #top-feed .right-content {
-    margin-right: 5%;
+    margin-right: 7%;
   }
   .news-feed > header #top-feed .right-content .last-feed-cont #cont-content ul li {
     width: 46%;
   }
   #news {
-    height: 5225px;
+    height: 5253px;
   }
   .news-feed > footer #down-feed .down-feed-cont #cont-content ul li {
     margin-left: -4%;
