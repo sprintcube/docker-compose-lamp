@@ -46,12 +46,14 @@
   font-weight: bold;
   text-decoration: none;
   font-size: 83%;
+  width: 100%;
 }
 .news-feed > header #top-feed .left-content main #descript{
   display: block;
   margin-top: 2%;
   font-size: 65%;
   color: gray;
+  width: 100%;
 }
 .news-feed > header #top-feed .left-content footer{ 
   display: block;
@@ -96,12 +98,14 @@
   font-size: 60%;
   display: block;
   padding-top: 3%;
+  width: 100%;
 }
 .news-feed >  header #top-feed .right-content .last-feed-cont #cont-content ul li span{ 
   color: gray;
   font-size: 60%;
   display: block;
   padding-top: 3%;
+  width: 100%;
 }
 .news-feed > main{
   margin-top: 35%;
@@ -148,12 +152,14 @@
   display: block;
   text-decoration: none;
   font-size: 97%;
+  width: 100%;
 }
 .news-feed > main #light-feed .light-feed-cont #cont-content ul li span{
   font-size: 79%;
   display: block;
   margin-top: 3%;
   color: gray;
+  width: 100%;
 }
 .news-feed > footer{
   margin-top: 0%;
@@ -190,12 +196,14 @@
   text-decoration: none;
   font-weight: bold;
   margin-top: 3%;
+  width: 100%;
 }
 .news-feed > footer #down-feed .down-feed-cont #cont-content ul li span{
   font-size: 81%;
   display: block;
   margin-top: 4%;
   color: gray;
+  width: 100%;
 }
 @media all and (min-width: 320px) and (max-width: 1024px){
   .news-feed {
@@ -326,14 +334,28 @@
   .news-feed > main {
     margin-top: 31%;
   }
+
   .news-feed > header #top-feed .right-content .last-feed-cont #cont-content ul li img,
-  .news-feed > footer #down-feed .down-feed-cont #cont-content ul li img{ width: 94%; }
+  .news-feed > header #top-feed .right-content .last-feed-cont #cont-content ul li a,
+  .news-feed > header #top-feed .right-content .last-feed-cont #cont-content ul li span,
+  .news-feed > footer #down-feed .down-feed-cont #cont-content ul li img,
+  .news-feed > footer #down-feed .down-feed-cont #cont-content ul li a,
+  .news-feed > footer #down-feed .down-feed-cont #cont-content ul li span,
+  .news-feed > main #light-feed .light-feed-cont #cont-content ul li a,
+  .news-feed > main #light-feed .light-feed-cont #cont-content ul li span{ width: 94%; }
 }
 @media all and (min-width: 1800px){
   .news-feed { margin-top: -3%; }
   .news-feed > main { margin-top: 27%; }
   .news-feed > header #top-feed .right-content { margin-right: 3px; }
+
   .news-feed > header #top-feed .right-content .last-feed-cont #cont-content ul li img,
-  .news-feed > footer #down-feed .down-feed-cont #cont-content ul li img{ width: 91%; }
+  .news-feed > header #top-feed .right-content .last-feed-cont #cont-content ul li a,
+  .news-feed > header #top-feed .right-content .last-feed-cont #cont-content ul li span,
+  .news-feed > footer #down-feed .down-feed-cont #cont-content ul li img,
+  .news-feed > footer #down-feed .down-feed-cont #cont-content ul li a,
+  .news-feed > footer #down-feed .down-feed-cont #cont-content ul li span,
+  .news-feed > main #light-feed .light-feed-cont #cont-content ul li a,
+  .news-feed > main #light-feed .light-feed-cont #cont-content ul li span{ width: 91%; }
 
 }
