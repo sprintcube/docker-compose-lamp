@@ -32,6 +32,7 @@
 .news-feed > header #top-feed .left-content header img{
   width: 100%;
   height: 340px;
+  object-fit: cover;
 }
 .news-feed > header #top-feed .left-content main{
   display: block;
@@ -87,9 +88,10 @@
   padding-bottom: 2%;
   margin-left: 2%;
 }
-.news-feed >  header #top-feed .right-content .last-feed-cont #cont-content ul li img{ 
+.news-feed >  header #top-feed .right-content .last-feed-cont #cont-content ul li img{
   width: 100%;
   height: 150px;
+  object-fit: cover;
 }
 .news-feed >  header #top-feed .right-content .last-feed-cont #cont-content ul li a{
   color: #0079bf;
@@ -188,6 +190,7 @@
 .news-feed > footer #down-feed .down-feed-cont #cont-content ul li img{
   width: 100%;
   height: 172px;
+  object-fit: cover;
 }
 .news-feed > footer #down-feed .down-feed-cont #cont-content ul li a{
   display: block;
@@ -240,7 +243,7 @@
     width: 95%;
   }
   .news-feed > footer #down-feed .down-feed-cont #cont-content ul li img {
-    width: 40%;
+    width: 77vw;
   }
   .news-feed > main #light-feed .light-feed-cont #cont-content ul li a {
     width: 103%;
@@ -276,7 +279,7 @@
     margin-left: -4%;
   }
   .news-feed > header #top-feed .right-content {
-    margin-right: 7%;
+    margin-right: 8%;
   }
   .news-feed > header #top-feed .right-content .last-feed-cont #cont-content ul li {
     width: 46%;
