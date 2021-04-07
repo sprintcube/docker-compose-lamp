@@ -11,7 +11,7 @@ span.view-title{
 }
 .object-viewer{
     width: 80%;
-    margin-left: 10%;
+    margin-left: 9%;
 }
 .object-viewer > .left-content, .object-viewer > .right-content{
     display: inline-table;
@@ -119,20 +119,25 @@ span.view-title{
     font-weight: bold;
 }
 .object-viewer > .right-content header .add-to-favorite{
-    font-size: 120%;
-    padding-bottom: 3%;
+    font-size: 110%;
+    padding-bottom: 2%;
+    border: solid 2px gray;
+    width: 178px;
 }
 .object-viewer > .right-content header .add-to-favorite i{
     color: #0079bf;
     vertical-align: middle;
+    margin-left: 14px;
+    margin-top: 1%;
 }
 .object-viewer > .right-content header .add-to-favorite a{
     font-size: 60%;
-    color: black;
+    color: gray;
     text-decoration: none;
 }
 .object-viewer > .right-content header .description{
     font-size: 100%;
+    margin-top: 18%;
 }
 .object-viewer > .right-content header .description span{
     height: 44px;
@@ -172,7 +177,7 @@ span.view-title{
 }
 .object-viewer > .right-content footer .view-player {
     display: block;
-    width: 100%;
+    width: 90%;
     height: 304px;
     margin-left: 8%;
     margin-top: 2%;
@@ -205,7 +210,7 @@ span.view-title{
     float: right;
     position: relative;
     top: 255%;
-    margin-right: -26%;
+    margin-right: -25%;
 }
 #images-slider > .header .switcher img{
     width: 26px;
@@ -217,7 +222,7 @@ span.view-title{
     margin-top: -6%;
 }
 #images-slider > .content #current{
-    width: 88%;
+    width: 87%;
     object-fit: cover;
     height: 337px;
 }
@@ -245,8 +250,10 @@ span.view-title{
 }
 @media all and (min-width: 320px) and (max-width: 1024px){
     .object-viewer {
-        width: 80%;
         margin-left: 4%;
+    }
+    .object-viewer > .right-content header .description {
+        margin-top: 11%;
     }
     .object-viewer > .left-content { width: 100%; }
     .object-viewer > .right-content { 
@@ -265,27 +272,44 @@ span.view-title{
         width: 84%;
         margin-top: 5%;
     }
+    .object-viewer {
+        width: 89%;
+        margin-top: 11%;
+    }
     #images-slider {
-        margin-top: -28%;
+        margin-top: -38%;
         height: 354px;
     }
     #images-slider > .content #current {
         height: 151px;
+        margin-left: 6%;
+        width: 77%;
     }
     #images-slider > .footer .image-switcher img {
         height: 37px;
     }
-    #images-slider > .header header.switcher{ left: -2%; }
+    #images-slider > .header header.switcher{left: 3%;}
     #images-slider > .header footer.switcher {
         top: 195%;
-        margin-right: -25%;
+        margin-right: -22%;
     }
     .object-viewer > .right-content footer .view-player {
         height: 165px;
+        width: 96%;
     }
     #objects > .objects-list main table { border-top: none; }
 }
 @media all and (min-width: 640px) and (max-width: 1024px){
+    .object-viewer {
+        width: 88%;
+        margin-left: 4%;
+    }
+    .object-viewer > .right-content footer {
+        margin-top: 2%;
+    }
+    #images-slider {
+        margin-top: -22%;
+    }
     #images-slider > .header header.switcher{ top: 291%; }
     #images-slider > .header footer.switcher { top: 307%; }
 }
@@ -293,6 +317,9 @@ span.view-title{
     #images-slider {
         margin-top: -28%;
         height: 616px;
+    }
+    .object-viewer > .right-content header .description {
+        margin-top: 24%;
     }
     #images-slider > .content #current {
         width: 90%;
@@ -313,18 +340,43 @@ span.view-title{
     #images-slider > .content { margin-top: -2%; }
 }
 @media all and (min-width: 1280px) and (max-width: 1366px){
+    .object-viewer > .right-content header .description {
+        margin-top: 24%;
+    }
     .object-viewer > .right-content {
         top: -38px;
     }
+    .object-viewer > .right-content footer .view-player {
+        width: 94%;
+    }
+    #images-slider > .header footer.switcher {
+        top: 275%;
+        margin-right: -29%;
+    }
 }
 @media all and (min-width: 1366px) and (max-width: 1400px){
+    .object-viewer > .right-content header .description {
+        margin-top: 22%;
+    }
     .object-viewer > .right-content {
         top: -38px;
     }
 }
 @media all and (min-width: 1400px) and (max-width: 1600px){
+    .object-viewer > .right-content header .description {
+        margin-top: 23%;
+    }
     .object-viewer > .right-content {
         top: -52px;
+    }
+    #images-slider > .content #current {
+        width: 89%;
+    }
+    .object-viewer > .right-content footer .view-player {
+        width: 93%;
+    }
+    #images-slider > .header footer.switcher {
+        margin-right: -27%;
     }
 }
 @media all and (min-width: 1680px) and (max-width: 1800px){
@@ -338,6 +390,15 @@ span.view-title{
     }
     .object-viewer > .right-content footer {
         margin-top: -8%;
+    }
+    .object-viewer > .right-content footer .view-player {
+        width: 88%;
+    }
+    #images-slider > .content #current {
+        width: 85%;
+    }
+    #images-slider > .header footer.switcher {
+        margin-right: -24%;
     }
 }
 @media all and (width: 1280px) {

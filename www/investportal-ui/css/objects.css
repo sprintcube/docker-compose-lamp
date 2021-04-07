@@ -2,9 +2,9 @@
 .window-closed{ display: none; }
 #objects{ height: auto; }
 #objects > .projects-search-form{
-    width: 75%;
+    width: 76%;
     height: auto;
-    margin-left: 13%;
+    margin-left: 12%;
     background-color: white;
 }
 #objects > .projects-search-form header{
@@ -43,15 +43,15 @@
     padding-bottom: 2%;
 }
 #objects > .objects-list{
-    width: 80%;
-    margin-left: 13%;
+    width: 83%;
+    margin-left: 12%;
     margin-top: 3%;
 }
 #objects > .objects-list header{
     color: black;
 }
 #objects > .objects-list header h2{
-    margin-left: -8%;
+    margin-left: -9%;
 }
 #objects > .objects-list main table{
     width: 91%;

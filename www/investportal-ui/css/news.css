@@ -85,7 +85,7 @@
 .news-feed >  header #top-feed .right-content .last-feed-cont #cont-content ul li{
   width: 43%;
   display: inline-table;
-  padding-bottom: 2%;
+  padding-bottom: 4%;
   margin-left: 2%;
 }
 .news-feed >  header #top-feed .right-content .last-feed-cont #cont-content ul li img{
@@ -131,7 +131,7 @@
   background-color: #eff3f4;
   position: relative;
   top: -19px;
-  padding-left: 2vw;
+  padding-left: 2%;
   padding-right: 1%;
 }
 .news-feed > main #light-feed .light-feed-cont #cont-content{
@@ -170,13 +170,13 @@
 .news-feed > footer #down-feed{
   padding-top: 1%;
   padding-bottom: 1%;
+  margin-top: -3%;
 }
 .news-feed > footer #down-feed .down-feed-cont{
   display: block;
-  padding-bottom: 1%;
 }
 .news-feed > footer #down-feed .down-feed-cont #cont-content{
-  padding-top: 5px;
+  padding-top: 1px;
 }
 .news-feed > footer #down-feed .down-feed-cont #cont-content ul{
   list-style-type: none;
@@ -198,13 +198,13 @@
   font-size: 92%;
   text-decoration: none;
   font-weight: bold;
-  margin-top: 3%;
+  margin-top: 1%;
   width: 100%;
 }
 .news-feed > footer #down-feed .down-feed-cont #cont-content ul li span{
   font-size: 81%;
   display: block;
-  margin-top: 4%;
+  margin-top: 3%;
   color: gray;
   width: 100%;
 }

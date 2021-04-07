@@ -12,7 +12,7 @@
 }
 .header > #header_bottom_adaptive header ul.adaptive-buttons li{
     display: inline-table;
-    padding-left: 10px;
+    padding-left: 5px;
 }
 .header > #header_bottom_adaptive header ul.adaptive-buttons li:hover{
     cursor: pointer;
