@@ -46,15 +46,15 @@
   color: #0079bf;
   font-weight: bold;
   text-decoration: none;
-  font-size: 83%;
-  width: 100%;
+  font-size: 94%;
+  width: 125%;
 }
 .news-feed > header #top-feed .left-content main #descript{
   display: block;
   margin-top: 2%;
-  font-size: 65%;
+  font-size: 69%;
   color: gray;
-  width: 100%;
+  width: 125%;
 }
 .news-feed > header #top-feed .left-content footer{ 
   display: block;
@@ -97,12 +97,12 @@
   color: #0079bf;
   font-weight: bold;
   text-decoration: none;
-  font-size: 60%;
+  font-size: 69%;
   display: block;
-  padding-top: 3%;
+  padding-top: 8%;
   width: 100%;
 }
-.news-feed >  header #top-feed .right-content .last-feed-cont #cont-content ul li span{ 
+.news-feed >  header #top-feed .right-content .last-feed-cont #cont-content ul li span{
   color: gray;
   font-size: 60%;
   display: block;
@@ -157,7 +157,7 @@
   width: 100%;
 }
 .news-feed > main #light-feed .light-feed-cont #cont-content ul li span{
-  font-size: 79%;
+  font-size: 80%;
   display: block;
   margin-top: 3%;
   color: gray;
@@ -195,14 +195,14 @@
 .news-feed > footer #down-feed .down-feed-cont #cont-content ul li a{
   display: block;
   color: #0079bf;
-  font-size: 92%;
+  font-size: 99%;
   text-decoration: none;
   font-weight: bold;
-  margin-top: 1%;
+  margin-top: 8%;
   width: 100%;
 }
 .news-feed > footer #down-feed .down-feed-cont #cont-content ul li span{
-  font-size: 81%;
+  font-size: 85%;
   display: block;
   margin-top: 3%;
   color: gray;

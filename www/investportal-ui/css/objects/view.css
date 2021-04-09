@@ -37,8 +37,8 @@ span.view-title{
 }
 .object-viewer > .left-content header .metadata div{
     font-size: 71%;
-    padding-top: 2%;
-    padding-bottom: 2%;
+    padding-top: 4%;
+    padding-bottom: 4%;
     border-top: solid 2px #0079bf;
 }
 .object-viewer > .left-content header .metadata div span{
@@ -118,6 +118,9 @@ span.view-title{
     color: black;
     font-weight: bold;
 }
+#objects > .objects-list {
+    margin-top: -4%;
+}
 .object-viewer > .right-content header .add-to-favorite{
     font-size: 110%;
     padding-bottom: 2%;
@@ -149,7 +152,9 @@ span.view-title{
 }
 .object-viewer > .right-content header .description a{
     margin-top: 1%;
-    display: block;
+    display: inline-block;
+    text-decoration: none;
+    border-bottom: dotted 2px;
 }
 .object-viewer > .right-content main {
     margin-top: 3%;
@@ -203,14 +208,14 @@ span.view-title{
 #images-slider > .header header.switcher{
     float: left;
     position: relative;
-    top: 190%;
-    margin-left: 2%;
+    top: 214%;
+    margin-left: -3%;
 }
 #images-slider > .header footer.switcher{
     float: right;
     position: relative;
-    top: 255%;
-    margin-right: -25%;
+    top: 268%;
+    margin-right: -29%;
 }
 #images-slider > .header .switcher img{
     width: 26px;
@@ -288,10 +293,13 @@ span.view-title{
     #images-slider > .footer .image-switcher img {
         height: 37px;
     }
-    #images-slider > .header header.switcher{left: 3%;}
+    #images-slider > .header header.switcher {
+        top: 189%;
+        left: 6%;
+    }
     #images-slider > .header footer.switcher {
-        top: 195%;
-        margin-right: -22%;
+        top: 196%;
+        right: 7%;
     }
     .object-viewer > .right-content footer .view-player {
         height: 165px;
@@ -310,8 +318,8 @@ span.view-title{
     #images-slider {
         margin-top: -22%;
     }
-    #images-slider > .header header.switcher{ top: 291%; }
-    #images-slider > .header footer.switcher { top: 307%; }
+    #images-slider > .header header.switcher{top: 291%;left: 5%;}
+    #images-slider > .header footer.switcher {top: 277%;right: 3%;}
 }
 @media all and (min-width: 1024px) and (max-width: 1280px){
     #images-slider {
@@ -330,8 +338,8 @@ span.view-title{
         top: -28px;
     }
     #images-slider > .header header.switcher {
-        top: 223%;
         margin-left: 0%;
+        top: 228%;
     }
     #images-slider > .header footer.switcher {
         top: 271%;
@@ -349,9 +357,8 @@ span.view-title{
     .object-viewer > .right-content footer .view-player {
         width: 94%;
     }
-    #images-slider > .header footer.switcher {
-        top: 275%;
-        margin-right: -29%;
+    #images-slider > .header header.switcher {
+        top: 207%;
     }
 }
 @media all and (min-width: 1366px) and (max-width: 1400px){
@@ -376,12 +383,18 @@ span.view-title{
         width: 93%;
     }
     #images-slider > .header footer.switcher {
-        margin-right: -27%;
+        margin-right: -32%;
+    }
+    #images-slider > .header header.switcher {
+        top: 205%;
     }
 }
 @media all and (min-width: 1680px) and (max-width: 1800px){
     .object-viewer > .right-content {
         top: -34px;
+    }
+    #images-slider > .header header.switcher {
+        top: 207%;
     }
 }
 @media all and (min-width: 1800px){
@@ -398,11 +411,20 @@ span.view-title{
         width: 85%;
     }
     #images-slider > .header footer.switcher {
-        margin-right: -24%;
+        margin-right: -28%;
+    }
+    #images-slider > .header header.switcher {
+        top: 205%;
     }
 }
 @media all and (width: 1280px) {
     #images-slider > .content {
         margin-top: 2%;
+    }
+}
+@media all and (min-width: 1280px) {
+    .object-viewer > .left-content {
+        width: 45%;
+        padding-right: 4%;
     }
 }
