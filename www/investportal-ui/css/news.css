@@ -47,14 +47,14 @@
   font-weight: bold;
   text-decoration: none;
   font-size: 94%;
-  width: 125%;
+  width: 120%;
 }
 .news-feed > header #top-feed .left-content main #descript{
   display: block;
   margin-top: 2%;
   font-size: 69%;
   color: gray;
-  width: 125%;
+  width: 120%;
 }
 .news-feed > header #top-feed .left-content footer{ 
   display: block;
