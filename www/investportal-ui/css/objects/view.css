@@ -113,6 +113,9 @@ span.view-title{
 }
 .specifications > tbody tr td{
     color: gray;
+    padding-top: 2%;
+    padding-bottom: 2%;
+    padding-left: 4%;
 }
 .specifications > tbody tr td:nth-child(2){
     color: black;
@@ -123,7 +126,7 @@ span.view-title{
 }
 .object-viewer > .right-content header .add-to-favorite{
     font-size: 110%;
-    padding-bottom: 2%;
+    padding-bottom: 7px;
     border: solid 2px gray;
     width: 178px;
 }
@@ -396,6 +399,9 @@ span.view-title{
     #images-slider > .header header.switcher {
         top: 207%;
     }
+    #objects > .objects-list {
+        margin-top: -2%;
+    }
 }
 @media all and (min-width: 1800px){
     #images-slider > .content {
@@ -415,6 +421,9 @@ span.view-title{
     }
     #images-slider > .header header.switcher {
         top: 205%;
+    }
+    #objects > .objects-list {
+        margin-top: 2%;
     }
 }
 @media all and (width: 1280px) {

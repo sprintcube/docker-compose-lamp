@@ -40,7 +40,7 @@
 }
 #objects > .projects-search-form footer{
     height: calc(72px * 5);
-    padding-bottom: 2%;
+    padding-bottom: 5%;
 }
 #objects > .objects-list{
     width: 83%;
@@ -151,18 +151,19 @@
     }
     #objects > .projects-search-form main form .selectors {
         width: 90%;
+        margin-top: 4%;
     }
     #objects > .projects-search-form header #right-content {
         margin-top: 6%;
     }
     #objects > .projects-search-form footer #left-content {
-        margin-top: 158%;
+        margin-top: 474px;
     }
     #objects > .projects-search-form footer #left-content-add {
         margin-top: 5%;
     }
     #objects > .projects-search-form footer {
-        height: calc(72px * 13);
+        height: calc(72px * 12);
     }
     #objects > .objects-list header h2 {
         margin-left: -19%;
@@ -197,12 +198,13 @@
     }
     #objects > .projects-search-form main form .selectors {
         width: 90%;
+        margin-top: 2%;
     }
     #objects > .projects-search-form header #right-content {
         margin-top: 4%;
     }
     #objects > .projects-search-form footer #left-content {
-        margin-top: 70%;
+        margin-top: 392px;
     }
     #objects > .projects-search-form footer #left-content-add {
         margin-top: 5%;
@@ -226,7 +228,7 @@
 }
 @media all and (min-width: 1024px) and (max-width: 1280px){
     #objects > .projects-search-form footer {
-        height: calc(72px * 5);
+        height: calc(80px * 5);
     }
 }
 @media all and (min-width: 1280px) and (max-width: 1366px){

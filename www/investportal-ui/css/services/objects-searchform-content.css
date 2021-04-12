@@ -6,15 +6,28 @@
     color: gray;
     text-transform: uppercase;
     margin-left: 4%;
+    background-color: white;
+    width: 90px;
+    padding-left: 1%;
+    padding-right: 1%;
+    position: relative;
+    top: 26px;
+    left: 1%;
 }
 #objects > .projects-search-form main form .selectors{
     display: inline-table;
     width: 40%;
     margin-left: 4%;
+    border-radius: 10px;
+    border: solid 2px gray;
+    padding-top: 1%;
+    padding-bottom: 1%;
+    height: 298px;
 }
 #objects > .projects-search-form main form .selectors .selector{
     margin-top: 2px;
     display: block;
+    margin-left: 2%;
 }
 #objects > .projects-search-form main form .selectors .selector span{
    font-size: 90%;
@@ -26,25 +39,54 @@
 }
 #objects > .projects-search-form footer .filter .option{
     display: inline-block;
+    width: 45%;
 }
 #objects > .projects-search-form footer .filter .option span{
     font-size: 80%;
+    color: gray;
+    text-transform: uppercase;
+    font-weight: bold;
+    background-color: white;
+    width: 90px;
+    padding-left: 2%;
+    padding-right: 2%;
+    position: relative;
+    top: 12px;
+    left: 5%;
 }
 #objects > .projects-search-form footer .filter .option #option-selector{
     display: block;
     width: 97%;
-    padding: 5px;
-    border: none;
     background-color: white;
+    font-size: 120%;
+    padding: 4%;
+    border: solid 2px gray;
+    border-radius: 10px;
+    margin-top: 1%;
 }
 #objects > .projects-search-form footer .filter .parameters{
     width: 100%;
 }
 #objects > .projects-search-form footer .filter .parameters span{
-    font-size: 80%;
+    font-size: 90%;
+    color: gray;
+    text-transform: uppercase;
+    font-weight: bold;
+    background-color: white;
+    width: 90px;
+    padding-left: 1%;
+    padding-right: 1%;
+    position: relative;
+    top: 17px;
+    left: 1%;
 }
 #objects > .projects-search-form footer .filter .parameters .parameter-form{
     font-size: 93%;
+    border-radius: 10px;
+    border: solid 2px gray;
+    padding-left: 2%;
+    padding-bottom: 3%;
+    margin-top: 1%;
 }
 #objects > .projects-search-form footer .filter .parameters .parameter-form #text-from{
     width: 20%;
@@ -67,26 +109,29 @@
         padding-bottom: 4px;
     }
     #objects > .projects-search-form footer .filter .parameters .parameter-form #text-from {
-        width: calc(20% * 3);
+        width: calc(6% * 3);
     }
     #objects > .projects-search-form footer .filter .parameters .parameter-form #text-to {
-        display: block;
-        width: calc(20% * 4);
+        display: inline-table;
+        width: calc(6% * 4);
         margin-top: 6%;
     }
+    #objects > .projects-search-form footer .filter { width: 100%; }
+
 }
 @media all and (min-width: 640px) and (max-width: 1024px){
     #objects > .projects-search-form main form .selectors .selector {
         padding-bottom: 4px;
     }
     #objects > .projects-search-form footer .filter .parameters .parameter-form #text-from {
-        width: calc(20% * 3);
+        width: calc(8% * 3);
     }
     #objects > .projects-search-form footer .filter .parameters .parameter-form #text-to {
-        display: block;
-        width: calc(20% * 4);
+        display: inline-table;
+        width: calc(8% * 4);
         margin-top: 6%;
     }
+    #objects > .projects-search-form footer .filter { width: 80%; }
 }
 @media all and (min-width: 1024px) and (max-width: 1280px){
     #objects > .projects-search-form footer .filter .parameters .parameter-form #text-to {
