@@ -40,6 +40,7 @@ span.view-title{
     padding-top: 4%;
     padding-bottom: 4%;
     border-top: solid 2px #0079bf;
+    text-indent: 4%;
 }
 .object-viewer > .left-content header .metadata div span{
     color: black;
@@ -58,7 +59,8 @@ span.view-title{
     padding-bottom: 18px;
 }
 .object-viewer > .left-content header .object-contacts .contact img{
-    width: 35px;
+    width: 30px;
+    margin-left: 18px;
 }
 .object-viewer > .left-content header .object-contacts .contact span{
     display: block;
@@ -66,6 +68,7 @@ span.view-title{
     margin-top: 11%;
     color: black;
     font-weight: bold;
+    margin-left: 22px;
 }
 .object-viewer > .left-content header .object-contacts .contact a{
     display: block;
@@ -73,6 +76,7 @@ span.view-title{
     margin-top: 11%;
     color: #0079bf;
     font-weight: bold;
+    margin-left: 1vw;
 }
 .object-viewer > .left-content main{
     margin-left: 8%;
@@ -342,10 +346,10 @@ span.view-title{
     }
     #images-slider > .header header.switcher {
         margin-left: -2%;
-        top: 206%;
+        top: 195%;
     }
     #images-slider > .header footer.switcher {
-        top: 194%;
+        top: 179%;
         margin-right: -30%;
     }
     #images-slider > .content {margin-top: -5%;margin-left: 8%;}
@@ -366,6 +370,13 @@ span.view-title{
     }
 }
 @media all and (min-width: 1366px) and (max-width: 1400px){
+    .objects-adding-search > header #right-content header {
+        margin-top: 0vw;
+    }
+    .input-from-to {
+        display: block;
+        margin-top: -5%;
+    }
     .object-viewer > .right-content header .description {
         margin-top: 22%;
     }
@@ -430,6 +441,10 @@ span.view-title{
 @media all and (width: 1280px) {
     #images-slider > .content {
         margin-top: 2%;
+    }
+    #images-slider > .header footer.switcher {
+        top: 263%;
+        margin-right: -34%;
     }
 }
 @media all and (min-width: 1280px) {

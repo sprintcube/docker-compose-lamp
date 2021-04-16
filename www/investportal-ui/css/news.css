@@ -13,13 +13,14 @@
 .news-feed > header h2.title{
   color: black;
   font-size: 120%;
+  margin-left: 6px;
 }
 .news-feed > header #top-feed{
   padding-top: 2px;
 }
 .news-feed > header #top-feed .left-content{
   float: left;
-  margin-left: -6vw;
+  margin-left: -5vw;
   width: 50%;
   margin-top: -41px;
 }
