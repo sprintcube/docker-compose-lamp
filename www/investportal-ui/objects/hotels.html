@@ -7,6 +7,8 @@
     <link rel="stylesheet" href="../css/app.css" />
     <link rel="stylesheet" href="../css/objects/hotels.css" />
     <script src="https://yastatic.net/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js" integrity="sha512-uto9mlQzrs59VwILcLiRYeLKPPbS/bT71da/OEBYEwcdNUk8jYIy+D176RYoop1Da+f9mvkYrmj5MCLZWEtQuA==" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/themes/base/jquery-ui.min.css" integrity="sha512-okE4owXD0kfXzgVXBzCDIiSSlpXn3tJbNodngsTnIYPJWjuYhtJ+qMoc0+WUwLHeOwns0wm57Ka903FqQKM1sA==" crossorigin="anonymous" />
     <script src="https://kit.fontawesome.com/97c3285af2.js" crossorigin="anonymous"></script>
     <style>
              
@@ -17,6 +19,8 @@
             border: none;
             font-size: 90%;
             padding: 10px;
+            margin-left: 1%;
+            margin-top: 6%;
         }
         
         .footer { overflow: hidden; }
@@ -24,6 +28,17 @@
         #services[data-text]::before{
             left: 17%;
             top: 36%;
+        }
+
+        @media all and (min-width: 1024px) and (max-width: 1400px){
+            .add-but {
+                margin-left: 0%;
+            }
+        }
+        @media all and (min-width: 1800px){
+            .add-but {
+                margin-left: 0%;
+            }
         }
     </style>
 </head>
@@ -263,12 +278,10 @@
                             </div>
                             <div id="right-content">
                                 <label class="range-form">
-                                     <input type="range"  min="" max="" value=""  step="" id="max"/>
-                                     <input type="range"  min="" max="" value=""  step="" id="min"/>
+                                    <div id="slider-range"></div>
                                 </label>
                                 <label class="range-form">
-                                     <input type="range"  min="" max="" value=""  step="" id="max"/>
-                                     <input type="range"  min="" max="" value=""  step="" id="min"/>
+                                    <div id="slider-range"></div>
                                 </label>
                             </div>
                         </footer>
@@ -276,7 +289,7 @@
                 </main>
                 <footer>
                     <div id="left-content">
-                        <button class="add-but" style="margin-left: 6%;margin-top: 6%;">Show objects(27)</button>
+                        <button class="add-but">Show objects(27)</button>
                     </div>
                 </footer>
             </div>
