@@ -12,9 +12,9 @@ const RangeInput = () => {
 
     range.slider({
       range: true,
-      min: 0,
-      max: 1130,
-      values: [ 1, 565 ],
+      min: 50,
+      max: 20000,
+      values: [ 100, 10000 ],
       slide: function( event, ui ) {
         for (let i = 0; i < rangetext.length; i++) {
             rangetext[i].val(ui.values[i] + ' m2');
@@ -23,9 +23,9 @@ const RangeInput = () => {
     });
     evenrange.slider({
       range: true,
-      min: 50,
-      max: 20000,
-      values: [ 100, 10000 ],
+      min: 0,
+      max: 1130,
+      values: [ 1, 565 ],
       slide: function( event, ui ) {
         for (let i = 0; i < rangeeventext.length; i++) {
             rangeeventext[i].val(ui.values[i]);

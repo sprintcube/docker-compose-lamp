@@ -31,7 +31,7 @@
     margin-top: -10%;
     height: auto;
     float: left;
-    width: 22vw;
+    width: 49%;
     border: solid 2px gray;
     border-radius: 10px;
     padding-bottom: 1%;
@@ -51,19 +51,19 @@
     margin-top: 2%;
     background-color: white;
     border: none;
-    font-size: 80%;
+    font-size: 100%;
+    width: 100%;
 }
 .objects-adding-search > main header form div input::placeholder{
-    color: black;
+    color: darkgray;
 }
 .objects-adding-search > main header form div input:focus{
-    border: solid 2px #0079bf;
+    border: none;
 }
 .objects-adding-search > main footer .check-selectors, .objects-adding-search > main footer .radio-selectors{
     display: block;
     margin-top: 2%;
-    border: solid 2px gray;
-    width: 30%;
+    width: 50%;
     border-radius: 10px;
     padding-bottom: 1%;
     padding-left: 2%;
@@ -79,6 +79,7 @@
     font-size: 90%;
     margin-top: 2px;
     display: block;
+    margin-left: -10px;
 }
 .objects-adding-search > main footer .check-selectors label input, .objects-adding-search > main footer .radio-selectors label input{
     top: 13%;
@@ -115,7 +116,7 @@
     position: relative;
 }
 .objects-adding-search > header #left-content{
-    width: 46%;
+    width: 52%;
     height: auto;
 }
 .objects-adding-search > header #left-content header{
@@ -142,7 +143,7 @@
 .objects-adding-search > header #left-content header form div {
     border: solid 2px gray;
     border-radius: 10px;
-    width: 95%;
+    width: 96%;
     padding-left: 2%;
     padding-bottom: 1%;
 }
@@ -255,8 +256,18 @@
     margin-top: 2%;
 }
 .ui-slider-horizontal .ui-slider-range { background: #0079bf; }
-.ui-state-default, .ui-widget-content .ui-state-default, .ui-widget-header .ui-state-default, .ui-button, html .ui-button.ui-state-disabled:hover, html .ui-button.ui-state-disabled:active {
+.ui-widget.ui-widget-content {
+    height: 5px;
+    background: #f0f3f4;
+}
+.ui-state-default, .ui-widget-content .ui-state-default{
     border-radius: 50%;
+}
+.ui-slider-handle.ui-corner-all.ui-state-default {
+    width: 15px;
+    height: 15px;
+    background: #0079bf;
+    color: #0079bf;
 }
 @media all and (min-width: 320px) and (max-width: 1024px){
     .objects-adding-search > header #left-content header form div:not(:nth-child(1)) {
@@ -324,7 +335,9 @@
 }
 @media all and (min-width: 1280px) and (max-width: 1366px){
     .objects-adding-search > header #right-content header {
-        margin-top: 0vw;
+        margin-top: -33%;
+        position: relative;
+        left: 7%;
     }
     .input-from-to {
         display: block;
@@ -342,6 +355,12 @@
     }
     .add-but {
         margin-left: 0%;
+    }
+    .objects-adding-search > header #right-content {
+        float: right;
+        margin-right: -1%;
+        margin-top: -14%;
+        background: transparent;
     }
 }
 @media all and (min-width: 1366px) and (max-width: 1400px){
@@ -375,13 +394,13 @@
 }
 @media all and (min-width: 1400px){
     .objects-adding-search > header #right-content {
-        width: 64%;
+        width: 56%;
         background-color: transparent;
     }
     .objects-adding-search > header #right-content .input-from-to > span.content-form {
         font-size: 51%;
-        padding-bottom: 2%;
-        padding-top: 2%;
+        padding-bottom: 3%;
+        padding-top: 3%;
     }
     .objects-adding-search > header #right-content .input-from-to {
         display: inline-block;

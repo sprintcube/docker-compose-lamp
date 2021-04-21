@@ -64,8 +64,8 @@
     top: 0px;
     width: 18px;
     height: 18px;
-    border: 1px solid lightgray;
-    background-color: lightgray;
+    border: 1px solid #f0f3f4;
+    background-color: #f0f3f4;
 }
 
 .lightwin-passport-regional > main form .countries-part label #country-selector + span.country-name:before{

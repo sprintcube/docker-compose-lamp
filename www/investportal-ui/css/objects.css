@@ -2,9 +2,9 @@
 .window-closed{ display: none; }
 #objects{ height: auto; }
 #objects > .projects-search-form{
-    width: 76%;
+    width: 77%;
     height: auto;
-    margin-left: 12%;
+    margin-left: 11%;
     background-color: white;
 }
 #objects > .projects-search-form header{
@@ -109,8 +109,8 @@
     top: 0px;
     width: 18px;
     height: 18px;
-    border: 1px solid lightgray;
-    background-color: lightgray;
+    border: 1px solid #f0f3f4;
+    background-color: #f0f3f4;
 }
 
 #objects > .projects-search-form main form .selectors .selector #type-selector + span:before{

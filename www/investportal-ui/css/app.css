@@ -209,11 +209,11 @@ html,body{
     text-decoration: none;
     padding-right: 3px;
     position: relative;
-    left: 6%;
+    left: 5%;
 }
 #link-switcher > #delimeter{
     position: relative;
-    left: 6%;
+    left: 5%;
 }
 #link-switcher > a:not(:nth-child(1)){
     margin-left: 0%;

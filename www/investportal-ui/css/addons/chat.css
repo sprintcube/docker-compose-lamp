@@ -73,7 +73,7 @@ main.chat > #footer #message{
     resize: none;
 }
 main.chat > #footer #message:focus{
-    border: solid 2px lightgray;
+    border: solid 2px #f0f3f4;
 }
 main.chat > #content #message{
     display: block;
@@ -93,7 +93,7 @@ main.chat > #content #message main{
     display: inline-table;
     width: 70%;
     font-size: 100%;
-    background-color: lightgray;
+    background-color: #f0f3f4;
     padding: 4%;
     border-radius: 5px;
 }

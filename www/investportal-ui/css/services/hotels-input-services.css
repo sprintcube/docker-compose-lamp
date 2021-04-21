@@ -32,7 +32,7 @@
 }
 .input-from-to > span.content-form input{
     border: none;
-    background-color: lightgray;
+    background-color: #f0f3f4;
     padding: 5px;
     font-size: 75%;
 }

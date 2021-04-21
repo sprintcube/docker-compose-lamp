@@ -90,7 +90,7 @@
 }
 #objects > .projects-search-form footer .filter .parameters .parameter-form #text-from{
     width: 20%;
-    background-color: lightgray;
+    background-color: #f0f3f4;
     font-size: 93%;
     border: none;
     padding: 8px;
@@ -98,7 +98,7 @@
 #objects > .projects-search-form footer .filter .parameters .parameter-form #text-to{
     display: inline-table;
     width: calc(20% * 2);
-    background-color: lightgray;
+    background-color: #f0f3f4;
     font-size: 93%;
     border: none;
     padding: 8px;
