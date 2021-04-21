@@ -209,11 +209,11 @@ html,body{
     text-decoration: none;
     padding-right: 3px;
     position: relative;
-    left: 5%;
+    left: 6vw;
 }
 #link-switcher > #delimeter{
     position: relative;
-    left: 5%;
+    left: 6vw;
 }
 #link-switcher > a:not(:nth-child(1)){
     margin-left: 0%;
@@ -1586,7 +1586,7 @@ html,body{
         height: 200px;
     }
     .header > #header_top {
-        margin-left: 11vw;
+        margin-left: 12vw;
     }
     .header > #header_bottom .hb_bottom header .welcome-link {
         margin-top: -7%;
@@ -2055,5 +2055,3 @@ html,body{
         margin-right: 11%;
     }
 }
-
-

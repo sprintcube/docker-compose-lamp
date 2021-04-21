@@ -341,7 +341,20 @@
     }
     .input-from-to {
         display: block;
+        margin-top: -2%;
+    }
+    .input-from-to > span.content-form {
+        padding-bottom: 1%;
+        padding-top: 1%;
+    }
+    .input-from-to:nth-child(2) {
         margin-top: -4%;
+    }
+    .input-from-to:nth-child(1) > span.content-form {
+        padding-bottom: 2%;
+    }
+    .input-from-to:nth-child(2) > span.content-form {
+        padding-top: 2%;
     }
     .range-form {
         margin-top: 1vw;
