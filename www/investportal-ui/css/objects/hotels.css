@@ -60,6 +60,9 @@
 .objects-adding-search > main header form div input:focus{
     border: none;
 }
+.objects-adding-search > header #left-content header form div:nth-child(1) select {
+    width: 98%;
+}
 .objects-adding-search > main footer .check-selectors, .objects-adding-search > main footer .radio-selectors{
     display: block;
     margin-top: 2%;
@@ -146,10 +149,12 @@
     width: 96%;
     padding-left: 2%;
     padding-bottom: 1%;
+    padding-right: 0vw;
 }
 .objects-adding-search > header #left-content header form div:not(:nth-child(1)){
     display: inline-table;
     width: 46%;
+    padding-right: 2px;
 }
 .objects-adding-search > header #right-content{
     width: 50%;
