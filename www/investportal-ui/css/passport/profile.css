@@ -32,6 +32,7 @@
     font-size: 100%;
     display: inline-table;
     margin-top: 15px;
+    color: gray;
 }
 .passport-page > main .profile-settings .editor #control:hover{
     cursor: pointer;
@@ -44,7 +45,6 @@
 }
 .passport-page > main .profile-settings .editor input:disabled{
     font-weight: normal;
-    border: none;
 }
 .passport-page > main .profile-settings .editor input[type=password]:disabled{
     color: gray;
@@ -55,6 +55,7 @@
 }
 .passport-page > footer #left-content{
     width: 100%;
+    margin-top: 3%;
 }
 @media all and (min-width: 320px) and (max-width: 1024px){
     #passport { height: 539px; }

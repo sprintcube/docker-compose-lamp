@@ -5,7 +5,7 @@
     font-size: 90%;
     color: gray;
     text-transform: uppercase;
-    margin-left: 4%;
+    margin-left: 21px;
     background-color: white;
     width: 90px;
     padding-left: 1%;
@@ -16,10 +16,9 @@
 }
 #objects > .projects-search-form main form .selectors{
     display: inline-table;
-    width: 40%;
-    margin-left: 4%;
+    width: 41%;
+    margin-left: 40px;
     border-radius: 10px;
-    border: solid 2px gray;
     padding-top: 1%;
     padding-bottom: 1%;
     height: 298px;
@@ -39,7 +38,10 @@
 }
 #objects > .projects-search-form footer .filter .option{
     display: inline-block;
-    width: 45%;
+    width: 49%;
+}
+#objects > .projects-search-form footer .filter .option:not(:nth-child(1)){
+    margin-left: 1%;
 }
 #objects > .projects-search-form footer .filter .option span{
     font-size: 80%;
@@ -56,13 +58,15 @@
 }
 #objects > .projects-search-form footer .filter .option #option-selector{
     display: block;
-    width: 97%;
+    width: 100%;
     background-color: white;
     font-size: 120%;
-    padding: 4%;
     border: solid 2px gray;
     border-radius: 10px;
     margin-top: 1%;
+    padding-top: 4%;
+    padding-bottom: 4%;
+    padding-left: 4%;
 }
 #objects > .projects-search-form footer .filter .parameters{
     width: 100%;
@@ -136,5 +140,6 @@
 @media all and (min-width: 1024px) and (max-width: 1280px){
     #objects > .projects-search-form footer .filter .parameters .parameter-form #text-to {
         margin-top: 2%;
+        width: 30%;
     }
 }

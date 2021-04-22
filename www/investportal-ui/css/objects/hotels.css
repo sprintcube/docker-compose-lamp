@@ -36,7 +36,7 @@
     border-radius: 10px;
     padding-bottom: 1%;
     padding-left: 2%;
-    margin-left: -7px;
+    margin-left: -11px;
 }
 .objects-adding-search > main header form div .label{
     font-size: 60%;
@@ -44,6 +44,7 @@
     top: -18px;
     background-color: white;
     padding-left: 2%;
+    left: -4%;
     padding-right: 2%;
 }
 .objects-adding-search > main header form div input{
@@ -101,6 +102,7 @@
 }
 .objects-adding-search > footer #left-content .input-from-to{
     font-size: 120%;
+    text-indent: 2%;
 }
 .objects-adding-search > footer #left-content .input-from-to input#from{
     width: 10%;
@@ -133,8 +135,9 @@
     background-color: white;
     position: relative;
     top: -9px;
-    padding-left: 2%;
-    width: 87px;
+    padding-left: 13px;
+    left: -3%;
+    width: 6pc;
 }
 .objects-adding-search > header #left-content header form div select{
     display: block;
@@ -273,6 +276,9 @@
     height: 15px;
     background: #0079bf;
     color: #0079bf;
+}
+.objects-adding-search > header #right-content .input-from-to > span.content-form {
+    padding-left: 4%;
 }
 @media all and (min-width: 320px) and (max-width: 1024px){
     .objects-adding-search > header #left-content header form div:not(:nth-child(1)) {
