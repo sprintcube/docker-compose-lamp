@@ -121,6 +121,9 @@
         margin-top: 6%;
     }
     #objects > .projects-search-form footer .filter { width: 100%; }
+    #objects > .projects-search-form footer .filter .parameters .parameter-form {
+        font-size: 77%;
+    }
 
 }
 @media all and (min-width: 640px) and (max-width: 1024px){

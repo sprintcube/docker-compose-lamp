@@ -40,7 +40,7 @@
 }
 #objects > .projects-search-form footer{
     height: calc(72px * 5);
-    padding-bottom: 5%;
+    padding-bottom: 8%;
 }
 #objects > .objects-list{
     width: 83%;
@@ -152,6 +152,7 @@
     #objects > .projects-search-form main form .selectors {
         width: 90%;
         margin-top: 4%;
+        margin-left: 3%;
     }
     #objects > .projects-search-form header #right-content {
         margin-top: 6%;
@@ -250,6 +251,9 @@
         margin-top: 5vw;
     }
     #services > header .add-but { width: 114%; }
+    #objects > .projects-search-form main form h4 {
+        left: -3%;
+    }
 }
 @media all and (min-width: 1024px) {
     #services > main #slider-view-adaptive, #services > main #slider-controller-adaptive{ display: none; }
