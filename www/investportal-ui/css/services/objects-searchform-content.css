@@ -67,6 +67,10 @@
     padding-top: 4%;
     padding-bottom: 4%;
     padding-left: 4%;
+    appearance: none;
+    background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABoAAAAaCAYAAACpSkzOAAAABmJLR0QA/wD/AP+gvaeTAAAAo0lEQVRIie3STaqBYRTA8Z+ukis7sgwTQzuxAckejFEGUiZiG5JV3G69YeBVb74/jtnzrzN7Or9OPaRSqcgGyLAPmizfedE2EDnN5hrUxC4Q2eU7r9YLhLq3EPjBMACZoHwPgl+sPkCWqD5CTtUwfwNZoP4sUrxs9gIyfeWS8yoYP4GM8rcfVULnDtJ3/ERhtfBXAP7RjgSKNbDOp/EtJJWK6QBceqOraqxeeAAAAABJRU5ErkJggg==) no-repeat right;
+    background-position-x: calc(100% - (8px * 2));
+    background-size: 15px;
 }
 #objects > .projects-search-form footer .filter .parameters{
     width: 100%;
