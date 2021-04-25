@@ -22,6 +22,7 @@ As of now, we have several different PHP versions. Use appropriate php version a
 * 7.2.x
 * 7.3.x
 * 7.4.x
+* 8.0.x
 
 > Please note that we simplified the project structure from several branches for each php version, to one centralized master branch. Please let us know if you encouter any problems. 
 ##  Installation
@@ -69,6 +70,10 @@ Define your custom `php.ini` modification to meet your requirments.
 _**DOCUMENT_ROOT**_
 
 It is a document root for Apache server. The default value for this is `./www`. All your sites will go here and will be synced automatically.
+
+_**APACHE_DOCUMENT_ROOT**_
+
+Apache config file value. The default value for this is /var/www/html.
 
 _**VHOSTS_DIR**_
 
@@ -119,7 +124,7 @@ docker-compose exec webserver bash
 
 ## PHP
 
-The installed version of depends on your `.env`file. 
+The installed version of php depends on your `.env`file.
 
 #### Extensions
 
