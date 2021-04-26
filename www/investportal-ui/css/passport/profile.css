@@ -16,6 +16,8 @@
     display: block;
     margin-top: 8px;
     font-size: 80%;
+    margin-left: 2%;
+    color: gray;
 }
 .passport-page > main .profile-settings .editor input{
     background-color: white;
@@ -24,15 +26,19 @@
     border: solid 2px darkgray;
     padding: 5px;
     font-weight: bold;
-    text-indent: 1%;
+    text-indent: 2%;
     margin-top: 12px;
     width: 86%;
+    border-radius: 4px;
+    padding-top: 2%;
+    padding-bottom: 2%;
 }
 .passport-page > main .profile-settings .editor #control{
     font-size: 100%;
     display: inline-table;
     margin-top: 15px;
     color: gray;
+    margin-left: 2%;
 }
 .passport-page > main .profile-settings .editor #control:hover{
     cursor: pointer;
@@ -45,8 +51,6 @@
 }
 .passport-page > main .profile-settings .editor input:disabled{
     font-weight: normal;
-}
-.passport-page > main .profile-settings .editor input[type=password]:disabled{
     color: gray;
 }
 .passport-page > footer{
@@ -55,7 +59,7 @@
 }
 .passport-page > footer #left-content{
     width: 100%;
-    margin-top: 3%;
+    margin-top: 4%;
 }
 @media all and (min-width: 320px) and (max-width: 1024px){
     #passport { height: 539px; }

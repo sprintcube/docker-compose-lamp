@@ -2,10 +2,11 @@
 .window-closed{ display: none; }
 #objects{ height: auto; }
 #objects > .projects-search-form{
-    width: 77%;
+    width: 76%;
     height: auto;
     margin-left: 12vw;
     background-color: white;
+    padding-right: 10px;
 }
 #objects > .projects-search-form header{
    color: black;
@@ -25,7 +26,7 @@
     width: 90%;
     margin-left: 4%;
     float: left;
-    margin-top: 3%;
+    margin-top: -1%;
 }
 #objects > .projects-search-form header #right-content{
     float: right;
@@ -158,7 +159,7 @@
         margin-top: 6%;
     }
     #objects > .projects-search-form footer #left-content {
-        margin-top: 474px;
+        margin-top: 456px;
     }
     #objects > .projects-search-form footer #left-content-add {
         margin-top: 5%;

@@ -18,7 +18,7 @@
     display: block;
 }
 .input-from-to{
-    margin-top: 2%;
+    margin-top: 1%;
     width: 100%;
 }
 .input-from-to > span.content-form{
@@ -43,4 +43,22 @@
 .input-from-to > span.content-form input#to{
     width: 25%;
     font-size: 100%;
+}
+.range-form:nth-child(2) {
+    margin-top: 12%;
+}
+@media all and (min-width: 1280px) and (max-width: 1366px){
+    .range-form:nth-child(2) {
+        margin-top: 7%;
+    }
+}
+@media all and (min-width: 1680px) and (max-width: 1800px){
+    .range-form:nth-child(2) {
+        margin-top: 10%;
+    }
+}
+@media all and (min-width: 1800px){
+    .range-form:nth-child(2) {
+        margin-top: 9%;
+    }
 }
