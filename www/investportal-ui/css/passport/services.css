@@ -2,7 +2,7 @@
 #passport{ height: 322px; }
 .passport-page{ height: 489px; }
 .passport-page > main .services-settings header{
-  margin-left: 0%;
+  margin-left: 4%;
 }
 .passport-page > main .services-settings header span{
   color: gray;
@@ -28,7 +28,7 @@
   border: solid 2px gray;
 }
 .passport-page > main .services-settings footer{
-  margin-top: 7%;
+  margin-top: -1%;
 }
 .passport-page > main .services-settings footer .services-selectors{
   display: inline-table;

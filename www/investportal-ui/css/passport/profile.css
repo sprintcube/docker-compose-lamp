@@ -77,10 +77,10 @@
     .passport-page > main .profile-settings { width: 50%; }
 }
 @media all and (min-width: 1680px) and (max-width: 1800px){
-    .passport-page { height: calc(290px * 2); }
-    .passport-page > footer { top: -30%; }
+    .passport-page {height: calc(300px * 2);}
+    .passport-page > footer {top: -27%;}
 }
 @media all and (min-width: 1800px){
-    .passport-page { height: calc(300px * 2); }
-    .passport-page > footer { top: -26%; }
+    .passport-page {height: calc(310px * 2);}
+    .passport-page > footer {top: -23%;}
 }
