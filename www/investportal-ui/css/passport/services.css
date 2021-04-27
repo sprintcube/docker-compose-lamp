@@ -5,17 +5,27 @@
   margin-left: 0%;
 }
 .passport-page > main .services-settings header span{
-  color: black;
+  color: gray;
   display: block;
-  font-size: 56%;
+  font-size: 40%;
+  text-transform: uppercase;
+  font-weight: bold;
+  margin-left: 2%;
+  position: relative;
+  top: 15px;
+  background: white;
+  width: 50px;
+  padding-left: 1%;
 }
 .passport-page > main .services-settings header select{
   margin-top: 1%;
   border: none;
-  font-size: 100%;
+  font-size: 90%;
   background-color: white;
   padding: 1%;
   width: 51%;
+  border-radius: 10px;
+  border: solid 2px gray;
 }
 .passport-page > main .services-settings footer{
   margin-top: 7%;
@@ -99,6 +109,7 @@
     display: block;
     width: 100%;
   }
+  .passport-page > main .services-settings header span { top: 10px; }
 }
 @media all and (min-width: 640px) and (max-width: 1024px){
   #passport { height: 931px; }

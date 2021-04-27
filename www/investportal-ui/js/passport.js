@@ -24,7 +24,7 @@ const lightboxcloseRegional = (e,t) => {
     $('.lightwin-passport-regional').addClass('lightbox-closed');
 }
 $(document).ready(function () {
-    $('.add-but, .passport-page > header #right-content nav img#newrequest').click(lightboxopen);
+    $('.add-but, .passport-page > header #right-content nav img#newrequest, .passport-page > header #right-content nav img#newoffer').click(lightboxopen);
     $('.lightwin-passport > header #right-content').click(lightboxclose);
     $('.lightwin-passport-regional > header #right-content').click(lightboxcloseRegional);
 });

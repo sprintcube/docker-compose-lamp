@@ -12,6 +12,7 @@
     left: 12%;
     top: -2%;
     padding-bottom: 2%;
+    padding-right: 5px;
 }
 .passport-page > header, .passport-page > footer{
     width: 100%;
@@ -19,6 +20,7 @@
     padding-top: 3%;
     padding-bottom: 3%;
     display: block;
+    padding-right: 5px;
 }
 .passport-page > main{
     width: 100%;
@@ -26,6 +28,7 @@
     padding-top: 1%;
     padding-bottom: 1%;
     display: block;
+    padding-right: 5px;
 }
 .passport-page > header #left-content, .passport-page > main #left-content, .passport-page > footer #left-content{
     float: left;
@@ -162,7 +165,13 @@
 @media all and (min-width: 1024px){
     .passport-page > header #right-content nav, .passport-menu-adaptive{ display: none; }
 }
+@media all and (min-width: 1280px) and (max-width: 1600px){
+    .passport-page{ width: 77%; }
+}
 @media all and (min-width: 1024px) and (max-width: 1400px){
     .passport-page > header #left-content, .passport-page > header #right-content { margin-top: 14px; }
     .lightwin-passport > header #left-content{ margin-top: 2%; }
+}
+@media all and (min-width: 1800px){
+    .passport-page{ width: 75%; }
 }
