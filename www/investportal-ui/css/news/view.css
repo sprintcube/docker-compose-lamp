@@ -171,6 +171,24 @@
     height: 4030px;
   }
 }
+@media all and (min-width: 640px) and (max-width: 1024px){
+  #news {
+    height: 4033px;
+  }
+  #news > .news-viewer #right-content .realted-news .realted {
+    padding-bottom: 1%;
+  }
+  #news > .news-viewer #right-content .realted-news .realted #content {
+    margin-top: 3%;
+  }
+  #news > .news-viewer #right-content .realted-news .realted #footer {
+    padding-top: 2%;
+    padding-bottom: 1%;
+  }
+  #news > .news-viewer #right-content .realted-news .realted #date {
+    padding-top: 1%;
+  }
+}
 @media all and (min-width: 1024px) and (max-width: 1280px){
   #news {
     height: 1995px;
