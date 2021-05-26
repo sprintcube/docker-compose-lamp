@@ -1272,7 +1272,7 @@ html,body{
     }
     .footer > main {
         margin-right: 11vw;
-        top: 18%;
+        top: 10%;
     }
     .footer > main #category_menu {
         padding-left: 10px;
@@ -1301,7 +1301,7 @@ html,body{
         width: 110%;
     }
 
-    .footer{ height: calc(400px * 2); }
+    .footer{height: calc(400px * 4);}
     .footer > header {
         width: 100%;
         position: relative;
@@ -1314,8 +1314,8 @@ html,body{
     .footer > main {
         float: left;
         margin-right: 0vw;
-        width: 100%;
-        top: 25%;
+        width: 90%;
+        top: 16%;
         margin-left: 11vw;
     }
     #link-switcher {
@@ -1397,7 +1397,7 @@ html,body{
     #services > main header#slider-controller-adaptive {
         left: 2%;
     }
-    .footer{ height: calc(300px * 2); }
+    .footer{height: calc(447px * 2);}
     .footer > header {
         width: 50%;
         position: relative;

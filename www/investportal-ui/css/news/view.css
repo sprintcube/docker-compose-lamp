@@ -165,17 +165,18 @@
 }
 @media all and (min-width: 320px) and (max-width: 400px){
   #news {
-    height: 4180px;
+    height: 3973px;
   }
 }
 @media all and (min-width: 400px) and (max-width: 640px){
   #news {
-    height: 4030px;
+    height: 3800px;
   }
 }
 @media all and (min-width: 640px) and (max-width: 1024px){
   #news {
-    height: 4033px;
+    height: 3513px;
+    padding-bottom: 30vh;
   }
   #news > .news-viewer #right-content .realted-news .realted {
     padding-bottom: 1%;
@@ -193,7 +194,7 @@
 }
 @media all and (min-width: 1024px) and (max-width: 1280px){
   #news {
-    height: 1995px;
+    height: 3800px;
   }
   #news > .news-viewer #left-content {
     margin-top: -15%;
