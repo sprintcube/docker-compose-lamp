@@ -1301,7 +1301,7 @@ html,body{
         width: 110%;
     }
 
-    .footer{height: calc(167px * 5);}
+    .footer{height: calc(295px * 5);}
     .footer > header {
         width: 100%;
         position: relative;
@@ -2073,4 +2073,25 @@ html,body{
 @media all and (width:1024px){
     .footer { height: calc(270px * 2); }
     .footer > main { top: 23%; }
+}
+@media all and (min-width: 393px) and (max-width: 414px){
+    .footer > main {
+        top: 10%;
+    }
+}
+@media all and (width: 414px){
+    .footer {
+        height: calc(197px * 4);
+    }
+    .footer > main {
+        top: 17%;
+    }
+}
+@media all and (width: 960px){
+    .footer {
+        height: calc(254px * 2);
+    }
+    .footer > main {
+        top: 26%;
+    }
 }
