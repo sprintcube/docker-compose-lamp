@@ -1271,8 +1271,8 @@ html,body{
         display: none;
     }
     .footer > main {
-        margin-right: 11vw;
-        top: 10%;
+        margin-right: 10vw;
+        top: 17%;
     }
     .footer > main #category_menu {
         padding-left: 10px;
@@ -1301,7 +1301,7 @@ html,body{
         width: 110%;
     }
 
-    .footer{height: calc(400px * 4);}
+    .footer{height: calc(167px * 5);}
     .footer > header {
         width: 100%;
         position: relative;
@@ -2069,4 +2069,8 @@ html,body{
     .header > #header_bottom_adaptive {
         margin-right: 11%;
     }
+}
+@media all and (width:1024px){
+    .footer { height: calc(270px * 2); }
+    .footer > main { top: 23%; }
 }
