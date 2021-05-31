@@ -2089,9 +2089,9 @@ html,body{
 }
 @media all and (width: 960px){
     .footer {
-        height: calc(254px * 2);
+        height: calc(317px * 2);
     }
     .footer > main {
-        top: 26%;
+        top: 22%;
     }
 }

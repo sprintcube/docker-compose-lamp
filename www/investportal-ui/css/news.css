@@ -245,7 +245,7 @@
     width: 92%;
   }
   .news-feed > footer #down-feed .down-feed-cont #cont-content ul li img {
-    width: 44%;
+    width: 90%;
   }
   .news-feed > header #top-feed .right-content .last-feed-cont #cont-content ul li span {
     width: 93%;
@@ -266,7 +266,13 @@
 }
 @media all and (min-width: 320px) and (max-width: 640px){
   .news-feed > main #light-feed .light-feed-cont #cont-header span#cont-title {
-    margin-left: -2%;
+    margin-left: -1%;
+  }
+  .news-feed > main #light-feed .light-feed-cont #cont-content ul li span {
+      width: 85%;
+  }
+  .news-feed > footer #down-feed .down-feed-cont #cont-content ul li a, .news-feed > footer #down-feed .down-feed-cont #cont-content ul li span {
+      width: 90%;
   }
 }
 @media all and (min-width: 400px) and (max-width: 640px){
