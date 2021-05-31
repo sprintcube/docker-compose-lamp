@@ -2095,3 +2095,8 @@ html,body{
         top: 22%;
     }
 }
+@media all and (min-width: 600px) and (max-width: 640px){
+    .footer {
+        height: calc(158px * 5);
+    }
+}
