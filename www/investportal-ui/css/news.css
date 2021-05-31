@@ -314,7 +314,13 @@
     height: 5253px;
   }
   .news-feed > footer #down-feed .down-feed-cont #cont-content ul li {
-    margin-left: -4%;
+    margin-left: 0%;
+  }
+  .news-feed > footer #down-feed .down-feed-cont #cont-content ul li img {
+    width: 44%;
+  }
+  .news-feed > main #light-feed .light-feed-cont #cont-content ul li a {
+    width: 102%;
   }
 }
 @media all and (min-width: 1024px) and (max-width: 1280px){

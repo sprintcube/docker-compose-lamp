@@ -168,7 +168,8 @@
         height: calc(72px * 12);
     }
     #objects > .objects-list header h2 {
-        margin-left: -19%;
+        margin-left: -20%;
+        text-align: center;
     }
     #objects > .objects-list main table {
         width: 114%;
@@ -187,6 +188,13 @@
     }
     #objects > .objects-list main table .content td:nth-child(4) {
         float: right;
+    }
+    #objects > .objects-list {
+        width: 74%;
+        margin-left: 18%;
+    }
+    #objects > .objects-list {
+        margin-top: -30%;
     }
 }
 @media all and (min-width: 640px) and (max-width: 1024px){

@@ -268,10 +268,11 @@ span.view-title{
         margin-top: 11%;
     }
     .object-viewer > .left-content { width: 100%; }
-    .object-viewer > .right-content { 
-        width: 100%; 
+    .object-viewer > .right-content {
+        width: 100%;
         top: 22px;
         left: -1%;
+        padding-bottom: 20vh;
     }
     #images-slider > .content {
         margin-top: 8%;
@@ -451,5 +452,20 @@ span.view-title{
     .object-viewer > .left-content {
         width: 45%;
         padding-right: 4%;
+    }
+}
+@media all and (min-width: 600px) and (max-width: 640px){
+    #images-slider {
+        margin-top: -23%;
+    }
+    .object-viewer > .right-content footer {
+        position: relative;
+        top: 44px;
+    }
+    #images-slider > .content #current {
+        margin-left: 4%;
+    }
+    .video-player > .play {
+        left: 38%;
     }
 }
