@@ -246,10 +246,10 @@
         }
         @media all and (min-width: 1024px) and (max-width: 1280px){
             #promo > main.swiper-container .promo-feed {
-                margin-left: 7vw;
+                margin-left: 0vw;
             }
             #investsearch > main.swiper-container .popular-objects {
-                margin-left: 8vw;
+                margin-left: 2vw;
             }
             .swiper-button-prev, .swiper-button-next {
                 width: 5vw;
@@ -383,6 +383,56 @@
         }
         @media all and (min-width: 1024px) {
             #news > main #slider-view-adaptive, #news > main #slider-controller-adaptive, #services > main #slider-view-adaptive, #services > main #slider-controller-adaptive, #analytics > main #slider-view-adaptive,  #analytics > main #slider-controller-adaptive, #estate > main #slider-view-adaptive,  #estate > main #slider-controller-adaptive, #reviews > main #slider-view-adaptive,  #reviews > main #slider-controller-adaptive{ display: none; }
+        }
+        @media all and (min-width: 1024px) and (max-width: 1279px){
+            #news > main #slider-view, #news > main #slider-controller, #services > main #slider-view, #services > main #slider-controller, #eventcalendar > main .calendar main, #eventcalendar > main .calendar .descr, #analytics > main #slider-view, #analytics > main #slider-controller, #estate > main #slider-view, #estate > main #slider-controller, #reviews > main #slider-view, #reviews > main #slider-controller {
+                display: inline-table;
+            }
+            #news {
+                padding-bottom: 15%;
+            }
+            #eventcalendar {
+                padding-top: 10%;
+            }
+            #services > header .add-but, #estate > header .add-but {
+                margin-top: 2%;
+                width: 19%;
+            }
+            #investsearch > header .add-but {
+                width: 13%;
+            }
+            #investsearch > header a {
+                margin-left: 15%;
+            }
+            #reviews > main {
+                margin-top: 3vw;
+            }
+            #services > main {
+                margin-top: -13vw;
+            }
+            #analytics > main {
+                width: 68%;
+                margin-top: -9%;
+                margin-left: 30vw;
+            }
+            #eventcalendar > main .calendar footer {
+                float: right;
+                width: 75%;
+                margin-top: -5%;
+            }
+            #eventcalendar > main .calendar header {
+                width: 26%;
+                margin-left: 7%;
+            }
+            #eventcalendar > main .calendar main {
+                visibility: hidden;
+            }
+            #estate {
+                height: calc(99px * 3);
+            }
+            #estate > header{
+                margin-top: -19%;
+            }
         }
         .footer { overflow: hidden; }
     </style>

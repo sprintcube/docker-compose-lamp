@@ -140,3 +140,11 @@
   border-bottom-style: inset;
   border-bottom-width: 2px;
 }
+@media all and (width: 1024px){
+  #promo > main.swiper-container .promo-feed .promoblock .promoblock-content {
+    height: 70vh;
+  }
+  #estate > main #slider-view .estat-feed .estat .estat-content{
+    height: 200%;
+  }
+}

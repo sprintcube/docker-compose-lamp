@@ -1471,7 +1471,7 @@ html,body{
         left: 66%;
     }
     #analytics > main #slider-controller img {
-        width: 28%;
+        width: 35%;
     }
     #analytics > main #slider-view .analytic-feed .analytic h2 {
         font-size: 93%;
@@ -1493,7 +1493,7 @@ html,body{
         font-size: 84%;
     }
     #reviews > main #slider-controller img {
-        width: 31%;
+        width: 24%;
         top: 7vw;
     }
     #promo > main.swiper-container .promo-feed .promoblock footer .info {
@@ -1559,7 +1559,7 @@ html,body{
     }
     #analytics > main #slider-view .analytic-feed {
         margin-left: -12%;
-        margin-top: -9%;
+        margin-top: -16%;
     }
     #services > main {
         margin-right: 2vw;
@@ -2098,5 +2098,18 @@ html,body{
 @media all and (min-width: 600px) and (max-width: 640px){
     .footer {
         height: calc(158px * 5);
+    }
+}
+@media all and (min-width: 1024px) and (max-width: 1280px){
+    #promo > main.swiper-container {
+        height: 70vh;
+    }
+    #analytics > main footer#slider-controller{
+        position: relative;
+        left: 1%;
+    }
+    #reviews > main footer#slider-controller{
+        position: relative;
+        left: -19%;
     }
 }

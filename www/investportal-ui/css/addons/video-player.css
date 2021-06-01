@@ -41,6 +41,8 @@
     .video-player > .controls {
         top: -3px;
         left: 6%;
+        padding-top: 2%;
+        padding-bottom: 22%;
     }
     .video-player > .play {
         top: -135px;

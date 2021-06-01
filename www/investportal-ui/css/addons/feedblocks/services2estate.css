@@ -6,10 +6,11 @@
 }
 @media all and (min-width: 1024px) and (max-width: 1280px){
     #services > main #slider-controller img.controls-chromium{
-        left: -22%;
+        left: -43%;
     }
     #estate > main #slider-controller img.controls-chromium{
         left: -6%;
+        top: -3vh;
     }
 }
 @media all and (min-width: 1280px) and (max-width: 1366px){
