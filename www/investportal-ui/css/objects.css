@@ -257,7 +257,7 @@
         width: 80%;
         float: left;
         margin-left: 12vw;
-        margin-top: 5vw;
+        margin-top: -14vw;
     }
     #services > header .add-but { width: 114%; }
     #objects > .projects-search-form main form h4 {
@@ -266,4 +266,13 @@
 }
 @media all and (min-width: 1024px) {
     #services > main #slider-view-adaptive, #services > main #slider-controller-adaptive{ display: none; }
+}
+@media all and (width: 1024px) {
+    #services > main #slider-view, #services > main #slider-controller {
+        display: inline-table;
+    }
+    #services > main header#slider-controller {
+        position: relative;
+        left: -8%;
+    }
 }

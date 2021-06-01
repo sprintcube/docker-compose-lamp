@@ -64,7 +64,7 @@ span.view-title{
 }
 .object-viewer > .left-content header .object-contacts .contact span{
     display: block;
-    font-size: 61%;
+    font-size: 52%;
     margin-top: 11%;
     color: black;
     font-weight: bold;
@@ -72,11 +72,11 @@ span.view-title{
 }
 .object-viewer > .left-content header .object-contacts .contact a{
     display: block;
-    font-size: 61%;
+    font-size: 52%;
     margin-top: 11%;
     color: #0079bf;
     font-weight: bold;
-    margin-left: 1vw;
+    margin-left: 22px;
 }
 .object-viewer > .left-content main{
     margin-left: 8%;
@@ -283,7 +283,7 @@ span.view-title{
 @media all and (min-width: 320px) and (max-width: 640px){
     .object-viewer > .left-content header .object-contacts .contact {
         width: 84%;
-        margin-top: 5%;
+        margin-top: 2%;
     }
     .object-viewer {
         width: 89%;
@@ -314,6 +314,14 @@ span.view-title{
         width: 96%;
     }
     #objects > .objects-list main table { border-top: none; }
+    .object-viewer > .left-content header .object-contacts .contact img {
+        width: calc(25px * 2);
+        vertical-align: middle;
+    }
+    .object-viewer > .left-content header .object-contacts .contact span,  .object-viewer > .left-content header .object-contacts .contact a{
+        display: inline-block;
+        font-size: calc(45% * 2);
+    }
 }
 @media all and (min-width: 640px) and (max-width: 1024px){
     .object-viewer {
@@ -328,6 +336,11 @@ span.view-title{
     }
     #images-slider > .header header.switcher{top: 291%;left: 5%;}
     #images-slider > .header footer.switcher {top: 277%;right: 3%;}
+    #objects > .objects-list {
+        width: 71%;
+        margin-left: 17%;
+        margin-top: -33%;
+    }
 }
 @media all and (min-width: 1024px) and (max-width: 1280px){
     #images-slider {
@@ -468,4 +481,76 @@ span.view-title{
     .video-player > .play {
         left: 38%;
     }
+}
+@media all and (min-width: 900px) and (max-width: 1024px){
+    #images-slider > .content {
+        margin-top: 13%;
+    }
+    #images-slider > .header header.switcher {
+        top: 364%;
+        left: 6%;
+    }
+    .object-viewer > .right-content footer {
+        margin-top: 10%;
+    }
+}
+@media all and (min-width: 800px) and (max-width: 960px){
+    #objects > .objects-list {
+        margin-top: -20%;
+    }
+}
+@media all and (min-width: 500px) and (max-width: 599px){
+    #images-slider > .content {
+        margin-top: 25%;
+    }
+    #images-slider > .header header.switcher {
+        top: 275%;
+        left: 8%;
+    }
+    #images-slider > .header footer.switcher {
+        top: 182%;
+        right: 6%;
+    }
+    .object-viewer > .right-content main {
+        margin-top: 20%;
+    }
+    .video-player > .play {
+        left: 37%;
+    }
+    .object-viewer > .right-content footer {
+        margin-top: 20%;
+    }
+}
+@media all and (min-width: 400px) and (max-width: 500px){
+    .object-viewer > .right-content main {
+        margin-top: 15%;
+    }
+    #images-slider {
+        margin-top: -30%;
+    }
+    .object-viewer > .right-content footer {
+        margin-top: 8%;
+    }
+    #images-slider > .header footer.switcher {
+        top: 157%;
+        right: 4%;
+    }
+    #objects > .objects-list {
+        margin-top: -55%;
+    }
+    .video-player > .play {
+        top: -135px;
+        left: 35%;
+    }
+}
+@media all and (min-width: 320px) and (max-width: 400px){
+    #objects > .objects-list {
+        margin-top: -45%;
+    }
+}
+@media all and (width: 1024px){
+    #objects > .objects-list {
+        margin-top: -18%;
+    }
+    
 }

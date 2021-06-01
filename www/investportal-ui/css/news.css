@@ -240,6 +240,8 @@
   }
   .news-feed > main #light-feed .light-feed-cont #cont-header hr{
     color: transparent;
+    margin-left: 2%;
+    width: 80%;
   }
   .news-feed > header #top-feed .right-content .last-feed-cont #cont-content ul li img {
     width: 92%;
@@ -259,6 +261,7 @@
   }
   .news-feed > main #light-feed .light-feed-cont #cont-header span#cont-title {
     padding-left: 4vw;
+    padding-right: 3vw;
   }
   .news-feed > header #top-feed .left-content main #title {
     width: 122%;
@@ -289,7 +292,7 @@
     margin-left: -2%;
   }
   #news {
-    height: 5060px;
+    height: 5308px;
   }
   .footer {
     height: calc(295px * 3);
@@ -435,3 +438,9 @@
     margin-top: -5%;
   }
 }
+@media (width: 414px){
+  #news {
+    height: 5392px;
+  }
+}
+
