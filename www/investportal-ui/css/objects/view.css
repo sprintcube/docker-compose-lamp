@@ -481,6 +481,10 @@ span.view-title{
     .video-player > .play {
         left: 38%;
     }
+    #objects > .objects-list {
+        margin-top: -38%;
+        padding-top: 9%;
+    }
 }
 @media all and (min-width: 900px) and (max-width: 1024px){
     #images-slider > .content {
@@ -496,7 +500,8 @@ span.view-title{
 }
 @media all and (min-width: 800px) and (max-width: 960px){
     #objects > .objects-list {
-        margin-top: -20%;
+        margin-top: -12%;
+        padding-top: 4%;
     }
 }
 @media all and (min-width: 500px) and (max-width: 599px){

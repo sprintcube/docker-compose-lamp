@@ -1276,7 +1276,7 @@ html,body{
     }
     .footer > main #category_menu {
         padding-left: 10px;
-        padding-right: 4%;
+        padding-right: 18%;
     }
     #promo > header .links {
         top: -50px;
@@ -2111,5 +2111,10 @@ html,body{
     #reviews > main footer#slider-controller{
         position: relative;
         left: -19%;
+    }
+}
+@media all and (min-width: 400px) and (max-width: 640px){
+    .footer {
+      height: calc(295px * 3);
     }
 }
