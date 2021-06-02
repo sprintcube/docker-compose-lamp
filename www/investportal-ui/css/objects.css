@@ -261,7 +261,7 @@
     }
     #services > header .add-but { width: 114%; }
     #objects > .projects-search-form main form h4 {
-        left: -3%;
+        left: 3%;
     }
 }
 @media all and (min-width: 1024px) {
@@ -270,6 +270,9 @@
 @media all and (width: 1024px) {
     #services > main #slider-view, #services > main #slider-controller {
         display: inline-table;
+    }
+    #services > main {
+        margin-top: -14vw;
     }
     #services > main header#slider-controller {
         position: relative;

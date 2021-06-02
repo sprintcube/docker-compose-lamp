@@ -2118,3 +2118,11 @@ html,body{
       height: calc(295px * 3);
     }
 }
+@media all and (min-width: 500px) and (max-width: 640px){
+    .footer {
+        height: calc(503px * 3);
+    }
+    .footer > main {
+        top: 10%;
+    }
+}

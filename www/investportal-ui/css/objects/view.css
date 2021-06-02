@@ -267,6 +267,12 @@ span.view-title{
     .object-viewer > .right-content header .description {
         margin-top: 11%;
     }
+    .object-viewer > .right-content header .description {
+        font-size: 72%;
+    }
+    .object-viewer > .right-content main {
+        margin-top: 7%;
+    }
     .object-viewer > .left-content { width: 100%; }
     .object-viewer > .right-content {
         width: 100%;
@@ -517,7 +523,10 @@ span.view-title{
         right: 6%;
     }
     .object-viewer > .right-content main {
-        margin-top: 20%;
+        margin-top: 3%;
+    }
+    #objects > .objects-list {
+        margin-top: -35%;
     }
     .video-player > .play {
         left: 37%;
