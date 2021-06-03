@@ -333,7 +333,6 @@
     }
     .input-from-to {
         display: block;
-        margin-top: -5%;
     }
     .range-form {
         margin-top: 1vw;
@@ -347,6 +346,9 @@
     }
     .add-but {
         margin-left: 0%;
+    }
+    #objects > .projects-search-form {
+        height: 1213px;
     }
 }
 @media all and (min-width: 1280px) and (max-width: 1366px){

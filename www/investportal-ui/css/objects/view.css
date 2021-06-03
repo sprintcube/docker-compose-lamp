@@ -154,7 +154,7 @@ span.view-title{
     overflow: auto;
     text-overflow: ellipsis;
     color: black;
-    font-size: 67%;
+    font-size: 100%;
     display: block;
 }
 .object-viewer > .right-content header .description a{
@@ -354,7 +354,7 @@ span.view-title{
         height: 616px;
     }
     .object-viewer > .right-content header .description {
-        margin-top: 24%;
+        margin-top: 14%;
     }
     #images-slider > .content #current {
         width: 88%;
@@ -369,10 +369,19 @@ span.view-title{
         top: 195%;
     }
     #images-slider > .header footer.switcher {
-        top: 179%;
-        margin-right: -30%;
+        top: 277%;
+        margin-right: -29%;
     }
     #images-slider > .content {margin-top: -5%;margin-left: 8%;}
+    .object-viewer > .right-content header .description span {
+        position: relative;
+        top: -84px;
+    }
+    .object-viewer > .right-content header .description a {
+        margin-top: 0%;
+        position: relative;
+        top: -66px;
+    }
 }
 @media all and (min-width: 1280px) and (max-width: 1366px){
     .object-viewer > .right-content header .description {
