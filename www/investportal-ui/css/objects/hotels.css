@@ -317,6 +317,7 @@
     }
     .input-from-to > span.content-form {
         font-size: 48%;
+        width: 103%;
     }
 }
 @media all and (min-width: 640px) and (max-width: 1024px){

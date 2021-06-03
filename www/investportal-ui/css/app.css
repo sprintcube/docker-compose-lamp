@@ -1573,7 +1573,7 @@ html,body{
         margin-left: 3%;
     }
     .header > #header_bottom_adaptive {
-        margin-right: 12%;
+        margin-right: 10vw;
     }
 }
 @media all and (min-width:1280px) and (max-width: 1366px){
