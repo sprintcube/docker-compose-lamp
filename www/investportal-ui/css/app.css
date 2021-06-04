@@ -2127,9 +2127,6 @@ html,body{
     }
 }
 @media all and (min-width: 960px) and (max-width: 1024px){
-    #estate {
-        height: calc(172px * 3);
-    }
     #eventcalendar > main .calendar footer {
         float: right;
         width: 67%;
@@ -2139,9 +2136,5 @@ html,body{
     }
     #services > header .add-but, #estate > header .add-but {
         margin-top: 2%;
-    }
-    #reviews > main {
-        margin-left: 12vw;
-        margin-top: 4vw;
     }
 }
