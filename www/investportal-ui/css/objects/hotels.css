@@ -22,7 +22,7 @@
     left: 2%;
     margin-top: 21%;
 }
-.objects-adding-search > main footer{
+.objects-adding-search > main footer#form-popup{
     display: block;
     margin-left: 10%;
     margin-top: 13%;
@@ -65,7 +65,7 @@
 .objects-adding-search > header #left-content header form div:nth-child(1) select {
     width: 98%;
 }
-.objects-adding-search > main footer .check-selectors, .objects-adding-search > main footer .radio-selectors{
+.objects-adding-search > main footer#form-popup .check-selectors, .objects-adding-search > main footer#form-popup .radio-selectors{
     display: block;
     margin-top: 2%;
     width: 50%;
@@ -74,23 +74,23 @@
     padding-left: 2%;
     margin-left: -11px;
 }
-.objects-adding-search > main footer .check-selectors .title-form, .objects-adding-search > main footer .radio-selectors .title-form{
+.objects-adding-search > main footer#form-popup .check-selectors .title-form, .objects-adding-search > main footer#form-popup .radio-selectors .title-form{
     font-size: 67%;
     position: relative;
     top: -13px;
     margin-left: -4%;
 }
-.objects-adding-search > main footer .check-selectors label, .objects-adding-search > main footer .radio-selectors label{
+.objects-adding-search > main footer#form-popup .check-selectors label, .objects-adding-search > main footer#form-popup .radio-selectors label{
     font-size: 90%;
     margin-top: 2px;
     display: block;
     margin-left: -10px;
 }
-.objects-adding-search > main footer .check-selectors label input, .objects-adding-search > main footer .radio-selectors label input{
+.objects-adding-search > main footer#form-popup .check-selectors label input, .objects-adding-search > main footer#form-popup .radio-selectors label input{
     top: 13%;
     position: relative;
 }
-.objects-adding-search > main footer .check-selectors label span, .objects-adding-search > main footer .radio-selectors label span{
+.objects-adding-search > main footer#form-popup .check-selectors label span, .objects-adding-search > main footer#form-popup .radio-selectors label span{
     padding-left: 2px;
 }
 .objects-adding-search > footer{
@@ -176,14 +176,18 @@
     margin-left: 8%;
 }
 
-.objects-adding-search > main footer .check-selectors label input, 
-.objects-adding-search > main footer .radio-selectors label input {
+.objects-adding-search > main footer#form-popup .check-selectors label input, 
+.objects-adding-search > main footer#form-popup .radio-selectors label input,
+.form-group > div footer .check-selectors label input, 
+.form-group > div footer .radio-selectors label input {
     position: absolute;
     left: -9999px;
 }
 
-.objects-adding-search > main footer .check-selectors label input + span, 
-.objects-adding-search > main footer .radio-selectors label input + span {
+.objects-adding-search > main footer#form-popup .check-selectors label input + span, 
+.objects-adding-search > main footer#form-popup .radio-selectors label input + span,
+.form-group > div footer .check-selectors label input + span, 
+.form-group > div footer .radio-selectors label input + span {
     display: inline-block;
     position: relative;
     padding-left: 28px;
@@ -191,8 +195,10 @@
     cursor: pointer;
 }
 
-.objects-adding-search > main footer .check-selectors label input + span:before, 
-.objects-adding-search > main footer .radio-selectors label input + span:before {
+.objects-adding-search > main footer#form-popup .check-selectors label input + span:before, 
+.objects-adding-search > main footer#form-popup .radio-selectors label input + span:before,
+.form-group > div footer .check-selectors label input + span:before, 
+.form-group > div footer .radio-selectors label input + span:before {
     content: "";
     position: absolute;
     left: 0px;
@@ -203,16 +209,20 @@
     background-color: white;
 }
 
-.objects-adding-search > main footer .check-selectors label input + span:before {
+.objects-adding-search > main footer#form-popup .check-selectors label input + span:before,
+.form-group > div footer .check-selectors label input + span:before {
     border-radius: 2px;
 }
 
-.objects-adding-search > main footer .radio-selectors label input + span:before {
+.objects-adding-search > main footer#form-popup .radio-selectors label input + span:before,
+.form-group > div footer .radio-selectors label input + span:before {
     border-radius: 100%;
 }
 
-.objects-adding-search > main footer .check-selectors label input + span:after, 
-.objects-adding-search > main footer .radio-selectors label input + span:after {
+.objects-adding-search > main footer#form-popup .check-selectors label input + span:after, 
+.objects-adding-search > main footer#form-popup .radio-selectors label input + span:after, 
+.form-group > div footer .check-selectors label input + span:after, 
+.form-group > div footer .radio-selectors label input + span:after{
     content: "";
     position: absolute;
     -webkit-transition: all 0.2s ease;
@@ -221,7 +231,8 @@
     transition: all 0.2s ease;
 }
 
-.objects-adding-search > main footer .check-selectors label input:checked + span:after{
+.objects-adding-search > main footer#form-popup .check-selectors label input:checked + span:after,
+.form-group > div footer .check-selectors label input:checked + span:after{
     left: 3px;
     top: 4px;
     width: 10px;
@@ -236,7 +247,8 @@
     transform: rotate(-45deg);
 }
 
-.objects-adding-search > main footer .radio-selectors label input:checked + span:after{
+.objects-adding-search > main footer#form-popup .radio-selectors label input:checked + span:after,
+.form-group > div footer .radio-selectors label input:checked + span:after{
     left: 5px;
     top: 5px;
     width: 10px;
@@ -245,13 +257,17 @@
     background-color: #0079bf;
 }
 
-.objects-adding-search > main footer .check-selectors label input + span:after, 
-.objects-adding-search > main footer .radio-selectors label input + span:after {
+.objects-adding-search > main footer#form-popup .check-selectors label input + span:after, 
+.objects-adding-search > main footer#form-popup .radio-selectors label input + span:after,
+.form-group > div footer .check-selectors label input + span:after, 
+.form-group > div footer .radio-selectors label input + span:after {
     opacity: 0;
 }
 
-.objects-adding-search > main footer .check-selectors label input:checked + span:after, 
-.objects-adding-search > main footer .radio-selectors label input:checked + span:after {
+.objects-adding-search > main footer#form-popup .check-selectors label input:checked + span:after, 
+.objects-adding-search > main footer#form-popup .radio-selectors label input:checked + span:after,
+.form-group > div footer .check-selectors label input:checked + span:after, 
+.form-group > div footer .radio-selectors label input:checked + span:after {
     opacity: 1;
 }
 #objects > .projects-search-form footer #left-content {
@@ -342,7 +358,7 @@
         top: -10px;
     }
     .objects-adding-search > main header form div { margin-left: -5px; }
-    .objects-adding-search > main footer .check-selectors, .objects-adding-search > main footer .radio-selectors {
+    .objects-adding-search > main footer#form-popup .check-selectors, .objects-adding-search > main footer#form-popup .radio-selectors {
         margin-left: -3px;
     }
     .add-but {
@@ -383,7 +399,7 @@
         top: -10px;
     }
     .objects-adding-search > main header form div { margin-left: -5px; }
-    .objects-adding-search > main footer .check-selectors, .objects-adding-search > main footer .radio-selectors {
+    .objects-adding-search > main footer#form-popup .check-selectors, .objects-adding-search > main footer#form-popup .radio-selectors {
         margin-left: -3px;
     }
     .add-but {
@@ -408,7 +424,7 @@
         margin-top: 3%;
     }
     .objects-adding-search > main header form div { margin-left: -5px; }
-    .objects-adding-search > main footer .check-selectors, .objects-adding-search > main footer .radio-selectors {
+    .objects-adding-search > main footer#form-popup .check-selectors, .objects-adding-search > main footer#form-popup .radio-selectors {
         margin-left: -3px;
     }
     .add-but {
@@ -421,7 +437,7 @@
     }
 }
 @media all and (max-width: 1024px){
-    .objects-adding-search > main footer {
+    .objects-adding-search > main footer#form-popup {
         display: none;
     }
 }

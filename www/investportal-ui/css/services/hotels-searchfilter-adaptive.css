@@ -1,8 +1,13 @@
+body.lightbox-opener{
+    overflow: hidden;
+}
 #mobile-form-popup > header a{
+    position: relative;
+    top: 15px;
     margin-top: 1%;
     margin-bottom: 1%;
     margin-left: 1vw;
-    font-size: 110%;
+    font-size: 95%;
     color: #0079bf;
     text-decoration: none;
     border-bottom: 1px dashed #0079bf;
@@ -36,7 +41,7 @@
 }
 .form-group > div header h4.title-form{
     margin-left: 2vw;
-    font-size: 80%;
+    font-size: 64%;
 }
 .form-group > div footer label{
     display: block;
@@ -73,13 +78,24 @@
 #mobile-form-popup > main.lb-filter-close, #mobile-form-popup > footer.lb-filter-close{
     display: none;
 }
+#objects > .projects-search-form footer.lightbox-opener {
+    height: 10vh;
+    margin-top: 2px;
+}
+#objects > .projects-search-form main.lightbox-opener {
+    height: 95vh;
+}
 @media all and (min-width: 320px) and (max-width: 640px){
     .form-group > div {
-      width: 96vw;
+        width: 83vw;
+        display: block;
+    }
+    .form-group > div footer label{
+        margin-left: 8vw;
     }
 }
 @media all and (min-width: 640px) and (max-width: 960px){
     .form-group > div header h4.title-form {
-      font-size: 70%;
+      font-size: 84%;
     }
 }
