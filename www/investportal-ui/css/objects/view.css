@@ -268,7 +268,10 @@ span.view-title{
         margin-top: 11%;
     }
     .object-viewer > .right-content header .description {
-        font-size: 72%;
+        font-size: 100%;
+        margin-top: 24%;
+        position: relative;
+        top: -49px;
     }
     .object-viewer > .right-content main {
         margin-top: 7%;

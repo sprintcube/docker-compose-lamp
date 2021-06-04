@@ -1,3 +1,4 @@
+$.getScript('../js/addons/hotels-searchfilter.js');
 const RangeInput = () => {
     var rangetext = [
         $('.objects-adding-search > footer #left-content .input-from-to:nth-child(1) .content-form input#from'),

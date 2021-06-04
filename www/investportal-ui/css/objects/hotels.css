@@ -1,5 +1,6 @@
 @import url('../objects.css');
 @import url('../services/hotels-input-services.css');
+@import url('../services/hotels-searchfilter-adaptive.css');
 @import url('../services/objects-services-cont.css');
 
 #objects > .projects-search-form {
@@ -466,4 +467,7 @@
     #objects > .projects-search-form footer #left-content {
         margin-left: 46px;
     }
+}
+@media all and (min-width: 1024px){
+    #mobile-form-popup{ display: none; }
 }

@@ -1,0 +1,85 @@
+#mobile-form-popup > header a{
+    margin-top: 1%;
+    margin-bottom: 1%;
+    margin-left: 1vw;
+    font-size: 110%;
+    color: #0079bf;
+    text-decoration: none;
+    border-bottom: 1px dashed #0079bf;
+}
+#mobile-form-popup > main{
+    width: 100vw;
+    height: 95vh;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color: lightgray;
+}
+.form-group > div{
+    display: inline-table;
+    width: 45vw;
+    margin-left: 2vw;
+    margin-right: 2vw;
+    margin-top: 1vh;
+}
+.form-group > div header, .form-group > div footer, #mobile-form-popup > footer{
+    padding-top: 1%;
+    padding-bottom: 1%;
+    width: 100%;
+    display: block;
+}
+.form-group > div header{
+    border: solid 2px darkgray;
+}
+.form-group > div header *{
+    display: inline-block;
+}
+.form-group > div header h4.title-form{
+    margin-left: 2vw;
+    font-size: 80%;
+}
+.form-group > div footer label{
+    display: block;
+    margin-top: 10px;
+    margin-left: 2vw;
+}
+#mobile-form-popup > footer{
+    height: 10vh;
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    background-color: white;
+}
+#mobile-form-popup > footer button.add-but-popup{
+    display: inline-block;
+    text-align: center;
+    color: #0079bf;
+    background-color: white;
+    border: solid 2px #0079bf;
+    font-size: 90%;
+    padding: 10px;
+}
+#mobile-form-popup > footer button#close{
+    margin-left: 2vw;
+}
+#mobile-form-popup > footer button#save{
+    color: white;
+    background-color: #0079bf;
+    border: none;
+    float: right;
+    margin-right: 2vw;
+}
+  
+#mobile-form-popup > main.lb-filter-close, #mobile-form-popup > footer.lb-filter-close{
+    display: none;
+}
+@media all and (min-width: 320px) and (max-width: 640px){
+    .form-group > div {
+      width: 96vw;
+    }
+}
+@media all and (min-width: 640px) and (max-width: 960px){
+    .form-group > div header h4.title-form {
+      font-size: 70%;
+    }
+}
