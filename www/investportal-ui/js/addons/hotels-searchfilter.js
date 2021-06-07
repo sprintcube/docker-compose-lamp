@@ -8,37 +8,7 @@ const LBFilter = () => {
       let curBut = $(this).eq($(this).index()).attr('id');
       
       switch(curBut){
-        case 'close':
-          LBShower(0);
-        break;
-        case 'save': 
-          let formEls = [
-            $('.form-group > div footer .check-selectors label input'),
-            $('.form-group > div footer .radio-selectors label input')
-          ];
-          let formDEls = [
-            $('.objects-adding-search > main footer#form-popup .check-selectors label input'),
-            $('.objects-adding-search > main footer#form-popup .radio-selectors label input')
-          ];
-
-          for (let index = 0; index < formEls.length; index++) {
-            const mobile = formEls[index],
-                  desktop = formDEls[index];
-
-            desktop.removeProp('checked');
-
-            for (let i = 0; i < mobile.length; i++) {
-              const fEl = mobile.eq(i),
-                    fDEl = desktop.eq(i);
-
-              if(fEl.is(':checked')){
-                fDEl.prop('checked','checked');
-              }
-              
-            }
-            
-          }
-
+        case 'save':
           LBShower(0);
         break;
         default: e.preventDefault(); break;
