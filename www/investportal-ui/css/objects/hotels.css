@@ -32,7 +32,7 @@
     margin-top: -10%;
     height: auto;
     float: left;
-    width: 49%;
+    width: 50%;
     border: solid 2px gray;
     border-radius: 10px;
     padding-bottom: 1%;
@@ -144,13 +144,13 @@
     display: block;
     border: none;
     background-color: white;
-    width: 96%;
+    width: 98%;
     font-size: 51%;
 }
 .objects-adding-search > header #left-content header form div {
     border: solid 2px gray;
     border-radius: 10px;
-    width: 96%;
+    width: 97%;
     padding-left: 2%;
     padding-bottom: 2%;
     padding-right: 0vw;
@@ -299,7 +299,7 @@
 }
 @media all and (min-width: 320px) and (max-width: 1024px){
     .objects-adding-search > header #left-content header form div:not(:nth-child(1)) {
-        width: 95%;
+        width: 97%;
     }
     
     #objects > .projects-search-form footer {
@@ -315,7 +315,7 @@
     }
     .objects-adding-search > main header form div {
         margin-top: 15%;
-        width: 96%;
+        width: 98%;
         margin-left: -1%;
     }
     #objects > .projects-search-form footer #left-content {
@@ -334,7 +334,12 @@
     }
     .input-from-to > span.content-form {
         font-size: 48%;
-        width: 103%;
+        width: 105%;
+    }
+}
+@media all and (min-width: 600px) and (max-width: 640px){
+    #objects > .projects-search-form {
+        height: 1133px;
     }
 }
 @media all and (min-width: 640px) and (max-width: 1024px){
@@ -383,7 +388,7 @@
         padding-top: 1%;
     }
     .input-from-to:nth-child(2) {
-        margin-top: -4%;
+        margin-top: -2%;
     }
     .input-from-to:nth-child(1) > span.content-form {
         padding-bottom: 2%;
@@ -398,7 +403,7 @@
         position: relative;
         top: -10px;
     }
-    .objects-adding-search > main header form div { margin-left: -5px; }
+    .objects-adding-search > main header form div {}
     .objects-adding-search > main footer#form-popup .check-selectors, .objects-adding-search > main footer#form-popup .radio-selectors {
         margin-left: -3px;
     }
@@ -406,9 +411,6 @@
         margin-left: 0%;
     }
     .objects-adding-search > header #right-content {
-        float: right;
-        margin-right: -1%;
-        margin-top: -14%;
         background: transparent;
     }
 }
@@ -423,7 +425,7 @@
     .range-form {
         margin-top: 3%;
     }
-    .objects-adding-search > main header form div { margin-left: -5px; }
+    .objects-adding-search > main header form div {margin-left: -5px;}
     .objects-adding-search > main footer#form-popup .check-selectors, .objects-adding-search > main footer#form-popup .radio-selectors {
         margin-left: -3px;
     }

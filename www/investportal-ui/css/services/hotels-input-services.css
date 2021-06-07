@@ -49,7 +49,7 @@
 }
 @media all and (min-width: 1280px) and (max-width: 1366px){
     .range-form:nth-child(2) {
-        margin-top: 7%;
+        margin-top: 8%;
     }
 }
 @media all and (min-width: 1680px) and (max-width: 1800px){

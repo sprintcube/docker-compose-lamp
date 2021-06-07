@@ -1,109 +1,489 @@
-body.lightbox-opener{
-    overflow: hidden;
+@import url('../objects.css');
+@import url('../services/hotels-input-services.css');
+@import url('../services/hotels-searchfilter-adaptive.css');
+@import url('../services/objects-services-cont.css');
+
+#objects > .projects-search-form {
+    height: 980px;
 }
-#mobile-form-popup > header a{
-    position: relative;
-    top: 15px;
-    margin-top: 1%;
-    margin-bottom: 1%;
-    margin-left: 1vw;
-    font-size: 95%;
-    color: #0079bf;
-    text-decoration: none;
-    border-bottom: 1px dashed #0079bf;
+.objects-adding-search{
+    width: 100%;
+    height: auto;
+    display: block;
+    margin-left: -6%;
 }
-#mobile-form-popup > main{
-    width: 100vw;
-    height: 95vh;
-    position: fixed;
-    top: 0;
-    left: 0;
-    background-color: lightgray;
-}
-.form-group > div{
-    display: inline-block;
-    width: 43vw;
-    margin-left: 2vw;
-    margin-right: 2vw;
-    margin-top: 1vh;
-}
-.form-group > div header, .form-group > div footer, #mobile-form-popup > footer{
-    padding-top: 1%;
-    padding-bottom: 1%;
+.objects-adding-search > main{
     width: 100%;
     display: block;
 }
-.form-group > div header{
-    border: solid 2px darkgray;
-}
-.form-group > div header *{
-    display: inline-block;
-}
-.form-group > div header h4.title-form{
-    margin-left: 2vw;
-    font-size: 64%;
-}
-.form-group > div footer label{
+.objects-adding-search > main header{
     display: block;
-    margin-top: 10px;
-    margin-left: 4vw;
+    position: relative;
+    left: 2%;
+    margin-top: 21%;
 }
-#mobile-form-popup > footer{
-    height: 10vh;
-    position: fixed;
-    left: 0;
-    bottom: 0;
+.objects-adding-search > main footer#form-popup{
+    display: block;
+    margin-left: 10%;
+    margin-top: 13%;
+}
+.objects-adding-search > main header form div{
+    display: inline;
+    margin-top: -10%;
+    height: auto;
+    float: left;
+    width: 49%;
+    border: solid 2px gray;
+    border-radius: 10px;
+    padding-bottom: 1%;
+    padding-left: 2%;
+    margin-left: -11px;
+}
+.objects-adding-search > main header form div .label{
+    font-size: 60%;
+    position: relative;
+    top: -18px;
     background-color: white;
+    padding-left: 2%;
+    left: -4%;
+    padding-right: 2%;
 }
-#mobile-form-popup > footer button.add-but-popup{
-    display: inline-block;
-    text-align: center;
-    color: #0079bf;
+.objects-adding-search > main header form div input{
+    display: block;
+    margin-top: -2%;
     background-color: white;
-    border: solid 2px #0079bf;
-    font-size: 90%;
-    padding: 10px;
-}
-#mobile-form-popup > footer button#close{
-    margin-left: 2vw;
-}
-#mobile-form-popup > footer button#save{
-    color: white;
-    background-color: #0079bf;
     border: none;
-    float: right;
-    margin-right: 2vw;
+    font-size: 100%;
+    width: 100%;
 }
-  
-#mobile-form-popup > main.lb-filter-close, #mobile-form-popup > footer.lb-filter-close{
-    display: none;
+.objects-adding-search > main header form div input::placeholder{
+    color: darkgray;
 }
-#objects > .projects-search-form footer.lightbox-opener {
-    height: 10vh;
+.objects-adding-search > main header form div input:focus{
+    border: none;
+}
+.objects-adding-search > header #left-content header form div:nth-child(1) select {
+    width: 98%;
+}
+.objects-adding-search > main footer#form-popup .check-selectors, .objects-adding-search > main footer#form-popup .radio-selectors{
+    display: block;
+    margin-top: 2%;
+    width: 50%;
+    border-radius: 10px;
+    padding-bottom: 1%;
+    padding-left: 2%;
+    margin-left: -11px;
+}
+.objects-adding-search > main footer#form-popup .check-selectors .title-form, .objects-adding-search > main footer#form-popup .radio-selectors .title-form{
+    font-size: 67%;
+    position: relative;
+    top: -13px;
+    margin-left: -4%;
+}
+.objects-adding-search > main footer#form-popup .check-selectors label, .objects-adding-search > main footer#form-popup .radio-selectors label{
+    font-size: 90%;
     margin-top: 2px;
-    z-index: 1;
+    display: block;
+    margin-left: -10px;
 }
-#objects > .projects-search-form main.lightbox-opener {
-    height: 95vh;
-    z-index: 1;
+.objects-adding-search > main footer#form-popup .check-selectors label input, .objects-adding-search > main footer#form-popup .radio-selectors label input{
+    top: 13%;
+    position: relative;
 }
-@media all and (min-width: 320px) and (max-width: 640px){
-    .form-group > div {
-        width: 83vw;
+.objects-adding-search > main footer#form-popup .check-selectors label span, .objects-adding-search > main footer#form-popup .radio-selectors label span{
+    padding-left: 2px;
+}
+.objects-adding-search > footer{
+    margin-top: -15%;
+    margin-left: 6%;
+}
+.objects-adding-search > footer #left-content{
+    position: relative;
+    top: 5%;
+}
+.objects-adding-search > footer #left-content .input-from-to{
+    font-size: 120%;
+    text-indent: 2%;
+}
+.objects-adding-search > footer #left-content .input-from-to input#from{
+    width: 10%;
+    font-size: 110%;
+}
+.objects-adding-search > footer #left-content .input-from-to input#to{
+    width: 15%;
+    font-size: 110%;
+}
+.objects-adding-search > footer #right-content{
+    float: right;
+    width: 35%;
+    display: inline-table;
+    margin-top: 66px;
+    right: 28%;
+    position: relative;
+}
+.objects-adding-search > header #left-content{
+    width: 52%;
+    height: auto;
+}
+.objects-adding-search > header #left-content header{
+    margin-left: -1%;
+    height: auto;
+    margin-top: 2%;
+}
+.objects-adding-search > header #left-content header form div .label{
+    font-size: 40%;
+    display: block;
+    background-color: white;
+    position: relative;
+    top: -9px;
+    padding-left: 13px;
+    left: -3%;
+    width: 6pc;
+}
+.objects-adding-search > header #left-content header form div select{
+    display: block;
+    border: none;
+    background-color: white;
+    width: 98%;
+    font-size: 51%;
+}
+.objects-adding-search > header #left-content header form div {
+    border: solid 2px gray;
+    border-radius: 10px;
+    width: 96%;
+    padding-left: 2%;
+    padding-bottom: 2%;
+    padding-right: 0vw;
+}
+.objects-adding-search > header #left-content header form div:not(:nth-child(1)){
+    display: inline-table;
+    width: 46%;
+    padding-right: 2px;
+}
+.objects-adding-search > header #right-content{
+    width: 50%;
+    font-size: 80%;
+    height: auto;
+    background-color: white;
+}
+.objects-adding-search > header #right-content header{
+    height: auto;
+    margin-top: -1vw;
+}
+.objects-adding-search > header #right-content footer{
+    display: block;
+    margin-top: 9%;
+    margin-left: 8%;
+}
+
+.objects-adding-search > main footer#form-popup .check-selectors label input, 
+.objects-adding-search > main footer#form-popup .radio-selectors label input,
+.form-group > div footer .check-selectors label input, 
+.form-group > div footer .radio-selectors label input {
+    position: absolute;
+    left: -9999px;
+}
+
+.objects-adding-search > main footer#form-popup .check-selectors label input + span, 
+.objects-adding-search > main footer#form-popup .radio-selectors label input + span,
+.form-group > div footer .check-selectors label input + span, 
+.form-group > div footer .radio-selectors label input + span {
+    display: inline-block;
+    position: relative;
+    padding-left: 28px;
+    line-height: 20px;
+    cursor: pointer;
+}
+
+.objects-adding-search > main footer#form-popup .check-selectors label input + span:before, 
+.objects-adding-search > main footer#form-popup .radio-selectors label input + span:before,
+.form-group > div footer .check-selectors label input + span:before, 
+.form-group > div footer .radio-selectors label input + span:before {
+    content: "";
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    width: 18px;
+    height: 18px;
+    border: 1px solid gray;
+    background-color: white;
+}
+
+.objects-adding-search > main footer#form-popup .check-selectors label input + span:before,
+.form-group > div footer .check-selectors label input + span:before {
+    border-radius: 2px;
+}
+
+.objects-adding-search > main footer#form-popup .radio-selectors label input + span:before,
+.form-group > div footer .radio-selectors label input + span:before {
+    border-radius: 100%;
+}
+
+.objects-adding-search > main footer#form-popup .check-selectors label input + span:after, 
+.objects-adding-search > main footer#form-popup .radio-selectors label input + span:after, 
+.form-group > div footer .check-selectors label input + span:after, 
+.form-group > div footer .radio-selectors label input + span:after{
+    content: "";
+    position: absolute;
+    -webkit-transition: all 0.2s ease;
+    -moz-transition: all 0.2s ease;
+    -o-transition: all 0.2s ease;
+    transition: all 0.2s ease;
+}
+
+.objects-adding-search > main footer#form-popup .check-selectors label input:checked + span:after,
+.form-group > div footer .check-selectors label input:checked + span:after{
+    left: 3px;
+    top: 4px;
+    width: 10px;
+    height: 5px;
+    border-radius: 1px;
+    border-left: 4px solid #0079bf;
+    border-bottom: 4px solid #0079bf;
+    -webkit-transform: rotate(-45deg);
+    -moz-transform: rotate(-45deg);
+    -o-transform: rotate(-45deg);
+    -ms-transform: rotate(-45deg);
+    transform: rotate(-45deg);
+}
+
+.objects-adding-search > main footer#form-popup .radio-selectors label input:checked + span:after,
+.form-group > div footer .radio-selectors label input:checked + span:after{
+    left: 5px;
+    top: 5px;
+    width: 10px;
+    height: 10px;
+    border-radius: 100%;
+    background-color: #0079bf;
+}
+
+.objects-adding-search > main footer#form-popup .check-selectors label input + span:after, 
+.objects-adding-search > main footer#form-popup .radio-selectors label input + span:after,
+.form-group > div footer .check-selectors label input + span:after, 
+.form-group > div footer .radio-selectors label input + span:after {
+    opacity: 0;
+}
+
+.objects-adding-search > main footer#form-popup .check-selectors label input:checked + span:after, 
+.objects-adding-search > main footer#form-popup .radio-selectors label input:checked + span:after,
+.form-group > div footer .check-selectors label input:checked + span:after, 
+.form-group > div footer .radio-selectors label input:checked + span:after {
+    opacity: 1;
+}
+#objects > .projects-search-form footer #left-content {
+    width: 50%;
+    margin-top: 5%;
+    border-radius: 10px;
+    margin-left: 40px;
+}
+#objects > .projects-search-form footer #left-content-add {
+    width: 50%;
+    margin-top: 2%;
+}
+.ui-slider-horizontal .ui-slider-range { background: #0079bf; }
+.ui-widget.ui-widget-content {
+    height: 5px;
+    background: #f0f3f4;
+}
+.ui-state-default, .ui-widget-content .ui-state-default{
+    border-radius: 50%;
+}
+.ui-slider-handle.ui-corner-all.ui-state-default {
+    width: 15px;
+    height: 15px;
+    background: #0079bf;
+    color: #0079bf;
+}
+.objects-adding-search > header #right-content .input-from-to > span.content-form {
+    padding-left: 4%;
+}
+@media all and (min-width: 320px) and (max-width: 1024px){
+    .objects-adding-search > header #left-content header form div:not(:nth-child(1)) {
+        width: 96%;
     }
-    .form-group > div footer label{
-        margin-left: 8vw;
+    
+    #objects > .projects-search-form footer {
+        margin-top: -57px;
+    }
+    .objects-adding-search > header #left-content, .objects-adding-search > header #right-content {
+        width: 100%;
+    }
+    #objects > .projects-search-form main header #right-content {
+        float: left;
+        margin-left: -7%;
+        background-color: transparent;
+    }
+    .objects-adding-search > main header form div {
+        margin-top: 15%;
+        width: 98%;
+        margin-left: -1%;
+    }
+    #objects > .projects-search-form footer #left-content {
+        width: 97%;
+        margin-top: 3%;
+        margin-left: 3%;
+    }
+    .objects-adding-search > footer #right-content {
+        float: left;
+        width: 100%;
+        margin-top: 15%;
+        margin-left: 35%;
+    }
+    #objects > .projects-search-form {
+        height: 1002px;
+    }
+    .input-from-to > span.content-form {
+        font-size: 48%;
+        width: 104%;
     }
 }
-@media all and (min-width: 640px) and (max-width: 960px){
-    #objects > .projects-search-form main.lightbox-opener {
-        height: 53vh;
-        z-index: 1;
-        width: 103vw;
+@media all and (min-width: 640px) and (max-width: 1024px){
+    #objects > .projects-search-form footer #left-content { width: 55%; }
+    .objects-adding-search > footer #right-content {width: 37%;margin-top: 9%;}
+    #objects > .projects-search-form {
+        height: 1185px;
     }
-    #objects > .projects-search-form footer.lightbox-opener {
-        height: 43vh;
-        margin-top: 2px;
-        z-index: 1;
+}
+@media all and (min-width: 1024px) and (max-width: 1280px){
+    .objects-adding-search > header #right-content header {
+        margin-top: 0vw;
     }
+    .input-from-to {
+        display: block;
+    }
+    .range-form {
+        margin-top: 1vw;
+        padding-bottom: 1vw;
+        position: relative;
+        top: -10px;
+    }
+    .objects-adding-search > main header form div { margin-left: -5px; }
+    .objects-adding-search > main footer#form-popup .check-selectors, .objects-adding-search > main footer#form-popup .radio-selectors {
+        margin-left: -3px;
+    }
+    .add-but {
+        margin-left: 0%;
+    }
+    #objects > .projects-search-form {
+        height: 1213px;
+    }
+}
+@media all and (min-width: 1280px) and (max-width: 1366px){
+    .objects-adding-search > header #right-content header {
+        margin-top: -33%;
+        position: relative;
+        left: 7%;
+    }
+    .input-from-to {
+        display: block;
+        margin-top: -4%;
+    }
+    .input-from-to > span.content-form {
+        padding-bottom: 2%;
+        padding-top: 1%;
+    }
+    .input-from-to:nth-child(2) {
+        margin-top: -4%;
+    }
+    .input-from-to:nth-child(1) > span.content-form {
+        padding-bottom: 2%;
+        padding-top: 2%;
+    }
+    .input-from-to:nth-child(2) > span.content-form {
+        padding-top: 2%;
+    }
+    .range-form {
+        margin-top: 1vw;
+        padding-bottom: 1vw;
+        position: relative;
+        top: -10px;
+    }
+    .objects-adding-search > main header form div { margin-left: -5px; }
+    .objects-adding-search > main footer#form-popup .check-selectors, .objects-adding-search > main footer#form-popup .radio-selectors {
+        margin-left: -3px;
+    }
+    .add-but {
+        margin-left: 0%;
+    }
+    .objects-adding-search > header #right-content {
+        float: right;
+        margin-right: -1%;
+        margin-top: -14%;
+        background: transparent;
+    }
+}
+@media all and (min-width: 1366px) and (max-width: 1400px){
+    .objects-adding-search > header #right-content header {
+        margin-top: 0vw;
+    }
+    .input-from-to {
+        display: block;
+        margin-top: -4%;
+    }
+    .range-form {
+        margin-top: 3%;
+    }
+    .objects-adding-search > main header form div { margin-left: -5px; }
+    .objects-adding-search > main footer#form-popup .check-selectors, .objects-adding-search > main footer#form-popup .radio-selectors {
+        margin-left: -3px;
+    }
+    .add-but {
+        margin-left: 0%;
+    }
+}
+@media all and (min-width: 1800px){
+    #objects > .projects-search-form {
+        height: 1049px;
+    }
+}
+@media all and (max-width: 1024px){
+    .objects-adding-search > main footer#form-popup {
+        display: none;
+    }
+}
+@media all and (min-width: 1400px){
+    .objects-adding-search > header #right-content {
+        width: 56%;
+        background-color: transparent;
+    }
+    .objects-adding-search > header #right-content .input-from-to > span.content-form {
+        font-size: 51%;
+        padding-bottom: 4%;
+        padding-top: 4%;
+    }
+    .objects-adding-search > header #right-content .input-from-to {
+        display: inline-block;
+        width: 47%;
+    }
+    .objects-adding-search > header #right-content header {
+        left: 14%;
+        position: relative;
+    }
+
+}
+@media all and (min-width: 1400px) and (max-width: 1600px){
+    .objects-adding-search > header #right-content header {
+        margin-top: -113px;
+    }
+}
+@media all and (min-width: 1600px) and (max-width: 1680px){
+    .objects-adding-search > header #right-content header {
+        margin-top: -117px;
+    }
+}
+@media all and (min-width: 1680px) and (max-width: 1800px){
+    .objects-adding-search > header #right-content header {
+        margin-top: -118px;
+    }
+}
+@media all and (min-width: 1800px){
+    .objects-adding-search > header #right-content header {
+        margin-top: -126px;
+    }
+    #objects > .projects-search-form footer #left-content {
+        margin-left: 46px;
+    }
+}
+@media all and (min-width: 1024px){
+    #mobile-form-popup{ display: none; }
 }
