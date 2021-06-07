@@ -164,7 +164,7 @@
     width: 50%;
     font-size: 80%;
     height: auto;
-    background-color: white;
+    background-color: transparent;
 }
 .objects-adding-search > header #right-content header{
     height: auto;
@@ -351,7 +351,9 @@
 }
 @media all and (min-width: 1024px) and (max-width: 1280px){
     .objects-adding-search > header #right-content header {
-        margin-top: 0vw;
+        margin-top: -11vw;
+        position: relative;
+        left: 4vw;
     }
     .input-from-to {
         display: block;
@@ -375,7 +377,7 @@
 }
 @media all and (min-width: 1280px) and (max-width: 1366px){
     .objects-adding-search > header #right-content header {
-        margin-top: -33%;
+        margin-top: -2%;
         position: relative;
         left: 7%;
     }
@@ -417,6 +419,8 @@
 @media all and (min-width: 1366px) and (max-width: 1400px){
     .objects-adding-search > header #right-content header {
         margin-top: 0vw;
+        position: relative;
+        left: 4vw;
     }
     .input-from-to {
         display: block;
@@ -465,7 +469,9 @@
 }
 @media all and (min-width: 1400px) and (max-width: 1600px){
     .objects-adding-search > header #right-content header {
-        margin-top: -113px;
+        margin-top: -7px;
+        position: relative;
+        left: 6vw;
     }
 }
 @media all and (min-width: 1600px) and (max-width: 1680px){
@@ -475,12 +481,12 @@
 }
 @media all and (min-width: 1680px) and (max-width: 1800px){
     .objects-adding-search > header #right-content header {
-        margin-top: -118px;
+        margin-top: 5px;
     }
 }
 @media all and (min-width: 1800px){
     .objects-adding-search > header #right-content header {
-        margin-top: -126px;
+        margin-top: 23px;
     }
     #objects > .projects-search-form footer #left-content {
         margin-left: 46px;
