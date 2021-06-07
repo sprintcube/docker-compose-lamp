@@ -2079,12 +2079,12 @@ html,body{
         top: 10%;
     }
 }
-@media all and (width: 414px){
+@media (min-width: 400px) and (max-width: 640px){
     .footer {
         height: calc(197px * 4);
     }
     .footer > main {
-        top: 17%;
+        top: 10%;
     }
 }
 @media all and (width: 960px){
@@ -2115,15 +2115,15 @@ html,body{
 }
 @media all and (min-width: 400px) and (max-width: 640px){
     .footer {
-      height: calc(295px * 3);
+      height: calc(295px * 5);
     }
 }
 @media all and (min-width: 500px) and (max-width: 640px){
     .footer {
-        height: calc(503px * 3);
+        height: calc(446px * 2);
     }
     .footer > main {
-        top: 10%;
+        top: 19%;
     }
 }
 @media all and (min-width: 960px) and (max-width: 1024px){

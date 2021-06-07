@@ -31,7 +31,7 @@
 #objects > .projects-search-form header #right-content{
     float: right;
     margin-right: 2%;
-    margin-top: -14%;
+    margin-top: 2%;
 }
 #objects > .projects-search-form header #right-content .close{
     width: 90%;
@@ -201,6 +201,7 @@
     #objects > .projects-search-form {
         width: 83%;
         margin-left: 11%;
+        height: 1233px;
     }
     #objects > .projects-search-form header .title {
         margin-left: -15%;
