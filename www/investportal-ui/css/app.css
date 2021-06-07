@@ -1772,7 +1772,7 @@ html,body{
 @media all and (min-width:1366px) and (max-width: 1400px){
     .header > #header_bottom {
         display: inherit;
-        top: -5%;
+        top: 58%;
         position: relative;
         right: -3%;
     }
