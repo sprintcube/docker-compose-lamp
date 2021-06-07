@@ -31,10 +31,12 @@
 #objects > .projects-search-form header #right-content{
     float: right;
     margin-right: 2%;
-    margin-top: 2%;
+    margin-top: -14%;
 }
 #objects > .projects-search-form header #right-content .close{
     width: 90%;
+    position: relative;
+    top: 13vw;
 }
 #objects > .projects-search-form main{
     height: calc(72px * 5);
