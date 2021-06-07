@@ -150,11 +150,10 @@ span.view-title{
     margin-top: 18%;
 }
 .object-viewer > .right-content header .description span{
-    height: 44px;
     overflow: auto;
     text-overflow: ellipsis;
     color: black;
-    font-size: 100%;
+    font-size: 80%;
     display: block;
 }
 .object-viewer > .right-content header .description a{
@@ -577,6 +576,5 @@ span.view-title{
 @media all and (width: 1024px){
     #objects > .objects-list {
         margin-top: -18%;
-    }
-    
+    }  
 }
