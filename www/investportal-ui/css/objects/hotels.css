@@ -351,7 +351,7 @@
 }
 @media all and (min-width: 1024px) and (max-width: 1280px){
     .objects-adding-search > header #right-content header {
-        margin-top: -11vw;
+        margin-top: -56%;
         position: relative;
         left: 4vw;
     }
@@ -377,7 +377,7 @@
 }
 @media all and (min-width: 1280px) and (max-width: 1366px){
     .objects-adding-search > header #right-content header {
-        margin-top: -2%;
+        margin-top: -33%;
         position: relative;
         left: 7%;
     }
@@ -417,7 +417,7 @@
 }
 @media all and (min-width: 1366px) and (max-width: 1400px){
     .objects-adding-search > header #right-content header {
-        margin-top: 0vw;
+        margin-top: -31%;
         position: relative;
         left: 4vw;
     }
@@ -468,7 +468,7 @@
 }
 @media all and (min-width: 1400px) and (max-width: 1600px){
     .objects-adding-search > header #right-content header {
-        margin-top: -7px;
+        margin-top: -185px;
         position: relative;
         left: 6vw;
     }
@@ -480,12 +480,12 @@
 }
 @media all and (min-width: 1680px) and (max-width: 1800px){
     .objects-adding-search > header #right-content header {
-        margin-top: 5px;
+        margin-top: -191px;
     }
 }
 @media all and (min-width: 1800px){
     .objects-adding-search > header #right-content header {
-        margin-top: 23px;
+        margin-top: -200px;
     }
     #objects > .projects-search-form footer #left-content {
         margin-left: 46px;
