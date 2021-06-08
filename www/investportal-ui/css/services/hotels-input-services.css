@@ -58,12 +58,12 @@
 }
 @media all and (min-width: 1280px) and (max-width: 1366px){
     .range-form:nth-child(2) {
-        margin-top: 27px;
+        margin-top: 23px;
     }
 }
 @media all and (min-width: 1680px) and (max-width: 1800px){
     .range-form:nth-child(2) {
-        margin-top: 50px;
+        margin-top: 36px;
     }
 }
 @media all and (min-width: 1800px){

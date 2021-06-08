@@ -353,18 +353,19 @@
     .objects-adding-search > header #right-content header {
         margin-top: -5%;
         position: relative;
-        left: -1vw;
+        left: 3vw;
+        top: -218px;
     }
     .input-from-to {
         display: block;
         margin-left: 1%;
     }
     .range-form {
-        margin-top: -179px;
+        margin-top: 21px;
         padding-bottom: 1vw;
-        margin-left: 31vw;
+        margin-left: 2vw;
     }
-    .objects-adding-search > main header form div {margin-left: -5px;position: relative;top: 55px;}
+    .objects-adding-search > main header form div {margin-left: -5px;position: relative;top: -48px;}
     .objects-adding-search > main footer#form-popup .check-selectors, .objects-adding-search > main footer#form-popup .radio-selectors {
         margin-left: -3px;
     }
@@ -372,7 +373,7 @@
         margin-left: 0%;
     }
     #objects > .projects-search-form {
-        height: 1070px;
+        height: 913px;
     }
     .objects-adding-search > main footer#form-popup {
         margin-top: -1%;
@@ -428,7 +429,7 @@
         margin-top: -4%;
     }
     .range-form {
-        margin-top: 16px;
+        margin-top: 6px;
     }
     .objects-adding-search > main header form div {margin-left: -5px;}
     .objects-adding-search > main footer#form-popup .check-selectors, .objects-adding-search > main footer#form-popup .radio-selectors {

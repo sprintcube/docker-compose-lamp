@@ -1581,7 +1581,7 @@ html,body{
         display: inherit;
         right: -2%;
         position: relative;
-        top: 61%;
+        top: -13%;
     }
     .header > #header_bottom_adaptive{ display: none; }
     .header > #header_bottom .hb_bottom header .header-informer header {
@@ -1772,9 +1772,9 @@ html,body{
 @media all and (min-width:1366px) and (max-width: 1400px){
     .header > #header_bottom {
         display: inherit;
-        top: 58%;
+        top: -6%;
         position: relative;
-        right: -3%;
+        right: -1%;
     }
     .header > #header_bottom_adaptive{ display: none; }
     #services > main #slider-view .service-feed .service {
