@@ -105,7 +105,7 @@
 }
 #objects > .projects-search-form footer .filter .parameters .parameter-form #text-to{
     display: inline-table;
-    width: calc(20% * 2);
+    width: calc(14% * 2);
     background-color: #f0f3f4;
     font-size: 93%;
     border: none;
@@ -139,7 +139,7 @@
     }
     #objects > .projects-search-form footer .filter .parameters .parameter-form #text-to {
         display: inline-table;
-        width: calc(8% * 4);
+        width: calc(6% * 4);
         margin-top: 6%;
     }
     #objects > .projects-search-form footer .filter { width: 80%; }
@@ -147,6 +147,6 @@
 @media all and (min-width: 1024px) and (max-width: 1280px){
     #objects > .projects-search-form footer .filter .parameters .parameter-form #text-to {
         margin-top: 2%;
-        width: 30%;
+        width: 18%;
     }
 }

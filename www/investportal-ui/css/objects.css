@@ -150,6 +150,12 @@
         margin-left: -10%;
         font-size: 76%;
     }
+    .objects-header{
+        margin-left: -7%;
+    }
+    .objects-close{
+        margin-top: -8%;
+    }
     #objects > .projects-search-form main form .selectors {
         width: 90%;
         margin-top: 4%;
@@ -241,11 +247,17 @@
     #objects > .projects-search-form footer {
         height: calc(80px * 5);
     }
+    .objects-foot{
+        margin-top: 4%;
+    }
 }
 @media all and (min-width: 1280px) and (max-width: 1366px){
     #objects > .projects-search-form footer {
         height: calc(80px * 5);
         margin-top: -9vw;
+    }
+    .objects-foot{
+        margin-top: 3vw;
     }
 }
 @media all and (min-width: 320px) and (max-width: 1024px) {
