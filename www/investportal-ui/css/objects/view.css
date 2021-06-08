@@ -126,7 +126,7 @@ span.view-title{
     font-weight: bold;
 }
 #objects > .objects-list {
-    margin-top: -4%;
+    margin-top: -2%;
 }
 .object-viewer > .right-content header .add-to-favorite{
     font-size: 110%;
@@ -147,7 +147,7 @@ span.view-title{
 }
 .object-viewer > .right-content header .description{
     font-size: 100%;
-    margin-top: 18%;
+    margin-top: 6%;
 }
 .object-viewer > .right-content header .description span{
     overflow: auto;
@@ -356,7 +356,7 @@ span.view-title{
         height: 616px;
     }
     .object-viewer > .right-content header .description {
-        margin-top: 14%;
+        margin-top: 20%;
     }
     #images-slider > .content #current {
         width: 88%;
@@ -387,7 +387,7 @@ span.view-title{
 }
 @media all and (min-width: 1280px) and (max-width: 1366px){
     .object-viewer > .right-content header .description {
-        margin-top: 24%;
+        margin-top: 27%;
     }
     .object-viewer > .right-content {
         top: -38px;
@@ -417,7 +417,7 @@ span.view-title{
 }
 @media all and (min-width: 1400px) and (max-width: 1600px){
     .object-viewer > .right-content header .description {
-        margin-top: 23%;
+        margin-top: 10%;
     }
     .object-viewer > .right-content {
         top: -52px;
@@ -443,7 +443,7 @@ span.view-title{
         top: 207%;
     }
     #objects > .objects-list {
-        margin-top: -2%;
+        margin-top: 2%;
     }
 }
 @media all and (min-width: 1800px){

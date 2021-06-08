@@ -12,17 +12,18 @@
 }
 .label{ font-size: 55%;}
 .range-form{
-    margin-top: 9%;
+    margin-top: 42px;
     padding-top: 6%;
     width: 30%;
     display: block;
+    margin-left: 3vw;
 }
 .input-from-to{
     margin-top: 1%;
     width: 100%;
 }
 .input-from-to > span.content-form{
-    font-size: 61%;
+    font-size: 45%;
     display: block;
     border: solid 2px gray;
     border-radius: 10px;
@@ -45,20 +46,28 @@
     font-size: 100%;
 }
 .range-form:nth-child(2) {
-    margin-top: 12%;
+    margin-top: 46px;
+}
+@media all and (min-width: 320px) and (max-width: 1023px){
+    .range-form {
+        margin-top: 8px;
+    }
+    .range-form:nth-child(2) {
+        margin-top: 15px;
+    }
 }
 @media all and (min-width: 1280px) and (max-width: 1366px){
     .range-form:nth-child(2) {
-        margin-top: 8%;
+        margin-top: 27px;
     }
 }
 @media all and (min-width: 1680px) and (max-width: 1800px){
     .range-form:nth-child(2) {
-        margin-top: 10%;
+        margin-top: 50px;
     }
 }
 @media all and (min-width: 1800px){
     .range-form:nth-child(2) {
-        margin-top: 9%;
+        margin-top: 51px;
     }
 }

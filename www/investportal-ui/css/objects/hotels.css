@@ -44,8 +44,8 @@
     position: relative;
     top: -18px;
     background-color: white;
-    padding-left: 2%;
-    left: -4%;
+    padding-left: 1%;
+    left: -3%;
     padding-right: 2%;
 }
 .objects-adding-search > main header form div input{
@@ -319,7 +319,7 @@
         margin-left: -1%;
     }
     #objects > .projects-search-form footer #left-content {
-        width: 97%;
+        width: 92%;
         margin-top: 3%;
         margin-left: 3%;
     }
@@ -330,7 +330,7 @@
         margin-left: 35%;
     }
     #objects > .projects-search-form {
-        height: 1002px;
+        height: 1040px;
     }
     .input-from-to > span.content-form {
         font-size: 48%;
@@ -351,18 +351,18 @@
 }
 @media all and (min-width: 1024px) and (max-width: 1280px){
     .objects-adding-search > header #right-content header {
-        margin-top: -56%;
+        margin-top: -5%;
         position: relative;
-        left: 4vw;
+        left: -1vw;
     }
     .input-from-to {
         display: block;
+        margin-left: 1%;
     }
     .range-form {
-        margin-top: 3vw;
+        margin-top: -179px;
         padding-bottom: 1vw;
-        position: relative;
-        top: -10px;
+        margin-left: 31vw;
     }
     .objects-adding-search > main header form div {margin-left: -5px;position: relative;top: 55px;}
     .objects-adding-search > main footer#form-popup .check-selectors, .objects-adding-search > main footer#form-popup .radio-selectors {
@@ -372,7 +372,7 @@
         margin-left: 0%;
     }
     #objects > .projects-search-form {
-        height: 1213px;
+        height: 913px;
     }
     .objects-adding-search > main footer#form-popup {
         margin-top: -1%;
@@ -403,10 +403,9 @@
         padding-top: 2%;
     }
     .range-form {
-        margin-top: 1vw;
+        margin-top: 8px;
         padding-bottom: 1vw;
-        position: relative;
-        top: -10px;
+        margin-left: 2vw;
     }
     .objects-adding-search > main footer#form-popup .check-selectors, .objects-adding-search > main footer#form-popup .radio-selectors {
         margin-left: -3px;
@@ -429,7 +428,7 @@
         margin-top: -4%;
     }
     .range-form {
-        margin-top: 3%;
+        margin-top: 16px;
     }
     .objects-adding-search > main header form div {margin-left: -5px;}
     .objects-adding-search > main footer#form-popup .check-selectors, .objects-adding-search > main footer#form-popup .radio-selectors {

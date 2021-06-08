@@ -147,8 +147,8 @@
         margin-left: 11%;
     }
     #objects > .projects-search-form header .title {
-        margin-left: -8%;
-        font-size: 64%;
+        margin-left: -18%;
+        font-size: 76%;
     }
     #objects > .projects-search-form main form .selectors {
         width: 90%;
@@ -204,7 +204,7 @@
         height: 1233px;
     }
     #objects > .projects-search-form header .title {
-        margin-left: -15%;
+        margin-left: -32%;
         font-size: 76%;
     }
     #objects > .projects-search-form main form .selectors {
@@ -245,6 +245,7 @@
 @media all and (min-width: 1280px) and (max-width: 1366px){
     #objects > .projects-search-form footer {
         height: calc(80px * 5);
+        margin-top: -9vw;
     }
 }
 @media all and (min-width: 320px) and (max-width: 1024px) {
@@ -283,5 +284,13 @@
 @media all and (min-width: 960px) and (max-width: 1024px){
     #services > main {
         margin-top: 3vw;
+    }
+}
+@media all and (width: 1024px){
+    #services {
+        height: calc(154px * 2);
+    }
+    #services > main {
+        margin-top: -15vw;
     }
 }
