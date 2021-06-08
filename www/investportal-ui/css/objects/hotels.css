@@ -25,7 +25,7 @@
 .objects-adding-search > main footer#form-popup{
     display: block;
     margin-left: 10%;
-    margin-top: 13%;
+    margin-top: -7%;
 }
 .objects-adding-search > main header form div{
     display: inline;
@@ -37,7 +37,7 @@
     border-radius: 10px;
     padding-bottom: 1%;
     padding-left: 2%;
-    margin-left: -11px;
+    margin-left: -5px;
 }
 .objects-adding-search > main header form div .label{
     font-size: 60%;
@@ -359,12 +359,12 @@
         display: block;
     }
     .range-form {
-        margin-top: 1vw;
+        margin-top: 3vw;
         padding-bottom: 1vw;
         position: relative;
         top: -10px;
     }
-    .objects-adding-search > main header form div { margin-left: -5px; }
+    .objects-adding-search > main header form div {margin-left: -5px;position: relative;top: 55px;}
     .objects-adding-search > main footer#form-popup .check-selectors, .objects-adding-search > main footer#form-popup .radio-selectors {
         margin-left: -3px;
     }
@@ -373,6 +373,9 @@
     }
     #objects > .projects-search-form {
         height: 1213px;
+    }
+    .objects-adding-search > main footer#form-popup {
+        margin-top: -1%;
     }
 }
 @media all and (min-width: 1280px) and (max-width: 1366px){

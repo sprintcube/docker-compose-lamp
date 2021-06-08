@@ -1,4 +1,4 @@
-let currentSlide = 0,
+var currentSlide = 0,
     n;
 
 
