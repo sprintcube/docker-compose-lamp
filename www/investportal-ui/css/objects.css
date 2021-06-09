@@ -207,7 +207,7 @@
     #objects > .projects-search-form {
         width: 83%;
         margin-left: 11%;
-        height: 1233px;
+        height: 1345px;
     }
     #objects > .projects-search-form header .title {
         margin-left: -27%;
@@ -228,6 +228,10 @@
     }
     #objects > .projects-search-form footer {
         height: calc(72px * 11);
+    }
+    #objects > .projects-search-form footer.objects-foot {
+        left: 4vw;
+        position: relative;
     }
     #objects > .objects-list header h2 {
         margin-left: -19%;

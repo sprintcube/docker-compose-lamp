@@ -128,6 +128,10 @@
     #objects > .projects-search-form footer .filter .parameters .parameter-form {
         font-size: 77%;
     }
+    #objects > .projects-search-form footer .filter .option {
+        display: block;
+        width: 100%;
+    }
 
 }
 @media all and (min-width: 640px) and (max-width: 1024px){
@@ -143,6 +147,10 @@
         margin-top: 6%;
     }
     #objects > .projects-search-form footer .filter { width: 80%; }
+    #objects > .projects-search-form footer .filter .option {
+        display: block;
+        width: 100%;
+    }
 }
 @media all and (min-width: 1024px) and (max-width: 1280px){
     #objects > .projects-search-form footer .filter .parameters .parameter-form #text-to {
