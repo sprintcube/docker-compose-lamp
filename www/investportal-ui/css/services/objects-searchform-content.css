@@ -132,7 +132,9 @@
         display: block;
         width: 100%;
     }
-
+    #objects > .projects-search-form footer .filter .option:not(:nth-child(1)){
+        margin-left: 0%;
+    }
 }
 @media all and (min-width: 640px) and (max-width: 1024px){
     #objects > .projects-search-form main form .selectors .selector {
@@ -150,6 +152,9 @@
     #objects > .projects-search-form footer .filter .option {
         display: block;
         width: 100%;
+    }
+    #objects > .projects-search-form footer .filter .option:not(:nth-child(1)){
+        margin-left: 0%;
     }
 }
 @media all and (min-width: 1024px) and (max-width: 1280px){
