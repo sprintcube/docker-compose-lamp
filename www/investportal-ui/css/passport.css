@@ -145,8 +145,8 @@
 }
 @media all and (min-width: 320px) and (max-width: 1028px){
     .passport-page {
-        width: 91%;
-        left: 4%;
+        width: 79%;
+        left: 11%;
         top: 0%;
     }
     .passport-page > main #right-content { display: none; }
