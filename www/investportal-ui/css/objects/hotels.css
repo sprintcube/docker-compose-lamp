@@ -523,3 +523,21 @@
 @media all and (min-width: 1024px){
     #mobile-form-popup{ display: none; }
 }
+@media all and (min-width: 1280px) and (max-width: 1314px){
+    .objects-adding-search > main header form div{
+        margin-top: -15%;
+    }
+    .objects-adding-search > main footer#form-popup{
+        margin-top: -4%;
+    }
+    .objects-adding-search > header #right-content header {
+        margin-top: 13%;
+    }
+    .objects-adding-search > header #left-content header form div:not(:nth-child(1)) {
+        width: 45%;
+    }
+    #objects > .projects-search-form header #right-content .close {
+        position: relative;
+        top: 10px;
+    }
+}
