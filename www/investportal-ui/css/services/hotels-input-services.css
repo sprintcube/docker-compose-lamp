@@ -23,7 +23,7 @@
     width: 100%;
 }
 .input-from-to > span.content-form{
-    font-size: 45%;
+    font-size: 70%;
     display: block;
     border: solid 2px gray;
     border-radius: 10px;
@@ -68,6 +68,6 @@
 }
 @media all and (min-width: 1800px){
     .range-form:nth-child(2) {
-        margin-top: 51px;
+        margin-top: 50px;
     }
 }

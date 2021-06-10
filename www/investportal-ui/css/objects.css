@@ -296,7 +296,7 @@
     }
     #services > header .add-but { width: 114%; }
     #objects > .projects-search-form main form h4 {
-        left: -3%;
+        margin-left: 3vw;
     }
 }
 @media all and (min-width: 1024px) {

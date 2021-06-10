@@ -402,7 +402,7 @@
 }
 @media all and (min-width: 1280px) and (max-width: 1366px){
     .objects-adding-search > header #right-content header {
-        margin-top: -33%;
+        margin-top: -32%;
         position: relative;
         left: 7%;
     }
@@ -460,6 +460,11 @@
         margin-left: 0%;
     }
 }
+@media all and (min-width: 1400px) and (max-width: 1600px){
+    .objects-adding-search > footer #right-content {
+    	margin-top: 54px;
+    }
+}
 @media all and (min-width: 1800px){
     #objects > .projects-search-form {
         height: 1049px;
@@ -504,7 +509,7 @@
 }
 @media all and (min-width: 1680px) and (max-width: 1800px){
     .objects-adding-search > header #right-content header {
-        margin-top: -191px;
+        margin-top: -190px;
     }
 }
 @media all and (min-width: 1800px){
