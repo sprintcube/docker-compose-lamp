@@ -1591,7 +1591,7 @@ html,body{
         display: inherit;
         right: -2%;
         position: relative;
-        top: 60%;
+        top: -13%;
     }
     .header > #header_bottom_adaptive{ display: none; }
     .header > #header_bottom .hb_bottom header .header-informer header {
