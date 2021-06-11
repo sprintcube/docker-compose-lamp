@@ -65,7 +65,7 @@
     #passport {height: 805px;}
     .passport-page {height: calc(189px * 4);}
     .passport-page > header #left-content span { font-size: 77%; }
-    .passport-page > header #left-content{margin-top: 9px;}
+    .passport-page > header #left-content{margin-top: 1%;}
     .passport-page > main .profile-settings { width: 138%; }
     .passport-page > footer { display: none; }
 }
