@@ -77,8 +77,11 @@
     .passport-page > main .profile-settings { width: 50%; }
 }
 @media all and (min-width: 1400px) and (max-width: 1600px){
+    .passport-page {
+        height: calc(290px * 2);
+    }
     .passport-page > footer {
-        top: -31%;
+        top: -29%;
     }    
 }
 @media all and (min-width: 1600px) and (max-width: 1799px){
