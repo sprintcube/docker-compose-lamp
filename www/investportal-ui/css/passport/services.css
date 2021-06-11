@@ -29,11 +29,11 @@
 }
 .passport-page > main .services-settings footer{
   margin-top: -1%;
+  margin-left: 3vw;
 }
 .passport-page > main .services-settings footer .services-selectors{
   display: inline-table;
-  width: 31%;
-  margin-left: 2%;
+  width: 30%;
 }
 .passport-page > main .services-settings footer .services-selectors .selector{
   margin-top: 4%;
@@ -102,7 +102,7 @@
   .passport-page > header #left-content span { font-size: 77%; }
   .passport-page > header #left-content{ margin-top: 0px; }
   #passport { height: 644px; }
-  .passport-page > main .services-settings header select { width: 87vw; }
+  .passport-page > main .services-settings header select {width: 73vw;}
   .passport-page { height: 757px; }
   .passport-page > footer { display: none; }
   .passport-page > main .services-settings footer .services-selectors {
