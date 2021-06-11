@@ -359,23 +359,24 @@
         height: 1038px;
     }
 }
-@media all and (min-width: 1025px) and (max-width: 1280px){
+@media (min-width: 1024px) and (max-width: 1280px){
     .objects-adding-search > header #right-content header {
-        margin-top: -5%;
+        margin-top: -1%;
         position: relative;
         left: 3vw;
-        top: -218px;
+        top: -215px;
     }
     .input-from-to {
         display: block;
         margin-left: 1%;
+        margin-top: -4%;
     }
     .range-form {
         margin-top: 21px;
         padding-bottom: 1vw;
         margin-left: 2vw;
     }
-    .objects-adding-search > main header form div {margin-left: -5px;position: relative;top: -48px;}
+    .objects-adding-search > main header form div {margin-left: -5px;position: relative;top: -49px;}
     .objects-adding-search > main footer#form-popup .check-selectors, .objects-adding-search > main footer#form-popup .radio-selectors {
         margin-left: -3px;
     }
@@ -481,7 +482,6 @@
         background-color: transparent;
     }
     .objects-adding-search > header #right-content .input-from-to > span.content-form {
-        font-size: 51%;
         padding-bottom: 4%;
         padding-top: 4%;
     }
@@ -501,10 +501,16 @@
         position: relative;
         left: 6vw;
     }
+    .input-from-to > span.content-form {
+        font-size: 45%;
+    }
 }
 @media all and (min-width: 1600px) and (max-width: 1680px){
     .objects-adding-search > header #right-content header {
-        margin-top: -117px;
+        margin-top: -190px;
+    }
+    .input-from-to > span.content-form {
+        font-size: 50%;
     }
 }
 @media all and (min-width: 1680px) and (max-width: 1800px){
@@ -525,13 +531,13 @@
 }
 @media all and (min-width: 1280px) and (max-width: 1314px){
     .objects-adding-search > main header form div{
-        margin-top: -15%;
+        margin-top: -7%;
     }
     .objects-adding-search > main footer#form-popup{
         margin-top: -4%;
     }
     .objects-adding-search > header #right-content header {
-        margin-top: 13%;
+        margin-top: -33%;
     }
     .objects-adding-search > header #left-content header form div:not(:nth-child(1)) {
         width: 45%;
@@ -539,5 +545,10 @@
     #objects > .projects-search-form header #right-content .close {
         position: relative;
         top: 10px;
+    }
+}
+@media all and (min-width: 1680px){
+    .input-from-to > span.content-form {
+        font-size: 50%;
     }
 }

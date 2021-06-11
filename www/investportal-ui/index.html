@@ -11,451 +11,455 @@
     <script src="https://kit.fontawesome.com/97c3285af2.js" crossorigin="anonymous"></script>
     <style>
          
-         .add-but{
-            text-align: center;
-            color: gray;
-            background-color: #f0f3f4;
-            border: none;
-            font-size: 60%;
-            padding: 10px;
-        }
-        #promo > header .promo-header{
-            position: relative;
-            top: 40px;
-        }
+        .add-but{
+           text-align: center;
+           color: gray;
+           background-color: #f0f3f4;
+           border: none;
+           font-size: 60%;
+           padding: 10px;
+       }
+       #promo > header .promo-header{
+           position: relative;
+           top: 40px;
+       }
 
-        .swiper-button-prev, .swiper-button-next, .swiper-pagination, .swiper-scrollbar{ opacity: 0;}
-        .swiper-button-prev, .swiper-button-next {
-            width: 6vw;
-            height: 390px;
-            margin-top: -11%;
-        }
-        #investsearch > main.swiper-container .swiper-button-prev, #investsearch > main.swiper-container .swiper-button-next {
-            height: 451px;
-            margin-top: -14%;
-        }
-        #promo > main.swiper-container .promo-feed{ margin-left: 8vw;}
-        #investsearch > main.swiper-container .popular-objects{ margin-left: -18vw; }
+       .swiper-button-prev, .swiper-button-next, .swiper-pagination, .swiper-scrollbar{ opacity: 0;}
+       .swiper-button-prev, .swiper-button-next {
+           width: 6vw;
+           height: 390px;
+           margin-top: -11%;
+       }
+       #investsearch > main.swiper-container .swiper-button-prev, #investsearch > main.swiper-container .swiper-button-next {
+           height: 451px;
+           margin-top: -14%;
+       }
+       #promo > main.swiper-container .promo-feed{ margin-left: 8vw;}
+       #investsearch > main.swiper-container .popular-objects{ margin-left: -18vw; }
 
-        [data-text]:nth-last-child(1)::before, [data-text]:nth-last-child(3)::before, [data-text]:nth-last-child(5)::before, #news[data-text]::before{
-            color: white;
-        }
+       [data-text]:nth-last-child(1)::before, [data-text]:nth-last-child(3)::before, [data-text]:nth-last-child(5)::before, #news[data-text]::before{
+           color: white;
+       }
 
 
-        [data-text]:nth-last-child(1)::before{
-            left: 14%;
-            top: 47%;
-        }
-        [data-text]:nth-last-child(2)::before{
-            left: 30%;
-            top: 36%;
-        }
-        [data-text]:nth-last-child(3)::before{
-            left: 25%;
-            top: 33%;
-        }
-        [data-text]:nth-last-child(4)::before{
-            left: 18%;
-            top: 46%;
-        }
-        [data-text]:nth-last-child(5)::before{
-            left: 13%;
-            top: 20%;
-        }
-        #news[data-text]::before{
-            left: 8%;
-            top: 69%;
-        }
-        @media all and (min-width: 320px) and (max-width: 640px){
-            #promo > main.swiper-container .promo-feed {
-                margin-left: -4vw;
-            }
-            #investsearch > main.swiper-container .popular-objects {
-                margin-left: 1vw;
-            }
-            #news > header, 
-            #investsearch > header, 
-            #eventcalendar > header,
-            #services > header,
-            #analytics > header,
-            #estate > header,
-            #reviews > header { 
-                display: block;
-                width: 100%; 
-            }
+       [data-text]:nth-last-child(1)::before{
+           left: 14%;
+           top: 47%;
+       }
+       [data-text]:nth-last-child(2)::before{
+           left: 30%;
+           top: 36%;
+       }
+       [data-text]:nth-last-child(3)::before{
+           left: 25%;
+           top: 33%;
+       }
+       [data-text]:nth-last-child(4)::before{
+           left: 18%;
+           top: 46%;
+       }
+       [data-text]:nth-last-child(5)::before{
+           left: 13%;
+           top: 20%;
+       }
+       #news[data-text]::before{
+           left: 8%;
+           top: 69%;
+       }
+       @media all and (min-width: 320px) and (max-width: 640px){
+           #promo > main.swiper-container .promo-feed {
+               margin-left: -4vw;
+           }
+           #investsearch > main.swiper-container .popular-objects {
+               margin-left: 1vw;
+           }
+           #news > header, 
+           #investsearch > header, 
+           #eventcalendar > header,
+           #services > header,
+           #analytics > header,
+           #estate > header,
+           #reviews > header { 
+               display: block;
+               width: 100%; 
+           }
 
-            #news {
-                padding-top: 69%;
-                padding-bottom: 55%;
-            }
-            #eventcalendar {
-                padding-bottom: 18%;
-                padding-top: 53%;
-            }
-            #services {
-                height: calc(154px * 3);
-                padding-top: calc(1vw - (15px * 2));
-            }
-            #services > main {
-                width: 80%;
-                float: left;
-                margin-left: 12vw;
-                margin-top: 5vw;
-            }
-            #analytics {
-                height: calc(220px * 2);
-                padding-top: calc(87px / 2);
-                padding-bottom: calc(217px / 2);
-            }
-            #analytics > main {
-                width: 59%;
-                float: left;
-                display: inline-table;
-                margin-top: -10%;
-                margin-left: 9vw;
-            }
-            #estate {
-                height: calc(211px * 3);
-                padding-top: calc(1vw * 2);
-            }
-            #reviews {
-                height: calc(245px * 2);
-                padding-top: calc(113px / 2);
-                padding-bottom: calc(135px / 2);
-            }
-            #reviews > main{
-                width: 100%;
-                float: left;
-                margin-left: 10vw;
-                margin-top: 10vw;
-            }
-            #eventcalendar > main .calendar header {
-                float: left;
-                font-size: calc(109% * 2);
-                width: 27%;
-                margin-left: 4%;
-            }
-            #eventcalendar > main .calendar .date { top: 7px; }
-            #eventcalendar > main .calendar footer {
-                float: left;
-                width: 100%;
-                margin-top: 7%;
-            }
-            #eventcalendar > main .calendar .event-location { font-size: 90%; }
-            #eventcalendar > main .calendar a { font-size: 119%; }
-            #investsearch > header a { margin-left: 33%; }
-            #investsearch > header .add-but { width: 31%; }
-            .swiper-button-prev, .swiper-button-next {
-                width: 10vw;
-                height: 438px;
-                margin-top: -64%;
-            }
-            #investsearch > main.swiper-container .swiper-button-prev, #investsearch > main.swiper-container .swiper-button-next {
-                height: 476px;
-                margin-top: -14%;
-            }
-        }
-        @media all and (min-width: 640px) and (max-width: 1024px){
-            #promo > main.swiper-container .promo-feed {
-                margin-left: -3vw;
-            }
-            #investsearch > main.swiper-container .popular-objects {
-                margin-left: 3vw;
-            }
-            #news > header, 
-            #investsearch > header, 
-            #eventcalendar > header,
-            #services > header,
-            #analytics > header,
-            #estate > header,
-            #reviews > header { 
-                display: block;
-                width: 100%; 
-            }
+           #news {
+               padding-top: 69%;
+               padding-bottom: 55%;
+           }
+           #eventcalendar {
+               padding-bottom: 30%;
+               padding-top: 53%;
+           }
+           #services {
+               height: calc(154px * 3);
+               padding-top: calc(1vw - (15px * 2));
+           }
+           #services > main {
+               width: 80%;
+               float: left;
+               margin-left: 12vw;
+               margin-top: 5vw;
+           }
+           #analytics {
+               height: calc(220px * 2);
+               padding-top: calc(87px / 2);
+               padding-bottom: calc(217px / 2);
+           }
+           #analytics > main {
+               width: 59%;
+               float: left;
+               display: inline-table;
+               margin-top: -10%;
+               margin-left: 9vw;
+           }
+           #estate {
+               height: calc(211px * 3);
+               padding-top: calc(1vw * 2);
+           }
+           #reviews {
+               height: calc(245px * 2);
+               padding-top: calc(113px / 2);
+               padding-bottom: calc(135px / 2);
+           }
+           #reviews > main{
+               width: 100%;
+               float: left;
+               margin-left: 10vw;
+               margin-top: 10vw;
+           }
+           #eventcalendar > main .calendar header {
+               float: left;
+               font-size: calc(109% * 2);
+               width: 27%;
+               margin-left: -4%;
+           }
+           #eventcalendar > main .calendar .date { top: 7px; }
+           #eventcalendar > main .calendar footer {
+               float: left;
+               width: 100%;
+               margin-top: 7%;
+               margin-left: 3%;
+           }
+           #eventcalendar > main .calendar .event-location { font-size: 90%; }
+           #eventcalendar > main .calendar a { font-size: 95%; }
+           #investsearch > header a { margin-left: 33%; }
+           #investsearch > header .add-but { width: 31%; }
+           .swiper-button-prev, .swiper-button-next {
+               width: 10vw;
+               height: 438px;
+               margin-top: -64%;
+           }
+           #investsearch > main.swiper-container .swiper-button-prev, #investsearch > main.swiper-container .swiper-button-next {
+               height: 476px;
+               margin-top: -14%;
+           }
+       }
+       @media all and (min-width: 640px) and (max-width: 1024px){
+           #promo > main.swiper-container .promo-feed {
+               margin-left: -3vw;
+           }
+           #investsearch > main.swiper-container .popular-objects {
+               margin-left: 3vw;
+           }
+           #news > header, 
+           #investsearch > header, 
+           #eventcalendar > header,
+           #services > header,
+           #analytics > header,
+           #estate > header,
+           #reviews > header { 
+               display: block;
+               width: 100%; 
+           }
 
-            #news {
-                padding-top: 32%;
-                padding-bottom: 32%;
-            }
-            #eventcalendar {
-                padding-bottom: 16%;
-                padding-top: 28%;
-            }
-            #services {
-                height: calc(154px * 3);
-                padding-top: calc(1vw - (15px * 2));
-            }
-            #services > main {
-                width: 80%;
-                float: left;
-                margin-left: 12vw;
-                margin-top: 5vw;
-            }
-            #analytics {
-                height: calc(220px * 2);
-                padding-top: calc(87px / 2);
-                padding-bottom: calc(217px / 2);
-            }
-            #analytics > main {
-                width: 59%;
-                float: left;
-                display: inline-table;
-                margin-top: -10%;
-                margin-left: 9vw;
-            }
-            #estate {
-                height: calc(211px * 3);
-                padding-top: calc(1vw * 2);
-            }
-            #reviews {
-                height: calc(245px * 2);
-                padding-top: calc(113px / 2);
-                padding-bottom: calc(135px / 2);
-            }
-            #reviews > main{
-                width: 100%;
-                float: left;
-                margin-left: 10vw;
-                margin-top: 10vw;
-            }
-            #eventcalendar > main .calendar header {
-                float: left;
-                font-size: calc(109% * 2);
-                width: 27%;
-                margin-left: 4%;
-            }
-            #eventcalendar > main .calendar .date { top: 7px; }
-            #eventcalendar > main .calendar footer {
-                float: left;
-                width: 100%;
-                margin-top: 7%;
-            }
-            #eventcalendar > main .calendar .event-location { font-size: 90%; }
-            #eventcalendar > main .calendar a { font-size: 119%; }
-            #investsearch > header a { margin-left: 33%; }
-            #investsearch > header .add-but { width: 31%; }
-            .swiper-button-prev, .swiper-button-next {
-                width: 12vw;
-                height: 429px;
-                margin-top: -31%;
-            }
-            #investsearch > main.swiper-container .swiper-button-prev, #investsearch > main.swiper-container .swiper-button-next {
-                height: 476px;
-                margin-top: -35%;
-            }
-        }
-        @media all and (min-width: 960px) and (max-width: 1024px){
-            #estate {
-                height: calc(172px * 3);
-            }
-            #reviews > main {
-                margin-left: 12vw;
-                margin-top: 4vw;
-            }
-            #eventcalendar > main .calendar header {
-                width: 27%;
-                margin-left: 7%;
-            }
-            #eventcalendar > main .calendar footer {
-                float: right;
-                width: 68%;
-                margin-top: 3%;
-            }
-            #eventcalendar > main .calendar .date {
-                top: 65px;
-            }
-        }
-        @media all and (min-width: 1024px) and (max-width: 1280px){
-            #promo > main.swiper-container .promo-feed {
-                margin-left: 0vw;
-            }
-            #investsearch > main.swiper-container .popular-objects {
-                margin-left: 2vw;
-            }
-            .swiper-button-prev, .swiper-button-next {
-                width: 5vw;
-                height: 364px;
-                margin-top: -14%;
-            }
-            #investsearch > main.swiper-container .swiper-button-prev, #investsearch > main.swiper-container .swiper-button-next {
-                height: 641px;
-                margin-top: -35%;
-            }
-        }
-        @media all and (min-width: 1280px) and (max-width: 1366px){
-            #promo > main.swiper-container .promo-feed {
-                margin-left: 94vw;
-            }
-            #investsearch > main.swiper-container .popular-objects {
-                margin-left: -20vw;
-            }
-            .swiper-button-prev, .swiper-button-next {
-                width: 4vw;
-                height: 429px;
-                margin-top: -15%;
-            }
-            #investsearch > main.swiper-container .swiper-button-prev, #investsearch > main.swiper-container .swiper-button-next {
-                height: 461px;
-                margin-top: -18%;
-            }
-        }
-        @media all and (min-width: 1366px) and (max-width: 1400px){
-            #promo > main.swiper-container .promo-feed {
-                margin-left: 7vw;
-            }
-            #investsearch > main.swiper-container .popular-objects {
-                margin-left: -20vw;
-            }
-            .swiper-button-prev, .swiper-button-next {
-                width: 5vw;
-                height: 369px;
-                margin-top: -12%;
-            }
-            #investsearch > main.swiper-container .swiper-button-prev, #investsearch > main.swiper-container .swiper-button-next {
-                height: 461px;
-                margin-top: -17%;
-            }
-        }
-        @media all and (min-width: 1400px) and (max-width: 1600px){
-            #promo > main.swiper-container .promo-feed {
-                margin-left: 8vw;
-            }
-            #investsearch > main.swiper-container .popular-objects {
-                margin-left: -19vw;
-            }
-            .swiper-button-prev, .swiper-button-next {
-                width: 5vw;
-                height: 385px;
-                margin-top: -11%;
-            }
-            #investsearch > main.swiper-container .swiper-button-prev, #investsearch > main.swiper-container .swiper-button-next {
-                height: 452px;
-                margin-top: -15%;
-            }
-        }
-        @media all and (min-width: 1600px) and (max-width: 1680px){
-            #promo > main.swiper-container .promo-feed {
-                margin-left: 8vw;
-            }
-            #investsearch > main.swiper-container .popular-objects {
-                margin-left: -19vw;
-            }
-        }
-        @media all and (min-width: 1680px) and (max-width: 1800px){
-            #promo > main.swiper-container .promo-feed {
-                margin-left: 8vw;
-            }
-            #investsearch > main.swiper-container .popular-objects {
-                margin-left: -19vw;
-            }
-            .swiper-button-prev, .swiper-button-next {
-                width: 7vw;
-                height: 412px;
-                margin-top: -11%;
-            }
-            #investsearch > main.swiper-container .swiper-button-prev, #investsearch > main.swiper-container .swiper-button-next {
-                height: 476px;
-                margin-top: -14%;
-            }
-        }
-        @media all and (min-width: 1800px){
-            #promo > main.swiper-container .promo-feed {
-                margin-left: 8vw;
-            }
-            #investsearch > main.swiper-container .popular-objects {
-                margin-left: -19vw;
-            }
-            .swiper-button-prev, .swiper-button-next {
-                width: 9vw;
-                height: 429px;
-                margin-top: -10%;
-            }
-            #investsearch > main.swiper-container .swiper-button-prev, #investsearch > main.swiper-container .swiper-button-next {
-                height: 544px;
-                margin-top: -14%;
-            }
-        }
-        @media all and (min-width: 320px) and (max-width: 1024px) {
-            #news > main #slider-view, #news > main #slider-controller, #services > main #slider-view, #services > main #slider-controller, #eventcalendar > main .calendar main, #eventcalendar > main .calendar .descr, #analytics > main #slider-view, #analytics > main #slider-controller, #estate > main #slider-view, #estate > main #slider-controller, #reviews > main #slider-view, #reviews > main #slider-controller{ display: none; }
-            #news[data-text]::before {
-                left: 15vw;
-                top: 56%;
-            }
-            [data-text]:nth-last-child(5)::before {
-                left: 27vw;
-                top: 26%;
-            }
-            [data-text]:nth-last-child(4)::before {
-                left: 29vw;
-                top: 21%;
-            }
-            [data-text]:nth-last-child(3)::before {
-                left: 43vw;
-                top: 28%;
-            }
-            [data-text]:nth-last-child(2)::before {
-                left: 61vw;
-                top: 22%;
-            }
-            [data-text]:nth-last-child(1)::before {
-                left: 26vw;
-                top: 27%;
-            }
-        }
-        @media all and (min-width: 1024px) {
-            #news > main #slider-view-adaptive, #news > main #slider-controller-adaptive, #services > main #slider-view-adaptive, #services > main #slider-controller-adaptive, #analytics > main #slider-view-adaptive,  #analytics > main #slider-controller-adaptive, #estate > main #slider-view-adaptive,  #estate > main #slider-controller-adaptive, #reviews > main #slider-view-adaptive,  #reviews > main #slider-controller-adaptive{ display: none; }
-        }
-        @media all and (min-width: 1024px) and (max-width: 1279px){
-            #news > main #slider-view, #news > main #slider-controller, #services > main #slider-view, #services > main #slider-controller, #eventcalendar > main .calendar main, #eventcalendar > main .calendar .descr, #analytics > main #slider-view, #analytics > main #slider-controller, #estate > main #slider-view, #estate > main #slider-controller, #reviews > main #slider-view, #reviews > main #slider-controller {
-                display: inline-table;
-            }
-            #news {
-                padding-bottom: 15%;
-            }
-            #eventcalendar {
-                padding-top: 10%;
-            }
-            #services > header .add-but, #estate > header .add-but {
-                margin-top: 2%;
-                width: 19%;
-            }
-            #investsearch > header .add-but {
-                width: 13%;
-            }
-            #investsearch > header a {
-                margin-left: 15%;
-            }
-            #reviews > main {
-                margin-top: 3vw;
-            }
-            #services > main {
-                margin-top: -13vw;
-            }
-            #analytics > main {
-                width: 68%;
-                margin-top: -9%;
-                margin-left: 30vw;
-            }
-            #eventcalendar > main .calendar footer {
-                float: right;
-                width: 75%;
-                margin-top: -5%;
-            }
-            #eventcalendar > main .calendar header {
-                width: 26%;
-                margin-left: 7%;
-            }
-            #eventcalendar > main .calendar main {
-                visibility: hidden;
-            }
-            #estate {
-                height: calc(99px * 3);
-            }
-            #estate > header{
-                margin-top: -19%;
-            }
-        }
-        .footer { overflow: hidden; }
+           #news {
+               padding-top: 32%;
+               padding-bottom: 32%;
+           }
+           #eventcalendar {
+               padding-bottom: 16%;
+               padding-top: 28%;
+           }
+           #services {
+               height: calc(154px * 3);
+               padding-top: calc(1vw - (15px * 2));
+           }
+           #services > main {
+               width: 80%;
+               float: left;
+               margin-left: 12vw;
+               margin-top: 5vw;
+           }
+           #analytics {
+               height: calc(220px * 2);
+               padding-top: calc(87px / 2);
+               padding-bottom: calc(217px / 2);
+           }
+           #analytics > main {
+               width: 59%;
+               float: left;
+               display: inline-table;
+               margin-top: -10%;
+               margin-left: 9vw;
+           }
+           #estate {
+               height: calc(211px * 3);
+               padding-top: calc(1vw * 2);
+           }
+           #reviews {
+               height: calc(245px * 2);
+               padding-top: calc(113px / 2);
+               padding-bottom: calc(135px / 2);
+           }
+           #reviews > main{
+               width: 100%;
+               float: left;
+               margin-left: 10vw;
+               margin-top: 10vw;
+           }
+           #eventcalendar > main .calendar header {
+               float: left;
+               font-size: calc(109% * 2);
+               width: 27%;
+               margin-left: -4%;
+           }
+           #eventcalendar > main .calendar .date { top: 7px; }
+           #eventcalendar > main .calendar footer {
+               float: left;
+               width: 100%;
+               margin-top: 7%;
+           }
+           #eventcalendar > main .calendar .event-location { font-size: 90%; }
+           #eventcalendar > main .calendar a { font-size: 103%; }
+           #investsearch > header a { margin-left: 33%; }
+           #investsearch > header .add-but { width: 31%; }
+           .swiper-button-prev, .swiper-button-next {
+               width: 12vw;
+               height: 429px;
+               margin-top: -31%;
+           }
+           #investsearch > main.swiper-container .swiper-button-prev, #investsearch > main.swiper-container .swiper-button-next {
+               height: 476px;
+               margin-top: -35%;
+           }
+       }
+       @media all and (min-width: 960px) and (max-width: 1024px){
+           #estate {
+               height: calc(172px * 3);
+           }
+           #reviews > main {
+               margin-left: 12vw;
+               margin-top: 4vw;
+           }
+           #eventcalendar > main .calendar header {
+               width: 27%;
+               margin-left: 7%;
+           }
+           #eventcalendar > main .calendar footer {
+               float: right;
+               width: 68%;
+               margin-top: 3%;
+           }
+           #eventcalendar > main .calendar .date {
+               top: 65px;
+           }
+       }
+       @media all and (min-width: 1024px) and (max-width: 1280px){
+           #promo > main.swiper-container .promo-feed {
+               margin-left: 6vw;
+           }
+           #investsearch > main.swiper-container .popular-objects {
+               margin-left: 10vw;
+           }
+           .swiper-button-prev, .swiper-button-next {
+               width: 5vw;
+               height: 364px;
+               margin-top: -14%;
+           }
+           #investsearch > main.swiper-container .swiper-button-prev, #investsearch > main.swiper-container .swiper-button-next {
+               height: 641px;
+               margin-top: -35%;
+           }
+       }
+       @media all and (min-width: 1280px) and (max-width: 1366px){
+           #promo > main.swiper-container .promo-feed {
+               margin-left: 94vw;
+           }
+           #investsearch > main.swiper-container .popular-objects {
+               margin-left: -20vw;
+           }
+           .swiper-button-prev, .swiper-button-next {
+               width: 4vw;
+               height: 429px;
+               margin-top: -15%;
+           }
+           #investsearch > main.swiper-container .swiper-button-prev, #investsearch > main.swiper-container .swiper-button-next {
+               height: 461px;
+               margin-top: -18%;
+           }
+       }
+       @media all and (min-width: 1366px) and (max-width: 1400px){
+           #promo > main.swiper-container .promo-feed {
+               margin-left: 7vw;
+           }
+           #investsearch > main.swiper-container .popular-objects {
+               margin-left: -20vw;
+           }
+           .swiper-button-prev, .swiper-button-next {
+               width: 5vw;
+               height: 369px;
+               margin-top: -12%;
+           }
+           #investsearch > main.swiper-container .swiper-button-prev, #investsearch > main.swiper-container .swiper-button-next {
+               height: 461px;
+               margin-top: -17%;
+           }
+       }
+       @media all and (min-width: 1400px) and (max-width: 1600px){
+           #promo > main.swiper-container .promo-feed {
+               margin-left: 8vw;
+           }
+           #investsearch > main.swiper-container .popular-objects {
+               margin-left: -19vw;
+           }
+           .swiper-button-prev, .swiper-button-next {
+               width: 5vw;
+               height: 385px;
+               margin-top: -11%;
+           }
+           #investsearch > main.swiper-container .swiper-button-prev, #investsearch > main.swiper-container .swiper-button-next {
+               height: 452px;
+               margin-top: -15%;
+           }
+       }
+       @media all and (min-width: 1600px) and (max-width: 1680px){
+           #promo > main.swiper-container .promo-feed {
+               margin-left: 8vw;
+           }
+           #investsearch > main.swiper-container .popular-objects {
+               margin-left: -19vw;
+           }
+       }
+       @media all and (min-width: 1680px) and (max-width: 1800px){
+           #promo > main.swiper-container .promo-feed {
+               margin-left: 8vw;
+           }
+           #investsearch > main.swiper-container .popular-objects {
+               margin-left: -19vw;
+           }
+           .swiper-button-prev, .swiper-button-next {
+               width: 7vw;
+               height: 412px;
+               margin-top: -11%;
+           }
+           #investsearch > main.swiper-container .swiper-button-prev, #investsearch > main.swiper-container .swiper-button-next {
+               height: 476px;
+               margin-top: -14%;
+           }
+       }
+       @media all and (min-width: 1800px){
+           #promo > main.swiper-container .promo-feed {
+               margin-left: 8vw;
+           }
+           #investsearch > main.swiper-container .popular-objects {
+               margin-left: -19vw;
+           }
+           .swiper-button-prev, .swiper-button-next {
+               width: 9vw;
+               height: 429px;
+               margin-top: -10%;
+           }
+           #investsearch > main.swiper-container .swiper-button-prev, #investsearch > main.swiper-container .swiper-button-next {
+               height: 544px;
+               margin-top: -14%;
+           }
+       }
+       @media all and (min-width: 320px) and (max-width: 1024px) {
+           #news > main #slider-view, #news > main #slider-controller, #services > main #slider-view, #services > main #slider-controller, #eventcalendar > main .calendar main, #eventcalendar > main .calendar .descr, #analytics > main #slider-view, #analytics > main #slider-controller, #estate > main #slider-view, #estate > main #slider-controller, #reviews > main #slider-view, #reviews > main #slider-controller{ display: none; }
+           #news[data-text]::before {
+               left: 15vw;
+               top: 56%;
+           }
+           [data-text]:nth-last-child(5)::before {
+               left: 27vw;
+               top: 26%;
+           }
+           [data-text]:nth-last-child(4)::before {
+               left: 29vw;
+               top: 21%;
+           }
+           [data-text]:nth-last-child(3)::before {
+               left: 43vw;
+               top: 28%;
+           }
+           [data-text]:nth-last-child(2)::before {
+               left: 61vw;
+               top: 22%;
+           }
+           [data-text]:nth-last-child(1)::before {
+               left: 26vw;
+               top: 27%;
+           }
+       }
+       @media all and (min-width: 1024px) {
+           #news > main #slider-view-adaptive, #news > main #slider-controller-adaptive, #services > main #slider-view-adaptive, #services > main #slider-controller-adaptive, #analytics > main #slider-view-adaptive,  #analytics > main #slider-controller-adaptive, #estate > main #slider-view-adaptive,  #estate > main #slider-controller-adaptive, #reviews > main #slider-view-adaptive,  #reviews > main #slider-controller-adaptive{ display: none; }
+       }
+       @media all and (min-width: 1024px) and (max-width: 1279px){
+           #news > main #slider-view, #news > main #slider-controller, #services > main #slider-view, #services > main #slider-controller, #eventcalendar > main .calendar main, #eventcalendar > main .calendar .descr, #analytics > main #slider-view, #analytics > main #slider-controller, #estate > main #slider-view, #estate > main #slider-controller, #reviews > main #slider-view, #reviews > main #slider-controller {
+               display: inline-table;
+           }
+           #news {
+               padding-bottom: 15%;
+           }
+           #eventcalendar {
+               padding-top: 10%;
+           }
+           #services > header .add-but, #estate > header .add-but {
+               margin-top: 2%;
+               width: 60%;
+           }
+           #investsearch > header .add-but {
+               width: 13%;
+           }
+           #investsearch > header a {
+               margin-left: 15%;
+           }
+           #reviews > header {
+               top: 5vw;
+           }
+           #reviews > main {
+               margin-top: -9vw;
+           }
+           #services > main {
+               margin-top: -13vw;
+           }
+           #analytics > main {
+               width: 68%;
+               margin-top: -9%;
+               margin-left: 30vw;
+           }
+           #eventcalendar > main .calendar footer {
+               float: right;
+               width: 75%;
+               margin-top: 2%;
+           }
+           #eventcalendar > main .calendar header {
+               width: 26%;
+               margin-left: -4%;
+           }
+           #eventcalendar > main .calendar main {
+               display: none;
+           }
+           #estate {
+               height: calc(99px * 2);
+           }
+           #estate > header{
+               margin-top: -31%;
+           }
+       }
+       .footer { overflow: hidden; }
     </style>
 </head>
 <body>
@@ -2407,7 +2411,7 @@
                     </div>
                     <div class="review hide" id="with-title-image">
                         <header>
-                            <img src="https://sun9-21.userapi.com/Xt8RTRAKYZYz8sAes-sf7wcuudSA6F10y5OKLw/PD5eeJ3Z2vA.jpg?ava=1" alt="Title image">
+                            <img src="https://mskr.mos.ru/upload/medialibrary/f18/riamo.jpg" alt="Title image">
                         </header>
                         <main>
                             <h3>Fees range from 1% to 5%, depending on the loan.</h3>
@@ -2418,7 +2422,7 @@
                     </div>
                     <div class="review hide" id="with-title-image">
                         <header>
-                            <img src="https://mosurbanforum.ru/upload/iblock/591/591af63ad915aefe3328a030b910e017.jpg" alt="Title image">
+                            <img src="https://mskr.mos.ru/upload/medialibrary/f18/riamo.jpg" alt="Title image">
                         </header>
                         <main>
                             <h3>Moscow’s financial support up nine-fold for high-tech sector</h3>
@@ -2509,7 +2513,7 @@
                         </div>
                         <div class="review" id="with-title-image">
                             <header>
-                                <img src="https://sun9-21.userapi.com/Xt8RTRAKYZYz8sAes-sf7wcuudSA6F10y5OKLw/PD5eeJ3Z2vA.jpg?ava=1" alt="Title image">
+                                <img src="https://mskr.mos.ru/upload/medialibrary/f18/riamo.jpg" alt="Title image">
                             </header>
                             <main>
                                 <h3>Fees range from 1% to 5%, depending on the loan.</h3>
@@ -2522,7 +2526,7 @@
                     <div class="review-feed" id="hide">
                         <div class="review" id="with-title-image">
                             <header>
-                                <img src="https://mosurbanforum.ru/upload/iblock/591/591af63ad915aefe3328a030b910e017.jpg" alt="Title image">
+                                <img src="https://mskr.mos.ru/upload/medialibrary/f18/riamo.jpg" alt="Title image">
                             </header>
                             <main>
                                 <h3>Moscow’s financial support up nine-fold for high-tech sector</h3>

@@ -190,10 +190,11 @@ html,body{
 #promo{ height: 378px; }
 #news{ height:106px; padding-top: 8%; }
 #investsearch{ height: 412px; }
+#eventcalendar{ height: 590px; }
 #services{ height: 154px; padding-top: calc(1vw - 15px);}
-#analytics{ height: 380px; padding-top: 87px;padding-bottom: 217px;}
-#estate{ height: 257px;padding-top: 1vw;}
-#reviews{ height: 245px; padding-top: 113px;padding-bottom: 135px;}
+#analytics{height: 245px;padding-top: 34px;padding-bottom: 217px;}
+#estate{height: 230px;padding-top: 1vw;}
+#reviews{height: 245px;padding-top: 49px;padding-bottom: 135px;}
 #link-switcher{
     width: 100%;
     background-color: white;
@@ -629,14 +630,12 @@ html,body{
 #eventcalendar > main .calendar{
     border-top: solid 1px black;
     width: 90%;
-    height: 180px;
-    padding-top: 10px;
-    padding-bottom: 10px;
+    height: 150px;
     display: block;
 }
 #eventcalendar > main .calendar header{
     float: left;
-    font-size: calc(152% * 2);
+    font-size: calc(127% * 2);
     font-weight: bold;
     display: inline;
     width: 10%;
@@ -644,8 +643,8 @@ html,body{
 }
 #eventcalendar > main .calendar .date{
     position: relative;
-    top: 60px;
-    margin-left: -20%;
+    top: 40px;
+    margin-left: 21%;
 }
 #eventcalendar > main .calendar main{
     display: inline;
@@ -653,9 +652,10 @@ html,body{
     margin-left: 3%;
 }
 #eventcalendar > main .calendar main img{
-    margin-left: 2%;
-    margin-top: 3%;
-    width: 130px;
+    width: 114px;
+    vertical-align: middle;
+    margin: 36px 56px 30px 48px;
+    object-fit: cover;
 }
 #eventcalendar > main .calendar footer{
     float: right;
@@ -666,19 +666,19 @@ html,body{
 #eventcalendar > main .calendar a{
     text-decoration: none;
     color: #0079bf;
-    font-size: 152%;
+    font-size: 129%;
     display: block;
     font-weight: bold;
 }
 #eventcalendar > main .calendar .event-location{
-    font-size: 109%;
+    font-size: 100%;
     display: block;
     font-style: italic;
     color: gray;
     font-family: 'Times New Roman', serif;
 }
 #eventcalendar > main .calendar .descr{
-    font-size: 108%;
+    font-size: 99%;
     display: block;
     color: gray;
 }
@@ -701,7 +701,6 @@ html,body{
     width: 70%;
     float: right;
     display: inline-table;
-
     margin-right: 3vw;
     margin-top: -12vw;
 }
@@ -744,7 +743,7 @@ html,body{
     width: 100%;
 }
 #services > main #slider-view .service-feed{
-    margin-left: -11%;
+    margin-left: -12%;
 }
 #services > main #slider-view-adaptive .service{
     width: 58vw;
@@ -830,7 +829,7 @@ html,body{
     width: 70%;
     float: right;
     display: inline-table;
-    margin-top: -10%;
+    margin-top: -8%;
     margin-right: 3vw;
 }
 #analytics > main #slider-controller{
@@ -873,6 +872,7 @@ html,body{
 }
 #analytics > main #slider-view .analytic-feed{
    margin-left: -13%;
+   margin-top: -4%;
 }
 #analytics > main #slider-view-adaptive .analytic{
     width: 58vw;
@@ -938,14 +938,14 @@ html,body{
     float: left;
     display: inline-table;
     left: 4vw;
-    padding-top: 2vw;
+    padding-top: 1vw;
 }
 #estate > main{
     width: 70%;
     float: right;
     display: inline-table;
-    margin-right: 3vw;
-    margin-top: -11vw;
+    margin-right: 4vw;
+    margin-top: -12vw;
 }
 #estate > main #slider-controller{
     width: 10%;
@@ -986,13 +986,13 @@ html,body{
     width: 100%;
 }
 #estate > main #slider-view .estat-feed{
-    margin-left: -11%;
+    margin-left: -10%;
 }
 #estate > main #slider-view .estat-feed .estat{
-    width: 16vw;
+    width: 28%;
     height: 208px;
     display: inline-table;
-    margin-left: 4%;
+    margin-left: 5%;
     background-color: white;
     box-shadow: 0 0 5px 1px grey;
 }
@@ -1102,7 +1102,7 @@ html,body{
     float: right;
     display: inline-table;
     margin-right: 3vw;
-    margin-top: -8vw;
+    margin-top: -6vw;
 }
 #reviews > main #slider-controller{
     width: 10%;
@@ -1419,7 +1419,7 @@ html,body{
         height: 317px;
     }
     #promo > main.swiper-container .promo-feed .promoblock {
-        height: 364px;
+        height: 370px;
     }
     #promo > header .marketing-info {
         margin-top: -16%;
@@ -1452,7 +1452,7 @@ html,body{
         height: 109px;
     }
     #services > main #slider-controller img {
-        width: 28%;
+        width: 35%;
     }
     #services > main #slider-view .service-feed .service header {
         font-size: 53%;
@@ -1472,6 +1472,7 @@ html,body{
     }
     #analytics > main #slider-controller img {
         width: 35%;
+        left: -12%;
     }
     #analytics > main #slider-view .analytic-feed .analytic h2 {
         font-size: 93%;
@@ -1480,7 +1481,7 @@ html,body{
         height: 187px;
     }
     #estate > main #slider-controller img {
-        width: 31%;
+        width: 35%;
         top: -5vw;
     }
     #estate > main #slider-view .estat-feed .estat {
@@ -1493,8 +1494,9 @@ html,body{
         font-size: 84%;
     }
     #reviews > main #slider-controller img {
-        width: 24%;
+        width: 35%;
         top: 7vw;
+        left: -5%;
     }
     #promo > main.swiper-container .promo-feed .promoblock footer .info {
         margin-top: 47%;
@@ -1532,7 +1534,7 @@ html,body{
         margin-top: 6%;
         width: 87px;
     }
-    #services > main #slider-view .service-feed .service, #analytics > main #slider-view .analytic-feed .analytic, #estate > main #slider-view .estat-feed .estat{ width: 16vw; margin-left: 4%;}
+    #services > main #slider-view .service-feed .service, #analytics > main #slider-view .analytic-feed .analytic, #estate > main #slider-view .estat-feed .estat{width: 27%;margin-left: 5%;}
     #services > main #slider-view .service-feed .service {
         height: 200px;
     }
@@ -1544,6 +1546,7 @@ html,body{
     }
     #analytics > main #slider-view .analytic-feed .analytic#with-title-image {
         top: 96px;
+        margin-left: 3%;
     }
     #analytics > main #slider-view .analytic-feed .analytic#with-title-image img {
         height: 125px;
@@ -1558,8 +1561,8 @@ html,body{
         font-size: 87%;
     }
     #analytics > main #slider-view .analytic-feed {
-        margin-left: -12%;
-        margin-top: -16%;
+        margin-left: -14%;
+        margin-top: -9%;
     }
     #services > main {
         margin-right: 2vw;
@@ -1575,13 +1578,20 @@ html,body{
     .header > #header_bottom_adaptive {
         margin-right: 10vw;
     }
+
+    #estate > main {
+        margin-top: -34vw;
+    }
+    #analytics > header {
+        top: 5vw;
+    }
 }
 @media all and (min-width:1280px) and (max-width: 1366px){
     .header > #header_bottom {
         display: inherit;
         right: -2%;
         position: relative;
-        top: -13%;
+        top: 60%;
     }
     .header > #header_bottom_adaptive{ display: none; }
     .header > #header_bottom .hb_bottom header .header-informer header {
@@ -1691,7 +1701,7 @@ html,body{
         font-size: 97%;
     }
     #estate {
-        height: 163px;
+        height: 292px;
     }
     #estate > main #slider-controller img {
         width: 34%;
@@ -1732,19 +1742,19 @@ html,body{
         font-size: 87%;
     }
     #eventcalendar > main .calendar .date {
-        top: 48px;
+        top: 40px;
     }
     #eventcalendar > main .calendar main img {
-        margin-left: 5%;
-        margin-top: 4%;
-        width: 88px;
+        width: 84px;
+        margin-top: 41px;
     }
-    #services > main #slider-view .service-feed .service, #analytics > main #slider-view .analytic-feed .analytic, #estate > main #slider-view .estat-feed .estat{ width: 15vw; margin-left: 6%;}
+    #services > main #slider-view .service-feed .service, #analytics > main #slider-view .analytic-feed .analytic, #estate > main #slider-view .estat-feed .estat{width: 28%;margin-left: 4%;}
     #reviews > main #slider-view .review-feed .review#with-title-image header img {
         left: 0%;
     }
     #analytics > main #slider-view .analytic-feed .analytic#with-title-image {
         top: 96px;
+        margin-left: 5%;
     }
     #analytics > main #slider-view .analytic-feed .analytic#with-title-image img {
         height: 125px;
@@ -1765,8 +1775,8 @@ html,body{
         margin-left: -10%;
     }
     #analytics > main #slider-view .analytic-feed .analytic{
-        width: 16vw;
-        margin-left: 4%;
+        width: 28%;
+        margin-left: 3%;
     }
 }
 @media all and (min-width:1366px) and (max-width: 1400px){
@@ -1830,16 +1840,14 @@ html,body{
         margin-top: 19px;
     }
     #eventcalendar > main .calendar footer {
-        margin-top: 1%;
+        margin-top: 2%;
         font-size: 92%;
     }
     #eventcalendar > main .calendar .date {
-        top: 45px;
+        top: 36px;
     }
     #eventcalendar > main .calendar main img {
-        margin-left: 4%;
-        margin-top: 3%;
-        width: 100px;
+        width: 90px;
     }
     #services > main #slider-view .service-feed .service, #analytics > main #slider-view .analytic-feed .analytic, #estate > main #slider-view .estat-feed .estat{ width: 16vw; margin-left: 4%;}
     #reviews > main #slider-view .review-feed .review#with-title-image header img {
@@ -1847,6 +1855,7 @@ html,body{
     }
     #analytics > main #slider-view .analytic-feed .analytic#with-title-image {
         top: 96px;
+        margin-left: 6%;
     }
     #analytics > main #slider-view .analytic-feed .analytic#with-title-image img {
         height: 125px;
@@ -1865,10 +1874,11 @@ html,body{
     }
     #analytics > main #slider-view .analytic-feed {
         margin-left: -10%;
+        margin-top: -8%;
     }
     #analytics > main #slider-view .analytic-feed .analytic{
-        width: 16vw;
-        margin-left: 4%;
+        width: 28%;
+        margin-left: 3%;
     }
 }
 @media all and (min-width:1400px) and (max-width: 1600px){
@@ -1907,26 +1917,25 @@ html,body{
         margin-top: 18px;
     }
     #eventcalendar > main .calendar footer {
-        margin-top: 1%;
+        margin-top: 2%;
         font-size: 92%;
     }
     #promo > header .marketing-info header img {
         width: 72%;
     }
     #eventcalendar > main .calendar main img {
-        margin-left: 4%;
-        margin-top: 3%;
-        width: 106px;
+        width: 90px;
     }
     #eventcalendar > main .calendar .date {
-        top: 44px;
+        top: 40px;
     }
     #analytics > main #slider-view .analytic-feed {
         margin-left: -11%;
+        margin-top: -5%;
     }
     #analytics > main #slider-view .analytic-feed .analytic{
-        width: 16vw;
-        margin-left: 4%;
+        width: 28%;
+        margin-left: 3%;
     }
 }
 @media all and (min-width:1600px) and (max-width: 1800px){
@@ -1954,16 +1963,14 @@ html,body{
         margin-top: 1px;
     }
     #eventcalendar > main .calendar footer {
-        margin-top: 1%;
+        margin-top: 2%;
         font-size: 100%;
     }
     #eventcalendar > main .calendar main img {
-        margin-left: 4%;
-        margin-top: 3%;
         width: 110px;
     }
     #eventcalendar > main .calendar .date {
-        top: 48px;
+        top: 47px;
     }
     #news {
         padding-top: 6%;
@@ -1978,7 +1985,7 @@ html,body{
     }
     .header > #header_bottom_adaptive{ display: none; }
     #analytics > main #slider-view .analytic-feed .analytic{
-        width: 16vw;
+        width: 28%;
         margin-left: 4%;
     }
 }
@@ -1997,11 +2004,11 @@ html,body{
         height: 410px;
     }
     #news {
-        padding-top: 7%;
+        padding-top: 5%;
     }
     #analytics > main #slider-view .analytic-feed .analytic{
-        width: 16vw;
-        margin-left: 5%;
+        width: 29%;
+        margin-left: 3%;
     }
 }
 @media all and (min-width: 1800px){
@@ -2042,11 +2049,11 @@ html,body{
         padding-bottom: 1%;
     }
     #analytics > main #slider-view .analytic-feed .analytic{
-        width: 16vw;
-        margin-left: 5%;
+        width: 26%;
+        margin-left: 6%;
     }
     #analytics > main{
-        margin-top: -9%;
+        margin-top: -6%;
     }
 }
 @media all and (width: 1280px){
@@ -2105,7 +2112,7 @@ html,body{
 }
 @media all and (min-width: 1024px) and (max-width: 1280px){
     #promo > main.swiper-container {
-        height: 70vh;
+        height: 500px;
     }
     #analytics > main footer#slider-controller{
         position: relative;
@@ -2113,7 +2120,7 @@ html,body{
     }
     #reviews > main footer#slider-controller{
         position: relative;
-        left: -19%;
+        left: 1%;
     }
 }
 @media (min-width: 400px) and (max-width: 500px){
