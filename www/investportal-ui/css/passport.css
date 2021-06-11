@@ -59,7 +59,7 @@
 .passport-page > header #left-content span, .passport-page > header #right-content a{
     color: white;
 }
-.passport-page > header #right-content nav{ margin-top: -10px; }
+.passport-page > header #right-content nav{margin-top: 5px;}
 .passport-page > header #right-content nav img{ display: inline-table; width: 25px; }
 .passport-page > header #right-content nav img:hover{ cursor: pointer; }
 .passport-page > header #left-content span{
@@ -155,10 +155,17 @@
     .passport-page > main #left-content #table-list, .passport-page > main #left-content #table-list .content td {
         border: none;
     }
+    .passport-page > header #left-content, .passport-page > header #right-content {
+        margin-top: 5px;
+    }
+
 }
 @media all and (min-width: 640px) and (max-width: 1024px){
     .passport-page > main #left-content {
         width: 94%;
+    }
+    .passport-page > header #left-content, .passport-page > header #right-content {
+        margin-top: 5px;
     }
 }
 @media all and (min-width: 1028px){
@@ -168,7 +175,7 @@
     .passport-page{ width: 77%; }
 }
 @media all and (min-width: 1024px) and (max-width: 1400px){
-    .passport-page > header #left-content, .passport-page > header #right-content {margin-top: 8px;}
+    .passport-page > header #left-content, .passport-page > header #right-content {margin-top: 9px;}
     .lightwin-passport > header #left-content{ margin-top: 2%; }
 }
 @media all and (min-width: 1800px){

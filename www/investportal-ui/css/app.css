@@ -2148,3 +2148,8 @@ html,body{
         margin-top: 2%;
     }
 }
+@media all and (min-width: 1300px) and (max-width: 1366px){
+    .header > #header_bottom {
+        top: 62%;
+    }
+}
