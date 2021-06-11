@@ -326,4 +326,7 @@
     #services > main {
         margin-top: -15vw;
     }
+    #objects > .projects-search-form header .title {
+        margin-left: -34%;
+    }
 }

@@ -352,11 +352,17 @@
 @media all and (width: 1024px){
     .objects-adding-search > footer #right-content {
         width: 37%;
-        margin-top: -135px;
+        margin-top: -304px;
         margin-left: 59vw;
     }
     #objects > .projects-search-form {
         height: 1038px;
+    }
+    .range-form:nth-child(2) {
+        margin-top: 32px;
+    }
+    #objects > .projects-search-form footer #left-content {
+        margin-top: -39%;
     }
 }
 @media (min-width: 1024px) and (max-width: 1280px){
@@ -392,14 +398,17 @@
 }
 @media all and (width: 1024px){
     .objects-adding-search > main header form div {
-        margin-left: -5px;
+        margin-left: -11px;
         position: relative;
-        top: -50px;
+        top: -308px;
     }
     .objects-adding-search > header #right-content header {
-        margin-top: 14%;
+        margin-top: 24%;
+        left: -1vw;
     }
-
+    .input-from-to {
+        margin-top: -1%;
+    }
 }
 @media all and (min-width: 1280px) and (max-width: 1366px){
     .objects-adding-search > header #right-content header {
@@ -416,7 +425,7 @@
         padding-top: 1%;
     }
     .input-from-to:nth-child(2) {
-        margin-top: -2%;
+        margin-top: -3%;
     }
     .input-from-to:nth-child(1) > span.content-form {
         padding-bottom: 2%;
@@ -529,15 +538,23 @@
 @media all and (min-width: 1024px){
     #mobile-form-popup{ display: none; }
 }
+@media all and (width: 1280px){
+    .objects-adding-search > header #right-content header {
+        margin-top: 12%;
+    }
+    .objects-adding-search > main header form div {
+        margin-top: -10%;
+    }
+}
 @media all and (min-width: 1280px) and (max-width: 1314px){
     .objects-adding-search > main header form div{
-        margin-top: -7%;
+        margin-top: -12%;
     }
     .objects-adding-search > main footer#form-popup{
         margin-top: -4%;
     }
     .objects-adding-search > header #right-content header {
-        margin-top: -33%;
+        margin-top: 13%;
     }
     .objects-adding-search > header #left-content header form div:not(:nth-child(1)) {
         width: 45%;
