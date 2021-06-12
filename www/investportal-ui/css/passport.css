@@ -5,7 +5,7 @@
     height: 643px;
 }
 .passport-page {
-    width: 80%;
+    width: 76%;
     background-color: white;
     position: relative;
     float: left;
@@ -38,7 +38,7 @@
 .passport-page > header #right-content, .passport-page > main #right-content{
     float: right;
     display: inline-table;
-    margin-right: 4%;
+    margin-right: 2%;
 }
 .passport-page > main #left-content{
     width: 70%;
@@ -189,4 +189,9 @@
 
 .passport-page > main #right-content .nav li:nth-last-child(1){
     border-bottom: solid 2px #0079bf;
+}
+@media all and (width: 1024px){
+    .passport-page > main #left-content #table-list {
+        width: 134%;
+    }
 }

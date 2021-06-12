@@ -61,7 +61,7 @@
     width: 7%;
 }
 @media all and (min-width: 320px) and (max-width: 640px){
-    #passport { height: 1872px; }
+    #passport {height: 1240px;}
     .passport-page > header #left-content { margin-top: 2px; }
     .passport-page > header #left-content span { font-size: 75%; }
     
@@ -74,35 +74,49 @@
     .passport-page > main #left-content .cart-data:nth-child(1) #table-list .content td:nth-child(3),  .passport-page > main #left-content .cart-data:nth-child(1) #table-list .content td:nth-child(4){
         width: 55%;
         display: block;
+        text-indent: 0%;
+        margin-left: -2%;
     }
     .passport-page > main #left-content .cart-data:nth-child(1) #table-list .content td:nth-child(2) {
-        width: 135%;
+        width: 100%;
         padding-bottom: 14%;
+        text-indent: 0%;
+        margin-left: -2%;
     }
     .passport-page > main #left-content .cart-data:nth-child(1) #table-list .content td:nth-child(5) {
         width: 50%;
-        display: inline-block;
+        display: inline-table;
         float: right;
-        margin-right: -36vw;
-        margin-top: -16vw;
+        margin-right: -43vw;
+        margin-top: -47px;
     }
     .passport-page > main #left-content .cart-data:nth-child(2) #table-list .content td:nth-child(2), .passport-page > main #left-content .cart-data:not(:nth-child(1)) #table-list .content td:not(:nth-child(1)){
         width: 100%;
         display: block;
+        text-indent: 0%;
+        margin-left: -4%;
     }
     .passport-page > main #left-content .cart-data #table-list {
-        margin-top: 19%;
+        margin-top: 5%;
     }
     .passport-page > main #left-content .cart-data h3 {
-        top: 0;
+        top: 0px;
     }
-    .passport-page > main #left-content #table-list:not(:nth-child(1)) .content {
-        height: 169px;
+    .passport-page > main #left-content .cart-data:not(:nth-child(1)) #table-list .content {
+        height: 100px;
         display: block;
+    }
+    .passport-page > main #left-content .cart-data:nth-last-child(1){
+        margin-top: -247px;
     }
 }
 @media all and (min-width: 640px) and (max-width: 1024px){
     #passport { height: calc(1510px * 1.1); }
     .passport-page > footer, .passport-page > header #right-content a{ display: none; }
     .passport-page > header #left-content { margin-top: 6px; }
+}
+@media all and (width: 1024px){
+    .passport-page > main #left-content .cart-data {
+        width: 134%;
+    }
 }

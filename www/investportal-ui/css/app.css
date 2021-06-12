@@ -2153,3 +2153,8 @@ html,body{
         top: 62%;
     }
 }
+@media all and (min-width: 1401px) and (max-width: 1405px){
+    .header > #header_bottom {
+        top: -75%;
+    }
+}
