@@ -35,8 +35,8 @@
 #investsearch > main.swiper-container .popular-objects .popular-object {
   position: relative;
   z-index: 1;
-  height: 460px;
   box-shadow: 0 0 5px 1px grey;
+  height: 480px;
 }
 
 #investsearch > main.swiper-container .popular-objects .popular-object .popularobject-content {
@@ -134,7 +134,6 @@
 
 #investsearch > main.swiper-container .popular-objects .popular-object{
   border-bottom-style: inset;
-  border-bottom-width: 23px;
 }
 #investsearch > main.swiper-container .popular-objects .popular-object .popularobject-content{
   border-bottom-style: inset;

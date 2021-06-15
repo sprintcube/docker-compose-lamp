@@ -591,8 +591,8 @@ html,body{
 }
 #investsearch > main.swiper-container .popular-objects .popular-object footer .info span{
     display: block;
-    padding-top: 3%;
-    padding-bottom: 3%;
+    padding-top: 1%;
+    padding-bottom: 1%;
     font-size: 150%;
 }
 #investsearch > main.swiper-container .popular-objects .popular-object footer .info span:nth-child(1){
@@ -601,7 +601,7 @@ html,body{
 #investsearch > main.swiper-container .popular-objects .popular-object footer .info span:nth-child(2){
     text-transform: uppercase;
     font-weight: bold;
-    font-size: 84%;
+    font-size: 73%;
     overflow: hidden;
     text-overflow: ellipsis;
     height: 38px;
@@ -1330,7 +1330,7 @@ html,body{
         display: none;
     }
     #promo > main.swiper-container .promo-feed .promoblock, #investsearch > main.swiper-container .popular-objects .popular-object{ width: 44vw; }
-    #promo > main.swiper-container .promo-feed .promoblock::before, #promo > main.swiper-container .promo-feed .promoblock .promoblock-content{ width: 98%; }
+    #promo > main.swiper-container .promo-feed .promoblock::before, #promo > main.swiper-container .promo-feed .promoblock .promoblock-content{width: 100%;}
 
     #promo > main.swiper-container .promo-feed .promoblock header {
         padding-right: 3vw;
@@ -1444,7 +1444,7 @@ html,body{
         font-size: 58%;
     }
     #investsearch > main.swiper-container .popular-objects .popular-object footer .info span:nth-child(2) {
-        font-size: 75%;
+        font-size: 71%;
     }
     #investsearch > main.swiper-container .popular-objects .popular-object footer a {
         font-size: 73%;
@@ -2149,9 +2149,17 @@ html,body{
         margin-top: 2%;
     }
 }
+@media all and (min-width: 1280px) and (max-width: 1300px){
+    #promo > header .marketing-info {
+        margin-top: -13%;
+    }
+}
 @media all and (min-width: 1300px) and (max-width: 1315px){
     .header > #header_bottom {
         top: -15%;
+    }
+    #promo > header .marketing-info {
+        margin-top: -13%;
     }
 }
 @media all and (min-width: 1316px) and (max-width: 1366px){
@@ -2167,5 +2175,10 @@ html,body{
 @media all and (min-width: 1406px) and (max-width: 1422px){
     .header > #header_bottom {
         top: -72%;
+    }
+}
+@media all and (width: 1366px){
+    #promo > header .marketing-info {
+        margin-top: 5%;
     }
 }
