@@ -701,8 +701,8 @@ html,body{
     width: 70%;
     float: right;
     display: inline-table;
-    margin-right: 3vw;
-    margin-top: -12vw;
+    right: 3vw;
+    top: 4%;
 }
 #services > main #slider-controller{
     width: 10%;
@@ -829,8 +829,8 @@ html,body{
     width: 70%;
     float: right;
     display: inline-table;
-    margin-top: -8%;
-    margin-right: 3vw;
+    top: 0%;
+    right: 3vw;
 }
 #analytics > main #slider-controller{
     width: 10%;
@@ -871,7 +871,7 @@ html,body{
     width: 100%;
 }
 #analytics > main #slider-view .analytic-feed{
-   margin-left: -13%;
+   margin-left: -15%;
    margin-top: -4%;
 }
 #analytics > main #slider-view-adaptive .analytic{
@@ -944,8 +944,8 @@ html,body{
     width: 70%;
     float: right;
     display: inline-table;
-    margin-right: 4vw;
-    margin-top: -12vw;
+    right: 4vw;
+    top: -4%;
 }
 #estate > main #slider-controller{
     width: 10%;
@@ -955,6 +955,7 @@ html,body{
     width: 26%;
     position: relative;
     top: -50px;
+    left: 1vw;
 }
 #estate > main #slider-controller-adaptive{
     width: 10%;
@@ -1101,8 +1102,8 @@ html,body{
     width: 70%;
     float: right;
     display: inline-table;
-    margin-right: 3vw;
-    margin-top: -6vw;
+    right: 3vw;
+    top: 2%;
 }
 #reviews > main #slider-controller{
     width: 10%;
@@ -2049,11 +2050,11 @@ html,body{
         padding-bottom: 1%;
     }
     #analytics > main #slider-view .analytic-feed .analytic{
-        width: 26%;
+        width: 27%;
         margin-left: 6%;
     }
     #analytics > main{
-        margin-top: -6%;
+        top: 1vw;
     }
 }
 @media all and (width: 1280px){
@@ -2148,13 +2149,23 @@ html,body{
         margin-top: 2%;
     }
 }
-@media all and (min-width: 1300px) and (max-width: 1366px){
+@media all and (min-width: 1300px) and (max-width: 1315px){
     .header > #header_bottom {
-        top: 62%;
+        top: -15%;
+    }
+}
+@media all and (min-width: 1316px) and (max-width: 1366px){
+    .header > #header_bottom {
+        top: 60%;
     }
 }
 @media all and (min-width: 1401px) and (max-width: 1405px){
     .header > #header_bottom {
         top: -75%;
+    }
+}
+@media all and (min-width: 1406px) and (max-width: 1422px){
+    .header > #header_bottom {
+        top: -72%;
     }
 }
