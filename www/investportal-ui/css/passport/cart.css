@@ -115,7 +115,7 @@
     .passport-page > footer, .passport-page > header #right-content a{ display: none; }
     .passport-page > header #left-content { margin-top: 6px; }
 }
-@media all and (min-width: 1024px) and (max-width: 1025px){
+@media all and (min-width: 1024px) and (max-width: 1028px){
     .passport-page > main #left-content .cart-data {
         width: 134%;
     }

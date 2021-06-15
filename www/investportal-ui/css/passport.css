@@ -168,7 +168,7 @@
         margin-top: 5px;
     }
 }
-@media all and (min-width: 1028px){
+@media all and (min-width: 1029px){
     .passport-page > header #right-content nav, .passport-menu-adaptive{ display: none; }
 }
 @media all and (min-width: 1280px) and (max-width: 1600px){
@@ -190,7 +190,7 @@
 .passport-page > main #right-content .nav li:nth-last-child(1){
     border-bottom: solid 2px #0079bf;
 }
-@media all and (min-width: 1024px) and (max-width: 1025px){
+@media all and (min-width: 1024px) and (max-width: 1028px){
     .passport-page > main #left-content #table-list {
         width: 134%;
     }
@@ -198,11 +198,6 @@
         margin-top: 5px;
     }
     .passport-page > header #right-content a {
-        display: none;
-    }
-}
-@media all and (min-width: 1026px){
-    .passport-page > header #right-content nav {
         display: none;
     }
 }
