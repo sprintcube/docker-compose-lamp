@@ -313,6 +313,7 @@ html,body{
     -moz-box-shadow: 8px -6px 6px 0px rgba(50, 50, 50, 0.75);
     box-shadow: 8px -6px 6px 0px rgba(50, 50, 50, 0.75);
     margin-left: 30px;
+    transform: scale(0.9);
 }
 #promo > main.swiper-container .promo-feed .promoblock:hover{
     cursor: pointer;
@@ -543,6 +544,7 @@ html,body{
     display: inline-flexbox;
     background-color: white;
     margin-left: 16px;
+    transform: scale(0.9);
 }
 #investsearch > main.swiper-container .popular-objects .popular-object#object-chromium{
    margin-left: 1vw;
@@ -743,7 +745,7 @@ html,body{
     width: 100%;
 }
 #services > main #slider-view .service-feed{
-    margin-left: -11%;
+    margin-left: -9%;
 }
 #services > main #slider-view-adaptive .service{
     width: 58vw;
@@ -754,13 +756,14 @@ html,body{
     padding-bottom: 4%;
 }
 #services > main #slider-view .service-feed .service{
-    width: 16vw;
+    width: 15vw;
     height: 250px;
     display: inline-table;
     box-shadow: 3px -1px 11px 3px darkgray;
-    margin-left: 4%;
+    margin-left: 5%;
     background-color: white;
     padding-bottom: 5%;
+    transform: scale(0.9);
 }
 #services > main #slider-view .service-feed .service header, #services > main #slider-view-adaptive .service header{
     background-color: darkgray;
@@ -892,6 +895,7 @@ html,body{
     padding-bottom: 2%;
     background-color: white;
     padding-right: -1px;
+    transform: scale(0.9);
 }
 #analytics > main #slider-view .analytic-feed .analytic:hover {
     background-color: #0079bf;
@@ -987,15 +991,16 @@ html,body{
     width: 100%;
 }
 #estate > main #slider-view .estat-feed{
-    margin-left: -10%;
+    margin-left: 1%;
 }
 #estate > main #slider-view .estat-feed .estat{
-    width: 28%;
+    width: 30%;
     height: 208px;
     display: inline-table;
-    margin-left: 5%;
+    margin-left: 1%;
     background-color: white;
     box-shadow: 0 0 5px 1px grey;
+    transform: scale(0.9);
 }
 #estate > main #slider-view-adaptive .estat{
     width: 63vw;
@@ -1164,6 +1169,7 @@ html,body{
     padding-bottom: 2%;
     background-color: white;
     padding-top: 1%;
+    transform: scale(0.9);
 }
 #reviews > main #slider-view .review-feed .review main h3, #reviews > main #slider-view-adaptive .review main h3{
     display: block;
@@ -1469,7 +1475,7 @@ html,body{
     }
     #analytics > main #slider-view .analytic-feed .analytic:nth-last-child(1) {
         top: -373px;
-        left: 66%;
+        left: 65%;
     }
     #analytics > main #slider-controller img {
         width: 35%;
@@ -1540,14 +1546,15 @@ html,body{
         height: 200px;
     }
     #estate > main #slider-view .estat-feed {
-        margin-top: -15%;
+        margin-top: 8%;
+        margin-left: -6vw;
     }
     #reviews > main #slider-view .review-feed .review#with-title-image header img {
         left: 0%;
     }
     #analytics > main #slider-view .analytic-feed .analytic#with-title-image {
         top: 96px;
-        margin-left: 3%;
+        margin-left: -1%;
     }
     #analytics > main #slider-view .analytic-feed .analytic#with-title-image img {
         height: 125px;
@@ -1573,7 +1580,7 @@ html,body{
         margin-top: 28%;
     }
     #analytics > main #slider-view .analytic-feed .analytic{
-        width: 17vw;
+        width: 18vw;
         margin-left: 3%;
     }
     .header > #header_bottom_adaptive {
@@ -1872,7 +1879,7 @@ html,body{
     }
     #analytics > main #slider-view .analytic-feed .analytic#with-title-image {
         top: 96px;
-        margin-left: 6%;
+        margin-left: 1%;
     }
     #analytics > main #slider-view .analytic-feed .analytic#with-title-image img {
         height: 125px;
@@ -1894,8 +1901,8 @@ html,body{
         margin-top: -8%;
     }
     #analytics > main #slider-view .analytic-feed .analytic{
-        width: 28%;
-        margin-left: 3%;
+        width: 29%;
+        margin-left: 5%;
     }
     #services > main {
         right: 3vw;
@@ -1966,15 +1973,15 @@ html,body{
         top: 40px;
     }
     #analytics > main #slider-view .analytic-feed {
-        margin-left: -11%;
+        margin-left: -15%;
         margin-top: -5%;
     }
     #analytics > main #slider-view .analytic-feed .analytic{
         width: 28%;
-        margin-left: 3%;
+        margin-left: 2%;
     }
     #analytics > main #slider-view .analytic-feed .analytic:nth-last-child(1) {
-        left: 1%;
+        left: -1%;
     }
 }
 @media all and (min-width:1600px) and (max-width: 1800px){
@@ -2025,13 +2032,13 @@ html,body{
     .header > #header_bottom_adaptive{ display: none; }
     #analytics > main #slider-view .analytic-feed .analytic{
         width: 28%;
-        margin-left: 6%;
+        margin-left: 9%;
     }
     #analytics > main #slider-view .analytic-feed .analytic#with-title-image {
-        margin-left: 1%;
+        margin-left: -3%;
     }
     #analytics > main #slider-view .analytic-feed .analytic:nth-last-child(2) {
-        left: 3%;
+        left: 5%;
     }
 }
 @media all and (min-width:1680px) and (max-width: 1800px){
@@ -2055,14 +2062,14 @@ html,body{
         margin-left: -12%;
     }
     #analytics > main #slider-view .analytic-feed .analytic{
-        width: 29%;
-        margin-left: 4%;
+        width: 28%;
+        margin-left: 7%;
     }
     #analytics > main #slider-view .analytic-feed .analytic#with-title-image {
-        margin-left: 1%;
+        margin-left: -1%;
     }
     #analytics > main #slider-view .analytic-feed .analytic:nth-last-child(2) {
-        left: 2%;
+        left: 4%;
     }
 }
 @media all and (min-width: 1800px){
@@ -2103,17 +2110,17 @@ html,body{
         padding-bottom: 1%;
     }
     #analytics > main #slider-view .analytic-feed .analytic{
-        width: 27%;
-        margin-left: 7%;
+        width: 25%;
+        margin-left: 10%;
     }
     #analytics > main{
         top: 1vw;
     }
     #analytics > main #slider-view .analytic-feed .analytic:nth-last-child(1) {
-        left: -2%;
+        left: -4%;
     }
     #analytics > main #slider-view .analytic-feed .analytic:nth-last-child(2) {
-        left: 0%;
+        left: 1%;
     }
     #analytics > main #slider-view .analytic-feed .analytic#with-title-image {
         margin-left: 4%;
