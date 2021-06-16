@@ -8,7 +8,7 @@
 #promo > main.swiper-container .promo-feed .promoblock .promoblock-content {
   position: absolute;
   top: 6px;
-  left: 1px;
+  left: -1%;
   width: 103%;
   height: 99%;
   background-color: white;
@@ -23,26 +23,26 @@
   pointer-events: none;
   position: absolute;
   top: -1px;
-  left: 0px;
+  left: 0%;
   z-index: -2;
-  width: 103%;
-  height: 99%;
+  width: 102%;
+  height: 100%;
   background-color: white;
   box-shadow: inherit;
-  padding-left: 7px;
+  padding-left: 6px;
 }
 
 #investsearch > main.swiper-container .popular-objects .popular-object {
   position: relative;
   z-index: 1;
-  box-shadow: 0 0 5px 1px grey;
-  height: 480px;
+  box-shadow: -10px -10px 5px -5px rgba(34, 60, 80, 0.6) inset;
+  height: 408px;
 }
 
 #investsearch > main.swiper-container .popular-objects .popular-object .popularobject-content {
   position: absolute;
   top: 6px;
-  left: 2px;
+  left: -1%;
   width: 100%;
   height: 100%;
   background-color: white;
@@ -57,13 +57,13 @@
   pointer-events: none;
   position: absolute;
   top: -5px;
-  left: 1px;
+  left: 0%;
   z-index: -2;
-  width: 100%;
-  height: 100%;
+  width: 99%;
+  height: 102%;
   background-color: white;
   box-shadow: inherit;
-  padding-left: 6px;
+  padding-left: 5px;
 }
 
 #services > main #slider-view .service-feed .service,  #services > main #slider-view-adaptive .service{
@@ -82,10 +82,7 @@
   background-color: white;
   z-index: 1;
   padding: 4px 3px 10px 0;
-  box-sizing: border-box;
-  box-shadow: inherit;
 }
-
 #services > main #slider-view .service-feed .service::before,  #services > main #slider-view-adaptive .service::before {
   content: '';
   pointer-events: none;
@@ -139,11 +136,34 @@
   border-bottom-style: inset;
   border-bottom-width: 2px;
 }
-@media all and (width: 1024px){
+@media all and (min-width: 320px) and (max-width: 640px){
+  #investsearch > main.swiper-container .popular-objects .popular-object {
+    height: 480px;
+  }
+}
+@media all and (min-width: 640px) and (max-width: 1024px){
+  #investsearch > main.swiper-container .popular-objects .popular-object {
+    height: 460px;
+  }
+}
+@media all and (min-width: 1024px) and (max-width: 1280px){
   #promo > main.swiper-container .promo-feed .promoblock .promoblock-content {
-    height: 70vh;
+    height: 380px;
+  }
+  #investsearch > main.swiper-container .popular-objects .popular-object {
+    height: 340px;
   }
   #estate > main #slider-view .estat-feed .estat .estat-content{
     height: 200%;
+  }
+}
+@media all and (min-width: 1280px) and (max-width: 1366px){
+  #investsearch > main.swiper-container .popular-objects .popular-object {
+    height: 360px;
+  }
+}
+@media all and (min-width: 1600px){
+  #investsearch > main.swiper-container .popular-objects .popular-object {
+    height: 450px;
   }
 }

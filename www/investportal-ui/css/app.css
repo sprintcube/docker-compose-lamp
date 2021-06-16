@@ -321,7 +321,7 @@ html,body{
     background-color: #0079bf;
 }
 #promo > main.swiper-container .promo-feed .promoblock header{
-    width: 95%;
+    width: 96%;
     background-color: darkgray;
     color: white;
     height: 42px;
@@ -551,7 +551,7 @@ html,body{
     cursor: pointer;
 }
 #investsearch > main.swiper-container .popular-objects .popular-object header {
-    width: 103%;
+    width: 105%;
     background-color: #0079bf;
     color: white;
     margin-left: 0%;
@@ -566,16 +566,16 @@ html,body{
     font-size: 93%;
 }
 #investsearch > main.swiper-container .popular-objects .popular-object main img{
-    width: 101%;
+    width: 100%;
     height: 228px;
     object-fit: cover;
 }
 #investsearch > main.swiper-container .popular-objects .popular-object main{
     display: block;
-    width: 106%;
+    width: 109%;
 }
 #investsearch > main.swiper-container .popular-objects .popular-object footer{
-    width: 97%;
+    width: 96%;
     padding-left: 2%;
     padding-right: 8%;
     background-color: white;
@@ -743,7 +743,7 @@ html,body{
     width: 100%;
 }
 #services > main #slider-view .service-feed{
-    margin-left: -12%;
+    margin-left: -11%;
 }
 #services > main #slider-view-adaptive .service{
     width: 58vw;
@@ -1296,10 +1296,10 @@ html,body{
     }
 
     #investsearch > main.swiper-container .popular-objects .popular-object header {
-        padding-right: 4vw;
+        width: 102%;
     }
     #investsearch > main.swiper-container .popular-objects .popular-object main {
-        width: 110%;
+        width: 106%;
     }
 
     .footer{height: calc(295px * 5);}
@@ -1336,7 +1336,7 @@ html,body{
         padding-right: 3vw;
     }
     #investsearch > main.swiper-container .popular-objects .popular-object header {
-        padding-right: 2vw;
+        width: 106%;
     }
     #investsearch > main.swiper-container .popular-objects .popular-object main {
         width: 110%;
@@ -1444,7 +1444,7 @@ html,body{
         font-size: 58%;
     }
     #investsearch > main.swiper-container .popular-objects .popular-object footer .info span:nth-child(2) {
-        font-size: 71%;
+        font-size: 63%;
     }
     #investsearch > main.swiper-container .popular-objects .popular-object footer a {
         font-size: 73%;
@@ -1566,10 +1566,10 @@ html,body{
         margin-top: -9%;
     }
     #services > main {
-        margin-right: 2vw;
+        margin-right: -1vw;
     }
     #services > main #slider-view .service-feed {
-        margin-left: -12%;
+        margin-left: -13%;
         margin-top: 28%;
     }
     #analytics > main #slider-view .analytic-feed .analytic{
@@ -1582,6 +1582,7 @@ html,body{
 
     #estate > main {
         margin-top: -34vw;
+        right: 2vw;
     }
     #analytics > header {
         top: 5vw;
@@ -1628,7 +1629,7 @@ html,body{
         left: 11vw;
     }
     #promo > main.swiper-container .promo-feed .promoblock {
-        height: 430px;
+        height: 400px;
         margin-left: calc(30px / 2);
         width: 24vw;
     }
@@ -1720,7 +1721,7 @@ html,body{
         width: 34%;
     }
     .rating-mini span {
-        font-size: 23px;
+        font-size: 20px;
     }
     #investsearch > main.swiper-container .popular-objects .popular-object main img {
         height: 149px;
@@ -1778,6 +1779,21 @@ html,body{
     #analytics > main #slider-view .analytic-feed .analytic{
         width: 28%;
         margin-left: 3%;
+    }
+    #services > main {
+        top: -25%;
+    }
+    #analytics > main {
+        top: -10%;
+        right: 3vw;
+    }
+    #estate > main {
+        right: 3vw;
+        top: -6%;
+    }
+    #reviews > main {
+        right: 2vw;
+        top: -8%;
     }
 }
 @media all and (min-width:1366px) and (max-width: 1400px){
@@ -1841,7 +1857,7 @@ html,body{
         margin-top: 19px;
     }
     #eventcalendar > main .calendar footer {
-        margin-top: 2%;
+        margin-top: 1%;
         font-size: 92%;
     }
     #eventcalendar > main .calendar .date {
@@ -1880,6 +1896,25 @@ html,body{
     #analytics > main #slider-view .analytic-feed .analytic{
         width: 28%;
         margin-left: 3%;
+    }
+    #services > main {
+        right: 3vw;
+        top: -9%;
+    }
+    #analytics > main {
+        top: 6%;
+        right: 3vw;
+    }
+    #estate > main #slider-view .estat-feed {
+        margin-left: -12%;
+    }
+    #estate > main {
+        right: 2vw;
+        top: -4%;
+    }
+    #reviews > main {
+        right: 2vw;
+        top: -2%;
     }
 }
 @media all and (min-width:1400px) and (max-width: 1600px){
@@ -1938,6 +1973,9 @@ html,body{
         width: 28%;
         margin-left: 3%;
     }
+    #analytics > main #slider-view .analytic-feed .analytic:nth-last-child(1) {
+        left: 1%;
+    }
 }
 @media all and (min-width:1600px) and (max-width: 1800px){
     .header > #header_bottom_adaptive{ display: none; }
@@ -1987,7 +2025,13 @@ html,body{
     .header > #header_bottom_adaptive{ display: none; }
     #analytics > main #slider-view .analytic-feed .analytic{
         width: 28%;
-        margin-left: 4%;
+        margin-left: 6%;
+    }
+    #analytics > main #slider-view .analytic-feed .analytic#with-title-image {
+        margin-left: 1%;
+    }
+    #analytics > main #slider-view .analytic-feed .analytic:nth-last-child(2) {
+        left: 3%;
     }
 }
 @media all and (min-width:1680px) and (max-width: 1800px){
@@ -2007,9 +2051,18 @@ html,body{
     #news {
         padding-top: 5%;
     }
+    #analytics > main #slider-view .analytic-feed {
+        margin-left: -12%;
+    }
     #analytics > main #slider-view .analytic-feed .analytic{
         width: 29%;
-        margin-left: 3%;
+        margin-left: 4%;
+    }
+    #analytics > main #slider-view .analytic-feed .analytic#with-title-image {
+        margin-left: 1%;
+    }
+    #analytics > main #slider-view .analytic-feed .analytic:nth-last-child(2) {
+        left: 2%;
     }
 }
 @media all and (min-width: 1800px){
@@ -2051,10 +2104,19 @@ html,body{
     }
     #analytics > main #slider-view .analytic-feed .analytic{
         width: 27%;
-        margin-left: 6%;
+        margin-left: 7%;
     }
     #analytics > main{
         top: 1vw;
+    }
+    #analytics > main #slider-view .analytic-feed .analytic:nth-last-child(1) {
+        left: -2%;
+    }
+    #analytics > main #slider-view .analytic-feed .analytic:nth-last-child(2) {
+        left: 0%;
+    }
+    #analytics > main #slider-view .analytic-feed .analytic#with-title-image {
+        margin-left: 4%;
     }
 }
 @media all and (width: 1280px){
