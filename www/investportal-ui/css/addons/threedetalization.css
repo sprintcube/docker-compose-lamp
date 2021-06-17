@@ -162,6 +162,11 @@
     height: 360px;
   }
 }
+@media all and (width: 1366px){
+  #investsearch > main.swiper-container .popular-objects .popular-object {
+    height: 400px;
+  }
+}
 @media all and (min-width: 1600px){
   #investsearch > main.swiper-container .popular-objects .popular-object {
     height: 450px;

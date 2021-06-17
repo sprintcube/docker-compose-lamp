@@ -745,7 +745,7 @@ html,body{
     width: 100%;
 }
 #services > main #slider-view .service-feed{
-    margin-left: -9%;
+    margin-left: -8%;
 }
 #services > main #slider-view-adaptive .service{
     width: 58vw;
@@ -760,10 +760,11 @@ html,body{
     height: 250px;
     display: inline-table;
     box-shadow: 3px -1px 11px 3px darkgray;
-    margin-left: 5%;
+    margin-left: 3%;
     background-color: white;
     padding-bottom: 5%;
     transform: scale(0.9);
+    padding-right: 6px;
 }
 #services > main #slider-view .service-feed .service header, #services > main #slider-view-adaptive .service header{
     background-color: darkgray;
@@ -991,16 +992,18 @@ html,body{
     width: 100%;
 }
 #estate > main #slider-view .estat-feed{
-    margin-left: 1%;
+    margin-left: -6%;
 }
 #estate > main #slider-view .estat-feed .estat{
-    width: 30%;
+    width: 27%;
     height: 208px;
     display: inline-table;
-    margin-left: 1%;
+    margin-left: 4%;
     background-color: white;
     box-shadow: 0 0 5px 1px grey;
     transform: scale(0.9);
+    position: relative;
+    padding-right: 6px;
 }
 #estate > main #slider-view-adaptive .estat{
     width: 63vw;
@@ -1089,7 +1092,7 @@ html,body{
 	color: lightgrey;
 }
 .rating-mini > span:before {
-	content: '★';
+	content: '★;
 }
 .rating-mini > span.active {
 	color: gold;
@@ -1149,7 +1152,7 @@ html,body{
     width: 100%;
 }
 #reviews > main #slider-view .review-feed{
-   margin-left: -12%;
+   margin-left: -8%;
 }
 #reviews > main #slider-view-adaptive .review{
     width: 62vw;
@@ -1161,15 +1164,16 @@ html,body{
     padding-top: 1%;
 }
 #reviews > main #slider-view .review-feed .review{
-    width: 16vw;
+    width: 15vw;
     height: 238px;
     display: inline-table;
     box-shadow: 3px -1px 11px 3px darkgray;
-    margin-left: 4%;
+    margin-left: 3%;
     padding-bottom: 2%;
     background-color: white;
     padding-top: 1%;
     transform: scale(0.9);
+    padding-right: 1px;
 }
 #reviews > main #slider-view .review-feed .review main h3, #reviews > main #slider-view-adaptive .review main h3{
     display: block;
@@ -1475,7 +1479,7 @@ html,body{
     }
     #analytics > main #slider-view .analytic-feed .analytic:nth-last-child(1) {
         top: -373px;
-        left: 65%;
+        left: 62%;
     }
     #analytics > main #slider-controller img {
         width: 35%;
@@ -1509,7 +1513,7 @@ html,body{
         margin-top: 47%;
     }
     .rating-mini span {
-        font-size: 23px;
+        font-size: 16px;
     }
     #promo > main.swiper-container .promo-feed .promoblock main img {
         height: 61px;
@@ -1541,20 +1545,20 @@ html,body{
         margin-top: 6%;
         width: 87px;
     }
-    #services > main #slider-view .service-feed .service, #analytics > main #slider-view .analytic-feed .analytic, #estate > main #slider-view .estat-feed .estat{width: 27%;margin-left: 5%;}
+    #services > main #slider-view .service-feed .service, #analytics > main #slider-view .analytic-feed .analytic, #estate > main #slider-view .estat-feed .estat{width: 28%;margin-left: 3%;padding-right: 4px;}
     #services > main #slider-view .service-feed .service {
         height: 200px;
     }
     #estate > main #slider-view .estat-feed {
         margin-top: 8%;
-        margin-left: -6vw;
+        margin-left: -2vw;
     }
     #reviews > main #slider-view .review-feed .review#with-title-image header img {
         left: 0%;
     }
     #analytics > main #slider-view .analytic-feed .analytic#with-title-image {
         top: 96px;
-        margin-left: -1%;
+        margin-left: 0%;
     }
     #analytics > main #slider-view .analytic-feed .analytic#with-title-image img {
         height: 125px;
@@ -1569,19 +1573,19 @@ html,body{
         font-size: 87%;
     }
     #analytics > main #slider-view .analytic-feed {
-        margin-left: -14%;
+        margin-left: -9%;
         margin-top: -9%;
     }
     #services > main {
         margin-right: -1vw;
     }
     #services > main #slider-view .service-feed {
-        margin-left: -13%;
+        margin-left: -6%;
         margin-top: 28%;
     }
     #analytics > main #slider-view .analytic-feed .analytic{
-        width: 18vw;
-        margin-left: 3%;
+        width: 32%;
+        margin-left: 4%;
     }
     .header > #header_bottom_adaptive {
         margin-right: 10vw;
@@ -1717,6 +1721,9 @@ html,body{
     }
     #estate > main #slider-view .estat-feed .estat {
         height: 181px;
+        position: relative;
+        left: -8%;
+        padding-right: 6px;
     }
     #estate > main #slider-view .estat-feed .estat header {
         font-size: 64%;
@@ -1728,7 +1735,7 @@ html,body{
         width: 34%;
     }
     .rating-mini span {
-        font-size: 20px;
+        font-size: 18px;
     }
     #investsearch > main.swiper-container .popular-objects .popular-object main img {
         height: 149px;
@@ -1757,13 +1764,13 @@ html,body{
         width: 84px;
         margin-top: 41px;
     }
-    #services > main #slider-view .service-feed .service, #analytics > main #slider-view .analytic-feed .analytic, #estate > main #slider-view .estat-feed .estat{width: 28%;margin-left: 4%;}
+    #services > main #slider-view .service-feed .service, #analytics > main #slider-view .analytic-feed .analytic, #estate > main #slider-view .estat-feed .estat{width: 28%;margin-left: 4%;padding-right: 4px;}
     #reviews > main #slider-view .review-feed .review#with-title-image header img {
         left: 0%;
     }
     #analytics > main #slider-view .analytic-feed .analytic#with-title-image {
         top: 96px;
-        margin-left: 5%;
+        margin-left: 2%;
     }
     #analytics > main #slider-view .analytic-feed .analytic#with-title-image img {
         height: 125px;
@@ -1784,8 +1791,8 @@ html,body{
         margin-left: -10%;
     }
     #analytics > main #slider-view .analytic-feed .analytic{
-        width: 28%;
-        margin-left: 3%;
+        width: 29%;
+        margin-left: 4%;
     }
     #services > main {
         top: -25%;
@@ -1801,6 +1808,9 @@ html,body{
     #reviews > main {
         right: 2vw;
         top: -8%;
+    }
+    #estate > main #slider-view .estat-feed {
+        margin-left: 2%;
     }
 }
 @media all and (min-width:1366px) and (max-width: 1400px){
@@ -1873,7 +1883,7 @@ html,body{
     #eventcalendar > main .calendar main img {
         width: 90px;
     }
-    #services > main #slider-view .service-feed .service, #analytics > main #slider-view .analytic-feed .analytic, #estate > main #slider-view .estat-feed .estat{ width: 16vw; margin-left: 4%;}
+    #services > main #slider-view .service-feed .service, #analytics > main #slider-view .analytic-feed .analytic, #estate > main #slider-view .estat-feed .estat{width: 29%;margin-left: 2%;padding-right: 2px;}
     #reviews > main #slider-view .review-feed .review#with-title-image header img {
         left: 0%;
     }
@@ -1913,7 +1923,7 @@ html,body{
         right: 3vw;
     }
     #estate > main #slider-view .estat-feed {
-        margin-left: -12%;
+        margin-left: -7%;
     }
     #estate > main {
         right: 2vw;
@@ -1923,6 +1933,7 @@ html,body{
         right: 2vw;
         top: -2%;
     }
+
 }
 @media all and (min-width:1400px) and (max-width: 1600px){
     .header > #header_bottom {
@@ -1973,15 +1984,15 @@ html,body{
         top: 40px;
     }
     #analytics > main #slider-view .analytic-feed {
-        margin-left: -15%;
+        margin-left: -14%;
         margin-top: -5%;
     }
     #analytics > main #slider-view .analytic-feed .analytic{
-        width: 28%;
-        margin-left: 2%;
+        width: 25%;
+        margin-left: 8%;
     }
     #analytics > main #slider-view .analytic-feed .analytic:nth-last-child(1) {
-        left: -1%;
+        left: -2%;
     }
 }
 @media all and (min-width:1600px) and (max-width: 1800px){
@@ -2032,10 +2043,10 @@ html,body{
     .header > #header_bottom_adaptive{ display: none; }
     #analytics > main #slider-view .analytic-feed .analytic{
         width: 28%;
-        margin-left: 9%;
+        margin-left: 8%;
     }
     #analytics > main #slider-view .analytic-feed .analytic#with-title-image {
-        margin-left: -3%;
+        margin-left: -4%;
     }
     #analytics > main #slider-view .analytic-feed .analytic:nth-last-child(2) {
         left: 5%;
@@ -2137,8 +2148,27 @@ html,body{
         display: inherit;
     }
     #estate > main #slider-view .estat-feed .estat {
-        margin-left: 4%;
-        width: 16vw;
+        margin-left: 1%;
+        width: 30%;
+    }
+    #estate > main #slider-view .estat-feed {
+        margin-left: 6vw;
+    }
+    #services > main #slider-view .service-feed {
+        margin-top: 0%;
+    }
+    #estate > main {
+        top: 125%;
+    }
+    #analytics > main #slider-view .analytic-feed .analytic:nth-last-child(1) {
+        top: 1px;
+        left: -5%;
+    }
+    #analytics > main #slider-view .analytic-feed {
+        margin-left: -1%;
+    }
+    #analytics > main {
+        top: 0%;
     }
     #reviews {
         height: 241px;
