@@ -553,7 +553,7 @@ html,body{
     cursor: pointer;
 }
 #investsearch > main.swiper-container .popular-objects .popular-object header {
-    width: 105%;
+    width: 100%;
     background-color: #0079bf;
     color: white;
     margin-left: 0%;
@@ -574,10 +574,10 @@ html,body{
 }
 #investsearch > main.swiper-container .popular-objects .popular-object main{
     display: block;
-    width: 109%;
+    width: 104%;
 }
 #investsearch > main.swiper-container .popular-objects .popular-object footer{
-    width: 96%;
+    width: 95%;
     padding-left: 2%;
     padding-right: 8%;
     background-color: white;
@@ -756,7 +756,7 @@ html,body{
     padding-bottom: 4%;
 }
 #services > main #slider-view .service-feed .service{
-    width: 15vw;
+    width: 26%;
     height: 250px;
     display: inline-table;
     box-shadow: 3px -1px 11px 3px darkgray;
@@ -765,6 +765,7 @@ html,body{
     padding-bottom: 5%;
     transform: scale(0.9);
     padding-right: 6px;
+    padding-left: 6px;
 }
 #services > main #slider-view .service-feed .service header, #services > main #slider-view-adaptive .service header{
     background-color: darkgray;
@@ -888,7 +889,7 @@ html,body{
     margin-top: 14vw;
 }
 #analytics > main #slider-view .analytic-feed .analytic{
-    width: 15vw;
+    width: 27%;
     height: 360px;
     display: inline-table;
     box-shadow: 3px -1px 11px 3px darkgray;
@@ -998,7 +999,7 @@ html,body{
     width: 27%;
     height: 208px;
     display: inline-table;
-    margin-left: 4%;
+    margin-left: 3%;
     background-color: white;
     box-shadow: 0 0 5px 1px grey;
     transform: scale(0.9);
@@ -1092,7 +1093,7 @@ html,body{
 	color: lightgrey;
 }
 .rating-mini > span:before {
-	content: '★;
+	content: 'â˜…;
 }
 .rating-mini > span.active {
 	color: gold;
@@ -1306,10 +1307,10 @@ html,body{
     }
 
     #investsearch > main.swiper-container .popular-objects .popular-object header {
-        width: 102%;
+        width: 99%;
     }
     #investsearch > main.swiper-container .popular-objects .popular-object main {
-        width: 106%;
+        width: 103%;
     }
 
     .footer{height: calc(295px * 5);}
@@ -1346,10 +1347,10 @@ html,body{
         padding-right: 3vw;
     }
     #investsearch > main.swiper-container .popular-objects .popular-object header {
-        width: 106%;
+        width: 101%;
     }
     #investsearch > main.swiper-container .popular-objects .popular-object main {
-        width: 110%;
+        width: 105%;
     }
     
     #reviews > main #slider-view-adaptive .review {
@@ -1580,7 +1581,7 @@ html,body{
         margin-right: -1vw;
     }
     #services > main #slider-view .service-feed {
-        margin-left: -6%;
+        margin-left: -9%;
         margin-top: 28%;
     }
     #analytics > main #slider-view .analytic-feed .analytic{
@@ -1764,7 +1765,7 @@ html,body{
         width: 84px;
         margin-top: 41px;
     }
-    #services > main #slider-view .service-feed .service, #analytics > main #slider-view .analytic-feed .analytic, #estate > main #slider-view .estat-feed .estat{width: 28%;margin-left: 4%;padding-right: 4px;}
+    #services > main #slider-view .service-feed .service, #analytics > main #slider-view .analytic-feed .analytic, #estate > main #slider-view .estat-feed .estat{width: 28%;margin-left: 2%;padding-right: 4px;}
     #reviews > main #slider-view .review-feed .review#with-title-image header img {
         left: 0%;
     }
@@ -1883,13 +1884,13 @@ html,body{
     #eventcalendar > main .calendar main img {
         width: 90px;
     }
-    #services > main #slider-view .service-feed .service, #analytics > main #slider-view .analytic-feed .analytic, #estate > main #slider-view .estat-feed .estat{width: 29%;margin-left: 2%;padding-right: 2px;}
+    #services > main #slider-view .service-feed .service, #analytics > main #slider-view .analytic-feed .analytic, #estate > main #slider-view .estat-feed .estat{width: 27%;margin-left: 3%;padding-right: 2px;}
     #reviews > main #slider-view .review-feed .review#with-title-image header img {
         left: 0%;
     }
     #analytics > main #slider-view .analytic-feed .analytic#with-title-image {
         top: 96px;
-        margin-left: 1%;
+        margin-left: 3%;
     }
     #analytics > main #slider-view .analytic-feed .analytic#with-title-image img {
         height: 125px;
@@ -1911,8 +1912,8 @@ html,body{
         margin-top: -8%;
     }
     #analytics > main #slider-view .analytic-feed .analytic{
-        width: 29%;
-        margin-left: 5%;
+        width: 28%;
+        margin-left: 4%;
     }
     #services > main {
         right: 3vw;
@@ -1988,11 +1989,11 @@ html,body{
         margin-top: -5%;
     }
     #analytics > main #slider-view .analytic-feed .analytic{
-        width: 25%;
+        width: 27%;
         margin-left: 8%;
     }
     #analytics > main #slider-view .analytic-feed .analytic:nth-last-child(1) {
-        left: -2%;
+        left: 0%;
     }
 }
 @media all and (min-width:1600px) and (max-width: 1800px){
@@ -2042,14 +2043,13 @@ html,body{
     }
     .header > #header_bottom_adaptive{ display: none; }
     #analytics > main #slider-view .analytic-feed .analytic{
-        width: 28%;
         margin-left: 8%;
     }
     #analytics > main #slider-view .analytic-feed .analytic#with-title-image {
-        margin-left: -4%;
+        margin-left: -5%;
     }
     #analytics > main #slider-view .analytic-feed .analytic:nth-last-child(2) {
-        left: 5%;
+        left: 6%;
     }
 }
 @media all and (min-width:1680px) and (max-width: 1800px){
@@ -2070,14 +2070,14 @@ html,body{
         padding-top: 5%;
     }
     #analytics > main #slider-view .analytic-feed {
-        margin-left: -12%;
+        margin-left: -14%;
     }
     #analytics > main #slider-view .analytic-feed .analytic{
-        width: 28%;
+        width: 27%;
         margin-left: 7%;
     }
     #analytics > main #slider-view .analytic-feed .analytic#with-title-image {
-        margin-left: -1%;
+        margin-left: -2%;
     }
     #analytics > main #slider-view .analytic-feed .analytic:nth-last-child(2) {
         left: 4%;
@@ -2100,6 +2100,8 @@ html,body{
     }
     #promo > main.swiper-container .promo-feed .promoblock {
         height: 445px;
+        width: 22%;
+        padding-right: 48px;
     }
     #news {
         padding-top: 5vw;
@@ -2122,19 +2124,22 @@ html,body{
     }
     #analytics > main #slider-view .analytic-feed .analytic{
         width: 25%;
-        margin-left: 10%;
+        margin-left: 8%;
+        padding-right: 14px;
     }
     #analytics > main{
         top: 1vw;
     }
     #analytics > main #slider-view .analytic-feed .analytic:nth-last-child(1) {
-        left: -4%;
+        left: -5%;
     }
     #analytics > main #slider-view .analytic-feed .analytic:nth-last-child(2) {
         left: 1%;
+        padding-right: 0px;
+        width: 26%;
     }
     #analytics > main #slider-view .analytic-feed .analytic#with-title-image {
-        margin-left: 4%;
+        margin-left: 1%;
     }
 }
 @media all and (width: 1280px){
@@ -2162,10 +2167,10 @@ html,body{
     }
     #analytics > main #slider-view .analytic-feed .analytic:nth-last-child(1) {
         top: 1px;
-        left: -5%;
+        left: -2%;
     }
     #analytics > main #slider-view .analytic-feed {
-        margin-left: -1%;
+        margin-left: -10%;
     }
     #analytics > main {
         top: 0%;
