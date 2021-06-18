@@ -545,9 +545,12 @@ html,body{
     background-color: white;
     margin-left: 16px;
     transform: scale(0.9);
+    padding-left: 10px;
 }
 #investsearch > main.swiper-container .popular-objects .popular-object#object-chromium{
    margin-left: 1vw;
+   position: relative;
+   left: -9%;
 }
 #investsearch > main.swiper-container .popular-objects .popular-object:hover{
     cursor: pointer;
@@ -2344,4 +2347,41 @@ html,body{
         position: relative;
         left: -20%;
     }
+}
+@media all and (width: 1366px){
+    #estate > main #slider-view .estat-feed {
+        margin-left: -3%;
+    }
+    #estate > main #slider-view .estat-feed .estat {
+        width: 27%;
+        margin-left: 5%;
+        padding-right: 12px;
+    }
+    #estate > main #slider-view .estat-feed .estat:nth-child(1) {
+        position: relative;
+        left: -62px;
+        padding-right: 17px;
+    }
+    #estate > main #slider-view .estat-feed .estat:nth-child(2) {
+        margin-left: 5%;
+        position: relative;
+        left: -63px;
+    }
+    #estate > main #slider-view .estat-feed .estat:nth-child(3) {
+        margin-left: 2%;
+        position: relative;
+        left: -45px;
+    }
+    #reviews > main #slider-view .review-feed .review {
+        width: 15vw;
+        margin-left: 0%;
+        padding-right: 8px;
+    }
+    #reviews > main #slider-view .review-feed .review:nth-child(2) {
+        margin-left: 4%;
+    }
+    #reviews > main #slider-view .review-feed .review:nth-child(3) {
+        margin-left: 3%;
+    }
+
 }
