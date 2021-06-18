@@ -1004,7 +1004,7 @@ html,body{
     box-shadow: 0 0 5px 1px grey;
     transform: scale(0.9);
     position: relative;
-    padding-right: 6px;
+    padding-right: 12px;
 }
 #estate > main #slider-view-adaptive .estat{
     width: 63vw;
@@ -1997,7 +1997,7 @@ html,body{
         margin-left: 8%;
     }
     #analytics > main #slider-view .analytic-feed .analytic:nth-last-child(1) {
-        left: 0%;
+        left: -6%;
     }
 }
 @media all and (min-width:1600px) and (max-width: 1800px){
