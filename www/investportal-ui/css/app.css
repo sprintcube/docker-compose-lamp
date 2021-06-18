@@ -1093,7 +1093,7 @@ html,body{
 	color: lightgrey;
 }
 .rating-mini > span:before {
-	content: 'â˜…;
+	content: '★';
 }
 .rating-mini > span.active {
 	color: gold;
@@ -1340,11 +1340,11 @@ html,body{
     #promo > header .marketing-info {
         display: none;
     }
-    #promo > main.swiper-container .promo-feed .promoblock, #investsearch > main.swiper-container .popular-objects .popular-object{ width: 44vw; }
+    #promo > main.swiper-container .promo-feed .promoblock, #investsearch > main.swiper-container .popular-objects .popular-object{width: 44vw;height: 400px;}
     #promo > main.swiper-container .promo-feed .promoblock::before, #promo > main.swiper-container .promo-feed .promoblock .promoblock-content{width: 100%;}
 
     #promo > main.swiper-container .promo-feed .promoblock header {
-        padding-right: 3vw;
+        padding-right: 2vw;
     }
     #investsearch > main.swiper-container .popular-objects .popular-object header {
         width: 101%;
@@ -1506,7 +1506,7 @@ html,body{
         font-size: 84%;
     }
     #reviews > main #slider-controller img {
-        width: 35%;
+        width: 30%;
         top: 7vw;
         left: -5%;
     }
@@ -1724,7 +1724,6 @@ html,body{
         height: 181px;
         position: relative;
         left: -8%;
-        padding-right: 6px;
     }
     #estate > main #slider-view .estat-feed .estat header {
         font-size: 64%;
@@ -1811,8 +1810,12 @@ html,body{
         top: -8%;
     }
     #estate > main #slider-view .estat-feed {
-        margin-left: 2%;
+        margin-left: 4%;
     }
+    #estate > main #slider-view .estat-feed .estat:not(:nth-child(1)){
+        margin-left: 5%;
+    }
+
 }
 @media all and (min-width:1366px) and (max-width: 1400px){
     .header > #header_bottom {
@@ -1949,6 +1952,7 @@ html,body{
     }
     #promo > main.swiper-container .promo-feed .promoblock {
         height: 390px;
+        width: 24vw;
     }
     #investsearch {
         height: 430px;
@@ -2153,11 +2157,19 @@ html,body{
         display: inherit;
     }
     #estate > main #slider-view .estat-feed .estat {
-        margin-left: 1%;
-        width: 30%;
+        margin-left: 6%;
+        width: 26%;
+    }
+    #reviews > main footer#slider-controller img {
+        position: relative;
+        left: 175%;
     }
     #estate > main #slider-view .estat-feed {
-        margin-left: 6vw;
+        margin-left: 0vw;
+    }
+    #estate > main #slider-view .estat-feed .estat:not(:nth-child(1)) {
+        margin-left: 6%;
+        padding-right: 6px;
     }
     #services > main #slider-view .service-feed {
         margin-top: 0%;
@@ -2225,7 +2237,7 @@ html,body{
     }
     #reviews > main footer#slider-controller{
         position: relative;
-        left: 1%;
+        left: -18%;
     }
 }
 @media (min-width: 400px) and (max-width: 500px){
@@ -2284,5 +2296,52 @@ html,body{
 @media all and (width: 1366px){
     #promo > header .marketing-info {
         margin-top: 5%;
+    }
+}
+@media all and (aspect-ratio: 4/3){
+    #reviews > main {
+        margin-top: -10vw;
+        right: -14vw;
+    }
+    #eventcalendar > main .calendar {
+        height: 120px;
+    }
+    #eventcalendar > main .calendar .date {
+        top: 30px;
+    }
+    #estate > header {
+        margin-top: -18%;
+    }
+    #estate > main #slider-view .estat-feed {
+        margin-top: 8%;
+        margin-left: -2vw;
+    }
+    #estate > main {
+        margin-top: -24vw;
+    }
+    #analytics > main {
+        margin-left: 35vw;
+    }
+    #analytics > main #slider-view .analytic-feed .analytic {
+        width: 31%;
+        margin-left: 8%;
+    }
+    #analytics > main #slider-view .analytic-feed {
+        margin-left: -22%;
+        margin-top: -9%;
+    }
+    #analytics > main #slider-view .analytic-feed .analytic#with-title-image {
+        top: 96px;
+        margin-left: -2%;
+    }
+    #analytics > main #slider-view .analytic-feed .analytic:nth-last-child(1) {
+        left: 60%;
+    }
+    #reviews > main #slider-controller img {
+        width: 25%;
+    }
+    #reviews > main footer#slider-controller {
+        position: relative;
+        left: -20%;
     }
 }

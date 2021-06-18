@@ -263,15 +263,15 @@
                margin-top: 3%;
            }
            #eventcalendar > main .calendar .date {
-               top: 65px;
+               top: 30px;
            }
        }
        @media all and (min-width: 1024px) and (max-width: 1280px){
            #promo > main.swiper-container .promo-feed {
-               margin-left: 7vw;
+               margin-left: -1vw;
            }
            #investsearch > main.swiper-container .popular-objects {
-               margin-left: 9vw;
+               margin-left: 4vw;
            }
            .swiper-button-prev, .swiper-button-next {
                width: 5vw;
@@ -319,7 +319,7 @@
        }
        @media all and (min-width: 1400px) and (max-width: 1600px){
            #promo > main.swiper-container .promo-feed {
-               margin-left: 8vw;
+               margin-left: 7vw;
            }
            #investsearch > main.swiper-container .popular-objects {
                margin-left: -19vw;
@@ -406,6 +406,8 @@
        @media all and (min-width: 1024px) {
            #news > main #slider-view-adaptive, #news > main #slider-controller-adaptive, #services > main #slider-view-adaptive, #services > main #slider-controller-adaptive, #analytics > main #slider-view-adaptive,  #analytics > main #slider-controller-adaptive, #estate > main #slider-view-adaptive,  #estate > main #slider-controller-adaptive, #reviews > main #slider-view-adaptive,  #reviews > main #slider-controller-adaptive{ display: none; }
        }
+       @media all and (aspect-ratio: 4/3){
+       }
        @media all and (min-width: 1024px) and (max-width: 1279px){
            #news > main #slider-view, #news > main #slider-controller, #services > main #slider-view, #services > main #slider-controller, #eventcalendar > main .calendar main, #eventcalendar > main .calendar .descr, #analytics > main #slider-view, #analytics > main #slider-controller, #estate > main #slider-view, #estate > main #slider-controller, #reviews > main #slider-view, #reviews > main #slider-controller {
                display: inline-table;
@@ -418,7 +420,7 @@
            }
            #services > header .add-but, #estate > header .add-but {
                margin-top: 2%;
-               width: 60%;
+               width: 20%;
            }
            #investsearch > header .add-but {
                width: 13%;
@@ -457,7 +459,12 @@
                height: calc(99px * 2);
            }
            #estate > header{
-               margin-top: -28%;
+               margin-top: -19%;
+           }
+       }
+       @media all and (width: 1024px){
+           #eventcalendar{
+               padding-bottom: 5%;
            }
        }
        .footer { overflow: hidden; }
