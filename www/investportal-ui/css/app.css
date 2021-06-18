@@ -2138,10 +2138,10 @@ html,body{
         top: 1vw;
     }
     #analytics > main #slider-view .analytic-feed .analytic:nth-last-child(1) {
-        left: -5%;
+        left: -45px;
     }
     #analytics > main #slider-view .analytic-feed .analytic:nth-last-child(2) {
-        left: 1%;
+        left: 16px;
         padding-right: 0px;
         width: 26%;
     }
