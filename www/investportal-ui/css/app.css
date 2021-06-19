@@ -2383,5 +2383,9 @@ html,body{
     #reviews > main #slider-view .review-feed .review:nth-child(3) {
         margin-left: 3%;
     }
-
+}
+@media all and (width: 1600px){
+    #analytics > main #slider-view .analytic-feed .analytic:nth-last-child(1) {
+        left: 0%;
+    }    
 }
