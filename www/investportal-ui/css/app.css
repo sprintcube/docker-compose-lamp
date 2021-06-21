@@ -1004,7 +1004,7 @@ html,body{
     display: inline-table;
     margin-left: 3%;
     background-color: white;
-    box-shadow: 0 0 5px 1px grey;
+    box-shadow: 3px -1px 11px 3px darkgrey;
     transform: scale(0.9);
     position: relative;
     padding-right: 12px;
@@ -1014,7 +1014,7 @@ html,body{
     height: 194px;
     margin-left: -8vw;
     background-color: white;
-    box-shadow: 0 0 5px 1px grey;
+    box-shadow: 3px -1px 11px 3px darkgrey;
     margin-top: 18vw;
 }
 #estate > main #slider-view .estat-feed .estat header, #estate > main #slider-view-adaptive .estat header{
@@ -1366,12 +1366,12 @@ html,body{
         margin-top: 24vw;
     }
     #analytics > main #slider-view-adaptive .analytic {
-        width: 46vw;
+        width: 47vw;
         margin-left: 19vw;
     }
     #services > main #slider-view-adaptive .service {
-        width: 39vw;
-        margin-left: calc(39vw / 2);
+        width: 46vw;
+        margin-left: calc(35vw / 2);
     }
     #estate > main #slider-controller-adaptive img {
         width: 54%;
@@ -1406,9 +1406,10 @@ html,body{
         width: 61%;
     }
     #services > main footer#slider-controller-adaptive {
-        right: 15%;
+        right: 10%;
         top: 0;
     }
+    #estate > main #slider-view-adaptive .estat .estat-content { height: 200%; }
     #services > main header#slider-controller-adaptive {
         left: 2%;
     }
@@ -1418,6 +1419,7 @@ html,body{
         position: relative;
     }
     .header > #header_bottom_adaptive footer #adaptive-window{ width: 50%; }
+    #estate > main { top: -23%; }
 }
 @media all and (min-width:1024px) and (max-width: 1280px){
     .header > #header_top {
@@ -2216,6 +2218,11 @@ html,body{
 @media all and (width:1024px){
     .footer { height: calc(270px * 2); }
     .footer > main { top: 23%; }
+}
+@media all and (min-width: 320px) and (max-width: 1024px){
+    #services > header .add-but, #estate > header .add-but {
+        margin-top: 2%;
+    }
 }
 @media all and (min-width: 393px) and (max-width: 414px){
     .footer > main {

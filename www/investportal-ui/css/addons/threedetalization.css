@@ -70,7 +70,7 @@
   position: relative;
   z-index: 1;
   height: 440px;
-  box-shadow: 0 0 5px 1px grey;
+  box-shadow: 3px -1px 11px 3px darkgrey;
 }
 
 #services > main #slider-view .service-feed .service .service-content,  #services > main #slider-view-adaptive .service .service-content{
@@ -100,7 +100,7 @@
   position: relative;
   z-index: 1;
   height: 440px;
-  box-shadow: 0 0 5px 1px grey;
+  box-shadow: 3px -1px 11px 3px darkgrey;
 }
 
 #estate > main #slider-view .estat-feed .estat .estat-content,  #estate > main #slider-view-adaptive .estat .estat-content{
