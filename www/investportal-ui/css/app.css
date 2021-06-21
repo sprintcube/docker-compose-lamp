@@ -2160,8 +2160,8 @@ html,body{
         display: inherit;
     }
     #estate > main #slider-view .estat-feed .estat {
-        margin-left: 6%;
-        width: 26%;
+        margin-left: 3%;
+        width: 32%;
     }
     #reviews > main footer#slider-controller img {
         position: relative;
@@ -2171,8 +2171,13 @@ html,body{
         margin-left: 0vw;
     }
     #estate > main #slider-view .estat-feed .estat:not(:nth-child(1)) {
-        margin-left: 6%;
-        padding-right: 6px;
+        margin-left: 2%;
+        padding-right: 3px;
+    }
+    #estate > main #slider-view .estat-feed .estat:nth-child(3) {
+        margin-left: -6%;
+        position: relative;
+        left: -1%;
     }
     #services > main #slider-view .service-feed {
         margin-top: 0%;
@@ -2192,6 +2197,17 @@ html,body{
     }
     #reviews {
         height: 241px;
+    }
+    #reviews > main #slider-view .review-feed {
+        margin-left: -9%;
+    }
+    #reviews > main #slider-view .review-feed .review {
+        width: 30%;
+        margin-left: 1%;
+        padding-right: 3px;
+    }
+    #reviews > main #slider-view .review-feed .review:nth-last-child(1) {
+        width: 29%;
     }
     .header > #header_bottom_adaptive {
         margin-right: 11%;
