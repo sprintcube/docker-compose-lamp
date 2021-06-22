@@ -304,14 +304,14 @@ html,body{
     width: 100vw;
 }
 #promo > main.swiper-container .promo-feed .promoblock{
-    width: 23vw;
+    width: 27vw;
     display: inline-flexbox;
     background-color: white;
     padding-right: 1%;
     margin-top: 2%;
-    -webkit-box-shadow: 8px -6px 6px 0px rgba(50, 50, 50, 0.75);
-    -moz-box-shadow: 8px -6px 6px 0px rgba(50, 50, 50, 0.75);
-    box-shadow: 8px -6px 6px 0px rgba(50, 50, 50, 0.75);
+    -webkit-box-shadow: 3px -1px 4px 0px darkgrey;
+    -moz-box-shadow: 3px -1px 4px 0px darkgrey;
+    box-shadow: 3px -1px 4px 0px darkgrey;
     margin-left: 30px;
     transform: scale(0.9);
 }
@@ -540,7 +540,7 @@ html,body{
     width: 100vw;
 }
 #investsearch > main.swiper-container .popular-objects .popular-object{
-    width: 25vw;
+    width: 27vw;
     display: inline-flexbox;
     background-color: white;
     margin-left: 16px;
@@ -753,7 +753,7 @@ html,body{
 #services > main #slider-view-adaptive .service{
     width: 58vw;
     height: 290px;
-    box-shadow: 3px -1px 11px 3px darkgray;
+    box-shadow: 3px -1px 4px 0px darkgrey;
     margin-left: calc(20vw / 2);
     background-color: white;
     padding-bottom: 4%;
@@ -762,7 +762,7 @@ html,body{
     width: 26%;
     height: 250px;
     display: inline-table;
-    box-shadow: 3px -1px 11px 3px darkgray;
+    box-shadow: 3px -1px 4px 0px darkgrey;
     margin-left: 3%;
     background-color: white;
     padding-bottom: 5%;
@@ -885,7 +885,7 @@ html,body{
 #analytics > main #slider-view-adaptive .analytic{
     width: 58vw;
     height: 412px;
-    box-shadow: 3px -1px 11px 3px darkgray;
+    box-shadow: 3px -1px 4px 0px darkgrey;
     margin-left: 11vw;
     padding-bottom: 2%;
     background-color: white;
@@ -895,7 +895,7 @@ html,body{
     width: 27%;
     height: 360px;
     display: inline-table;
-    box-shadow: 3px -1px 11px 3px darkgray;
+    box-shadow: 3px -1px 4px 0px darkgrey;
     margin-left: 6%;
     padding-bottom: 2%;
     background-color: white;
@@ -1004,7 +1004,7 @@ html,body{
     display: inline-table;
     margin-left: 3%;
     background-color: white;
-    box-shadow: 3px -1px 11px 3px darkgrey;
+    box-shadow: 3px -1px 4px 0px darkgrey;
     transform: scale(0.9);
     position: relative;
     padding-right: 12px;
@@ -1014,7 +1014,7 @@ html,body{
     height: 194px;
     margin-left: -8vw;
     background-color: white;
-    box-shadow: 3px -1px 11px 3px darkgrey;
+    box-shadow: 3px -1px 4px 0px darkgrey;
     margin-top: 18vw;
 }
 #estate > main #slider-view .estat-feed .estat header, #estate > main #slider-view-adaptive .estat header{
@@ -1161,7 +1161,7 @@ html,body{
 #reviews > main #slider-view-adaptive .review{
     width: 62vw;
     height: 238px;
-    box-shadow: 3px -1px 11px 3px darkgray;
+    box-shadow: 3px -1px 4px 0px darkgrey;
     margin-left: 8%;
     padding-bottom: calc(2% * 5);
     background-color: white;
@@ -1171,7 +1171,7 @@ html,body{
     width: 15vw;
     height: 238px;
     display: inline-table;
-    box-shadow: 3px -1px 11px 3px darkgray;
+    box-shadow: 3px -1px 4px 0px darkgrey;
     margin-left: 3%;
     padding-bottom: 2%;
     background-color: white;
@@ -1648,7 +1648,6 @@ html,body{
     #promo > main.swiper-container .promo-feed .promoblock {
         height: 400px;
         margin-left: calc(30px / 2);
-        width: 24vw;
     }
     #promo > header .marketing-info {
         margin-top: 4%;
@@ -1851,6 +1850,7 @@ html,body{
     }
     #promo > main.swiper-container .promo-feed .promoblock {
         height: 379px;
+        width: 26vw;
     }
     #promo > header .marketing-info {
         margin-top: -10vw;
@@ -1956,8 +1956,8 @@ html,body{
         height: 336px;
     }
     #promo > main.swiper-container .promo-feed .promoblock {
-        height: 390px;
-        width: 24vw;
+        height: 420px;
+        width: 26vw;
     }
     #investsearch {
         height: 430px;
@@ -2073,7 +2073,7 @@ html,body{
         margin-right: -10vw;
     }
     #promo > main.swiper-container .promo-feed .promoblock {
-        height: 410px;
+        height: 440px;
     }
     #news {
         padding-top: 5%;
@@ -2108,9 +2108,8 @@ html,body{
         width: 60%;
     }
     #promo > main.swiper-container .promo-feed .promoblock {
-        height: 445px;
-        width: 22%;
-        padding-right: 48px;
+        height: 518px;
+        width: 26vw;
     }
     #news {
         padding-top: 5vw;
