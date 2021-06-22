@@ -2411,3 +2411,7 @@ html,body{
         left: 0%;
     }    
 }
+@media all and (width: 1024px){
+    #promo > main.swiper-container .promo-feed .promoblock { height: 495px; }
+    #promo > main.swiper-container .promo-feed .promoblock .promoblock-content { height: 500px; }
+}
