@@ -707,7 +707,7 @@ html,body{
     float: right;
     display: inline-table;
     right: 3vw;
-    top: 4%;
+    top: -6%;
 }
 #services > main #slider-controller{
     width: 10%;
@@ -837,7 +837,7 @@ html,body{
     width: 70%;
     float: right;
     display: inline-table;
-    top: 0%;
+    top: -10%;
     right: 3vw;
 }
 #analytics > main #slider-controller{
@@ -954,7 +954,7 @@ html,body{
     float: right;
     display: inline-table;
     right: 4vw;
-    top: -4%;
+    top: -10%;
 }
 #estate > main #slider-controller{
     width: 10%;
@@ -1115,7 +1115,7 @@ html,body{
     float: right;
     display: inline-table;
     right: 3vw;
-    top: 2%;
+    top: -5%;
 }
 #reviews > main #slider-controller{
     width: 10%;
@@ -1598,11 +1598,14 @@ html,body{
     }
 
     #estate > main {
-        margin-top: -34vw;
         right: 2vw;
     }
     #analytics > header {
         top: 5vw;
+    }
+    #services > main header#slider-controller {
+        position: relative;
+        left: 2%;
     }
 }
 @media all and (min-width:1280px) and (max-width: 1366px){
@@ -1802,12 +1805,12 @@ html,body{
         top: -25%;
     }
     #analytics > main {
-        top: -10%;
-        right: 3vw;
+        top: -22%;
+        right: 4vw;
     }
     #estate > main {
         right: 3vw;
-        top: -6%;
+        top: -9%;
     }
     #reviews > main {
         right: 2vw;
@@ -1928,7 +1931,7 @@ html,body{
         top: -9%;
     }
     #analytics > main {
-        top: 6%;
+        top: 3%;
         right: 3vw;
     }
     #estate > main #slider-view .estat-feed {
@@ -1936,11 +1939,11 @@ html,body{
     }
     #estate > main {
         right: 2vw;
-        top: -4%;
+        top: -7%;
     }
     #reviews > main {
         right: 2vw;
-        top: -2%;
+        top: -8%;
     }
 
 }
@@ -2337,7 +2340,7 @@ html,body{
         margin-top: 5%;
     }
 }
-@media all and (aspect-ratio: 4/3){
+@media (width: 1024px){
     #reviews > main {
         margin-top: -10vw;
         right: -14vw;
@@ -2356,7 +2359,7 @@ html,body{
         margin-left: -2vw;
     }
     #estate > main {
-        margin-top: -24vw;
+        margin-top: -20vw;
     }
     #analytics > main {
         margin-left: 35vw;
