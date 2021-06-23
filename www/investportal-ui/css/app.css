@@ -1849,7 +1849,7 @@ html,body{
         left: 11vw;
     }
     #promo > main.swiper-container .promo-feed .promoblock {
-        height: 379px;
+        height: 400px;
         width: 26vw;
     }
     #promo > header .marketing-info {
@@ -2108,7 +2108,7 @@ html,body{
         width: 60%;
     }
     #promo > main.swiper-container .promo-feed .promoblock {
-        height: 518px;
+        height: 490px;
         width: 26vw;
     }
     #news {
@@ -2152,7 +2152,10 @@ html,body{
 }
 @media all and (width: 1280px){
     #promo > main.swiper-container .promo-feed .promoblock {
-        height: 405px;
+        height: 440px;
+    }
+    #promo > main.swiper-container .promo-feed .promoblock .promoblock-content {
+        height: 435px;
     }
     .header > #header_bottom{
         display: none;
@@ -2284,11 +2287,22 @@ html,body{
         width: 67%;
     }
     #estate > main {
-        margin-top: -21vw;
+        margin-top: -9vw;
     }
     #services > header .add-but, #estate > header .add-but {
         margin-top: 2%;
+        width: 30%;
     }
+    #promo > main.swiper-container .promo-feed .promoblock {
+        height: 435px;
+    }
+    #investsearch > main.swiper-container .popular-objects .popular-object {
+        height: 490px;
+    }
+    #services > main #slider-view-adaptive .service {
+        height: 330px;
+    }
+
 }
 @media all and (min-width: 1280px) and (max-width: 1300px){
     #promo > header .marketing-info {
@@ -2367,7 +2381,7 @@ html,body{
     }
     #reviews > main footer#slider-controller {
         position: relative;
-        left: -20%;
+        left: -18%;
     }
 }
 @media all and (width: 1366px){
@@ -2414,4 +2428,7 @@ html,body{
 @media all and (width: 1024px){
     #promo > main.swiper-container .promo-feed .promoblock { height: 495px; }
     #promo > main.swiper-container .promo-feed .promoblock .promoblock-content { height: 500px; }
+    #news > main #slider-view .news-feed .news .descr{
+        font-size: 79%;
+    }
 }
