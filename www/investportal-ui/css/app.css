@@ -717,19 +717,19 @@ html,body{
     width: 26%;
     position: relative;
     top: -114px;
-    left: 13%;
+    left: calc(13% / 1.5);
 }
 #services > main footer#slider-controller img{
-    left: -39%;
+    left: calc(-39% / 1.5);
 }
 #analytics > main footer#slider-controller img{
-    left: -39%;
+    left: calc(-39% / 1.5);
 }
 #estate > main footer#slider-controller img{
-    left: -21%;
+    left: calc(-21% / 1.5);
 }
 #reviews > main footer#slider-controller img{
-    left: -34%;
+    left: calc(-34% / 1.5);
 }
 #services > main #slider-controller-adaptive{
     width: 8%;
@@ -861,7 +861,6 @@ html,body{
     width: 26%;
     position: relative;
     top: 93px;
-    left: 17%;
 }
 #analytics > main #slider-controller-adaptive{
     width: 10%;
@@ -978,7 +977,6 @@ html,body{
     width: 26%;
     position: relative;
     top: -50px;
-    left: 35%;
 }
 #estate > main #slider-controller-adaptive{
     width: 10%;
@@ -1110,7 +1108,7 @@ html,body{
 	color: lightgrey;
 }
 .rating-mini > span:before {
-	content: '★';
+	content: 'â˜…';
 }
 .rating-mini > span.active {
 	color: gold;
@@ -1139,7 +1137,6 @@ html,body{
     width: 26%;
     position: relative;
     top: 84px;
-    left: 19%;
 }
 #reviews > main #slider-controller-adaptive{
     width: 8%;
@@ -1733,10 +1730,10 @@ html,body{
     }
     #analytics > main #slider-controller img {
         width: 35%;
-        left: 33%;
+        left: calc(33% / 1.5);
     }
     #analytics > main footer#slider-controller img {
-        left: -60%;
+        left: calc(-60% / 1.5);
     }
     #analytics > main #slider-view .analytic-feed .analytic h2 {
         font-size: 97%;
@@ -1760,7 +1757,7 @@ html,body{
     }
     #reviews > main #slider-controller img {
         width: 34%;
-        left: 7%;
+        left: calc(7% / 1.5);
     }
     .rating-mini span {
         font-size: 18px;
@@ -1970,13 +1967,13 @@ html,body{
         top: -8%;
     }
     #analytics > main #slider-controller img {
-        left: 24%;
+        left: calc(24% / 1.5);
     }
     #analytics > main footer#slider-controller img {
-        left: -10%;
+        left: calc(-45% / 1.5);
     }
     #reviews > main footer#slider-controller img {
-        left: -23%;
+        left: calc(-9% / 1.5);
     }
 }
 @media all and (min-width:1400px) and (max-width: 1600px){
@@ -2202,7 +2199,7 @@ html,body{
         width: 32%;
     }
     #reviews > main footer#slider-controller img {
-        left: -88%;
+        left: calc(-88% / 1.5);
     }
     #estate > main #slider-view .estat-feed {
         margin-left: 0vw;
@@ -2415,6 +2412,9 @@ html,body{
     #reviews > main footer#slider-controller {
         position: relative;
         left: -12%;
+    }
+    #investsearch > main.swiper-container .popular-objects .popular-object {
+        height: 390px;
     }
 }
 @media all and (width: 1366px){

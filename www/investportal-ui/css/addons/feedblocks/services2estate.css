@@ -13,7 +13,7 @@
         top: 119px;
     }
     #services > main footer#slider-controller img.controls-chromium{
-        left: 17%;
+        left: -7%;
     }
     #analytics > main footer#slider-controller img.controls-chromium{
         left: 23%;
@@ -24,29 +24,29 @@
 }
 @media all and (min-width: 1280px) and (max-width: 1366px){
     #services > main #slider-controller img.controls-chromium{
-        left: -4%;
+        left: calc(-4% / 1.5);
     }
     #services > main footer#slider-controller img.controls-chromium{
-        left: -35%;
+        left: calc(-35% / 1.5);
     }
     #estate > main #slider-controller img.controls-chromium{
-        left: 20%;
+        left: calc(20% / 1.5);
     }
     #estate > main footer#slider-controller img.controls-chromium{
-        left: -26%;
+        left: calc(-26% / 1.5);
     }
 }
 @media all and (min-width: 1366px) and (max-width: 1400px){
     #services > main #slider-controller img.controls-chromium{
-        left: 29%;
+        left: calc(29% / 1.5);
     }
     #services > main footer#slider-controller img.controls-chromium{
-        left: -7%;
+        left: calc(-42% / 1.5);
     }
     #estate > main #slider-controller img.controls-chromium{
-        left: 9%;
+        left: calc(9% / 1.5);
     }
     #estate > main footer#slider-controller img.controls-chromium{
-        left: -27%;
+        left: calc(-42% / 1.5);
     }
 }
