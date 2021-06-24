@@ -707,7 +707,7 @@ html,body{
     float: right;
     display: inline-table;
     right: 3vw;
-    top: -6%;
+    top: -1vw;
 }
 #services > main #slider-controller{
     width: 10%;
@@ -717,6 +717,19 @@ html,body{
     width: 26%;
     position: relative;
     top: -114px;
+    left: 13%;
+}
+#services > main footer#slider-controller img{
+    left: -39%;
+}
+#analytics > main footer#slider-controller img{
+    left: -39%;
+}
+#estate > main footer#slider-controller img{
+    left: -21%;
+}
+#reviews > main footer#slider-controller img{
+    left: -34%;
 }
 #services > main #slider-controller-adaptive{
     width: 8%;
@@ -837,7 +850,7 @@ html,body{
     width: 70%;
     float: right;
     display: inline-table;
-    top: -10%;
+    top: -1vw;
     right: 3vw;
 }
 #analytics > main #slider-controller{
@@ -848,6 +861,7 @@ html,body{
     width: 26%;
     position: relative;
     top: 93px;
+    left: 17%;
 }
 #analytics > main #slider-controller-adaptive{
     width: 10%;
@@ -954,7 +968,7 @@ html,body{
     float: right;
     display: inline-table;
     right: 4vw;
-    top: -10%;
+    top: -1vw;
 }
 #estate > main #slider-controller{
     width: 10%;
@@ -964,7 +978,7 @@ html,body{
     width: 26%;
     position: relative;
     top: -50px;
-    left: 1vw;
+    left: 35%;
 }
 #estate > main #slider-controller-adaptive{
     width: 10%;
@@ -1115,7 +1129,7 @@ html,body{
     float: right;
     display: inline-table;
     right: 3vw;
-    top: -5%;
+    top: -1vw;
 }
 #reviews > main #slider-controller{
     width: 10%;
@@ -1125,6 +1139,7 @@ html,body{
     width: 26%;
     position: relative;
     top: 84px;
+    left: 19%;
 }
 #reviews > main #slider-controller-adaptive{
     width: 8%;
@@ -1485,11 +1500,11 @@ html,body{
     }
     #analytics > main #slider-view .analytic-feed .analytic:nth-last-child(1) {
         top: -373px;
-        left: 62%;
+        left: 66%;
     }
     #analytics > main #slider-controller img {
-        width: 35%;
-        left: -12%;
+        width: 40%;
+        left: -15%;
     }
     #analytics > main #slider-view .analytic-feed .analytic h2 {
         font-size: 93%;
@@ -1513,7 +1528,7 @@ html,body{
     #reviews > main #slider-controller img {
         width: 30%;
         top: 7vw;
-        left: -5%;
+        left: 23%;
     }
     #promo > main.swiper-container .promo-feed .promoblock footer .info {
         margin-top: 47%;
@@ -1557,7 +1572,7 @@ html,body{
     }
     #estate > main #slider-view .estat-feed {
         margin-top: 8%;
-        margin-left: -2vw;
+        margin-left: -5vw;
     }
     #reviews > main #slider-view .review-feed .review#with-title-image header img {
         left: 0%;
@@ -1579,7 +1594,7 @@ html,body{
         font-size: 87%;
     }
     #analytics > main #slider-view .analytic-feed {
-        margin-left: -9%;
+        margin-left: -13%;
         margin-top: -9%;
     }
     #services > main {
@@ -1590,7 +1605,7 @@ html,body{
         margin-top: 28%;
     }
     #analytics > main #slider-view .analytic-feed .analytic{
-        width: 32%;
+        width: 30%;
         margin-left: 4%;
     }
     .header > #header_bottom_adaptive {
@@ -1599,13 +1614,14 @@ html,body{
 
     #estate > main {
         right: 2vw;
+        top: -184%;
     }
     #analytics > header {
         top: 5vw;
     }
     #services > main header#slider-controller {
         position: relative;
-        left: 2%;
+        left: 1%;
     }
 }
 @media all and (min-width:1280px) and (max-width: 1366px){
@@ -1716,7 +1732,8 @@ html,body{
         font-size: 70%;
     }
     #analytics > main #slider-controller img {
-        width: 31%;
+        width: 35%;
+        left: 33%;
     }
     #analytics > main #slider-view .analytic-feed .analytic h2 {
         font-size: 97%;
@@ -1740,6 +1757,7 @@ html,body{
     }
     #reviews > main #slider-controller img {
         width: 34%;
+        left: 35%;
     }
     .rating-mini span {
         font-size: 18px;
@@ -1802,7 +1820,7 @@ html,body{
         margin-left: 4%;
     }
     #services > main {
-        top: -25%;
+        top: -26%;
     }
     #analytics > main {
         top: -22%;
@@ -1822,7 +1840,10 @@ html,body{
     #estate > main #slider-view .estat-feed .estat:not(:nth-child(1)){
         margin-left: 5%;
     }
-
+    #reviews > main footer#slider-controller {
+        position: relative;
+        left: -4%;
+    }
 }
 @media all and (min-width:1366px) and (max-width: 1400px){
     .header > #header_bottom {
@@ -1945,7 +1966,15 @@ html,body{
         right: 2vw;
         top: -8%;
     }
-
+    #analytics > main #slider-controller img {
+        left: 24%;
+    }
+    #analytics > main footer#slider-controller img {
+        left: -10%;
+    }
+    #reviews > main footer#slider-controller img {
+        left: -23%;
+    }
 }
 @media all and (min-width:1400px) and (max-width: 1600px){
     .header > #header_bottom {
@@ -2139,7 +2168,6 @@ html,body{
         padding-right: 14px;
     }
     #analytics > main{
-        top: 1vw;
     }
     #analytics > main #slider-view .analytic-feed .analytic:nth-last-child(1) {
         left: -45px;
@@ -2190,17 +2218,17 @@ html,body{
         margin-top: 0%;
     }
     #estate > main {
-        top: 125%;
+        top: -5vw;
     }
     #analytics > main #slider-view .analytic-feed .analytic:nth-last-child(1) {
         top: 1px;
         left: -2%;
     }
     #analytics > main #slider-view .analytic-feed {
-        margin-left: -10%;
+        margin-left: -8%;
     }
     #analytics > main {
-        top: 0%;
+        top: 1vw;
     }
     #reviews {
         height: 241px;
@@ -2264,11 +2292,11 @@ html,body{
     }
     #analytics > main footer#slider-controller{
         position: relative;
-        left: 1%;
+        left: 5%;
     }
     #reviews > main footer#slider-controller{
         position: relative;
-        left: -18%;
+        left: 5%;
     }
 }
 @media (min-width: 400px) and (max-width: 500px){
@@ -2384,7 +2412,7 @@ html,body{
     }
     #reviews > main footer#slider-controller {
         position: relative;
-        left: -18%;
+        left: -12%;
     }
 }
 @media all and (width: 1366px){
