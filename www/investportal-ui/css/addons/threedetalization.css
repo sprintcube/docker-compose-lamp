@@ -105,8 +105,8 @@
 
 #estate > main #slider-view .estat-feed .estat .estat-content,  #estate > main #slider-view-adaptive .estat .estat-content{
   position: absolute;
-  top: 6px;
-  left: -5px;
+  top: 12px;
+  left: -5%;
   width: 100%;
   height: 183%;
   background-color: white;
