@@ -1735,6 +1735,9 @@ html,body{
         width: 35%;
         left: 33%;
     }
+    #analytics > main footer#slider-controller img {
+        left: -60%;
+    }
     #analytics > main #slider-view .analytic-feed .analytic h2 {
         font-size: 97%;
     }
@@ -1757,7 +1760,7 @@ html,body{
     }
     #reviews > main #slider-controller img {
         width: 34%;
-        left: 35%;
+        left: 7%;
     }
     .rating-mini span {
         font-size: 18px;
@@ -2199,8 +2202,7 @@ html,body{
         width: 32%;
     }
     #reviews > main footer#slider-controller img {
-        position: relative;
-        left: 175%;
+        left: -88%;
     }
     #estate > main #slider-view .estat-feed {
         margin-left: 0vw;

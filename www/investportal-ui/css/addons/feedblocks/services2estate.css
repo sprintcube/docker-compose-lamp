@@ -24,16 +24,16 @@
 }
 @media all and (min-width: 1280px) and (max-width: 1366px){
     #services > main #slider-controller img.controls-chromium{
-        left: 20%;
+        left: -4%;
     }
     #services > main footer#slider-controller img.controls-chromium{
         left: -35%;
     }
     #estate > main #slider-controller img.controls-chromium{
-        left: 50%;
+        left: 20%;
     }
     #estate > main footer#slider-controller img.controls-chromium{
-        left: -45%;
+        left: -26%;
     }
 }
 @media all and (min-width: 1366px) and (max-width: 1400px){
