@@ -693,7 +693,7 @@ html,body{
     float: left;
     display: inline-table;
     left: 4vw;
-    padding-top: 2vw;
+    padding-top: 3vw;
 }
 #services > header a{
    text-decoration: none;
@@ -708,6 +708,10 @@ html,body{
     display: inline-table;
     right: 3vw;
     top: -1vw;
+    transform: scale(1.1);
+    -webkit-transform: scale(1.1);
+    -moz-transform: scale(1.1);
+    -o-transform: scale(1.1);
 }
 #services > main #slider-controller{
     width: 10%;
@@ -761,7 +765,7 @@ html,body{
     width: 100%;
 }
 #services > main #slider-view .service-feed{
-    margin-left: -8%;
+    margin-left: -7%;
 }
 #services > main #slider-view-adaptive .service{
     width: 58vw;
@@ -844,14 +848,18 @@ html,body{
     float: left;
     display: inline-table;
     left: 4vw;
-    top: 2vw;
+    top: 3vw;
 }
 #analytics > main{
     width: 70%;
     float: right;
     display: inline-table;
-    top: -1vw;
+    top: -5%;
     right: 3vw;
+    transform: scale(1.1);
+    -webkit-transform: scale(1.1);
+    -moz-transform: scale(1.1);
+    -o-transform: scale(1.1);
 }
 #analytics > main #slider-controller{
     width: 10%;
@@ -960,7 +968,7 @@ html,body{
     float: left;
     display: inline-table;
     left: 4vw;
-    padding-top: 1vw;
+    padding-top: 3vw;
 }
 #estate > main{
     width: 70%;
@@ -968,6 +976,10 @@ html,body{
     display: inline-table;
     right: 4vw;
     top: -1vw;
+    transform: scale(1.1);
+    -webkit-transform: scale(1.1);
+    -moz-transform: scale(1.1);
+    -o-transform: scale(1.1);
 }
 #estate > main #slider-controller{
     width: 10%;
@@ -1008,7 +1020,7 @@ html,body{
     width: 100%;
 }
 #estate > main #slider-view .estat-feed{
-    margin-left: -6%;
+    margin-left: -5%;
 }
 #estate > main #slider-view .estat-feed .estat{
     width: 27%;
@@ -1120,14 +1132,18 @@ html,body{
     float: left;
     display: inline-table;
     left: 4vw;
-    top: 1vw;
+    top: 2vw;
 }
 #reviews > main{
     width: 70%;
     float: right;
     display: inline-table;
     right: 3vw;
-    top: -1vw;
+    top: -3%;
+    transform: scale(1.1);
+    -webkit-transform: scale(1.1);
+    -moz-transform: scale(1.1);
+    -o-transform: scale(1.1);
 }
 #reviews > main #slider-controller{
     width: 10%;
@@ -2255,6 +2271,12 @@ html,body{
 @media all and (min-width: 320px) and (max-width: 1024px){
     #services > header .add-but, #estate > header .add-but {
         margin-top: 2%;
+    }
+    #services > main, #analytics > main, #estate > main, #reviews > main{
+        transform: scale(1);
+        -webkit-transform: scale(1);
+        -moz-transform: scale(1);
+        -o-transform: scale(1);
     }
 }
 @media all and (min-width: 393px) and (max-width: 414px){
