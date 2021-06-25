@@ -1594,6 +1594,9 @@ html,body{
         top: 96px;
         margin-left: 0%;
     }
+    #analytics > main #slider-view .analytic-feed .analytic:nth-last-child(2) {
+        left: 2%;
+    }
     #analytics > main #slider-view .analytic-feed .analytic#with-title-image img {
         height: 125px;
     }
@@ -1991,6 +1994,12 @@ html,body{
     #reviews > main footer#slider-controller img {
         left: calc(-9% / 1.5);
     }
+    #analytics > main #slider-view .analytic-feed .analytic:nth-last-child(1) {
+        left: -2%;
+    }
+    #analytics > main #slider-view .analytic-feed .analytic:nth-last-child(2) {
+        left: -1%;
+    }
 }
 @media all and (min-width:1400px) and (max-width: 1600px){
     .header > #header_bottom {
@@ -2106,7 +2115,11 @@ html,body{
         margin-left: -5%;
     }
     #analytics > main #slider-view .analytic-feed .analytic:nth-last-child(2) {
-        left: 6%;
+        left: 7%;
+    }
+    #analytics > main #slider-view .analytic-feed .analytic:nth-last-child(1) {
+        left: 0%;
+        padding-right: 0px;
     }
 }
 @media all and (min-width:1680px) and (max-width: 1800px){
@@ -2127,7 +2140,11 @@ html,body{
         padding-top: 5%;
     }
     #analytics > main #slider-view .analytic-feed {
-        margin-left: -14%;
+        margin-left: -13%;
+    }
+    #analytics > main #slider-view .analytic-feed .analytic:nth-last-child(1) {
+        left: -2%;
+        padding-right: 0px;
     }
     #analytics > main #slider-view .analytic-feed .analytic{
         width: 27%;
@@ -2187,15 +2204,21 @@ html,body{
     #analytics > main{
     }
     #analytics > main #slider-view .analytic-feed .analytic:nth-last-child(1) {
-        left: -45px;
+        left: -51px;
     }
     #analytics > main #slider-view .analytic-feed .analytic:nth-last-child(2) {
-        left: 16px;
+        left: 12px;
         padding-right: 0px;
         width: 26%;
     }
     #analytics > main #slider-view .analytic-feed .analytic#with-title-image {
         margin-left: 1%;
+    }
+    #analytics > main #slider-view .analytic-feed {
+        margin-left: -14%;
+    }
+    #estate > main #slider-view .estat-feed .estat {
+        padding-right: 7px;
     }
 }
 @media all and (width: 1280px){
