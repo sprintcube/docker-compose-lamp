@@ -1108,7 +1108,7 @@ html,body{
 	color: lightgrey;
 }
 .rating-mini > span:before {
-	content: 'â˜…';
+	content: '★';
 }
 .rating-mini > span.active {
 	color: gold;
@@ -2141,7 +2141,8 @@ html,body{
     }
     #promo > main.swiper-container .promo-feed .promoblock {
         height: 490px;
-        width: 26vw;
+        width: 25%;
+        padding-right: 23px;
     }
     #news {
         padding-top: 5vw;
