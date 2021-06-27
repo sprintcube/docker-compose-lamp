@@ -707,7 +707,7 @@ html,body{
     float: right;
     display: inline-table;
     right: 3vw;
-    top: -1vw;
+    top: 8%;
     transform: scale(1.1);
     -webkit-transform: scale(1.1);
     -moz-transform: scale(1.1);
@@ -854,7 +854,7 @@ html,body{
     width: 70%;
     float: right;
     display: inline-table;
-    top: -5%;
+    top: 9%;
     right: 3vw;
     transform: scale(1.1);
     -webkit-transform: scale(1.1);
@@ -975,7 +975,7 @@ html,body{
     float: right;
     display: inline-table;
     right: 4vw;
-    top: -1vw;
+    top: 12%;
     transform: scale(1.1);
     -webkit-transform: scale(1.1);
     -moz-transform: scale(1.1);
@@ -1139,7 +1139,7 @@ html,body{
     float: right;
     display: inline-table;
     right: 3vw;
-    top: 3%;
+    top: 8%;
     transform: scale(1.1);
     -webkit-transform: scale(1.1);
     -moz-transform: scale(1.1);
