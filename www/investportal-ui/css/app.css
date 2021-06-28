@@ -1776,7 +1776,7 @@ html,body{
     }
     #reviews > main #slider-controller img {
         width: 34%;
-        left: calc(7% / 1.5);
+        left: calc(-10% / 1.5);
     }
     .rating-mini span {
         font-size: 18px;
@@ -1873,7 +1873,10 @@ html,body{
     }
     .header > #header_bottom_adaptive{ display: none; }
     #services > main #slider-view .service-feed .service {
-        height: 250px;
+        height: 220px;
+        position: relative;
+        left: -2%;
+        padding-left: 20px;
     }
     .header > #header_top {
         margin-left: 12vw;
@@ -1963,8 +1966,8 @@ html,body{
         margin-top: -8%;
     }
     #analytics > main #slider-view .analytic-feed .analytic{
-        width: 28%;
-        margin-left: 4%;
+        width: 29%;
+        margin-left: 3%;
     }
     #services > main {
         right: 3vw;
@@ -1986,19 +1989,23 @@ html,body{
         top: -8%;
     }
     #analytics > main #slider-controller img {
-        left: calc(24% / 1.5);
+        left: calc(-4% / 1.5);
     }
     #analytics > main footer#slider-controller img {
-        left: calc(-45% / 1.5);
+        left: calc(-4% / 1.5);
     }
     #reviews > main footer#slider-controller img {
         left: calc(-9% / 1.5);
     }
     #analytics > main #slider-view .analytic-feed .analytic:nth-last-child(1) {
-        left: -2%;
+        left: -5px;
     }
     #analytics > main #slider-view .analytic-feed .analytic:nth-last-child(2) {
-        left: -1%;
+        left: 0%;
+    }
+    #services {
+        height: 140px;
+        padding-bottom: 11vw;
     }
 }
 @media all and (min-width:1400px) and (max-width: 1600px){
@@ -2193,7 +2200,7 @@ html,body{
     #eventcalendar{ padding-top: 8%; }
     #services{ height: 196px; }
     #services > main #slider-view .service-feed .service {
-        height: 350px;
+        height: 305px;
         padding-bottom: 1%;
     }
     #analytics > main #slider-view .analytic-feed .analytic{
@@ -2239,7 +2246,7 @@ html,body{
         width: 32%;
     }
     #reviews > main footer#slider-controller img {
-        left: calc(-88% / 1.5);
+        left: calc(-115% / 1.5);
     }
     #estate > main #slider-view .estat-feed {
         margin-left: 0vw;
