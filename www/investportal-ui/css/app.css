@@ -1517,7 +1517,10 @@ html,body{
     }
     #analytics > main #slider-controller img {
         width: 40%;
-        left: -15%;
+        left: -30%;
+    }
+    #analytics > main footer#slider-controller img {
+        left: -25%;
     }
     #analytics > main #slider-view .analytic-feed .analytic h2 {
         font-size: 93%;
@@ -1995,7 +1998,7 @@ html,body{
         left: calc(-4% / 1.5);
     }
     #reviews > main footer#slider-controller img {
-        left: calc(-9% / 1.5);
+        left: calc(35% / 1.5);
     }
     #analytics > main #slider-view .analytic-feed .analytic:nth-last-child(1) {
         left: -5px;
@@ -2439,7 +2442,7 @@ html,body{
         margin-left: -2vw;
     }
     #estate > main {
-        margin-top: -20vw;
+        margin-top: 12%;
     }
     #analytics > main {
         margin-left: 35vw;

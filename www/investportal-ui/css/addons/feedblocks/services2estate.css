@@ -36,8 +36,18 @@
         left: calc(6% / 1.5);
     }
     #estate > main footer#slider-controller img.controls-chromium{
-        left: calc(-6% / 1.5);
+        left: calc(-14% / 1.5);
     }
+}
+@media all and (width: 1366px){
+    #estate > main header#slider-controller img.controls-chromium {
+        left: calc(-25% / 1.5);
+    }
+    #reviews > main #slider-controller img {
+        width: 34%;
+        left: calc(-30% / 1.5);
+    }
+    
 }
 @media all and (min-width: 1366px) and (max-width: 1400px){
     #services > main #slider-controller img.controls-chromium{
@@ -50,6 +60,6 @@
         left: calc(9% / 1.5);
     }
     #estate > main footer#slider-controller img.controls-chromium{
-        left: calc(-42% / 1.5);
+        left: calc(-20% / 1.5);
     }
 }
