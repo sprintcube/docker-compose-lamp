@@ -1334,7 +1334,7 @@ h4.title, p.descr{
     #link-switcher {
         display: none;
     }
-    #promo > main.swiper-container .promo-feed .promoblock, #investsearch > main.swiper-container .popular-objects .popular-object{ width: 95vw; }
+    #promo > main.swiper-container .promo-feed .promoblock, #investsearch > main.swiper-container .popular-objects .popular-object{width: 95vw;}
     #promo > main.swiper-container .promo-feed .promoblock::before, #promo > main.swiper-container .promo-feed .promoblock .promoblock-content{ width: 98%; }
     #promo > main.swiper-container .promo-feed .promoblock header {
         padding-right: 6vw;
@@ -2523,4 +2523,7 @@ h4.title, p.descr{
     #news > main #slider-view .news-feed .news .descr{
         font-size: 79%;
     }
+}
+@media all and (min-width: 600px) and (max-width: 639px){
+    #promo > main.swiper-container .promo-feed .promoblock{ height: 500px; }
 }
