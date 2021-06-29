@@ -1374,7 +1374,7 @@ h4.title, p.descr{
     #promo > header .marketing-info {
         display: none;
     }
-    #promo > main.swiper-container .promo-feed .promoblock, #investsearch > main.swiper-container .popular-objects .popular-object{width: 44vw;height: 400px;}
+    #promo > main.swiper-container .promo-feed .promoblock, #investsearch > main.swiper-container .popular-objects .popular-object{width: 44vw;height: 450px;}
     #promo > main.swiper-container .promo-feed .promoblock::before, #promo > main.swiper-container .promo-feed .promoblock .promoblock-content{width: 100%;}
 
     #promo > main.swiper-container .promo-feed .promoblock header {
@@ -1450,7 +1450,7 @@ h4.title, p.descr{
         position: relative;
     }
     .header > #header_bottom_adaptive footer #adaptive-window{ width: 50%; }
-    #estate > main { top: -23%; }
+    #estate > main { margin-top: -16%; }
 }
 @media all and (min-width:1024px) and (max-width: 1280px){
     .header > #header_top {
