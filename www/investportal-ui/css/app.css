@@ -1736,7 +1736,7 @@ h4.title, p.descr{
     }
     #services {
         height: 84px;
-        padding-bottom: 10vw;
+        padding-bottom: 14vw;
     }
     #services > main #slider-controller img {
         width: 34%;
@@ -1845,19 +1845,19 @@ h4.title, p.descr{
         margin-left: 4%;
     }
     #services > main {
-        top: -26%;
+        top: 15%;
     }
     #analytics > main {
-        top: -22%;
+        top: 24%;
         right: 4vw;
     }
     #estate > main {
         right: 3vw;
-        top: -9%;
+        top: -7%;
     }
     #reviews > main {
         right: 2vw;
-        top: -8%;
+        top: 2%;
     }
     #estate > main #slider-view .estat-feed {
         margin-left: 4%;
@@ -1977,10 +1977,10 @@ h4.title, p.descr{
     }
     #services > main {
         right: 3vw;
-        top: -9%;
+        top: 11%;
     }
     #analytics > main {
-        top: 3%;
+        top: 16%;
         right: 3vw;
     }
     #estate > main #slider-view .estat-feed {
@@ -1988,11 +1988,11 @@ h4.title, p.descr{
     }
     #estate > main {
         right: 2vw;
-        top: -7%;
+        top: 5%;
     }
     #reviews > main {
         right: 2vw;
-        top: -8%;
+        top: 2%;
     }
     #analytics > main #slider-controller img {
         left: calc(-4% / 1.5);
@@ -2270,7 +2270,6 @@ h4.title, p.descr{
         margin-top: 0%;
     }
     #estate > main {
-        top: -5vw;
     }
     #analytics > main #slider-view .analytic-feed .analytic:nth-last-child(1) {
         top: 1px;
@@ -2280,7 +2279,6 @@ h4.title, p.descr{
         margin-left: -8%;
     }
     #analytics > main {
-        top: 1vw;
     }
     #reviews {
         height: 241px;
