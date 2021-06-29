@@ -17,6 +17,9 @@ html,body{
     margin-top: 0%;
     margin-bottom: 0%;
 }
+h4.title, p.descr{
+    font-size: calc(87% / 2);
+}
 .header{
     width: 100%;
     height: 99px;
