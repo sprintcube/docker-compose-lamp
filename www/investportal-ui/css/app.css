@@ -2313,6 +2313,8 @@ h4.title, p.descr{
         -webkit-transform: scale(1);
         -moz-transform: scale(1);
         -o-transform: scale(1);
+        top: -3%;
+        right: 1vw;
     }
 }
 @media all and (min-width: 393px) and (max-width: 414px){
