@@ -41,8 +41,8 @@
 
 #investsearch > main.swiper-container .popular-objects .popular-object .popularobject-content {
   position: absolute;
-  top: 15px;
-  left: -2%;
+  top: 17px;
+  left: -3%;
   width: 99%;
   height: 100%;
   background-color: white;
@@ -56,16 +56,30 @@
   content: '';
   pointer-events: none;
   position: absolute;
+  top: -1px;
+  left: 0%;
+  z-index: -2;
+  width: 99%;
+  height: 101%;
+  background-color: white;
+  box-shadow: inherit;
+  padding-left: 5px;
+  padding-bottom: 2%;
+}
+#investsearch > main.swiper-container .popular-objects .popular-object::after {
+  content: '';
+  pointer-events: none;
+  position: absolute;
   top: 8px;
   left: -2%;
   z-index: -2;
   width: 99%;
-  height: 99%;
+  height: 98%;
   background-color: white;
   box-shadow: inherit;
-  padding-left: 5px;
+  padding-right: 5px;
+  padding-bottom: 4%;
 }
-
 #services > main #slider-view .service-feed .service,  #services > main #slider-view-adaptive .service{
   position: relative;
   z-index: 1;
@@ -150,7 +164,7 @@
 }
 @media all and (min-width: 320px) and (max-width: 640px){
   #investsearch > main.swiper-container .popular-objects .popular-object {
-    height: 480px;
+    height: 500px;
   }
 }
 @media all and (min-width: 640px) and (max-width: 1024px){
@@ -181,6 +195,6 @@
 }
 @media all and (min-width: 1600px){
   #investsearch > main.swiper-container .popular-objects .popular-object {
-    height: 450px;
+    height: 460px;
   }
 }

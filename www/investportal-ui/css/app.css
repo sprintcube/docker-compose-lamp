@@ -559,7 +559,7 @@ h4.title, p.descr{
     cursor: pointer;
 }
 #investsearch > main.swiper-container .popular-objects .popular-object header {
-    width: 100%;
+    width: 99%;
     background-color: #0079bf;
     color: white;
     margin-left: 0%;
@@ -580,10 +580,10 @@ h4.title, p.descr{
 }
 #investsearch > main.swiper-container .popular-objects .popular-object main{
     display: block;
-    width: 104%;
+    width: 103%;
 }
 #investsearch > main.swiper-container .popular-objects .popular-object footer{
-    width: 95%;
+    width: 92%;
     padding-left: 2%;
     padding-right: 8%;
     background-color: white;
@@ -1334,7 +1334,8 @@ h4.title, p.descr{
     #link-switcher {
         display: none;
     }
-    #promo > main.swiper-container .promo-feed .promoblock, #investsearch > main.swiper-container .popular-objects .popular-object{width: 95vw;}
+    #promo > main.swiper-container .promo-feed .promoblock, #investsearch > main.swiper-container .popular-objects .popular-object{width: 96vw;}
+    #investsearch > main.swiper-container .popular-objects .popular-object#object-chromium { margin-left: 9vw; }
     #promo > main.swiper-container .promo-feed .promoblock::before, #promo > main.swiper-container .promo-feed .promoblock .promoblock-content{ width: 98%; }
     #promo > main.swiper-container .promo-feed .promoblock header {
         padding-right: 6vw;
@@ -2318,6 +2319,9 @@ h4.title, p.descr{
         -o-transform: scale(1);
         top: -3%;
         right: 1vw;
+    }
+    #analytics > main #slider-view .analytic-feed .analytic h2, #analytics > main #slider-view-adaptive .analytic h2 {
+        padding-top: 5vw;
     }
 }
 @media all and (min-width: 393px) and (max-width: 414px){
