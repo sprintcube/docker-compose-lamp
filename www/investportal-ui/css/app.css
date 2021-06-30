@@ -1642,7 +1642,7 @@ h4.title, p.descr{
 
     #estate > main {
         right: 2vw;
-        top: -184%;
+        top: -89%;
     }
     #analytics > header {
         top: 5vw;
@@ -2320,6 +2320,8 @@ h4.title, p.descr{
         top: -3%;
         right: 1vw;
     }
+}
+@media all and (min-width: 320px) and (max-width: 1023px){
     #analytics > main #slider-view .analytic-feed .analytic h2, #analytics > main #slider-view-adaptive .analytic h2 {
         padding-top: 5vw;
     }
@@ -2454,7 +2456,7 @@ h4.title, p.descr{
         margin-left: -2vw;
     }
     #estate > main {
-        margin-top: 12%;
+        top: -46%;
     }
     #analytics > main {
         margin-left: 35vw;
