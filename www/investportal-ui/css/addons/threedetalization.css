@@ -57,7 +57,7 @@
   pointer-events: none;
   position: absolute;
   top: -1px;
-  left: 0%;
+  left: 1%;
   z-index: -2;
   width: 99%;
   height: 101%;
@@ -71,7 +71,7 @@
   pointer-events: none;
   position: absolute;
   top: 8px;
-  left: -2%;
+  left: -1%;
   z-index: -2;
   width: 99%;
   height: 98%;
