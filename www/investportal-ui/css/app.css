@@ -1346,7 +1346,12 @@ h4.title, p.descr{
     #investsearch > main.swiper-container .popular-objects .popular-object main {
         width: 103%;
     }
-
+    #services > main header#slider-controller-adaptive {
+        left: -12%;
+    }
+    #services > main footer#slider-controller-adaptive {
+        right: 4%;
+    }
     .footer{height: calc(295px * 5);}
     .footer > header {
         width: 100%;
