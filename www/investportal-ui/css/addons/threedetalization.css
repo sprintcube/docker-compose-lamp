@@ -22,14 +22,27 @@
   content: '';
   pointer-events: none;
   position: absolute;
-  top: 5px;
-  left: -1%;
+  top: -4px;
+  left: 1%;
   z-index: -2;
   width: 102%;
   height: 100%;
   background-color: white;
   box-shadow: inherit;
   padding-left: 6px;
+}
+#promo > main.swiper-container .promo-feed .promoblock::after {
+  content: '';
+  pointer-events: none;
+  position: absolute;
+  top: 5px;
+  left: -1%;
+  z-index: -2;
+  width: 100%;
+  height: 100%;
+  background-color: white;
+  box-shadow: inherit;
+  padding-right: 6px;
 }
 
 #investsearch > main.swiper-container .popular-objects .popular-object {
@@ -164,7 +177,7 @@
 }
 @media all and (min-width: 320px) and (max-width: 640px){
   #investsearch > main.swiper-container .popular-objects .popular-object {
-    height: 500px;
+    height: 470px;
   }
 }
 @media all and (min-width: 640px) and (max-width: 1024px){

@@ -559,7 +559,7 @@ h4.title, p.descr{
     cursor: pointer;
 }
 #investsearch > main.swiper-container .popular-objects .popular-object header {
-    width: 100%;
+    width: 99%;
     background-color: #0079bf;
     color: white;
     margin-left: 0%;
@@ -580,12 +580,12 @@ h4.title, p.descr{
 }
 #investsearch > main.swiper-container .popular-objects .popular-object main{
     display: block;
-    width: 104%;
+    width: 103%;
 }
 #investsearch > main.swiper-container .popular-objects .popular-object footer{
     width: 94%;
     padding-left: 2%;
-    padding-right: 8%;
+    padding-right: 4%;
     background-color: white;
     margin-top: -2%;
     padding-bottom: 4%;
@@ -2194,7 +2194,7 @@ h4.title, p.descr{
     #promo > main.swiper-container .promo-feed .promoblock {
         height: 490px;
         width: 25%;
-        padding-right: 23px;
+        padding-right: 26px;
     }
     #news {
         padding-top: 5vw;
@@ -2486,6 +2486,7 @@ h4.title, p.descr{
     #investsearch > main.swiper-container .popular-objects .popular-object {
         height: 390px;
     }
+    
 }
 @media all and (width: 1366px){
     #estate > main #slider-view .estat-feed {
