@@ -20,6 +20,9 @@ html,body{
 h4.title, p.descr{
     font-size: calc(87% / 2);
 }
+h4.title.gecko-fix, p.descr.gecko-fix{
+    font-size: calc(200% / 2);
+}
 .header{
     width: 100%;
     height: 99px;
@@ -716,6 +719,9 @@ h4.title, p.descr{
     -moz-transform: scale(1.1);
     -o-transform: scale(1.1);
 }
+#services > main.gecko-fix{
+    top: 35%;
+}
 #services > main #slider-controller{
     width: 10%;
     display: inline-table;
@@ -726,14 +732,26 @@ h4.title, p.descr{
     top: -114px;
     left: calc(13% / 1.5);
 }
+#services > main #slider-controller.gecko-fix img{
+    left: calc(42% / 1.5);
+}
 #services > main footer#slider-controller img{
     left: calc(-39% / 1.5);
+}
+#services > main footer#slider-controller.gecko-fix img{
+    left: calc(-70% / 1.5);
 }
 #analytics > main footer#slider-controller img{
     left: calc(-39% / 1.5);
 }
+#analytics > main footer#slider-controller.gecko-fix img{
+    left: calc(-70% / 1.5);
+}
 #estate > main footer#slider-controller img{
     left: calc(-21% / 1.5);
+}
+#estate > main footer#slider-controller.gecko-fix img {
+    left: calc(-50% / 1.5);
 }
 #reviews > main footer#slider-controller img{
     left: calc(-34% / 1.5);
@@ -873,6 +891,9 @@ h4.title, p.descr{
     position: relative;
     top: 93px;
 }
+#analytics > main #slider-controller.gecko-fix img{
+    left: calc(42% / 1.5);
+}
 #analytics > main #slider-controller-adaptive{
     width: 10%;
     height: 370px;
@@ -891,6 +912,9 @@ h4.title, p.descr{
 #analytics > main footer#slider-controller-adaptive{
     right: -24%;
     top: 0;
+}
+#analytics > main footer#slider-controller-adaptive.gecko-fix{
+    right: -23%;
 }
 #analytics > main #slider-controller-adaptive img:hover{
     cursor: pointer;
@@ -984,6 +1008,9 @@ h4.title, p.descr{
     -moz-transform: scale(1.1);
     -o-transform: scale(1.1);
 }
+#estate > main.gecko-fix{
+    top: 26%;
+}
 #estate > main #slider-controller{
     width: 10%;
     display: inline-table;
@@ -992,6 +1019,9 @@ h4.title, p.descr{
     width: 26%;
     position: relative;
     top: -50px;
+}
+#estate > main #slider-controller.gecko-fix img {
+    left: calc(56% / 1.5);
 }
 #estate > main #slider-controller-adaptive{
     width: 10%;
@@ -1157,6 +1187,12 @@ h4.title, p.descr{
     position: relative;
     top: 84px;
 }
+#reviews > main #slider-controller.gecko-fix img{
+    left: calc(40% / 1.5);
+}
+#reviews > main footer#slider-controller.gecko-fix img {
+    left: calc(-62% / 1.5);
+}
 #reviews > main #slider-controller-adaptive{
     width: 8%;
     height: 240px;
@@ -1175,6 +1211,9 @@ h4.title, p.descr{
 #reviews > main footer#slider-controller-adaptive{
     right: 18%;
     top: 0;
+}
+#reviews > main footer#slider-controller-adaptive.gecko-fix{
+    right: 20%;
 }
 #reviews > main #slider-controller-adaptive img:hover{
     cursor: pointer;
@@ -1336,7 +1375,6 @@ h4.title, p.descr{
     }
     #promo > main.swiper-container .promo-feed .promoblock, #investsearch > main.swiper-container .popular-objects .popular-object{width: 96vw;}
     #investsearch > main.swiper-container .popular-objects .popular-object#object-chromium { margin-left: 9vw; }
-    #promo > main.swiper-container .promo-feed .promoblock::before, #promo > main.swiper-container .promo-feed .promoblock .promoblock-content{ width: 98%; }
     #promo > main.swiper-container .promo-feed .promoblock header {
         padding-right: 6vw;
     }
@@ -1358,6 +1396,7 @@ h4.title, p.descr{
         width: 100%;
         position: relative;
     }
+
 }
 @media all and (min-width: 640px) and (max-width: 1024px){
     .header > #header_bottom, .header > #header_top .ht_header span{
@@ -1381,7 +1420,6 @@ h4.title, p.descr{
         display: none;
     }
     #promo > main.swiper-container .promo-feed .promoblock, #investsearch > main.swiper-container .popular-objects .popular-object{width: 44vw;height: 450px;}
-    #promo > main.swiper-container .promo-feed .promoblock::before, #promo > main.swiper-container .promo-feed .promoblock .promoblock-content{width: 100%;}
 
     #promo > main.swiper-container .promo-feed .promoblock header {
         padding-right: 2vw;
@@ -1430,6 +1468,9 @@ h4.title, p.descr{
     #analytics > main footer#slider-controller-adaptive {
         right: -19%;
     }
+    #analytics > main footer#slider-controller-adaptive.gecko-fix {
+        right: -17%;
+    }
     #reviews > main #slider-controller-adaptive img {
         width: 51%;
     }
@@ -1438,6 +1479,9 @@ h4.title, p.descr{
     }
     #reviews > main footer#slider-controller-adaptive {
         right: 27%;
+    }
+    #reviews > main footer#slider-controller-adaptive.gecko-fix {
+        right: 26%;
     }
     #services > main #slider-controller-adaptive img {
         width: 61%;
@@ -1508,6 +1552,12 @@ h4.title, p.descr{
     #services > main #slider-controller img {
         width: 35%;
     }
+    #services > main #slider-controller.gecko-fix img {
+        left: calc(-10% / 1.5);
+    }
+    #services > main footer#slider-controller.gecko-fix img {
+        left: calc(-3% / 1.5);
+    }
     #services > main #slider-view .service-feed .service header {
         font-size: 53%;
     }
@@ -1527,6 +1577,21 @@ h4.title, p.descr{
     #analytics > main #slider-controller img {
         width: 40%;
         left: -30%;
+    }
+    #estate > main #slider-controller.gecko-fix img {
+        left: calc(-5% / 1.5);
+    }
+    #estate > main footer#slider-controller.gecko-fix img {
+        left: calc(182% / 1.5);
+    }
+    #reviews > main footer#slider-controller.gecko-fix img {
+        left: calc(1% / 1.5);
+    }
+    #analytics > main #slider-controller.gecko-fix img {
+        left: calc(-50% / 1.5);
+    }
+    #analytics > main footer#slider-controller.gecko-fix img {
+        left: calc(-24% / 1.5);
     }
     #analytics > main footer#slider-controller img {
         left: -25%;
@@ -1651,6 +1716,7 @@ h4.title, p.descr{
         position: relative;
         left: 1%;
     }
+
 }
 @media all and (min-width:1280px) and (max-width: 1366px){
     .header > #header_bottom {
@@ -1747,6 +1813,9 @@ h4.title, p.descr{
     #services > main #slider-controller img {
         width: 34%;
     }
+    #services > main footer#slider-controller.gecko-fix img {
+        left: calc(-50% / 1.5);
+    }
     #services > main #slider-view .service-feed .service header {
         font-size: 64%;
     }
@@ -1789,6 +1858,12 @@ h4.title, p.descr{
     #reviews > main #slider-controller img {
         width: 34%;
         left: calc(-10% / 1.5);
+    }
+    #reviews > main #slider-controller.gecko-fix img {
+        left: calc(8% / 1.5);
+    }
+    #reviews > main footer#slider-controller.gecko-fix img {
+        left: calc(-13% / 1.5);
     }
     .rating-mini span {
         font-size: 18px;
@@ -1857,6 +1932,12 @@ h4.title, p.descr{
         top: 24%;
         right: 4vw;
     }
+    #analytics > main.gecko-fix{
+        top: 0%;
+    }
+    #services > main footer#slider-controller.gecko-fix img {
+        left: calc(-50% / 1.5);
+    }
     #estate > main {
         right: 3vw;
         top: -7%;
@@ -1874,6 +1955,27 @@ h4.title, p.descr{
     #reviews > main footer#slider-controller {
         position: relative;
         left: -4%;
+    }
+    #analytics > main #slider-controller.gecko-fix img {
+        left: calc(37% / 1.5);
+    }
+    #analytics > main footer#slider-controller.gecko-fix img {
+        left: calc(-38% / 1.5);
+    }
+    #estate > main #slider-controller.gecko-fix img {
+        left: calc(20% / 1.5);
+    }
+    #estate > main footer#slider-controller.gecko-fix img {
+        left: calc(-54% / 1.5);
+    }
+    #estate > main.gecko-fix {
+        top: 1%;
+    }
+    #services > main.gecko-fix #slider-view .service-feed {
+        margin-top: 3%;
+    }
+    #eventcalendar.gecko-fix > main .calendar footer {
+        margin-top: 1%;
     }
 }
 @media all and (min-width:1366px) and (max-width: 1400px){
@@ -2019,6 +2121,21 @@ h4.title, p.descr{
         height: 140px;
         padding-bottom: 11vw;
     }
+    #reviews > main #slider-controller.gecko-fix img {
+        left: calc(55% / 1.5);
+    }
+    #estate > main.gecko-fix {
+        top: 18%;
+    }
+    #reviews > main footer#slider-controller.gecko-fix img, #estate > main footer#slider-controller.gecko-fix img {
+        left: calc(-75% / 1.5);
+    }
+    #analytics > main footer#slider-controller.gecko-fix img {
+        left: calc(-40% / 1.5);
+    }
+    #services > main footer#slider-controller.gecko-fix img {
+        left: calc(-30% / 1.5);
+    }
 }
 @media all and (min-width:1400px) and (max-width: 1600px){
     .header > #header_bottom {
@@ -2079,6 +2196,9 @@ h4.title, p.descr{
     }
     #analytics > main #slider-view .analytic-feed .analytic:nth-last-child(1) {
         left: -6%;
+    }
+    #estate > main footer#slider-controller.gecko-fix img {
+        left: calc(-40% / 1.5);
     }
 }
 @media all and (min-width:1600px) and (max-width: 1800px){
@@ -2303,6 +2423,15 @@ h4.title, p.descr{
     .header > #header_bottom_adaptive {
         margin-right: 11%;
     }
+    #reviews > main #slider-controller.gecko-fix img {
+        left: calc(9% / 1.5);
+    }
+    #reviews > main footer#slider-controller.gecko-fix img {
+        left: calc(-129% / 1.5);
+    }
+    #services > main footer#slider-controller.gecko-fix img {
+        left: calc(-56% / 1.5);
+    }
 }
 @media all and (width:1024px){
     .footer { height: calc(270px * 2); }
@@ -2319,6 +2448,9 @@ h4.title, p.descr{
         -o-transform: scale(1);
         top: -3%;
         right: 1vw;
+    }
+    #estate > main.gecko-fix {
+        top: -5%;
     }
 }
 @media all and (min-width: 320px) and (max-width: 1023px){
@@ -2538,4 +2670,5 @@ h4.title, p.descr{
 }
 @media all and (min-width: 600px) and (max-width: 639px){
     #promo > main.swiper-container .promo-feed .promoblock{ height: 500px; }
+    #promo.gecko-fix > main.swiper-container .promo-feed .promoblock{ height: 540px; }
 }

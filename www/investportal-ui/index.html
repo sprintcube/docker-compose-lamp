@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="css/app.css" />
     <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
     <script src="https://yastatic.net/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Detect.js/2.2.2/detect.min.js" integrity="sha512-iNuMM5cmiXDvk4VCTp6UEbDwYy/dA3CFTTYKB6/V+LD62S58TQZ+sykXzhmVT1QvqHD39ZhecsPGXjZUaIuSWQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
     <script src="https://kit.fontawesome.com/97c3285af2.js" crossorigin="anonymous"></script>
     <style>
@@ -70,8 +71,14 @@
            #promo > main.swiper-container .promo-feed {
                margin-left: -3vw;
            }
+           #promo.gecko-fix > main.swiper-container .promo-feed {
+               margin-left: -7vw;
+           }
            #investsearch > main.swiper-container .popular-objects {
                margin-left: 6vw;
+           }
+           #investsearch.gecko-fix > main.swiper-container .popular-objects {
+               margin-left: -2vw;
            }
            #news > header, 
            #investsearch > header, 
@@ -101,6 +108,9 @@
                float: left;
                left: 13vw;
                top: 6vw;
+           }
+           #services > main.gecko-fix {
+                top: 5%;
            }
            #analytics {
                height: calc(220px * 2);
@@ -144,6 +154,7 @@
            }
            #eventcalendar > main .calendar .event-location { font-size: 90%; }
            #eventcalendar > main .calendar a { font-size: 95%; }
+           #eventcalendar.gecko-fix > main .calendar a {font-size: 83%;}
            #investsearch > header a { margin-left: 33%; }
            #investsearch > header .add-but { width: 31%; }
            .swiper-button-prev, .swiper-button-next {
@@ -160,8 +171,14 @@
            #promo > main.swiper-container .promo-feed {
                margin-left: 4vw;
            }
+           #promo.gecko-fix > main.swiper-container .promo-feed {
+               margin-left: 0vw;
+           }
            #investsearch > main.swiper-container .popular-objects {
                margin-left: 16vw;
+           }
+           #investsearch.gecko-fix > main.swiper-container .popular-objects {
+                margin-left: 3vw;
            }
            #news > header, 
            #investsearch > header, 
@@ -173,7 +190,9 @@
                display: block;
                width: 100%; 
            }
-
+           #services > main.gecko-fix {
+                top: 0%;
+           }
            #news {
                padding-top: 32%;
                padding-bottom: 32%;
@@ -225,7 +244,7 @@
                width: 27%;
                margin-left: -3%;
            }
-           #eventcalendar > main .calendar .date { top: 7px; }
+           #eventcalendar > main .calendar .date { top: 7px; margin-left: 8%; }
            #eventcalendar > main .calendar footer {
                float: left;
                width: 100%;
@@ -290,6 +309,9 @@
            #investsearch > main.swiper-container .popular-objects {
                margin-left: -11vw;
            }
+           #investsearch.gecko-fix > main.swiper-container .popular-objects {
+                margin-left: 35vw;
+           }
            .swiper-button-prev, .swiper-button-next {
                width: 4vw;
                height: 429px;
@@ -304,8 +326,14 @@
            #promo > main.swiper-container .promo-feed {
                margin-left: 8vw;
            }
+           #promo.gecko-fix > main.swiper-container .promo-feed {
+                margin-left: 6vw;
+           }
            #investsearch > main.swiper-container .popular-objects {
                margin-left: -11vw;
+           }
+           #investsearch.gecko-fix > main.swiper-container .popular-objects {
+                margin-left: 8vw;
            }
            .swiper-button-prev, .swiper-button-next {
                width: 5vw;
@@ -324,6 +352,9 @@
            #investsearch > main.swiper-container .popular-objects {
                margin-left: -11vw;
            }
+           #investsearch.gecko-fix > main.swiper-container .popular-objects {
+                margin-left: 8vw;
+           }
            .swiper-button-prev, .swiper-button-next {
                width: 5vw;
                height: 385px;
@@ -341,6 +372,9 @@
            #investsearch > main.swiper-container .popular-objects {
                margin-left: -11vw;
            }
+           #investsearch.gecko-fix > main.swiper-container .popular-objects {
+               margin-left: -19vw;
+           }
        }
        @media all and (min-width: 1680px) and (max-width: 1800px){
            #promo > main.swiper-container .promo-feed {
@@ -348,6 +382,9 @@
            }
            #investsearch > main.swiper-container .popular-objects {
                margin-left: -11vw;
+           }
+           #investsearch.gecko-fix > main.swiper-container .popular-objects {
+                margin-left: 8vw;
            }
            .swiper-button-prev, .swiper-button-next {
                width: 7vw;
@@ -365,6 +402,9 @@
            }
            #investsearch > main.swiper-container .popular-objects {
                margin-left: -11vw;
+           }
+           #investsearch.gecko-fix > main.swiper-container .popular-objects {
+                margin-left: 8vw;
            }
            .swiper-button-prev, .swiper-button-next {
                width: 9vw;
@@ -500,6 +540,9 @@
             position: relative;
             top: -199px;
            }
+           #estate > main.gecko-fix #slider-view .estat-feed .estat:nth-last-child(1) {
+            top: -186px;
+           }
            #estate > main header#slider-controller img.controls-chromium {
             left: 13%;
            }
@@ -546,6 +589,12 @@
            }
            #investsearch > main.swiper-container .popular-objects .popular-object {
             width: 26vw;
+           }
+           #promo.gecko-fix > main.swiper-container .promo-feed {
+                margin-left: 6vw;
+           }
+           #investsearch.gecko-fix > main.swiper-container .popular-objects {
+            margin-left: 8vw;
            }
        }   
        @media all and (min-width: 960px) and (max-width: 1023px){
