@@ -2340,8 +2340,6 @@ h4.title.gecko-fix, p.descr.gecko-fix{
         margin-left: 8%;
         padding-right: 14px;
     }
-    #analytics > main{
-    }
     #analytics > main #slider-view .analytic-feed .analytic:nth-last-child(1) {
         left: -51px;
     }
@@ -2395,16 +2393,12 @@ h4.title.gecko-fix, p.descr.gecko-fix{
     #services > main #slider-view .service-feed {
         margin-top: 0%;
     }
-    #estate > main {
-    }
     #analytics > main #slider-view .analytic-feed .analytic:nth-last-child(1) {
         top: 1px;
         left: -2%;
     }
     #analytics > main #slider-view .analytic-feed {
         margin-left: -8%;
-    }
-    #analytics > main {
     }
     #reviews {
         height: 241px;
