@@ -1989,8 +1989,8 @@ h4.title.gecko-fix, p.descr.gecko-fix{
     #services > main #slider-view .service-feed .service {
         height: 220px;
         position: relative;
-        left: -2%;
-        padding-left: 20px;
+        left: -1%;
+        padding-left: 24px;
     }
     .header > #header_top {
         margin-left: 12vw;
@@ -2052,7 +2052,7 @@ h4.title.gecko-fix, p.descr.gecko-fix{
     #eventcalendar > main .calendar main img {
         width: 90px;
     }
-    #services > main #slider-view .service-feed .service, #analytics > main #slider-view .analytic-feed .analytic, #estate > main #slider-view .estat-feed .estat{width: 27%;margin-left: 3%;padding-right: 2px;}
+    #services > main #slider-view .service-feed .service, #analytics > main #slider-view .analytic-feed .analytic, #estate > main #slider-view .estat-feed .estat{width: 27%;margin-left: 2%;padding-right: 2px;}
     #reviews > main #slider-view .review-feed .review#with-title-image header img {
         left: 0%;
     }
@@ -2122,12 +2122,15 @@ h4.title.gecko-fix, p.descr.gecko-fix{
         padding-bottom: 11vw;
     }
     #reviews > main #slider-controller.gecko-fix img {
-        left: calc(55% / 1.5);
+        left: calc(23% / 1.5);
     }
     #estate > main.gecko-fix {
         top: 18%;
     }
-    #reviews > main footer#slider-controller.gecko-fix img, #estate > main footer#slider-controller.gecko-fix img {
+    #reviews > main footer#slider-controller.gecko-fix img {
+        left: calc(-20% / 1.5);
+    }
+    #estate > main footer#slider-controller.gecko-fix img {
         left: calc(-75% / 1.5);
     }
     #analytics > main footer#slider-controller.gecko-fix img {
