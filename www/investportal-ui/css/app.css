@@ -21,7 +21,7 @@ h4.title, p.descr{
     font-size: calc(87% / 2);
 }
 h4.title.gecko-fix, p.descr.gecko-fix{
-    font-size: calc(200% / 2);
+    font-size: calc(180% / 2);
 }
 .header{
     width: 100%;
@@ -1553,7 +1553,7 @@ h4.title.gecko-fix, p.descr.gecko-fix{
         width: 35%;
     }
     #services > main #slider-controller.gecko-fix img {
-        left: calc(-10% / 1.5);
+        left: calc(5% / 1.5);
     }
     #services > main footer#slider-controller.gecko-fix img {
         left: calc(-3% / 1.5);
@@ -1579,19 +1579,19 @@ h4.title.gecko-fix, p.descr.gecko-fix{
         left: -30%;
     }
     #estate > main #slider-controller.gecko-fix img {
-        left: calc(-5% / 1.5);
+        left: calc(13% / 1.5);
     }
     #estate > main footer#slider-controller.gecko-fix img {
-        left: calc(182% / 1.5);
+        left: calc(180% / 1.5);
     }
     #reviews > main footer#slider-controller.gecko-fix img {
-        left: calc(1% / 1.5);
+        left: calc(-20% / 1.5);
     }
     #analytics > main #slider-controller.gecko-fix img {
-        left: calc(-50% / 1.5);
+        left: calc(-34% / 1.5);
     }
     #analytics > main footer#slider-controller.gecko-fix img {
-        left: calc(-24% / 1.5);
+        left: calc(-31% / 1.5);
     }
     #analytics > main footer#slider-controller img {
         left: -25%;
@@ -1620,6 +1620,10 @@ h4.title.gecko-fix, p.descr.gecko-fix{
         top: 7vw;
         left: 23%;
     }
+    #reviews > main #slider-controller.gecko-fix img {
+        left: calc(55% / 1.5);
+    }
+
     #promo > main.swiper-container .promo-feed .promoblock footer .info {
         margin-top: 47%;
     }
@@ -2142,6 +2146,19 @@ h4.title.gecko-fix, p.descr.gecko-fix{
     #services > main.gecko-fix {
         margin-top: -2%;
     }
+    #services > main #slider-controller.gecko-fix img {
+        left: calc(25% / 1.5);
+    }
+    #analytics > main #slider-controller.gecko-fix img {
+        left: calc(31% / 1.5);
+    }
+    #estate > main #slider-controller.gecko-fix img {
+        left: calc(13% / 1.5);
+    }
+    #reviews > main #slider-controller.gecko-fix img {
+        left: calc(15% / 1.5);
+    }
+
 }
 @media all and (min-width:1400px) and (max-width: 1600px){
     .header > #header_bottom {

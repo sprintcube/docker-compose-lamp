@@ -11,8 +11,9 @@
     <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
     <script src="https://kit.fontawesome.com/97c3285af2.js" crossorigin="anonymous"></script>
     <style>
+
          
-        .add-but{
+.add-but{
            text-align: center;
            color: gray;
            background-color: #f0f3f4;
@@ -292,6 +293,9 @@
            #investsearch > main.swiper-container .popular-objects {
                margin-left: 17vw;
            }
+           #investsearch.gecko-fix > main.swiper-container .popular-objects {
+               margin-left: 7vw;
+           }
            .swiper-button-prev, .swiper-button-next {
                width: 5vw;
                height: 364px;
@@ -327,7 +331,7 @@
                margin-left: 8vw;
            }
            #promo.gecko-fix > main.swiper-container .promo-feed {
-                margin-left: 6vw;
+                margin-left: 8vw;
            }
            #investsearch > main.swiper-container .popular-objects {
                margin-left: -11vw;
@@ -497,7 +501,19 @@
                height: calc(99px * 3);
            }
            #estate > header{
-               margin-top: -19%;
+               top: -19%;
+           }
+           #estate > header.gecko-fix {
+                top: -29%;
+           }
+           #estate > main.gecko-fix {
+                top: -71%;
+           }
+           #reviews > main.gecko-fix {
+            top: -5%;
+           }
+           #services > header .add-but.gecko-fix, #estate > header .add-but.gecko-fix {
+                width: 15%;
            }
        }
        @media all and (width: 1024px){
@@ -630,6 +646,7 @@
         }
        }
        .footer { overflow: hidden; }
+    
     </style>
 </head>
 <body>
