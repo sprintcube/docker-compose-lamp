@@ -1676,7 +1676,7 @@ h4.title.gecko-fix, p.descr.gecko-fix{
         margin-left: 0%;
     }
     #analytics > main #slider-view .analytic-feed .analytic:nth-last-child(2) {
-        left: 2%;
+        left: 0%;
     }
     #analytics > main #slider-view .analytic-feed .analytic#with-title-image img {
         height: 125px;
@@ -1937,7 +1937,7 @@ h4.title.gecko-fix, p.descr.gecko-fix{
         right: 4vw;
     }
     #analytics > main.gecko-fix{
-        top: 0%;
+        top: 15%;
     }
     #services > main footer#slider-controller.gecko-fix img {
         left: calc(-50% / 1.5);
@@ -1961,16 +1961,16 @@ h4.title.gecko-fix, p.descr.gecko-fix{
         left: -4%;
     }
     #analytics > main #slider-controller.gecko-fix img {
-        left: calc(37% / 1.5);
+        left: calc(62% / 1.5);
     }
     #analytics > main footer#slider-controller.gecko-fix img {
-        left: calc(-38% / 1.5);
+        left: calc(-104% / 1.5);
     }
     #estate > main #slider-controller.gecko-fix img {
-        left: calc(20% / 1.5);
+        left: calc(30% / 1.5);
     }
     #estate > main footer#slider-controller.gecko-fix img {
-        left: calc(-54% / 1.5);
+        left: calc(-33% / 1.5);
     }
     #estate > main.gecko-fix {
         top: 1%;
@@ -2119,7 +2119,7 @@ h4.title.gecko-fix, p.descr.gecko-fix{
         left: -5px;
     }
     #analytics > main #slider-view .analytic-feed .analytic:nth-last-child(2) {
-        left: 0%;
+        left: -1%;
     }
     #services {
         height: 140px;
@@ -2157,6 +2157,11 @@ h4.title.gecko-fix, p.descr.gecko-fix{
     }
     #reviews > main #slider-controller.gecko-fix img {
         left: calc(15% / 1.5);
+    }
+    #analytics > main #slider-view .analytic-feed .analytic:nth-last-child(1) {
+        left: -12px;
+        padding-left: 4px;
+        top: 0;
     }
 
 }
@@ -2441,10 +2446,10 @@ h4.title.gecko-fix, p.descr.gecko-fix{
         margin-right: 11%;
     }
     #reviews > main #slider-controller.gecko-fix img {
-        left: calc(9% / 1.5);
+        left: calc(19% / 1.5);
     }
     #reviews > main footer#slider-controller.gecko-fix img {
-        left: calc(-129% / 1.5);
+        left: calc(-135% / 1.5);
     }
     #services > main footer#slider-controller.gecko-fix img {
         left: calc(-56% / 1.5);
