@@ -343,6 +343,8 @@ h4.title.gecko-fix, p.descr.gecko-fix{
     margin-top: 13px;
     color: white;
     text-decoration: none;
+    position: relative;
+    top: -7%;
 }
 #promo > main.swiper-container .promo-feed .promoblock header strong{
     display: inline-table;
@@ -575,6 +577,8 @@ h4.title.gecko-fix, p.descr.gecko-fix{
     margin-left: 4%;
     margin-top: 1%;
     font-size: 93%;
+    position: relative;
+    top: 10px;
 }
 #investsearch > main.swiper-container .popular-objects .popular-object main img{
     width: 100%;
@@ -1539,6 +1543,7 @@ h4.title.gecko-fix, p.descr.gecko-fix{
     }
     #investsearch > main.swiper-container .popular-objects .popular-object header h3 {
         font-size: 58%;
+        top: 0px;
     }
     #investsearch > main.swiper-container .popular-objects .popular-object footer .info span:nth-child(2) {
         font-size: 63%;
@@ -1803,6 +1808,7 @@ h4.title.gecko-fix, p.descr.gecko-fix{
     }
     #investsearch > main.swiper-container .popular-objects .popular-object header h3 {
         font-size: 58%;
+        top: 0px;
     }
     #investsearch > main.swiper-container .popular-objects .popular-object footer .info span:nth-child(2) {
         font-size: 74%;
@@ -2016,6 +2022,9 @@ h4.title.gecko-fix, p.descr.gecko-fix{
         height: 400px;
         width: 26vw;
     }
+    #promo.gecko-fix > main.swiper-container .promo-feed .promoblock {
+        height: 405px;
+    }
     #promo > header .marketing-info {
         margin-top: -10vw;
         margin-right: -3%;
@@ -2032,6 +2041,7 @@ h4.title.gecko-fix, p.descr.gecko-fix{
     }
     #investsearch > main.swiper-container .popular-objects .popular-object header h3 {
         font-size: 64%;
+        top: 1px;
     }
     #investsearch > main.swiper-container .popular-objects .popular-object main img {
         height: 194px;
@@ -2132,10 +2142,10 @@ h4.title.gecko-fix, p.descr.gecko-fix{
         top: 18%;
     }
     #reviews > main footer#slider-controller.gecko-fix img {
-        left: calc(-20% / 1.5);
+        left: calc(5% / 1.5);
     }
     #estate > main footer#slider-controller.gecko-fix img {
-        left: calc(-75% / 1.5);
+        left: calc(-56% / 1.5);
     }
     #analytics > main footer#slider-controller.gecko-fix img {
         left: calc(-40% / 1.5);
@@ -2193,6 +2203,7 @@ h4.title.gecko-fix, p.descr.gecko-fix{
     }
     #investsearch > main.swiper-container .popular-objects .popular-object header h3 {
         font-size: 79%;
+        top: 0px;
     }
     #investsearch > main.swiper-container .popular-objects .popular-object main img {
         height: 194px;
@@ -2248,6 +2259,7 @@ h4.title.gecko-fix, p.descr.gecko-fix{
     }
     #investsearch > main.swiper-container .popular-objects .popular-object header h3 {
         font-size: 79%;
+        top: 0px;
     }
     #investsearch > header a {
         margin-left: 150px;
@@ -2344,6 +2356,9 @@ h4.title.gecko-fix, p.descr.gecko-fix{
         width: 25%;
         padding-right: 26px;
     }
+    #promo.gecko-fix > main.swiper-container .promo-feed .promoblock {
+        height: 480px;
+    }
     #news {
         padding-top: 5vw;
     }
@@ -2353,6 +2368,7 @@ h4.title.gecko-fix, p.descr.gecko-fix{
     }
     #investsearch > main.swiper-container .popular-objects .popular-object header h3 {
         margin-top: 3%;
+        top: 3px;
     }
     #investsearch > main.swiper-container .popular-objects .popular-object {
         height: 517px;

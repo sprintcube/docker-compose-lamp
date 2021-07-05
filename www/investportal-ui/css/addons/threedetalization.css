@@ -5,7 +5,7 @@
   box-shadow: 0 0 5px 1px grey;
 }
 #promo.gecko-fix > main.swiper-container .promo-feed .promoblock {
-  height: 470px;
+  height: 430px;
 }
 #promo > main.swiper-container .promo-feed .promoblock .promoblock-content {
   position: absolute;
@@ -72,10 +72,10 @@
   pointer-events: none;
   position: absolute;
   top: -1px;
-  left: 1%;
+  left: 0%;
   z-index: -2;
   width: 99%;
-  height: 101%;
+  height: 99%;
   background-color: white;
   box-shadow: inherit;
   padding-left: 5px;
@@ -86,10 +86,10 @@
   pointer-events: none;
   position: absolute;
   top: 8px;
-  left: -1%;
+  right: 2%;
   z-index: -2;
   width: 99%;
-  height: 98%;
+  height: 96%;
   background-color: white;
   box-shadow: inherit;
   padding-right: 5px;
@@ -116,15 +116,26 @@
   content: '';
   pointer-events: none;
   position: absolute;
-  top: 5px;
-  left: -5px;
+  top: -2px;
+  left: 2%;
   z-index: -2;
   width: 100%;
-  height: 100%;
+  height: 105%;
   background-color: white;
   box-shadow: inherit;
 }
-
+#services > main #slider-view .service-feed .service::after,  #services > main #slider-view-adaptive .service::after {
+  content: '';
+  pointer-events: none;
+  position: absolute;
+  top: 5px;
+  right: 1%;
+  z-index: -2;
+  width: 100%;
+  height: 105%;
+  background-color: white;
+  box-shadow: inherit;
+}
 #estate > main #slider-view .estat-feed .estat,  #estate > main #slider-view-adaptive .estat{
   position: relative;
   z-index: 1;
@@ -193,6 +204,9 @@
 @media all and (min-width: 1024px) and (max-width: 1280px){
   #promo > main.swiper-container .promo-feed .promoblock .promoblock-content {
     height: 376px;
+  }
+  #promo.gecko-fix > main.swiper-container .promo-feed .promoblock .promoblock-content {
+    height: 430px;
   }
   #investsearch > main.swiper-container .popular-objects .popular-object {
     height: 340px;
