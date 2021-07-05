@@ -573,6 +573,9 @@ h4.title.gecko-fix, p.descr.gecko-fix{
     padding-right: 0vw;
     padding-left: 4%;
 }
+#investsearch.gecko-fix > main.swiper-container .popular-objects .popular-object header {
+    width: 98%;
+}
 #investsearch > main.swiper-container .popular-objects .popular-object header h3{
     margin-left: 4%;
     margin-top: 1%;
@@ -588,6 +591,9 @@ h4.title.gecko-fix, p.descr.gecko-fix{
 #investsearch > main.swiper-container .popular-objects .popular-object main{
     display: block;
     width: 103%;
+}
+#investsearch.gecko-fix > main.swiper-container .popular-objects .popular-object main{
+    width: 102%;
 }
 #investsearch > main.swiper-container .popular-objects .popular-object footer{
     width: 94%;
@@ -2230,11 +2236,12 @@ h4.title.gecko-fix, p.descr.gecko-fix{
         margin-top: -5%;
     }
     #analytics > main #slider-view .analytic-feed .analytic{
-        width: 27%;
+        width: 26%;
         margin-left: 8%;
     }
     #analytics > main #slider-view .analytic-feed .analytic:nth-last-child(1) {
-        left: -6%;
+        left: -4%;
+        padding-right: 5px;
     }
     #estate > main footer#slider-controller.gecko-fix img {
         left: calc(-40% / 1.5);
@@ -2266,7 +2273,7 @@ h4.title.gecko-fix, p.descr.gecko-fix{
         margin-top: 1px;
     }
     #eventcalendar > main .calendar footer {
-        margin-top: 2%;
+        margin-top: 1%;
         font-size: 100%;
     }
     #eventcalendar > main .calendar main img {
@@ -2294,10 +2301,10 @@ h4.title.gecko-fix, p.descr.gecko-fix{
         margin-left: -5%;
     }
     #analytics > main #slider-view .analytic-feed .analytic:nth-last-child(2) {
-        left: 7%;
+        left: 8%;
     }
     #analytics > main #slider-view .analytic-feed .analytic:nth-last-child(1) {
-        left: 0%;
+        left: 3%;
         padding-right: 0px;
     }
 }
@@ -2322,7 +2329,7 @@ h4.title.gecko-fix, p.descr.gecko-fix{
         margin-left: -13%;
     }
     #analytics > main #slider-view .analytic-feed .analytic:nth-last-child(1) {
-        left: -2%;
+        left: -1%;
         padding-right: 0px;
     }
     #analytics > main #slider-view .analytic-feed .analytic{
@@ -2385,7 +2392,7 @@ h4.title.gecko-fix, p.descr.gecko-fix{
         padding-right: 14px;
     }
     #analytics > main #slider-view .analytic-feed .analytic:nth-last-child(1) {
-        left: -51px;
+        left: -55px;
     }
     #analytics > main #slider-view .analytic-feed .analytic:nth-last-child(2) {
         left: 12px;
@@ -2399,7 +2406,7 @@ h4.title.gecko-fix, p.descr.gecko-fix{
         margin-left: -14%;
     }
     #estate > main #slider-view .estat-feed .estat {
-        padding-right: 7px;
+        padding-right: 10px;
     }
 }
 @media all and (width: 1280px){
@@ -2665,22 +2672,24 @@ h4.title.gecko-fix, p.descr.gecko-fix{
     #estate > main #slider-view .estat-feed .estat {
         width: 27%;
         margin-left: 5%;
-        padding-right: 12px;
+        padding-right: 16px;
     }
     #estate > main #slider-view .estat-feed .estat:nth-child(1) {
         position: relative;
         left: -62px;
-        padding-right: 17px;
+        padding-right: 25px;
     }
     #estate > main #slider-view .estat-feed .estat:nth-child(2) {
         margin-left: 5%;
         position: relative;
-        left: -63px;
+        left: -72px;
+        padding-right: 19px;
     }
     #estate > main #slider-view .estat-feed .estat:nth-child(3) {
-        margin-left: 2%;
+        margin-left: -3%;
         position: relative;
-        left: -45px;
+        left: -31px;
+        padding-right: 30px;
     }
     #reviews > main #slider-view .review-feed .review {
         width: 15vw;
@@ -2693,11 +2702,6 @@ h4.title.gecko-fix, p.descr.gecko-fix{
     #reviews > main #slider-view .review-feed .review:nth-child(3) {
         margin-left: 3%;
     }
-}
-@media all and (width: 1600px){
-    #analytics > main #slider-view .analytic-feed .analytic:nth-last-child(1) {
-        left: 0%;
-    }    
 }
 @media all and (width: 1024px){
     #promo > main.swiper-container .promo-feed .promoblock { height: 495px; }
