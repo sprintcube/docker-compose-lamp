@@ -900,6 +900,7 @@ h4.title.gecko-fix, p.descr.gecko-fix{
     width: 26%;
     position: relative;
     top: 93px;
+    left: 8%;
 }
 #analytics > main #slider-controller.gecko-fix img{
     left: calc(42% / 1.5);
