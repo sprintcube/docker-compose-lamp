@@ -730,7 +730,7 @@ h4.title.gecko-fix, p.descr.gecko-fix{
     -o-transform: scale(1.1);
 }
 #services > main.gecko-fix{
-    top: 35%;
+    top: 20%;
 }
 #services > main #slider-controller{
     width: 10%;
@@ -1561,6 +1561,9 @@ h4.title.gecko-fix, p.descr.gecko-fix{
     #services {
         height: 109px;
     }
+    #services.gecko-fix {
+        height: 209px;
+    }
     #services > main #slider-controller img {
         width: 35%;
     }
@@ -1594,16 +1597,16 @@ h4.title.gecko-fix, p.descr.gecko-fix{
         left: calc(13% / 1.5);
     }
     #estate > main footer#slider-controller.gecko-fix img {
-        left: calc(180% / 1.5);
+        left: calc(-40% / 1.5);
     }
     #reviews > main footer#slider-controller.gecko-fix img {
-        left: calc(-20% / 1.5);
+        left: calc(-87% / 1.5);
     }
     #analytics > main #slider-controller.gecko-fix img {
-        left: calc(-34% / 1.5);
+        left: calc(-2% / 1.5);
     }
     #analytics > main footer#slider-controller.gecko-fix img {
-        left: calc(-31% / 1.5);
+        left: calc(-67% / 1.5);
     }
     #analytics > main footer#slider-controller img {
         left: -25%;
@@ -1688,7 +1691,7 @@ h4.title.gecko-fix, p.descr.gecko-fix{
         margin-left: 0%;
     }
     #analytics > main #slider-view .analytic-feed .analytic:nth-last-child(2) {
-        left: 0%;
+        left: 2%;
     }
     #analytics > main #slider-view .analytic-feed .analytic#with-title-image img {
         height: 125px;
@@ -1731,6 +1734,11 @@ h4.title.gecko-fix, p.descr.gecko-fix{
     #services > main header#slider-controller {
         position: relative;
         left: 1%;
+    }
+    #reviews > main #slider-view .review-feed .review {
+        width: 29%;
+        margin-left: 2%;
+        padding-right: 5px;
     }
 
 }
@@ -2567,6 +2575,9 @@ h4.title.gecko-fix, p.descr.gecko-fix{
     #estate > main {
         margin-top: -9vw;
     }
+    #estate > main.gecko-fix {
+        margin-top: -19vw;
+    }
     #services > header .add-but, #estate > header .add-but {
         margin-top: 2%;
         width: 30%;
@@ -2625,6 +2636,7 @@ h4.title.gecko-fix, p.descr.gecko-fix{
     }
     #eventcalendar > main .calendar .date {
         top: 30px;
+        margin-left: 22%;
     }
     #estate > header {
         margin-top: -18%;
@@ -2714,4 +2726,8 @@ h4.title.gecko-fix, p.descr.gecko-fix{
 @media all and (min-width: 600px) and (max-width: 639px){
     #promo > main.swiper-container .promo-feed .promoblock{ height: 500px; }
     #promo.gecko-fix > main.swiper-container .promo-feed .promoblock{ height: 540px; }
+}
+@media all and (max-width: 1280px){
+    #estate > main #slider-view .estat-feed .estat::before, #estate > main #slider-view-adaptive .estat::before,
+    #estate > main #slider-view .estat-feed .estat::after, #estate > main #slider-view-adaptive .estat::after{ height: 198%; }
 }

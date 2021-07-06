@@ -166,8 +166,8 @@ const AdaptiveButtonEventer = () => {
 const GeckoUI = () => {
     let problemEls = [
         $('h4.title, p.descr, .add-but'),
-        $('#promo, #investsearch, #eventcalendar'),
-        $('#estate > header'),
+        $('#promo, #investsearch, #eventcalendar, #estate, #services'),
+        $('#estate > header, #reviews > header'),
         $('#services > main, #estate > main, #analytics > main, #reviews > main'),
         $('#services > main #slider-controller, #analytics > main #slider-controller, #estate > main #slider-controller, #reviews > main #slider-controller, #analytics > main #slider-controller-adaptive, #reviews > main #slider-controller-adaptive')
     ];

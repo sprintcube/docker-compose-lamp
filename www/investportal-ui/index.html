@@ -13,6 +13,7 @@
     <style>
 
 
+
          
 .add-but{
            text-align: center;
@@ -270,6 +271,9 @@
            #estate {
                height: calc(172px * 3);
            }
+           #estate.gecko-fix {
+                height: calc(155px * 4);
+           }
            #reviews > main {
                margin-left: 12vw;
                margin-top: 4vw;
@@ -309,13 +313,13 @@
        }
        @media all and (min-width: 1280px) and (max-width: 1366px){
            #promo > main.swiper-container .promo-feed {
-               margin-left: 91vw;
+               margin-left: 92vw;
            }
            #investsearch > main.swiper-container .popular-objects {
                margin-left: -11vw;
            }
            #investsearch.gecko-fix > main.swiper-container .popular-objects {
-                margin-left: 35vw;
+                margin-left: 36vw;
            }
            .swiper-button-prev, .swiper-button-next {
                width: 4vw;
@@ -475,6 +479,9 @@
            #reviews > header {
                top: 5vw;
            }
+           #reviews > header.gecko-fix {
+               top: -3vw;
+           }
            #reviews > main {
                margin-top: -8%;
                right: 3vw;
@@ -500,22 +507,22 @@
                display: none;
            }
            #estate {
-               height: calc(99px * 3);
+               height: calc(109px * 3);
            }
            #estate > header{
                top: -19%;
            }
            #estate > header.gecko-fix {
-                top: -29%;
+                top: -90%;
            }
            #estate > main.gecko-fix {
-                top: -71%;
+                top: -90%;
            }
            #reviews > main.gecko-fix {
             top: -5%;
            }
            #services > header .add-but.gecko-fix, #estate > header .add-but.gecko-fix {
-                width: 15%;
+                width: 70%;
            }
        }
        @media all and (width: 1024px){
@@ -648,6 +655,7 @@
         }
        }
        .footer { overflow: hidden; }
+    
     
     
     </style>
