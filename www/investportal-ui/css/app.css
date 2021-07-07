@@ -160,7 +160,7 @@ h4.title, p.descr{
     width: 100%;
     height: 800px;
     display: block;
-    padding-bottom: 9%;
+    padding-bottom: 8%;
     padding-top: 4%;
 }
 .main > .section header{
@@ -191,9 +191,9 @@ h4.title, p.descr{
 }
 
 #promo{ height: 378px; }
-#news{ height:106px; padding-top: 8%; }
-#investsearch{ height: 412px; }
-#eventcalendar{ height: 590px; }
+#news{height:106px;padding-top: 6%;}
+#investsearch{height: 412px;padding-top: 8%;}
+#eventcalendar{height: 590px;padding-top: 10%;}
 #services{ height: 154px; padding-top: calc(1vw - 15px);}
 #analytics{height: 245px;padding-top: 34px;padding-bottom: 217px;}
 #estate{height: 230px;padding-top: 1vw;}
@@ -291,7 +291,7 @@ h4.title, p.descr{
     display: inline-table;
     float:right;
     width: 80%;
-    margin-top: -11%;
+    margin-top: -12%;
     margin-right: -9%;
 }
 #promo > header .marketing-info footer ul{
@@ -453,6 +453,7 @@ h4.title, p.descr{
     border: none !important;
     font-size:0;
     position: absolute;
+    display: none;
 }
 #news > main #slider-controller-adaptive img{
     width: 76%;
@@ -477,6 +478,7 @@ h4.title, p.descr{
     display: block;
     margin-left: 10%;
     margin-top: 19%;
+    display: none;
 }
 #news > main #slider-view .news-feed{
    margin-left: -11%;
@@ -749,6 +751,7 @@ h4.title, p.descr{
     border: none !important;
     font-size:0;
     position: absolute;
+    display: none;
 }
 #services > main #slider-controller-adaptive img{
     width: 96%;
@@ -770,6 +773,7 @@ h4.title, p.descr{
 }
 #services > main #slider-view-adaptive{
     width: 100%;
+    display: none;
 }
 #services > main #slider-view .service-feed{
     margin-left: -7%;
@@ -885,6 +889,7 @@ h4.title, p.descr{
     border: none !important;
     font-size:0;
     position: absolute;
+    display: none;
 }
 #analytics > main #slider-controller-adaptive img{
     width: 82%;
@@ -906,6 +911,7 @@ h4.title, p.descr{
 }
 #analytics > main #slider-view-adaptive{
     width: 100%;
+    display: none;
 }
 #analytics > main #slider-view .analytic-feed{
    margin-left: -15%;
@@ -1005,6 +1011,7 @@ h4.title, p.descr{
     border: none !important;
     font-size:0;
     position: absolute;
+    display: none;
 }
 #estate > main #slider-controller-adaptive img{
     width: 82%;
@@ -1026,6 +1033,7 @@ h4.title, p.descr{
 }
 #estate > main #slider-view-adaptive{
     width: 100%;
+    display: none;
 }
 #estate > main #slider-view .estat-feed{
     margin-left: -5%;
@@ -1169,6 +1177,7 @@ h4.title, p.descr{
     border: none !important;
     font-size:0;
     position: absolute;
+    display: none;
 }
 #reviews > main #slider-controller-adaptive img{
     width: 82%;
@@ -1191,6 +1200,7 @@ h4.title, p.descr{
 }
 #reviews > main #slider-view-adaptive{
     width: 100%;
+    display: none;
 }
 #reviews > main #slider-view .review-feed{
    margin-left: -8%;

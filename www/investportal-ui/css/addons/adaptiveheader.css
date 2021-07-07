@@ -1,6 +1,7 @@
 .header > #header_bottom_adaptive {
     float: right;
     margin-right: 8%;
+    display: none;
 }
 .header > #header_bottom_adaptive header {
     position: relative;
