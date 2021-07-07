@@ -1,9 +1,0 @@
-#services > main #slider-controller img.controls-chromium{
-    top: 111px;
-}
-#estate > main #slider-controller img.controls-chromium{
-    top: 116px;
-}
-#estate > main header#slider-controller img.controls-chromium{
-    left: calc(19% / 1.5);
-}

@@ -554,11 +554,6 @@ h4.title, p.descr{
     transform: scale(0.9);
     padding-left: 10px;
 }
-#investsearch > main.swiper-container .popular-objects .popular-object#object-chromium{
-   margin-left: 1vw;
-   position: relative;
-   left: -9%;
-}
 #investsearch > main.swiper-container .popular-objects .popular-object:hover{
     cursor: pointer;
 }
