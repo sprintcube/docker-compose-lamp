@@ -12,11 +12,10 @@
 }
 .label{ font-size: 55%;}
 .range-form{
-    margin-top: 42px;
-    padding-top: 6%;
     width: 30%;
     display: block;
     margin-left: 3vw;
+    margin-top: 12vh;
 }
 .input-from-to{
     margin-top: 1%;
@@ -46,5 +45,5 @@
     font-size: 100%;
 }
 .range-form:nth-child(2) {
-    margin-top: 46px;
+    margin-top: 15vh;
 }

@@ -39,7 +39,7 @@
 }
 .passport-page > footer #left-content{
     position: relative;
-    top: 189px;
+    top: 210px;
     left: -73%;
 }
 .passport-page > main #left-content #table-list .content td:nth-child(1)::after,  .passport-page > main #left-content #table-list .content td:nth-child(3)::before, .passport-page > main #left-content #table-list .content td:nth-child(4)::before{

@@ -1,6 +1,9 @@
 body.lightbox-opener{
     overflow: hidden;
 }
+#mobile-form-popup{
+    display: none;
+}
 #mobile-form-popup > header a{
     position: relative;
     top: 15px;

@@ -41,7 +41,7 @@
 }
 #objects > .projects-search-form footer{
     height: calc(72px * 5);
-    padding-bottom: 8%;
+    padding-bottom: 3vh;
 }
 #objects > .objects-list{
     width: 83%;

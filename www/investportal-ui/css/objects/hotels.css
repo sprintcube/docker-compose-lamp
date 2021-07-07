@@ -165,10 +165,12 @@
     font-size: 80%;
     height: auto;
     background-color: transparent;
+    position: relative;
+    right: -5%;
 }
 .objects-adding-search > header #right-content header{
     height: auto;
-    margin-top: -1vw;
+    margin-top: -183px;
 }
 .objects-adding-search > header #right-content footer{
     display: block;

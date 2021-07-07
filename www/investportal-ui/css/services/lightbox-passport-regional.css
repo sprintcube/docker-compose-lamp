@@ -1,6 +1,6 @@
 .lightwin-passport-regional{
     width: 30%;
-    height: calc(56% / 2);
+    height: 26vh;
     background-color: #f0f3f4;
     position: absolute;
     bottom: 1%;
@@ -13,16 +13,17 @@
 }
 .lightwin-passport-regional > main{
     width: 100%;
-    height: calc((278% / 2) / 2);
+    height: 14vh;
     overflow: auto;
 }
 .lightwin-passport-regional > footer{
     width: 100%;
-    height: calc((100% / 4) / 2);
+    height: 20vh;
+    margin-top: 3%;
 }
 .lightwin-passport-regional > header #left-content, .lightwin-passport-regional > footer #left-content{
     float: left;
-    margin-left: 2%;
+    margin-left: 4%;
 }
 .lightwin-passport-regional > header #left-content{
     margin-top: 3%;
@@ -38,8 +39,9 @@
     width: 80%;
 }
 .lightwin-passport-regional > main form .countries-part{
-    width: calc(100% / 5);
+    width: 5vw;
     display: inline-table;
+    padding-left: 4%;
 }
 .lightwin-passport-regional > main form .countries-part .country-name{
     font-size: 80%;

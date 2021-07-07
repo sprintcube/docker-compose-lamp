@@ -84,7 +84,7 @@
   list-style-type: none;
 }
 .news-feed >  header #top-feed .right-content .last-feed-cont #cont-content ul li{
-  width: 43%;
+  width: 40%;
   display: inline-table;
   padding-bottom: 4%;
   margin-left: 2%;
@@ -133,7 +133,7 @@
   background-color: #eff3f4;
   position: relative;
   top: -19px;
-  padding-left: 2%;
+  padding-left: 4%;
   padding-right: 1%;
 }
 .news-feed > main #light-feed .light-feed-cont #cont-content{
@@ -146,9 +146,9 @@
   margin-left: -3%;
 }
 .news-feed > main #light-feed .light-feed-cont #cont-content ul li{
-  width: 18vw;
+  width: 16vw;
   display: inline-table;
-  margin-left: 3%;
+  margin-left: 4%;
 }
 .news-feed > main #light-feed .light-feed-cont #cont-content ul li a{
   color: #0079bf;
@@ -156,14 +156,14 @@
   display: block;
   text-decoration: none;
   font-size: 97%;
-  width: 100%;
+  width: 110%;
 }
 .news-feed > main #light-feed .light-feed-cont #cont-content ul li span{
   font-size: 80%;
   display: block;
   margin-top: 3%;
   color: gray;
-  width: 100%;
+  width: 110%;
 }
 .news-feed > footer{
   margin-top: 0%;
@@ -182,10 +182,10 @@
 }
 .news-feed > footer #down-feed .down-feed-cont #cont-content ul{
   list-style-type: none;
-  margin-left: -3%;
+  margin-left: -2%;
 }
 .news-feed > footer #down-feed .down-feed-cont #cont-content ul li{
-  width: 18vw;
+  width: 17vw;
   display: inline-table;
   margin-left: 3%;
 }

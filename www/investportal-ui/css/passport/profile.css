@@ -59,5 +59,6 @@
 }
 .passport-page > footer #left-content{
     width: 100%;
-    margin-top: 4%;
+    top: 60px;
+    position: relative;
 }

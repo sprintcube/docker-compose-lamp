@@ -194,9 +194,9 @@ h4.title, p.descr{
 #news{height:106px;padding-top: 6%;}
 #investsearch{height: 412px;padding-top: 8%;}
 #eventcalendar{height: 590px;padding-top: 10%;}
-#services{ height: 154px; padding-top: calc(1vw - 15px);}
+#services{height: 206px;padding-top: calc(1vw - 15px);}
 #analytics{height: 245px;padding-top: 34px;padding-bottom: 217px;}
-#estate{height: 230px;padding-top: 1vw;}
+#estate{height: 304px;padding-top: 1vw;}
 #reviews{height: 245px;padding-top: 49px;padding-bottom: 135px;}
 #link-switcher{
     width: 100%;
@@ -307,15 +307,15 @@ h4.title, p.descr{
     width: 100vw;
 }
 #promo > main.swiper-container .promo-feed .promoblock{
-    width: 27vw;
+    width: 25%;
     display: inline-flexbox;
     background-color: white;
-    padding-right: 1%;
+    padding-right: 2%;
     margin-top: 2%;
     -webkit-box-shadow: 3px -1px 4px 0px darkgrey;
     -moz-box-shadow: 3px -1px 4px 0px darkgrey;
     box-shadow: 3px -1px 4px 0px darkgrey;
-    margin-left: 30px;
+    margin-left: 15px;
     transform: scale(0.9);
 }
 #promo > main.swiper-container .promo-feed .promoblock:hover{
@@ -697,7 +697,7 @@ h4.title, p.descr{
     float: left;
     display: inline-table;
     left: 4vw;
-    padding-top: 3vw;
+    top: 2vw;
 }
 #services > header a{
    text-decoration: none;
@@ -724,20 +724,20 @@ h4.title, p.descr{
 #services > main #slider-controller img{
     width: 26%;
     position: relative;
-    top: -114px;
-    left: calc(13% / 1.5);
+    top: 140px;
+    left: calc(52% / 1.5);
 }
 #services > main footer#slider-controller img{
-    left: calc(-39% / 1.5);
+    left: calc(-79% / 1.5);
 }
 #analytics > main footer#slider-controller img{
-    left: calc(-39% / 1.5);
+    left: calc(-81% / 1.5);
 }
 #estate > main footer#slider-controller img{
-    left: calc(-21% / 1.5);
+    left: calc(-50% / 1.5);
 }
 #reviews > main footer#slider-controller img{
-    left: calc(-34% / 1.5);
+    left: calc(-78% / 1.5);
 }
 #services > main #slider-controller-adaptive{
     width: 8%;
@@ -854,7 +854,7 @@ h4.title, p.descr{
     float: left;
     display: inline-table;
     left: 4vw;
-    top: 3vw;
+    top: 4vw;
 }
 #analytics > main{
     width: 70%;
@@ -874,8 +874,8 @@ h4.title, p.descr{
 #analytics > main #slider-controller img{
     width: 26%;
     position: relative;
-    top: 93px;
-    left: 8%;
+    top: 140px;
+    left: calc(58% / 1.5);
 }
 #analytics > main #slider-controller-adaptive{
     width: 10%;
@@ -922,11 +922,11 @@ h4.title, p.descr{
     margin-top: 14vw;
 }
 #analytics > main #slider-view .analytic-feed .analytic{
-    width: 27%;
+    width: 26%;
     height: 360px;
     display: inline-table;
     box-shadow: 3px -1px 4px 0px darkgrey;
-    margin-left: 6%;
+    margin-left: 9%;
     padding-bottom: 2%;
     background-color: white;
     padding-right: -1px;
@@ -977,7 +977,7 @@ h4.title, p.descr{
     float: left;
     display: inline-table;
     left: 4vw;
-    padding-top: 3vw;
+    top: 3vw;
 }
 #estate > main{
     width: 70%;
@@ -997,7 +997,8 @@ h4.title, p.descr{
 #estate > main #slider-controller img{
     width: 26%;
     position: relative;
-    top: -50px;
+    top: 140px;
+    left: calc(76% / 1.5);
 }
 #estate > main #slider-controller-adaptive{
     width: 10%;
@@ -1131,7 +1132,7 @@ h4.title, p.descr{
 	color: lightgrey;
 }
 .rating-mini > span:before {
-	content: '★';
+	content: 'â˜…';
 }
 .rating-mini > span.active {
 	color: gold;
@@ -1143,7 +1144,7 @@ h4.title, p.descr{
     float: left;
     display: inline-table;
     left: 4vw;
-    top: 2vw;
+    top: 3vw;
 }
 #reviews > main{
     width: 70%;
@@ -1163,7 +1164,8 @@ h4.title, p.descr{
 #reviews > main #slider-controller img{
     width: 26%;
     position: relative;
-    top: 84px;
+    top: 140px;
+    left: calc(58% / 1.5);
 }
 #reviews > main #slider-controller-adaptive{
     width: 8%;
@@ -1242,7 +1244,7 @@ h4.title, p.descr{
 
 .footer{
     width: 100%;
-    height: calc(197px * 2);
+    height: calc(210px * 2);
     background-color:#9da5a7;
     color: white;
 }

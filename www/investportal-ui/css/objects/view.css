@@ -12,6 +12,7 @@ span.view-title{
 .object-viewer{
     width: 80%;
     margin-left: 9%;
+    padding-bottom: 4%;
 }
 .object-viewer > .left-content, .object-viewer > .right-content{
     display: inline-table;

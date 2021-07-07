@@ -1,9 +1,9 @@
-#news{ height: 1805px;}
+#news{ height: 1600px;}
 #news > .news-viewer #left-content{
   width: 55%;
   float: left;
   margin-left: 7%;
-  margin-top: -6%;
+  margin-top: -1%;
 }
 #news > .news-viewer #left-content header{
   width: 100%;
