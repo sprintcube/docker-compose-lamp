@@ -142,62 +142,7 @@
 .passport-page > main #right-content .nav li:hover, .passport-page > main #right-content .nav li.active{
     background-color: rgba(30, 143, 255, 0.137);
 }
-@media all and (min-width: 320px) and (max-width: 1028px){
-    .passport-page {
-        width: 81%;
-        left: 11%;
-        top: 0%;
-    }
-    .passport-page > main #right-content { display: none; }
-    .footer{ display: none;}
-}
-@media all and (min-width: 320px) and (max-width: 640px){
-    .passport-page > main #left-content #table-list, .passport-page > main #left-content #table-list .content td {
-        border: none;
-    }
-    .passport-page > header #left-content, .passport-page > header #right-content {
-        margin-top: 5px;
-    }
-
-}
-@media all and (min-width: 640px) and (max-width: 1024px){
-    .passport-page > main #left-content {
-        width: 94%;
-    }
-    .passport-page > header #left-content, .passport-page > header #right-content {
-        margin-top: 5px;
-    }
-}
-@media all and (min-width: 1029px){
-    .passport-page > header #right-content nav, .passport-menu-adaptive{ display: none; }
-}
-@media all and (min-width: 1280px) and (max-width: 1600px){
-    .passport-page{width: 77%;}
-}
-@media all and (min-width: 1024px) and (max-width: 1400px){
-    .passport-page > header #left-content, .passport-page > header #right-content {margin-top: 9px;}
-    .lightwin-passport > header #left-content{ margin-top: 2%; }
-}
-@media all and (min-width: 1800px){
-    .passport-page{width: 75%;}
-}
-@media all and (min-width: 1024px) and (max-width: 1100px){
-    .passport-page > main #left-content {
-        width: 72%;
-    }
-}
 
 .passport-page > main #right-content .nav li:nth-last-child(1){
     border-bottom: solid 2px #0079bf;
-}
-@media all and (min-width: 1024px) and (max-width: 1028px){
-    .passport-page > main #left-content #table-list {
-        width: 134%;
-    }
-    .passport-page > header #right-content nav {
-        margin-top: 5px;
-    }
-    .passport-page > header #right-content a {
-        display: none;
-    }
 }

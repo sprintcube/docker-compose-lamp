@@ -14,8 +14,3 @@
     background-color: #f0f3f4;
     font-size: 75%;
 }
-@media all and (max-width: 640px){
-    #services > header a {
-        font-size: 56%;
-    }
-}

@@ -27,8 +27,3 @@
 .passport-menu-adaptive .nav li.active{
     background-color: #1E90FF;
 }
-@media all and (max-width: 640px){
-    .passport-menu-adaptive .nav{
-      margin-left: -14%;
-    }
- }
