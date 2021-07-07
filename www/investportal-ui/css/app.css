@@ -18,10 +18,7 @@ html,body{
     margin-bottom: 0%;
 }
 h4.title, p.descr{
-    font-size: calc(87% / 2);
-}
-h4.title.gecko-fix, p.descr.gecko-fix{
-    font-size: calc(180% / 2);
+    font-size: calc(100% / 2);
 }
 .header{
     width: 100%;
@@ -573,9 +570,6 @@ h4.title.gecko-fix, p.descr.gecko-fix{
     padding-right: 0vw;
     padding-left: 4%;
 }
-#investsearch.gecko-fix > main.swiper-container .popular-objects .popular-object header {
-    width: 98%;
-}
 #investsearch > main.swiper-container .popular-objects .popular-object header h3{
     margin-left: 4%;
     margin-top: 1%;
@@ -591,9 +585,6 @@ h4.title.gecko-fix, p.descr.gecko-fix{
 #investsearch > main.swiper-container .popular-objects .popular-object main{
     display: block;
     width: 103%;
-}
-#investsearch.gecko-fix > main.swiper-container .popular-objects .popular-object main{
-    width: 102%;
 }
 #investsearch > main.swiper-container .popular-objects .popular-object footer{
     width: 94%;
@@ -729,9 +720,6 @@ h4.title.gecko-fix, p.descr.gecko-fix{
     -moz-transform: scale(1.1);
     -o-transform: scale(1.1);
 }
-#services > main.gecko-fix{
-    top: 20%;
-}
 #services > main #slider-controller{
     width: 10%;
     display: inline-table;
@@ -742,26 +730,14 @@ h4.title.gecko-fix, p.descr.gecko-fix{
     top: -114px;
     left: calc(13% / 1.5);
 }
-#services > main #slider-controller.gecko-fix img{
-    left: calc(42% / 1.5);
-}
 #services > main footer#slider-controller img{
     left: calc(-39% / 1.5);
-}
-#services > main footer#slider-controller.gecko-fix img{
-    left: calc(-70% / 1.5);
 }
 #analytics > main footer#slider-controller img{
     left: calc(-39% / 1.5);
 }
-#analytics > main footer#slider-controller.gecko-fix img{
-    left: calc(-70% / 1.5);
-}
 #estate > main footer#slider-controller img{
     left: calc(-21% / 1.5);
-}
-#estate > main footer#slider-controller.gecko-fix img {
-    left: calc(-50% / 1.5);
 }
 #reviews > main footer#slider-controller img{
     left: calc(-34% / 1.5);
@@ -902,9 +878,6 @@ h4.title.gecko-fix, p.descr.gecko-fix{
     top: 93px;
     left: 8%;
 }
-#analytics > main #slider-controller.gecko-fix img{
-    left: calc(42% / 1.5);
-}
 #analytics > main #slider-controller-adaptive{
     width: 10%;
     height: 370px;
@@ -923,9 +896,6 @@ h4.title.gecko-fix, p.descr.gecko-fix{
 #analytics > main footer#slider-controller-adaptive{
     right: -24%;
     top: 0;
-}
-#analytics > main footer#slider-controller-adaptive.gecko-fix{
-    right: -23%;
 }
 #analytics > main #slider-controller-adaptive img:hover{
     cursor: pointer;
@@ -1019,9 +989,6 @@ h4.title.gecko-fix, p.descr.gecko-fix{
     -moz-transform: scale(1.1);
     -o-transform: scale(1.1);
 }
-#estate > main.gecko-fix{
-    top: 26%;
-}
 #estate > main #slider-controller{
     width: 10%;
     display: inline-table;
@@ -1030,9 +997,6 @@ h4.title.gecko-fix, p.descr.gecko-fix{
     width: 26%;
     position: relative;
     top: -50px;
-}
-#estate > main #slider-controller.gecko-fix img {
-    left: calc(56% / 1.5);
 }
 #estate > main #slider-controller-adaptive{
     width: 10%;
@@ -1198,12 +1162,6 @@ h4.title.gecko-fix, p.descr.gecko-fix{
     position: relative;
     top: 84px;
 }
-#reviews > main #slider-controller.gecko-fix img{
-    left: calc(40% / 1.5);
-}
-#reviews > main footer#slider-controller.gecko-fix img {
-    left: calc(-62% / 1.5);
-}
 #reviews > main #slider-controller-adaptive{
     width: 8%;
     height: 240px;
@@ -1223,9 +1181,7 @@ h4.title.gecko-fix, p.descr.gecko-fix{
     right: 18%;
     top: 0;
 }
-#reviews > main footer#slider-controller-adaptive.gecko-fix{
-    right: 20%;
-}
+
 #reviews > main #slider-controller-adaptive img:hover{
     cursor: pointer;
 }

@@ -4,9 +4,6 @@
   height: 440px;
   box-shadow: 0 0 5px 1px grey;
 }
-#promo.gecko-fix > main.swiper-container .promo-feed .promoblock {
-  height: 430px;
-}
 #promo > main.swiper-container .promo-feed .promoblock .promoblock-content {
   position: absolute;
   top: 12px;

@@ -163,24 +163,7 @@ const AdaptiveButtonEventer = () => {
     });
 }
 
-const GeckoUI = () => {
-    let problemEls = [
-        $('h4.title, p.descr, .add-but'),
-        $('#promo, #investsearch, #eventcalendar, #estate, #services'),
-        $('#estate > header, #reviews > header'),
-        $('#services > main, #estate > main, #analytics > main, #reviews > main'),
-        $('#services > main #slider-controller, #analytics > main #slider-controller, #estate > main #slider-controller, #reviews > main #slider-controller, #analytics > main #slider-controller-adaptive, #reviews > main #slider-controller-adaptive')
-    ];
 
-    for (let index = 0; index < problemEls.length; index++) {
-        const el = problemEls[index];
-        el.addClass('gecko-fix');  
-    }
-}
 $(document).ready(function () {
     AdaptiveButtonEventer();
-
-    let isMozilla = detect.parse(navigator.userAgent).browser.family === "Firefox";
-
-    if(isMozilla) GeckoUI();
 });
