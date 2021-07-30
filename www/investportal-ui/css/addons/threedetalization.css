@@ -48,7 +48,7 @@
   position: relative;
   z-index: 1;
   box-shadow: 3px -1px 4px 0px darkgrey;
-  height: 470px;
+  height: 490px;
 }
 
 #investsearch > main.swiper-container .popular-objects .popular-object .popularobject-content {
@@ -186,16 +186,16 @@
   border-bottom-width: 2px;
 }
 
-@media only all and (max-width: 414px){}
-@media only all and (max-width: 600px){}
-@media only all and (max-width: 768px){}
-@media only all and (max-width: 800px){}
-@media only all and (max-width: 960px){}
-@media only all and (max-width: 1024px){}
-@media only all and (max-width: 1280px){}
-@media only all and (max-width: 1366px){}
-@media only all and (max-width: 1440px){}
-@media only all and (max-width: 1536px){}
-@media only all and (max-width: 1600px){}
-@media only all and (max-width: 1920px){}
-@media only all and (min-width: 1920px){}
+@media all and (max-width: 414px){}
+@media all and (max-width: 600px){}
+@media all and (max-width: 768px){}
+@media all and (max-width: 800px){}
+@media all and (max-width: 960px){}
+@media all and (max-width: 1024px){}
+@media all and (max-width: 1280px){}
+@media all and (max-width: 1366px){}
+@media all and (max-width: 1440px){}
+@media all and (max-width: 1536px){}
+@media all and (max-width: 1600px){}
+@media all and (max-width: 1920px){}
+@media all and (min-width: 1920px){}

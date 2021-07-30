@@ -15,7 +15,8 @@
   top: 15px;
   background: white;
   width: 50px;
-  padding-left: 1%;
+  padding-left: 2%;
+  padding-right: 4%;
 }
 .passport-page > main .services-settings header select{
   margin-top: 1%;
@@ -44,8 +45,11 @@
 }
 .passport-page > footer {
     float: left;
-    margin-top: -19%;
-    margin-left: 22px;
+    margin-top: -24%;
+    margin-left: 42px;
+}
+.passport-page.gecko-fix > footer {
+    margin-top: 2%;
 }
 .passport-page > main .services-settings footer .services-selectors .selector input{
     position: absolute;
@@ -99,16 +103,76 @@
     transform: rotate(-45deg);
 }
 
-@media only all and (max-width: 414px){}
-@media only all and (max-width: 600px){}
-@media only all and (max-width: 768px){}
-@media only all and (max-width: 800px){}
-@media only all and (max-width: 960px){}
-@media only all and (max-width: 1024px){}
-@media only all and (max-width: 1280px){}
-@media only all and (max-width: 1366px){}
-@media only all and (max-width: 1440px){}
-@media only all and (max-width: 1536px){}
-@media only all and (max-width: 1600px){}
-@media only all and (max-width: 1920px){}
-@media only all and (min-width: 1920px){}
+@media all and (max-width: 414px){
+  .passport-page > main .services-settings footer .services-selectors {
+    display: block;
+    width: 100%;
+  }
+  #passport {
+    height: calc(322px * 3);
+  }
+  .passport-page {
+    height: 610px;
+  }
+}
+@media all and (max-width: 600px){
+  .passport-page > main .services-settings footer .services-selectors {
+    display: block;
+    width: 80%;
+  }
+  #passport {
+    height: calc(244px * 3);
+  }
+  .passport-page {
+    height: 630px;
+  }
+}
+@media all and (max-width: 768px){
+  .passport-page > main .services-settings header select {
+    padding: 2%;
+    width: 99%;
+  }
+}
+@media all and (min-width: 600px) and (max-width: 768px){
+  .passport-page > main .services-settings footer .services-selectors {
+    width: 45%;
+  }
+  #passport {
+    height: calc(237px * 3);
+  }
+  .passport-page {
+    height: 610px;
+  }
+}
+@media all  and (min-width: 768px) and (max-width: 800px){
+  .passport-page > main .services-settings footer .services-selectors {
+    width: 32%;
+  }
+  #passport {
+    height: calc(322px * 3);
+  }
+  .passport-page {
+    height: 610px;
+  }
+}
+@media all and (max-width: 960px){
+  #passport {
+    height: calc(322px * 3);
+  }
+}
+@media all and (max-width: 1024px){
+  #passport {
+    height: calc(322px * 3);
+  }
+}
+@media all and (max-width: 1280px){
+  #passport {
+    height: calc(247px * 3);
+  }
+}
+@media all and (max-width: 1366px){}
+@media all and (max-width: 1440px){}
+@media all and (max-width: 1536px){}
+@media all and (max-width: 1600px){}
+@media all and (max-width: 1920px){}
+@media all and (min-width: 1920px){}

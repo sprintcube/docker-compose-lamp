@@ -2,7 +2,7 @@
     position: fixed;
     bottom: 0;
     left: 0;
-    width: 100vw;
+    width: 100%;
     display: none;
     background-color: #0079bf;
 }
@@ -28,16 +28,16 @@
     background-color: #1E90FF;
 }
 
-@media only all and (max-width: 414px){}
-@media only all and (max-width: 600px){}
-@media only all and (max-width: 768px){}
-@media only all and (max-width: 800px){}
-@media only all and (max-width: 960px){}
-@media only all and (max-width: 1024px){}
-@media only all and (max-width: 1280px){}
-@media only all and (max-width: 1366px){}
-@media only all and (max-width: 1440px){}
-@media only all and (max-width: 1536px){}
-@media only all and (max-width: 1600px){}
-@media only all and (max-width: 1920px){}
-@media only all and (min-width: 1920px){}
+@media all and (max-width: 414px){}
+@media all and (max-width: 600px){}
+@media all and (max-width: 768px){}
+@media all and (max-width: 800px){}
+@media all and (max-width: 960px){}
+@media all and (max-width: 1024px){}
+@media all and (max-width: 1280px){}
+@media all and (max-width: 1366px){}
+@media all and (max-width: 1440px){}
+@media all and (max-width: 1536px){}
+@media all and (max-width: 1600px){}
+@media all and (max-width: 1920px){}
+@media all and (min-width: 1920px){}

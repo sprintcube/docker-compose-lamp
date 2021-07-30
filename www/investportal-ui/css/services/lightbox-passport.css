@@ -37,7 +37,7 @@
    margin-left: 2%;
 }
 .lightwin-passport > header #left-content{
-    margin-top: 2%;
+    margin-top: 8px;
     color: white;
 }
 .lightwin-passport > header #left-content span{
@@ -46,7 +46,7 @@
 .lightwin-passport > header #right-content{
     float: right;
     margin-right: 2%;
-    margin-top: 2%;
+    margin-top: 8px;
 }
 .lightwin-passport > header #right-content:hover{
     cursor: pointer;
@@ -69,7 +69,7 @@
 .lightwin-passport > main form #textput{
     display: block;
     margin-top: 1%;
-    width: 95%;
+    width: 94%;
     border: none;
     padding-top: 2%;
     padding-bottom: 2%;
@@ -189,16 +189,47 @@
 
 .lightwin-passport > main form #textput:focus, .lightwin-passport > main form #selector-form:focus, .lightwin-passport > main form #from-to #selector-form-add:focus{ border: solid 2px darkgray;}
 
-@media only all and (max-width: 414px){}
-@media only all and (max-width: 600px){}
-@media only all and (max-width: 768px){}
-@media only all and (max-width: 800px){}
-@media only all and (max-width: 960px){}
-@media only all and (max-width: 1024px){}
-@media only all and (max-width: 1280px){}
-@media only all and (max-width: 1366px){}
-@media only all and (max-width: 1440px){}
-@media only all and (max-width: 1536px){}
-@media only all and (max-width: 1600px){}
-@media only all and (max-width: 1920px){}
-@media only all and (min-width: 1920px){}
+@media all and (max-width: 414px){}
+@media all and (max-width: 600px){
+    .lightwin-passport {
+        width: 98%;
+        left: 1%;
+    }
+
+}
+@media all and (max-width: 768px){
+    .lightwin-passport {
+        width: 82%;
+        left: 10%;
+    }
+}
+@media all and (max-width: 800px){
+    .lightwin-passport {
+        width: 82%;
+        left: 10%;
+    }
+}
+@media all and (max-width: 960px){
+    .lightwin-passport {
+        width: 82%;
+        left: 10%;
+    }
+}
+@media all and (max-width: 1024px){
+    .lightwin-passport {
+        width: 82%;
+        left: 10%;
+    }
+}
+@media all and (max-width: 1280px){
+    .lightwin-passport {
+        width: 82%;
+        left: 10%;
+    }
+}
+@media all and (max-width: 1366px){}
+@media all and (max-width: 1440px){}
+@media all and (max-width: 1536px){}
+@media all and (max-width: 1600px){}
+@media all and (max-width: 1920px){}
+@media all and (min-width: 1920px){}

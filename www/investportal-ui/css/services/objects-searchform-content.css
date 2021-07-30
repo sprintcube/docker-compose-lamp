@@ -113,16 +113,65 @@
     margin-top: 3%;
 }
 
-@media only all and (max-width: 414px){}
-@media only all and (max-width: 600px){}
-@media only all and (max-width: 768px){}
-@media only all and (max-width: 800px){}
-@media only all and (max-width: 960px){}
-@media only all and (max-width: 1024px){}
-@media only all and (max-width: 1280px){}
-@media only all and (max-width: 1366px){}
-@media only all and (max-width: 1440px){}
-@media only all and (max-width: 1536px){}
-@media only all and (max-width: 1600px){}
-@media only all and (max-width: 1920px){}
-@media only all and (min-width: 1920px){}
+@media all and (max-width: 414px){}
+@media all and (max-width: 600px){}
+@media all and (max-width: 768px){
+    #objects > .projects-search-form main form .selectors {
+        display: inline-table;
+        width: 90%;
+        margin-left: 22px;
+        padding-top: 4%;
+    }
+    #objects > .projects-search-form main form .selectors .selector {
+        margin-top: 5px;
+    }
+    #objects > .projects-search-form main form {
+        margin-top: -12%;
+        margin-left: -3vw;
+    } 
+    #objects > .projects-search-form footer .filter .option:not(:nth-child(1)) {
+        margin-left: 0%;
+    }   
+    #objects > .projects-search-form footer .filter {
+        width: 100%;
+    }
+}
+@media all and (max-width: 800px){}
+@media all and (min-width: 768px) and (max-width: 960px){
+    #objects > .projects-search-form main {
+        margin-top: -8%;
+    }
+    #objects > .projects-search-form main form .selectors {
+        width: 36%;
+        padding-top: 3%;
+    }
+    #objects > .projects-search-form main form .selectors .selector {
+        margin-top: 4px;
+    }
+    #objects > .projects-search-form footer .filter {
+        width: 100%;
+    }
+}
+@media all and (min-width: 960px) and (max-width: 1024px){
+    #objects > .projects-search-form footer .filter {
+        width: 100%;
+    }
+    #objects > .projects-search-form main form .selectors .selector {
+        margin-top: 3px;
+    }
+}
+@media all and (min-width: 1024px) and (max-width: 1280px){
+    #objects > .projects-search-form footer .filter {
+        width: 53%;
+    }
+}
+@media all and (min-width: 1280px) and (max-width: 1366px){
+    #objects > .projects-search-form footer .filter {
+        width: 48%;
+    }
+}
+@media all and (max-width: 1440px){}
+@media all and (max-width: 1536px){}
+@media all and (max-width: 1600px){}
+@media all and (max-width: 1920px){}
+@media all and (min-width: 1920px){}

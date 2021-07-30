@@ -117,9 +117,19 @@ const VideoPlayerUI = (player) => {
 
     });
 }
+const GeckoSupport = () => {
+    $.getJSON("geckoElements.json", function (data, textStatus, jqXHR) {
+            $(data.el.cont).addClass('gecko-fix');
+        }
+    );
+}
 $(document).ready(function () {
     
+    var cb = detect.parse(navigator.userAgent);
 
+    if(cb.browser.family === "Firefox" || cb.browser.family === "Waterfox" || cb.browser.family === "SeaMonkey" || cb.browser.family === "BlackHawk" || cb.browser.family === "IceCat" || cb.browser.family === "IceDragon" || cb.browser.family === "Pale Moon" || cb.browser.family === "K-Meleon" || cb.browser.family === "FlashFox" || cb.browser.family === "Orfox" || cb.browser.family === "Vega"){
+        GeckoSupport();
+    }
     //OnlineChat();
     MarketingHeadBannerAdaptive();
     HomePageHorizontalAdaptiveLine();

@@ -62,16 +62,27 @@
     left: -5%;
 }
 
-@media only all and (max-width: 414px){}
-@media only all and (max-width: 600px){}
-@media only all and (max-width: 768px){}
-@media only all and (max-width: 800px){}
-@media only all and (max-width: 960px){}
-@media only all and (max-width: 1024px){}
-@media only all and (max-width: 1280px){}
-@media only all and (max-width: 1366px){}
-@media only all and (max-width: 1440px){}
-@media only all and (max-width: 1536px){}
-@media only all and (max-width: 1600px){}
-@media only all and (max-width: 1920px){}
-@media only all and (min-width: 1920px){}
+@media all and (max-width: 414px){}
+@media all and (max-width: 600px){
+    .passport-page > main #left-content #table-list .content td:nth-child(3),  .passport-page > main #left-content #table-list .header th:nth-child(3){
+        display: none;
+    }
+    .passport-page > main #left-content #table-list .header th:nth-child(4), .passport-page > main #left-content #table-list .content td:nth-child(4) {
+        width: 37%;
+    }
+}
+@media all and (max-width: 768px){}
+@media all and (max-width: 800px){}
+@media all and (max-width: 960px){}
+@media all and (max-width: 1024px){}
+@media all and (max-width: 1280px){
+    #passport {
+        height: 775px;
+    }
+}
+@media all and (max-width: 1366px){}
+@media all and (max-width: 1440px){}
+@media all and (max-width: 1536px){}
+@media all and (max-width: 1600px){}
+@media all and (max-width: 1920px){}
+@media all and (min-width: 1920px){}

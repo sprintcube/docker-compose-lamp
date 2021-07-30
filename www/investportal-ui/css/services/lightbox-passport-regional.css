@@ -98,16 +98,52 @@
     transform: rotate(-45deg);
 }
 
-@media only all and (max-width: 414px){}
-@media only all and (max-width: 600px){}
-@media only all and (max-width: 768px){}
-@media only all and (max-width: 800px){}
-@media only all and (max-width: 960px){}
-@media only all and (max-width: 1024px){}
-@media only all and (max-width: 1280px){}
-@media only all and (max-width: 1366px){}
-@media only all and (max-width: 1440px){}
-@media only all and (max-width: 1536px){}
-@media only all and (max-width: 1600px){}
-@media only all and (max-width: 1920px){}
-@media only all and (min-width: 1920px){}
+@media all and (max-width: 414px){}
+@media all and (max-width: 600px){
+    .lightwin-passport-regional {
+        width: 98%;
+        height: 33vh;
+        left: 1%;
+    }
+}
+@media all and (max-width: 768px){
+    .lightwin-passport-regional {
+        width: 82%;
+        height: 32vh;
+        left: 10%;
+    }
+}
+@media all and (max-width: 800px){
+    .lightwin-passport-regional {
+        width: 82%;
+        height: 32vh;
+        left: 10%;
+    }
+}
+@media all and (max-width: 960px){
+    .lightwin-passport-regional {
+        width: 82%;
+        height: 32vh;
+        left: 10%;
+    }
+}
+@media all and (max-width: 1024px){
+    .lightwin-passport-regional {
+        width: 82%;
+        height: 32vh;
+        left: 10%;
+    }
+}
+@media all and (max-width: 1280px){
+    .lightwin-passport-regional {
+        width: 82%;
+        height: 32vh;
+        left: 10%;
+    }
+}
+@media all and (max-width: 1366px){}
+@media all and (max-width: 1440px){}
+@media all and (max-width: 1536px){}
+@media all and (max-width: 1600px){}
+@media all and (max-width: 1920px){}
+@media all and (min-width: 1920px){}

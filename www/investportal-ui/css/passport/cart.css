@@ -61,16 +61,34 @@
     width: 7%;
 }
 
-@media only all and (max-width: 414px){}
-@media only all and (max-width: 600px){}
-@media only all and (max-width: 768px){}
-@media only all and (max-width: 800px){}
-@media only all and (max-width: 960px){}
-@media only all and (max-width: 1024px){}
-@media only all and (max-width: 1280px){}
-@media only all and (max-width: 1366px){}
-@media only all and (max-width: 1440px){}
-@media only all and (max-width: 1536px){}
-@media only all and (max-width: 1600px){}
-@media only all and (max-width: 1920px){}
-@media only all and (min-width: 1920px){}
+@media all and (max-width: 414px){}
+@media all and (max-width: 600px){}
+@media all and (max-width: 768px){
+    .passport-page > main #left-content .cart-data:nth-child(1) #table-list .content td:nth-child(1) {
+        width: 25%;
+    }
+    .passport-page > main #left-content .cart-data:nth-child(1) #table-list .content td:nth-child(2) {
+        width: 70%;
+    }
+    .passport-page > main #left-content .cart-data:nth-child(2) #table-list .content td:nth-child(1), .passport-page > main #left-content .cart-data:nth-child(3) #table-list .content td:nth-child(1) {
+        width: 15%;
+    }
+    .passport-page > main #left-content .cart-data:nth-child(3) #table-list .content td:nth-child(2) {
+        width: 40%;
+    }
+    .passport-page > main #left-content .cart-data:nth-child(2) #table-list .content td:nth-child(2) {
+        width: 39%;
+    }
+    .passport-page > main #left-content .cart-data:nth-child(1) #table-list .header th:nth-child(4), .passport-page > main #left-content .cart-data:nth-child(1) #table-list .content td:nth-child(4), .passport-page > main #left-content .cart-data:nth-child(1) #table-list .content td:nth-child(3), .passport-page > main #left-content .cart-data:nth-child(1) #table-list .header th:nth-child(3),
+    .passport-page > main #left-content .cart-data:nth-child(2) #table-list .header th:nth-last-child(1), .passport-page > main #left-content .cart-data:nth-child(2) #table-list .content td:nth-last-child(1){ display: none; }
+}
+@media all and (max-width: 800px){}
+@media all and (max-width: 960px){}
+@media all and (max-width: 1024px){}
+@media all and (max-width: 1280px){}
+@media all and (max-width: 1366px){}
+@media all and (max-width: 1440px){}
+@media all and (max-width: 1536px){}
+@media all and (max-width: 1600px){}
+@media all and (max-width: 1920px){}
+@media all and (min-width: 1920px){}

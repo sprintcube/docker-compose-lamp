@@ -1,4 +1,4 @@
-const inputSwitcher1 = () => {
+const inputSwitcher1 = (e,t) => {
     let form = [$('.passport-page > main .profile-settings .editor:nth-child(1) input'), $('.passport-page > main .profile-settings .editor:nth-child(1) #control')];
 
 
@@ -11,7 +11,7 @@ const inputSwitcher1 = () => {
         form[0].attr('disabled','');
     }
 }
-const inputSwitcher2 = () => {
+const inputSwitcher2 = (e,t) => {
     let form = [$('.passport-page > main .profile-settings .editor:nth-child(2) input'), $('.passport-page > main .profile-settings .editor:nth-child(2) #control')];
 
 
@@ -24,7 +24,7 @@ const inputSwitcher2 = () => {
         form[0].attr('disabled','');
     }
 }
-const inputSwitcher3 = () => {
+const inputSwitcher3 = (e,t) => {
     let form = [$('.passport-page > main .profile-settings .editor:nth-child(3) input'), $('.passport-page > main .profile-settings .editor:nth-child(3) #control')];
 
 
@@ -37,7 +37,7 @@ const inputSwitcher3 = () => {
         form[0].attr('disabled','');
     }
 }
-const inputSwitcher4 = () => {
+const inputSwitcher4 = (e,t) => {
     let form = [$('.passport-page > main .profile-settings .editor:nth-child(4) input'), $('.passport-page > main .profile-settings .editor:nth-child(4) #control')];
 
 
@@ -50,7 +50,7 @@ const inputSwitcher4 = () => {
         form[0].attr('disabled','');
     }
 }
-const inputSwitcher5 = () => {
+const inputSwitcher5 = (e,t) => {
     let form = [$('.passport-page > main .profile-settings .editor:nth-child(5) input'), $('.passport-page > main .profile-settings .editor:nth-child(5) #control')];
 
 
@@ -63,7 +63,7 @@ const inputSwitcher5 = () => {
         form[0].attr('disabled','');
     }
 }
-const inputSwitcher6 = () => {
+const inputSwitcher6 = (e,t) => {
     let form = [$('.passport-page > main .profile-settings .editor:nth-child(6) input'), $('.passport-page > main .profile-settings .editor:nth-child(6) #control')];
 
 

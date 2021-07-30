@@ -31,7 +31,7 @@
 #objects > .projects-search-form header #right-content{
     float: right;
     margin-right: 2%;
-    margin-top: 2%;
+    margin-top: 3%;
 }
 #objects > .projects-search-form header #right-content .close{
     width: 90%;
@@ -71,7 +71,7 @@
     height: 39px;
 }
 #objects > .objects-list main table .content td{
-    font-size: 90%;
+    font-size: 80%;
     border-top: solid 2px gray;
     padding-top: 10px;
     padding-bottom: 10px;
@@ -141,16 +141,64 @@
     -ms-transform: rotate(-45deg);
     transform: rotate(-45deg);
 }
-@media only all and (max-width: 414px){}
-@media only all and (max-width: 600px){}
-@media only all and (max-width: 768px){}
-@media only all and (max-width: 800px){}
-@media only all and (max-width: 960px){}
-@media only all and (max-width: 1024px){}
-@media only all and (max-width: 1280px){}
-@media only all and (max-width: 1366px){}
-@media only all and (max-width: 1440px){}
-@media only all and (max-width: 1536px){}
-@media only all and (max-width: 1600px){}
-@media only all and (max-width: 1920px){}
-@media only all and (min-width: 1920px){}
+@media all and (max-width: 414px){}
+@media all and (max-width: 600px){}
+@media all and (min-width: 240px) and (max-width: 768px){
+    #objects > .projects-search-form header .title {
+        font-size: 65%;
+    }
+    #objects > .projects-search-form header #right-content {
+        margin-top: 5%;
+    }
+    #objects > .projects-search-form {
+        padding-right: 25px;
+        padding-bottom: 5%;
+    }
+    #objects > .projects-search-form footer {
+        margin-top: 100%;
+    }
+}
+@media all and (max-width: 800px){}
+@media all  and (min-width: 768px) and (max-width: 960px){
+    #objects > .projects-search-form {
+        width: 80%;
+        padding-bottom: 20%;
+    }
+    #objects > .projects-search-form footer {
+        margin-top: 30%;
+    }
+}
+@media all and (max-width: 1024px){
+    #objects > .projects-search-form main {
+        margin-top: -6%;
+    }
+    #objects > .projects-search-form footer {
+        margin-top: 6%;
+    }
+    #objects > .projects-search-form header #right-content {
+        margin-top: 3%;
+    }
+    #objects > .objects-list main table .header th:nth-last-child(1), #objects > .objects-list main table .content td:nth-last-child(1){ display: none;}
+    #objects > .objects-list main table .content td:nth-child(3) {
+        width: 30%;
+    }
+}
+@media all and (max-width: 1280px){
+    #objects > .projects-search-form {
+        width: 80%;
+        padding-bottom: 5%;
+    }
+    #objects > .projects-search-form header #right-content {
+        margin-top: 3%;
+    }
+    #objects > .projects-search-form footer {
+        margin-top: 17%;
+    }
+    #link-switcher > a.active, #link-switcher > #delimeter:nth-last-child(1){ display: none; }
+}
+@media all and (max-width: 1366px){}
+@media all and (max-width: 1440px){}
+@media all and (max-width: 1536px){}
+@media all and (max-width: 1600px){}
+@media all and (max-width: 1920px){}
+@media all and (min-width: 1920px){}

@@ -44,7 +44,7 @@ body.lightbox-opener{
 }
 .form-group > div header h4.title-form{
     margin-left: 2vw;
-    font-size: 64%;
+    font-size: 35%;
 }
 .form-group > div footer label{
     display: block;
@@ -75,32 +75,42 @@ body.lightbox-opener{
     background-color: #0079bf;
     border: none;
     float: right;
-    margin-right: 2vw;
+    margin-right: 6vw;
+    margin-top: 14%;
+    padding: 3%;
+    width: 30%;
 }
   
 #mobile-form-popup > main.lb-filter-close, #mobile-form-popup > footer.lb-filter-close{
     display: none;
 }
 #objects > .projects-search-form footer.lightbox-opener {
-    height: 10vh;
+    height: 12vh;
     margin-top: 2px;
-    z-index: 1;
+    z-index: 11;
+    position: fixed;
 }
 #objects > .projects-search-form main.lightbox-opener {
     height: 95vh;
-    z-index: 1;
+    z-index: 99;
+    position: fixed;
 }
 
-@media only all and (max-width: 414px){}
-@media only all and (max-width: 600px){}
-@media only all and (max-width: 768px){}
-@media only all and (max-width: 800px){}
-@media only all and (max-width: 960px){}
-@media only all and (max-width: 1024px){}
-@media only all and (max-width: 1280px){}
-@media only all and (max-width: 1366px){}
-@media only all and (max-width: 1440px){}
-@media only all and (max-width: 1536px){}
-@media only all and (max-width: 1600px){}
-@media only all and (max-width: 1920px){}
-@media only all and (min-width: 1920px){}
+.form-group > div:nth-child(1) {
+    position: relative;
+    top: -33px;
+}
+
+@media all and (max-width: 414px){}
+@media all and (max-width: 600px){}
+@media all and (max-width: 768px){}
+@media all and (max-width: 800px){}
+@media all and (max-width: 960px){}
+@media all and (max-width: 1024px){}
+@media all and (max-width: 1280px){}
+@media all and (max-width: 1366px){}
+@media all and (max-width: 1440px){}
+@media all and (max-width: 1536px){}
+@media all and (max-width: 1600px){}
+@media all and (max-width: 1920px){}
+@media all and (min-width: 1920px){}

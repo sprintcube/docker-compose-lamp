@@ -1,6 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,600;0,700;0,800;1,300;1,400;1,600;1,700;1,800&display=swap');
 @import url('addons/adaptiveheader.css');
-@import url('addons/feedblocks/services2estate.css');
 @import url('addons/lightbox.css');
 @import url('addons/docsicon.css');
 @import url('addons/video-player.css');
@@ -18,7 +17,7 @@ html,body{
     margin-bottom: 0%;
 }
 h4.title, p.descr{
-    font-size: calc(100% / 2);
+    font-size: 100%;
 }
 .header{
     width: 100%;
@@ -190,10 +189,10 @@ h4.title, p.descr{
     display: inline-table;
 }
 
-#promo{ height: 378px; }
-#news{height:106px;padding-top: 6%;}
-#investsearch{height: 412px;padding-top: 8%;}
-#eventcalendar{height: 590px;padding-top: 10%;}
+#promo{height: 450px;}
+#news{height: 200px;padding-top: 6%;}
+#investsearch{height: 481px;padding-top: 8%;}
+#eventcalendar{height: 590px;padding-top: 4%;}
 #services{height: 206px;padding-top: calc(1vw - 15px);}
 #analytics{height: 245px;padding-top: 34px;padding-bottom: 217px;}
 #estate{height: 304px;padding-top: 1vw;}
@@ -727,6 +726,9 @@ h4.title, p.descr{
     top: 140px;
     left: calc(52% / 1.5);
 }
+#services > main #slider-controller img.gecko-fix{
+    top: -100px;
+}
 #services > main footer#slider-controller img{
     left: calc(-79% / 1.5);
 }
@@ -749,14 +751,14 @@ h4.title, p.descr{
     display: none;
 }
 #services > main #slider-controller-adaptive img{
-    width: 96%;
-    margin-top: 66px;
+    width: 5vw;
+    margin-top: 100px;
 }
 #services > main header#slider-controller-adaptive{
-    left: -17%;
+    left: -6%;
 }
 #services > main footer#slider-controller-adaptive{
-    right: -3%;
+    right: -6%;
     top: 0;
 }
 #services > main #slider-controller-adaptive img:hover{
@@ -820,7 +822,7 @@ h4.title, p.descr{
 }
 #services > main #slider-view .service-feed .service main img, #services > main #slider-view-adaptive .service main img{
     width: 50%;
-    object-fit: cover;
+    object-fit: contain;
     margin-left: 7%;
 }
 #services > main #slider-view .service-feed .service footer, #services > main #slider-view-adaptive .service footer{
@@ -847,6 +849,7 @@ h4.title, p.descr{
     display: block;
     text-align: justify;
     width: 77%;
+    font-size: calc(110% / 2);
 }
 
 #analytics > header{
@@ -887,14 +890,14 @@ h4.title, p.descr{
     display: none;
 }
 #analytics > main #slider-controller-adaptive img{
-    width: 82%;
-    margin-top: 109px;
+    width: 5vw;
+    margin-top: 200px;
 }
 #analytics > main header#slider-controller-adaptive{
-    left: -10%;
+    left: -4%;
 }
 #analytics > main footer#slider-controller-adaptive{
-    right: -24%;
+    right: -10%;
     top: 0;
 }
 #analytics > main #slider-controller-adaptive img:hover{
@@ -1000,6 +1003,9 @@ h4.title, p.descr{
     top: 140px;
     left: calc(76% / 1.5);
 }
+#estate > main #slider-controller img.gecko-fix{
+    top: -32px;
+}
 #estate > main #slider-controller-adaptive{
     width: 10%;
     height: 240px;
@@ -1010,14 +1016,14 @@ h4.title, p.descr{
     display: none;
 }
 #estate > main #slider-controller-adaptive img{
-    width: 82%;
-    margin-top: 174px;
+    width: 5vw;
+    margin-top: 200px;
 }
 #estate > main header#slider-controller-adaptive{
-    left: -37%;
+    left: -35%;
 }
 #estate > main footer#slider-controller-adaptive{
-    right: 7%;
+    right: 10%;
     top: 0;
 }
 #estate > main #slider-controller-adaptive img:hover{
@@ -1047,7 +1053,7 @@ h4.title, p.descr{
 }
 #estate > main #slider-view-adaptive .estat{
     width: 63vw;
-    height: 194px;
+    height: 235px;
     margin-left: -8vw;
     background-color: white;
     box-shadow: 3px -1px 4px 0px darkgrey;
@@ -1164,7 +1170,7 @@ h4.title, p.descr{
 #reviews > main #slider-controller img{
     width: 26%;
     position: relative;
-    top: 140px;
+    top: 100px;
     left: calc(58% / 1.5);
 }
 #reviews > main #slider-controller-adaptive{
@@ -1177,14 +1183,14 @@ h4.title, p.descr{
     display: none;
 }
 #reviews > main #slider-controller-adaptive img{
-    width: 82%;
-    margin-top: 66px;
+    width: 5vw;
+    margin-top: 100px;
 }
 #reviews > main header#slider-controller-adaptive{
     left: -11%;
 }
 #reviews > main footer#slider-controller-adaptive{
-    right: 18%;
+    right: -5%;
     top: 0;
 }
 
@@ -1256,7 +1262,7 @@ h4.title, p.descr{
     float: left;
     display: inline;
     margin-left: 12vw;
-    width: 20%;
+    width: 22%;
     position: relative;
     top: 50px;
     font-size: 98%;
@@ -1325,16 +1331,836 @@ h4.title, p.descr{
 	color: white;
 	text-decoration: none;
 }
-@media only all and (max-width: 414px){}
-@media only all and (max-width: 600px){}
-@media only all and (max-width: 768px){}
-@media only all and (max-width: 800px){}
-@media only all and (max-width: 960px){}
-@media only all and (max-width: 1024px){}
-@media only all and (max-width: 1280px){}
-@media only all and (max-width: 1366px){}
-@media only all and (max-width: 1440px){}
-@media only all and (max-width: 1536px){}
-@media only all and (max-width: 1600px){}
-@media only all and (max-width: 1920px){}
-@media only all and (min-width: 1920px){}
+@media all and (max-width: 1024px){
+    #news > main #slider-controller, #news > main #slider-view, #services > main #slider-controller, #services > main #slider-view,
+    #analytics > main #slider-controller, #analytics > main #slider-view, #estate > main #slider-controller, #estate > main #slider-view,
+    #reviews > main #slider-controller, #reviews > main #slider-view, #eventcalendar > main .calendar main, #eventcalendar > main .calendar .descr{ display: none; }
+    #news > main #slider-controller-adaptive, #news > main #slider-view-adaptive, #services > main #slider-controller-adaptive, #services > main #slider-view-adaptive,
+    #analytics > main #slider-controller-adaptive, #analytics > main #slider-view-adaptive, #estate > main #slider-controller-adaptive, #estate > main #slider-view-adaptive,
+    #reviews > main #slider-controller-adaptive, #reviews > main #slider-view-adaptive{ display: inherit; }
+
+    #link-switcher {
+        height: 20px;
+    }
+}
+@media all and (max-width: 414px){
+    #promo {
+        height: 600px;
+    }
+    #news {
+        height: 280px;
+    }
+    #investsearch {
+        height: 650px;
+    }
+    #services {
+        height: 580px;
+    }
+    #analytics {
+        height: 420px;
+    }
+    #estate {
+        height: 710px;
+    }
+    #reviews {
+        height: 320px;
+    }
+    #eventcalendar {
+        height: 780px;
+    }
+    #services > header .add-but, #estate > header .add-but {
+        width: 90%;
+    }
+    #promo > main.swiper-container .promo-feed .promoblock {
+        width: 90%;
+    }
+    #investsearch > header a { margin-left: 53%; }
+    #promo > header .links {
+        top: -49px;
+        left: 36vw;
+    }
+    #investsearch > main.swiper-container .popular-objects .popular-object {
+        width: 100%;
+    }
+    #eventcalendar > main .calendar header {
+        font-size: calc(100% * 2);
+    }
+    #eventcalendar > main .calendar .date {
+        top: calc(40px / 2);
+    }
+    #eventcalendar > main .calendar {
+        height: 170px;
+    }
+    #eventcalendar > main .calendar footer {
+        float: left;
+        display: block;
+        width: 93%;
+        margin-top: 9%;
+        margin-left: 7%;
+    }
+    #eventcalendar > main .calendar .event-location {
+        font-size: 90%;
+    }
+    #eventcalendar > main .calendar a {
+        font-size: 100%;
+    }
+    #promo > main.swiper-container .promo-feed .promoblock header {
+        width: 103%;
+    }
+    #promo > main.swiper-container .promo-feed .promoblock main {
+        padding-bottom: 20%;
+    }
+    #services > main {
+        right: 20vw;
+    }
+    #analytics > main {
+        right: 20vw;
+        top: -2%;
+    }
+    #estate > main {
+        right: 0vw;
+        top: -4%;
+    }
+    #reviews > main {
+        right: 15vw;
+        top: 12%;
+    }
+    #services > header, #analytics > header, #estate > header, #reviews > header {
+        width: 50%;
+    }
+    .footer {
+        height: calc(165px * 8);
+    }
+    .footer > header {
+        width: 72%;
+    }
+    .footer > main {
+        float: left;
+        display: block;
+        margin-right: 0vw;
+        top: 6%;
+        margin-left: 10%;
+    }
+}
+@media all and (min-width: 414px) and (max-width: 768px){
+    #promo {
+        height: 650px;
+    }
+    #news {
+        height: 280px;
+    }
+    #investsearch {
+        height: 650px;
+    }
+    #services {
+        height: 580px;
+    }
+    #analytics {
+        height: 420px;
+    }
+    #estate {
+        height: 633px;
+    }
+    #reviews {
+        height: 320px;
+    }
+    #eventcalendar {
+        height: 780px;
+    }
+    #services > header .add-but, #estate > header .add-but {
+        width: 90%;
+    }
+    #investsearch > header a { margin-left: 57%; }
+    #promo > header .links {
+        top: -49px;
+        left: 35vw;
+    }
+    #promo > main.swiper-container .promo-feed .promoblock {
+        width: 90%;
+        height: 490px;
+    }
+    #investsearch > main.swiper-container .popular-objects .popular-object {
+        width: 100%;
+    }
+    #eventcalendar > main .calendar header {
+        font-size: calc(100% * 2);
+    }
+    #eventcalendar > main .calendar .date {
+        top: calc(40px / 2);
+    }
+    #eventcalendar > main .calendar {
+        height: 170px;
+    }
+    #eventcalendar > main .calendar footer {
+        float: left;
+        display: block;
+        width: 93%;
+        margin-top: 9%;
+        margin-left: 7%;
+    }
+    #eventcalendar > main .calendar .event-location {
+        font-size: 90%;
+    }
+    #eventcalendar > main .calendar a {
+        font-size: 100%;
+    }
+    #promo > main.swiper-container .promo-feed .promoblock header {
+        width: 101%;
+    }
+    #services > main {
+        right: 20vw;
+    }
+    #analytics > main {
+        right: 20vw;
+        top: -2%;
+    }
+    #estate > main {
+        right: 0vw;
+        top: -4%;
+    }
+    #reviews > main {
+        right: 17vw;
+        top: 12%;
+    }
+    #services > header, #analytics > header, #estate > header, #reviews > header {
+        width: 50%;
+    }
+    .footer {
+        height: calc(210px * 4);
+    }
+    .footer > header {
+        width: 72%;
+    }
+    .footer > main {
+        float: left;
+        display: block;
+        margin-right: 0vw;
+        top: 15%;
+        margin-left: 10%;
+        width: 80%;
+    }
+    .footer > main #category_menu {
+        padding-right: 3%;
+    }
+}
+@media all and (min-width: 600px) and (max-width: 768px){
+    #investsearch > header a { margin-left: 53%; }
+    #promo > header .links {
+        top: -49px;
+        left: 25vw;
+    }
+    #promo > main.swiper-container .promo-feed .promoblock { width: 80%; }
+    #investsearch > main.swiper-container .popular-objects .popular-object {
+        width: 100%;
+    }
+    #services > header, #analytics > header, #estate > header, #reviews > header {
+        width: 50%;
+    }
+    #reviews > main {
+        top: 13%;
+    }
+    #estate {
+        padding-bottom: 26%;
+    }
+    #services > header, #analytics > header, #estate > header, #reviews > header {
+        width: 50%;
+    }
+    .footer > main #category_menu {
+        padding-right: 15%;
+    }
+    #estate > main #slider-view-adaptive .estat {
+        height: 230px;
+    }
+}
+@media all and (min-width: 768px) and (max-width: 800px){
+    #reviews {
+        padding-bottom: 33%;
+    }
+    #reviews > main {
+        top: 21%;
+        left: -15vw;
+    }
+    #estate {
+        height: 430px;
+    }
+    #services > main{
+        top: 12%;
+        left: -17vw;
+    }
+    #analytics > main {
+        margin-top: -6%;
+        left: -19vw;
+    }
+    #services > header, #analytics > header, #estate > header, #reviews > header {
+        width: 50%;
+    }
+    .footer {
+        height: calc(210px * 5);
+    }
+    .footer > header {
+        width: 50%;
+    }
+    .footer > main {
+        margin-right: -11vw;
+        width: 100%;
+        top: 12%;
+    }
+}
+@media all and (min-width: 600px) and (max-width: 768px){
+    #estate > main {
+        margin-top: 0%;
+    }
+    #estate {
+        padding-bottom: 49%;
+    }
+    #services > main #slider-view-adaptive .service {
+        height: 350px;
+    }
+    #services {
+        padding-bottom: 15%;
+    }
+    #analytics > main {
+        margin-top: -4%;
+    }
+    .footer {
+        height: calc(320px * 4);
+    }
+    .footer > main {
+        top: 6%;
+    }
+
+}
+@media all and (min-width: 800px) and (max-width: 1024px){
+    #reviews {
+        padding-bottom: 40%;
+    }
+}
+@media all and (min-width: 768px) and (max-width: 800px){
+    #investsearch > header a { margin-left: 53%; }
+    #promo > header .links {
+        top: -49px;
+        left: 20vw;
+    }
+    #promo {
+        height: 625px;
+    }
+    #investsearch {
+        height: 610px;
+        padding-top: 15%;
+    }
+    #services {
+        height: 567px;
+    }
+    #analytics {
+        padding-bottom: 450px;
+    }
+    #promo > main.swiper-container .promo-feed .promoblock { width: 35%; }
+    #services > main #slider-view-adaptive .service {
+        width: 58vw;
+        height: 330px;
+    }
+    #eventcalendar > main .calendar footer {
+        margin-top: 6%;
+    }
+    #eventcalendar {
+        height: 729px;
+    }
+    #estate > main {
+        right: -2vw;
+        top: -12%;
+    }
+    .footer {
+        height: calc(320px * 6);
+    }
+
+}
+@media all and (min-width: 800px) and (max-width: 960px){
+    #investsearch > header a { margin-left: 53%; }
+    #promo > header .links {
+        top: -49px;
+        left: 20vw;
+    }
+    #promo > main.swiper-container .promo-feed .promoblock {
+        height: 380px;
+    }
+    #investsearch {
+        height: 570px;
+    }  
+    #eventcalendar > main .calendar footer {
+        margin-top: 5%;
+    }  
+    #promo > main.swiper-container .promo-feed .promoblock {width: 27%;}
+    #services > header, #analytics > header, #estate > header, #reviews > header {
+        width: 50%;
+    }
+    #eventcalendar {
+        height: 630px;
+    }
+    #services {
+        height: 640px;
+    }
+    #estate {
+        height: calc(254px * 3);
+    }
+    #analytics {
+        padding-bottom: calc(217px * 2);
+    }
+    #services > main {
+        right: 17vw;
+        top: 10%;
+    }
+    #services > main #slider-view-adaptive .service {
+        width: 58vw;
+        height: 350px;
+    }
+    #analytics > main {
+        top: 6%;
+        right: 19vw;
+    }
+    #estate > main {
+        right: -2vw;
+        top: -10%;
+    }
+    #reviews > main {
+        right: 17vw;
+        top: 22%;
+    }
+    #promo > main.swiper-container .promo-feed .promoblock header {
+        width: 99%;
+    }
+    #promo > main.swiper-container .promo-feed .promoblock footer {
+        margin-top: 50%;
+    }
+    .footer {
+        height: calc(210px * 4);
+    }
+    .footer > header {
+        width: 50%;
+    }
+    .footer > main {
+        margin-right: -11vw;
+        width: 100%;
+        top: 12%;
+    }
+    .footer > main #category_menu {
+        padding-right: 17%;
+    }
+}
+@media all and (min-width: 960px) and (max-width: 1024px){
+    #link-switcher{
+        height: 22px;
+    }
+    #promo {
+        height: 550px;
+    }
+    #news {
+        height: 300px;
+        padding-top: 3vw;
+    }
+    #investsearch {
+        height: 600px;
+    }
+    #analytics {
+        height: 490px;
+    }
+    #services {
+        height: calc(350px * 2);
+    }
+    #estate {
+        height: calc(390px * 2);
+    }
+    #reviews {
+        height: 400px;
+        padding-bottom: 37vw;
+    }
+    #news > main #slider-view,
+    #services > main #slider-view,
+    #estate > main #slider-view,
+    #analytics > main #slider-view,
+    #reviews > main #slider-view,
+    #news > main #slider-controller,
+    #services > main #slider-controller,
+    #estate > main #slider-controller,
+    #analytics > main #slider-controller,
+    #reviews > main #slider-controller,
+    #eventcalendar > main .calendar main,
+    #eventcalendar > main .calendar .descr{ display: none; }
+    
+    #news > main #slider-view-adaptive,
+    #services > main #slider-view-adaptive,
+    #estate > main #slider-view-adaptive,
+    #analytics > main #slider-view-adaptive,
+    #reviews > main #slider-view-adaptive,
+    #news > main #slider-controller-adaptive,
+    #services > main #slider-controller-adaptive,
+    #estate > main #slider-controller-adaptive,
+    #analytics > main #slider-controller-adaptive,
+    #reviews > main #slider-controller-adaptive{ display: inherit; }
+
+    .footer > header main {
+        display: none;
+    }
+    .footer > header {
+        width: 25%;
+    }
+    .footer > main {
+        float: left;
+        margin-left: -27vw;
+        width: 80%;
+        top: 19%;
+    }
+    .footer {
+        height: calc(123px * 7);
+    }
+    .footer > header .logo img {
+        width: 100%;
+    }
+    #investsearch > header, #estate > header, #services > header {
+        width: 80%;
+    }
+    #promo > header .add-but, #investsearch > header .add-but { width: 50%; }
+
+    #eventcalendar > main .calendar header {
+        float: left;
+        font-size: calc((127% / 2) * 3);
+        display: block;
+        width: 100%;
+        margin-left: 2%;
+    }
+    #eventcalendar > main .calendar .date {
+        top: 2px;
+        margin-left: 0%;
+    }
+    #eventcalendar > main .calendar footer {
+        float: left;
+        display: block;
+        width: 100%;
+        margin-top: 1%;
+        margin-left: 2%;
+    }
+    #eventcalendar > main .calendar {
+        height: 110px;
+    }
+    #eventcalendar > main .calendar a {
+        font-size: 120%;
+    }
+    #eventcalendar > main .calendar .event-location {
+        font-size: 120%;
+    }
+    #analytics > main {
+        top: -5%;
+        right: 21vw;
+    }
+    #estate > main {
+        top: -14%;
+        right: 1vw;
+    }
+    #reviews > main {
+        right: 17vw;
+        top: 22%;
+    }
+    #investsearch > header a { margin-left: 53%; }
+    #promo > header .links {
+        top: -49px;
+        left: 16vw;
+    }
+    #analytics > main #slider-view .analytic-feed .analytic h2, #analytics > main #slider-view-adaptive .analytic h2{ top: 4mm; }
+    #services > main {top: 12%;right: 17vw;}
+    #services > main #slider-view-adaptive .service {
+        height: 360px;
+    }
+    #estate > main #slider-controller-adaptive img{
+        margin-top: 400%;
+    }
+    #analytics > main #slider-controller-adaptive img{
+        margin-top: 320%;
+    }
+}
+@media all and (min-width: 1024px) and (max-width: 1280px){
+    #eventcalendar > main .calendar .date {
+        margin-left: -25%;
+    }
+    #promo {
+        height: 500px;
+    }
+    #news {
+        height: 180px;
+    }
+    #investsearch {
+        height: 520px;
+    }
+    .footer > main #category_menu { 
+        padding-right: 2%;
+    }
+    #eventcalendar {
+        height: 710px;
+    }
+    #eventcalendar > main .calendar {
+        height: 175px;
+    }
+    #eventcalendar > main .calendar main {
+        display: none;
+    }
+    #eventcalendar > main .calendar footer {
+        width: 80%;
+        margin-top: 1%;
+    }
+    #analytics > main #slider-view .analytic-feed .analytic {
+        height: 405px;
+        width: 27%;
+    }
+    #reviews > main {
+        top: 50%;
+    }
+    #promo > header .links {
+        top: -48px;
+        left: 14vw;
+    }
+    #analytics > main{
+        top: 13%;
+        left: -3%;
+    }
+    #estate > main {
+        top: -15%;
+    }
+    #analytics > main #slider-view .analytic-feed .analytic:nth-last-child(1) {
+        left: -1%;
+    }
+    #services > main footer#slider-controller img, #analytics > main footer#slider-controller img {
+        left: calc(-45% / 1.5);
+    }
+    #estate > main footer#slider-controller img {
+        left: calc(-25% / 1.5);
+    }
+    .header > #header_top .ht_header span {
+        display: none;
+    }
+    .header > #header_bottom {
+        margin-right: 4%;
+        margin-top: -6%;
+    }
+    #promo > header .marketing-info {
+        margin-top: 5%;
+        margin-right: -18%;
+    }
+    #services > main #slider-controller img.gecko-fix {
+        top: -110px;
+    }
+    #estate > main #slider-controller img.gecko-fix {
+        top: -20px;
+    }
+
+}
+@media all and (min-width: 1211px) and (max-width: 1233px){
+    #promo > header .marketing-info {
+        margin-top: -15%;
+    }
+}
+@media all and (min-width: 1233px) and (max-width: 1279px){
+    .header > #header_bottom {
+        position: relative;
+        top: 77%;
+    }
+}
+@media all and (width: 1280px){
+    .header > #header_bottom {
+        margin-right: 17%;
+        top: -10%;
+    }
+    #promo > header .marketing-info {
+        margin-right: -3%;
+    }
+
+}
+@media (max-width: 1024px){
+    .footer > header main {
+        display: none;
+    }
+    .header > #header_top .ht_header span, .header > #header_bottom, #promo > header .marketing-info{ display: none; }
+    .header > #header_bottom_adaptive{ display: inherit; }
+    #investsearch > header a { margin-left: 22%; }
+    #investsearch > header .add-but {
+        width: 20%;
+    }
+    #promo > header .add-but {
+        width: 60%;
+    }
+}
+
+@media all and (min-width: 1280px) and (max-width: 1366px){
+    .header > #header_bottom {
+        margin-top: -5%;
+        position: relative;
+        right: -5%;
+    }
+    #promo > header .marketing-info {
+        margin-top: 3%;
+    }
+    #eventcalendar > main .calendar main {
+        display: none;
+    }
+    #investsearch {
+        height: 520px;
+    }
+    #eventcalendar > main .calendar footer {
+        width: 80%;
+    }
+    #analytics > main{
+        top: 2%;
+    }
+    #estate > main {
+        top: 7%;
+    }
+    #analytics > main #slider-view .analytic-feed .analytic:nth-last-child(1) {
+        left: -1%;
+        padding-top: 5px;
+    }
+    #promo > header .marketing-info header img {
+        width: 77%;
+        border-radius: 10px 10px 10px 10px;
+    }
+    #promo > header .links {
+        top: -48px;
+        left: 11vw;
+    }
+    #services > main footer#slider-controller img, #analytics > main footer#slider-controller img {
+        left: calc(-45% / 1.5);
+    }
+    #estate > main footer#slider-controller img {
+        left: calc(-25% / 1.5);
+    }
+    #reviews > main {
+        top: 10%;
+    }
+    
+}
+@media all and (min-width: 1336px) and (max-width: 1367px){
+    #promo > header .marketing-info {
+        margin-top: -13%;
+    }
+}
+@media all and (min-width: 1366px) and (max-width: 1440px){
+    .header > #header_bottom {
+        margin-top: -5%;
+    }
+    #eventcalendar > main .calendar main {
+        display: none;
+    }
+    #services > main #slider-view .service-feed .service header {
+        font-size: calc(130% / 2);
+    }
+    #analytics > main #slider-view .analytic-feed .analytic:nth-child(1) h2 {
+        font-size: calc(254% / 2);
+    }
+    #analytics > main #slider-view .analytic-feed .analytic h2 {
+        font-size: calc(200% / 2);
+    }
+    #analytics > main #slider-view .analytic-feed .analytic .descr{
+        font-size: calc(190% / 2);
+    }
+    #analytics > main #slider-view .analytic-feed .analytic#with-title-image img{
+        height: 130px;
+    }
+    #analytics > main #slider-view .analytic-feed .analytic:nth-last-child(1) {
+        top: 0px;
+        left: 1%;
+    }
+    #eventcalendar > main .calendar header {
+        font-size: calc((127% / 2) * 3);
+    }
+    #eventcalendar > main .calendar .event-location {
+        font-size: calc(200% / 2);
+    }
+    #eventcalendar > main .calendar a {
+        font-size: calc(200% / 2);
+    }
+    #eventcalendar > main .calendar .descr {
+        font-size: calc(200% / 2);
+    }
+    #eventcalendar > main .calendar footer {
+        width: 82%;
+        margin-top: 1%;
+    }
+    #eventcalendar > main .calendar {
+        height: 125px;
+    }
+    #analytics > main{
+        top: 4%;
+    }
+    #estate > main {
+        top: 7%;
+    }
+    #investsearch {
+        height: 500px;
+    }
+    #promo > header .marketing-info {
+        margin-top: -13%;
+    }
+    #promo > header .links {
+        top: -50px;
+        left: 10vw;
+    }
+    #estate > main #slider-controller img.gecko-fix {
+        top: -30px;
+    }
+    #analytics > main #slider-view .analytic-feed .analytic#with-title-image {
+        top: 98px;
+    }
+
+}
+@media all and (min-width: 1406px) and (max-width: 1440px){
+    #promo > header .marketing-info {
+        margin-top: -12%;
+    }
+    .header > #header_bottom {
+        margin-top: 0%;
+    }
+}
+
+@media all and (min-width: 1440px) and (max-width: 1536px){
+    #eventcalendar > main .calendar main {
+        margin-left: 2%;
+    }
+    #eventcalendar > main .calendar{
+        height: 160px;
+    } 
+    #promo > header .marketing-info {
+        margin-top: -13%;
+    }
+    #investsearch {
+        height: 500px;
+    }
+}
+@media all and (max-width: 1536px){
+    
+}
+@media all and (max-width: 1600px){}
+@media all and (max-width: 1920px){}
+@media all and (min-width: 1920px){
+    #promo > header .marketing-info {
+        margin-top: -9%;
+    }
+    #promo > main.swiper-container .promo-feed .promoblock {
+        height: 480px;
+    }
+    #analytics > main {
+        top: 25%;
+    }
+    #reviews > main {
+        top: 20%;
+    }
+}
+@media all and (width: 1024px){
+    #promo {
+        height: 520px;
+    }
+    #analytics > main {
+        left: -22%;
+    }
+    #news {
+        height: 220px;
+    }
+    #investsearch {
+        height: 570px;
+    }
+}

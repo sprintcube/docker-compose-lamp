@@ -1,0 +1,7 @@
+{
+    "el": [
+        {"cont": "#services > main #slider-controller img"},
+        {"cont": "#estate > main #slider-controller img"},
+        {"cont": ".news-feed, .passport-page"}
+    ]
+}

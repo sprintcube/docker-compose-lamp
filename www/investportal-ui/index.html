@@ -9,6 +9,7 @@
     <script src="https://yastatic.net/jquery/3.3.1/jquery.min.js"></script>
     <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
     <script src="https://kit.fontawesome.com/97c3285af2.js" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Detect.js/2.2.2/detect.min.js" integrity="sha512-iNuMM5cmiXDvk4VCTp6UEbDwYy/dA3CFTTYKB6/V+LD62S58TQZ+sykXzhmVT1QvqHD39ZhecsPGXjZUaIuSWQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <style>
         .add-but{
             text-align: center;
@@ -33,7 +34,7 @@
             height: 451px;
             margin-top: -14%;
         }
-        #promo > main.swiper-container .promo-feed, #investsearch > main.swiper-container .popular-objects{margin-left: 9%;}
+        #promo > main.swiper-container .promo-feed, #investsearch > main.swiper-container .popular-objects{margin-left: 8%;}
         
         [data-text]:nth-last-child(1)::before, [data-text]:nth-last-child(3)::before, [data-text]:nth-last-child(5)::before, #news[data-text]::before{
             color: white;
@@ -65,19 +66,103 @@
             top: 69%;
         }
         .footer { overflow: hidden; } 
-        @media only all and (max-width: 414px){}
-        @media only all and (max-width: 600px){}
-        @media only all and (max-width: 768px){}
-        @media only all and (max-width: 800px){}
-        @media only all and (max-width: 960px){}
-        @media only all and (max-width: 1024px){}
-        @media only all and (max-width: 1280px){}
-        @media only all and (max-width: 1366px){}
-        @media only all and (max-width: 1440px){}
-        @media only all and (max-width: 1536px){}
-        @media only all and (max-width: 1600px){}
-        @media only all and (max-width: 1920px){}
-        @media only all and (min-width: 1920px){}
+        @media all and (max-width: 414px){
+            #promo > main.swiper-container .promo-feed {
+                margin-left: 2%;
+            }
+            #investsearch > main.swiper-container .popular-objects {
+                margin-left: -2%;
+            }
+            #investsearch > header .add-but {
+                width: 50%;
+            }
+            #investsearch > header a {
+                margin-left: 52%;
+                font-size: 60%;
+            }
+            #promo > header .links {
+                top: -49px;
+                left: 46vw;
+                font-size: 70%;
+            }   
+        }
+        @media all and (min-width: 414px) and (max-width: 600px){
+            #promo > main.swiper-container .promo-feed {
+                margin-left: 2%;
+            }
+            #investsearch > main.swiper-container .popular-objects {
+                margin-left: -2%;
+            }             
+        }
+        @media all and (min-width: 600px) and (max-width: 768px){
+            #promo > main.swiper-container .promo-feed {
+                margin-left: 5%;
+            }  
+            #promo > main.swiper-container .promo-feed .promoblock {
+                height: 530px;
+            }
+            #investsearch > main.swiper-container .popular-objects {
+                margin-left: 0%;
+            } 
+            #investsearch > main.swiper-container .popular-objects .popular-object {
+                height: 500px;
+            }
+        }
+        @media all and (min-width: 768px) and (max-width: 800px){
+            #promo > main.swiper-container .promo-feed {
+                margin-left: 8%;
+            }
+            #estate > main #slider-view-adaptive .estat {
+                height: 220px;
+            }
+            #investsearch > main.swiper-container .popular-objects .popular-object { width: 28%; }
+            #investsearch > main.swiper-container .popular-objects {
+                margin-left: 6%;
+            }
+        }
+        @media all and (min-width: 800px) and (max-width: 960px){
+            #promo > main.swiper-container .promo-feed {
+                margin-left: 7%;
+            }
+            #investsearch > main.swiper-container .popular-objects {
+                margin-left: 7%;
+            }
+        }
+        @media all and (min-width: 960px) and (max-width: 1024px){
+            #promo > main.swiper-container .promo-feed {
+                margin-left: 7%;
+            }
+            #investsearch > main.swiper-container .popular-objects {
+                margin-left: 7%;
+            }
+        }
+        @media all and (min-width: 1024px) and (max-width: 1280px){
+            #promo > main.swiper-container .promo-feed, #investsearch > main.swiper-container .popular-objects {
+                margin-left: 8%;
+            }
+        }
+        @media all and (min-width: 1280px) and (max-width: 1366px){
+            #promo > main.swiper-container .promo-feed, #investsearch > main.swiper-container .popular-objects {
+                margin-left: 8%;
+            }
+        }
+        @media all and (min-width: 1366px) and (max-width: 1440px){
+            #promo > main.swiper-container .promo-feed, #investsearch > main.swiper-container .popular-objects {
+                margin-left: 8%;
+            }
+        }
+        @media all and (min-width: 1440px) and (max-width: 1536px){
+            #promo > main.swiper-container .promo-feed, #investsearch > main.swiper-container .popular-objects {
+                margin-left: 8%;
+            }
+        }
+        @media all and (max-width: 1600px){}
+        @media all and (max-width: 1920px){}
+        @media all and (min-width: 1920px){
+            #promo > main.swiper-container .promo-feed, #investsearch > main.swiper-container .popular-objects {
+                margin-left: 8%;
+            }
+        }
     </style>
 </head>
 <body>
@@ -1006,7 +1091,7 @@
                                 <h3>Wellness services</h3>
                             </header>
                             <main>
-                                <img src="https://poisk-firm.ru/storage/employer/logo/94/96/d7/f438ee1f5cf7b477f939a06f84.png" alt="Logo">
+                                <img src="https://adlerkurortsochi.ru/wp-content/uploads/2018/02/adler2.png" alt="Logo">
                             </main>
                             <footer>
                                 <h4 class="title">Resort service and shady park</h4>
@@ -1051,7 +1136,7 @@
                                 <h3>Wellness services</h3>
                             </header>
                             <main>
-                                <img src="https://poisk-firm.ru/storage/employer/logo/94/96/d7/f438ee1f5cf7b477f939a06f84.png" alt="Logo">
+                                <img src="https://adlerkurortsochi.ru/wp-content/uploads/2018/02/adler2.png" alt="Logo">
                             </main>
                             <footer>
                                 <h4 class="title">Resort service and shady park</h4>
@@ -1096,7 +1181,7 @@
                                 <h3>Wellness services</h3>
                             </header>
                             <main>
-                                <img src="https://poisk-firm.ru/storage/employer/logo/94/96/d7/f438ee1f5cf7b477f939a06f84.png" alt="Logo">
+                                <img src="https://adlerkurortsochi.ru/wp-content/uploads/2018/02/adler2.png" alt="Logo">
                             </main>
                             <footer>
                                 <h4 class="title">Resort service and shady park</h4>
@@ -1176,7 +1261,7 @@
                                     <h3>Wellness services</h3>
                                 </header>
                                 <main>
-                                    <img src="https://poisk-firm.ru/storage/employer/logo/94/96/d7/f438ee1f5cf7b477f939a06f84.png" alt="Logo">
+                                    <img src="https://adlerkurortsochi.ru/wp-content/uploads/2018/02/adler2.png" alt="Logo">
                                 </main>
                                 <footer>
                                     <h4 class="title">Resort service and shady park</h4>
@@ -1191,7 +1276,7 @@
                                     <h3>Wellness services</h3>
                                 </header>
                                 <main>
-                                    <img src="https://poisk-firm.ru/storage/employer/logo/94/96/d7/f438ee1f5cf7b477f939a06f84.png" alt="Logo">
+                                    <img src="https://adlerkurortsochi.ru/wp-content/uploads/2018/02/adler2.png" alt="Logo">
                                 </main>
                                 <footer>
                                     <h4 class="title">Resort service and shady park</h4>
@@ -1206,7 +1291,7 @@
                                     <h3>Wellness services</h3>
                                 </header>
                                 <main>
-                                    <img src="https://poisk-firm.ru/storage/employer/logo/94/96/d7/f438ee1f5cf7b477f939a06f84.png" alt="Logo">
+                                    <img src="https://adlerkurortsochi.ru/wp-content/uploads/2018/02/adler2.png" alt="Logo">
                                 </main>
                                 <footer>
                                     <h4 class="title">Resort service and shady park</h4>

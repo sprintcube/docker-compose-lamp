@@ -5,21 +5,21 @@
 .passport-page {
     height: calc(284px * 2);
 }
-.passport-page > main .profile-settings{
+.passport-page > main #left-content .profile-settings{
     width: 50%;
 }
-.passport-page > main .profile-settings .editor{
+.passport-page > main #left-content .profile-settings .editor{
     display: block;
     margin-top: 2%;
 }
-.passport-page > main .profile-settings .editor label{
+.passport-page > main #left-content .profile-settings .editor label{
     display: block;
     margin-top: 8px;
     font-size: 80%;
     margin-left: 2%;
     color: gray;
 }
-.passport-page > main .profile-settings .editor input{
+.passport-page > main #left-content .profile-settings .editor input{
     background-color: white;
     font-size: 90%;
     color:black;
@@ -32,24 +32,25 @@
     border-radius: 4px;
     padding-top: 2%;
     padding-bottom: 2%;
+    margin-left: 2%;
 }
-.passport-page > main .profile-settings .editor #control{
+.passport-page > main #left-content .profile-settings .editor #control{
     font-size: 100%;
     display: inline-table;
     margin-top: 15px;
     color: gray;
     margin-left: 2%;
 }
-.passport-page > main .profile-settings .editor #control:hover{
+.passport-page > main #left-content .profile-settings .editor #control:hover{
     cursor: pointer;
 }
-.passport-page > main .profile-settings .editor #control i.inputing{
+.passport-page > main #left-content .profile-settings .editor #control i.inputing{
     color: #0079bf;
 }
-.passport-page > main .profile-settings .editor input:focus{
+.passport-page > main #left-content .profile-settings .editor input:focus{
     border-color:#0079bf;
 }
-.passport-page > main .profile-settings .editor input:disabled{
+.passport-page > main #left-content .profile-settings .editor input:disabled{
     font-weight: normal;
     color: gray;
 }
@@ -63,16 +64,63 @@
     position: relative;
 }
 
-@media only all and (max-width: 414px){}
-@media only all and (max-width: 600px){}
-@media only all and (max-width: 768px){}
-@media only all and (max-width: 800px){}
-@media only all and (max-width: 960px){}
-@media only all and (max-width: 1024px){}
-@media only all and (max-width: 1280px){}
-@media only all and (max-width: 1366px){}
-@media only all and (max-width: 1440px){}
-@media only all and (max-width: 1536px){}
-@media only all and (max-width: 1600px){}
-@media only all and (max-width: 1920px){}
-@media only all and (min-width: 1920px){}
+@media all and (max-width: 414px){
+    #passport {
+        height: 590px;
+    }    
+}
+@media all and (max-width: 600px){
+    #passport {
+        height: 590px;
+    }    
+}
+@media all and (max-width: 768px){
+    #passport {
+        height: 590px;
+    }    
+    .passport-page {
+        height: calc(313px * 2);
+    }
+}
+@media all and (max-width: 800px){
+    #passport {
+        height: 590px;
+    }  
+    .passport-page {
+        height: calc(313px * 2);
+    }  
+}
+@media all and (max-width: 960px){
+    #passport {
+        height: 590px;
+    }  
+    .passport-page > main #left-content .profile-settings .editor input{
+        width: 80%;
+    }
+    .passport-page > main #left-content .profile-settings {
+        width: 98%;
+    }
+    .passport-page {
+        height: calc(313px * 2);
+    }
+}
+@media all and (max-width: 1024px){
+    #passport {
+        height: 590px;
+    }
+    .passport-page {
+        height: calc(313px * 2);
+    }
+}
+@media all and (max-width: 1280px){
+    #passport {
+        height: 680px;
+    }
+
+}
+@media all and (max-width: 1366px){}
+@media all and (max-width: 1440px){}
+@media all and (max-width: 1536px){}
+@media all and (max-width: 1600px){}
+@media all and (max-width: 1920px){}
+@media all and (min-width: 1920px){}
