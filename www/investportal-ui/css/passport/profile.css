@@ -5,55 +5,6 @@
 .passport-page {
     height: calc(284px * 2);
 }
-.passport-page > main #left-content .profile-settings{
-    width: 50%;
-}
-.passport-page > main #left-content .profile-settings .editor{
-    display: block;
-    margin-top: 2%;
-}
-.passport-page > main #left-content .profile-settings .editor label{
-    display: block;
-    margin-top: 8px;
-    font-size: 80%;
-    margin-left: 2%;
-    color: gray;
-}
-.passport-page > main #left-content .profile-settings .editor input{
-    background-color: white;
-    font-size: 90%;
-    color:black;
-    border: solid 2px darkgray;
-    padding: 5px;
-    font-weight: bold;
-    text-indent: 2%;
-    margin-top: 12px;
-    width: 86%;
-    border-radius: 4px;
-    padding-top: 2%;
-    padding-bottom: 2%;
-    margin-left: 2%;
-}
-.passport-page > main #left-content .profile-settings .editor #control{
-    font-size: 100%;
-    display: inline-table;
-    margin-top: 15px;
-    color: gray;
-    margin-left: 2%;
-}
-.passport-page > main #left-content .profile-settings .editor #control:hover{
-    cursor: pointer;
-}
-.passport-page > main #left-content .profile-settings .editor #control i.inputing{
-    color: #0079bf;
-}
-.passport-page > main #left-content .profile-settings .editor input:focus{
-    border-color:#0079bf;
-}
-.passport-page > main #left-content .profile-settings .editor input:disabled{
-    font-weight: normal;
-    color: gray;
-}
 .passport-page > footer{
     position: relative;
     top: -32%;
@@ -63,64 +14,230 @@
     top: 60px;
     position: relative;
 }
-
+.settings-form{
+    width: 90%;
+    margin-top: -1%;
+}
+.settings-form > .form-wrapper, .settings-form > .form-wrapper-special{
+    display: block;
+    margin-top: 2%;
+}
+.settings-form > .form-wrapper label, .settings-form > .form-wrapper-special label{
+    color: gray;
+    font-size: 60%;
+    display: block;
+    text-indent: 2%;
+    position: relative;
+    top: 9px;
+    width: 5.5vw;
+    background-color: white;
+    margin-left: 2%;
+    padding-left: 1%;
+}
+.settings-form > .form-wrapper .input,  .settings-form > .form-wrapper button, .settings-form > .form-wrapper-special .input,  .settings-form > .form-wrapper-special button{
+    font-size: calc(60% * 2);
+    text-indent: 2%;
+}
+.settings-form > .form-wrapper .input, .settings-form > .form-wrapper-special .input{
+    padding: 1%;
+    font-weight: bold;
+    background-color: transparent;
+    border-radius: 8px;
+    width: 50%;
+    border: solid 2px lightgray;
+}
+.settings-form > .form-wrapper button i.fa-edit, .settings-form > .form-wrapper-special i.fa-edit{
+    color: gray;
+}
+.settings-form > .form-wrapper button i.fa-save, .settings-form > .form-wrapper-special i.fa-save{
+    color: #0079bf;
+}
+.settings-form > .form-wrapper .input:disabled, .settings-form > .form-wrapper-special .input:disabled{
+    font-weight: normal;
+}
+.settings-form > .form-wrapper button, .settings-form > .form-wrapper-special button{
+    background-color: transparent;
+    border: none;
+    position: relative;
+    left: -6%;
+}
 @media all and (max-width: 414px){
     #passport {
         height: 590px;
-    }    
+    }
 }
 @media all and (max-width: 600px){
     #passport {
         height: 590px;
+    }  
+    .settings-form{
+        width: 100%;
+    }
+    .settings-form > .form-wrapper, .settings-form > .form-wrapper-special{
+        margin-top: -1%;
+    }
+    .settings-form > .form-wrapper .input, .settings-form > .form-wrapper-special .input{
+        width: 95%;
+        padding: 2%;
+    }
+    .settings-form > .form-wrapper button, .settings-form > .form-wrapper-special button{
+        left: 88%;
+        top: -36px;
+    }
+    .settings-form > .form-wrapper label, .settings-form > .form-wrapper-special label{
+        width: 100px;
+        font-size: 50%;
+        padding-left: 2%;
+    }
+    .settings-form > .form-wrapper .input,  .settings-form > .form-wrapper button, .settings-form > .form-wrapper-special .input,  .settings-form > .form-wrapper-special button{
+        font-size: calc(50% * 3);
+    }  
+}
+@media all and (min-width: 600px) and (max-width: 768px){
+    #passport {
+        height: 590px;
     }    
-}
-@media all and (max-width: 768px){
-    #passport {
-        height: 590px;
-    }    
     .passport-page {
         height: calc(313px * 2);
     }
+    .settings-form{
+        width: 100%;
+    }
+    .settings-form > .form-wrapper, .settings-form > .form-wrapper-special{
+        margin-top: -1%;
+    }
+    .settings-form > .form-wrapper .input, .settings-form > .form-wrapper-special .input{
+        width: 95%;
+        padding: 2%;
+    }
+    .settings-form > .form-wrapper button, .settings-form > .form-wrapper-special button{
+        left: 88%;
+        top: -40px;
+    }
 }
-@media all and (max-width: 800px){
+@media all and (min-width: 768px) and (max-width: 800px){
     #passport {
         height: 590px;
     }  
     .passport-page {
         height: calc(313px * 2);
     }  
+    .settings-form{
+        width: 100%;
+    }
+    .settings-form > .form-wrapper, .settings-form > .form-wrapper-special{
+        margin-top: -1%;
+    }
+    .settings-form > .form-wrapper label, .settings-form > .form-wrapper-special label{
+        width: 100px;
+        font-size: 50%;
+        padding-left: 2%;
+    }
+    .settings-form > .form-wrapper .input, .settings-form > .form-wrapper-special .input{
+        width: 95%;
+        padding: 2%;
+    }
+    .settings-form > .form-wrapper button, .settings-form > .form-wrapper-special button{
+        left: 88%;
+        top: -40px;
+    }
 }
-@media all and (max-width: 960px){
+@media all and (min-width: 800px) and (max-width: 960px){
     #passport {
         height: 590px;
     }  
-    .passport-page > main #left-content .profile-settings .editor input{
-        width: 80%;
-    }
-    .passport-page > main #left-content .profile-settings {
-        width: 98%;
-    }
     .passport-page {
         height: calc(313px * 2);
     }
+    .settings-form{
+        width: 100%;
+    }
+    .settings-form > .form-wrapper, .settings-form > .form-wrapper-special{
+        margin-top: -1%;
+    }
+    .settings-form > .form-wrapper label, .settings-form > .form-wrapper-special label{
+        width: 100px;
+        font-size: 50%;
+        padding-left: 2%;
+    }
+    .settings-form > .form-wrapper .input, .settings-form > .form-wrapper-special .input{
+        width: 95%;
+        padding: 2%;
+    }
+    .settings-form > .form-wrapper button, .settings-form > .form-wrapper-special button{
+        left: 88%;
+        top: -40px;
+    }
 }
-@media all and (max-width: 1024px){
+@media all and (min-width: 960px) and (max-width: 1024px){
     #passport {
         height: 590px;
     }
     .passport-page {
         height: calc(313px * 2);
-    }
-}
-@media all and (max-width: 1280px){
-    #passport {
-        height: 680px;
     }
 
+    .settings-form{
+        width: 100%;
+    }
+    .settings-form > .form-wrapper, .settings-form > .form-wrapper-special{
+        margin-top: -1%;
+    }
+    .settings-form > .form-wrapper label, .settings-form > .form-wrapper-special label{
+        width: 100px;
+        font-size: 50%;
+        padding-left: 2%;
+    }
+    .settings-form > .form-wrapper .input, .settings-form > .form-wrapper-special .input{
+        width: 95%;
+        padding: 2%;
+    }
+    .settings-form > .form-wrapper button, .settings-form > .form-wrapper-special button{
+        left: 90%;
+        top: -40px;
+    }
+}
+@media all and (min-width: 1024px) and (max-width: 1280px){
+    #passport {
+        height: 810px;
+    }
+    .passport-page {
+        height: calc(313px * 2);
+    }
+    .settings-form{
+        width: 100%;
+    }
+    .settings-form > .form-wrapper, .settings-form > .form-wrapper-special{
+        margin-top: -1%;
+    }
+    .settings-form > .form-wrapper label, .settings-form > .form-wrapper-special label{
+        width: 100px;
+        font-size: 50%;
+        padding-left: 2%;
+    }
+    .settings-form > .form-wrapper .input, .settings-form > .form-wrapper-special .input{
+        width: 95%;
+        padding: 2%;
+    }
+    .settings-form > .form-wrapper button, .settings-form > .form-wrapper-special button{
+        left: 90%;
+        top: -40px;
+    }
 }
 @media all and (max-width: 1366px){}
 @media all and (max-width: 1440px){}
 @media all and (max-width: 1536px){}
 @media all and (max-width: 1600px){}
 @media all and (max-width: 1920px){}
-@media all and (min-width: 1920px){}
+@media all and (min-width: 1920px){
+    #passport {
+        height: 450px;
+    }
+    .passport-page {
+        height: calc(295px * 2);
+    }
+    .passport-page > footer {
+        position: relative;
+        top: -27%;
+    }
+}

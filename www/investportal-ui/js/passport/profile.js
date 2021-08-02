@@ -1,86 +1,72 @@
-const inputSwitcher1 = (e,t) => {
-    let form = [$('.passport-page > main .profile-settings .editor:nth-child(1) input'), $('.passport-page > main .profile-settings .editor:nth-child(1) #control')];
-
-
-    if(form[0].attr('disabled')){
-        form[1].html("<i class='far fa-save inputing'></i>");
-        form[0].removeAttr('disabled');
-    }
-    else{
-        form[1].html("<i class='far fa-edit'></i>");
-        form[0].attr('disabled','');
-    }
-}
-const inputSwitcher2 = (e,t) => {
-    let form = [$('.passport-page > main .profile-settings .editor:nth-child(2) input'), $('.passport-page > main .profile-settings .editor:nth-child(2) #control')];
-
-
-    if(form[0].attr('disabled')){
-        form[1].html("<i class='far fa-save inputing'></i>");
-        form[0].removeAttr('disabled');
-    }
-    else{
-        form[1].html("<i class='far fa-edit'></i>");
-        form[0].attr('disabled','');
-    }
-}
-const inputSwitcher3 = (e,t) => {
-    let form = [$('.passport-page > main .profile-settings .editor:nth-child(3) input'), $('.passport-page > main .profile-settings .editor:nth-child(3) #control')];
-
-
-    if(form[0].attr('disabled')){
-        form[1].html("<i class='far fa-save inputing'></i>");
-        form[0].removeAttr('disabled');
-    }
-    else{
-        form[1].html("<i class='far fa-edit'></i>");
-        form[0].attr('disabled','');
-    }
-}
-const inputSwitcher4 = (e,t) => {
-    let form = [$('.passport-page > main .profile-settings .editor:nth-child(4) input'), $('.passport-page > main .profile-settings .editor:nth-child(4) #control')];
-
-
-    if(form[0].attr('disabled')){
-        form[1].html("<i class='far fa-save inputing'></i>");
-        form[0].removeAttr('disabled');
-    }
-    else{
-        form[1].html("<i class='far fa-edit'></i>");
-        form[0].attr('disabled','');
-    }
-}
-const inputSwitcher5 = (e,t) => {
-    let form = [$('.passport-page > main .profile-settings .editor:nth-child(5) input'), $('.passport-page > main .profile-settings .editor:nth-child(5) #control')];
-
-
-    if(form[0].attr('disabled')){
-        form[1].html("<i class='far fa-save inputing'></i>");
-        form[0].removeAttr('disabled');
-    }
-    else{
-        form[1].html("<i class='far fa-edit'></i>");
-        form[0].attr('disabled','');
-    }
-}
-const inputSwitcher6 = (e,t) => {
-    let form = [$('.passport-page > main .profile-settings .editor:nth-child(6) input'), $('.passport-page > main .profile-settings .editor:nth-child(6) #control')];
-
-
-    if(form[0].attr('disabled')){
-        form[1].html("<i class='far fa-save inputing'></i>");
-        form[0].removeAttr('disabled');
-    }
-    else{
-        form[1].html("<i class='far fa-edit'></i>");
-        form[0].attr('disabled','');
-    }
-}
 $(document).ready(function () {
-    $('.passport-page > main .profile-settings .editor:nth-child(1) #control').click(inputSwitcher1);
-    $('.passport-page > main .profile-settings .editor:nth-child(2) #control').click(inputSwitcher2);
-    $('.passport-page > main .profile-settings .editor:nth-child(3) #control').click(inputSwitcher3);
-    $('.passport-page > main .profile-settings .editor:nth-child(4) #control').click(inputSwitcher4);
-    $('.passport-page > main .profile-settings .editor:nth-child(5) #control').click(inputSwitcher5);
-    $('.passport-page > main .profile-settings .editor:nth-child(6) #control').click(inputSwitcher6);
+    const but = $('.settings-form > .form-wrapper button'),
+          butCont = $('.settings-form > .form-wrapper button i.far'),
+          put = $('.settings-form > .form-wrapper .input');
+
+    for (let index = 0; index < $('.settings-form > .form-wrapper').length; index++) {
+        but.eq(index).click(function (e,t) { 
+
+            const curPut = put.eq(index),
+                  curBC = butCont.eq(index);
+            let inputState = false,
+                butState = "",
+                butStateDel = "";
+
+            if (!curPut.prop('disabled')) {
+                inputState = true;
+                butState = "fa-edit";
+                butStateDel = "fa-save";
+            } 
+            else { 
+                butState = "fa-save"; 
+                butStateDel = "fa-edit";
+            }
+            
+            curPut.prop('disabled',inputState);
+
+            curBC.addClass(butState);
+            curBC.removeClass(butStateDel);
+            
+        });
+        
+    }
+
+    const buts = $('.settings-form > .form-wrapper-special button'),
+          butConts = $('.settings-form > .form-wrapper-special button i.far'),
+          puts = $('.settings-form > .form-wrapper-special .input');
+
+    for (let index = 0; index < $('.settings-form > .form-wrapper-special').length; index++) {
+        buts.eq(index).click(function (e,t) { 
+
+            const curPuts = puts.eq(index),
+                  curBCs = butConts.eq(index);
+            let inputStates = false,
+                butStates = "",
+                butStateDels = "",
+                attrState = 'text';
+
+            if (!curPuts.prop('disabled')) {
+                inputStates = true;
+                butStates = "fa-edit";
+                butStateDels = "fa-save";
+
+                if(index === 1){ attrState = 'password'; }
+                else{ attrState = 'email'; }
+            } 
+            else { 
+                butStates = "fa-save"; 
+                butStateDels = "fa-edit";
+            }
+            
+            curPuts.prop('disabled',inputStates);
+            curPuts.attr('type',attrState);
+
+            curBCs.addClass(butStates);
+            curBCs.removeClass(butStateDels);
+            
+        });
+        
+    }
+
+    
 });
