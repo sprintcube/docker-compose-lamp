@@ -726,7 +726,7 @@ h4.title, p.descr{
     top: 140px;
     left: calc(52% / 1.5);
 }
-#services > main #slider-controller img.gecko-fix{
+#services > main.gecko-fix #slider-controller img{
     top: -100px;
 }
 #services > main footer#slider-controller img{
@@ -850,6 +850,9 @@ h4.title, p.descr{
     text-align: justify;
     width: 77%;
     font-size: calc(110% / 2);
+}
+#services > main.gecko-fix #slider-view .service-feed .service footer .descr, #services > main.gecko-fix #slider-view-adaptive .service footer .descr{
+    font-size: calc(200% / 2);
 }
 
 #analytics > header{
@@ -1003,7 +1006,7 @@ h4.title, p.descr{
     top: 140px;
     left: calc(76% / 1.5);
 }
-#estate > main #slider-controller img.gecko-fix{
+#estate > main.gecko-fix #slider-controller img{
     top: -32px;
 }
 #estate > main #slider-controller-adaptive{
@@ -1943,10 +1946,10 @@ h4.title, p.descr{
         margin-top: 5%;
         margin-right: -18%;
     }
-    #services > main #slider-controller img.gecko-fix {
+    #services > main.gecko-fix #slider-controller img {
         top: -110px;
     }
-    #estate > main #slider-controller img.gecko-fix {
+    #estate > main.gecko-fix #slider-controller img {
         top: -20px;
     }
 
@@ -2100,7 +2103,7 @@ h4.title, p.descr{
         top: -50px;
         left: 10vw;
     }
-    #estate > main #slider-controller img.gecko-fix {
+    #estate > main.gecko-fix #slider-controller img {
         top: -30px;
     }
     #analytics > main #slider-view .analytic-feed .analytic#with-title-image {
