@@ -827,8 +827,8 @@ h4.title, p.descr{
 }
 #services > main #slider-view .service-feed .service footer, #services > main #slider-view-adaptive .service footer{
     display: block;
-    width: 100%;
-    font-size: 87%;
+    width: 95%;
+    font-size: 100%;
     margin-left: 2%;
     padding-top: 2%;
     padding-bottom: 2%;
@@ -848,8 +848,8 @@ h4.title, p.descr{
 #services > main #slider-view .service-feed .service footer .descr, #services > main #slider-view-adaptive .service footer .descr{
     display: block;
     text-align: justify;
-    width: 77%;
-    font-size: calc(110% / 2);
+    width: 90%;
+    font-size: calc(120% / 2);
 }
 #services > main.gecko-fix #slider-view .service-feed .service footer .descr, #services > main.gecko-fix #slider-view-adaptive .service footer .descr{
     font-size: calc(200% / 2);
@@ -1141,7 +1141,7 @@ h4.title, p.descr{
 	color: lightgrey;
 }
 .rating-mini > span:before {
-	content: 'â˜…';
+	content: '★';
 }
 .rating-mini > span.active {
 	color: gold;
