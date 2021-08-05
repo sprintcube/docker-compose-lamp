@@ -56,10 +56,10 @@
   top: 17px;
   left: -3%;
   width: 99%;
-  height: 100%;
+  height: 105%;
   background-color: white;
   z-index: 1;
-  padding: 0px 11px 9px 0px;
+  padding: 0px 9px 9px 0px;
   box-sizing: border-box;
   box-shadow: inherit;
 }
@@ -68,15 +68,16 @@
   content: '';
   pointer-events: none;
   position: absolute;
-  top: -1px;
-  left: 0%;
+  top: 1px;
+  left: -2%;
   z-index: -2;
   width: 99%;
-  height: 99%;
+  height: 103%;
   background-color: white;
   box-shadow: inherit;
   padding-left: 5px;
-  padding-bottom: 2%;
+  padding-bottom: 4%;
+  padding-right: 11px;
 }
 #investsearch > main.swiper-container .popular-objects .popular-object::after {
   content: '';
@@ -86,11 +87,11 @@
   right: 2%;
   z-index: -2;
   width: 99%;
-  height: 96%;
+  height: 100%;
   background-color: white;
   box-shadow: inherit;
-  padding-right: 5px;
-  padding-bottom: 4%;
+  padding-right: 10px;
+  padding-bottom: 6%;
 }
 #services > main #slider-view .service-feed .service,  #services > main #slider-view-adaptive .service{
   position: relative;

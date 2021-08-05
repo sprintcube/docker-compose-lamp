@@ -557,13 +557,12 @@ h4.title, p.descr{
     cursor: pointer;
 }
 #investsearch > main.swiper-container .popular-objects .popular-object header {
-    width: 99%;
+    width: 98%;
     background-color: #0079bf;
     color: white;
     margin-left: 0%;
     padding-bottom: 4%;
     padding-top: 3%;
-    padding-right: 0vw;
     padding-left: 4%;
 }
 #investsearch > main.swiper-container .popular-objects .popular-object header h3{
@@ -574,7 +573,7 @@ h4.title, p.descr{
     top: 10px;
 }
 #investsearch > main.swiper-container .popular-objects .popular-object main img{
-    width: 100%;
+    width: 99%;
     height: 228px;
     object-fit: cover;
 }
