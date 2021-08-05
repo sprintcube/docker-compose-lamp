@@ -190,8 +190,8 @@ h4.title, p.descr{
 }
 
 #promo{height: 450px;}
-#news{height: 200px;padding-top: 6%;}
-#investsearch{height: 481px;padding-top: 8%;}
+#news{height: 200px;padding-top: 1%;}
+#investsearch{height: 481px;padding-top: 3%;}
 #eventcalendar{height: 590px;padding-top: 4%;}
 #services{height: 206px;padding-top: calc(1vw - 15px);}
 #analytics{height: 245px;padding-top: 34px;padding-bottom: 217px;}
@@ -1758,7 +1758,6 @@ h4.title, p.descr{
     }
     #news {
         height: 300px;
-        padding-top: 3vw;
     }
     #investsearch {
         height: 600px;
