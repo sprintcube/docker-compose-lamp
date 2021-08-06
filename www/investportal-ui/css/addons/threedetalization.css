@@ -109,6 +109,7 @@
   background-color: white;
   z-index: 1;
   padding: 4px 3px 10px 0;
+  box-shadow: -8px 0px 5px -2px rgb(34 60 80 / 38%);
 }
 #services > main #slider-view .service-feed .service::before,  #services > main #slider-view-adaptive .service::before {
   content: '';
@@ -151,7 +152,7 @@
   z-index: 1;
   padding: 4px 2px 2px 0;
   box-sizing: border-box;
-  box-shadow: inherit;
+  box-shadow: -8px 0px 5px -2px rgb(34 60 80 / 38%);
 }
 
 #estate > main #slider-view .estat-feed .estat::before, #estate > main #slider-view-adaptive .estat::before {

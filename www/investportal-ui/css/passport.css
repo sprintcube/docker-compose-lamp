@@ -2,7 +2,7 @@
 @import url('passport/cart.css');
 @import url('addons/passportpagesadaptivemenu.css');
 #passport{
-    height: 643px;
+    height: 780px;
 }
 .passport-page {
     width: 76%;
@@ -11,7 +11,7 @@
     float: left;
     left: 12%;
     top: -2%;
-    padding-bottom: 3%;
+    padding-bottom: 7%;
     padding-right: 5px;
 }
 .passport-page > header, .passport-page > footer{
