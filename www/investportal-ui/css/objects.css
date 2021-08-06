@@ -110,8 +110,8 @@
     top: 0px;
     width: 18px;
     height: 18px;
-    border: 1px solid #f0f3f4;
-    background-color: #f0f3f4;
+    border: 1px solid #bec4c6;
+    background-color: #bec4c6;
 }
 
 #objects > .projects-search-form main form .selectors .selector #type-selector + span:before{

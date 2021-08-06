@@ -71,8 +71,8 @@
     top: 0px;
     width: 18px;
     height: 18px;
-    border: 1px solid #f0f3f4;
-    background-color: #f0f3f4;
+    border: 1px solid #bec4c6;
+    background-color: #bec4c6;
 }
 
 .passport-page > main .services-settings footer .services-selectors .selector input + span:before{

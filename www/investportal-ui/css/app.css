@@ -865,7 +865,7 @@ h4.title, p.descr{
     width: 70%;
     float: right;
     display: inline-table;
-    top: 9%;
+    top: 11%;
     right: 3vw;
     transform: scale(1.1);
     -webkit-transform: scale(1.1);
@@ -2013,8 +2013,10 @@ h4.title, p.descr{
         top: 7%;
     }
     #analytics > main #slider-view .analytic-feed .analytic:nth-last-child(1) {
-        left: -1%;
-        padding-top: 5px;
+        left: 1%;
+    }
+    #analytics > main #slider-view .analytic-feed .analytic:nth-last-child(2) {
+        left: -7%;
     }
     #promo > header .marketing-info header img {
         width: 77%;
@@ -2064,7 +2066,7 @@ h4.title, p.descr{
     }
     #analytics > main #slider-view .analytic-feed .analytic:nth-last-child(1) {
         top: 0px;
-        left: 1%;
+        left: 3%;
     }
     #eventcalendar > main .calendar header {
         font-size: calc((127% / 2) * 3);
@@ -2086,7 +2088,7 @@ h4.title, p.descr{
         height: 125px;
     }
     #analytics > main{
-        top: 4%;
+        top: 9%;
     }
     #estate > main {
         top: 7%;
