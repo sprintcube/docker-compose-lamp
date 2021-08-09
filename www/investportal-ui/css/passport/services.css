@@ -1,8 +1,24 @@
 @import url('../passport.css');
-#passport{ height: 322px; }
+#passport{ height: 445px; }
 .passport-page{ height: 489px; }
 .passport-page > main .services-settings header{
-  margin-left: 4%;
+  margin-left: -1%;
+  position: relative;
+}
+.passport-page > main .services-settings header:after {
+  content: "▼";
+  padding: 0 8px;
+  font-size: 18px;
+  position: absolute;
+  right: 26vw;
+  top: 38px;
+  z-index: 1;
+  text-align: center;
+  width: 10%;
+  height: 100%;
+  pointer-events: none;
+  box-sizing: border-box;
+  color: black;
 }
 .passport-page > main .services-settings header span{
   color: gray;
@@ -27,10 +43,12 @@
   width: 51%;
   border-radius: 10px;
   border: solid 2px gray;
+  appearance: none;
+  padding-right: 25px;
 }
 .passport-page > main .services-settings footer{
   margin-top: -1%;
-  margin-left: 3vw;
+  margin-left: 0vw;
 }
 .passport-page > main .services-settings footer .services-selectors{
   display: inline-table;
@@ -46,7 +64,6 @@
 .passport-page > footer {
     float: left;
     margin-top: -24%;
-    margin-left: 42px;
 }
 .passport-page.gecko-fix > footer {
     margin-top: 2%;
@@ -114,8 +131,12 @@
   .passport-page {
     height: 610px;
   }
+  .passport-page > main .services-settings header:after {
+    right: 4vw;
+    top: 30px;
+  }
 }
-@media all and (max-width: 600px){
+@media all and (min-width: 414px) and (max-width: 600px){
   .passport-page > main .services-settings footer .services-selectors {
     display: block;
     width: 80%;
@@ -125,6 +146,10 @@
   }
   .passport-page {
     height: 630px;
+  }
+  .passport-page > main .services-settings header:after {
+    right: 4vw;
+    top: 30px;
   }
 }
 @media all and (max-width: 768px){
@@ -143,6 +168,10 @@
   .passport-page {
     height: 610px;
   }
+  .passport-page > main .services-settings header:after {
+    right: 2vw;
+    top: 35px;
+  }
 }
 @media all  and (min-width: 768px) and (max-width: 800px){
   .passport-page > main .services-settings footer .services-selectors {
@@ -154,25 +183,55 @@
   .passport-page {
     height: 610px;
   }
+  .passport-page > main .services-settings header:after {
+    right: 2vw;
+    top: 38px;
+  }
 }
-@media all and (max-width: 960px){
+@media all and (min-width:800px) and (max-width: 960px){
   #passport {
     height: calc(322px * 3);
   }
+  .passport-page > main .services-settings header:after {
+    right: 40vw;
+    top: 34px;
+  }
 }
-@media all and (max-width: 1024px){
+@media all and (min-width:960px) and (max-width: 1024px){
   #passport {
     height: calc(322px * 3);
   }
+  .passport-page > main .services-settings header:after {
+    right: 39vw;
+    top: 36px;
+  }
 }
-@media all and (max-width: 1280px){
+@media all and (min-width:1024px) and (max-width: 1280px){
   #passport {
     height: calc(247px * 3);
   }
+  .passport-page > main .services-settings header:after {
+    right: 38vw;
+    top: 40px;
+  }
 }
-@media all and (max-width: 1366px){}
+@media all and (max-width: 1280px){
+  .passport-page > main .services-settings header, .passport-page > main .services-settings footer{
+    margin-left: 2%;
+  }
+}
+@media all and (min-width: 1280px) and (max-width: 1366px){
+  .passport-page > main .services-settings header:after { right: 37vw; }
+}
+@media all and (min-width: 1366px) and (max-width: 1440px){
+  .passport-page > main .services-settings header:after { right: 28vw; }
+}
 @media all and (max-width: 1440px){}
 @media all and (max-width: 1536px){}
 @media all and (max-width: 1600px){}
 @media all and (max-width: 1920px){}
-@media all and (min-width: 1920px){}
+@media all and (min-width: 1920px){
+  .passport-page > footer {
+    margin-top: -17%;
+  }
+}
