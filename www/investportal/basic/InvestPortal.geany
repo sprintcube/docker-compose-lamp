@@ -27,9 +27,10 @@ long_line_behaviour=1
 long_line_column=72
 
 [files]
-current_page=1
+current_page=2
 FILE_NAME_0=480;PHP;0;EUTF-8;1;1;0;%2Fhome%2Fhead%2FDesktop%2FСерега%20Младший%2FITProjects%2Fdocker-compose-lamp%2Fwww%2Finvestportal%2Fbasic%2Frequirements.php;0;4
 FILE_NAME_1=337;PHP;0;EUTF-8;1;1;0;%2Fhome%2Fhead%2FDesktop%2FСерега%20Младший%2FITProjects%2Fdocker-compose-lamp%2Fwww%2Finvestportal%2Fbasic%2Fcontrollers%2FSiteController.php;0;4
+FILE_NAME_2=0;PHP;0;EUTF-8;1;1;0;%2Ftmp%2Ffz3temp-2%2Fsidebar-right.php;0;4
 
 [prjorg]
 source_patterns=*.c;*.C;*.cpp;*.cxx;*.c++;*.cc;*.m;

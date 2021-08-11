@@ -304,15 +304,16 @@
     .objects-adding-search > main footer#mobile-form-popup{ display: inherit; }
     .objects-adding-search > main footer#form-popup{ display: none; }
     .objects-adding-search > footer #right-content {
-        width: 70%;
-        margin-top: -126px;
-        right: -40vw;
+        width: 90%;
+        margin-top: -129px;
+        right: -60vw;
     }
     .range-form {
         width: 20%;
+        margin-top: 64px;
     }
     .range-form:nth-child(2) {
-        margin-top: 60px;
+        margin-top: 52px;
     }
     #objects > .projects-search-form main form {
         margin-top: -12%;
@@ -338,7 +339,7 @@
         margin-top: 15%;
     }
     #objects > .projects-search-form footer #left-content {
-        width: 100%;
+        width: 109%;
         margin-left: 3vw;
     }
 
@@ -378,8 +379,12 @@
         width: 100%;
         margin-left: 3vw;
     }
+    .range-form {
+        width: 30%;
+        margin-top: 64px;
+    }
     .range-form:nth-child(2) {
-        margin-top: 60px;
+        margin-top: 52px;
     }
 }
 @media all and (min-width: 600px) and (max-width: 768px){
@@ -417,8 +422,12 @@
         width: 100%;
         margin-left: 3vw;
     }
+    .range-form {
+        width: 30%;
+        margin-top: 68px;
+    }
     .range-form:nth-child(2) {
-        margin-top: 70px;
+        margin-top: 55px;
     }
 }
 @media all and (min-width: 768px) and (max-width: 800px){
@@ -428,6 +437,13 @@
         width: 100%;
         position: relative;
         top: 74%;
+    }
+    .range-form {
+        width: 30%;
+        margin-top: 68px;
+    }
+    .range-form:nth-child(2) {
+        margin-top: 55px;
     }
 }
 @media all and (min-width: 800px) and (max-width: 960px){
@@ -445,6 +461,16 @@
     .objects-adding-search > footer #right-content {
         margin-top: 27px;
         right: 5%;
+    }
+    .objects-adding-search > footer #left-content .input-from-to {
+        width: 188%;
+    }
+    .range-form {
+        width: 90%;
+        margin-top: 68px;
+    }
+    .range-form:nth-child(2) {
+        margin-top: 62px;
     }
 }
 @media all and (min-width: 960px) and (max-width: 1024px){
@@ -467,10 +493,27 @@
     .objects-adding-search > header #left-content {
         width: 100%;
     }
+    .range-form {
+        width: 90%;
+        margin-top: 80px;
+    }
+    .range-form:nth-child(2) {
+        margin-top: 62px;
+    }
 }
 @media all and (min-width: 1024px) and (max-width: 1280px){
     #objects > .projects-search-form {
         width: 75%;
+    }
+    .objects-adding-search > footer #left-content .input-from-to {
+        width: 189%;
+    }
+    .range-form {
+        width: 90%;
+        margin-top: 80px;
+    }
+    .range-form:nth-child(2) {
+        margin-top: 62px;
     }
 }
 @media all and (min-width: 1280px) and (max-width: 1366px){
@@ -480,16 +523,27 @@
     #objects > .projects-search-form footer {
         margin-top: -17%;
     }
+    .objects-adding-search > footer #left-content .input-from-to {
+        width: initial;
+    }
+    .range-form {
+        width: inherit;
+    }
     .objects-adding-search > footer #right-content {
-        margin-top: 51px;
+        margin-top: 102px;
+        right: 30%;
     }
     .range-form:nth-child(2) {
-        margin-top: 70px;
+        margin-top: 55px;
     }
     .objects-adding-search > main header form div {
         margin-top: -43px;
         font-size: 75%;
     }
+    .objects-adding-search > header #left-content header form div:not(:nth-child(1)) {
+        width: 45%;
+        padding-right: 6px;
+    } 
 }
 @media all and (min-width: 1366px) and (max-width: 1440px){
     #objects > .projects-search-form main .objects-adding-search header #right-content {
@@ -502,21 +556,36 @@
         margin-top: 51px;
     }
     .range-form:nth-child(2) {
-        margin-top: 70px;
+        margin-top: 55px;
     }
     .objects-adding-search > main header form div {
         margin-top: -80px;
         font-size: 75%;
+    }
+    .range-form {
+        margin-top: 62px;
     }
 }
 @media all and (min-width: 1440px) and (max-width: 1536px){
     #objects > .projects-search-form main .objects-adding-search header #right-content {
         margin-top: 2%;
     }
+    .range-form {
+        margin-top: 73px;
+    }
+    .range-form:nth-child(2) {
+        margin-top: 55px;
+    }
 }
 @media all and (min-width: 1536px) and (max-width: 1600px){
     #objects > .projects-search-form main .objects-adding-search header #right-content {
         margin-top: 2%;
+    }
+    .range-form {
+        margin-top: 57px;
+    }
+    .range-form:nth-child(2) {
+        margin-top: 55px;
     }
 }
 @media all and (min-width: 1600px) and (max-width: 1920px){
@@ -525,7 +594,16 @@
     }
 }
 @media all and (min-width: 1920px){
+    #objects > .projects-search-form {
+        height: 1020px;
+    }
     #objects > .projects-search-form main .objects-adding-search header #right-content {
         margin-top: 1%;
+    }
+    .objects-adding-search > footer #right-content {
+        top: 18px;
+    }
+    .range-form:nth-child(2) {
+        margin-top: 64px;
     }
 }
