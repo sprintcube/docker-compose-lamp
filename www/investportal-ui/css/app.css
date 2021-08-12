@@ -189,8 +189,8 @@ h4.title, p.descr{
     display: inline-table;
 }
 
-#promo{height: 450px;}
-#news{height: 200px;padding-top: 1%;}
+#promo{height: 420px;}
+#news{height: 200px;padding-top: 3%;}
 #investsearch{height: 481px;padding-top: 3%;}
 #eventcalendar{height: 590px;padding-top: 4%;}
 #services{height: 206px;padding-top: calc(1vw - 15px);}
@@ -290,7 +290,7 @@ h4.title, p.descr{
     display: inline-table;
     float:right;
     width: 80%;
-    margin-top: -12%;
+    margin-top: -11%;
     margin-right: -9%;
 }
 #promo > header .marketing-info footer ul{
@@ -2108,6 +2108,9 @@ h4.title, p.descr{
     }
     #analytics > main #slider-view .analytic-feed .analytic#with-title-image {
         top: 98px;
+    }
+    #news {
+        padding-top: 5%;
     }
 
 }

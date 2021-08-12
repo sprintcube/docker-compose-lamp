@@ -153,7 +153,9 @@
     width: 97%;
     padding-left: 2%;
     padding-bottom: 2%;
-    padding-right: 0vw;
+    padding-top: 1%;
+    position: relative;
+    top: 3px;
 }
 .objects-adding-search > header #left-content header form div:not(:nth-child(1)){
     display: inline-table;
