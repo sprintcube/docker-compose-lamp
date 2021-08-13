@@ -1,6 +1,6 @@
 @import url('../passport.css');
 #passport {
-    height: 472px;
+    height: 600px;
 }
 .passport-page {
     height: calc(329px * 2);
