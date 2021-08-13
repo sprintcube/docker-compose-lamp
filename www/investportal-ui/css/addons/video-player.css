@@ -48,25 +48,19 @@
 }
 @media all and (min-width: 768px) and (max-width: 1280px){
     .video-player > .play {
-        top: calc(-230px / 2);
+        top: calc(-405px / 2);
         left: calc(60% / 2);
     }
 }
 @media all and (min-width: 800px) and (max-width: 960px){
     .video-player > .play {
-        left: calc(65% / 2);
+        left: calc(73% / 2);
     }
 }
 @media all and (min-width: 960px) and (max-width: 1024px){
     .video-player > .play {
-        top: calc(-235px / 2);
-        left: calc(68% / 2);
-    }
-}
-@media all and (max-width: 1280px){
-    .video-player > .play {
-        top: calc(-235px / 2);
-        left: calc(68% / 2);
+        top: calc(-425px / 2);
+        left: calc(77% / 2);
     }
 }
 @media all and (min-width: 1280px) and (max-width: 1366px){
