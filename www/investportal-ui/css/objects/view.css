@@ -68,7 +68,7 @@ span.view-title{
 }
 .object-viewer > .left-content header .object-contacts .contact span{
     display: block;
-    font-size: 70%;
+    font-size: 66%;
     margin-top: 4%;
     color: black;
     font-weight: bold;
@@ -76,7 +76,7 @@ span.view-title{
 }
 .object-viewer > .left-content header .object-contacts .contact a{
     display: block;
-    font-size: 70%;
+    font-size: 66%;
     margin-top: 4%;
     color: #0079bf;
     font-weight: bold;

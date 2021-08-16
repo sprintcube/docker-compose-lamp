@@ -70,7 +70,13 @@
 }
 @media all and (min-width: 1366px) and (max-width: 1440px){
     .input-from-to {
-        margin-top: 0%;
+        margin-top: -1%;
+    }
+    .objects-adding-search > header #right-content .input-from-to > span.content-form {
+        height: 34px;
+    }
+    .input-from-to:nth-last-child(1) {
+        margin-top: -5%;
     }
 }
 @media all and (min-width: 1440px) and (max-width: 1536px){

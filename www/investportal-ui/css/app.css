@@ -2116,6 +2116,9 @@ h4.title, p.descr{
     #news {
         padding-top: 5%;
     }
+    #reviews > main footer#slider-controller img {
+        left: calc(-40% / 1.5);
+    }
 
 }
 @media all and (min-width: 1406px) and (max-width: 1440px){
@@ -2141,8 +2144,10 @@ h4.title, p.descr{
         height: 500px;
     }
 }
-@media all and (max-width: 1536px){
-    
+@media all and (min-width: 1536px) and (max-width: 1600px){
+    #promo > header .marketing-info {
+        margin-top: -11%;
+    }
 }
 @media all and (max-width: 1600px){}
 @media all and (max-width: 1920px){}
