@@ -52,12 +52,15 @@ span.view-title{
     width: 120%;
 }
 .object-viewer > .left-content header .object-contacts .contact{
-    width: 27%;
+    width: 26%;
     display: inline-table;
     margin-left: 0%;
     border-bottom: solid 3px #0079bf;
     height: 74px;
     padding-bottom: 18px;
+}
+.object-viewer > .left-content header .object-contacts .contact:not(:nth-child(1)){
+    margin-left: 2%;
 }
 .object-viewer > .left-content header .object-contacts .contact img{
     width: 30px;
