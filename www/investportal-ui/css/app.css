@@ -1967,16 +1967,6 @@ h4.title, p.descr{
         top: 77%;
     }
 }
-@media all and (width: 1280px){
-    .header > #header_bottom {
-        margin-right: 17%;
-        top: -10%;
-    }
-    #promo > header .marketing-info {
-        margin-right: -3%;
-    }
-
-}
 @media (max-width: 1024px){
     .footer > header main {
         display: none;
@@ -1993,13 +1983,32 @@ h4.title, p.descr{
 }
 
 @media all and (min-width: 1280px) and (max-width: 1366px){
-    .header > #header_bottom {
-        margin-top: -5%;
+    #promo {
+        height: 460px;
+    }
+    #analytics > main #slider-view .analytic-feed .analytic:nth-child(1) {
         position: relative;
-        right: -5%;
+        top: -3px;
+    }
+    #analytics > main #slider-view .analytic-feed .analytic:nth-child(1) h2, #analytics > main #slider-view-adaptive .analytic:nth-child(3n+1) h2 {
+        font-size: 120%;
+    }
+    #analytics > main #slider-view .analytic-feed .analytic {
+        height: 309px;
+        width: 27%;
+    }
+    #analytics > main #slider-view .analytic-feed .analytic#with-title-image img, #analytics > main #slider-view-adaptive .analytic#with-title-image img {
+        height: 82px;
+    }
+    #investsearch > main.swiper-container .popular-objects .popular-object {
+        height: 450px;
+    }
+    .header > #header_bottom {
+        margin-right: 17%;
+        top: -10%;
     }
     #promo > header .marketing-info {
-        margin-top: 3%;
+        margin-right: -3%;
     }
     #eventcalendar > main .calendar main {
         display: none;
@@ -2011,7 +2020,11 @@ h4.title, p.descr{
         width: 80%;
     }
     #analytics > main{
-        top: 2%;
+        top: 28%;
+    }
+    #news {
+        height: 180px;
+        padding-bottom: 12%;
     }
     #estate > main {
         top: 7%;
