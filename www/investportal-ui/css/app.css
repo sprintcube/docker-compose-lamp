@@ -2004,7 +2004,7 @@ h4.title, p.descr{
         height: 450px;
     }
     .header > #header_bottom {
-        margin-right: 17%;
+        margin-right: 12%;
         top: -10%;
     }
     #promo > header .marketing-info {
@@ -2051,6 +2051,9 @@ h4.title, p.descr{
     }
     #reviews > main {
         top: 10%;
+    }
+    #reviews > main footer#slider-controller img {
+        left: calc(-40% / 1.5);
     }
     
 }
