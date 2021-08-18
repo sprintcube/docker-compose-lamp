@@ -2077,6 +2077,9 @@ h4.title, p.descr{
     .header > #header_bottom {
         margin-top: -5%;
     }
+    .header > #header_top .ht_header span {
+        display: none;
+    }
     #eventcalendar > main .calendar main {
         display: none;
     }

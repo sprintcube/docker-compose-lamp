@@ -5,7 +5,7 @@
     height: 780px;
 }
 .passport-page {
-    width: 76%;
+    width: 75%;
     background-color: white;
     position: relative;
     float: left;
@@ -156,6 +156,11 @@
 @media all and (max-width: 800px){}
 @media all and (max-width: 960px){}
 @media all and (max-width: 1024px){
+    .passport-page {
+        width: 80%;
+        left: 12%;
+        top: 2%;
+    }
 }
 @media all and (max-width: 1280px){
     .passport-page > main #left-content #table-list {
@@ -172,8 +177,7 @@
         height: 1000px;
     }
     .passport-page {
-        width: 80%;
-        left: 11%;
+        left: 12%;
         top: 2%;
     }
     .footer, .passport-page > header #right-content a, .passport-page > main #right-content { display: none; }
@@ -181,11 +185,6 @@
     .passport-page > header #left-content, .passport-page > header #right-content {
         margin-top: calc(12px / 2);
         font-size: calc(159% / 2);
-    }
-}
-@media all and (max-width: 1366px){
-    .passport-page {
-        width: 80%;
     }
 }
 @media all and (min-width: 1280px) and (max-width: 1366px){
