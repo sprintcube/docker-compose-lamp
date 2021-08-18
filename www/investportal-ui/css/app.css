@@ -2055,7 +2055,18 @@ h4.title, p.descr{
     #reviews > main footer#slider-controller img {
         left: calc(-40% / 1.5);
     }
-    
+    #services > main #slider-controller img {
+        left: calc(20% / 1.5);
+    }
+    #analytics > main #slider-controller img {
+        left: calc(30% / 1.5);
+    }
+    #estate > main #slider-controller img {
+        left: calc(50% / 1.5);
+    }
+    #reviews > main #slider-controller img {
+        left: calc(30% / 1.5);
+    }
 }
 @media all and (min-width: 1336px) and (max-width: 1367px){
     #promo > header .marketing-info {

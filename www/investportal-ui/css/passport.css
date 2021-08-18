@@ -188,6 +188,15 @@
         width: 80%;
     }
 }
+@media all and (min-width: 1280px) and (max-width: 1366px){
+    .passport-page > main #left-content #table-list {
+        font-size: 100%;
+    }
+    .passport-page > header #left-content, .passport-page > header #right-content {
+        margin-top: calc(27px / 2);
+        font-size: calc(180% / 2);
+    }
+}
 @media all and (max-width: 1440px){}
 @media all and (max-width: 1536px){}
 @media all and (max-width: 1600px){}
