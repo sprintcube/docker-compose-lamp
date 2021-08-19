@@ -2,7 +2,7 @@
 .window-closed{ display: none; }
 #objects{ height: auto; }
 #objects > .projects-search-form{
-    width: 76%;
+    width: 75%;
     height: auto;
     margin-left: 12vw;
     background-color: white;
@@ -195,6 +195,12 @@
         margin-top: 17%;
     }
     #link-switcher > a.active, #link-switcher > #delimeter:nth-last-child(1){ display: none; }
+}
+@media all and (width: 1280px){
+    #objects > .projects-search-form {
+        width: 75%;
+        padding-bottom: 5%;
+    }
 }
 @media all and (max-width: 1366px){}
 @media all and (max-width: 1440px){}

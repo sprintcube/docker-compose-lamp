@@ -723,22 +723,22 @@ h4.title, p.descr{
     width: 26%;
     position: relative;
     top: 140px;
-    left: calc(52% / 1.5);
+    left: calc(34% / 1.5);
 }
 #services > main.gecko-fix #slider-controller img{
     top: -100px;
 }
 #services > main footer#slider-controller img{
-    left: calc(-79% / 1.5);
+    left: calc(-61% / 1.5);
 }
 #analytics > main footer#slider-controller img{
-    left: calc(-81% / 1.5);
+    left: calc(-61% / 1.5);
 }
 #estate > main footer#slider-controller img{
-    left: calc(-50% / 1.5);
+    left: calc(-39% / 1.5);
 }
 #reviews > main footer#slider-controller img{
-    left: calc(-78% / 1.5);
+    left: calc(-60% / 1.5);
 }
 #services > main #slider-controller-adaptive{
     width: 8%;
@@ -880,7 +880,7 @@ h4.title, p.descr{
     width: 26%;
     position: relative;
     top: 140px;
-    left: calc(58% / 1.5);
+    left: calc(36% / 1.5);
 }
 #analytics > main #slider-controller-adaptive{
     width: 10%;
@@ -1007,7 +1007,7 @@ h4.title, p.descr{
     width: 26%;
     position: relative;
     top: 140px;
-    left: calc(76% / 1.5);
+    left: calc(47% / 1.5);
 }
 #estate > main.gecko-fix #slider-controller img{
     top: -32px;
@@ -1177,7 +1177,7 @@ h4.title, p.descr{
     width: 26%;
     position: relative;
     top: 100px;
-    left: calc(58% / 1.5);
+    left: calc(31% / 1.5);
 }
 #reviews > main #slider-controller-adaptive{
     width: 8%;
@@ -2147,8 +2147,34 @@ h4.title, p.descr{
         padding-top: 5%;
     }
     #reviews > main footer#slider-controller img {
-        left: calc(-40% / 1.5);
+        left: calc(-20% / 1.5);
     }
+    #services > main #slider-controller img {
+        left: calc(12% / 1.5);
+    }
+    #services > main footer#slider-controller img, #analytics > main footer#slider-controller img {
+        left: calc(-23% / 1.5);
+    }
+    #analytics > main #slider-controller img {
+        left: calc(14% / 1.5);
+    }
+    #estate > main #slider-controller img {
+        left: calc(28% / 1.5);
+    }
+    #estate > main footer#slider-controller img {
+        left: calc(7% / 1.5);
+    }
+    #estate > main footer#slider-controller img {
+        left: calc(-6% / 1.5);
+    }
+    #reviews > main #slider-controller img {
+        left: calc(10% / 1.5);
+    }
+    #analytics > main #slider-view .analytic-feed .analytic:nth-child(1) {
+        position: relative;
+        top: 2px;
+    }
+
 
 }
 @media all and (min-width: 1406px) and (max-width: 1440px){
@@ -2173,10 +2199,49 @@ h4.title, p.descr{
     #investsearch {
         height: 500px;
     }
+    #services > main #slider-controller img {
+        left: calc(30% / 1.5);
+    }
+    #services > main footer#slider-controller img, #analytics > main footer#slider-controller img {
+        left: calc(-56% / 1.5);
+    }
+    #analytics > main #slider-controller img {
+        left: calc(33% / 1.5);
+    }
+    #estate > main #slider-controller img {
+        left: calc(46% / 1.5);
+    }
+    #estate > main footer#slider-controller img {
+        left: calc(-20% / 1.5);
+    }
+    #reviews > main #slider-controller img {
+        left: calc(33% / 1.5);
+    }
+    #reviews > main footer#slider-controller img {
+        left: calc(-49% / 1.5);
+    }
 }
 @media all and (min-width: 1536px) and (max-width: 1600px){
     #promo > header .marketing-info {
         margin-top: -11%;
+    }
+    #services > main #slider-controller img {
+        left: calc(30% / 1.5);
+    }
+    #services > main footer#slider-controller img, #analytics > main footer#slider-controller img {
+        left: calc(-56% / 1.5);
+    }
+    #estate > main #slider-controller img {
+        left: calc(52% / 1.5);
+    }
+    #estate > main footer#slider-controller img {
+        left: calc(-21% / 1.5);
+    }
+    #reviews > main #slider-controller img {
+        left: calc(37% / 1.5);
+    }
+    #reviews > main footer#slider-controller img {
+        left: calc(-56% / 1.5);
     }
 }
 @media all and (max-width: 1600px){}
