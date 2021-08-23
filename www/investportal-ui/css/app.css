@@ -8,6 +8,7 @@
 @import url('addons/feedblocks/analytics.css');
 @import url('addons/feedblocks/reviews.css');
 @import url('addons/feedblocks/slidesshow.css');
+@import url('addons/investportal-id-ui.css');
 html,body{
     font-family: 'Open Sans', sans-serif;
     overflow-x:hidden;
@@ -1550,12 +1551,15 @@ h4.title, p.descr{
     }
 }
 @media all and (min-width: 600px) and (max-width: 768px){
+    #promo {
+        height: 630px;
+    }
     #investsearch > header a { margin-left: 53%; }
     #promo > header .links {
         top: -49px;
         left: 25vw;
     }
-    #promo > main.swiper-container .promo-feed .promoblock { width: 80%; }
+    #promo > main.swiper-container .promo-feed .promoblock { width: 80%; height: 530px; }
     #investsearch > main.swiper-container .popular-objects .popular-object {
         width: 100%;
     }
@@ -1648,7 +1652,7 @@ h4.title, p.descr{
         left: 20vw;
     }
     #promo {
-        height: 625px;
+        height: 460px;
     }
     #investsearch {
         height: 610px;
@@ -1660,7 +1664,7 @@ h4.title, p.descr{
     #analytics {
         padding-bottom: 450px;
     }
-    #promo > main.swiper-container .promo-feed .promoblock { width: 35%; }
+    #promo > main.swiper-container .promo-feed .promoblock { width: 35%; height: 375px;}
     #services > main #slider-view-adaptive .service {
         width: 58vw;
         height: 330px;

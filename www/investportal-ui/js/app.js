@@ -1,4 +1,4 @@
-//Works
+
 var host;
 if (location.hostname === "investportal-ui.aplex") { host = "http://investportal-ui.aplex"; }
 else { host = "http://zolotaryow.aplex.ru/invest"; }
@@ -177,3 +177,21 @@ const AdaptiveButtonEventer = () => {
 $(document).ready(function () {
     AdaptiveButtonEventer();
 });
+
+const AuthLightBoxModuleOpen = () => {
+    $('.header > #header_bottom .hb_bottom header .header-informer footer .user-services a, .header > #header_bottom_adaptive header ul.adaptive-buttons li:nth-last-child(2)').click(function(e,t){
+      e.preventDefault();
+      $('#auth-lightbox').removeClass('lightbox-closed');
+    });
+}
+const AuthLightBoxModuleClose = () => {
+    $('#auth-lightbox > .close').click(function(e,t){
+      $('#auth-lightbox').addClass('lightbox-closed');
+      $('#auth-lightbox > .module-page').removeAttr('style');
+    });
+}
+const AuthLightBoxModule = () => {
+    AuthLightBoxModuleOpen();
+    AuthLightBoxModuleClose();
+}
+$(document).ready(AuthLightBoxModule);
