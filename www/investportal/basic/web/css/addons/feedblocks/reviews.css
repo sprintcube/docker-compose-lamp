@@ -1,0 +1,36 @@
+#reviews > main #slider-view .review-feed .review#with-title-image{
+    margin-top: -3%;
+    position: relative;
+    top: 52px;
+}
+#reviews > main #slider-view .review-feed .review#with-title-image header, #reviews > main #slider-view-adaptive .review#with-title-image header{
+    border-bottom: solid 2px gray;
+    margin-left: 0%;
+    width: 100%;
+    padding-bottom: 5px;
+}
+#reviews > main #slider-view .review-feed .review#with-title-image header img, #reviews > main #slider-view-adaptive .review#with-title-image header img{
+    width: 60%;
+    object-fit: contain;
+    height: 76px;
+    position: relative;
+    left: 2%;
+}
+
+@media all and (max-width: 414px){}
+@media all and (max-width: 600px){}
+@media all and (max-width: 768px){}
+@media all and (max-width: 800px){}
+@media all and (max-width: 960px){}
+@media all and (min-width: 414px) and (max-width: 1024px){
+    #reviews > main #slider-view .review-feed .review#with-title-image header img, #reviews > main #slider-view-adaptive .review#with-title-image header img {
+        left: -8%;
+    }
+}
+@media all and (max-width: 1280px){}
+@media all and (max-width: 1366px){}
+@media all and (max-width: 1440px){}
+@media all and (max-width: 1536px){}
+@media all and (max-width: 1600px){}
+@media all and (max-width: 1920px){}
+@media all and (min-width: 1920px){}

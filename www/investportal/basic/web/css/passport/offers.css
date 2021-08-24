@@ -1,0 +1,88 @@
+@import url('../passport.css');
+#passport {
+    height: 600px;
+}
+.passport-page {
+    height: calc(329px * 2);
+}
+.passport-page > main #left-content #table-list .header th{
+    color: gray;
+}
+.passport-page > main #left-content #table-list .content td:nth-child(1){
+    color: gray;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    width: 7%;
+}
+.passport-page > main #left-content #table-list .content td:nth-child(2){
+    width: 39%;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+.passport-page > main #left-content #table-list .content td:nth-child(3){
+    width: 23%;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+.passport-page > main #left-content #table-list .content td:nth-child(4){
+    text-indent: 2%;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+.passport-page > main #left-content #table-list .content td:nth-child(5){
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+.passport-page > main #left-content #table-list .header th:nth-child(4), .passport-page > main #left-content #table-list .content td:nth-child(4){
+    text-align: left;
+    width: 28%;
+}
+.passport-page > footer #left-content{
+    position: relative;
+    top: 210px;
+    left: -73%;
+}
+.passport-page > main #left-content #table-list .content td:nth-child(1)::after,  .passport-page > main #left-content #table-list .content td:nth-child(3)::before, .passport-page > main #left-content #table-list .content td:nth-child(4)::before{
+    content: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAQAAAA1CAYAAABm10p2AAAABmJLR0QA/wD/AP+gvaeTAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAB3RJTUUH5QMTCSMwGPDecgAAAB1pVFh0Q29tbWVudAAAAAAAQ3JlYXRlZCB3aXRoIEdJTVBkLmUHAAAAKUlEQVQoz2Os6+plQAZMSOw0dIGZ6AIMowKjAqMCRAvMQhdIZ2BgYAAAtnMD/8BCHfkAAAAASUVORK5CYII=');
+}
+.passport-page > main #left-content #table-list .content td:nth-child(1)::after {
+    float: right;
+    height: 55px;
+    margin-top: -29px;
+    position: relative;
+    top: 16px;
+    left: -9%;
+}
+.passport-page > main #left-content #table-list .content td:nth-child(3)::before, .passport-page > main #left-content #table-list .content td:nth-child(4)::before{
+    float: left;
+    height: 55px;
+    margin-top: -36px;
+    position: relative;
+    top: 19px;
+    left: -5%;
+}
+
+@media all and (max-width: 414px){}
+@media all and (max-width: 600px){
+    .passport-page > main #left-content #table-list .content td:nth-child(3),  .passport-page > main #left-content #table-list .header th:nth-child(3){
+        display: none;
+    }
+    .passport-page > main #left-content #table-list .header th:nth-child(4), .passport-page > main #left-content #table-list .content td:nth-child(4) {
+        width: 37%;
+    }
+}
+@media all and (max-width: 768px){}
+@media all and (max-width: 800px){}
+@media all and (max-width: 960px){}
+@media all and (max-width: 1024px){}
+@media all and (max-width: 1280px){
+    #passport {
+        height: 775px;
+    }
+}
+@media all and (max-width: 1366px){}
+@media all and (max-width: 1440px){}
+@media all and (max-width: 1536px){}
+@media all and (max-width: 1600px){}
+@media all and (max-width: 1920px){}
+@media all and (min-width: 1920px){}

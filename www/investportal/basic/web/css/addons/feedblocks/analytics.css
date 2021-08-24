@@ -1,0 +1,35 @@
+#analytics > main #slider-view .analytic-feed .analytic:nth-child(1), #analytics > main #slider-view .analytic-feed .analytic:nth-child(1) *, #analytics > main #slider-view .analytic-feed .analytic:nth-child(1) .descr,
+#analytics > main #slider-view-adaptive .analytic:nth-child(3n+1), #analytics > main #slider-view-adaptive .analytic:nth-child(3n+1) *, #analytics > main #slider-view-adaptive .analytic:nth-child(3n+1) .descr{
+    background-color: #0079bf;
+    color: white;
+}
+#analytics > main #slider-view .analytic-feed .analytic#with-title-image{
+    margin-top: -3%;
+    top: 112px;
+    position: relative;
+}
+#analytics > main #slider-view .analytic-feed .analytic#with-title-image img, #analytics > main #slider-view-adaptive .analytic#with-title-image img{
+    width: 100%;
+    object-fit: cover;
+    height: 146px;
+}
+#analytics > main #slider-view .analytic-feed .analytic:nth-last-child(1){margin-left: -7%;position: relative;top: -6px;left: 2%;}
+#analytics > main #slider-view .analytic-feed .analytic:nth-last-child(2){left: -7%;}
+
+@media all and (max-width: 414px){}
+@media all and (max-width: 600px){}
+@media all and (max-width: 768px){}
+@media all and (max-width: 800px){}
+@media all and (max-width: 960px){}
+@media all and (max-width: 1024px){}
+@media all and (min-width: 1280px) and (max-width: 1366px){
+    #analytics > main #slider-view .analytic-feed .analytic#with-title-image {
+        top: 48px;
+    }
+}
+@media all and (max-width: 1366px){}
+@media all and (max-width: 1440px){}
+@media all and (max-width: 1536px){}
+@media all and (max-width: 1600px){}
+@media all and (max-width: 1920px){}
+@media all and (min-width: 1920px){}

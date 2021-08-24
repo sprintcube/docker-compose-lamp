@@ -1,0 +1,42 @@
+#news > main #slider-view .news-feed#hide, #services > main #slider-view .service-feed#hide, #analytics > main #slider-view .analytic-feed#hide, #estate > main #slider-view .estat-feed#hide, #reviews > main #slider-view .review-feed#hide, #news > main #slider-view-adaptive .news#hide, #services > main #slider-view-adaptive .service#hide, #analytics > main #slider-view-adaptive .analytic.hide, #estate > main #slider-view-adaptive .estat#hide, #reviews > main #slider-view-adaptive .review.hide{
+    display: none;
+}
+#slider-controller > img{
+    cursor: pointer;
+}
+
+[data-text]{
+    position: relative;
+}
+  
+[data-text]::before{
+    content: attr(data-text);
+    position: absolute;
+    transform: translate(-50%, -50%);
+    z-index: 1;
+    pointer-events: none;
+    text-transform: uppercase;
+    font-weight: bolder;
+    font-size: 13vw;
+    opacity: .5;
+    color: #eff3f4;
+}
+  
+[data-text] > *{
+    position: relative;
+    z-index: 2;
+}
+
+@media all and (max-width: 414px){}
+@media all and (max-width: 600px){}
+@media all and (max-width: 768px){}
+@media all and (max-width: 800px){}
+@media all and (max-width: 960px){}
+@media all and (max-width: 1024px){}
+@media all and (max-width: 1280px){}
+@media all and (max-width: 1366px){}
+@media all and (max-width: 1440px){}
+@media all and (max-width: 1536px){}
+@media all and (max-width: 1600px){}
+@media all and (max-width: 1920px){}
+@media all and (min-width: 1920px){}

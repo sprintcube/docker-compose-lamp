@@ -1,0 +1,104 @@
+.label, span.title-form{
+    color: gray;
+    font-size: 50%;
+    text-transform: uppercase;
+    font-weight: bold;
+    position: relative;
+    top: 12px;
+    padding-left: 2%;
+    padding-right: 2%;
+    background-color: white;
+    margin-left: 2%;
+}
+.label{ font-size: 55%;}
+.range-form{
+    width: 30%;
+    display: block;
+    margin-left: 3vw;
+    margin-top: 55px;
+}
+.input-from-to{
+    margin-top: 0%;
+    width: 100%;
+    display: block;
+}
+.input-from-to:nth-last-child(1){
+    margin-top: -3%;
+}
+.input-from-to > span.content-form{
+    font-size: 60%;
+    display: block;
+    border: solid 2px gray;
+    border-radius: 10px;
+    padding-bottom: 2%;
+    padding-top: 2%;
+    padding-left: 2%;
+}
+.input-from-to > span.content-form input{
+    border: none;
+    background-color: #bec4c6;
+    padding: 5px;
+    font-size: 75%;
+}
+.input-from-to > span.content-form input#from{
+    width: 20%;
+    font-size: 100%;
+}
+.input-from-to > span.content-form input#to{
+    width: 25%;
+    font-size: 100%;
+}
+.range-form:nth-child(2) {
+    margin-top: 57px;
+}
+
+@media all and (max-width: 414px){}
+@media all and (max-width: 600px){
+    .input-from-to {
+        margin-top: 4%;
+    }
+}
+@media all and (max-width: 768px){}
+@media all and (max-width: 800px){}
+@media all and (max-width: 960px){}
+@media all and (max-width: 1024px){}
+@media all and (max-width: 1280px){}
+@media all and (min-width: 1280px) and (max-width: 1366px){
+    .input-from-to {
+        margin-top: 16%;
+    }   
+}
+@media all and (min-width: 1366px) and (max-width: 1440px){
+    .input-from-to {
+        margin-top: -1%;
+    }
+    .objects-adding-search > header #right-content .input-from-to > span.content-form {
+        height: 34px;
+    }
+    .input-from-to:nth-last-child(1) {
+        margin-top: -5%;
+    }
+}
+@media all and (min-width: 1440px) and (max-width: 1536px){
+    .input-from-to {
+        margin-top: 1%;
+    }
+}
+@media all and (min-width: 1536px) and (max-width: 1600px){
+    .input-from-to {
+        margin-top: 0%;
+    }
+}
+@media all and (min-width: 1680px) and (max-width: 1920px){
+    .range-form {
+        margin-top: 62px;
+    }
+}
+@media all and (min-width: 1920px){
+    .range-form {
+        margin-top: 54px;
+    }
+    .input-from-to:nth-last-child(1) {
+        margin-top: -2%;
+    }
+}

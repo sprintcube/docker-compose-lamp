@@ -1,0 +1,43 @@
+.passport-menu-adaptive{
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    display: none;
+    background-color: #0079bf;
+}
+.passport-menu-adaptive .nav{
+    list-style-type: none;
+    margin-left: -10%;
+}
+.passport-menu-adaptive .nav li{
+    display: inline-block;
+    padding: 2%;
+    margin-left: 2%;
+}
+.passport-menu-adaptive .nav li img{
+    width: 30px;
+}
+.passport-menu-adaptive .nav li a{ text-decoration: none; }
+.passport-menu-adaptive .nav li span{
+    display: block;
+    color: white;
+    font-size: 12px;
+}
+.passport-menu-adaptive .nav li.active{
+    background-color: #1E90FF;
+}
+
+@media all and (max-width: 414px){}
+@media all and (max-width: 600px){}
+@media all and (max-width: 768px){}
+@media all and (max-width: 800px){}
+@media all and (max-width: 960px){}
+@media all and (max-width: 1024px){}
+@media all and (max-width: 1280px){}
+@media all and (max-width: 1366px){}
+@media all and (max-width: 1440px){}
+@media all and (max-width: 1536px){}
+@media all and (max-width: 1600px){}
+@media all and (max-width: 1920px){}
+@media all and (min-width: 1920px){}

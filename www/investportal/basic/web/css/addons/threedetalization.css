@@ -1,0 +1,203 @@
+#promo > main.swiper-container .promo-feed .promoblock {
+  position: relative;
+  z-index: 1;
+  height: 440px;
+  box-shadow: 0 0 5px 1px grey;
+}
+#promo > main.swiper-container .promo-feed .promoblock .promoblock-content {
+  position: absolute;
+  top: 12px;
+  left: -2%;
+  width: 103%;
+  height: 99%;
+  background-color: white;
+  z-index: 1;
+  padding: 6px 20px 10px 0px;
+  box-sizing: border-box;
+  box-shadow: inherit;
+}
+
+#promo > main.swiper-container .promo-feed .promoblock::before {
+  content: '';
+  pointer-events: none;
+  position: absolute;
+  top: -4px;
+  left: 1%;
+  z-index: -2;
+  width: 102%;
+  height: 100%;
+  background-color: white;
+  box-shadow: inherit;
+  padding-left: 6px;
+}
+#promo > main.swiper-container .promo-feed .promoblock::after {
+  content: '';
+  pointer-events: none;
+  position: absolute;
+  top: 5px;
+  left: -1%;
+  z-index: -2;
+  width: 102%;
+  height: 100%;
+  background-color: white;
+  box-shadow: inherit;
+  padding-right: 6px;
+}
+
+#investsearch > main.swiper-container .popular-objects .popular-object {
+  position: relative;
+  z-index: 1;
+  box-shadow: 3px -1px 4px 0px darkgrey;
+  height: 490px;
+}
+
+#investsearch > main.swiper-container .popular-objects .popular-object .popularobject-content {
+  position: absolute;
+  top: 17px;
+  left: -3%;
+  width: 99%;
+  height: 105%;
+  background-color: white;
+  z-index: 1;
+  padding: 0px 9px 9px 0px;
+  box-sizing: border-box;
+  box-shadow: inherit;
+}
+
+#investsearch > main.swiper-container .popular-objects .popular-object::before {
+  content: '';
+  pointer-events: none;
+  position: absolute;
+  top: 1px;
+  left: -2%;
+  z-index: -2;
+  width: 99%;
+  height: 103%;
+  background-color: white;
+  box-shadow: inherit;
+  padding-left: 5px;
+  padding-bottom: 4%;
+  padding-right: 11px;
+}
+#investsearch > main.swiper-container .popular-objects .popular-object::after {
+  content: '';
+  pointer-events: none;
+  position: absolute;
+  top: 8px;
+  right: 2%;
+  z-index: -2;
+  width: 99%;
+  height: 100%;
+  background-color: white;
+  box-shadow: inherit;
+  padding-right: 10px;
+  padding-bottom: 6%;
+}
+#services > main #slider-view .service-feed .service,  #services > main #slider-view-adaptive .service{
+  position: relative;
+  z-index: 1;
+  height: 440px;
+  box-shadow: 3px -1px 4px 0px darkgrey;
+}
+
+#services > main #slider-view .service-feed .service .service-content,  #services > main #slider-view-adaptive .service .service-content{
+  position: absolute;
+  top: 8px;
+  left: -4%;
+  width: 100%;
+  height: 100%;
+  background-color: white;
+  z-index: 1;
+  padding: 4px 3px 10px 0;
+  box-shadow: -8px 0px 5px -2px rgb(34 60 80 / 38%);
+}
+#services > main #slider-view .service-feed .service::before,  #services > main #slider-view-adaptive .service::before {
+  content: '';
+  pointer-events: none;
+  position: absolute;
+  top: -2px;
+  left: 2%;
+  z-index: -2;
+  width: 100%;
+  height: 105%;
+  background-color: white;
+  box-shadow: inherit;
+}
+#services > main #slider-view .service-feed .service::after,  #services > main #slider-view-adaptive .service::after {
+  content: '';
+  pointer-events: none;
+  position: absolute;
+  top: 5px;
+  right: 1%;
+  z-index: -2;
+  width: 100%;
+  height: 105%;
+  background-color: white;
+  box-shadow: inherit;
+}
+#estate > main #slider-view .estat-feed .estat,  #estate > main #slider-view-adaptive .estat{
+  position: relative;
+  z-index: 1;
+  height: 440px;
+  box-shadow: 3px -1px 4px 0px darkgrey;
+}
+
+#estate > main #slider-view .estat-feed .estat .estat-content,  #estate > main #slider-view-adaptive .estat .estat-content{
+  position: absolute;
+  top: 12px;
+  left: -5%;
+  width: 100%;
+  height: 183%;
+  background-color: white;
+  z-index: 1;
+  padding: 4px 2px 2px 0;
+  box-sizing: border-box;
+  box-shadow: -8px 0px 5px -2px rgb(34 60 80 / 38%);
+}
+
+#estate > main #slider-view .estat-feed .estat::before, #estate > main #slider-view-adaptive .estat::before {
+  content: '';
+  pointer-events: none;
+  position: absolute;
+  top: -1px;
+  left: 0%;
+  z-index: -2;
+  width: 100%;
+  height: 182%;
+  background-color: white;
+  box-shadow: inherit;
+}
+#estate > main #slider-view .estat-feed .estat::after, #estate > main #slider-view-adaptive .estat::after {
+  content: '';
+  pointer-events: none;
+  position: absolute;
+  top: 6px;
+  left: -2%;
+  z-index: -2;
+  width: 100%;
+  height: 182%;
+  background-color: white;
+  box-shadow: inherit;
+}
+
+#investsearch > main.swiper-container .popular-objects .popular-object{
+  border-bottom-style: inset;
+}
+#investsearch > main.swiper-container .popular-objects .popular-object .popularobject-content{
+  border-bottom-style: inset;
+  border-bottom-width: 2px;
+}
+
+@media all and (max-width: 414px){}
+@media all and (max-width: 600px){}
+@media all and (max-width: 768px){}
+@media all and (max-width: 800px){}
+@media all and (max-width: 960px){}
+@media all and (max-width: 1024px){}
+@media all and (max-width: 1280px){}
+@media all and (max-width: 1366px){}
+@media all and (max-width: 1440px){}
+@media all and (max-width: 1536px){}
+@media all and (max-width: 1600px){}
+@media all and (max-width: 1920px){}
+@media all and (min-width: 1920px){}

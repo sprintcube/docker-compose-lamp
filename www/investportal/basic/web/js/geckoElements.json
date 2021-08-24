@@ -1,0 +1,6 @@
+{
+    "el": [
+        {"cont": "#services > main, #estate > main"},
+        {"cont": ".news-feed, .passport-page"}
+    ]
+}

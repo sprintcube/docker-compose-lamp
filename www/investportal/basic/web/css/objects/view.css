@@ -1,0 +1,442 @@
+@import url('hotels.css');
+@import url('../services/objects-services-cont.css');
+h2.view-title{
+    color: black;
+    font-size: 80%;
+}
+span.view-title{
+    font-size: 60%;
+    text-transform: uppercase;
+    font-weight: bold;
+}
+.object-viewer{
+    width: 80%;
+    margin-left: 9%;
+    padding-bottom: 4%;
+}
+.object-viewer > .left-content, .object-viewer > .right-content{
+    display: inline-table;
+    width: 50%;
+}
+.object-viewer > .right-content{
+    width: 48%;
+    position: relative;
+    top: -55px;
+    left: 2%;
+}
+.object-viewer > .left-content header{
+    margin-top: 2%;
+}
+.object-viewer > .left-content header .title{
+    padding-top: 1%;
+    padding-bottom: 1%;
+}
+.object-viewer > .left-content header .metadata{
+    margin-top: 2%;
+    padding-bottom: 1%;
+    border-bottom: solid 2px #0079bf;
+}
+.object-viewer > .left-content header .metadata div{
+    font-size: 71%;
+    padding-top: 4%;
+    padding-bottom: 4%;
+    border-top: solid 2px #0079bf;
+    text-indent: 4%;
+}
+.object-viewer > .left-content header .metadata div span{
+    color: black;
+    font-weight: bold;
+}
+.object-viewer > .left-content header .object-contacts{
+    margin-top: 4%;
+    width: 120%;
+}
+.object-viewer > .left-content header .object-contacts .contact{
+    width: 26%;
+    display: inline-table;
+    margin-left: 0%;
+    border-bottom: solid 3px #0079bf;
+    height: 74px;
+    padding-bottom: 18px;
+}
+.object-viewer > .left-content header .object-contacts .contact:not(:nth-child(1)){
+    margin-left: 2%;
+}
+.object-viewer > .left-content header .object-contacts .contact img{
+    width: 30px;
+    margin-left: 18px;
+}
+.object-viewer > .left-content header .object-contacts .contact span{
+    display: block;
+    font-size: 66%;
+    margin-top: 4%;
+    color: black;
+    font-weight: bold;
+    margin-left: 22px;
+}
+.object-viewer > .left-content header .object-contacts .contact a{
+    display: block;
+    font-size: 66%;
+    margin-top: 4%;
+    color: #0079bf;
+    font-weight: bold;
+    margin-left: 22px;
+}
+.object-viewer > .left-content main{
+    margin-left: 8%;
+    margin-top: 2%;
+}
+.object-viewer > .left-content main .view-title{
+    color: gray;
+    font-size: 80%;
+}
+.object-viewer > .left-content footer{
+    margin-left: 8%;
+    margin-top: 2%;
+}
+.object-viewer > .left-content footer #more{
+    color: #0079bf;
+    font-size: 80%;
+    text-decoration: none;
+    border-bottom: dashed 2px #0079bf;
+}
+
+#objects > .objects-list main table {
+    border-top: solid 2px gray;
+}
+#objects > .objects-list main table .header {
+    height: 60px;
+}
+.specifications{
+    width: 100%;
+    margin-top: 2%;
+    font-size: 96%;
+    border-collapse: collapse;
+}
+.specifications > tbody tr{
+    height: 35px;
+}
+.specifications > tbody tr:nth-child(odd){
+    background-color: white;
+}
+.specifications > tbody tr td{
+    color: gray;
+    padding-top: 2%;
+    padding-bottom: 2%;
+    padding-left: 4%;
+}
+.specifications > tbody tr td:nth-child(2){
+    color: black;
+    font-weight: bold;
+}
+#objects > .objects-list {
+    margin-top: -2%;
+}
+.object-viewer > .right-content header .add-to-favorite{
+    font-size: 110%;
+    padding-bottom: 7px;
+    border: solid 2px gray;
+    width: 178px;
+}
+.object-viewer > .right-content header .add-to-favorite i{
+    color: #0079bf;
+    vertical-align: middle;
+    margin-left: 14px;
+    margin-top: 1%;
+}
+.object-viewer > .right-content header .add-to-favorite a{
+    font-size: 60%;
+    color: gray;
+    text-decoration: none;
+}
+.object-viewer > .right-content header .description{
+    font-size: 100%;
+    margin-top: 6%;
+}
+.object-viewer > .right-content header .description span{
+    overflow: auto;
+    text-overflow: ellipsis;
+    color: black;
+    font-size: 80%;
+    display: block;
+}
+.object-viewer > .right-content header .description a{
+    margin-top: 1%;
+    display: inline-block;
+    text-decoration: none;
+    border-bottom: dotted 2px;
+}
+.object-viewer > .right-content main {
+    margin-top: 3%;
+    display: block;
+}
+.object-viewer > .right-content footer {
+    margin-top: -10%;
+    display: block;
+}
+.object-viewer > .right-content main .view-title {
+    font-size: 90%;
+    text-transform: uppercase;
+    font-weight: bold;
+    margin-left: 8%;
+    color: gray;
+    display: block;
+}
+.object-viewer > .right-content footer .view-title {
+    font-size: 90%;
+    text-transform: uppercase;
+    font-weight: bold;
+    margin-left: 8%;
+    color: gray;
+    display: block;
+}
+.object-viewer > .right-content footer .view-player {
+    display: block;
+    width: 90%;
+    height: 304px;
+    margin-left: 8%;
+    margin-top: 2%;
+    object-fit: cover;
+}
+#images-slider{
+    display: block;
+    margin-top: -10%;
+    width: 100%;
+    height: 617px;
+}
+#images-slider > .header{
+    padding-top: 2%;
+}
+#images-slider > .header .switcher{
+    width: 25%;
+    display: inline-table;
+    height: auto;
+}
+#images-slider > .header .switcher:hover{
+    cursor: pointer;
+}
+#images-slider > .header header.switcher{
+    float: left;
+    position: relative;
+    top: 214%;
+    margin-left: 2%;
+}
+#images-slider > .header footer.switcher{
+    float: right;
+    position: relative;
+    top: 280%;
+    margin-right: -25%;
+}
+#images-slider > .header .switcher img{
+    width: 26px;
+}
+#images-slider > .content{
+    width: 104%;
+    display: block;
+    margin-left: 8%;
+    margin-top: -30px;
+}
+#images-slider > .content #current{
+    width: 87%;
+    object-fit: cover;
+    height: 337px;
+}
+#images-slider > .footer{
+    display: block;
+    margin-top: 8px;
+    background-color: transparent;
+    margin-left: 8%;
+}
+#images-slider > .footer .image-switcher{
+    width: 20%;
+    display: inline-table;
+}
+#images-slider > .footer .image-switcher:hover{
+    cursor: pointer;
+    opacity: 0.85;
+}
+#images-slider > .footer .image-switcher img{
+    width: 99%;
+    object-fit: cover;
+    height: 80px;
+}
+.image-current{
+    opacity: 0.65;
+}
+
+@media all and (max-width: 414px){
+    #images-slider > .header header.switcher {
+        top: 110%;
+        margin-left: -1%;
+    }
+    #images-slider > .header footer.switcher {
+        top: 179%;
+        margin-right: -20%;
+    }
+    #images-slider > .content {
+        margin-top: -18%;
+    }
+}
+@media all and (min-width: 414px) and (max-width: 600px){
+    #images-slider > .header header.switcher {
+        top: 138%;
+        margin-left: 0%;
+    }
+    #images-slider > .header footer.switcher {
+        top: 244%;
+        margin-right: -21%;
+    }
+    #images-slider > .content {
+        margin-top: -16%;
+    }
+}
+@media all and (min-width: 600px) and (max-width: 768px){
+    #images-slider > .header header.switcher {
+        top: 140%;
+        margin-left: 2%;
+    }
+    #images-slider > .header footer.switcher {
+        top: 260%;
+        margin-right: -19%;
+    }
+    #images-slider > .content {
+        margin-top: -8%;
+    }
+}
+@media all and (max-width: 768px){
+    .object-viewer > .left-content header {
+        margin-top: 20%;
+    }
+    .object-viewer > .left-content, .object-viewer > .right-content {
+        width: 110%;
+        float: left;
+        margin-right: 0;
+        margin-left: -6%;
+    }
+    .object-viewer > .right-content {
+        margin-top: 40%;
+    }
+    .object-viewer > .left-content header .object-contacts .contact {
+        width: 83%;
+    }
+    .object-viewer > .left-content header .object-contacts .contact:not(:nth-child(1)) img {
+        margin-top: 3%;
+    }
+    .object-viewer > .left-content header .object-contacts .contact span,
+    .object-viewer > .left-content header .object-contacts .contact a { margin-top: 4%; }
+    .object-viewer > .right-content footer {
+        margin-top: calc(-10% * 2);
+    }  
+    .object-viewer > .right-content footer .view-player {
+        height: calc(304px / 2);
+    }
+    #images-slider > .content #current {
+        width: 82%;
+        height: calc(337px / 2);
+    }  
+    #images-slider > .footer .image-switcher img {
+        height: calc(80px / 2);
+    }
+    #images-slider {
+        height: 430px;
+    }
+}
+
+@media all and (min-width: 768px) and (max-width: 1280px){
+    .object-viewer {
+        width: 81%;
+        margin-left: 6%;
+    }
+    .object-viewer > .left-content, .object-viewer > .right-content {
+        margin-top: 6%;
+        width: 100%;
+    }
+    .object-viewer > .right-content {
+        width: 100%;
+        top: calc(1px / 2);
+        left: 1%;
+    }
+    #images-slider > .content #current {
+        height: calc(337px / 2);
+    }
+    #images-slider > .footer .image-switcher {
+        width: 28%;
+    }
+    #images-slider > .footer .image-switcher img {
+        height: calc(253px / 2);
+    }
+    .object-viewer > .right-content footer .view-player {
+        height: calc(665px / 2);
+    }
+    .object-viewer > .right-content main .view-title {
+        position: relative;
+        top: 38px;
+    }
+    #images-slider {
+        height: calc(735px / 2);
+    }
+    .object-viewer > .left-content header .object-contacts .contact span {
+        margin-top: 1%;
+    }
+    .object-viewer > .left-content header .object-contacts .contact a {
+        margin-left: 16px;
+    }
+    #images-slider > .header header.switcher {
+        top: 176%;
+        margin-left: 2%;
+    }
+    #images-slider > .header footer.switcher {
+        top: 135%;
+        margin-right: -20%;
+    }
+    .object-viewer > .right-content footer {
+        margin-top: calc(3% * 2);
+    }
+    #images-slider > .content {
+        margin-top: 2%;
+    }
+    .object-viewer > .right-content footer {
+        position: relative;
+        top: 70px;
+    }
+}
+@media all and (min-width: 800px) and (max-width: 960px){
+    #images-slider > .header header.switcher {
+        top: 166%;
+        margin-left: 2%;
+    }
+    #images-slider > .header footer.switcher {
+        top: 129%;
+        margin-right: -25%;
+    }
+}
+@media all and (min-width: 960px) and (max-width: 1024px){
+    #images-slider > .header header.switcher {
+        top: 172%;
+        margin-left: 0%;
+    }
+    #images-slider > .header footer.switcher {
+        top: 115%;
+        margin-right: -27%;
+    }
+}
+@media all and (min-width: 1024px) and (max-width: 1280px){
+    #images-slider > .header header.switcher {
+        top: 180%;
+        margin-left: 2%;
+    }
+    #images-slider > .header footer.switcher {
+        top: 120%;
+        margin-right: -26%;
+    }
+    .object-viewer > .right-content main .view-title {
+        position: relative;
+        top: 16px;
+    }
+}
+@media all and (max-width: 1366px){}
+@media all and (max-width: 1440px){}
+@media all and (max-width: 1536px){}
+@media all and (max-width: 1600px){}
+@media all and (max-width: 1920px){}
+@media all and (min-width: 1920px){}

@@ -1,0 +1,203 @@
+@import url('services/lightbox-passport.css');
+@import url('passport/cart.css');
+@import url('addons/passportpagesadaptivemenu.css');
+#passport{
+    height: 780px;
+}
+.passport-page {
+    width: 75%;
+    background-color: white;
+    position: relative;
+    float: left;
+    left: 12%;
+    top: -2%;
+    padding-bottom: 7%;
+    padding-right: 5px;
+}
+.passport-page > header, .passport-page > footer{
+    width: 100%;
+    height: calc((300px * 2) / 20);
+    padding-top: 3%;
+    padding-bottom: 3%;
+    display: block;
+    padding-right: 5px;
+}
+.passport-page > main{
+    width: 100%;
+    height: calc((300px * 2) / 2);
+    padding-top: 1%;
+    padding-bottom: 1%;
+    display: block;
+    padding-right: 5px;
+}
+.passport-page > header #left-content, .passport-page > main #left-content, .passport-page > footer #left-content{
+    float: left;
+    display: inline-table;
+    margin-left: 3%;
+}
+.passport-page > header #right-content, .passport-page > main #right-content{
+    float: right;
+    display: inline-table;
+    margin-right: 2%;
+}
+.passport-page > main #left-content{
+    width: 70%;
+}
+.passport-page > main #right-content{
+    width: 22%;
+    margin-right: 3%;
+}
+.passport-page > header{
+    background-color: #0079bf;
+    left: -8%;
+    position: relative;
+}
+.passport-page > header #left-content, .passport-page > header #right-content{
+   margin-top: 15px;
+   font-size: 103%;
+}
+.passport-page > header #left-content span, .passport-page > header #right-content a{
+    color: white;
+}
+.passport-page > header #right-content nav{margin-top: 0px;display: none;}
+.passport-page > header #right-content nav img{ display: inline-table; width: 25px; }
+.passport-page > header #right-content nav img:hover{ cursor: pointer; }
+.passport-page > header #left-content span{
+    font-size: 94%;
+}
+.passport-page > header #right-content a{
+    text-decoration: none;
+}
+.passport-page > header #right-content a:hover{
+    text-decoration: underline;
+}
+.passport-page > main #left-content #table-list{
+    width: 100%;
+    border-bottom: solid 2px darkgray;
+    font-size: 87%;
+    border-spacing: 0px;
+    overflow: auto;
+    height: 426px;
+}
+.passport-page > main #left-content #table-list .header{
+    height: 35px;
+}
+.passport-page > main #left-content #table-list .header th{
+    background-color: white;
+    text-align: left;
+    font-weight: normal;
+}
+.passport-page > main #left-content #table-list .header th:nth-child(1), .passport-page > main #left-content #table-list .header th:nth-child(4), .passport-page > main #left-content #table-list .content td:nth-child(1), .passport-page > main #left-content #table-list .content td:nth-child(4){
+    text-align: center;
+}
+.passport-page > main #left-content #table-list .header th:nth-child(2), .passport-page > main #left-content #table-list .header th:nth-child(3), .passport-page > main #left-content #table-list .content td:nth-child(2), .passport-page > main #left-content #table-list .content td:nth-child(3){
+    padding-left: 3%;
+}
+.passport-page > main #left-content #table-list .content{
+    height: 38px;
+}
+.passport-page > main #left-content #table-list .content td{
+    border-top: solid 2px darkgray;
+}
+.passport-page > main #left-content #table-list .content td:nth-child(2){
+    font-weight: bold;
+    width: 41%;
+}
+.passport-page > main #left-content #table-list .content td .status {
+    background-color: #bec4c6;
+    color: white;
+    width: 53px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    text-transform: uppercase;
+    font-size: 67%;
+    text-align: center;
+    margin-left: -18%;
+}
+.passport-page > main #right-content .nav{
+    list-style-type: none;
+    width: 90%;
+}
+.passport-page > main #right-content .nav li{
+    border-top: solid 2px #0079bf;
+    margin-left: -14%;
+    padding-top: 12px;
+    padding-bottom: 12px;
+    font-size: 86%;
+}
+.passport-page > main #right-content .nav li .fas{
+    font-size: 78%;
+    margin-left: 2%;
+    color: #0079bf;
+    visibility: hidden;
+}
+.passport-page > main #right-content .nav li.active .fas{
+    visibility: visible;
+}
+.passport-page > main #right-content .nav li a{
+    color: #0079bf;
+    text-decoration: none;
+    margin-left: 5%;
+}
+.passport-page > main #right-content .nav li:hover, .passport-page > main #right-content .nav li.active{
+    background-color: rgba(30, 143, 255, 0.137);
+}
+
+.passport-page > main #right-content .nav li:nth-last-child(1){
+    border-bottom: solid 2px #0079bf;
+}
+
+@media all and (max-width: 414px){
+}
+@media all and (max-width: 600px){
+}
+@media all and (max-width: 768px){
+}
+@media all and (max-width: 800px){}
+@media all and (max-width: 960px){}
+@media all and (max-width: 1024px){
+    .passport-page {
+        width: 80%;
+        left: 12%;
+        top: 2%;
+    }
+}
+@media all and (max-width: 1280px){
+    .passport-page > main #left-content #table-list {
+        font-size: calc(87% / 2);
+    }
+    .passport-page.gecko-fix > main #left-content #table-list {
+        font-size: calc(160% / 2);
+    }
+    .passport-page > main #left-content {
+        width: 97%;
+        margin-left: 1%;
+    }
+    #passport {
+        height: 1000px;
+    }
+    .passport-page {
+        left: 12%;
+        top: 2%;
+    }
+    .footer, .passport-page > header #right-content a, .passport-page > main #right-content { display: none; }
+    .passport-page > header #right-content nav, .passport-menu-adaptive { display: inherit; }
+    .passport-page > header #left-content, .passport-page > header #right-content {
+        margin-top: calc(12px / 2);
+        font-size: calc(159% / 2);
+    }
+}
+@media all and (min-width: 1280px) and (max-width: 1366px){
+    .passport-page > main #left-content #table-list {
+        font-size: 100%;
+    }
+    .passport-page > header #left-content, .passport-page > header #right-content {
+        margin-top: calc(27px / 2);
+        font-size: calc(180% / 2);
+    }
+}
+@media all and (max-width: 1440px){}
+@media all and (max-width: 1536px){}
+@media all and (max-width: 1600px){}
+@media all and (max-width: 1920px){}
+@media all and (min-width: 1920px){}

@@ -1,0 +1,177 @@
+#objects > .projects-search-form main form{
+    width: 100%;
+}
+#objects > .projects-search-form main form h4{
+    font-size: 90%;
+    color: gray;
+    text-transform: uppercase;
+    margin-left: 21px;
+    background-color: white;
+    width: 90px;
+    padding-left: 1%;
+    padding-right: 1%;
+    position: relative;
+    top: 26px;
+    left: 1%;
+}
+#objects > .projects-search-form main form .selectors{
+    display: inline-table;
+    width: 41%;
+    margin-left: 40px;
+    border-radius: 10px;
+    padding-top: 1%;
+    padding-bottom: 1%;
+    height: 298px;
+}
+#objects > .projects-search-form main form .selectors .selector{
+    margin-top: 2px;
+    display: block;
+    margin-left: 2%;
+}
+#objects > .projects-search-form main form .selectors .selector span{
+   font-size: 90%;
+}
+#objects > .projects-search-form footer .filter{
+    width: 43%;
+    display: block;
+    padding-bottom: 8px;
+}
+#objects > .projects-search-form footer .filter .option{
+    display: inline-block;
+    width: 49%;
+}
+#objects > .projects-search-form footer .filter .option:not(:nth-child(1)){
+    margin-left: 1%;
+}
+#objects > .projects-search-form footer .filter .option span{
+    font-size: 80%;
+    color: gray;
+    text-transform: uppercase;
+    font-weight: bold;
+    background-color: white;
+    width: 90px;
+    padding-left: 2%;
+    padding-right: 2%;
+    position: relative;
+    top: 12px;
+    left: 5%;
+}
+#objects > .projects-search-form footer .filter .option #option-selector{
+    display: block;
+    width: 100%;
+    background-color: white;
+    font-size: 120%;
+    border: solid 2px gray;
+    border-radius: 10px;
+    margin-top: 1%;
+    padding-top: 4%;
+    padding-bottom: 4%;
+    padding-left: 4%;
+    appearance: none;
+    background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABoAAAAaCAYAAACpSkzOAAAABmJLR0QA/wD/AP+gvaeTAAAAo0lEQVRIie3STaqBYRTA8Z+ukis7sgwTQzuxAckejFEGUiZiG5JV3G69YeBVb74/jtnzrzN7Or9OPaRSqcgGyLAPmizfedE2EDnN5hrUxC4Q2eU7r9YLhLq3EPjBMACZoHwPgl+sPkCWqD5CTtUwfwNZoP4sUrxs9gIyfeWS8yoYP4GM8rcfVULnDtJ3/ERhtfBXAP7RjgSKNbDOp/EtJJWK6QBceqOraqxeeAAAAABJRU5ErkJggg==) no-repeat right;
+    background-position-x: calc(100% - (8px * 2));
+    background-size: 15px;
+}
+#objects > .projects-search-form footer .filter .parameters{
+    width: 100%;
+}
+#objects > .projects-search-form footer .filter .parameters span{
+    font-size: 90%;
+    color: gray;
+    text-transform: uppercase;
+    font-weight: bold;
+    background-color: white;
+    width: 90px;
+    padding-left: 1%;
+    padding-right: 1%;
+    position: relative;
+    top: 17px;
+    left: 1%;
+}
+#objects > .projects-search-form footer .filter .parameters .parameter-form{
+    font-size: 93%;
+    border-radius: 10px;
+    border: solid 2px gray;
+    padding-left: 2%;
+    padding-bottom: 3%;
+    margin-top: 1%;
+}
+#objects > .projects-search-form footer .filter .parameters .parameter-form #text-from{
+    width: 20%;
+    background-color: #bec4c6;
+    font-size: 93%;
+    border: none;
+    padding: 8px;
+}
+#objects > .projects-search-form footer .filter .parameters .parameter-form #text-to{
+    display: inline-table;
+    width: calc(14% * 2);
+    background-color: #bec4c6;
+    font-size: 93%;
+    border: none;
+    padding: 8px;
+    margin-top: 3%;
+}
+
+@media all and (max-width: 414px){}
+@media all and (max-width: 600px){}
+@media all and (max-width: 768px){
+    #objects > .projects-search-form main form .selectors {
+        display: inline-table;
+        width: 90%;
+        margin-left: 22px;
+        padding-top: 4%;
+    }
+    #objects > .projects-search-form main form .selectors .selector {
+        margin-top: 5px;
+    }
+    #objects > .projects-search-form main form {
+        margin-top: -12%;
+        margin-left: -3vw;
+    } 
+    #objects > .projects-search-form footer .filter .option:not(:nth-child(1)) {
+        margin-left: 0%;
+    }   
+    #objects > .projects-search-form footer .filter {
+        width: 100%;
+    }
+}
+@media all and (max-width: 800px){}
+@media all and (min-width: 768px) and (max-width: 960px){
+    #objects > .projects-search-form main {
+        margin-top: -8%;
+    }
+    #objects > .projects-search-form main form .selectors {
+        width: 36%;
+        padding-top: 3%;
+    }
+    #objects > .projects-search-form main form .selectors .selector {
+        margin-top: 4px;
+    }
+    #objects > .projects-search-form footer .filter {
+        width: 100%;
+    }
+}
+@media all and (min-width: 960px) and (max-width: 1024px){
+    #objects > .projects-search-form footer .filter {
+        width: 100%;
+    }
+    #objects > .projects-search-form main form .selectors .selector {
+        margin-top: 3px;
+    }
+}
+@media all and (min-width: 1024px) and (max-width: 1280px){
+    #objects > .projects-search-form footer .filter {
+        width: 53%;
+    }
+}
+@media all and (min-width: 1280px) and (max-width: 1366px){
+    #objects > .projects-search-form footer .filter {
+        width: 48%;
+    }
+}
+@media all and (max-width: 1440px){}
+@media all and (max-width: 1536px){}
+@media all and (max-width: 1600px){}
+@media all and (max-width: 1920px){}
+@media all and (min-width: 1920px){}

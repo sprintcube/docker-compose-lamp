@@ -1,0 +1,129 @@
+CSS-код:
+
+#promo > main.swiper-container .promo-feed, #investsearch > main.swiper-container .popular-objects{
+    position: relative;
+    z-index: 1;  
+
+}
+#promo > main.swiper-container .promo-feed .promoblock, #investsearch > main.swiper-container .popular-objects .popular-object{
+    position: absolute;
+    z-index: 1;
+}
+#promo > main.swiper-container .promo-feed .promoblock::before, #investsearch > main.swiper-container .popular-objects .popular-object::before{
+    content: '';
+    position: absolute;
+    z-index: -2;
+    pointer-events: none;
+    background-color: white;
+    box-shadow: inherit;
+    width: 100%;
+    height: 100%;
+    display: inline-flexbox;
+}
+
+
+@media all and (min-width:1024px) and (max-width: 1100px){
+    #promo > main.swiper-container .promo-feed .promoblock header {
+        padding-right: 8px;
+    }
+
+    #promo > main.swiper-container .promo-feed .promoblock::before {
+        
+    }
+    
+    #investsearch > main.swiper-container .popular-objects .popular-object::before {
+        
+    }
+    
+   
+}
+@media all and (min-width:1100px) and (max-width: 1181px){
+    #promo > main.swiper-container .promo-feed .promoblock header {
+        padding-right: 8px;
+    }
+    #promo > main.swiper-container .promo-feed .promoblock::before {
+       
+    }
+    #investsearch > main.swiper-container .popular-objects .popular-object::before {
+        
+    }
+    
+}
+@media all and (min-width:1181px) and (max-width: 1280px){
+    #promo > main.swiper-container .promo-feed .promoblock header {
+        padding-right: 8px;
+    }
+    #promo > main.swiper-container .promo-feed .promoblock::before {
+        
+    }
+   
+    #investsearch > main.swiper-container .popular-objects .popular-object::before {
+        
+    }
+   
+}
+@media all and (min-width:1280px) and (max-width: 1366px){
+   #promo > main.swiper-container .promo-feed .promoblock header {
+        padding-right: 8px;
+   }
+    #promo > main.swiper-container .promo-feed .promoblock::before {
+       
+    }
+   
+    #investsearch > main.swiper-container .popular-objects .popular-object::before {
+        
+    }
+    
+}
+@media all and (min-width:1366px) and (max-width: 1400px){
+    #promo > main.swiper-container .promo-feed .promoblock header {
+        padding-right: 8px;
+    }
+    #promo > main.swiper-container .promo-feed .promoblock::before {
+       
+    }
+    
+    #investsearch > main.swiper-container .popular-objects .popular-object::before {
+       
+    }
+    
+}
+@media all and (min-width:1400px) and (max-width: 1600px){
+    #promo > main.swiper-container .promo-feed .promoblock header {
+        padding-right: 9px;
+    }
+    #promo > main.swiper-container .promo-feed .promoblock::before {
+        
+    }
+    
+    #investsearch > main.swiper-container .popular-objects .popular-object::before {
+        
+    }
+   
+}
+@media (max-width: 1680px) and (min-width: 1600px){
+    #promo > main.swiper-container .promo-feed .promoblock header {
+        padding-right: 9px;
+    }
+    #promo > main.swiper-container .promo-feed .promoblock::before {
+       
+    }
+   
+    #investsearch > main.swiper-container .popular-objects .popular-object::before {
+        
+    }
+    
+}
+@media all and (min-width:1680px) and (max-width: 1800px){
+    #promo > main.swiper-container .promo-feed .promoblock header {
+        padding-right: 9px;
+    }
+    #promo > main.swiper-container .promo-feed .promoblock::before {
+        
+    }
+    
+    #investsearch > main.swiper-container .popular-objects .popular-object::before {
+        
+    }
+    
+}

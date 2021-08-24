@@ -1,0 +1,149 @@
+.lightwin-passport-regional{
+    width: 30%;
+    height: 26vh;
+    background-color: #bec4c6;
+    position: absolute;
+    bottom: 1%;
+    left: 33%;
+    padding-bottom: 2%;
+}
+.lightwin-passport-regional > header{
+    width: 100%;
+    height: calc(100% / 4);
+}
+.lightwin-passport-regional > main{
+    width: 100%;
+    height: 14vh;
+    overflow: auto;
+}
+.lightwin-passport-regional > footer{
+    width: 100%;
+    height: 20vh;
+    margin-top: 3%;
+}
+.lightwin-passport-regional > header #left-content, .lightwin-passport-regional > footer #left-content{
+    float: left;
+    margin-left: 4%;
+}
+.lightwin-passport-regional > header #left-content{
+    margin-top: 3%;
+    font-weight: bold;
+    font-size: 100%;
+}
+.lightwin-passport-regional > header #right-content{
+    float: right;
+    margin-right: 2%;
+    margin-top: 3%;
+}
+.lightwin-passport-regional > header #right-content .close{
+    width: 80%;
+}
+.lightwin-passport-regional > main form .countries-part{
+    width: 5vw;
+    display: inline-table;
+    padding-left: 4%;
+}
+.lightwin-passport-regional > main form .countries-part .country-name{
+    font-size: 80%;
+}
+.lightwin-passport-regional > main form .countries-part label #country-selector{
+    position: absolute;
+    left: -9999px;
+}
+
+.lightwin-passport-regional > main form .countries-part label #country-selector + span.country-name{
+    display: inline-block;
+    position: relative;
+    padding-left: 28px;
+    line-height: 20px;
+    cursor: pointer;
+}
+
+.lightwin-passport-regional > main form .countries-part label #country-selector + span.country-name:before{
+    content: "";
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    width: 18px;
+    height: 18px;
+    border: 1px solid darkgray;
+    background-color: darkgray;
+}
+
+.lightwin-passport-regional > main form .countries-part label #country-selector + span.country-name:before{
+    border-radius: 2px;
+}
+
+.lightwin-passport-regional > main form .countries-part label #country-selector:checked + span.country-name:after{
+    content: "";
+    position: absolute;
+    -webkit-transition: all 0.2s ease;
+    -moz-transition: all 0.2s ease;
+    -o-transition: all 0.2s ease;
+    transition: all 0.2s ease;
+}
+
+.lightwin-passport-regional > main form .countries-part label #country-selector:checked + span.country-name:after{
+    left: 3px;
+    top: 4px;
+    width: 10px;
+    height: 5px;
+    border-radius: 1px;
+    border-left: 4px solid #0079bf;
+    border-bottom: 4px solid #0079bf;
+    -webkit-transform: rotate(-45deg);
+    -moz-transform: rotate(-45deg);
+    -o-transform: rotate(-45deg);
+    -ms-transform: rotate(-45deg);
+    transform: rotate(-45deg);
+}
+
+@media all and (max-width: 414px){}
+@media all and (max-width: 600px){
+    .lightwin-passport-regional {
+        width: 98%;
+        height: 33vh;
+        left: 1%;
+    }
+}
+@media all and (max-width: 768px){
+    .lightwin-passport-regional {
+        width: 82%;
+        height: 32vh;
+        left: 10%;
+    }
+}
+@media all and (max-width: 800px){
+    .lightwin-passport-regional {
+        width: 82%;
+        height: 32vh;
+        left: 10%;
+    }
+}
+@media all and (max-width: 960px){
+    .lightwin-passport-regional {
+        width: 82%;
+        height: 32vh;
+        left: 10%;
+    }
+}
+@media all and (max-width: 1024px){
+    .lightwin-passport-regional {
+        width: 82%;
+        height: 32vh;
+        left: 10%;
+    }
+}
+@media all and (max-width: 1280px){
+    .lightwin-passport-regional {
+        width: 82%;
+        height: 32vh;
+        left: 10%;
+    }
+}
+@media all and (max-width: 1366px){}
+@media all and (max-width: 1440px){}
+@media all and (max-width: 1536px){}
+@media all and (max-width: 1600px){}
+@media all and (max-width: 1920px){}
+@media all and (min-width: 1920px){}
