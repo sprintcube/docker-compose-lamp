@@ -3911,3 +3911,26 @@ AH00558: apache2: Could not reliably determine the server's fully qualified doma
 AH00558: apache2: Could not reliably determine the server's fully qualified domain name, using 172.18.0.3. Set the 'ServerName' directive globally to suppress this message
 [Mon Aug 23 11:43:43.440847 2021] [mpm_prefork:notice] [pid 1] AH00163: Apache/2.4.38 (Debian) PHP/7.4.2 configured -- resuming normal operations
 [Mon Aug 23 11:43:43.440932 2021] [core:notice] [pid 1] AH00094: Command line: 'apache2 -D FOREGROUND'
+[Mon Aug 23 12:48:33.833712 2021] [core:crit] [pid 39] (13)Permission denied: [client 172.18.0.1:43186] AH00529: /var/www/html/investportal/.htaccess pcfg_openfile: unable to check htaccess file, ensure it is readable and that '/var/www/html/investportal/' is executable
+[Mon Aug 23 12:48:34.480312 2021] [core:crit] [pid 39] (13)Permission denied: [client 172.18.0.1:43186] AH00529: /var/www/html/investportal/.htaccess pcfg_openfile: unable to check htaccess file, ensure it is readable and that '/var/www/html/investportal/' is executable, referer: http://investportal.aplex/
+[Mon Aug 23 12:49:48.267815 2021] [core:crit] [pid 48] (13)Permission denied: [client 172.18.0.1:43818] AH00529: /var/www/html/investportal/.htaccess pcfg_openfile: unable to check htaccess file, ensure it is readable and that '/var/www/html/investportal/' is executable
+[Mon Aug 23 12:49:48.849626 2021] [core:crit] [pid 48] (13)Permission denied: [client 172.18.0.1:43818] AH00529: /var/www/html/investportal/.htaccess pcfg_openfile: unable to check htaccess file, ensure it is readable and that '/var/www/html/investportal/' is executable, referer: http://investportal.aplex/
+[Mon Aug 23 12:51:39.008115 2021] [mpm_prefork:notice] [pid 1] AH00170: caught SIGWINCH, shutting down gracefully
+AH00558: apache2: Could not reliably determine the server's fully qualified domain name, using 172.18.0.3. Set the 'ServerName' directive globally to suppress this message
+[Mon Aug 23 12:51:41.562377 2021] [mpm_prefork:notice] [pid 1] AH00163: Apache/2.4.38 (Debian) PHP/7.4.2 configured -- resuming normal operations
+[Mon Aug 23 12:51:41.562504 2021] [core:notice] [pid 1] AH00094: Command line: 'apache2 -D FOREGROUND'
+[Mon Aug 23 12:53:34.173365 2021] [mpm_prefork:notice] [pid 1] AH00170: caught SIGWINCH, shutting down gracefully
+AH00558: apache2: Could not reliably determine the server's fully qualified domain name, using 172.18.0.2. Set the 'ServerName' directive globally to suppress this message
+[Mon Aug 23 12:53:36.098150 2021] [mpm_prefork:notice] [pid 1] AH00163: Apache/2.4.38 (Debian) PHP/7.4.2 configured -- resuming normal operations
+[Mon Aug 23 12:53:36.098285 2021] [core:notice] [pid 1] AH00094: Command line: 'apache2 -D FOREGROUND'
+[Mon Aug 23 12:57:18.969444 2021] [mpm_prefork:notice] [pid 1] AH00170: caught SIGWINCH, shutting down gracefully
+AH00558: apache2: Could not reliably determine the server's fully qualified domain name, using 172.18.0.2. Set the 'ServerName' directive globally to suppress this message
+[Mon Aug 23 12:57:21.784609 2021] [mpm_prefork:notice] [pid 1] AH00163: Apache/2.4.38 (Debian) PHP/7.4.2 configured -- resuming normal operations
+[Mon Aug 23 12:57:21.784729 2021] [core:notice] [pid 1] AH00094: Command line: 'apache2 -D FOREGROUND'
+[Mon Aug 23 15:06:08.177209 2021] [mpm_prefork:notice] [pid 1] AH00170: caught SIGWINCH, shutting down gracefully
+AH00558: apache2: Could not reliably determine the server's fully qualified domain name, using 172.18.0.3. Set the 'ServerName' directive globally to suppress this message
+[Tue Aug 24 03:41:06.476625 2021] [mpm_prefork:notice] [pid 1] AH00163: Apache/2.4.38 (Debian) PHP/7.4.2 configured -- resuming normal operations
+[Tue Aug 24 03:41:06.476728 2021] [core:notice] [pid 1] AH00094: Command line: 'apache2 -D FOREGROUND'
+AH00558: apache2: Could not reliably determine the server's fully qualified domain name, using 172.18.0.2. Set the 'ServerName' directive globally to suppress this message
+[Tue Aug 24 04:02:36.447623 2021] [mpm_prefork:notice] [pid 1] AH00163: Apache/2.4.38 (Debian) PHP/7.4.2 configured -- resuming normal operations
+[Tue Aug 24 04:02:36.447748 2021] [core:notice] [pid 1] AH00094: Command line: 'apache2 -D FOREGROUND'
