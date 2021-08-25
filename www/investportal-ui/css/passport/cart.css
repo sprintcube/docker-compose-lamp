@@ -32,14 +32,14 @@
     font-size: 102%;
 }
 .passport-page > main #left-content .cart-data #table-list .content td:nth-child(1){
-    text-indent: 16%;
+    text-indent: 30%;
     color: gray;
 }
 .passport-page > main #left-content .cart-data #table-list .content td:nth-child(4){
     text-indent: 2%;
 }
 .passport-page > main #left-content .cart-data:nth-child(1) #table-list .content td:nth-child(1) {
-    width: 6%;
+    width: 10%;
 }
 .passport-page > main #left-content .cart-data:nth-child(1) #table-list .content td:nth-child(2) {
     width: 36%;
@@ -59,7 +59,7 @@
 .passport-page > main #left-content .cart-data #table-list .content td:nth-child(5), .passport-page > main #left-content .cart-data #table-list .content td:nth-child(1){
     text-align: left;
     padding-left: 1%;
-    width: 7%;
+    width: 11%;
 }
 
 @media all and (max-width: 414px){
@@ -75,13 +75,13 @@
         height: 1320px;
     } 
     .passport-page > main #left-content .cart-data:nth-child(1) #table-list .content td:nth-child(1) {
-        width: 25%;
+        width: 9%;
     }
     .passport-page > main #left-content .cart-data:nth-child(1) #table-list .content td:nth-child(2) {
-        width: 70%;
+        width: 64%;
     }
     .passport-page > main #left-content .cart-data:nth-child(2) #table-list .content td:nth-child(1), .passport-page > main #left-content .cart-data:nth-child(3) #table-list .content td:nth-child(1) {
-        width: 15%;
+        width: 11%;
     }
     .passport-page > main #left-content .cart-data:nth-child(3) #table-list .content td:nth-child(2) {
         width: 40%;
