@@ -126,9 +126,12 @@
         margin-top: 5px;
     }
     #objects > .projects-search-form main form {
-        margin-top: -12%;
-        margin-left: -3vw;
+        margin-top: 5%;
+        margin-left: 1vw;
     } 
+    #objects > .projects-search-form main form h4 {
+        left: 0%;
+    }
     #objects > .projects-search-form footer .filter .option:not(:nth-child(1)) {
         margin-left: 0%;
     }   
@@ -142,11 +145,12 @@
         margin-top: -8%;
     }
     #objects > .projects-search-form main form .selectors {
-        width: 36%;
+        width: 46%;
         padding-top: 3%;
     }
     #objects > .projects-search-form main form .selectors .selector {
-        margin-top: 4px;
+        margin-top: 10px;
+        width: 100%;
     }
     #objects > .projects-search-form footer .filter {
         width: 100%;

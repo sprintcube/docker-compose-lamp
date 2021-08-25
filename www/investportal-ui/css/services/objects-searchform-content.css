@@ -161,8 +161,15 @@
         width: 100%;
     }
     #objects > .projects-search-form main form .selectors .selector {
-        margin-top: 3px;
+        margin-top: 8px;
     }
+    #objects > .projects-search-form main form .selectors {
+        width: 40%;
+    }
+    #objects > .projects-search-form main form h4 {
+        left: 2%;
+    }
+
 }
 @media all and (min-width: 1024px) and (max-width: 1280px){
     #objects > .projects-search-form footer .filter {

@@ -1684,7 +1684,7 @@ h4.title, p.descr{
         top: -12%;
     }
     .footer {
-        height: calc(320px * 6);
+        height: calc(126px * 6);
     }
 
 }

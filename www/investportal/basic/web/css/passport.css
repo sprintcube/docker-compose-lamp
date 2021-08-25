@@ -164,14 +164,14 @@
 }
 @media all and (max-width: 1280px){
     .passport-page > main #left-content #table-list {
-        font-size: calc(87% / 2);
+        font-size: calc(164% / 2);
     }
     .passport-page.gecko-fix > main #left-content #table-list {
         font-size: calc(160% / 2);
     }
     .passport-page > main #left-content {
-        width: 97%;
-        margin-left: 1%;
+        width: 93%;
+        margin-left: 3%;
     }
     #passport {
         height: 1000px;
