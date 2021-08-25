@@ -1655,8 +1655,11 @@ h4.title, p.descr{
         height: 460px;
     }
     #investsearch {
-        height: 610px;
+        height: 500px;
         padding-top: 15%;
+    }
+    #analytics > main #slider-view .analytic-feed .analytic h2, #analytics > main #slider-view-adaptive .analytic h2 {
+        top: 5mm;
     }
     #services {
         height: 567px;
@@ -1666,8 +1669,9 @@ h4.title, p.descr{
     }
     #promo > main.swiper-container .promo-feed .promoblock { width: 35%; height: 375px;}
     #services > main #slider-view-adaptive .service {
-        width: 58vw;
+        width: 56vw;
         height: 330px;
+        margin-left: calc(22vw / 2);
     }
     #eventcalendar > main .calendar footer {
         margin-top: 6%;

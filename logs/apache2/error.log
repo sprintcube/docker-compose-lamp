@@ -3934,3 +3934,53 @@ AH00558: apache2: Could not reliably determine the server's fully qualified doma
 AH00558: apache2: Could not reliably determine the server's fully qualified domain name, using 172.18.0.2. Set the 'ServerName' directive globally to suppress this message
 [Tue Aug 24 04:02:36.447623 2021] [mpm_prefork:notice] [pid 1] AH00163: Apache/2.4.38 (Debian) PHP/7.4.2 configured -- resuming normal operations
 [Tue Aug 24 04:02:36.447748 2021] [core:notice] [pid 1] AH00094: Command line: 'apache2 -D FOREGROUND'
+AH00558: apache2: Could not reliably determine the server's fully qualified domain name, using 172.18.0.2. Set the 'ServerName' directive globally to suppress this message
+[Tue Aug 24 06:41:31.068780 2021] [mpm_prefork:notice] [pid 1] AH00163: Apache/2.4.38 (Debian) PHP/7.4.2 configured -- resuming normal operations
+[Tue Aug 24 06:41:31.068863 2021] [core:notice] [pid 1] AH00094: Command line: 'apache2 -D FOREGROUND'
+[Tue Aug 24 07:25:25.785337 2021] [core:crit] [pid 25] (13)Permission denied: [client 172.18.0.1:54966] AH00529: /var/www/html/investportal-ui/js/modals/css/.htaccess pcfg_openfile: unable to check htaccess file, ensure it is readable and that '/var/www/html/investportal-ui/js/modals/css/' is executable, referer: http://investportal-ui.aplex/
+[Tue Aug 24 07:25:26.144924 2021] [core:crit] [pid 26] (13)Permission denied: [client 172.18.0.1:55042] AH00529: /var/www/html/investportal-ui/js/modals/js/.htaccess pcfg_openfile: unable to check htaccess file, ensure it is readable and that '/var/www/html/investportal-ui/js/modals/js/' is executable, referer: http://investportal-ui.aplex/
+[Tue Aug 24 07:25:26.223646 2021] [core:crit] [pid 27] (13)Permission denied: [client 172.18.0.1:55046] AH00529: /var/www/html/investportal-ui/js/modals/css/.htaccess pcfg_openfile: unable to check htaccess file, ensure it is readable and that '/var/www/html/investportal-ui/js/modals/css/' is executable, referer: http://investportal-ui.aplex/
+[Tue Aug 24 07:25:26.311329 2021] [core:crit] [pid 26] (13)Permission denied: [client 172.18.0.1:55042] AH00529: /var/www/html/investportal-ui/js/modals/js/.htaccess pcfg_openfile: unable to check htaccess file, ensure it is readable and that '/var/www/html/investportal-ui/js/modals/js/' is executable, referer: http://investportal-ui.aplex/
+[Tue Aug 24 07:28:31.811570 2021] [core:crit] [pid 28] (13)Permission denied: [client 172.18.0.1:56674] AH00529: /var/www/html/investportal-ui/js/modals/.htaccess pcfg_openfile: unable to check htaccess file, ensure it is readable and that '/var/www/html/investportal-ui/js/modals/' is executable, referer: http://investportal-ui.aplex/
+[Tue Aug 24 07:28:32.126906 2021] [core:crit] [pid 28] (13)Permission denied: [client 172.18.0.1:56674] AH00529: /var/www/html/investportal-ui/js/modals/.htaccess pcfg_openfile: unable to check htaccess file, ensure it is readable and that '/var/www/html/investportal-ui/js/modals/' is executable, referer: http://investportal-ui.aplex/
+[Tue Aug 24 07:28:32.199775 2021] [core:crit] [pid 28] (13)Permission denied: [client 172.18.0.1:56674] AH00529: /var/www/html/investportal-ui/js/modals/.htaccess pcfg_openfile: unable to check htaccess file, ensure it is readable and that '/var/www/html/investportal-ui/js/modals/' is executable, referer: http://investportal-ui.aplex/
+[Tue Aug 24 07:28:32.256495 2021] [core:crit] [pid 26] (13)Permission denied: [client 172.18.0.1:56706] AH00529: /var/www/html/investportal-ui/js/modals/.htaccess pcfg_openfile: unable to check htaccess file, ensure it is readable and that '/var/www/html/investportal-ui/js/modals/' is executable, referer: http://investportal-ui.aplex/
+[Tue Aug 24 07:28:36.556540 2021] [core:crit] [pid 18] (13)Permission denied: [client 172.18.0.1:56698] AH00529: /var/www/html/investportal-ui/js/modals/.htaccess pcfg_openfile: unable to check htaccess file, ensure it is readable and that '/var/www/html/investportal-ui/js/modals/' is executable, referer: http://investportal-ui.aplex/
+[Tue Aug 24 07:28:36.972487 2021] [core:crit] [pid 28] (13)Permission denied: [client 172.18.0.1:56674] AH00529: /var/www/html/investportal-ui/js/modals/.htaccess pcfg_openfile: unable to check htaccess file, ensure it is readable and that '/var/www/html/investportal-ui/js/modals/' is executable, referer: http://investportal-ui.aplex/
+[Tue Aug 24 07:28:37.051149 2021] [core:crit] [pid 28] (13)Permission denied: [client 172.18.0.1:56674] AH00529: /var/www/html/investportal-ui/js/modals/.htaccess pcfg_openfile: unable to check htaccess file, ensure it is readable and that '/var/www/html/investportal-ui/js/modals/' is executable, referer: http://investportal-ui.aplex/
+[Tue Aug 24 07:28:37.085733 2021] [core:crit] [pid 29] (13)Permission denied: [client 172.18.0.1:56672] AH00529: /var/www/html/investportal-ui/js/modals/.htaccess pcfg_openfile: unable to check htaccess file, ensure it is readable and that '/var/www/html/investportal-ui/js/modals/' is executable, referer: http://investportal-ui.aplex/
+[Tue Aug 24 07:29:05.278429 2021] [core:crit] [pid 30] (13)Permission denied: [client 172.18.0.1:57038] AH00529: /var/www/html/investportal-ui/js/modals/.htaccess pcfg_openfile: unable to check htaccess file, ensure it is readable and that '/var/www/html/investportal-ui/js/modals/' is executable, referer: http://investportal-ui.aplex/
+[Tue Aug 24 07:29:05.592188 2021] [core:crit] [pid 30] (13)Permission denied: [client 172.18.0.1:57038] AH00529: /var/www/html/investportal-ui/js/modals/.htaccess pcfg_openfile: unable to check htaccess file, ensure it is readable and that '/var/www/html/investportal-ui/js/modals/' is executable, referer: http://investportal-ui.aplex/
+[Tue Aug 24 07:29:05.708202 2021] [core:crit] [pid 24] (13)Permission denied: [client 172.18.0.1:57050] AH00529: /var/www/html/investportal-ui/js/modals/.htaccess pcfg_openfile: unable to check htaccess file, ensure it is readable and that '/var/www/html/investportal-ui/js/modals/' is executable, referer: http://investportal-ui.aplex/
+[Tue Aug 24 07:29:05.890860 2021] [core:crit] [pid 27] (13)Permission denied: [client 172.18.0.1:57036] AH00529: /var/www/html/investportal-ui/js/modals/.htaccess pcfg_openfile: unable to check htaccess file, ensure it is readable and that '/var/www/html/investportal-ui/js/modals/' is executable, referer: http://investportal-ui.aplex/
+AH00558: apache2: Could not reliably determine the server's fully qualified domain name, using 172.18.0.3. Set the 'ServerName' directive globally to suppress this message
+[Tue Aug 24 07:37:51.334463 2021] [mpm_prefork:notice] [pid 1] AH00163: Apache/2.4.38 (Debian) PHP/7.4.2 configured -- resuming normal operations
+[Tue Aug 24 07:37:51.334610 2021] [core:notice] [pid 1] AH00094: Command line: 'apache2 -D FOREGROUND'
+AH00558: apache2: Could not reliably determine the server's fully qualified domain name, using 172.18.0.3. Set the 'ServerName' directive globally to suppress this message
+[Tue Aug 24 08:07:32.768639 2021] [mpm_prefork:notice] [pid 1] AH00163: Apache/2.4.38 (Debian) PHP/7.4.2 configured -- resuming normal operations
+[Tue Aug 24 08:07:32.768762 2021] [core:notice] [pid 1] AH00094: Command line: 'apache2 -D FOREGROUND'
+AH00558: apache2: Could not reliably determine the server's fully qualified domain name, using 172.18.0.3. Set the 'ServerName' directive globally to suppress this message
+[Tue Aug 24 08:33:55.202025 2021] [mpm_prefork:notice] [pid 1] AH00163: Apache/2.4.38 (Debian) PHP/7.4.2 configured -- resuming normal operations
+[Tue Aug 24 08:33:55.202119 2021] [core:notice] [pid 1] AH00094: Command line: 'apache2 -D FOREGROUND'
+AH00558: apache2: Could not reliably determine the server's fully qualified domain name, using 172.18.0.2. Set the 'ServerName' directive globally to suppress this message
+[Tue Aug 24 09:01:44.206639 2021] [mpm_prefork:notice] [pid 1] AH00163: Apache/2.4.38 (Debian) PHP/7.4.2 configured -- resuming normal operations
+[Tue Aug 24 09:01:44.206763 2021] [core:notice] [pid 1] AH00094: Command line: 'apache2 -D FOREGROUND'
+AH00558: apache2: Could not reliably determine the server's fully qualified domain name, using 172.18.0.3. Set the 'ServerName' directive globally to suppress this message
+[Tue Aug 24 09:45:49.364448 2021] [mpm_prefork:notice] [pid 1] AH00163: Apache/2.4.38 (Debian) PHP/7.4.2 configured -- resuming normal operations
+[Tue Aug 24 09:45:49.364553 2021] [core:notice] [pid 1] AH00094: Command line: 'apache2 -D FOREGROUND'
+AH00558: apache2: Could not reliably determine the server's fully qualified domain name, using 172.18.0.2. Set the 'ServerName' directive globally to suppress this message
+[Tue Aug 24 10:51:17.831400 2021] [mpm_prefork:notice] [pid 1] AH00163: Apache/2.4.38 (Debian) PHP/7.4.2 configured -- resuming normal operations
+[Tue Aug 24 10:51:17.831495 2021] [core:notice] [pid 1] AH00094: Command line: 'apache2 -D FOREGROUND'
+AH00558: apache2: Could not reliably determine the server's fully qualified domain name, using 172.18.0.3. Set the 'ServerName' directive globally to suppress this message
+[Tue Aug 24 11:53:12.580508 2021] [mpm_prefork:notice] [pid 1] AH00163: Apache/2.4.38 (Debian) PHP/7.4.2 configured -- resuming normal operations
+[Tue Aug 24 11:53:12.580613 2021] [core:notice] [pid 1] AH00094: Command line: 'apache2 -D FOREGROUND'
+AH00558: apache2: Could not reliably determine the server's fully qualified domain name, using 172.18.0.3. Set the 'ServerName' directive globally to suppress this message
+[Tue Aug 24 13:00:15.410745 2021] [mpm_prefork:notice] [pid 1] AH00163: Apache/2.4.38 (Debian) PHP/7.4.2 configured -- resuming normal operations
+[Tue Aug 24 13:00:15.410893 2021] [core:notice] [pid 1] AH00094: Command line: 'apache2 -D FOREGROUND'
+[Tue Aug 24 13:46:04.371953 2021] [mpm_prefork:notice] [pid 1] AH00170: caught SIGWINCH, shutting down gracefully
+AH00558: apache2: Could not reliably determine the server's fully qualified domain name, using 172.18.0.3. Set the 'ServerName' directive globally to suppress this message
+[Wed Aug 25 03:32:09.129794 2021] [mpm_prefork:notice] [pid 1] AH00163: Apache/2.4.38 (Debian) PHP/7.4.2 configured -- resuming normal operations
+[Wed Aug 25 03:32:09.129893 2021] [core:notice] [pid 1] AH00094: Command line: 'apache2 -D FOREGROUND'
+AH00558: apache2: Could not reliably determine the server's fully qualified domain name, using 172.18.0.3. Set the 'ServerName' directive globally to suppress this message
+[Wed Aug 25 05:56:26.521360 2021] [mpm_prefork:notice] [pid 1] AH00163: Apache/2.4.38 (Debian) PHP/7.4.2 configured -- resuming normal operations
+[Wed Aug 25 05:56:26.521487 2021] [core:notice] [pid 1] AH00094: Command line: 'apache2 -D FOREGROUND'

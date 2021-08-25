@@ -1,6 +1,5 @@
 <?php
 
-$params = require __DIR__ . '/params.php';
 $db = require __DIR__ . '/db.php';
 
 $config = [
@@ -25,9 +24,22 @@ $config = [
                 ],
             ],
         ],
+        'urlManager' => [
+			 'class' => 'yii\web\UrlManager',
+			 'showScriptName' => false,
+			 'enablePrettyUrl' => true,
+			 'rules' => [
+				'defaultRoute' => 'site/index',
+				'news' => 'news/index',
+				'news/<contentId:\d+>' => 'news/view',
+				'passport' => 'passport/service',
+				'objects' => 'objects/index',
+				'objects/search' => 'objects/object',
+				'objects/<objectId:\d+>' => 'objects/view'
+			 ]
+        ],
         'db' => $db,
     ],
-    'params' => $params,
     /*
     'controllerMap' => [
         'fixture' => [ // Fixture generation command line.
