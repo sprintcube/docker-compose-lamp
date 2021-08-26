@@ -779,7 +779,7 @@ h4.title, p.descr{
     width: 58vw;
     height: 290px;
     box-shadow: 3px -1px 4px 0px darkgrey;
-    margin-left: calc(20vw / 2);
+    margin-left: calc(22vw / 2);
     background-color: white;
     padding-bottom: 4%;
 }
@@ -1469,7 +1469,7 @@ h4.title, p.descr{
         height: 633px;
     }
     #reviews {
-        height: 320px;
+        height: 380px;
     }
     #eventcalendar {
         height: 780px;
@@ -1516,6 +1516,7 @@ h4.title, p.descr{
     }
     #services > main {
         right: 20vw;
+        top: 12%;
     }
     #analytics > main {
         right: 20vw;
@@ -1523,7 +1524,7 @@ h4.title, p.descr{
     }
     #estate > main {
         right: 0vw;
-        top: -4%;
+        top: -7%;
     }
     #reviews > main {
         right: 17vw;
@@ -1981,9 +1982,9 @@ h4.title, p.descr{
     }
     .header > #header_top .ht_header span, .header > #header_bottom, #promo > header .marketing-info{ display: none; }
     .header > #header_bottom_adaptive{ display: inherit; }
-    #investsearch > header a { margin-left: 22%; }
+    #investsearch > header a {margin-left: 34%;}
     #investsearch > header .add-but {
-        width: 20%;
+        width: 30%;
     }
     #promo > header .add-but {
         width: 60%;
