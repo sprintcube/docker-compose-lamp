@@ -235,6 +235,7 @@
   #news > .news-viewer #right-content {
     width: 26%;
     margin-right: 6%;
+    margin-top: 14%;
   }
 }
 @media all and (min-width: 1024px) and (max-width: 1280px){

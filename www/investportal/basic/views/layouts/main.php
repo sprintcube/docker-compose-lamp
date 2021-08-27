@@ -1,10 +1,26 @@
 <?php
 use yii\helpers\Html;
+use yii\helpers\Url;
 
 /* @var $this yii\web\View */
 /* @var $content string */
 
 $this->beginPage();
+
+$isUserData = [];
+
+if(!Yii::$app->user->isGuest){
+	$isUserData = [
+		'link' => Url::to(['passport/service']),
+		'title' => 'My passport'
+	];
+}
+else{
+	$isUserData = [
+		'link' => '',
+		'title' => 'Join/Login'
+	];
+}
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -21,7 +37,7 @@ $this->beginPage();
 		<header class="header">
 				<div id="header_top">
 					<div class="ht_header">
-						<img src="images/icons/investportal.png" alt="InvestPortal" />
+						<img src="/images/icons/investportal.png" alt="InvestPortal" />
 						<span>International Platform <br />for Investors and<br /> Investment Projects</span>
 					</div>
 				</div>
@@ -49,7 +65,7 @@ $this->beginPage();
 								<footer>
 									<div class="user-services">
 										<div>
-											<a href="">Join/Login</a>
+											<a href="<?php echo $userData['link']; ?>"><?php echo $userData['title']; ?></a>
 										</div>
 										<div>
 											<a href=""><i class="fas fa-user-check" style="color: #0079bf;"></i></a>
@@ -131,10 +147,10 @@ $this->beginPage();
 				</div>
 				<span>International Platform <br />for Investors and<br /> Investment Projects</span>
 				<main>
-					<a href="" target="_blank"><img src="images/icons/socials/1-foot.png" alt="SN" /></a>
-					<a href="" target="_blank"><img src="images/icons/socials/2-foot.png" alt="SN" /></a>
-					<a href="" target="_blank"><img src="images/icons/socials/3-foot.png" alt="SN" /></a>
-					<a href="" target="_blank"><img src="images/icons/socials/4-foot.png" alt="SN" /></a>
+					<a href="" target="_blank"><img src="/images/icons/socials/1-foot.png" alt="SN" /></a>
+					<a href="" target="_blank"><img src="/images/icons/socials/2-foot.png" alt="SN" /></a>
+					<a href="" target="_blank"><img src="/images/icons/socials/3-foot.png" alt="SN" /></a>
+					<a href="" target="_blank"><img src="/images/icons/socials/4-foot.png" alt="SN" /></a>
 				</main>
 			</header>
 			<main>
@@ -188,8 +204,9 @@ $this->beginPage();
 				</div>
 			</main>
     </footer>
-		<?php if($this->id == 'Passport'){ ?>
-			<div id="auth-lightbox" class="lightbox-closed">
+		<script src="/js/app.js"></script>
+		<?php if(Yii::$app->user->isGuest && $this->id != 'Passport'){ ?>
+			    <div id="auth-lightbox" class="lightbox-closed">
         <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAABmJLR0QA/wD/AP+gvaeTAAADT0lEQVRYhe2WQWwUZRTHf++b3cIFT6SJtE0UOHAoF/GsbDdAgqRLg7deDIkJNIqJXWC3G0xJ2qXUGjWRJnDgpCekpZgeStidclc52AQulRgEDTfgAGxn5nn4htKdGXa7qzf7v8xk3vve/zczb+Z7sKH/u6Sl7NKtHvwgh/AB8BbQE0buo9zDMI/HHJOZP/9bgFKlC3W+QPUokGqcrAEiV5HgJOPZP/49QLHaD/I9sAWkBjqLcA2jt3m+Yu90c7obz7yDaA5kALQDeIqRQcb3/tQ+wMjip2jwDYhBuIIxpxl7/17DNYWb2zHOJMoR0ACVz5jIfNc6QLHaD8yCKCInKe/9uqFxDN4dRjkPKhhz+HVPIhmgVOkiMHeALYh83rJ5PcQUyBPE7KL83l/RFJO4MDBnrTlX2jYHKGe+ApkBfQOC0aSUOEDpVg/wEUgNY07H4sXF4+QXOmPX8wudFBePx647/imQGqpHKVW6mgP4QQ5wQGdjDVeoDoFOk+6o1EHkFzpJd1RAp23OGo1llxGdA1L4kmsOAAcBUJmLRbyVH4EloHcVYtWcXmApzKlXQFhLDjYHENlhj94vsdjUgUes1LJ1EGvNV2pZpg48iq1L6c+2JjuaA6DbANjkPIzHQgicPuC30LgXuIvHvkRzgJQ8CM+61wGAJhZpprTT4Kf2LPSRYB0AYr/VF/62xFr5hU7wq8Bu7KtYAnah/o3ErwPA2/ymPdHYU40DqC7bY2pPonn0nUd7IgnCk3dtTZabAxjmAezGElEq/SHRhos2ps2J1rS1ROabA3jMAR7IAIWb2+tiE33TIEOxbl+FkCGbs0YFdycqOcDD+NejdsmNU6xeAvkY4SrlTPyOWtGIO4MyAFzkXOZYNJy8F/jeKPAU5Qgj7nDb5kU3H5o/xmOdewHA5P6HGBm0+znn24Iounlgwk5IOsiXmb+T0hoPJAX3E0S/BTEgMzj+KcaysU6OrNmJYdLeuQaInKCcufC69HWMZO4hkB/slio1u7HoNVR+ZRN2JHtBN8oehMNADkgDjxEdpNwX6/zWAACG3a10yBnQIZoOpXiIXAYzmjSAtAfwUqVKF4HTDxxC9G00HMuF+wT8jsg8xr/OePZB40Ib2tAr/QNOXDy1WmL6DAAAAABJRU5ErkJggg==" class="close">
         <section class="module-page" data-screen="SignIn">
             <header>
@@ -274,7 +291,7 @@ $this->beginPage();
                 </li>
               </ul>
               <div id="reg-footer">
-                <button id="form-submit">Sign up</button>
+                <button id="form-submit">Countine</button>
               </div>
             </main>
             <footer>
@@ -317,7 +334,7 @@ $this->beginPage();
                 </li>
               </ul>
               <div id="reg-footer">
-                <button id="form-submit">Restore</button>
+                <button id="form-submit">Countine</button>
               </div>
             </main>
             <footer>
@@ -330,7 +347,6 @@ $this->beginPage();
             </footer>
         </section>
     </div>
-    <script src="/js/app.js"></script>
     <script src="/js/addons/authmodule/ui/form.js"></script>
     <script src="/js/addons/authmodule/ui/screen.js"></script>
     <script src="/js/addons/authmodule/services/addons/fb.js"></script>

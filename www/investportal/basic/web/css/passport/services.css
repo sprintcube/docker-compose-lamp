@@ -193,8 +193,8 @@
     height: calc(322px * 3);
   }
   .passport-page > main .services-settings header:after {
-    right: 40vw;
-    top: 34px;
+    right: 37vw;
+    top: 27px;
   }
 }
 @media all and (min-width:960px) and (max-width: 1024px){

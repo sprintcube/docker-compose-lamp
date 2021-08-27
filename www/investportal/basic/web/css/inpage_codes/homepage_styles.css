@@ -1,0 +1,162 @@
+.add-but{
+            text-align: center;
+            color: gray;
+            background-color: #bec4c6;
+            border: none;
+            font-size: 60%;
+            padding: 10px;
+}
+#promo > header .promo-header{
+            position: relative;
+            top: 40px;
+}
+        
+ .swiper-button-prev, .swiper-button-next, .swiper-pagination, .swiper-scrollbar{ opacity: 0;}
+ .swiper-button-prev, .swiper-button-next {
+            width: 6vw;
+            height: 390px;
+            margin-top: -11%;
+}
+#investsearch > main.swiper-container .swiper-button-prev, #investsearch > main.swiper-container .swiper-button-next {
+            height: 451px;
+            margin-top: -14%;
+}
+#promo > main.swiper-container .promo-feed, #investsearch > main.swiper-container .popular-objects{margin-left: 8%;}
+        
+[data-text]:nth-last-child(1)::before, [data-text]:nth-last-child(3)::before, [data-text]:nth-last-child(5)::before, #news[data-text]::before{
+            color: white;
+}
+        
+        
+[data-text]:nth-last-child(1)::before{
+            left: 14%;
+            top: 47%;
+}
+[data-text]:nth-last-child(2)::before{
+            left: 30%;
+            top: 36%;
+}
+[data-text]:nth-last-child(3)::before{
+            left: 25%;
+            top: 33%;
+}
+[data-text]:nth-last-child(4)::before{
+            left: 18%;
+            top: 46%;
+}
+[data-text]:nth-last-child(5)::before{
+            left: 13%;
+            top: 20%;
+}
+#news[data-text]::before{
+            left: 8%;
+            top: 69%;
+}
+.footer { overflow: hidden; } 
+@media all and (max-width: 414px){
+            #promo > main.swiper-container .promo-feed {
+                margin-left: 2%;
+            }
+            #investsearch > main.swiper-container .popular-objects {
+                margin-left: -2%;
+            }
+            #investsearch > header .add-but {
+                width: 50%;
+            }
+            #investsearch > header a {
+                margin-left: 52%;
+                font-size: 60%;
+            }
+            #promo > header .links {
+                top: -49px;
+                left: 46vw;
+                font-size: 70%;
+            }   
+}
+@media all and (min-width: 414px) and (max-width: 600px){
+            #promo > main.swiper-container .promo-feed {
+                margin-left: 3%;
+            }
+            #investsearch > main.swiper-container .popular-objects {
+                margin-left: 1%;
+            }             
+}
+@media all and (min-width: 600px) and (max-width: 768px){
+            #promo > main.swiper-container .promo-feed {
+                margin-left: 5%;
+            }  
+            
+            #investsearch > main.swiper-container .popular-objects {
+                margin-left: 0%;
+            } 
+            #investsearch > main.swiper-container .popular-objects .popular-object {
+                height: 500px;
+            }
+}
+@media all and (min-width: 768px) and (max-width: 800px){
+            #promo > main.swiper-container .promo-feed {
+                margin-left: 8%;
+            }
+            #estate > main #slider-view-adaptive .estat {
+                height: 220px;
+            }
+            #investsearch > main.swiper-container .popular-objects .popular-object { 
+                width: 28%; 
+                height: 365px;
+            }
+            #investsearch > main.swiper-container .popular-objects .popular-object header h3 {
+                font-size: 65%;
+            }
+            #investsearch > main.swiper-container .popular-objects .popular-object main img {
+                height: 153px;
+            }
+            #investsearch > main.swiper-container .popular-objects {
+                margin-left: 6%;
+            }
+            #investsearch > main.swiper-container .popular-objects .popular-object footer .info span:nth-child(2) {
+                height: 60px;
+            }
+}
+@media all and (min-width: 800px) and (max-width: 960px){
+            #promo > main.swiper-container .promo-feed {
+                margin-left: 7%;
+            }
+            #investsearch > main.swiper-container .popular-objects {
+                margin-left: 7%;
+            }
+}
+@media all and (min-width: 960px) and (max-width: 1024px){
+            #promo > main.swiper-container .promo-feed {
+                margin-left: 7%;
+            }
+            #investsearch > main.swiper-container .popular-objects {
+                margin-left: 7%;
+            }
+}
+@media all and (min-width: 1024px) and (max-width: 1280px){
+            #promo > main.swiper-container .promo-feed, #investsearch > main.swiper-container .popular-objects {
+                margin-left: 8%;
+            }
+}
+@media all and (min-width: 1280px) and (max-width: 1366px){
+            #promo > main.swiper-container .promo-feed, #investsearch > main.swiper-container .popular-objects {
+                margin-left: 8%;
+            }
+}
+@media all and (min-width: 1366px) and (max-width: 1440px){
+            #promo > main.swiper-container .promo-feed, #investsearch > main.swiper-container .popular-objects {
+                margin-left: 8%;
+            }
+}
+@media all and (min-width: 1440px) and (max-width: 1536px){
+            #promo > main.swiper-container .promo-feed, #investsearch > main.swiper-container .popular-objects {
+                margin-left: 8%;
+            }
+}
+@media all and (max-width: 1600px){}
+@media all and (max-width: 1920px){}
+@media all and (min-width: 1920px){
+            #promo > main.swiper-container .promo-feed, #investsearch > main.swiper-container .popular-objects {
+                margin-left: 8%;
+            }
+}

@@ -6,6 +6,7 @@ use yii/web/controllers;
 
 class PassportController extends Controller{
 	public function actionService(){
+		
 		return ['passport/page'];
 	}
 }
