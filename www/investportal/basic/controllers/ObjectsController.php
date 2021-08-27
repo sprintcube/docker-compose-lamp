@@ -3,6 +3,7 @@ namespace app/controllers;
 
 use Yii;
 use yii/web/controllers;
+use yii/web/View;
 
 class ObjectsController extends Controller{
 	public function actionIndex(){

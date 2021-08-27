@@ -27,11 +27,10 @@ long_line_behaviour=1
 long_line_column=72
 
 [files]
-current_page=2
-FILE_NAME_0=141;PHP;0;EUTF-8;1;1;0;%2Fhome%2Fhead%2FDesktop%2FСерега%20Младший%2FITProjects%2Fdocker-compose-lamp%2Fwww%2Finvestportal%2Fbasic%2Fcontrollers%2FNewsController.php;0;4
-FILE_NAME_1=336;PHP;0;EUTF-8;1;1;0;%2Fhome%2Fhead%2FDesktop%2FСерега%20Младший%2FITProjects%2Fdocker-compose-lamp%2Fwww%2Finvestportal%2Fbasic%2Fcontrollers%2FSiteController.php;0;4
-FILE_NAME_2=178;PHP;0;EUTF-8;1;1;0;%2Fhome%2Fhead%2FDesktop%2FСерега%20Младший%2FITProjects%2Fdocker-compose-lamp%2Fwww%2Finvestportal%2Fbasic%2Fcontrollers%2FPassportController.php;0;4
-FILE_NAME_3=147;PHP;0;EUTF-8;1;1;0;%2Fhome%2Fhead%2FDesktop%2FСерега%20Младший%2FITProjects%2Fdocker-compose-lamp%2Fwww%2Finvestportal%2Fbasic%2Fcontrollers%2FObjectsController.php;0;4
+current_page=0
+FILE_NAME_0=0;PHP;0;EUTF-8;1;1;0;%2Fhome%2Fhead%2FDesktop%2FСерега%20Младший%2FITProjects%2Fdocker-compose-lamp%2Fwww%2Finvestportal%2Fbasic%2Fviews%2Fsite%2Fnews%2Fview.php;0;4
+FILE_NAME_1=0;PHP;0;EUTF-8;1;1;0;%2Fhome%2Fhead%2FDesktop%2FСерега%20Младший%2FITProjects%2Fdocker-compose-lamp%2Fwww%2Finvestportal%2Fbasic%2Fviews%2Fsite%2Fobjects%2Findex.php;0;4
+FILE_NAME_2=0;PHP;0;EUTF-8;1;1;0;%2Fhome%2Fhead%2FDesktop%2FСерега%20Младший%2FITProjects%2Fdocker-compose-lamp%2Fwww%2Finvestportal%2Fbasic%2Fviews%2Fsite%2Fobjects%2Fobject.php;0;4
 
 [prjorg]
 source_patterns=*.c;*.C;*.cpp;*.cxx;*.c++;*.cc;*.m;
