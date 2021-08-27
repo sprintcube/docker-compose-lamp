@@ -755,10 +755,10 @@ h4.title, p.descr{
     margin-top: 100px;
 }
 #services > main header#slider-controller-adaptive{
-    left: -6%;
+    left: -5%;
 }
 #services > main footer#slider-controller-adaptive{
-    right: -6%;
+    right: -7%;
     top: 0;
 }
 #services > main #slider-controller-adaptive img:hover{
@@ -1027,10 +1027,10 @@ h4.title, p.descr{
     margin-top: 200px;
 }
 #estate > main header#slider-controller-adaptive{
-    left: -35%;
+    left: -28%;
 }
 #estate > main footer#slider-controller-adaptive{
-    right: 10%;
+    right: 17%;
     top: 0;
 }
 #estate > main #slider-controller-adaptive img:hover{
@@ -1059,9 +1059,9 @@ h4.title, p.descr{
     padding-right: 12px;
 }
 #estate > main #slider-view-adaptive .estat{
-    width: 63vw;
+    width: 52vw;
     height: 235px;
-    margin-left: -8vw;
+    margin-left: -3vw;
     background-color: white;
     box-shadow: 3px -1px 4px 0px darkgrey;
     margin-top: 18vw;
@@ -1555,12 +1555,7 @@ h4.title, p.descr{
     .footer > main #category_menu {
         padding-right: 3%;
     }
-    #services > main header#slider-controller-adaptive {
-        left: -5%;
-    }
-    #services > main footer#slider-controller-adaptive {
-        right: -7%;
-    }
+    
 }
 @media all and (min-width: 600px) and (max-width: 768px){
     #promo {
