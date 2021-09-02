@@ -10,7 +10,7 @@ use yii\web\NotFoundHttpException;
 class SiteController extends Controller{
 	public function actionIndex(){
 		$this->registerCssFile("/css/inpage_codes/homepage_styles.css");
-		$this->registerJsFile("/js/inpage_codes/homepage_script.js", ['position' => View::POS_END]);
+		$this->registerJsFile("/js/inpage_codes/homepage_script.js", ['position' => POS_END]);
 
 		return $this->render('index');
 	}

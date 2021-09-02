@@ -9,7 +9,7 @@ class ObjectsController extends Controller{
 	public function actionIndex(){
 		$this->registerCssFile("/css/objects.css");
 		$this->registerCssFile("/css/inpage_codes/objects/1.css");
-		$this->registerJsFile("/js/objects.js", ['position' => View::POS_END]);
+		$this->registerJsFile("/js/objects.js", ['position' => POS_END]);
 	
 		return $this->render('objects/index');
 	}
@@ -17,8 +17,8 @@ class ObjectsController extends Controller{
 		$this->registerCssFile("/css/objects.css");
 		$this->registerCssFile("/css/objects/hotels.css");
 		$this->registerCssFile("/css/inpage_codes/objects/2.css");
-		$this->registerJsFile("/js/objects.js", ['position' => View::POS_END]);
-		$this->registerJsFile("/js/objects/hotels.js", ['position' => View::POS_END]);
+		$this->registerJsFile("/js/objects.js", ['position' => POS_END]);
+		$this->registerJsFile("/js/objects/hotels.js", ['position' => POS_END]);
 		
 		return $this->render('objects/object');
 	}
@@ -26,8 +26,8 @@ class ObjectsController extends Controller{
 		$this->registerCssFile("/css/objects.css");
 		$this->registerCssFile("/css/objects/view.css");
 		$this->registerCssFile("/css/inpage_codes/objects/3.css");
-		$this->registerJsFile("/js/objects.js", ['position' => View::POS_END]);
-		$this->registerJsFile("/js/objects/view.js", ['position' => View::POS_END]);
+		$this->registerJsFile("/js/objects.js", ['position' => POS_END]);
+		$this->registerJsFile("/js/objects/view.js", ['position' => POS_END]);
 		
 		return $this->render('objects/view');
 	}
