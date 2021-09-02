@@ -1,0 +1,104 @@
+.add-but {
+            text-align: center;
+            color: white;
+            background-color: #0079bf;
+            border: none;
+            font-size: 90%;
+            padding: 10px;
+            width: 117px;
+}
+.passport-page > main #left-content #table-list .header th {
+            color: gray;
+}
+.passport-page > main #left-content #table-list .content td {
+            padding-top: 8px;
+            padding-bottom: 8px;
+}
+.passport-page > main #left-content #table-list .content td:nth-child(1) {
+            color: gray;
+            width: 7%;
+            padding-left: 1%;
+            padding-right: 2%;
+}
+.passport-page > main #left-content #table-list .content td:nth-child(2) {
+            width: 62%;
+}
+.passport-page > main #left-content #table-list .content td:nth-child(1)::after,  .passport-page > main #left-content #table-list .content td:nth-child(3)::before{
+            content:  url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAQAAAA1CAYAAABm10p2AAAABmJLR0QA/wD/AP+gvaeTAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAB3RJTUUH5QMTCSMwGPDecgAAAB1pVFh0Q29tbWVudAAAAAAAQ3JlYXRlZCB3aXRoIEdJTVBkLmUHAAAAKUlEQVQoz2Os6+plQAZMSOw0dIGZ6AIMowKjAqMCRAvMQhdIZ2BgYAAAtnMD/8BCHfkAAAAASUVORK5CYII=');
+            overflow: hidden;
+}
+.passport-page > main #left-content #table-list .content td:nth-child(1)::after{
+            float: right;
+            height: 55px;
+            margin-top: -24px;
+            position: relative;
+            top: 11px;
+            left: 31%;
+}
+.passport-page > main #left-content #table-list .content td:nth-child(3)::before{
+            float: left;
+            height: 55px;
+            margin-top: -36px;
+            position: relative;
+            top: 19px;
+            left: -5%;
+}
+.passport-page > main #left-content #table-list .content td:nth-child(3) {
+            width: 27%;
+}
+
+@media all and (max-width: 414px){
+            .passport-page > main #left-content #table-list .content td:nth-child(2) {
+                width: 25%;
+            }
+}
+@media all and (min-width: 414px) and (max-width: 600px){
+            .passport-page > main #left-content #table-list .content td .status {
+                margin-left: -2%;
+            }
+}
+@media all and (min-width: 600px) and (max-width: 768px){
+            .passport-page > main #left-content #table-list .content td .status {
+                margin-left: 8%;
+            }
+}
+@media all and (min-width: 768px) and (max-width: 800px){
+            .passport-page > main #left-content #table-list .content td .status {
+                margin-left: 15%;
+            }
+}
+@media all and (min-width: 800px) and (max-width: 960px){
+            .passport-page > main #left-content #table-list .content td .status {
+                margin-left: 14%;
+            }
+}
+@media all and (min-width: 960px) and (max-width: 1024px){
+            .passport-page > main #left-content #table-list .content td .status {
+                margin-left: 16%;
+            }
+}
+@media all and (min-width: 1024px) and (max-width: 1280px){
+            .passport-page > main #left-content #table-list .content td .status {
+                margin-left: 19%;
+            }
+}
+@media all and (max-width: 1280px){
+            .add-but { display: none; }
+            .passport-page > main #left-content #table-list .content td:nth-child(1) {
+                width: 15%;
+                padding-left: 2%;
+                padding-right: 2%;
+            }
+            .passport-page > main #left-content #table-list .content td:nth-child(2) {
+                width: 27%;
+            }  
+            .passport-page > main #left-content #table-list .content td:nth-child(3) {
+                width: 33%;
+            }      
+}
+@media all and (max-width: 1366px){}
+@media all and (max-width: 1440px){}
+@media all and (max-width: 1536px){}
+@media all and (max-width: 1600px){}
+@media all and (max-width: 1920px){}
+@media all and (min-width: 1920px){}

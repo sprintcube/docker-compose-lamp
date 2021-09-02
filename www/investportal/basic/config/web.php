@@ -1,6 +1,5 @@
 <?php
 
-$params = require __DIR__ . '/params.php';
 $db = require __DIR__ . '/db.php';
 
 $config = [
@@ -16,11 +15,13 @@ $config = [
             // !!! insert a secret key in the following (if it is empty) - this is required by cookie validation
             'cookieValidationKey' => 'DSFgksdifhiw899734hekfDFGisjdfi9374',
         ],
+        'portalUserService' => ['class' => 'app\components\SignService'],
+        'portalCommunicationService' => ['class' => 'app\components\CommunicationService'],
         'cache' => [
             'class' => 'yii\caching\FileCache',
         ],
         'user' => [
-            'identityClass' => 'app\models\User',
+            'identityClass' => 'app\models\UserService\User',
             'enableAutoLogin' => true,
         ],
         'errorHandler' => [
@@ -51,15 +52,7 @@ $config = [
             ],
         ],
         */
-    ],
-    'modules' => [
-        'gii' => [
-            'class' => \yii\gii\Module::className(),
-        'allowedIPs' => ['*']
-        ]
-    ],
-     
-    'params' => $params,
+    ]
 ];
 if (YII_ENV_DEV) {
     // configuration adjustments for 'dev' environment

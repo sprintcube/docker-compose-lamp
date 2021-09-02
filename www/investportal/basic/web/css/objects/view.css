@@ -287,7 +287,8 @@ span.view-title{
         margin-right: -21%;
     }
     #images-slider > .content {
-        margin-top: -16%;
+        margin-top: -4%;
+        margin-left: 8%;
     }
 }
 @media all and (min-width: 600px) and (max-width: 768px){

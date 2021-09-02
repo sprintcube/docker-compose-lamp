@@ -1,20 +1,26 @@
 <?php
-namespace app/controllers;
+namespace app\controllers;
 
 use Yii;
-use yii/web/controllers;
-use yii/web/View;
+use yii\web\Controller;
+use yii\web\View;
 
 class NewsController extends Controller{
 	public function actionIndex(){
-		$this->registerCssFile("/css/inpage_codes/news/1.css", 'news-home-ui');
+		$this->registerCssFile("/css/news.css");
+		$this->registerJsFile("/js/news.js", ['position' => View::POS_END]);
+		$this->registerCssFile("/css/inpage_codes/news/1.css");
 		
-		return ['news/index'];
+		return $this->render('news/index');
 	}
 	public function actionView($contentId){
-		$this->registerCssFile("/css/inpage_codes/news/2.css", 'news-ui');
+		$this->registerCssFile("/css/news.css");
+		$this->registerJsFile("/js/news.js", ['position' => View::POS_END]);
+		$this->registerJsFile("/js/news/view.js", ['position' => View::POS_END]);
+		$this->registerCssFile("/css/news/view.css");
+		$this->registerCssFile("/css/inpage_codes/news/2.css");
 		
-		return ['news/view'];
+		return $this->render('news/view');
 	}
 }
 ?>

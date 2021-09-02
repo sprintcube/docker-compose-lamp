@@ -59,7 +59,8 @@ let feedParams = [
 	realtedsData = [
 	[],
 	[]
-];
+],
+	currentPage;
 
 for(let i=0; i < feedParams[][1].length; i++){
 	const dc = feedParams[i][0],

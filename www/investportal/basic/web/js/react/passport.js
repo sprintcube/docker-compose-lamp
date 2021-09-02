@@ -43,3 +43,7 @@ class UserEventsService extends React.Component{
 	}
 }
 
+let page, currentPage;
+
+ReactDOM.render(page, $('#passport'));
+

@@ -189,7 +189,7 @@
 }
 @media all and (min-width: 600px) and (max-width: 768px){
   #news {
-    height: 2280px;
+    height: 2616px;
   }
   #news > .news-viewer #right-content .realted-news .realted #header {
     width: 99%;
@@ -197,6 +197,7 @@
   #news > .news-viewer #right-content {
     width: 26%;
     margin-right: 6%;
+    margin-top: 32%;
   }
 }
 @media all and (min-width: 768px) and (max-width: 800px){
