@@ -156,6 +156,8 @@ http://localhost:8080/
 username: root  
 password: tiger
 
+> In order to disable auto login for phpMyAdmin, you should remove or comment `PMA_USER` and `PMA_PASSWORD`.
+
 ## Redis
 
 It comes with Redis. It runs on default port `6379`.
