@@ -13,7 +13,7 @@ A clear and concise description of what the bug is.
 **which Branch / PHP Version are you using ?**
 php74
 
-**To Reproduce**
+**Steps to reproduce**
 Steps to reproduce the behavior:
 1. Go to '...'
 2. Click on '....'
