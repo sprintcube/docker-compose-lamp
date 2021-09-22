@@ -60,10 +60,3 @@ services:
     image: redis:latest
     ports:
       - "127.0.0.1:${HOST_MACHINE_REDIS_PORT}:6379"
-  sftp:
-    image: atmoz/sftp
-    volumes:
-        - ${DOCUMENT_ROOT-./www/public_html}:/home/${SFTP_USER}/public_html
-    ports:
-        - "${HOST_MACHINE_SFTP_PORT}:22"
-    command: ${SFTP_USER}:${SFTP_PASSWORD}:${SFTP_UID}
