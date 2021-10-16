@@ -1,0 +1,83 @@
+.data-page > header{
+  width: 100%;
+  height: calc(99px / 2);
+  background-color: #eff3f4;
+}
+.data-page > header h2{
+  font-size: 120%;
+  margin-left: 2%;
+  display: inline-block;
+}
+.data-page > header nav{
+  float: right;
+  margin-top: 1%;
+  margin-right: 2%;
+}
+.data-page > header nav a{
+  display: inline-table;
+  font-size: 100%;
+  color: #0079bf;
+  font-weight: bold;
+  text-decoration: none;
+}
+
+#attributes-list{
+  width: 70%;
+  display: block;
+  padding-top: 2%;
+  margin-left: 14%;
+}
+#attributes-list > .list-cont{
+  width: 20%;
+  height: 100px;
+  display: inline-table;
+  margin-left: 2%;
+  margin-top: 2%;
+  -webkit-box-shadow: 8px 10px 5px 0px #0079bf;
+-moz-box-shadow:    8px 10px 5px 0px #0079bf;
+box-shadow:         8px 10px 5px 0px #0079bf;
+  border: solid 2px #0079bf;
+  text-indent: 7%;
+}
+#attributes-list > .list-cont *{
+  margin-top: 4%;
+}
+#attributes-list > .list-cont header{
+  font-weight: bolder;
+  font-size: 140%;
+}
+#attributes-list > .list-cont footer{
+  font-size: 100%;
+  margin-top: calc(4% * 2);
+  color: darkgray;
+  font-style: italic;
+}
+#add-attribute{
+  width: 50%;
+  display: block;
+  padding-top: 2%;
+  margin-left: 28%;
+}
+#add-attribute > *{
+  margin-top: 2%;
+}
+#add-attribute > div h2{
+  font-size: 200%;
+  color: #0079bf;
+}
+#add-attribute > div input{
+  font-size: 180%;
+  width: 80%;
+  padding: 1%;
+}
+#add-attribute > button{
+  font-size: 100%;
+  width: 20%;
+  padding: 1%;
+  float: right;
+  margin-right: 8%;
+  margin-top: calc(2% * 3);
+  border: none;
+  color: #ffffff;
+  background-color: #0079bf;
+}

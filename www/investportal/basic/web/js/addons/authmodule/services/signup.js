@@ -59,25 +59,100 @@ function SignUpFormProcess(){
     }
     else if(isOpenedStep[2]){
        OpenStep('SignUp', 3);
-       new CodeSender('SignUp').send($('.module-page[data-screen="SignUp"] main #reg-content li[data-signstep="1"] form div input').eq(3).val());
+
+       var q = { phone: $('.module-page[data-screen="SignUp"] main #reg-content li[data-signstep="1"] form div input').eq(3).val() },
+		   s = new CodeSender('SignUp').send(q);
+
+	   if(s === 'OK'){ console.log('SMS Send code success!'); }
+	   else{
+		   do{
+			 var problem = alert('The code could not be sent! By clicking "OK", try to repeat this procedure.');
+
+			 if(!problem){ var retry = s; }
+
+		   } while(retry === 'OK' && console.log('SMS Send code success!'));
+	   }
+
        $('.module-page[data-screen="SignUp"] > main #reg-footer button#form-submit').html('Sign up');
     }
     else if(isOpenedStep[3]){
-        const inputedCode = $('.module-page[data-screen="SignUp"] main #reg-content li[data-signstep="3"] form div input').val();
+		const inputedCode = $('.module-page[data-screen="SignUp"] main #reg-content li[data-signstep="3"] form div input').val();
+		var isValidCode = new CodeSender('SignUp').valid({
+			phone: $('.module-page[data-screen="SignUp"] main #reg-content li[data-signstep="1"] form div input').eq(3).val(),
+			code: inputedCode
+		});
         if(inputedCode.length === 0 || inputedCode.length < 4 || inputedCode.length > 4){
             alert('The entered code must have a four-digit format, or it is not entered!');
         }
-        else if(new CodeSender('SignUp').valid(inputedCode) === 'Fail'){
-            alert('The code is entered incorrectly and check it carefully, please!');
+        else if(isValidCode !== 'OK'){
+             if(isValidCode === 'Error'){ alert('The code is entered incorrectly and check it carefully, please!'); }
+             else{
+				  do{
+					 var problem = alert('The code could not be sent! By clicking "OK", try to repeat this procedure.');
+
+					 if(!problem){ var retry = isValidCode; }
+
+				  } while(retry === 'OK' && console.log('SMS Code verify success!'));
+			 }
         }
         else{
-            $('.module-page[data-screen="SignUp"] > main #reg-content li form div input').val('');
-            $('#auth-lightbox > .close').trigger('click');
-            OpenStep('SignUp', 0);
+			var phoneNumber = $('.module-page[data-screen="SignUp"] main #reg-content li[data-signstep="1"] form div input').eq(3).val();
+		
+			if(phoneNumber.indexOf('+')){ phoneNumber += phoneNumber.substr(-2,0); }
+			if(phoneNumber.indexOf('(') && phoneNumber.indexOf(')') && phoneNumber.indexOf('-')){ phoneNumber += phoneNumber.replace(/\D/g, ''); }
+			if(phoneNumber.indexOf('8')){ phoneNumber += phoneNumber.substr(-1,0); }
+		
+			var UpQuery = {
+				rsq: 'DefaultService',
+				rsqt: {
+					fn: $('.module-page[data-screen="SignUp"] main #reg-content li[data-signstep="0"] form div input').eq(0).val(),
+					sn: $('.module-page[data-screen="SignUp"] main #reg-content li[data-signstep="0"] form div input').eq(1).val(),
+					login: $('.module-page[data-screen="SignUp"] main #reg-content li[data-signstep="0"] form div input').eq(2).val(),
+					password: $('.module-page[data-screen="SignUp"] main #reg-content li[data-signstep="1"] form div input').eq(1).val(),
+					email: $('.module-page[data-screen="SignUp"] main #reg-content li[data-signstep="1"] form div input').eq(0).val(),
+					phone: phoneNumber,
+					country: $('.module-page[data-screen="SignUp"] main #reg-content li[data-signstep="1"] form div select').val(),
+					isAccept: true
+				}
+			};
 
-            let finishReg = alert('Congratulations! You have successfully created an account on our portal and for you we have expanded the possibilities of using our services ;-)');
-            
-            if(!finishReg){ location.reload(true); }
+			var responseUp = await fetch('/accounts/signUp', {
+				method: 'POST',
+				body: {'serviceQuery': JSON.stringify(UpQuery)}
+			});
+
+			switch(responseUp.status){
+				case 202:
+					$('.module-page[data-screen="SignUp"] > main #reg-content li form div input').val('');
+					$('#auth-lightbox > .close').trigger('click');
+					OpenStep('SignUp', 0);
+
+					let finishReg = alert('Congratulations! You have successfully created an account on our portal and for you we have expanded the possibilities of using our services ;-)');
+
+					console.log('SMS Code verify success!');
+					if(!finishReg){
+						AutoSignIn(UpQuery.rsqt.login);
+						location.reload(true);
+					}
+				break;
+				case 400:
+					var errors = await JSON.parse(responseUp.json());
+					var eMess = '';
+
+					for(let id in errors){ eMess += errors[id].validError + '\n'; }
+
+					alert(eMess);
+					OpenStep('SignUp', 0);
+				break;
+				default:
+					 do{
+						var problem = alert('The new account data not be sent! By clicking "OK", try to repeat this procedure.');
+
+						if(!problem){ var retry = responseUp; }
+
+					 } while(retry.status === 202 && $('.module-page[data-screen="SignUp"] > main #reg-content li form div input').val('') && $('#auth-lightbox > .close').trigger('click') && OpenStep('SignIn', 0) && AutoSignIn(UpQuery.rsqt.login) && location.reload(true));
+				break;
+			}
         }
     }
     else{
@@ -129,7 +204,23 @@ function SignUpFormProcess(){
 
 }
 
+const AutoSignIn = (login) => {
+	var autoInQuery = {fsq:{portalId:login}};
+	var response_autoIn = await fetch('/accounts/autoAuth', {
+				method: 'POST',
+				body: {'serviceQuery': JSON.stringify(autoInQuery)}
+	});
 
-const SignUpService = () => {
-    $('.module-page[data-screen="SignUp"] > main #reg-footer button#form-submit').click(SignUpFormProcess);  
+	switch(response_autoIn.status){
+				case 202: console.log('Automatic authorization success!'); break;
+				default:
+				   do{
+					 var problem = alert('There was a failure in the automatic authorization service! By clicking "OK", try to repeat this procedure.');
+
+					 if(!problem){ var retry = response_autoIn.status; }
+
+				   } while(retry === 202 && console.log('Automatic authorization success!'));
+				break;
+	}
 }
+const SignUpService = () => { $('.module-page[data-screen="SignUp"] > main #reg-footer button#form-submit').click(SignUpFormProcess);  }

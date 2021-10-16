@@ -2,6 +2,9 @@
 
 $db = require __DIR__ . '/db.php';
 
+//Если basic шаблон
+$baseUrl = str_replace('/web', '', (new Request)->getBaseUrl());
+
 $config = [
     'id' => 'basic-console',
     'basePath' => dirname(__DIR__),
@@ -16,6 +19,9 @@ $config = [
         'cache' => [
             'class' => 'yii\caching\FileCache',
         ],
+        'imageCreator' => [
+			'class' => 'yii\components\CrossFormatsImageCreator'
+        ],
         'log' => [
             'targets' => [
                 [
@@ -26,12 +32,17 @@ $config = [
         ],
         'urlManager' => [
 			 'class' => 'yii\web\UrlManager',
-			 'showScriptName' => false,
+			 'baseUrl' => $baseUrl,
 			 'enablePrettyUrl' => true,
+             'showScriptName' => false,
+             'enableStrictParsing' => true,
 			 'rules' => [
 				'defaultRoute' => 'site/index',
-				'/accounts/<service:\w+>' => 'site/accountService',
-				'/accounts/accept/<service:\w+>' => 'site/serviceCodeCenter',
+				'accounts/<service:\w+>' => 'site/accountService',
+				'accounts/accept/<service:\w+>' => 'site/serviceCodeCenter',
+				'admin' => 'admin/index',
+				'admin/signIn' => 'admin/auth',
+				'admin/api/<svc:\w+>/<subSVC:\w+>' => 'admin/adminService',
 				'news' => 'news/index',
 				'news/<contentId:\d+>' => 'news/view',
 				'passport' => 'passport/service',
@@ -43,6 +54,20 @@ $config = [
 				'objects/search' => 'objects/object',
 				'objects/<objectId:\d+>' => 'objects/view'
 			 ]
+        ],
+        'user' => [
+            'class' => 'yii\web\User',
+            'identityClass' => 'app\models\UserService\User',
+            'enableAutoLogin' => true,
+        ],
+        'hdfs' => [
+			'class' => 'org\apache\hadoop\WebHDFS'
+        ],
+        'view' => [
+            'class' => 'app\components\View',
+        ],
+        'session' => [ // for use session in console application
+            'class' => 'yii\web\Session'
         ],
         'db' => $db,
     ],

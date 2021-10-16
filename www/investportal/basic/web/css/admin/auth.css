@@ -1,0 +1,182 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,600;0,700;0,800;1,300;1,400;1,600;1,700;1,800&display=swap');
+html,body{
+    font-family: 'Open Sans', sans-serif;
+    overflow-x:hidden;
+    margin-left: -1%;
+    width: 102%;
+    margin-top: 0%;
+    margin-bottom: 0%;
+}
+.admin-auth > header{
+  width: 99vw;
+  height: 99px;
+  padding-top: 5px;
+}
+.admin-auth > header #back{
+  width: 50px;
+  vertical-align: middle;
+  margin-left: 1vw;
+}
+.admin-auth > header #title{
+  display: inline-block;
+  margin-left: 1vw;
+  margin-top: 10px;
+  font-size: 160%;
+  color: white;
+}
+.admin-auth > main{
+  width: 99vw;
+  padding-top: 15vh;
+  padding-bottom: 15vh;
+}
+.admin-auth > main form{
+  padding-top:2%;
+  padding-bottom: 2%;
+  width: 50%;
+}
+.admin-auth > main form div{
+  display: block;
+  margin-top: 2%;
+  font-size: 80%;
+}
+.admin-auth > main form div label{
+  margin-left: -32%;
+  color: #ffffff;
+}
+.admin-auth > main form div input{
+  display: block;
+  margin-top: 1%;
+  padding-top: 1%;
+  padding-bottom: 1%;
+  border: solid 1px white;
+  color: white;
+  font-size: 100%;
+  background: transparent;
+  width: 40%;
+  text-indent: 2%;
+}
+.admin-auth > main form div input:focus{
+  background-color: #4285b4;
+}
+.admin-auth > main form button{
+  display: block;
+  margin-top: 20px;
+  margin-left: 10vw;
+  border: solid 1px white;
+  width: 160px;
+  padding: 6px;
+  color: white;
+  font-size: 100%;
+  background: transparent;
+}
+.admin-auth > footer{
+  width: 99vw;
+  height: calc((210px * 2) / 4);
+  padding-top: 1px;
+}
+.admin-auth > footer .copyright{
+  font-size: 120%;
+  margin-left: 2vw;
+  margin-top: 2%;
+  color: #ffffff;
+}
+@media all and (max-width: 768px){
+  .admin-auth > header #title {
+    font-size: 4vw;
+    margin-left: 0vw;
+  }
+  .admin-auth > header, .admin-auth > main, .admin-auth > footer{
+    width: 90vw;
+  }
+  .admin-auth > main form {
+    width: 100%;
+    margin-left: -10vw;
+  }
+  .admin-auth > main form div {
+    font-size: 150%;
+    padding-bottom: 4%;
+  }
+  .admin-auth > main form div label {
+    margin-left: -41%;
+  }
+  .admin-auth > main form div input {
+    width: 80%;
+    margin-left: 14%;
+    margin-top: 1%;
+  }
+  .admin-auth > main form button {
+    margin-top: 20px;
+    margin-left: 53vw;
+    width: 179px;
+    padding: 10px;
+    font-size: 110%;
+  }
+}
+@media all and (min-width: 768px) and (max-width: 1024px){
+  .admin-auth > main form div {
+    font-size: 110%;
+    padding-bottom: 2%;
+  }
+  .admin-auth > main form div label {
+    margin-left: -40%;
+  }
+  .admin-auth > main form div input {
+    width: 60%;
+  }
+  .admin-auth > main form button {
+    font-size: 100%;
+    margin-left: 20%;
+  }
+  
+}
+@media all and (min-width: 1024px) and (max-width: 1280px){
+  .admin-auth > main form div {
+    font-size: 110%;
+    padding-bottom: 2%;
+  }
+  .admin-auth > main form div label {
+    margin-left: -45%;
+  }
+  .admin-auth > main form div input {
+    width: 60%;
+  }
+  .admin-auth > main form button {
+    font-size: 100%;
+    margin-left: 29%;
+  }
+  
+}
+@media all and (min-width: 1280px) and (max-width: 1366px){
+  .admin-auth > main form div {
+    font-size: 110%;
+    padding-bottom: 2%;
+  }
+  .admin-auth > main form div label {
+    margin-left: -48%;
+  }
+  .admin-auth > main form div input {
+    width: 60%;
+  }
+  .admin-auth > main form button {
+    font-size: 100%;
+    margin-left: 36%;
+  }
+  
+}
+@media all and (min-width: 1366px) and (max-width: 1400px){
+  .admin-auth > main form div {
+    font-size: 110%;
+    padding-bottom: 2%;
+  }
+  .admin-auth > main form div label {
+    margin-left: -49%;
+  }
+  .admin-auth > main form div input {
+    width: 60%;
+  }
+  .admin-auth > main form button {
+    font-size: 100%;
+    margin-left: 37%;
+  }
+  
+}

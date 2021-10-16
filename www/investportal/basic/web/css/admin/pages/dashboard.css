@@ -1,0 +1,90 @@
+.admin-dashboard{
+  width: 100%;
+  margin-left: 2%;
+}
+.admin-dashboard > h1{
+  font-size: 200%;
+}
+.admin-dashboard > header{
+  display: block;
+  margin-top: 1%;
+}
+.admin-dashboard > header #board-tabs{
+  padding-top: 2px;
+  padding-bottom: 2px;
+}
+.admin-dashboard > header #board-tabs section{
+  display: inline-table;
+  text-align: center;
+  width: 30%;
+  padding-top: 1%;
+  padding-bottom: 1%;
+  border-top: solid 2px #eff3f4;
+  border-left: solid 2px #eff3f4;
+  border-right: solid 2px #eff3f4;
+}
+.admin-dashboard > header #board-tabs section:hover{
+  cursor: pointer;
+}
+.admin-dashboard > header #board-tabs section span{
+  color: darkgray;
+  font-size: 100%;
+}
+.admin-dashboard > header #board-tabs section.active{
+  border: none;
+  background-color: #0079bf;
+}
+.admin-dashboard > header #board-tabs section.active span{
+  color: white;
+  font-size: 120%;
+  font-weight: bold;
+}
+.admin-dashboard > main{
+  border: solid 2px #eff3f4;
+  width: 91%;
+  height: 79vh;
+  overflow-y: auto;
+  overflow-x: hidden;
+}
+.admin-dashboard > main ul{
+ list-style-type: none;
+ width: 100%;
+}
+.admin-dashboard > main ul li{
+ display: none;
+}
+.admin-dashboard > main ul li.active{
+ display: inherit;
+}
+
+#dashboard-header{
+  width: 90%;
+  height: 250px;
+  -webkit-box-shadow: 7px 7px 7px 0px rgba(50, 50, 50, 0.75);
+  -moz-box-shadow:    7px 7px 7px 0px rgba(50, 50, 50, 0.75);
+  box-shadow:         7px 7px 7px 0px rgba(50, 50, 50, 0.75);
+  margin-left: 2%;
+  margin-top: 2%;
+}
+#dashboard-header > div{
+  padding-top: 1%;
+  padding-left: 2%;
+  display: inline-table;
+  width: 30%;
+}
+#dashboard-header > div:not(:nth-child(1)) span{
+  font-size: 150%;
+  font-weight: bold;
+  padding-bottom: 10px;
+  display: block;
+}
+#dashboard-header > div:not(:nth-child(1)) nav{
+  font-size: 140%;
+  padding-top: 10px;
+}
+#dashboard-header > div:not(:nth-child(1)) nav a{
+  display: block;
+  margin-top: 5px;
+  color: #0079bf;
+  text-decoration: none;
+}

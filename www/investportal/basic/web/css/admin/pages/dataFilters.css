@@ -1,0 +1,165 @@
+.data-page > header{
+  width: 100%;
+  height: calc(99px / 2);
+  background-color: #eff3f4;
+}
+.data-page > header h2{
+  font-size: 120%;
+  margin-left: 2%;
+  display: inline-block;
+}
+.data-page > header nav{
+  float: right;
+  margin-top: 1%;
+  margin-right: 2%;
+}
+.data-page > header nav a{
+  display: inline-table;
+  font-size: 100%;
+  color: #0079bf;
+  font-weight: bold;
+  text-decoration: none;
+}
+#filters-list{
+  width: 80%;
+  margin-left: 10%;
+  padding: 1%;
+}
+#filters-list > header{
+  font-size: 180%;
+}
+#filters-list > main{
+  padding-top: 2%;
+}
+
+#filters-list > main #filter-card{
+  width: 20%;
+  height: 390px;
+  -webkit-box-shadow: 8px 10px 5px 0px #0079bf;
+  -moz-box-shadow:    8px 10px 5px 0px #0079bf;
+  box-shadow:         8px 10px 5px 0px #0079bf;
+  border: solid 1px #0079bf;
+  padding: 2%;
+  display: inline-table;
+  margin-left: 6%;
+}
+#filter-card > #header{
+  display: block;
+  margin-left: 5%;
+  font-size: 160%;
+  font-weight: bold;
+}
+#filter-card > #main{
+  display: block;
+  padding-top: 14%;
+}
+#filter-card > #main ul{
+  font-size: 80%;
+  text-transform: uppercase;
+  margin-left: -4%;
+}
+#filter-card > #main ul li{
+  margin-top: 2%;
+}
+#filter-card > #main ul li span{
+  font-weight: bold;
+}
+#filter-card > #footer{
+  display: block;
+  padding-top: 16%;
+  padding-left: 4%;
+}
+#filter-card > #footer nav{
+  font-size: 100%;
+  font-style: italic;
+  color: darkgray;
+}
+#filter-card > #footer nav span{
+  display: inline-block;
+  padding-right: 12px;
+  cursor: pointer;
+}
+
+.add-fields, .edit-fields{
+  width: 80%;
+  margin-left: 10%;
+  padding: 1%;
+}
+.add-fields > header, .edit-fields > header{
+  font-size: 180%;
+}
+.add-fields > main, .edit-fields > main{
+  margin-top: 2%;
+  width: 90%;
+  height: 50vh;
+  overflow: auto;
+}
+.add-fields > main *, .edit-fields > main *{
+  width: 40%;
+  text-indent: 2%;
+  font-size: 90%;
+  padding: 1%;
+  display: inline-table;
+}
+.add-fields > main div, .edit-fields > main div{
+  display: block;
+}
+.add-fields > main input, .edit-fields > main input{
+  float:left;
+  margin-left: 2%;
+}
+.add-fields > main select, .edit-fields > main select{
+  float:right;
+  margin-right: 2%;
+}
+.add-fields > footer, .edit-fields > footer{
+  padding: 2%;
+}
+.add-fields > footer button, .edit-fields > footer button{
+  padding: 1%;
+  width: 15%;
+  border: none;
+  background-color: #0079bf;
+  color: white;
+  font-size: 100%;
+}
+
+.downloaded-file{
+  display: inline-block;
+  margin-left: 4%;
+  position: relative;
+  top: 38px;
+}
+.downloaded-file > img{
+  width: 40%;
+}
+.downloaded-file > span{
+  font-size: 120%;
+  display: inline-table;
+  margin-left: 40%;
+  vertical-align: middle;
+  margin-top: -68%;
+}
+
+.downloaded-files{
+  display: inline-table;
+  margin-left: -2%;
+  position: relative;
+  top: 8px;
+}
+.downloaded-files > ul{
+  list-style-type: none;
+}
+.downloaded-files > ul li{
+  display: block;
+}
+.downloaded-files > ul li img{
+   width: 30%;
+}
+.downloaded-files > ul li span{
+  font-size: 100%;
+  display: inline-table;
+  margin-left: 40%;
+  vertical-align: middle;
+  margin-top: -58%;
+}

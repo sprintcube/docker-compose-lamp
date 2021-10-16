@@ -8,16 +8,21 @@ use linslin\yii2\curl\Curl;
 use yii\web\NotFoundHttpException;
 
 class SiteController extends Controller{
+	public function beforeAction($action){
+	 if (in_array($action->id, ['accountService', 'serviceCodeCenter'])) {
+		$this->enableCsrfValidation = false;
+	 }
+	 return parent::beforeAction($action);
+	}
 	public function actionIndex(){
-		$this->registerCssFile("/css/inpage_codes/homepage_styles.css");
-		$this->registerJsFile("/js/inpage_codes/homepage_script.js", ['position' => POS_END]);
+		$this->view->registerCssFile("/css/inpage_codes/homepage_styles.css");
+		$this->view->registerJsFile("/js/inpage_codes/homepage_script.js", ['position' => View::POS_END]);
 
 		return $this->render('index');
 	}
 
 	public function actionAccountService($service){
 		$q = json_decode($_POST['serviceQuery']);
-		
 		switch($service){
 			case "signIn":
 				if($_POST['serviceQuery']){
@@ -109,7 +114,7 @@ class SiteController extends Controller{
 						$sign['code'] = $query;
 					}
 
-					if($sign['service'] === 'Inbox'){ Yii::$app->portalCommunicationService->SMSCode->sendCode('SignUp', $sign['phone']); }
+					if($sign['service'] === 'Inbox'){ Yii::$app->portalCommunicationService->SMSCode->sendCode('SignUp', $sign['phone'], $sign['code']); }
 					else if($sign['service'] === 'Valid'){ Yii::$app->portalCommunicationService->SMSCode->validCode('SignUp', $sign['phone'], $sign['code']); }
 					else{ throw new HttpException(403 ,'Operation conflict'); }
 				}

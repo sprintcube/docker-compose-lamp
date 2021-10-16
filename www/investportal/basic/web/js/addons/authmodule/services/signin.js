@@ -10,10 +10,53 @@ function SignInFormProcess() {
 
         
     if ((notEmpty[0] && notEmpty[1]) && isValid) {
-        $('#auth-lightbox > .module-page[data-screen="SignIn"] main .module-form form input').val('');
-        $('#auth-lightbox > .close').trigger('click');
+		var ld = $('#auth-lightbox > .module-page[data-screen="SignIn"] main .module-form form input').eq(0).val();
 
-        location.reload(true);
+		if(/^([+]?[0-9\s-\(\)]{3,25})*$/i.test(ld)){
+				if(ld.indexOf('+')){ ld += ld.substr(-2,0); }
+				if(ld.indexOf('(') && ld.indexOf(')') && ld.indexOf('-')){ ld += ld.replace(/\D/g, ''); }
+				if(ld.indexOf('8')){ ld += ld.substr(-1,0); }
+		}
+
+
+
+	    var InQuery = {
+				rsq: 'DefaultService',
+				rsqt: {
+					portalId: ld,
+					password: $('#auth-lightbox > .module-page[data-screen="SignIn"] main .module-form form input').eq(1).val(),
+				}
+		};
+
+		var responseIn = await fetch('/accounts/signIn', {
+				method: 'POST',
+				body: {'serviceQuery': JSON.stringify(InQuery)}
+		});
+
+		switch(responseUp.status){
+				case 202:
+					$('#auth-lightbox > .module-page[data-screen="SignIn"] main .module-form form input').val('');
+					$('#auth-lightbox > .close').trigger('click');
+
+					location.reload(true);
+				break;
+				case 400:
+					var errors = await JSON.parse(responseIn.json());
+					var eMess = '';
+
+					for(let id in errors){ eMess += errors[id].validError + '\n'; }
+
+					alert(eMess);
+				break;
+				default:
+					 do{
+						var problem = alert('Authorization is temporarily unavailable! By clicking "OK", try to repeat this procedure.');
+
+						if(!problem){ var retry = responseIn; }
+
+					 } while(retry.status === 202 && $('#auth-lightbox > .module-page[data-screen="SignIn"] main .module-form form input').val('') && $('#auth-lightbox > .close').trigger('click') && location.reload(true));
+				break;
+		}
     }
     else {
         if (!isValid) {
@@ -34,12 +77,4 @@ function SignInFormProcess() {
     }
 }
 
-
-
-
-const SignInService = () => {
-
-    $('#auth-lightbox > .module-page[data-screen="SignIn"] main .module-form button#form-submit:nth-last-child(1)').click(SignInFormProcess);
-
-
-}
+const SignInService = () => { $('#auth-lightbox > .module-page[data-screen="SignIn"] main .module-form button#form-submit:nth-last-child(1)').click(SignInFormProcess); }

@@ -181,7 +181,8 @@ $(document).ready(function () {
 const AuthLightBoxModuleOpen = () => {
     $('.header > #header_bottom .hb_bottom header .header-informer footer .user-services a, .header > #header_bottom_adaptive header ul.adaptive-buttons li:nth-last-child(2)').click(function(e,t){
       e.preventDefault();
-      $('#auth-lightbox').removeClass('lightbox-closed');
+      if($(this).data('profile') === 'passport'){ window.location.assign("/passport"); }
+      else{ $('#auth-lightbox').removeClass('lightbox-closed'); }
     });
 }
 const AuthLightBoxModuleClose = () => {

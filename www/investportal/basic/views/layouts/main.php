@@ -1,26 +1,16 @@
 <?php
 use yii\helpers\Html;
 use yii\helpers\Url;
+use app\assets\AppAsset;
 
 /* @var $this yii\web\View */
 /* @var $content string */
 
+AppAsset::register($this);
+
 $this->beginPage();
 
-$isUserData = [];
 
-if(!Yii::$app->user->isGuest){
-	$isUserData = [
-		'link' => Url::to(['passport/service']),
-		'title' => 'My passport'
-	];
-}
-else{
-	$isUserData = [
-		'link' => '',
-		'title' => 'Join/Login'
-	];
-}
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -29,8 +19,12 @@ else{
 		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, viewport-fit=cover" />
 		<title><?= Html::encode($this->title) ?></title>
 		<?= Html::csrfMetaTags() ?>
+		<script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.6.0.min.js"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/babel-standalone/6.26.0/babel.min.js" integrity="sha512-kp7YHLxuJDJcOzStgd6vtpxr4ZU9kjn77e6dBsivSz+pUuAuMlE2UTdKB7jjsWT84qbS8kdCWHPETnP/ctrFsA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+		<script crossorigin src="https://unpkg.com/react@17/umd/react.development.js"></script>
+		<script crossorigin src="https://unpkg.com/react-dom@17/umd/react-dom.development.js"></script>
 		<script src="https://kit.fontawesome.com/97c3285af2.js" crossorigin="anonymous"></script>
-<?php if($this->id == 'Objects' && $this->action->id == 'Object'){ ?>	
+<?php if(Yii::$app->controller->id == 'Objects' && Yii::$app->action->id == 'Object'){ ?>	
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js" integrity="sha512-uto9mlQzrs59VwILcLiRYeLKPPbS/bT71da/OEBYEwcdNUk8jYIy+D176RYoop1Da+f9mvkYrmj5MCLZWEtQuA==" crossorigin="anonymous"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui-touch-punch/0.2.3/jquery.ui.touch-punch.min.js" integrity="sha512-0bEtK0USNd96MnO4XhH8jhv3nyRF0eK87pJke6pkYf3cM0uDIhNJy9ltuzqgypoIFXw3JSuiy04tVk4AjpZdZw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/themes/base/jquery-ui.min.css" integrity="sha512-okE4owXD0kfXzgVXBzCDIiSSlpXn3tJbNodngsTnIYPJWjuYhtJ+qMoc0+WUwLHeOwns0wm57Ka903FqQKM1sA==" crossorigin="anonymous" />
@@ -70,7 +64,8 @@ else{
 								<footer>
 									<div class="user-services">
 										<div>
-											<a href="<?php echo $userData['link']; ?>"><?php echo $userData['title']; ?></a>
+											<?php if(!Yii::$app->user->isGuest){ ?><a href="" data-profile="passport">Passport</a><?php } else{ ?><a href="">Join/Login</a><?php } ?>
+											
 										</div>
 										<div>
 											<a href=""><i class="fas fa-user-check" style="color: #0079bf;"></i></a>
@@ -210,7 +205,7 @@ else{
 			</main>
     </footer>
 		<script src="/js/app.js"></script>
-		<?php if(Yii::$app->user->isGuest && $this->id != 'Passport'){ ?>
+		<?php if(Yii::$app->user->isGuest && Yii::$app->id != 'Passport'){ ?>
 			    <div id="auth-lightbox" class="lightbox-closed">
         <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAABmJLR0QA/wD/AP+gvaeTAAADT0lEQVRYhe2WQWwUZRTHf++b3cIFT6SJtE0UOHAoF/GsbDdAgqRLg7deDIkJNIqJXWC3G0xJ2qXUGjWRJnDgpCekpZgeStidclc52AQulRgEDTfgAGxn5nn4htKdGXa7qzf7v8xk3vve/zczb+Z7sKH/u6Sl7NKtHvwgh/AB8BbQE0buo9zDMI/HHJOZP/9bgFKlC3W+QPUokGqcrAEiV5HgJOPZP/49QLHaD/I9sAWkBjqLcA2jt3m+Yu90c7obz7yDaA5kALQDeIqRQcb3/tQ+wMjip2jwDYhBuIIxpxl7/17DNYWb2zHOJMoR0ACVz5jIfNc6QLHaD8yCKCInKe/9uqFxDN4dRjkPKhhz+HVPIhmgVOkiMHeALYh83rJ5PcQUyBPE7KL83l/RFJO4MDBnrTlX2jYHKGe+ApkBfQOC0aSUOEDpVg/wEUgNY07H4sXF4+QXOmPX8wudFBePx647/imQGqpHKVW6mgP4QQ5wQGdjDVeoDoFOk+6o1EHkFzpJd1RAp23OGo1llxGdA1L4kmsOAAcBUJmLRbyVH4EloHcVYtWcXmApzKlXQFhLDjYHENlhj94vsdjUgUes1LJ1EGvNV2pZpg48iq1L6c+2JjuaA6DbANjkPIzHQgicPuC30LgXuIvHvkRzgJQ8CM+61wGAJhZpprTT4Kf2LPSRYB0AYr/VF/62xFr5hU7wq8Bu7KtYAnah/o3ErwPA2/ymPdHYU40DqC7bY2pPonn0nUd7IgnCk3dtTZabAxjmAezGElEq/SHRhos2ps2J1rS1ROabA3jMAR7IAIWb2+tiE33TIEOxbl+FkCGbs0YFdycqOcDD+NejdsmNU6xeAvkY4SrlTPyOWtGIO4MyAFzkXOZYNJy8F/jeKPAU5Qgj7nDb5kU3H5o/xmOdewHA5P6HGBm0+znn24Iounlgwk5IOsiXmb+T0hoPJAX3E0S/BTEgMzj+KcaysU6OrNmJYdLeuQaInKCcufC69HWMZO4hkB/slio1u7HoNVR+ZRN2JHtBN8oehMNADkgDjxEdpNwX6/zWAACG3a10yBnQIZoOpXiIXAYzmjSAtAfwUqVKF4HTDxxC9G00HMuF+wT8jsg8xr/OePZB40Ib2tAr/QNOXDy1WmL6DAAAAABJRU5ErkJggg==" class="close">
         <section class="module-page" data-screen="SignIn">
@@ -365,5 +360,3 @@ else{
 	<?php $this->endBody() ?>
 </html>
 <?php $this->endPage() ?>
-	
-

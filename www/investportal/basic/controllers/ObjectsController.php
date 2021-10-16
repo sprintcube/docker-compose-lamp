@@ -7,29 +7,29 @@ use yii\web\View;
 
 class ObjectsController extends Controller{
 	public function actionIndex(){
-		$this->registerCssFile("/css/objects.css");
-		$this->registerCssFile("/css/inpage_codes/objects/1.css");
-		$this->registerJsFile("/js/objects.js", ['position' => POS_END]);
+		$this->view->registerCssFile("/css/objects.css");
+		$this->view->registerCssFile("/css/inpage_codes/objects/1.css");
+		$this->view->registerJsFile("/js/objects.js", ['position' => View::POS_END]);
 	
-		return $this->render('objects/index');
+		return $this->render('objects');
 	}
 	public function actionObject(){
-		$this->registerCssFile("/css/objects.css");
-		$this->registerCssFile("/css/objects/hotels.css");
-		$this->registerCssFile("/css/inpage_codes/objects/2.css");
-		$this->registerJsFile("/js/objects.js", ['position' => POS_END]);
-		$this->registerJsFile("/js/objects/hotels.js", ['position' => POS_END]);
+		$this->view->registerCssFile("/css/objects.css");
+		$this->view->registerCssFile("/css/objects/hotels.css");
+		$this->view->registerCssFile("/css/inpage_codes/objects/2.css");
+		$this->view->registerJsFile("/js/objects.js", ['position' => View::POS_END]);
+		$this->view->registerJsFile("/js/objects/hotels.js", ['position' => View::POS_END]);
 		
-		return $this->render('objects/object');
+		return $this->render('object');
 	}
 	public function actionView($objectId){
-		$this->registerCssFile("/css/objects.css");
-		$this->registerCssFile("/css/objects/view.css");
-		$this->registerCssFile("/css/inpage_codes/objects/3.css");
-		$this->registerJsFile("/js/objects.js", ['position' => POS_END]);
-		$this->registerJsFile("/js/objects/view.js", ['position' => POS_END]);
+		$this->view->registerCssFile("/css/objects.css");
+		$this->view->registerCssFile("/css/objects/view.css");
+		$this->view->registerCssFile("/css/inpage_codes/objects/3.css");
+		$this->view->registerJsFile("/js/objects.js", ['position' => View::POS_END]);
+		$this->view->registerJsFile("/js/objects/view.js", ['position' => View::POS_END]);
 		
-		return $this->render('objects/view');
+		return $this->render('objectsView');
 	}
 }
 ?>

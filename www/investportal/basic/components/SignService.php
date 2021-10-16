@@ -143,12 +143,10 @@ class AutoSignIn extends Component{
 	public function proccess($signQuery = null){
 		if($signQuery != null){ $this->signQuery = $signQuery; }
 
-		$inModel = User::find();
-
 		$login = $this->signQuery['portalId'];
 
 
-		$auth = User::findOne(['login' => $login]);
+		$auth = User::findOne(['login' => $login]) || User::findOne(['email' => $login]) || User::findOne(['phone' => $login]);
 
 		if(Yii::$app->user->login($auth)){ throw new HttpException(202 ,'First authorization success!'); }
 		else{ throw new HttpException(409 ,'The portal accounting service is temporarily unavailable! Try again later;-('); }

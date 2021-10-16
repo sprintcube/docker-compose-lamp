@@ -8,29 +8,52 @@ class CodeSender{
         var isSUP = this.service === 'SignUp',
             isRST = this.service === 'Forgot';
 
-        var generateCode = [
-            Math.ceil(getRandomFromRange(1000,9999)),
-            Math.ceil(getRandomFromRange(2000,4600))
-        ];
-
-        var saveCode, message = "";
-
 
         if(isRST){
-            message += " - Restore your account access code";
-            saveCode = generateCode[1];
+			const login = query['login'];
+
+			if(/^([+]?[0-9\s-\(\)]{3,25})*$/i.test(login)){
+				if(login.indexOf('+')){ phone = login.substr(-2,0); }
+				if(login.indexOf('(') && login.indexOf(')') && login.indexOf('-')){ phone = login.replace(/\D/g, ''); }
+				if(login.indexOf('8')){ phone = login.substr(-1,0); }
+			}
+			
+			let phone = this.__getAccountPhone(login);
+
+			let svcQuery = {
+				rsq: {
+					service: 'Inbox',
+					phone: phone
+				}
+			};
+			
+			var ws = this.__CCService('forgot',svcQuery); //Code sender and generation service call
+
+			if(ws === true){ return 'OK'; }
+			else{ return 'Fail'; }
         }
         else if(isSUP){
-            message += " - Your account registration confirm code";
-            saveCode = generateCode[0];
+			const phoneNumber = query['phone'];
+
+			let phone = '';
+
+			if(phoneNumber.indexOf('+')){ phone = phoneNumber.substr(-2,0); }
+			if(phoneNumber.indexOf('(') && phoneNumber.indexOf(')') && phoneNumber.indexOf('-')){ phone = phoneNumber.replace(/\D/g, ''); }
+			if(phoneNumber.indexOf('8')){ phone = phoneNumber.substr(-1,0); }
+
+			let svcQuery = {
+				rsq: {
+					service: 'Inbox',
+					phone: phone
+				}
+			};
+
+			var ws = this.__CCService('signUp',svcQuery);
+
+			if(ws === true){ return 'OK'; }
+			else{ return 'Fail'; }
         }
 
-
-
-        set_cookie("serviceCode",saveCode);
-
-        alert("Message by Investportal to "+ query +":\n\n" + get_cookie("serviceCode") + message + " The code is valid for five minutes;-)");
-  
     }
 
     valid(formQuery){
@@ -38,24 +61,94 @@ class CodeSender{
             isRST = this.service === 'Forgot';
 
             if(isRST){
-                if(formQuery === get_cookie("serviceCode")){
-                    return 'RST_Success';
-                }
-                else{
-                    return 'Fail';
-                }
+
+			   const login = query['login'],
+					 code = query['code'];
+
+			   if(/^([+]?[0-9\s-\(\)]{3,25})*$/i.test(login)){
+				if(login.indexOf('+')){ phone = login.substr(-2,0); }
+				if(login.indexOf('(') && login.indexOf(')') && login.indexOf('-')){ phone = login.replace(/\D/g, ''); }
+				if(login.indexOf('8')){ phone = login.substr(-1,0); }
+			   }
+			   
+			   let phone = this.__getAccountPhone(login);
+
+			   let svcQuery = {
+					rsq: {
+						service: 'Valid',
+						code: code,
+						phone: phone
+					}
+				};	
+
+               var ws = this.__CVCService('forgot',svcQuery); //Inputed code validation service call
+
+               if(ws === true){ return 'OK'; }
+               else if(ws === null){ return 'Fail'; }
+			   else{ return 'Error'; }
             }
             else if(isSUP){
-                if(isRST){
-                    if(formQuery === get_cookie("serviceCode")){
-                        return 'SUP_Success';
-                    }
-                    else{
-                        return 'Fail';
-                    }
-                }
+			   const login = query['phone'],
+					 code = query['code'];
+			   let phone = '';
+
+			   if(phoneNumber.indexOf('+')){ phone = phoneNumber.substr(-2,0); }
+			   if(phoneNumber.indexOf('(') && phoneNumber.indexOf(')') && phoneNumber.indexOf('-')){ phone = phoneNumber.replace(/\D/g, ''); }
+			   if(phoneNumber.indexOf('8')){ phone = phoneNumber.substr(-1,0); }
+
+			   let svcQuery = {
+					rsq: {
+						service: 'Valid',
+						code: code,
+						phone: phone
+					}
+				};	
+				
+               var ws = this.__CVCService('signUp',svcQuery);
+
+               if(ws === true){ return 'OK'; }
+               else if(ws === null){ return 'Fail'; }
+			   else{ return 'Error'; }
             }
 
         
     }
+    __getAccountPhone(q){
+		let sQ = {
+			method: 'POST',
+			body: {'serviceQuery': JSON.stringify(q) }
+		},
+			response = await fetch('/accounts/getInfo', sQ);
+
+
+		if(response.status === 200){
+			let data = await response.json();
+			return data[0].phone;
+		}
+		else{ return null; }
+		
+	}
+    __CCService(s,q){
+		let sQ = {
+			method: 'POST',
+			body: {'serviceQuery': JSON.stringify(q) }
+		},
+			response = await fetch('/accounts/accept/' + s, sQ);
+
+		if(response.status === 202){ return true; }
+		else{ return null; }
+	}
+	__CVCService(s,q){
+		let sQ = {
+			method: 'POST',
+			body: {'serviceQuery': JSON.stringify(q) }
+		},
+			response = await fetch('accounts/accept/' + s, sQ);
+
+		if(response.status === 202){ return true; }
+		else if(response.status === 403){ return false; }
+		else{ return null; }
+
+			
+	}
 }
