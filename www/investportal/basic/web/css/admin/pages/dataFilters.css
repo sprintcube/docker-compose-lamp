@@ -124,6 +124,99 @@
   font-size: 100%;
 }
 
+.form-rpa-addon{
+  width: 80%;
+  height: 100vh;
+  background-color: #eff3f4;
+}
+#smdf-content > section.mode-hidden{ display: none; }
+.form-rpa-addon > header{
+  background-color: #0079bf;
+  width: 100%;
+  height: calc(99px / 2);
+  padding-bottom: 2%;
+  display: block;
+}
+.form-rpa-addon > header h2{
+  color: #ffffff;
+  font-size: 140%;
+  padding: 2%;
+}
+#header-right{
+  float: right;
+  display: inline-table;
+  margin-top: -6%;
+  margin-right: 4%;
+  width: 6%;
+}
+#header-right > img{
+  width: 30px;
+  height: 30px;
+  padding-left: 2%;
+}
+.form-rpa-addon > main{
+  height: 80%;
+  display: block;
+  overflow: auto;
+}
+.form-rpa-addon > main #smdf-header{
+  width: calc(100% / 6);
+  height: calc(100% / 3);
+  float: left;
+  padding-left: 2%;
+  display: inline-table;
+}
+.form-rpa-addon > main #smdf-header nav{
+  font-size: 120%;
+  padding-top: 8%;
+  padding-bottom: 8%;
+  text-transform: uppercase;
+}
+.form-rpa-addon > main #smdf-header nav a{
+  display: block;
+  padding-top: 4%;
+  padding-bottom: 4%;
+  color: #0079bf;
+  cursor: pointer;
+  text-decoration: none;
+}
+.form-rpa-addon > main #smdf-header nav a.active{
+ font-weight: bold;
+}
+.form-rpa-addon > main #smdf-content{
+  width: 70%;
+  height: calc(100% / 3);
+  float: right;
+  display: inline-table;
+}
+.form-rpa-addon > main #smdf-content section * label{
+  font-size: 120%;
+  padding: 1%;
+  width: 40%;
+  text-align: center;
+  color: white;
+  background-color: #0079bf;
+}
+.form-rpa-addon > main #smdf-content section * input[type=file]{
+  display: none;
+}
+#smdf-content > section{
+  padding-top: 2%;
+  padding-bottom: 2%;
+  display: block;
+}
+#smdf-content > section header, #smdf-content > section main, #smdf-content > section footer{
+  margin-top: 1%;
+}
+#smdf-content > section * h3{
+  font-size: 140%;
+}
+#smdf-content > section header div{
+  font-size: 100%;
+  display: inline-table;
+  padding-right: 2%;
+}
+
 .downloaded-file{
   display: inline-block;
   margin-left: 4%;
