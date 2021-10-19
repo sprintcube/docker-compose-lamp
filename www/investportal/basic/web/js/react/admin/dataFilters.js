@@ -490,12 +490,94 @@ const openModal = (dataType) => {
 				];
 
 				var downloadsDatasets = $(this).prop('files');
+				let isMultiple = downloadsDatasets.length !== 1 ? true : null;
 				
 				if(isEdit){
+					var ext = "";
+					var responseLoad = "";
 					
+					switch(isMultiple){
+						case null:
+
+							var file = downloadsDatasets[0];
+							var parts = file.name.split(".");
+
+							if (parts.length > 1){ ext = parts.pop(); }
+
+							if(ext === 'csv'){ responseLoad += '\n<li>\n\t<img src="data:image/png;base64,' + formatIcon[0]'" />'; }
+							if(ext === 'json'){ responseLoad += '\n<li>\n\t<img src="data:image/png;base64,' + formatIcon[1]'" />'; }
+							if(ext === 'xml'){ responseLoad += '\n<li>\n\t<img src="data:image/png;base64,' + formatIcon[2]'" />'; }
+							if(ext === 'xlsx'){ responseLoad += '\n<li>\n\t<img src="data:image/png;base64,' + formatIcon[3]'" />'; }
+
+							responseLoad += '\n\t<span>' + file.name + '</span>\n</li>';
+
+							$('.downloaded-files > ul').append(responseLoad);
+							
+							uploadDataset(downloadedDatasets[0]);
+						break;
+						default:
+							for(let i = 0; i < downloadedDatasets.length; i++){
+								var file = downloadsDatasets[i];
+								var parts = file.name.split(".");
+
+								if (parts.length > 1){ ext = parts.pop(); }
+
+									if(ext === 'csv'){ responseLoad += '\n<li>\n\t<img src="data:image/png;base64,' + formatIcon[0]'" />'; }
+									if(ext === 'json'){ responseLoad += '\n<li>\n\t<img src="data:image/png;base64,' + formatIcon[1]'" />'; }
+									if(ext === 'xml'){ responseLoad += '\n<li>\n\t<img src="data:image/png;base64,' + formatIcon[2]'" />'; }
+									if(ext === 'xlsx'){ responseLoad += '\n<li>\n\t<img src="data:image/png;base64,' + formatIcon[3]'" />'; }
+
+									responseLoad += '\n\t<span>' + file.name + '</span>\n</li>';
+
+								}
+							}
+
+							$('.downloaded-files > ul').append(responseLoad);
+							uploadMultipleDatasets(downloadedDatasets);
+						break;
+					}
 				}
 				else{
-					
+					switch(isMultiple){
+						case null:
+
+							var file = downloadsDatasets[0];
+							var parts = file.name.split(".");
+
+							if (parts.length > 1){ ext = parts.pop(); }
+
+							if(ext === 'csv'){ responseLoad += '\n<li>\n\t<img src="data:image/png;base64,' + formatIcon[0]'" />'; }
+							if(ext === 'json'){ responseLoad += '\n<li>\n\t<img src="data:image/png;base64,' + formatIcon[1]'" />'; }
+							if(ext === 'xml'){ responseLoad += '\n<li>\n\t<img src="data:image/png;base64,' + formatIcon[2]'" />'; }
+							if(ext === 'xlsx'){ responseLoad += '\n<li>\n\t<img src="data:image/png;base64,' + formatIcon[3]'" />'; }
+
+							responseLoad += '\n\t<span>' + file.name + '</span>\n</li>';
+
+							$('.downloaded-files > ul').append(responseLoad);
+							
+							uploadDataset(downloadedDatasets[0]);
+						break;
+						default:
+							for(let i = 0; i < downloadedDatasets.length; i++){
+								var file = downloadsDatasets[i];
+								var parts = file.name.split(".");
+
+								if (parts.length > 1){ ext = parts.pop(); }
+
+									if(ext === 'csv'){ responseLoad += '\n<li>\n\t<img src="data:image/png;base64,' + formatIcon[0]'" />'; }
+									if(ext === 'json'){ responseLoad += '\n<li>\n\t<img src="data:image/png;base64,' + formatIcon[1]'" />'; }
+									if(ext === 'xml'){ responseLoad += '\n<li>\n\t<img src="data:image/png;base64,' + formatIcon[2]'" />'; }
+									if(ext === 'xlsx'){ responseLoad += '\n<li>\n\t<img src="data:image/png;base64,' + formatIcon[3]'" />'; }
+
+									responseLoad += '\n\t<span>' + file.name + '</span>\n</li>';
+
+								}
+							}
+
+							$('.downloaded-files > ul').append(responseLoad);
+							uploadMultipleDatasets(downloadedDatasets);
+						break;
+					}
 				}
 			});
 
