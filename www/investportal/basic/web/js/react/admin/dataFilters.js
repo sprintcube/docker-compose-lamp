@@ -491,11 +491,12 @@ const openModal = (dataType) => {
 
 				var downloadsDatasets = $(this).prop('files');
 				let isMultiple = downloadsDatasets.length !== 1 ? true : null;
+				var ext = "";
+				var responseLoad = "";
+				let dataValid = {};
 				
 				if(isEdit){
-					var ext = "";
-					var responseLoad = "";
-					
+				
 					switch(isMultiple){
 						case null:
 
@@ -513,7 +514,7 @@ const openModal = (dataType) => {
 
 							$('.downloaded-files > ul').append(responseLoad);
 							
-							uploadDataset(downloadedDatasets[0]);
+							dataValid = {service: 'edit', query: uploadDataset(downloadedDatasets[0])};
 						break;
 						default:
 							for(let i = 0; i < downloadedDatasets.length; i++){
@@ -533,7 +534,7 @@ const openModal = (dataType) => {
 							}
 
 							$('.downloaded-files > ul').append(responseLoad);
-							uploadMultipleDatasets(downloadedDatasets);
+							dataValid = {service: 'edit', query: uploadMultipleDatasets(downloadedDatasets)};
 						break;
 					}
 				}
@@ -555,7 +556,7 @@ const openModal = (dataType) => {
 
 							$('.downloaded-files > ul').append(responseLoad);
 							
-							uploadDataset(downloadedDatasets[0]);
+							dataValid = {service: 'add', query: uploadDataset(downloadedDatasets[0])};
 						break;
 						default:
 							for(let i = 0; i < downloadedDatasets.length; i++){
@@ -575,36 +576,64 @@ const openModal = (dataType) => {
 							}
 
 							$('.downloaded-files > ul').append(responseLoad);
-							uploadMultipleDatasets(downloadedDatasets);
+							dataValid = {service: 'add', query: uploadMultipleDatasets(downloadedDatasets)};
 						break;
 					}
 				}
 			});
 
 			$('#header-right > img').eq(0).click(function(e,t){
+				
+				
 				if(isEdit){
 					
+					if(validSmartField('dataset',dataValid)){
+						
+					}
+					else{
+						
+					}
 				}
 				else{
-					
+					if(validSmartField('dataset',dataValid)){
+						
+					}
+					else{
+						
+					}
 				}
 			});
 
 		break;
 		case 'photogallery':
 			let modalUI;
+			let dataValid = {};
 
+			
 			if(currentFilterPage.isEdit){ modalUI = $('.edit-modals > li'); }
 			if(currentFilterPage.isAdd){ modalUI = $('.add-modals > li'); }
 
 			modalUI.eq(1).removeClass('modal-close');
 
 			$('#header-right > img').eq(0).click(function(e,t){
+				
+				let dataValid;
+				
 				if(isEdit){
-					
+					if(validSmartField('photogallery',dataValid)){
+						
+					}
+					else{
+						
+					}
 				}
 				else{
-					
+					if(validSmartField('photogallery',dataValid)){
+						
+					}
+					else{
+						
+					}
 				}
 			});
 		break;
@@ -799,6 +828,16 @@ const uploadMultipleDatasets = (type, dsq) => {
 
 	return queryFile;
 	
+}
+
+const validSmartField(type,data) = () => {
+	if(type === 'dataset'){
+		
+	}
+	
+	if(type === 'photogallery'){
+		
+	}
 }
 
 $(document).ready(function(){

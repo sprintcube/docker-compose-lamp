@@ -29,7 +29,7 @@ long_line_column=72
 [files]
 current_page=1
 FILE_NAME_0=0;PHP;0;EUTF-8;1;1;0;%2Fhome%2Fhead%2FDesktop%2FСерега%20Младший%2FITProjects%2Fdocker-compose-lamp%2Fwww%2Finvestportal%2Fbasic%2Fcontrollers%2FAdminController.php;0;4
-FILE_NAME_1=35689;Javascript;0;EUTF-8;1;1;0;%2Fhome%2Fhead%2FDesktop%2FСерега%20Младший%2FITProjects%2Fdocker-compose-lamp%2Fwww%2Finvestportal%2Fbasic%2Fweb%2Fjs%2Freact%2Fadmin%2FdataFilters.js;0;4
+FILE_NAME_1=35949;Javascript;0;EUTF-8;1;1;0;%2Fhome%2Fhead%2FDesktop%2FСерега%20Младший%2FITProjects%2Fdocker-compose-lamp%2Fwww%2Finvestportal%2Fbasic%2Fweb%2Fjs%2Freact%2Fadmin%2FdataFilters.js;0;4
 
 [prjorg]
 source_patterns=*.c;*.C;*.cpp;*.cxx;*.c++;*.cc;*.m;
