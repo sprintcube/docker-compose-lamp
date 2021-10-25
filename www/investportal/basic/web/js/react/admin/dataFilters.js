@@ -119,10 +119,7 @@ class Add extends React.Component{
 						<h3>Input your need dataset:</h3>
 						<label for="dataset">Add dataset</label>
 						<input type="file" id="dataset" accept="application/xml, application/json, application/vnd.ms-excel" />
-						<div class="downloaded-file">
-						  <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAABmJLR0QA/wD/AP+gvaeTAAABoUlEQVRYhe2XS0oDQRCGv+qI11DXCm4Us1DiI3oCvYAvvIDo4FbwdQJB8QDJBVQ0GhAF3Qhx5cLgGVyIjF0uuo0xmBkZI7OZH5qeqq6u+qnu6u6BDClD2o4EFe1opK2JH2OZjgZJgK5YizbMf42YTKaegYxA6gQyRJfYxlkP1hwCeeAaGy6wM/3cor8lZ5bZLDw2Sm5r3C1tcGGd3L6Uo88BF2TKS0VM1wEw06If590eAaNAHehl/XKoyUs9KkTMQSRjoGB1ACM1kIIfGHGd5lEGgdCJWkJkFeycn+90yQloNwA7kw98X64boAimimgVGy44tSmBriIy+2VqIgkkK0NjF4FTL30uDWwX7oAnoM+3J69LSkDeAFg77yeoKEHlFQBriqiWkXDYG+a9vaJabkxXLYP85S7QqrOSmldUfb+CyD6au/fyVZPL0s/fSQh8pfoF5AQbLgJgzTxw7fQc885SY45LeR2ox6X//xBU9lg/3/2Nafx7IBG0TE7/+KJymy6hExXX4v38Uwaid34zUr+OMwLxe6DT/wctSD0DGVLHB45Oieeid2jHAAAAAElFTkSuQmCC">
-						  <span>dataset.csv</span>
-						</div>
+						<div class="downloaded-file"></div>
 					  </main></section>
 					  <section class="mode-hidden"><header>
 						<h3>Select form elements:</h3>
@@ -133,35 +130,13 @@ class Add extends React.Component{
 						 <h3>Input your priority dataset:</h3>
 						<label for="dataset">Add dataset</label>
 						<input type="file" id="dataset" accept="application/xml, application/json, application/vnd.ms-excel" />
-						<div class="downloaded-file">
-						  <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAABmJLR0QA/wD/AP+gvaeTAAABoUlEQVRYhe2XS0oDQRCGv+qI11DXCm4Us1DiI3oCvYAvvIDo4FbwdQJB8QDJBVQ0GhAF3Qhx5cLgGVyIjF0uuo0xmBkZI7OZH5qeqq6u+qnu6u6BDClD2o4EFe1opK2JH2OZjgZJgK5YizbMf42YTKaegYxA6gQyRJfYxlkP1hwCeeAaGy6wM/3cor8lZ5bZLDw2Sm5r3C1tcGGd3L6Uo88BF2TKS0VM1wEw06If590eAaNAHehl/XKoyUs9KkTMQSRjoGB1ACM1kIIfGHGd5lEGgdCJWkJkFeycn+90yQloNwA7kw98X64boAimimgVGy44tSmBriIy+2VqIgkkK0NjF4FTL30uDWwX7oAnoM+3J69LSkDeAFg77yeoKEHlFQBriqiWkXDYG+a9vaJabkxXLYP85S7QqrOSmldUfb+CyD6au/fyVZPL0s/fSQh8pfoF5AQbLgJgzTxw7fQc885SY45LeR2ox6X//xBU9lg/3/2Nafx7IBG0TE7/+KJymy6hExXX4v38Uwaid34zUr+OMwLxe6DT/wctSD0DGVLHB45Oieeid2jHAAAAAElFTkSuQmCC">
-						  <span>dataset.csv</span>
-						</div>
+						<div class="downloaded-file"></div>
 					  </main>
 					  <footer>
 						 <h3>Add datasets in search group:</h3>
 						<label for="datasets">Add datasets</label>
 						<input type="file" id="datasets" accept="application/xml, application/json, application/vnd.ms-excel" multiple/>
-						<div class="downloaded-files">
-						  <ul>
-							<li>
-							  <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAABmJLR0QA/wD/AP+gvaeTAAABoUlEQVRYhe2XS0oDQRCGv+qI11DXCm4Us1DiI3oCvYAvvIDo4FbwdQJB8QDJBVQ0GhAF3Qhx5cLgGVyIjF0uuo0xmBkZI7OZH5qeqq6u+qnu6u6BDClD2o4EFe1opK2JH2OZjgZJgK5YizbMf42YTKaegYxA6gQyRJfYxlkP1hwCeeAaGy6wM/3cor8lZ5bZLDw2Sm5r3C1tcGGd3L6Uo88BF2TKS0VM1wEw06If590eAaNAHehl/XKoyUs9KkTMQSRjoGB1ACM1kIIfGHGd5lEGgdCJWkJkFeycn+90yQloNwA7kw98X64boAimimgVGy44tSmBriIy+2VqIgkkK0NjF4FTL30uDWwX7oAnoM+3J69LSkDeAFg77yeoKEHlFQBriqiWkXDYG+a9vaJabkxXLYP85S7QqrOSmldUfb+CyD6au/fyVZPL0s/fSQh8pfoF5AQbLgJgzTxw7fQc885SY45LeR2ox6X//xBU9lg/3/2Nafx7IBG0TE7/+KJymy6hExXX4v38Uwaid34zUr+OMwLxe6DT/wctSD0DGVLHB45Oieeid2jHAAAAAElFTkSuQmCC">
-						  <span>dataset.csv</span>
-							</li>
-							<li>
-							  <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAABmJLR0QA/wD/AP+gvaeTAAABI0lEQVRYhe2XzW3DMAxGH41O0cY9JRs4l2aBLlLDY3SLGs4iHaA/QNMN4puLjhH2UAVwXTuSbBm6+J0MihY/kJQIwUJkZGghK48aMtBnsemNlYQMMoYrm8OQcldsmYyegUWAtQfabMv6XtE9sOr2hql1I0h+KNbPrnt6ZUDRClhdcEmNjzO+JUih/2S0bOmcAoIzSUBWHnXqjeksIHuqd+bza9BJ+QbYVvWd677up0D0BUBgfzb964WECuVRT/rKhTnz95eQnNyCjhIgiex+Y5CfbT098GA2dS6Bs4BDvn4DELgZVsk1wEexeQ8uYC68ruIuU0c1+Geggf4Z37I1swkQJLcEaIyPM14lMFPutm9tbDmiN+EiwNoDod8HXaJnYCE6P+sWUDhptfNHAAAAAElFTkSuQmCC">
-						  <span>dataset1.json</span>
-							</li>
-							<li>
-							  <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAABmJLR0QA/wD/AP+gvaeTAAAC6ElEQVRYhe2Wz04TYRTFf/dLAaExunNlYiytIgk1sYMLYqImEF9AIhsENFBQ38F3UKQ0KshGoy9gJAETw0IKi5L4j6FqYuJao+WP1Lku2jEd6ExbY6ILzmYm997vfidzzz0Z2MMe/jHkbzQ5NWlHRFkDckvJaGs9Z01Q0krb7Z2pXKJqF9Xu4ovMloc7U7mElbbb/4hAx0w2rMoTB2fBSq1dqEKhB8Aoz9yAlVq74OAsqPKkYyYbrptAU755HKUN+NjYUFjwqzt7cz4kyHmg8NPInBvfasm/UFhDaWvcaL5bF4HEhD2kIpeBTYPTu3Dl+De/Bt8PHT4NHABeLo9Evrrxlf543hh6gXVULiUm7KGaCFhpux3hFoCgY4vJY1m/y4sozV+Y3ZnJDEdfodwo5cc7U+/igQQ6ZrJhx+Ex0ALyMJOMTQVfDkA3gIjsIgCwNBq9L6oPgH0O5nHXvbf7fQk05ZvHBU4Aq00NhZFqN5+c+nAQoRP4Ev78adGvbiu8cU3hNRDbKph0RQL1zN1Fw9b2eSAEMvf85rmCX12QHgzsmLvqaPW5F6GY7uLTqfj5y5EZjr4S9Drg0YNx9x1oUWQ6MxqbruXyEoWSACvPfxeJZGxKkWlgnyPmYcdMNhzohEE4NWlHgAiQWx6J5v60j1npj+dFuAisCzpgTawO1Hi2B0DK3K8arNTqoKADwKZRp2+lP5434N1XFZmotK+7UPJ/obbPb6XtdkVuF89yzdXZ7xFU29dy+NmvHzz+IvpoaTR63815NODZ1+3QpF9DP/v1g8dfQs5wec5DwLOvaJ+VWh2s3NLffneimr/s2gKPHpA7PnoItF8X5f5SPvdAAhCsh1rtN2juVQlAUQ8Ib4AjP7ZDXW68cfPnOSCk6HyQ/Tath88ItCK8+dG8cdWvzpeA6w8G05VJtj51444U9x+C9z+TbH1qMF0iXFzpj+f96ur+KU2k7BxwVByNZMZi7+s9v4c9/Hf4BffAU6HdvJ3CAAAAAElFTkSuQmCC">
-						  <span>dataset2.xml</span>
-							</li>
-							<li>
-							  <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAABmJLR0QA/wD/AP+gvaeTAAACSUlEQVRYhe2WsWsTYRjGf+9d0gytKCqIxSLaBEGxIDla0agRujk4KYiLIG0zaMHFwQq2s5NWbcStUOgi/gMWMhRNSIIUFDWpg1ToKCgott69DjUQL8ldL+Em82zH93zf+3zv8/LdA13875Ag5OTTUlTtXUOm4aRUJAmcRTkIUMokAp1VQ8Rr8cTsh/5I1EwCpxVSKJYYGlMEtJ1y2xBgzVVuI3IKOAnsc9XZBEoIeVEKti15w9RqJwIa2mZlq3U1ZV3RsihlMXXZ0b5X5Yn+H635/nBb1dIC02SgMBb/EuTwdtBSQGEsEai43xC26pTnEAZBrUApkxB3MS9xngKGH73fQ6TnkC3O1/JE4pM193EYMR4Dzs/dG2feXT620alwTwFONDKFOrcEXQSuIMZdwFKRa+7i9bcM8iZ4CrA3zQdmxL6JyuhItnrUhgtAZcf62oKb264FhpeANzcOfxZ4Aey1lSd/+VO56fO/vfYFgf8QGsZ9HOcSwjkRysXx+HMyjbRQLABQ2+mtPVeq0peeyZk5aOhAKBYAINwDFJWXoEe+7x+46rsnADw7YM1V00AaeC2m3FFHRwWdiT+sLq5OJn7Vc8OxYOv2ICwUxweLVrayjEpqZ4+MA7P/iA3DAnODi6gcj0Xs+S0d5rRAHvT60PxKr6f4bcKzA4XJxDfgbe27mBlcApaacdu1wH8IQ0bLDow8qx4I8kcMmgt8Bdg2a1Z21TeQdIrGROSKZK7lTWClWSRrN5R6bmoIpWABsWbcUAS4EUYs76KLP8N2+9GXw6c1AAAAAElFTkSuQmCC">
-						  <span>dataset3.xlsx</span>
-							</li>
-						  </ul>
-						</div>
+						<div class="downloaded-files"><ul></ul></div>
 					  </footer></section>
 					</div>
 				  </main>
@@ -265,10 +240,7 @@ class Edit extends React.Component{
 						<h3>Update your need dataset:</h3>
 						<label for="dataset">Add dataset</label>
 						<input type="file" id="dataset" accept="application/xml, application/json, application/vnd.ms-excel" />
-						<div class="downloaded-file">
-						  <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAABmJLR0QA/wD/AP+gvaeTAAABoUlEQVRYhe2XS0oDQRCGv+qI11DXCm4Us1DiI3oCvYAvvIDo4FbwdQJB8QDJBVQ0GhAF3Qhx5cLgGVyIjF0uuo0xmBkZI7OZH5qeqq6u+qnu6u6BDClD2o4EFe1opK2JH2OZjgZJgK5YizbMf42YTKaegYxA6gQyRJfYxlkP1hwCeeAaGy6wM/3cor8lZ5bZLDw2Sm5r3C1tcGGd3L6Uo88BF2TKS0VM1wEw06If590eAaNAHehl/XKoyUs9KkTMQSRjoGB1ACM1kIIfGHGd5lEGgdCJWkJkFeycn+90yQloNwA7kw98X64boAimimgVGy44tSmBriIy+2VqIgkkK0NjF4FTL30uDWwX7oAnoM+3J69LSkDeAFg77yeoKEHlFQBriqiWkXDYG+a9vaJabkxXLYP85S7QqrOSmldUfb+CyD6au/fyVZPL0s/fSQh8pfoF5AQbLgJgzTxw7fQc885SY45LeR2ox6X//xBU9lg/3/2Nafx7IBG0TE7/+KJymy6hExXX4v38Uwaid34zUr+OMwLxe6DT/wctSD0DGVLHB45Oieeid2jHAAAAAElFTkSuQmCC">
-						  <span>dataset.csv</span>
-						</div>
+						<div class="downloaded-file"></div>
 					  </main></section>
 					  <section class="mode-hidden"><header>
 						<h3>Select form elements:</h3>
@@ -279,35 +251,13 @@ class Edit extends React.Component{
 						 <h3>Update your priority dataset:</h3>
 						<label for="dataset">Add dataset</label>
 						<input type="file" id="dataset" accept="application/xml, application/json, application/vnd.ms-excel" />
-						<div class="downloaded-file">
-						  <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAABmJLR0QA/wD/AP+gvaeTAAABoUlEQVRYhe2XS0oDQRCGv+qI11DXCm4Us1DiI3oCvYAvvIDo4FbwdQJB8QDJBVQ0GhAF3Qhx5cLgGVyIjF0uuo0xmBkZI7OZH5qeqq6u+qnu6u6BDClD2o4EFe1opK2JH2OZjgZJgK5YizbMf42YTKaegYxA6gQyRJfYxlkP1hwCeeAaGy6wM/3cor8lZ5bZLDw2Sm5r3C1tcGGd3L6Uo88BF2TKS0VM1wEw06If590eAaNAHehl/XKoyUs9KkTMQSRjoGB1ACM1kIIfGHGd5lEGgdCJWkJkFeycn+90yQloNwA7kw98X64boAimimgVGy44tSmBriIy+2VqIgkkK0NjF4FTL30uDWwX7oAnoM+3J69LSkDeAFg77yeoKEHlFQBriqiWkXDYG+a9vaJabkxXLYP85S7QqrOSmldUfb+CyD6au/fyVZPL0s/fSQh8pfoF5AQbLgJgzTxw7fQc885SY45LeR2ox6X//xBU9lg/3/2Nafx7IBG0TE7/+KJymy6hExXX4v38Uwaid34zUr+OMwLxe6DT/wctSD0DGVLHB45Oieeid2jHAAAAAElFTkSuQmCC">
-						  <span>dataset.csv</span>
-						</div>
+						<div class="downloaded-file"></div>
 					  </main>
 					  <footer>
 						 <h3>Update datasets in search group:</h3>
 						<label for="datasets">Add datasets</label>
 						<input type="file" id="datasets" accept="application/xml, application/json, application/vnd.ms-excel" multiple/>
-						<div class="downloaded-files">
-						  <ul>
-							<li>
-							  <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAABmJLR0QA/wD/AP+gvaeTAAABoUlEQVRYhe2XS0oDQRCGv+qI11DXCm4Us1DiI3oCvYAvvIDo4FbwdQJB8QDJBVQ0GhAF3Qhx5cLgGVyIjF0uuo0xmBkZI7OZH5qeqq6u+qnu6u6BDClD2o4EFe1opK2JH2OZjgZJgK5YizbMf42YTKaegYxA6gQyRJfYxlkP1hwCeeAaGy6wM/3cor8lZ5bZLDw2Sm5r3C1tcGGd3L6Uo88BF2TKS0VM1wEw06If590eAaNAHehl/XKoyUs9KkTMQSRjoGB1ACM1kIIfGHGd5lEGgdCJWkJkFeycn+90yQloNwA7kw98X64boAimimgVGy44tSmBriIy+2VqIgkkK0NjF4FTL30uDWwX7oAnoM+3J69LSkDeAFg77yeoKEHlFQBriqiWkXDYG+a9vaJabkxXLYP85S7QqrOSmldUfb+CyD6au/fyVZPL0s/fSQh8pfoF5AQbLgJgzTxw7fQc885SY45LeR2ox6X//xBU9lg/3/2Nafx7IBG0TE7/+KJymy6hExXX4v38Uwaid34zUr+OMwLxe6DT/wctSD0DGVLHB45Oieeid2jHAAAAAElFTkSuQmCC">
-						  <span>dataset.csv</span>
-							</li>
-							<li>
-							  <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAABmJLR0QA/wD/AP+gvaeTAAABI0lEQVRYhe2XzW3DMAxGH41O0cY9JRs4l2aBLlLDY3SLGs4iHaA/QNMN4puLjhH2UAVwXTuSbBm6+J0MihY/kJQIwUJkZGghK48aMtBnsemNlYQMMoYrm8OQcldsmYyegUWAtQfabMv6XtE9sOr2hql1I0h+KNbPrnt6ZUDRClhdcEmNjzO+JUih/2S0bOmcAoIzSUBWHnXqjeksIHuqd+bza9BJ+QbYVvWd677up0D0BUBgfzb964WECuVRT/rKhTnz95eQnNyCjhIgiex+Y5CfbT098GA2dS6Bs4BDvn4DELgZVsk1wEexeQ8uYC68ruIuU0c1+Geggf4Z37I1swkQJLcEaIyPM14lMFPutm9tbDmiN+EiwNoDod8HXaJnYCE6P+sWUDhptfNHAAAAAElFTkSuQmCC">
-						  <span>dataset1.json</span>
-							</li>
-							<li>
-							  <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAABmJLR0QA/wD/AP+gvaeTAAAC6ElEQVRYhe2Wz04TYRTFf/dLAaExunNlYiytIgk1sYMLYqImEF9AIhsENFBQ38F3UKQ0KshGoy9gJAETw0IKi5L4j6FqYuJao+WP1Lku2jEd6ExbY6ILzmYm997vfidzzz0Z2MMe/jHkbzQ5NWlHRFkDckvJaGs9Z01Q0krb7Z2pXKJqF9Xu4ovMloc7U7mElbbb/4hAx0w2rMoTB2fBSq1dqEKhB8Aoz9yAlVq74OAsqPKkYyYbrptAU755HKUN+NjYUFjwqzt7cz4kyHmg8NPInBvfasm/UFhDaWvcaL5bF4HEhD2kIpeBTYPTu3Dl+De/Bt8PHT4NHABeLo9Evrrxlf543hh6gXVULiUm7KGaCFhpux3hFoCgY4vJY1m/y4sozV+Y3ZnJDEdfodwo5cc7U+/igQQ6ZrJhx+Ex0ALyMJOMTQVfDkA3gIjsIgCwNBq9L6oPgH0O5nHXvbf7fQk05ZvHBU4Aq00NhZFqN5+c+nAQoRP4Ev78adGvbiu8cU3hNRDbKph0RQL1zN1Fw9b2eSAEMvf85rmCX12QHgzsmLvqaPW5F6GY7uLTqfj5y5EZjr4S9Drg0YNx9x1oUWQ6MxqbruXyEoWSACvPfxeJZGxKkWlgnyPmYcdMNhzohEE4NWlHgAiQWx6J5v60j1npj+dFuAisCzpgTawO1Hi2B0DK3K8arNTqoKADwKZRp2+lP5434N1XFZmotK+7UPJ/obbPb6XtdkVuF89yzdXZ7xFU29dy+NmvHzz+IvpoaTR63815NODZ1+3QpF9DP/v1g8dfQs5wec5DwLOvaJ+VWh2s3NLffneimr/s2gKPHpA7PnoItF8X5f5SPvdAAhCsh1rtN2juVQlAUQ8Ib4AjP7ZDXW68cfPnOSCk6HyQ/Tath88ItCK8+dG8cdWvzpeA6w8G05VJtj51444U9x+C9z+TbH1qMF0iXFzpj+f96ur+KU2k7BxwVByNZMZi7+s9v4c9/Hf4BffAU6HdvJ3CAAAAAElFTkSuQmCC">
-						  <span>dataset2.xml</span>
-							</li>
-							<li>
-							  <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAABmJLR0QA/wD/AP+gvaeTAAACSUlEQVRYhe2WsWsTYRjGf+9d0gytKCqIxSLaBEGxIDla0agRujk4KYiLIG0zaMHFwQq2s5NWbcStUOgi/gMWMhRNSIIUFDWpg1ToKCgott69DjUQL8ldL+Em82zH93zf+3zv8/LdA13875Ag5OTTUlTtXUOm4aRUJAmcRTkIUMokAp1VQ8Rr8cTsh/5I1EwCpxVSKJYYGlMEtJ1y2xBgzVVuI3IKOAnsc9XZBEoIeVEKti15w9RqJwIa2mZlq3U1ZV3RsihlMXXZ0b5X5Yn+H635/nBb1dIC02SgMBb/EuTwdtBSQGEsEai43xC26pTnEAZBrUApkxB3MS9xngKGH73fQ6TnkC3O1/JE4pM193EYMR4Dzs/dG2feXT620alwTwFONDKFOrcEXQSuIMZdwFKRa+7i9bcM8iZ4CrA3zQdmxL6JyuhItnrUhgtAZcf62oKb264FhpeANzcOfxZ4Aey1lSd/+VO56fO/vfYFgf8QGsZ9HOcSwjkRysXx+HMyjbRQLABQ2+mtPVeq0peeyZk5aOhAKBYAINwDFJWXoEe+7x+46rsnADw7YM1V00AaeC2m3FFHRwWdiT+sLq5OJn7Vc8OxYOv2ICwUxweLVrayjEpqZ4+MA7P/iA3DAnODi6gcj0Xs+S0d5rRAHvT60PxKr6f4bcKzA4XJxDfgbe27mBlcApaacdu1wH8IQ0bLDow8qx4I8kcMmgt8Bdg2a1Z21TeQdIrGROSKZK7lTWClWSRrN5R6bmoIpWABsWbcUAS4EUYs76KLP8N2+9GXw6c1AAAAAElFTkSuQmCC">
-						  <span>dataset3.xlsx</span>
-							</li>
-						  </ul>
-						</div>
+						<div class="downloaded-files"><ul></ul></div>
 					  </footer></section>
 					</div>
 				  </main>
@@ -430,7 +380,29 @@ const jsonQueryConstructor = (query,result,pm) => {
 
 		result.command = { subCMD: serviceCmd };
 	}
-	
+
+	if(query.defaultParameter.element === 'dataset'){
+		let q = query.pms;
+		switch(query.service){
+			case 'add':
+				
+			break;
+			case 'edit':
+				
+			break;
+		}
+	}
+	if(query.defaultParameter.element === 'photogallery'){
+		let q = query.pms;
+		switch(query.service){
+			case 'add':
+				
+			break;
+			case 'edit':
+				
+			break;
+		}
+	}
 	if(query.defaultParameter.element === 'selecting'){
 		var queryConstructe = query.defaultParameter.data.split(/\s/g) || query.defaultParameter.data.split(/[;,]/);
 		var queryForm = [queryConstructe[0], queryConstructe[1]];
@@ -514,7 +486,7 @@ const openModal = (dataType) => {
 
 							$('.downloaded-files > ul').append(responseLoad);
 							
-							dataValid = {service: 'edit', query: uploadDataset(downloadedDatasets[0])};
+							dataValid = {service: 'edit', pms: uploadDataset(downloadedDatasets[0])};
 						break;
 						default:
 							for(let i = 0; i < downloadedDatasets.length; i++){
@@ -534,7 +506,7 @@ const openModal = (dataType) => {
 							}
 
 							$('.downloaded-files > ul').append(responseLoad);
-							dataValid = {service: 'edit', query: uploadMultipleDatasets(downloadedDatasets)};
+							dataValid = {service: 'edit', pms: uploadMultipleDatasets(downloadedDatasets)};
 						break;
 					}
 				}
@@ -556,7 +528,7 @@ const openModal = (dataType) => {
 
 							$('.downloaded-files > ul').append(responseLoad);
 							
-							dataValid = {service: 'add', query: uploadDataset(downloadedDatasets[0])};
+							dataValid = {service: 'add', pms: uploadDataset(downloadedDatasets[0])};
 						break;
 						default:
 							for(let i = 0; i < downloadedDatasets.length; i++){
@@ -576,7 +548,7 @@ const openModal = (dataType) => {
 							}
 
 							$('.downloaded-files > ul').append(responseLoad);
-							dataValid = {service: 'add', query: uploadMultipleDatasets(downloadedDatasets)};
+							dataValid = {service: 'add', pms: uploadMultipleDatasets(downloadedDatasets)};
 						break;
 					}
 				}
@@ -587,19 +559,21 @@ const openModal = (dataType) => {
 				
 				if(isEdit){
 					
-					if(validSmartField('dataset',dataValid)){
-						
+					if(validSmartField('dataset',dataValid) === 'editDataReady'){
+						jsonQueryConstructor(dataValid, JSON.parse($('#queryParameters').val()));
+						modalUI.eq(0).addClass('modal-close');
 					}
 					else{
-						
+						window.alert('Some required data for editing this attribute has not been loaded');
 					}
 				}
 				else{
-					if(validSmartField('dataset',dataValid)){
-						
+					if(validSmartField('dataset',dataValid) === 'addDataReady'){
+						jsonQueryConstructor(dataValid, JSON.parse($('#queryParameters').val()));
+						modalUI.eq(0).addClass('modal-close');
 					}
 					else{
-						
+						window.alert('Some required data for added this attribute has not been loaded');
 					}
 				}
 			});
@@ -617,22 +591,54 @@ const openModal = (dataType) => {
 
 			$('#header-right > img').eq(0).click(function(e,t){
 				
-				let dataValid;
+				let constructorData;
+
+				var checkedFormats = modalUI.eq(1).find('.form-rpa-addon > main #pg li div #format:checked'),
+					photosCount = modalUI.eq(1).find('.form-rpa-addon > main #pg li div #imagesCount');
+
+
+				switch(isEdit){
+					case null:
+						let editOut = [];
+						
+						for(let i = 0; i < checkedFormats.length; i++){ editOut.push(checkedFormats.eq(i).val()); }
+
+						constructorData = {
+							'value' : editOut,
+							'format' : ParseInt(photosCount.val())
+						}
+						dataValid = {service: 'edit', pms: constructorData};
+					break;
+					default:
+						let addOut = [];
+
+						for(let i = 0; i < checkedFormats.length; i++){ addOut.push(checkedFormats.eq(i).val()); }
+
+						constructorData = {
+							'format' : addOut,
+							'galleryCount' : ParseInt(photosCount.val())
+						}
+						
+						dataValid = {service: 'add', pms: constructorData};
+					break;
+				}
 				
 				if(isEdit){
-					if(validSmartField('photogallery',dataValid)){
-						
+					if(validSmartField('photogallery',dataValid) === 'editDataReady'){
+						jsonQueryConstructor(dataValid, JSON.parse($('#queryParameters').val()));
+						modalUI.eq(1).addClass('modal-close');
 					}
 					else{
-						
+						window.alert('You have allowed inappropriate values for editing filters. Check them out and fix them!');
 					}
 				}
 				else{
-					if(validSmartField('photogallery',dataValid)){
-						
+					if(validSmartField('photogallery',dataValid) === 'addDataReady'){
+						jsonQueryConstructor(dataValid, JSON.parse($('#queryParameters').val()));
+						modalUI.eq(1).addClass('modal-close');
 					}
 					else{
-						
+						window.alert('You have allowed inappropriate values for adding filters. Check them out and fix them!');
 					}
 				}
 			});
@@ -832,11 +838,52 @@ const uploadMultipleDatasets = (type, dsq) => {
 
 const validSmartField(type,data) = () => {
 	if(type === 'dataset'){
+		var stateValid;
+		switch(data.service){
+			case 'edit':
+				if((data.pms.dataConstructor.priority && data.pms.dataConstructor.group) || data.pms.dataConstructor.single){
+					stateValid = "editDataReady";
+				}
+				else{
+					stateValid = "editDataError";
+				}
+			break;
+			case 'add':
+				if((data.pms.dataConstructor.priority && data.pms.dataConstructor.group) || data.pms.dataConstructor.single){
+					stateValid = "addDataReady";
+				}
+				else{
+					stateValid = "addDataError";
+				}
+			break;
+		}
+
+		return stateValid;
 		
 	}
 	
 	if(type === 'photogallery'){
-		
+		var stateMetaValid;
+		switch(data.service){
+			case 'edit':
+				if(data.pms.format.length > 0 && (data.pms.galleryCount === 4 || data.pms.galleryCount > 4)){
+					stateValid = "editDataReady";
+				}
+				else{
+					stateValid = "editDataError";
+				}
+			break;
+			case 'add':
+				if(data.pms.format.length > 0 && (data.pms.galleryCount === 4 || data.pms.galleryCount > 4)){
+					stateValid = "addDataReady";
+				}
+				else{
+					stateValid = "addDataError";
+				}
+			break;
+		}
+
+		return stateMetaValid;
 	}
 }
 
