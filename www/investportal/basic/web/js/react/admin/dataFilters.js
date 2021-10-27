@@ -367,43 +367,74 @@ const AddFieldEvent = () => {
   AddField();
 }
 
-const jsonQueryConstructor = (query,result,pm) => {
+const jsonQueryConstructor = (query,pm) => {
+	let result = {};
 	let currentFilterPage {
 		isAdd: document.location.href.indexOf("add") ? true : null,
 		isEdit: document.location.href.indexOf("edit") ? true : null
 	};
 	
-	if(!pm['command']['subCMD']){
-		let serviceCmd;
-		if(isEdit){ serviceCmd = 'editFilters'; }
-		if(isAdd){ serviceCmd = 'addFilters'; }
 
-		result.command = { subCMD: serviceCmd };
-	}
+	let serviceCmd;
+
 
 	if(query.defaultParameter.element === 'dataset'){
-		let q = query.pms;
+		let q = query.pms,
+			res = {};
+
+		if(isEdit){ serviceCmd = 'editDatasets'; }
+		if(isAdd){ serviceCmd = 'sendDatasets'; }
+
+		result.command = { subCMD: serviceCmd };
+
 		switch(query.service){
 			case 'add':
-				
+				if(q.dataConstructor.group && q.dataConstructor.priority){
+					res = q.dataConstructor.priority.concat(q.dataConstructor.group);
+				}
+				else{
+					res = q.dataConstructor.single;
+				}
 			break;
 			case 'edit':
-				
+				if(q.dataConstructor.group && q.dataConstructor.priority){
+					res = q.dataConstructor.priority.concat(q.dataConstructor.group);
+				}
+				else{
+					res = q.dataConstructor.single;
+				}
 			break;
 		}
+
+		result.parameters = res;
 	}
 	if(query.defaultParameter.element === 'photogallery'){
-		let q = query.pms;
+		let q = query.pms,
+			res = {};
+
+		if(isEdit){ serviceCmd = 'editPhotogallery'; }
+		if(isAdd){ serviceCmd = 'sendPhotogallery'; }
+
+		result.command = { subCMD: serviceCmd };
+
+		result.dataParam = 'photogallery';
 		switch(query.service){
 			case 'add':
-				
+				res = q;
 			break;
 			case 'edit':
-				
+				res = q;
 			break;
 		}
+
+		result.parameters = res;
 	}
 	if(query.defaultParameter.element === 'selecting'){
+		if(isEdit){ serviceCmd = 'editParameters'; }
+		if(isAdd){ serviceCmd = 'sendParameters'; }
+
+		result.command = { subCMD: serviceCmd };
+		
 		var queryConstructe = query.defaultParameter.data.split(/\s/g) || query.defaultParameter.data.split(/[;,]/);
 		var queryForm = [queryConstructe[0], queryConstructe[1]];
 		result.parameters = {
@@ -412,6 +443,11 @@ const jsonQueryConstructor = (query,result,pm) => {
 		};
 	}
 	if(query.defaultParameter.element === 'cost'){
+		if(isEdit){ serviceCmd = 'editParameters'; }
+		if(isAdd){ serviceCmd = 'sendParameters'; }
+
+		result.command = { subCMD: serviceCmd };
+		
 		var queryForm = query.defaultParameter.data;
 		result.parameters = {
 			dataParam: 'cost',
@@ -419,6 +455,11 @@ const jsonQueryConstructor = (query,result,pm) => {
 		};
 	}
 	if(query.defaultParameter.element === 'integer'){
+		if(isEdit){ serviceCmd = 'editParameters'; }
+		if(isAdd){ serviceCmd = 'sendParameters'; }
+
+		result.command = { subCMD: serviceCmd };
+		
 		var queryForm = query.defaultParameter.data;
 		result.parameters = {
 			dataParam: 'integer',
@@ -426,19 +467,27 @@ const jsonQueryConstructor = (query,result,pm) => {
 		};
 	}
 	if(query.defaultParameter.element === 'text'){
+		if(isEdit){ serviceCmd = 'editParameters'; }
+		if(isAdd){ serviceCmd = 'sendParameters'; }
+
+		result.command = { subCMD: serviceCmd };
+		
 		var queryForm = query.defaultParameter.data;
 		result.parameters = {
 			dataParam: 'text',
 			textData: queryForm
 		};
 	}
+
+	if(isEdit){ result = { command: 1 }; }
+	else{ result = { command: 0 }; }
 	
-	$(query).val(result);
+	$(pm).val(result);
 }
 
 const openModal = (dataType) => {
 	let queryModule = {};
-	let currentFilterPage {
+	let currentFilterPage = {
 		isAdd: document.location.href.indexOf("add") ? true : null,
 		isEdit: document.location.href.indexOf("edit") ? true : null
 	};
@@ -560,7 +609,7 @@ const openModal = (dataType) => {
 				if(isEdit){
 					
 					if(validSmartField('dataset',dataValid) === 'editDataReady'){
-						jsonQueryConstructor(dataValid, JSON.parse($('#queryParameters').val()));
+						jsonQueryConstructor(dataValid, '#queryParameters');
 						modalUI.eq(0).addClass('modal-close');
 					}
 					else{
@@ -569,7 +618,7 @@ const openModal = (dataType) => {
 				}
 				else{
 					if(validSmartField('dataset',dataValid) === 'addDataReady'){
-						jsonQueryConstructor(dataValid, JSON.parse($('#queryParameters').val()));
+						jsonQueryConstructor(dataValid, '#queryParameters');
 						modalUI.eq(0).addClass('modal-close');
 					}
 					else{
@@ -625,7 +674,7 @@ const openModal = (dataType) => {
 				
 				if(isEdit){
 					if(validSmartField('photogallery',dataValid) === 'editDataReady'){
-						jsonQueryConstructor(dataValid, JSON.parse($('#queryParameters').val()));
+						jsonQueryConstructor(dataValid, '#queryParameters');
 						modalUI.eq(1).addClass('modal-close');
 					}
 					else{
@@ -634,7 +683,7 @@ const openModal = (dataType) => {
 				}
 				else{
 					if(validSmartField('photogallery',dataValid) === 'addDataReady'){
-						jsonQueryConstructor(dataValid, JSON.parse($('#queryParameters').val()));
+						jsonQueryConstructor(dataValid, '#queryParameters');
 						modalUI.eq(1).addClass('modal-close');
 					}
 					else{
@@ -750,7 +799,7 @@ const openModal = (dataType) => {
 		break;
 	}
 
-	jsonQueryConstructor(queryModule, JSON.parse($('#queryParameters').val()));
+	jsonQueryConstructor(queryModule, '#queryParameters');
 }
 
 
@@ -773,8 +822,17 @@ const editFilters = (e,t) => {
 	
 }
 const deleteFilters = (e,t) => {
-	let jsonQuery = $('.list-filters > #queryParameters').val();
+	let jsonQuery = {};
 
+	jsonQuery = { command: 2 };
+
+	jsonQuery.command = { subCMD: 'deleteFilters' };
+
+	jsonQuery.parameters = {
+		field: $('#filters-list > main #filter-card #header').eq($(this).index()).text()
+	};
+
+	
 	var sendProccess = await fetch('/admin/api/dataServices/filters', {
 		method: 'POST',
 		body: {'svcQuery': jsonQuery}
@@ -814,7 +872,7 @@ const uploadMultipleDatasets = (type, dsq) => {
 		fsAPI.readAsDataURL(dsq);
 
 		queryFile.dataConstructor.priority = {
-			file: fileData
+			smartDS: fileData
 		};
 	}
 	if(type === 'group'){
@@ -827,7 +885,7 @@ const uploadMultipleDatasets = (type, dsq) => {
 
 		queryFile.dataConstructor.group = {
 			isSmartDS: true,
-			file: fileData
+			smartDS: fileData
 		};
 		
 	}

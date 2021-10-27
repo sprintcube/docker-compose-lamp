@@ -170,7 +170,7 @@ class AdminController extends Controller
 										if($q['photogallery']){
 											$attributeId = lowercase($pm['attribute']);
 											$formats = $q['format'];
-											$isPhotoCount = $q['count'] > 4 ? TRUE : FALSE;
+											$isPhotoCount = ($q['count'] > 4 || $q['count'] == 4) ? TRUE : FALSE;
 
 											switch($isPhotoCount){
 												case FALSE:
@@ -388,7 +388,7 @@ class AdminController extends Controller
 										if($q['photogallery']){
 											$attributeId = lowercase($pm['attribute']);
 											$formats = $q['format'];
-											$isPhotoCount = $q['count'] > 4 ? TRUE : FALSE;
+											$isPhotoCount = ($q['count'] > 4 || $q['count'] == 4) ? TRUE : FALSE;
 
 											switch($isPhotoCount){
 												case FALSE:
