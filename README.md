@@ -46,7 +46,8 @@ Your LAMP stack is now ready! You can access it via [http://localhost](http://lo
 ---
 ## How to configure a local virtual host
 
-1. Add the local host in your host file (EG: `/etc/hosts`):
+1. Add the local host in your hosts:
+On Linux/Mac the file is `/etc/hosts`. On Windows the host file is `C:\Windows\System32\Drivers\etc\hosts`.
 ```
 127.0.0.1   website.local
 ```
