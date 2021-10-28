@@ -1,4 +1,4 @@
-# LAMP Docker stack with NODE/NPM
+# LAMP Stack on Docker with NODE/NPM
 
 This repo is a Docker LAMP environment for **local** development. You can set up multiple local website and you can easily configure the version of PHP, MySQL or Node.
 
@@ -8,7 +8,8 @@ This Docker environment gives you the basic tools you need for the PHP and front
 * MySQL/MariaDB
 * phpMyAdmin
 * Redis
-* Node/NPM
+* Node / NPM
+* Composer
 
 **Note for M1 Mac**: at the time of this writing there is no official image of MySQL for M1 chip; please use MariaDB instead.
 
