@@ -1,0 +1,33 @@
+version: "3"
+
+services:
+  node:
+    image: node:${NODE_VERSION}
+    user: 1000:1000
+    working_dir: /home/node/app
+    volumes:
+      - ${DOCUMENT_ROOT-./www}:/home/node/app
+  node17:
+    image: node:17
+    user: 1000:1000
+    working_dir: /home/node/app
+    volumes:
+      - ${DOCUMENT_ROOT-./www}:/home/node/app
+  node16:
+    image: node:16
+    user: 1000:1000
+    working_dir: /home/node/app
+    volumes:
+      - ${DOCUMENT_ROOT-./www}:/home/node/app
+  node14:
+    image: node:14
+    user: 1000:1000
+    working_dir: /home/node/app
+    volumes:
+      - ${DOCUMENT_ROOT-./www}:/home/node/app
+  node12:
+    image: node:12
+    user: 1000:1000
+    working_dir: /home/node/app
+    volumes:
+      - ${DOCUMENT_ROOT-./www}:/home/node/app

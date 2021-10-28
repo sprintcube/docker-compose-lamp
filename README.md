@@ -1,50 +1,164 @@
-#  LAMP stack built with Docker Compose
+# LAMP Docker stack with NODE/NPM
 
-  
+This repo is a Docker LAMP environment for **local** development. You can set up multiple local website and you can easily configure the version of PHP, MySQL or Node.
 
-![Landing Page](https://preview.ibb.co/gOTa0y/LAMP_STACK.png)
-
-  
-
-A basic LAMP stack environment built using Docker Compose. It consists of the following:
-
+This Docker environment gives you the basic tools you need for the PHP and frontend development:
 * PHP
 * Apache
-* MySQL
+* MySQL/MariaDB
 * phpMyAdmin
 * Redis
+* Node/NPM
 
-As of now, we have several different PHP versions. Use appropriate php version as needed:
+**Note for M1 Mac**: at the time of this writing there is no official image of MySQL for M1 chip; please use MariaDB instead.
 
-* 5.4.x
-* 5.6.x
-* 7.1.x
-* 7.2.x
-* 7.3.x
-* 7.4.x
-* 8.0.x
+**Credit:** This repo is a fork of the awesome repo https://github.com/sprintcube/docker-compose-lamp. This fork adds the support for NODE/NPM and examples.
 
-> Please note that we simplified the project structure from several branches for each php version, to one centralized master branch. Please let us know if you encouter any problems. 
+
+
+---
 ##  Installation
- 
-* Clone this repository on your local computer
-* configure .env as needed 
-* Run the `docker-compose up -d`.
 
+### 1. Clone this repository on your local computer.
 ```shell
-git clone https://github.com/sprintcube/docker-compose-lamp.git
-cd docker-compose-lamp/
-cp sample.env .env
-// modify sample.env as needed
-docker-compose up -d
-// visit localhost
+git clone https://github.com/danielefavi/docker-compose-lamp.git
 ```
 
-Your LAMP stack is now ready!! You can access it via `http://localhost`.
+### 2. Duplicate the file `.env.example` and rename it into `.env`.
+```shell
+cd docker-compose-lamp/
+cp .env.example .env
+```
 
+### 3. configure your `.env`.
+
+Open the `.env` file just duplicated and choose your PHP version, database version and default Node version.
+
+### 4. Start the container.
+```shell
+docker-compose up -d
+```
+
+Your LAMP stack is now ready! You can access it via [http://localhost](http://localhost)
+
+
+
+---
+## How to configure a local virtual host
+
+1. Add the local host in your host file (EG: `/etc/hosts`):
+```
+127.0.0.1   website.local
+```
+
+2. Add the virtual host entry in the file `vhosts/default.conf`. In the file `vhosts/default.conf` you can find sone examples for Laravel, Wordpress or a plain website.
+
+3. Restart the container.
+
+
+
+---
+## Laravel and Wordpress database setting examples
+
+Note that the password of the `root` user shown below is set in the `.env` file.
+
+### Laravel .ENV example
+
+```
+DB_CONNECTION=mysql
+DB_HOST=database
+DB_PORT=3306
+DB_DATABASE=YOUR_DATABASE_HERE
+DB_USERNAME=root
+DB_PASSWORD=tiger
+```
+
+### Wordpress wp-config example
+
+```php
+/** The name of the database for WordPress */
+define( 'DB_NAME', 'YOUR_DATABASE_HERE' );
+
+/** MySQL database username */
+define( 'DB_USER', 'root' );
+
+/** MySQL database password */
+define( 'DB_PASSWORD', 'tiger' );
+
+/** MySQL hostname */
+define( 'DB_HOST', 'database' );
+```
+
+
+---
+## Useful commands
+
+Note that the `docker-compose` command must be executed in the `lamp-docker` folder where the YMLs files resides.
+
+## Node and NPM commands
+
+You can choose different version of node: `node17`, `node16`, `node14` and `node12`. You can use just `node` for the default version set in the `.env`.
+
+
+For example, to use the node 17 version you can execute the following command:
+```shell
+docker-compose -f docker-compose.node.yml run node14 bash
+cd project-folder
+npm install
+```
+
+Below another example for running an NPM command using the default node version (you can set it in the `.env`):
+```shell
+docker-compose -f docker-compose.node.yml run node bash -c "cd laravel-app && npm run watch"
+```
+
+
+---
+## Composer commands
+
+First enter in `webserver` container (you can find the name of the webserver service running the command `docker-compose ps` in the *lamp-docker* folder):
+
+```shell
+docker-compose run webserver bash
+```
+
+Then execute the composer command.
+
+```shell
+mkdir example-app
+cd example-app
+composer create-project laravel/laravel .
+```
+
+
+---
+## Other commands
+
+```shell
+docker-compose run SERVICE_NAME bash
+```
+
+```shell
+docker-compose ps
+```
+
+```shell
+docker-compose run webserver bash
+```
+
+```shell
+docker ps
+```
+
+```shell
+docker exec -it CONTAINER_NAME /bin/sh
+```
+
+
+---
 ##  Configuration and Usage
 
-### General Information 
+### General Information
 This Docker Stack is build for local development and not for production usage.
 
 ### Configuration
@@ -58,13 +172,13 @@ There are following configuration variables available and you can customize them
 #### PHP
 ---
 _**PHPVERSION**_
-Is used to specify which PHP Version you want to use. Defaults always to latest PHP Version. 
+Is used to specify which PHP Version you want to use. Defaults always to latest PHP Version.
 
 _**PHP_INI**_
-Define your custom `php.ini` modification to meet your requirments. 
+Define your custom `php.ini` modification to meet your requirments.
 
 ---
-#### Apache 
+#### Apache
 ---
 
 _**DOCUMENT_ROOT**_
@@ -90,7 +204,7 @@ This will be used to store Apache logs. The default value for this is `./logs/ap
 ---
 
 _**DATABASE**_
-Define which MySQL or MariaDB Version you would like to use. 
+Define which MySQL or MariaDB Version you would like to use.
 
 _**MYSQL_DATA_DIR**_
 
@@ -128,7 +242,7 @@ The installed version of php depends on your `.env`file.
 
 #### Extensions
 
-By default following extensions are installed. 
+By default following extensions are installed.
 May differ for PHP Verions <7.x.x
 
 * mysqli
@@ -152,23 +266,10 @@ May differ for PHP Verions <7.x.x
 
 phpMyAdmin is configured to run on port 8080. Use following default credentials.
 
-http://localhost:8080/  
-username: root  
+http://localhost:8080/
+username: root
 password: tiger
 
 ## Redis
 
 It comes with Redis. It runs on default port `6379`.
-
-## Contributing
-We are happy if you want to create a pull request or help people with their issues. If you want to create a PR, please remember that this stack is not built for production usage, and changes should good for general purpose and not overspecialized. 
-> Please note that we simplified the project structure from several branches for each php version, to one centralized master branch.  Please create your PR against master branch. 
-> 
-Thank you! 
-
-## Why you shouldn't use this stack unmodified in production
-We want to empower developers to quickly create creative Applications. Therefore we are providing an easy to set up a local development environment for several different Frameworks and PHP Versions. 
-In Production you should modify at a minimum the following subjects:
-
-* php handler: mod_php=> php-fpm
-* secure mysql users with proper source IP limitations
