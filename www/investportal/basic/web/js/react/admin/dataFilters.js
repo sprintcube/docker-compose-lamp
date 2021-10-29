@@ -1,12 +1,59 @@
 import HashChange from "https://cdn.skypack.dev/react-hashchange";
 
+var gets = (function() {
+    var a = window.location.search;
+    var b = new Object();
+    a = a.substring(1).split("&");
+    for (var i = 0; i < a.length; i++) {
+  	c = a[i].split("=");
+        b[c[0]] = c[1];
+    }
+    return b;
+})();
+
 class List extends React.Component{
+  constructor(){
+	  super();
+	  this.state = {
+		  listSheet: null
+	  };
+  }
   componentDidMount(){
+	  let qpm = {
+		  command : 3,
+		  command : [
+			subCMD: 'showAttributes'
+		  ]
+	  };
 	  
+	  const requestOptions = {
+        method: 'POST',
+        body: {'svcQuery': JSON.stringify(qpm)}
+	  };
+	  
+	  fetch('/admin/api/dataServices/filters', requestOptions)
+        .then(response => response.json())
+        .then(data => this.setState({ listSheet: data }));
   }
   render(){
+	let responseList = this.state.listSheet.response;
+	let renderData = ();
+	
+	if(responseList){
+		for(let i = 0; i < responseList.length; i++){
+			renderData += (
+				<div id="filter-card">
+					<div id="header">{responseList[i].Attribute}</div>
+					<div id="main">{RenderAttributeFiltersList('List', responseList[i].Attribute)}</div>
+					<div id="footer">{RenderAttributeFiltersList('Control', responseList[i].Attribute)}</div>
+				</div>	
+			);
+		}
+	}
+	else{ alert('There are no filters in the portal database!'); }
     return (
       <React.Fragment>
+       
         <section id="filters-list">
           <header><h2>Attributes filters list</h2></header>
           <main>
@@ -21,27 +68,6 @@ class List extends React.Component{
                   <li>Numbers count - <span>Integer value</span></li>
                   <li>Availability of SPA - <span>The form of the answer to the question</span></li> 
                  <li>Land area - <span>Integer value</span></li> 
-                </ul>
-              </div>
-              <div id="footer">
-                <nav>
-                  <span>Edit</span>
-                  <span>Delete</span>
-                </nav>
-              </div>
-            </div>
-            <div id="filter-card">
-              <div id="header">Olive groves</div>
-              <div id="main">
-                <ul>
-                  <li>Region data - <span>Smart datasets</span></li>
-                  <li>Granting a residence permit - <span>The form of the answer to the question</span></li> 
-                  <li>Cost - <span>Price parameters</span></li>
-                  <li>Profitability - <span>Percentage value</span></li>
-                  <li>Photogallery</li>
-                  <li>Area in hectares - <span>Integer value</span></li>
-                  <li>Annual yield in tons - <span>Integer value</span></li> 
-                  <li>Personnel - <span>The form of the answer to the question</span></li> 
                 </ul>
               </div>
               <div id="footer">
@@ -189,10 +215,37 @@ class Add extends React.Component{
   }
 }
 class Edit extends React.Component{
+  constructor(){
+	 super(); 
+	 this.state = {
+		  currentAttributeSheet: null
+	 };
+  }
   componentDidMount(){
+	  let qpm = {
+		  command: 3,
+		  command: [
+			subCMD: 'showFilters'
+		  ],
+		  parameters: [
+			attribute: gets["attr"]
+		  ]
+	  };
 	  
+	  const requestOptions = {
+        method: 'POST',
+        body: {'svcQuery': JSON.stringify(qpm)}
+	  };
+	  
+	  fetch('/admin/api/dataServices/filters', requestOptions)
+        .then(response => response.json())
+        .then(data => this.setState({ currentAttributeSheet: data }));
   }
   render(){
+	let responseList = this.state.listSheet.response;
+	
+	
+	
     return (
       <React.Fragment>
         <div class="edit-fields">
@@ -840,6 +893,22 @@ const deleteFilters = (e,t) => {
 	
 }
 
+const redirectToDataForm = (e,t) => {
+	let currentLink = $(this).text(),
+					  redirect;
+					  
+	switch(currentLink){
+		case 'Add':
+		break;
+		case 'Edit':
+		break;
+		
+	}
+					  
+					  
+	window.location.assign(redirect);
+}
+
 const uploadDataset = (dataset) => {
 	//При одиночном режиме
 
@@ -894,6 +963,12 @@ const uploadMultipleDatasets = (type, dsq) => {
 	
 }
 
+const selectFilterType = (e) => {
+	var optionSelected = $("option:selected", this);
+    var valueSelected = this.value;
+    
+    openModal(valueSelected);
+}
 const validSmartField(type,data) = () => {
 	if(type === 'dataset'){
 		var stateValid;
@@ -945,12 +1020,110 @@ const validSmartField(type,data) = () => {
 	}
 }
 
+const RenderAttributeFiltersList = (service, query) => {
+	let isList = service === 'List' ? true : false,
+		isControl = service === 'Control' ? true : false,
+		response = ();
+	
+	let qpm = {
+		command: 3,
+		command: [
+			subCMD: 'showFilters'
+		],
+		parameters: [
+			attribute: query
+		]
+	};
+	  
+	const requestOptions = {
+        method: 'POST',
+        body: {'svcQuery': JSON.stringify(qpm)}
+	};
+	  
+	
+		
+	if(isList){
+		let filters = ();
+		
+		fetch('/admin/api/dataServices/filters', requestOptions).then(response => response.json()).then(data => {
+			let list = data.response;
+			
+			if(list){
+				
+				let filter = ();
+				
+				for(let i = 0; i < list.length; i++){
+					var isParameter,
+						parameter;
+					
+					switch(isParameter){
+						case null:
+							filter += (
+								<li>{list[i].Field} - <span>{parameter}</span></li>
+							);
+						break;
+						case true:
+							filter += (
+								<li>{list[i].Field} - {parameter}</li>
+							);
+						break;
+					}
+					
+					
+				}
+				
+				filters += (
+					<ul>{filter}</ul>
+				);
+			}
+			else{
+				filters += (
+					<ul><li>Not filters</li></ul>
+				);
+			}
+		});
+		
+		response = filters;
+	}
+	if(isControl){
+		let controls = ();
+		
+		fetch('/admin/api/dataServices/filters', requestOptions).then(response => response.json()).then(data => {
+			let buttons = data.response;
+			
+			if(buttons){
+				controls += (
+					<nav>
+					  <span>Edit</span>
+					  <span>Delete</span>
+					</nav>
+				);
+			}
+			else{
+				controls += (
+					<nav>
+					  <span>Add</span>
+					  <span>Delete</span>
+					</nav>
+				);
+			}
+		});
+		
+		response = controls;
+	}
+	
+	return response;
+}
+
+
 $(document).ready(function(){
   $('.add-fields > footer button').click(AddFieldEvent);
 
-  let elService = [$('.add-fields > footer button'),$('.edit-fields > footer button'),$('.filters-list > main #filters-card #footer nav span:nth-last-child(1)')],
-	  eventService = [addFilters,updateFilters,deleteFilters];
+  let elService = [$('.add-fields > footer button'),$('.edit-fields > footer button'),$('.filters-list > main #filters-card #footer nav span:nth-last-child(1)'),$('.filters-list > main #filters-card #footer nav span:nth-last-child(2)')],
+	  eventService = [addFilters,updateFilters,deleteFilters,redirectToDataForm];
 
   for(let i = 0; i < eventService.length; i++){ $(elService[i]).click(eventService[i]); }
+  
+  $('.add-fields > main select, .edit-fields > main select').on('change', selectFilterType);
   
 });

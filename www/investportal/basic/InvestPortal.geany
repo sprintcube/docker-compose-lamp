@@ -19,7 +19,7 @@ indent_mode=2
 
 [project]
 name=InvestPortal
-base_path=/home/head/Desktop/Серега Младший/ITProjects/docker-compose-lamp/www/investportal/basic
+base_path=/home/sergey/Рабочий стол/Code/docker-compose-lamp/www/investportal/basic
 description=
 
 [long line marker]
@@ -27,9 +27,9 @@ long_line_behaviour=1
 long_line_column=72
 
 [files]
-current_page=1
-FILE_NAME_0=0;PHP;0;EUTF-8;1;1;0;%2Fhome%2Fhead%2FDesktop%2FСерега%20Младший%2FITProjects%2Fdocker-compose-lamp%2Fwww%2Finvestportal%2Fbasic%2Fcontrollers%2FAdminController.php;0;4
-FILE_NAME_1=19682;Javascript;0;EUTF-8;1;1;0;%2Fhome%2Fhead%2FDesktop%2FСерега%20Младший%2FITProjects%2Fdocker-compose-lamp%2Fwww%2Finvestportal%2Fbasic%2Fweb%2Fjs%2Freact%2Fadmin%2FdataFilters.js;0;4
+current_page=0
+FILE_NAME_0=39211;Javascript;0;EUTF-8;1;1;0;%2Fhome%2Fsergey%2FРабочий%20стол%2FCode%2Fdocker-compose-lamp%2Fwww%2Finvestportal%2Fbasic%2Fweb%2Fjs%2Freact%2Fadmin%2FdataFilters.js;0;4
+FILE_NAME_1=0;PHP;0;EUTF-8;1;1;0;%2Fhome%2Fsergey%2FРабочий%20стол%2FCode%2Fdocker-compose-lamp%2Fwww%2Finvestportal%2Fbasic%2Fcontrollers%2FAdminController.php;0;4
 
 [prjorg]
 source_patterns=*.c;*.C;*.cpp;*.cxx;*.c++;*.cc;*.m;
@@ -40,4 +40,4 @@ generate_tag_prefs=0
 external_dirs=
 
 [VTE]
-last_dir=/home/head/Desktop
+last_dir=/home/sergey
