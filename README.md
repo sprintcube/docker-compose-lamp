@@ -22,12 +22,12 @@ This Docker environment gives you the basic tools you need for the PHP and front
 
 ### 1. Clone this repository on your local computer.
 ```shell
-git clone https://github.com/danielefavi/docker-compose-lamp.git
+git clone https://github.com/danielefavi/lamp-docker.git
 ```
 
 ### 2. Duplicate the file `.env.example` and rename it into `.env`.
 ```shell
-cd docker-compose-lamp/
+cd lamp-docker
 cp .env.example .env
 ```
 
