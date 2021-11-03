@@ -20,7 +20,10 @@ class AdminController extends Controller
 			if($service == "dataManagment"){
 				if($_GET['subSVC']){
 					 switch($_GET['subSVC']){
-						 case "filters": $service = 'dataFilters'; break;
+						 case "filters": 
+							$service = 'dataFilters'; 
+							$this->view->registerJsFile("/js/react/admin/addons/validParams.js", ['position' => View::POS_END]);
+						break;
 						 default: $service = 'dataAttributes'; break;
 					 }
 				 }
@@ -874,6 +877,8 @@ class AdminController extends Controller
 											case "cost": $dataQuery = 'SELECT '. $pm['costQuery'] .' FROM '. $attributeId; break;
 											case "text": $dataQuery = 'SELECT '. $pm['textQuery'] .' FROM '. $attributeId; break;
 											case "selecting": $dataQuery = 'SELECT '. $pm['selectingQuery'] .' FROM '. $attributeId; break;
+											case "precentable": $dataQuery = 'SELECT '. $pm['precentableQuery'] .' FROM '. $attributeId; break;
+											case "smartDataset": case "photogallery": $dataQuery = 'SELECT '. $pm['dQuery'] .' FROM '. $attributeId; break;
 											default: $dataQuery = 'SELECT '. $pm['intQuery'] .' FROM '. $attributeId; break;
 										}
 										try{

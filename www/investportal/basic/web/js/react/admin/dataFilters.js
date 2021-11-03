@@ -56,41 +56,7 @@ class List extends React.Component{
        
         <section id="filters-list">
           <header><h2>Attributes filters list</h2></header>
-          <main>
-            <div id="filter-card">
-              <div id="header">Hotels</div>
-              <div id="main">
-                <ul>
-                  <li>Region data - <span>Smart datasets</span></li>
-                  <li>Cost - <span>Price parameters</span></li>
-                  <li>Profitability - <span>Percentage value</span></li>
-                  <li>Photogallery</li>
-                  <li>Numbers count - <span>Integer value</span></li>
-                  <li>Availability of SPA - <span>The form of the answer to the question</span></li> 
-                 <li>Land area - <span>Integer value</span></li> 
-                </ul>
-              </div>
-              <div id="footer">
-                <nav>
-                  <span>Edit</span>
-                  <span>Delete</span>
-                </nav>
-              </div>
-            </div>
-            <div id="filter-card">
-              <div id="header">Night clubs</div>
-              <div id="main">
-                <ul><li>Not filters</li></ul>
-              </div>
-              <div id="footer">
-                <nav>
-                  <span>Add</span>
-                  <span>Delete</span>
-                </nav>
-              </div>
-            </div>
-          </main>
-          
+          <main>{renderData}</main>
         </section>
       </React.Fragment>
     );
@@ -242,29 +208,142 @@ class Edit extends React.Component{
         .then(data => this.setState({ currentAttributeSheet: data }));
   }
   render(){
-	let responseList = this.state.listSheet.response;
+	let responseList = this.state.listSheet.response,
+		parametersRender = ();
 	
 	
-	
+	if(responseList){
+		
+		for(let i = 0; i < responseList.length; i++){
+			
+			var filterName = responseList[i].Field;
+			let query = [],
+				call = [],
+				caller = [];
+			
+			query = [
+				{
+					command: 3,
+					command: [
+						subCMD: 'showParameters'
+					],
+					parameters: [
+						attribute: gets["attr"],
+						dataParam: "cost",
+						costQuery: filterName
+					]
+				},
+				{
+					command: 3,
+					command: [
+						subCMD: 'showParameters'
+					],
+					parameters: [
+						attribute: gets["attr"],
+						dataParam: "int",
+						intQuery: filterName
+					]
+				},
+				{
+					command: 3,
+					command: [
+						subCMD: 'showParameters'
+					],
+					parameters: [
+						attribute: gets["attr"],
+						dataParam: "text",
+						textQuery: filterName
+					]
+				},
+				{
+					command: 3,
+					command: [
+						subCMD: 'showParameters'
+					],
+					parameters: [
+						attribute: gets["attr"],
+						dataParam: "precentable",
+						precentableQuery: filterName
+					]
+				},
+				{
+					command: 3,
+					command: [
+						subCMD: 'showParameters'
+					],
+					parameters: [
+						attribute: gets["attr"],
+						dataParam: "selecting",
+						selectingQuery: filterName
+					]
+				},
+				{
+					command: 3,
+					command: [
+						subCMD: 'showParameters'
+					],
+					parameters: [
+						attribute: gets["attr"],
+						dataParam: "smartDataset",
+						dQuery: filterName
+					]
+				},
+				{
+					command: 3,
+					command: [
+						subCMD: 'showParameters'
+					],
+					parameters: [
+						attribute: gets["attr"],
+						dataParam: "photogallery",
+						dQuery: filterName
+					]
+				}
+			];
+			
+			caller = [isSmartDS, isPhotogallery, isCost, isInteger, isPrecentable, isSelecting, isDefault];
+			
+			
+			for(let i = 0; i < query.length; i++){
+				call.push({
+					method: 'POST',
+					body: {'svcQuery': JSON.stringify(query[i])}
+				});
+			}
+			
+			
+			for(let i = 0; i < caller.length; i++){
+				fetch('/admin/api/dataServices/filters', call[i]).then(response => response.json()).then(caller[i]);
+			}
+			
+			
+			
+			
+			parametersRender += (
+				<div>
+					<input type="text" name="fieldName" id="fieldName" value="{filterName}" />
+					<select name="fieldType" id="fieldType">
+						<option>Select form field type</option>
+						<option value="defaultField">Data field</option>
+						<option value="intField">Integer field</option>
+						<option value="precentableField">Precentable field</option>
+						<option value="costField">Cost field</option>
+						<option value="smartDatasets">Smart Datasets</option>
+						<option value="photogalleryField">Photogallery</option>
+					</select>
+				</div>
+			);
+		}
+	}
+	else{
+		window.location.assign('/admin?svc=dataManagment&subSVC=filters');
+	}
     return (
       <React.Fragment>
         <div class="edit-fields">
 		  <input type="hidden" id="queryParameters" value="" />
-          <header><h2>Add new filters group for attribute</h2></header>
-          <main>
-            <div>
-              <input type="text" name="fieldName" id="fieldName" placeholder="Enter the field name" />
-              <select name="fieldType" id="fieldType">
-                <option>Select form field type</option>
-                <option value="defaultField">Data field</option>
-                <option value="intField">Integer field</option>
-                <option value="precentableField">Precentable field</option>
-                <option value="costField">Cost field</option>
-                <option value="smartDatasets">Smart Datasets</option>
-                <option value="photogalleryField">Photogallery</option>
-              </select>
-            </div>
-          </main>
+          <header><h2>Edit current filters group for attribute</h2></header>
+          <main>{parametersRender}</main>
           <footer><button>Add field</button></footer></div>
           <ul class="edit-modals">
 			<li>
@@ -386,12 +465,14 @@ document.title = "Data Filters";
 const UIRender = ({ hash }) => {
   switch(hash){
     case "add": document.title = "Add new Filter"; break;
+    case "edit": document.title = "Edit current Filter"; break;
     default: document.title = "Data Filters"; break;
   }
 }
 const UXRender = ({ hash }) => {
   switch(hash){
     case "add": return <Add />; break;
+    case "edit": return <Edit />; break;
     default: return <List />; break;
   }
 }
@@ -1053,18 +1134,38 @@ const RenderAttributeFiltersList = (service, query) => {
 				let filter = ();
 				
 				for(let i = 0; i < list.length; i++){
-					var isParameter,
+					var isParameter = null,
 						parameter;
+						
+					if(list[i].Type === 'json'){
+						parameter = "Smart datasets or Photogallery";
+						isParameter = true;
+					}
+					
+					if(list[i].Type === 'float'){
+						parameter = "Price parameters";
+						isParameter = true;
+					}
+					
+					if(list[i].Type === 'int'){
+						parameter = "Integer value";
+						isParameter = true;
+					}
+					
+					if(list[i].Type === 'varchar(255)'){
+						parameter = "The form of the answer to the question";
+						isParameter = true;
+					}
 					
 					switch(isParameter){
 						case null:
 							filter += (
-								<li>{list[i].Field} - <span>{parameter}</span></li>
+								<li>{list[i].Field}</li>
 							);
 						break;
 						case true:
 							filter += (
-								<li>{list[i].Field} - {parameter}</li>
+								<li>{list[i].Field} - <span>{parameter}</span></li>
 							);
 						break;
 					}
