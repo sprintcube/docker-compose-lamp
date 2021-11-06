@@ -20,29 +20,35 @@ This Docker environment gives you the basic tools you need for the PHP and front
 ---
 ##  Installation
 
-### 1. Clone this repository on your local computer.
+#### 1. Clone this repository on your local computer.
 ```shell
 git clone https://github.com/danielefavi/lamp-docker.git
 ```
 
-### 2. Duplicate the file `.env.example` and rename it into `.env`.
+#### 2. Duplicate the file `.env.example` and rename it into `.env`.
 ```shell
 cd lamp-docker
 cp .env.example .env
 ```
 
-### 3. configure your `.env`.
+#### 3. configure your `.env`.
 
 Open the `.env` file just duplicated and choose your PHP version, database version and default Node version.
 
-### 4. Start the container.
+#### 4. Start the container.
+
+For Linux/Mac users:
+```shell
+sudo docker-compose up -d
+```
+
+For Windows users:
+Open the terminal with administration rights and execute the command below:
 ```shell
 docker-compose up -d
 ```
 
 Your LAMP stack is now ready! You can access it via [http://localhost](http://localhost)
-
-
 
 ---
 ## How to configure a local virtual host
