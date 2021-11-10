@@ -73,7 +73,7 @@ class AdminController extends Controller
 									case "sendFilters":
 											$attributeId = lowercase($pm['attribute']);
 											switch($pm['type']){
-														case "intField": $dataType = 'int'; break;
+														case "intField": case "precentableField": $dataType = 'int'; break;
 														case "costField": $dataType = 'float'; break;
 														case "smartDatasets": case "photogalleryField": $dataType = 'json'; break;
 														case "selectingField": $dataType = 'varchar(255)' break;
@@ -262,6 +262,36 @@ class AdminController extends Controller
 												if($pm['fieldID']){ $dataQuery = 'UPDATE '. $attributeId .' SET '. $pm['field'] .'='. $response .' WHERE id='. $pm['fieldID']; }
 												else{ $dataQuery = 'INSERT INTO '. $attributeId .' ('. $pm['field'] .') VALUES('. $response .')'); }
 											break;
+											case "precentable":
+												$pQuery = $q['precentableData'];
+												
+												if(strrpos($pQuery['val'],'>') || strrpos($pQuery['val'],'<')){
+													if(strrpos($pQuery['val'],'>')){
+														$dataArray = explode('>', $pQuery['val']);
+
+														$firstVal = (int) $dataArray[0];
+														$doubleVal = (int) $dataArray[1];
+
+														$module = ($firstVal + $doubleVal) / 2;
+													}
+													else{
+														$dataArray = explode('<', $pQuery['val']);
+
+														$firstVal = (int) $dataArray[0];
+														$doubleVal = (int) $dataArray[1];
+
+														$module = ($doubleVal - $firstVal) * 2;
+													}
+
+													$response = $module;
+												}
+												else {
+													$response = (int) $pQuery['val'];
+												}
+												
+												if($pm['fieldID']){ $dataQuery = 'UPDATE '. $attributeId .' SET '. $pm['field'] .'='. $response .' WHERE id='. $pm['fieldID']; }
+												else{ $dataQuery = 'INSERT INTO '. $attributeId .' ('. $pm['field'] .') VALUES('. $response .')'); }
+											break;
 											default:
 												$intQuery = $q['intData'];
 
@@ -286,7 +316,7 @@ class AdminController extends Controller
 													$response = $module;
 												}
 												else {
-													$response = (int) $costQuery['val'];
+													$response = (int) $intQuery['val'];
 												}
 												
 												if($pm['fieldID']){ $dataQuery = 'UPDATE '. $attributeId .' SET '. $pm['field'] .'='. $response .' WHERE id='. $pm['fieldID']; }
@@ -366,7 +396,7 @@ class AdminController extends Controller
 										$attributeId = lowercase($pm['attribute']);
 										
 										switch($pm['newType']){
-												case "intField": $dataType = 'int'; break;
+												case "intField": case "precentableField": $dataType = 'int'; break;
 												case "costField": $dataType = 'float'; break;
 												case "smartDatasets": case "photogalleryField": $dataType = 'json'; break;
 												case "selectingField": $dataType = 'varchar(255)' break;
@@ -585,6 +615,35 @@ class AdminController extends Controller
 												$response = "[". $firstVariant .",". $doubleVariant ."]";
 												$dataQuery = 'UPDATE '. $attributeId .' SET '. $pm['field'] .'='. $response .' WHERE id='. $pm['fieldID'];
 											break;
+											case "precentable":
+												$pQuery = $q['precentableData'];
+												
+												if(strrpos($pQuery['val'],'>') || strrpos($pQuery['val'],'<')){
+													if(strrpos($pQuery['val'],'>')){
+														$dataArray = explode('>', $pQuery['val']);
+
+														$firstVal = (int) $dataArray[0];
+														$doubleVal = (int) $dataArray[1];
+
+														$module = ($firstVal + $doubleVal) / 2;
+													}
+													else{
+														$dataArray = explode('<', $pQuery['val']);
+
+														$firstVal = (int) $dataArray[0];
+														$doubleVal = (int) $dataArray[1];
+
+														$module = ($doubleVal - $firstVal) * 2;
+													}
+
+													$response = $module;
+												}
+												else {
+													$response = (int) $pQuery['val'];
+												}
+												
+												$dataQuery = 'UPDATE '. $attributeId .' SET '. $pm['field'] .'='. $response .' WHERE id='. $pm['fieldID'];
+											break;
 											default:
 												$intQuery = $q['intData'];
 
@@ -609,7 +668,7 @@ class AdminController extends Controller
 													$response = $module;
 												}
 												else {
-													$response = (int) $costQuery['val'];
+													$response = (int) $intQuery['val'];
 												}
 												
 												$dataQuery = 'UPDATE '. $attributeId .' SET '. $pm['field'] .'='. $response .' WHERE id='. $pm['fieldID'];
@@ -734,6 +793,10 @@ class AdminController extends Controller
 											case "selecting":
 												$dataQuery = 'UPDATE '. $attributeId .' SET '. $pm['field'] .'=\' []\' WHERE id='. $pm['fieldID'];
 												$successMessage = 'Current selecting parameters is deleted!';
+											break;
+											case "precentable":
+												$dataQuery = 'UPDATE '. $attributeId .' SET '. $pm['field'] .'=\' 0\' WHERE id='. $pm['fieldID'];
+												$successMessage = 'Current precentable parameters is deleted!';
 											break;
 											default:
 												$dataQuery = 'UPDATE '. $attributeId .' SET '. $pm['field'] .'=\' 0\' WHERE id='. $pm['fieldID'];

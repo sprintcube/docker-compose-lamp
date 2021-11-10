@@ -63,6 +63,14 @@ class List extends React.Component{
   }
 }
 class Add extends React.Component{
+  componentDidMount(){
+	  if(gets['attr']){
+		  
+	  }
+	  else{
+		  
+	  }
+  }
   render(){
     return (
       <React.Fragment>
@@ -600,6 +608,18 @@ const jsonQueryConstructor = (query,pm) => {
 			intData: queryForm
 		};
 	}
+	if(query.defaultParameter.element === 'precentable'){
+		if(isEdit){ serviceCmd = 'editParameters'; }
+		if(isAdd){ serviceCmd = 'sendParameters'; }
+
+		result.command = { subCMD: serviceCmd };
+		
+		var queryForm = query.defaultParameter.data;
+		result.parameters = {
+			dataParam: 'precentable',
+			precentableData: queryForm
+		};
+	}
 	if(query.defaultParameter.element === 'text'){
 		if(isEdit){ serviceCmd = 'editParameters'; }
 		if(isAdd){ serviceCmd = 'sendParameters'; }
@@ -845,6 +865,29 @@ const openModal = (dataType) => {
 			}
 			else{ openModal('selecting'); }
 		break;
+		case 'precentable':
+			var query = window.prompt('Enter a condition "<" or ">" between two precentables or just enter a precentable!');
+			let valid = 0;
+			
+			if(query.indexOf(">") || query.indexOf("<")){
+				var queryForm = query.split(">") || query.split("<");
+
+				if(queryForm[0].match(/^[0-9]+$/)){
+					valid += 1;
+				}
+				
+				if(queryForm[1].match(/^[0-9]+$/)){
+					valid += 1;
+				}
+
+				if(valid === 1){ openModal('precentable'); }
+				else{ queryModule.defaultParameter = {element: 'precentable', data: query}; }
+			}
+			else{
+				if(query.match(/^[0-9]+$/)){ queryModule.defaultParameter = {element: 'precentable', data: query}; }
+				else{ openModal('precentable'); }
+			}
+		break;
 		case 'cost':
 			var query = window.prompt('Enter a condition "<" or ">" between two costs or just enter a default cost!');
 			let valid = 0;
@@ -978,12 +1021,10 @@ const redirectToDataForm = (e,t) => {
 	let currentLink = $(this).text(),
 					  redirect;
 					  
+					  
 	switch(currentLink){
-		case 'Add':
-		break;
-		case 'Edit':
-		break;
-		
+		case 'Add': redirect = '/admin?svc=dataManagment&subSVC=filters&attr='+ $(this).prev().prev().prev().prev().prev().prev().text() +'#add'; break;
+		case 'Edit': redirect = '/admin?svc=dataManagment&subSVC=filters&attr='+ $(this).prev().prev().prev().text() +'#edit'; break;
 	}
 					  
 					  
@@ -1046,7 +1087,7 @@ const uploadMultipleDatasets = (type, dsq) => {
 
 const selectFilterType = (e) => {
 	var optionSelected = $("option:selected", this);
-    var valueSelected = this.value;
+    var valueSelected = this.value.split('Field')[0];
     
     openModal(valueSelected);
 }
@@ -1148,7 +1189,7 @@ const RenderAttributeFiltersList = (service, query) => {
 					}
 					
 					if(list[i].Type === 'int'){
-						parameter = "Integer value";
+						parameter = "Integer or precentable value";
 						isParameter = true;
 					}
 					
