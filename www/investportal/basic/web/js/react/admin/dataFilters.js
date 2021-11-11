@@ -988,6 +988,12 @@ const addFilters = (e,t) => {
 		body: {'svcQuery': jsonQuery}
 	});
 	
+	if(sendProccess.ok){ window.location.assign('/admin?svc=dataManagment&subSVC=filters'); }
+	else{
+		var sendError = alert('Connection to the service failed to perform this operation! Try again;-)');
+		if(!sendError){ $('.add-fields > footer button').trigger('click'); }
+	}
+	
 }
 const editFilters = (e,t) => {
 	let jsonQuery = $('.edit-filters > #queryParameters').val();
@@ -996,6 +1002,12 @@ const editFilters = (e,t) => {
 		method: 'POST',
 		body: {'svcQuery': jsonQuery}
 	});
+	
+	if(sendProccess.ok){ window.location.assign('/admin?svc=dataManagment&subSVC=filters'); }
+	else{
+		var sendError = alert('Connection to the service failed to perform this operation! Try again;-)');
+		if(!sendError){ $('.edit-fields > footer button').trigger('click'); }
+	}
 	
 }
 const deleteFilters = (e,t) => {
@@ -1014,6 +1026,12 @@ const deleteFilters = (e,t) => {
 		method: 'POST',
 		body: {'svcQuery': jsonQuery}
 	});
+	
+	if(sendProccess.ok){ window.reload(); }
+	else{
+		var sendError = alert('Connection to the service failed to perform this operation! Try again;-)');
+		if(!sendError){ $('.filters-list > main #filters-card #footer nav span:nth-last-child(1)').trigger('click'); }
+	}
 	
 }
 
