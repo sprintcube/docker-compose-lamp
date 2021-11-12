@@ -1,9 +1,7 @@
 
-var host;
-if (location.hostname === "investportal-ui.aplex") { host = "http://investportal-ui.aplex"; }
-else { host = "http://zolotaryow.aplex.ru/invest"; }
 
-$('body').after('<script src="'+ host +'/js/addons/slidesshow.js"></script>');
+
+$('body').after('<script src="/js/addons/slidesshow.js"></script>');
 
 let notiaudio = [
     new Audio(host + '/audios/chat_open.mp3'),

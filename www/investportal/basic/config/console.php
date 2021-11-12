@@ -22,12 +22,6 @@ $config = [
                 ],
             ],
         ],
-        'view' => [
-            'class' => 'app\components\View',
-        ],
-        'session' => [ // for use session in console application
-            'class' => 'yii\web\Session'
-        ],
         'db' => $db,
     ],
     /*

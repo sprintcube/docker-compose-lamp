@@ -15,8 +15,11 @@ class SiteController extends Controller{
 	 return parent::beforeAction($action);
 	}
 	public function actionIndex(){
+		$this->view->registerCssFile("https://unpkg.com/swiper/swiper-bundle.min.css");
+		$this->view->registerJsFile("https://unpkg.com/swiper/swiper-bundle.min.js", ['position' => View::POS_HEAD]);
 		$this->view->registerCssFile("/css/inpage_codes/homepage_styles.css");
 		$this->view->registerJsFile("/js/inpage_codes/homepage_script.js", ['position' => View::POS_END]);
+		
 
 		return $this->render('index');
 	}

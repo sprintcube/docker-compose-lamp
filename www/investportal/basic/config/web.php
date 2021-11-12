@@ -44,10 +44,16 @@ $config = [
 				'objects/<objectId:\d+>' => 'objects/view'
 			 ]
         ],
+        'view' => [
+            'class' => 'app\components\View',
+        ],
         'user' => [
             'class' => 'yii\web\User',
             'identityClass' => 'app\models\UserService\User',
             'enableAutoLogin' => true,
+        ],
+        'session' => [ // for use session in console application
+            'class' => 'yii\web\Session'
         ],
         'hdfs' => [
 			'class' => 'org\apache\hadoop\WebHDFS'

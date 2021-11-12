@@ -15,9 +15,7 @@ class User extends ActiveRecord{
 			]
 		];
 	}
-	public static function tableName(){
-        return 'users';
-    }
+	public static function tableName(){ return 'users'; }
 }
 class SenderCode extends ActiveRecord{
 	public function rules(){
@@ -30,8 +28,6 @@ class SenderCode extends ActiveRecord{
 			]
 		];
 	}
-	public static function tableName(){
-        return 'senderCodes';
-    }
+	public static function tableName(){ return 'senderCodes'; }
 }
 ?>

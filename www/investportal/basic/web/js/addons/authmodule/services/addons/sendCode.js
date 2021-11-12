@@ -27,7 +27,7 @@ class CodeSender{
 				}
 			};
 			
-			var ws = this.__CCService('forgot',svcQuery); //Code sender and generation service call
+			var ws = this.CCService('forgot',svcQuery); //Code sender and generation service call
 
 			if(ws === true){ return 'OK'; }
 			else{ return 'Fail'; }
@@ -48,7 +48,7 @@ class CodeSender{
 				}
 			};
 
-			var ws = this.__CCService('signUp',svcQuery);
+			var ws = this.CCService('signUp',svcQuery);
 
 			if(ws === true){ return 'OK'; }
 			else{ return 'Fail'; }
@@ -71,7 +71,7 @@ class CodeSender{
 				if(login.indexOf('8')){ phone = login.substr(-1,0); }
 			   }
 			   
-			   let phone = this.__getAccountPhone(login);
+			   let phone = this.getAccountPhone(login);
 
 			   let svcQuery = {
 					rsq: {
@@ -113,7 +113,7 @@ class CodeSender{
 
         
     }
-    __getAccountPhone(q){
+    async getAccountPhone(q){
 		let sQ = {
 			method: 'POST',
 			body: {'serviceQuery': JSON.stringify(q) }

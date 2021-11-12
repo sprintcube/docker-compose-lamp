@@ -1,5 +1,5 @@
 
-function SignInFormProcess() {
+async function SignInService() {
 
     var notEmpty = [
         $('#auth-lightbox > .module-page[data-screen="SignIn"] main .module-form form input').eq(0).val() !== '',

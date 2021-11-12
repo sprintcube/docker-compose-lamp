@@ -27,12 +27,13 @@ long_line_behaviour=1
 long_line_column=72
 
 [files]
-current_page=4
-FILE_NAME_0=199;None;0;EUTF-8;1;1;0;%2Fhome%2Fsergey%2FРабочий%20стол%2FCode%2Fdocker-compose-lamp%2Fwww%2Finvestportal%2Fbasic%2Fweb%2F.htaccess;0;4
-FILE_NAME_1=129;None;0;EUTF-8;1;1;0;%2Fhome%2Fsergey%2FРабочий%20стол%2FCode%2Fdocker-compose-lamp%2Fconfig%2Fvhosts%2Fvhosts.txt;0;4
-FILE_NAME_2=803;PHP;0;EUTF-8;1;1;0;%2Fhome%2Fsergey%2FРабочий%20стол%2FCode%2Fdocker-compose-lamp%2Fwww%2Finvestportal%2Fbasic%2Fconfig%2Fweb.php;0;4
-FILE_NAME_3=769;PHP;0;EUTF-8;1;1;0;%2Fhome%2Fsergey%2FРабочий%20стол%2FCode%2Fdocker-compose-lamp%2Fwww%2Finvestportal%2Fbasic%2Fconfig%2Fconsole.php;0;4
-FILE_NAME_4=518;PHP;0;EUTF-8;1;1;0;%2Fhome%2Fsergey%2FРабочий%20стол%2FCode%2Fdocker-compose-lamp%2Fwww%2Finvestportal%2Fbasic%2Fcontrollers%2FSiteController.php;0;4
+current_page=0
+FILE_NAME_0=2676;PHP;0;EUTF-8;1;1;0;%2Fhome%2Fsergey%2FРабочий%20стол%2FCode%2Fdocker-compose-lamp%2Fwww%2Finvestportal%2Fbasic%2Fviews%2Flayouts%2Fmain.php;0;4
+FILE_NAME_1=613;PHP;0;EUTF-8;1;1;0;%2Fhome%2Fsergey%2FРабочий%20стол%2FCode%2Fdocker-compose-lamp%2Fwww%2Finvestportal%2Fbasic%2Fcontrollers%2FSiteController.php;0;4
+FILE_NAME_2=575;PHP;0;EUTF-8;1;1;0;%2Fhome%2Fsergey%2FРабочий%20стол%2FCode%2Fdocker-compose-lamp%2Fwww%2Finvestportal%2Fbasic%2Fconfig%2Fconsole.php;0;4
+FILE_NAME_3=1619;PHP;0;EUTF-8;1;1;0;%2Fhome%2Fsergey%2FРабочий%20стол%2FCode%2Fdocker-compose-lamp%2Fwww%2Finvestportal%2Fbasic%2Fconfig%2Fweb.php;0;4
+FILE_NAME_4=684;Javascript;0;EUTF-8;1;1;0;%2Fhome%2Fsergey%2FРабочий%20стол%2FCode%2Fdocker-compose-lamp%2Fwww%2Finvestportal%2Fbasic%2Fweb%2Fjs%2Freact%2Fnews.js;0;4
+FILE_NAME_5=0;Javascript;0;EUTF-8;1;1;0;%2Fhome%2Fsergey%2FРабочий%20стол%2FCode%2Fdocker-compose-lamp%2Fwww%2Finvestportal%2Fbasic%2Fweb%2Fjs%2Freact%2Fhomepage.js;0;4
 
 [prjorg]
 source_patterns=*.c;*.C;*.cpp;*.cxx;*.c++;*.cc;*.m;
