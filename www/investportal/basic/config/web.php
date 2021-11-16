@@ -50,7 +50,12 @@ $config = [
         'user' => [
             'class' => 'yii\web\User',
             'identityClass' => 'app\models\UserService\User',
-            'enableAutoLogin' => true,
+            'enableAutoLogin' => true
+        ],
+        'admin' => [
+			'class' => 'yii\web\User',
+            'identityClass' => 'app\models\UserService\Admin',
+            'enableAutoLogin' => true
         ],
         'session' => [ // for use session in console application
             'class' => 'yii\web\Session'

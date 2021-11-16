@@ -6,6 +6,10 @@ use yii\web\NotFoundHttpException;
 use yii\helpers\Json;
 use app\models\UserService;
 
+interface IAdminUserService{
+	private function adminController($wayData);
+}
+
 class SignUp extends Component{
 	public $type;
 	public $signQuery;
@@ -59,10 +63,10 @@ class SignUp extends Component{
 						$upModel[1]->country = $region;
 						$upModel[1]->isAccept= TRUE;
 
-						if($upModel[1]->save()){ throw new HttpException(202 ,'Registration success!'); }
-						else{ throw new HttpException(409 ,'The portal accounting service is temporarily unavailable! Try again later;-('); }
+						if($upModel[1]->save()){ throw new HttpException(202, 'Registration success!'); }
+						else{ throw new HttpException(409, 'The portal accounting service is temporarily unavailable! Try again later;-('); }
 					}
-					else{ throw new HttpException(500 ,'New account data not is accept!'); }
+					else{ throw new HttpException(500, 'New account data not is accept!'); }
 			}
 			else{
 					$validError = [];
@@ -73,7 +77,7 @@ class SignUp extends Component{
 					if($validPassword){ $validError[]['validError'] = 'The password you entered exists'; }
 					if($validPhone){ $validError[]['validError'] = 'The phone number you entered exists'; }
 
-					throw new HttpException(400 ,Json::encode($validError));
+					throw new HttpException(400, Json::encode($validError));
 			}
 		}
 
@@ -84,6 +88,93 @@ class SignUp extends Component{
 	}
 	
 }
+
+class adminSignUp extends Component implements IAdminUserService{
+	public $signQuery;
+	
+	
+	public function init(){
+		parent::init();
+		$this->signQuery = [];
+	}
+	
+	public function proccess($signQuery = null){
+		if($signQuery != null){ $this->signQuery = $signQuery; }
+		
+		$svc = $this->adminControl($this->signQuery);
+		
+		switch($svc['state']){
+			case 0: throw new HttpException(202, header('Location: /admin')); break;
+			case 1:
+				$res = '<script>let problem=alert("The portal administration accounting service is temporarily unavailable! Try again later;-("),res="";res=problem?"/":"/admin/auth",window.location.assign(res);</script>'
+				throw new HttpException(409, $res);
+			break;
+			default:
+				$validError = '';
+
+				if($svc['isLogin']){ $validError .= 'The login you entered exists\n'; }
+				if($svc['isEMail']){ $validError .= 'The e-mail you entered exists\n'; }
+				if($svc['isPass']){ $validError .= 'The password you entered exists\n'; }
+				if($svc['isPhone']){ $validError .= 'The phone number you entered exists\n'; }
+				
+				$res = '<script>let problem=alert("'. $validError .'"),res="";res=problem?"/admin":"/admin/auth",window.location.assign(res);</script>'
+				throw new HttpException(400, $res);
+			break;
+		}
+	}
+	private function adminControl($wayData){
+		$upModel = [
+			Admin::find(),
+			new Admin()
+		];
+		
+		$response = [
+			'state': 3,
+			'isLogin': FALSE,
+			'isPass': FALSE,
+			'isEMail': FALSE,
+			'isPhone': FALSE
+		];
+		
+		$login = $wayData['login'];
+		$pass = sha1($wayData['password']);
+		$firstname = $wayData['fn'];
+		$surname = $wayData['sn'];
+		$mail = $wayData['email'];
+		$phone = $wayData['phone'];
+		$region = $wayData['country'];
+
+		$validLogin = $upModel[0]->where(['login' => $login])->all();
+		$validEMail = $upModel[0]->where(['email' => $mail])->all();
+		$validPassword = $upModel[0]->where(['password' => $pass])->all();
+		$validPhone = $upModel[0]->where(['phone' => $phone])->all();
+
+		if(!$validLogin && !$validEMail && !$validPassword && !$validPhone){
+			$upModel[1]->firstname = $firstname;
+			$upModel[1]->surname = $surname;
+			$upModel[1]->login = $login;
+			$upModel[1]->password = $pass;
+			$upModel[1]->email = $mail;
+			$upModel[1]->phone = $phone;
+			$upModel[1]->country = $region;
+
+
+			if($upModel[1]->save()){ $response['state'] = 0; }
+			else{ $response['state'] = 1; }
+		}
+		else{
+			$response['state'] = 2;
+			
+			if($validLogin){ $response['isLogin'] = TRUE; }
+			if($validEMail){ $response['isEmail'] = TRUE; }
+			if($validPassword){ $response['isPass'] = TRUE; }
+			if($validPhone){ $response['isPhone'] = TRUE; }
+		}
+		
+		return $response;
+	}
+}
+
 class SignIn extends Component{
 	public $type;
 	public $signQuery;
@@ -116,8 +207,8 @@ class SignIn extends Component{
 			if($isLogin && $isPass){
 				$auth = User::findOne(['login' => $login]) || User::findOne(['email' => $login]) || User::findOne(['phone' => $login]);
 
-				if(Yii::$app->user->login($auth)){ throw new HttpException(202 ,'Authorization success!'); }
-				else{ throw new HttpException(409 ,'The portal accounting service is temporarily unavailable! Try again later;-('); }
+				if(Yii::$app->user->login($auth)){ throw new HttpException(202, 'Authorization success!'); }
+				else{ throw new HttpException(409, 'The portal accounting service is temporarily unavailable! Try again later;-('); }
 			}
 			else{
 					$validError = [];
@@ -126,9 +217,77 @@ class SignIn extends Component{
 					if(!$isLogin){ $validError[]['validError'] = 'The login you entered no exists'; }
 					if(!$isPass){ $validError[]['validError'] = 'The password you entered exists'; }
 
-					throw new HttpException(400 ,Json::encode($validError));
+					throw new HttpException(400, Json::encode($validError));
 			}
 		}
+	}
+}
+
+class adminSignIn extends Component implements IAdminUserService{
+	public $signQuery;
+	
+	
+	public function init(){
+		parent::init();
+		$this->signQuery = [];
+	}
+	
+	public function proccess($signQuery = null){
+		if($signQuery != null){ $this->signQuery = $signQuery; }
+		
+		$svc = $this->adminControl($this->signQuery);
+		
+		switch($svc['state']){
+			case 0: throw new HttpException(202, header('Location: /admin')); break;
+			case 1: 
+				$res = '<script>let problem=alert("The portal administration accounting service is temporarily unavailable! Try again later;-("),res="";res=problem?"/":"/admin/auth",window.location.assign(res);</script>'
+				throw new HttpException(409, $res);
+			break;
+			default:
+				$validError = '';
+
+				if($svc['noValidUser']){ $validError .= 'The login you entered no exists\n'; }
+				if($svc['noValidPass']){ $validError .= 'The password you entered exists\n'; }
+				
+				$res = '<script>let problem=alert("'. $validError .'"),res="";res=problem?"/":"/admin/auth",window.location.assign(res);</script>'
+				throw new HttpException(400, $res);
+			break;
+		}
+	}
+	private function adminControl($wayData){
+		$response = [
+			'state': 3,
+			'noValidUser': FALSE,
+			'noValidPass': FALSE
+		];
+		
+		$l = $wayData['admin'];
+		$p = sha1($wayData['password']);
+		
+		$model = Admin::find();
+		
+		$isLogin = $inModel->where(['login' => $l])->all() || $inModel->where(['email' => $l])->all() || $inModel->where(['phone' => $l])->all();
+		$isPass = $inModel->where(['password' => $p]);
+		
+		if($isLogin && $isPass){
+			$auth = User::findOne(['login' => $login]) || User::findOne(['email' => $login]) || User::findOne(['phone' => $login]);
+
+			if(Yii::$app->user->login($auth)){ $response['state'] = 0; }
+			else{ $response['state'] = 1; }
+		}
+		else{
+			$response['state'] = 2;
+			
+			if(!$isLogin){ $response['noValidUser'] = TRUE; }
+			if(!$isPass){ $response['noValidPass'] = TRUE; }
+				
+		    }
+		}
+		
+		
+		return $response;
+		
+		
 	}
 }
 
@@ -148,8 +307,8 @@ class AutoSignIn extends Component{
 
 		$auth = User::findOne(['login' => $login]) || User::findOne(['email' => $login]) || User::findOne(['phone' => $login]);
 
-		if(Yii::$app->user->login($auth)){ throw new HttpException(202 ,'First authorization success!'); }
-		else{ throw new HttpException(409 ,'The portal accounting service is temporarily unavailable! Try again later;-('); }
+		if(Yii::$app->user->login($auth)){ throw new HttpException(202, 'First authorization success!'); }
+		else{ throw new HttpException(409, 'The portal accounting service is temporarily unavailable! Try again later;-('); }
 	}
 }
 
@@ -179,9 +338,9 @@ class Forgot extends Component{
 				$forgotModel->password = $newPass;
 
 				if($forgotModel->save()){ throw new HttpException(202 ,'Access restore success!'); }
-				else{ throw new HttpException(409 ,'The portal accounting service is temporarily unavailable! Try again later;-('); }
+				else{ throw new HttpException(409, 'The portal accounting service is temporarily unavailable! Try again later;-('); }
 			}
-			else{ throw new HttpException(500 ,'Account data for restore not is accept!'); }	
+			else{ throw new HttpException(500, 'Account data for restore not is accept!'); }	
 		}
 		else{
 			$validError = [];
@@ -189,7 +348,7 @@ class Forgot extends Component{
 
 			if(!$isLogin){ $validError[]['validError'] = 'The login you entered no exists'; }
 
-			throw new HttpException(400 ,Json::encode($validError));
+			throw new HttpException(400, Json::encode($validError));
 		}
 		
 	}
@@ -199,11 +358,38 @@ class SignOut extends Component{
 	public function init(){ parent::init(); }
 
 	public function proccess(){
-		$out = Yii::app()->user->logout();
+		$out = Yii::$app()->user->logout();
 
-		if($out){ throw new HttpException(202 ,'Sign account out success!'); }
-		else{ throw new HttpException(409 ,'The portal accounting service is temporarily unavailable! Try again later;-('); }
+		if($out){ throw new HttpException(202, 'Sign account out success!'); }
+		else{ throw new HttpException(409, 'The portal accounting service is temporarily unavailable! Try again later;-('); }
 	}
 
+}
+
+class adminSignOut extends Component implements IAdminUserService{
+	public function init(){ parent::init(); }
+	
+	public function proccess(){
+		
+		$svc = $this->adminControl(Yii::$app()->admin->logout());
+		
+		switch($svc['state']){
+			case 0: throw new HttpException(202, header('Location: /admin/auth')); break;
+			default:
+				$res = '<script>let problem=alert("The portal administration accounting service is temporarily unavailable! Try again later;-("),res="";res=problem?"/":"/",window.location.assign(res);</script>'
+				throw new HttpException(409, $res);
+			break;
+		}
+		
+	}
+	private function adminControl($wayData){
+		$response = ['state' => 2];
+		
+		if($wayData){ $response['state'] = 0; }
+		else{ $response['state'] = 1; }
+		
+		return $response;
+		
+	}
 }
 ?>

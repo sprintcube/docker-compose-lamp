@@ -21,7 +21,7 @@ class AuthBody extends React.Component{
     
     return(
       <React.Fragment>
-        <center><form action="" method="POST">
+        <center><form action="/admin/auth" method="POST">
           <div for="username">
             <label>Username</label>
             <input type="text" name="username" />
@@ -49,14 +49,6 @@ Investment Projects
     );
   }
 }
-
-const SignInProccess = (e,t) => {
-	e.preventDefault();
-}
-
-$(document).ready(function(){
-	$('').click(SignInProccess);
-});
 
 let cmps = [<AuthHeader />, <AuthBody />, <AuthFooter />],
     els = [document.querySelector('.admin-auth > header'),document.querySelector('.admin-auth > main'),document.querySelector('.admin-auth > footer')];

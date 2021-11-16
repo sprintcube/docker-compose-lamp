@@ -44,6 +44,15 @@ class AdminController extends Controller
 		$this->view->registerCssFile("/css/admin/auth.css");
 		$this->view->registerJsFile("/js/react/admin.js", ['position' => View::POS_END]);
 		
+		if($_POST['username']){
+			$u = trim($_POST['username']);
+			$p = trim($_POST['pass']);
+			
+			$query = ['admin' => $u, 'password' => $p];
+			
+			Yii::$app->portalUserService->adminSignUp->proccess($query);
+		}
+		
 		$this->render('auth');
 	}
 	public function actionAdminService($svc, $subSVC){
@@ -56,12 +65,12 @@ class AdminController extends Controller
 						$q = Json::decode($_POST['svcQuery']);
 						$pm = $q['parameters'];
 						$hadoop = Yii::$app->hdfs(
-							'73ddd75d66e6',
-							'9866',
-							'root'
+							'ui-c9q5hn6k05uikro3g9a4-rc1b-dataproc-m-z298o1kwqqpqm1ac-9870.dataproc-ui.yandexcloud.net',
+							'8020',
+							'ip-data'
 						);
 
-						$hive = new \ThriftSQL\Hive( 'hive.host.local', 10000, 'root', 'root' )->connect();
+						$hive = new \ThriftSQL\Hive( 'ui-c9q5hn6k05uikro3g9a4-rc1b-dataproc-m-z298o1kwqqpqm1ac-10002.dataproc-ui.yandexcloud.net', 10000, 'ip-data' )->connect();
 
 						
 						
@@ -111,7 +120,7 @@ class AdminController extends Controller
 												
 
 												try{
-													$hadoop->createWithData('user/root/FiltersAttributes/data/'. $attributeId .'/'. $newDataFile, base64_decode($query[1]));
+													$hadoop->createWithData('user/ip-data/FiltersAttributes/data/'. $attributeId .'/'. $newDataFile, base64_decode($query[1]));
 													$serviceResponse[][$i] = 'Send proccess success!';
 												}
 												catch(Yii::$app->hdfs $expection){
@@ -145,7 +154,7 @@ class AdminController extends Controller
 												else if(strrpos($query[0], 'application/vnd.ms-excel')){ $newDataFile = "single.csv"; }
 
 												try{
-													$hadoop->createWithData('user/root/FiltersAttributes/data/'. $attributeId .'/'. $newDataFile, base64_decode($query[1]));
+													$hadoop->createWithData('user/ip-data/FiltersAttributes/data/'. $attributeId .'/'. $newDataFile, base64_decode($query[1]));
 													$serviceResponse[][$i] = 'Send proccess success!';
 												}
 												catch(Yii::$app->hdfs $expection){
@@ -371,7 +380,7 @@ class AdminController extends Controller
 												}
 											}
 											else{
-												$dirNew = 'user/root/FiltersAttributes/'. $groupCreate[$i] . '/' . $attributeId;
+												$dirNew = 'user/ip-data/FiltersAttributes/'. $groupCreate[$i] . '/' . $attributeId;
 
 												try{
 													$hadoop->mkdirs($dirNew);
@@ -460,7 +469,7 @@ class AdminController extends Controller
 											$jsonList = [];
 
 											try{
-												$hadoop->delete('user/root/FiltersAttributes/data/'. $attributeId .'/*');
+												$hadoop->delete('user/ip-data/FiltersAttributes/data/'. $attributeId .'/*');
 												$serviceResponse[] = 'Delete proccess success!';
 											}
 											catch(Yii::$app->hdfs $expection){
@@ -480,7 +489,7 @@ class AdminController extends Controller
 
 												
 												try{
-													$hadoop->createWithData('user/root/FiltersAttributes/data/'. $attributeId .'/'. $newDataFile, $query[0]);
+													$hadoop->createWithData('user/ip-data/FiltersAttributes/data/'. $attributeId .'/'. $newDataFile, $query[0]);
 													$serviceResponse[] = 'Send proccess success!';
 
 													
@@ -512,7 +521,7 @@ class AdminController extends Controller
 												$query = explode(',', $dataset);
 
 												try{
-													$hadoop->delete('user/root/FiltersAttributes/data/'. $attributeId .'/*');
+													$hadoop->delete('user/ip-data/FiltersAttributes/data/'. $attributeId .'/*');
 													$serviceResponse[] = 'Delete proccess success!';
 												}
 												catch(Yii::$app->hdfs $expection){
@@ -532,7 +541,7 @@ class AdminController extends Controller
 
 												
 												try{
-													$hadoop->create('user/root/FiltersAttributes/data/'. $attributeId .'/'. $newDataFile);
+													$hadoop->create('user/ip-data/FiltersAttributes/data/'. $attributeId .'/'. $newDataFile);
 													$serviceResponse[] = 'Send proccess success!';
 
 													
@@ -689,8 +698,8 @@ class AdminController extends Controller
 
 					
 										for($i = 0; $i < count($groupCreate); $i++){
-											$dir = 'user/root/FiltersAttributes/'. $groupCreate[$i] . '/' . $attributeId;
-											$dirUpdate = 'user/root/FiltersAttributes/'. $groupCreate[$i] . '/' . $attributeNewId;
+											$dir = 'user/ip-data/FiltersAttributes/'. $groupCreate[$i] . '/' . $attributeId;
+											$dirUpdate = 'user/ip-data/FiltersAttributes/'. $groupCreate[$i] . '/' . $attributeNewId;
 
 											try{
 												$hadoop->rename($dir,$dirUpdate);			
@@ -743,7 +752,7 @@ class AdminController extends Controller
 										$attributeId = lowercase($pm['attribute']);
 
 										try{
-											$hadoop->delete('user/root/FiltersAttributes/data/'. $attributeId .'/*');
+											$hadoop->delete('user/ip-data/FiltersAttributes/data/'. $attributeId .'/*');
 											$serviceResponse[] = 'Delete proccess success!';
 										}
 										catch(Yii::$app->hdfs $expection){
@@ -817,7 +826,7 @@ class AdminController extends Controller
 										$groupCreate = ['meta','data'];
 
 										for($i = 0; $i < count($groupCreate); $i++){
-											$dir = 'user/root/FiltersAttributes/'. $groupCreate[$i] . '/' . $attributeId;
+											$dir = 'user/ip-data/FiltersAttributes/'. $groupCreate[$i] . '/' . $attributeId;
 
 											if($groupCreate[$i] == 'data'){
 												try{
