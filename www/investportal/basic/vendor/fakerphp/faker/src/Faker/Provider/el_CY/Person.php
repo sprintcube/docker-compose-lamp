@@ -6,7 +6,8 @@ class Person extends \Faker\Provider\Person
 {
     /**
      * @var array
-     * @link http://www.mof.gov.cy/mof/cystat/statistics.nsf/populationcondition_22main_gr/populationcondition_22main_gr?OpenForm&sub=2&sel=2
+     *
+     * @see http://www.mof.gov.cy/mof/cystat/statistics.nsf/populationcondition_22main_gr/populationcondition_22main_gr?OpenForm&sub=2&sel=2
      */
     protected static $firstNameMale = [
         'Άγγελος', 'Άδωνης', 'Άκης', 'Άνθιμος', 'Άρης',
@@ -37,7 +38,8 @@ class Person extends \Faker\Provider\Person
 
     /**
      * @var array
-     * @link http://www.mof.gov.cy/mof/cystat/statistics.nsf/populationcondition_22main_gr/populationcondition_22main_gr?OpenForm&sub=2&sel=2
+     *
+     * @see http://www.mof.gov.cy/mof/cystat/statistics.nsf/populationcondition_22main_gr/populationcondition_22main_gr?OpenForm&sub=2&sel=2
      */
     protected static $firstNameFemale = [
         'Ελση',
@@ -67,7 +69,8 @@ class Person extends \Faker\Provider\Person
 
     /**
      * @var array
-     * @link http://www.mof.gov.cy/mof/cystat/statistics.nsf/populationcondition_22main_gr/populationcondition_22main_gr?OpenForm&sub=2&sel=2
+     *
+     * @see http://www.mof.gov.cy/mof/cystat/statistics.nsf/populationcondition_22main_gr/populationcondition_22main_gr?OpenForm&sub=2&sel=2
      */
     protected static $lastName = [
         'Άκη', 'Αγαθοκλέους', 'Αθανάσιου', 'Αλέκου', 'Αλεξάνδρου', 'Αλκιβιάδη', 'Αναστασίου', 'Ανδρέου', 'Ανδρονίκου', 'Αντωνίου', 'Αργύρη', 'Αριστείδη', 'Αριστοδήμου', 'Αυγουστή', 'Αυξεντίου', 'Αχιλλέα',

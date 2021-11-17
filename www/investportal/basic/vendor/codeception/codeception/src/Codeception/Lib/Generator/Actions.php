@@ -155,11 +155,18 @@ EOF;
     {
         $params = [];
         foreach ($refMethod->getParameters() as $param) {
+            $type = '';
+            if (PHP_VERSION_ID >= 70000) {
+                $reflectionType = $param->getType();
+                if ($reflectionType !== null) {
+                    $type = $this->stringifyType($reflectionType) . ' ';
+                }
+            }
             if ($param->isOptional()) {
-                $params[] = '$' . $param->name . ' = ' . ReflectionHelper::getDefaultValue($param);
+                $params[] = $type . '$' . $param->name . ' = ' . ReflectionHelper::getDefaultValue($param);
             } else {
-                $params[] = '$' . $param->name;
-            };
+                $params[] = $type . '$' . $param->name;
+            }
         }
         return implode(', ', $params);
     }
@@ -222,15 +229,29 @@ EOF;
             return '';
         }
 
+        return ': ' . $this->stringifyType($returnType);
+    }
+
+    /**
+     * @param \ReflectionType $type
+     * @return string
+     */
+    private function stringifyType(\ReflectionType $type)
+    {
+        if ($type instanceof \ReflectionUnionType) {
+            $types = $type->getTypes();
+            return implode('|', $types);
+        }
+
         if (PHP_VERSION_ID < 70100) {
-            $returnTypeString = (string)$returnType;
+            $returnTypeString = (string)$type;
         } else {
-            $returnTypeString = $returnType->getName();
+            $returnTypeString = $type->getName();
         }
         return sprintf(
-            ': %s%s%s',
-            $returnType->allowsNull() ? '?' : '',
-            $returnType->isBuiltin() ? '' : '\\',
+            '%s%s%s',
+            (PHP_VERSION_ID >= 70100 && $type->allowsNull()) ? '?' : '',
+            $type->isBuiltin() ? '' : '\\',
             $returnTypeString
         );
     }

@@ -16,8 +16,8 @@ use Symfony\Component\Console\Output\OutputInterface;
  * Usage:
  *
  * * `codecept run acceptance`: run all acceptance tests
- * * `codecept run tests/acceptance/MyCept.php`: run only MyCept
- * * `codecept run acceptance MyCept`: same as above
+ * * `codecept run tests/acceptance/MyCest.php`: run only MyCest
+ * * `codecept run acceptance MyCest`: same as above
  * * `codecept run acceptance MyCest:myTestInIt`: run one test from a Cest
  * * `codecept run acceptance checkout.feature`: run feature-file
  * * `codecept run acceptance -g slow`: run tests from *slow* group
@@ -27,9 +27,9 @@ use Symfony\Component\Console\Output\OutputInterface;
  *
  * * `codecept run -v`:
  * * `codecept run --steps`: print step-by-step execution
- * * `codecept run -vv`:
- * * `codecept run --debug`: print steps and debug information
- * * `codecept run -vvv`: print internal debug information
+ * * `codecept run -vv`: print steps and debug information
+ * * `codecept run --debug`: alias for `-vv`
+ * * `codecept run -vvv`: print Codeception-internal debug information
  *
  * Load config:
  *
@@ -66,9 +66,9 @@ use Symfony\Component\Console\Output\OutputInterface;
  *  --json                Generate Json Log (default: "report.json")
  *  --colors              Use colors in output
  *  --no-colors           Force no colors in output (useful to override config file)
- *  --silent              Only outputs suite names and final results
+ *  --silent              Only outputs suite names and final results. Almost the same as `--quiet`
  *  --steps               Show steps in output
- *  --debug (-d)          Show debug and scenario output
+ *  --debug (-d)          Alias for `-vv`
  *  --bootstrap           Execute bootstrap script before the test
  *  --coverage            Run with code coverage (default: "coverage.serialized")
  *  --coverage-html       Generate CodeCoverage HTML report in path (default: "coverage")
@@ -84,8 +84,8 @@ use Symfony\Component\Console\Output\OutputInterface;
  *  --fail-fast (-f)      Stop after first failure
  *  --no-rebuild          Do not rebuild actor classes on start
  *  --help (-h)           Display this help message.
- *  --quiet (-q)          Do not output any message.
- *  --verbose (-v|vv|vvv) Increase the verbosity of messages: 1 for normal output, 2 for more verbose output and 3 for debug
+ *  --quiet (-q)          Do not output any message. Almost the same as `--silent`
+ *  --verbose (-v|vv|vvv) Increase the verbosity of messages: `v` for normal output, `vv` for steps and debug, `vvv` for Codeception-internal debug
  *  --version (-V)        Display this application version.
  *  --ansi                Force ANSI output.
  *  --no-ansi             Disable ANSI output.
@@ -116,7 +116,6 @@ class Run extends Command
      * @var OutputInterface
      */
     protected $output;
-
 
     /**
      * Sets Run arguments
@@ -271,9 +270,12 @@ class Run extends Command
             $this->output->writeln(
                 Codecept::versionString() . "\nPowered by " . \PHPUnit\Runner\Version::getVersionString()
             );
-            $this->output->writeln(
-                "Running with seed: " . $this->options['seed'] . "\n"
-            );
+
+            if ($this->options['seed']) {
+                $this->output->writeln(
+                    "Running with seed: <info>" . $this->options['seed'] . "</info>\n"
+                );
+            }
         }
         if ($this->options['debug']) {
             $this->output->setVerbosity(OutputInterface::VERBOSITY_VERY_VERBOSE);
@@ -383,10 +385,10 @@ class Run extends Command
         }
 
         if ($test) {
-            $filter = $this->matchFilteredTestName($test);
-            $userOptions['filter'] = $filter;
+            $userOptions['filter'] = $this->matchFilteredTestName($test);
+        } elseif ($suite) {
+            $userOptions['filter'] = $this->matchFilteredTestName($suite);
         }
-
         if (!$this->options['silent'] && $config['settings']['shuffle']) {
             $this->output->writeln(
                 "[Seed] <info>" . $userOptions['seed'] . "</info>"
@@ -453,9 +455,29 @@ class Run extends Command
             }
         }
 
-        // Run single test without included tests
-        if (! Configuration::isEmpty() && strpos($suite, $config['paths']['tests']) === 0) {
-            return $this->matchTestFromFilename($suite, $config['paths']['tests']);
+        if (! Configuration::isEmpty()) {
+            // Run single test without included tests
+            if (strpos($suite, $config['paths']['tests']) === 0) {
+                return $this->matchTestFromFilename($suite, $config['paths']['tests']);
+            }
+
+            // Run single test from working directory
+            $realTestDir = realpath(Configuration::testsDir());
+            $cwd = getcwd();
+            if (strpos($realTestDir, $cwd) === 0) {
+                $file = $suite;
+                if (strpos($file, ':') !== false) {
+                    list($file) = explode(':', $suite, -1);
+                }
+                $realPath = $cwd . DIRECTORY_SEPARATOR . $file;
+                if (file_exists($realPath) && strpos($realPath, $realTestDir) === 0) {
+                    //only match test if file is in tests directory
+                    return $this->matchTestFromFilename(
+                        $cwd . DIRECTORY_SEPARATOR . $suite,
+                        $realTestDir
+                    );
+                }
+            }
         }
     }
 
@@ -483,7 +505,6 @@ class Run extends Command
             }
         }
     }
-
 
     protected function currentNamespace()
     {
@@ -517,15 +538,38 @@ class Run extends Command
 
     protected function matchTestFromFilename($filename, $testsPath)
     {
+        $filter = '';
+        if (strpos($filename, ':') !== false) {
+            if ((PHP_OS === 'Windows' || PHP_OS === 'WINNT') && $filename[1] === ':') {
+                // match C:\...
+                list($drive, $path, $filter) = explode(':', $filename, 3);
+                $filename = $drive . ':' . $path;
+            } else {
+                list($filename, $filter) = explode(':', $filename, 2);
+            }
+
+            if ($filter) {
+                $filter = ':' . $filter;
+            }
+        }
+
         $testsPath = str_replace(['//', '\/', '\\'], '/', $testsPath);
         $filename = str_replace(['//', '\/', '\\'], '/', $filename);
+
+        if (rtrim($filename, '/') === $testsPath) {
+            //codecept run tests
+            return ['', '', $filter];
+        }
         $res = preg_match("~^$testsPath/(.*?)(?>/(.*))?$~", $filename, $matches);
 
         if (!$res) {
             throw new \InvalidArgumentException("Test file can't be matched");
         }
         if (!isset($matches[2])) {
-            $matches[2] = null;
+            $matches[2] = '';
+        }
+        if ($filter) {
+            $matches[2] .= $filter;
         }
 
         return $matches;

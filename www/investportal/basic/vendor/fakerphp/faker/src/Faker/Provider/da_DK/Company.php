@@ -2,9 +2,6 @@
 
 namespace Faker\Provider\da_DK;
 
-/**
- * @author Antoine Corcy <contact@sbin.dk>
- */
 class Company extends \Faker\Provider\Company
 {
     /**
@@ -35,14 +32,14 @@ class Company extends \Faker\Provider\Company
     protected static $companySuffix = ['ApS', 'A/S', 'I/S', 'K/S'];
 
     /**
-     * @link http://cvr.dk/Site/Forms/CMS/DisplayPage.aspx?pageid=60
+     * @see http://cvr.dk/Site/Forms/CMS/DisplayPage.aspx?pageid=60
      *
      * @var string CVR number format.
      */
     protected static $cvrFormat = '%#######';
 
     /**
-     * @link http://cvr.dk/Site/Forms/CMS/DisplayPage.aspx?pageid=60
+     * @see http://cvr.dk/Site/Forms/CMS/DisplayPage.aspx?pageid=60
      *
      * @var string P number (production number) format.
      */

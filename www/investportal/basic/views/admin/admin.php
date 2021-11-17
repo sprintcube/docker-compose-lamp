@@ -5,7 +5,7 @@
 use yii\helpers\Html;
 use yii\helpers\Url;
 
-$this->title = 'Welcome to Investportal!';
+$this->title = 'Admin Services portal';
 ?>
 <?php if($_GET['svc']){ ?>
 	<?php if($_GET['svc'] == "dataManagment"){ ?>

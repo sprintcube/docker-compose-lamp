@@ -215,8 +215,10 @@ yii.gii = (function ($) {
 
             // model generator: translate table name to model class
             $('#model-generator #generator-tablename').on('blur', function () {
-                var tableName = $(this).val();
-                var tablePrefix = $(this).attr('table_prefix') || '';
+                var $this = $(this);
+                var $modelClass = $('#generator-modelclass');
+                var tableName = $this.val();
+                var tablePrefix = $this.data('table-prefix') || '';
                 if (tablePrefix.length) {
                     // if starts with prefix
                     if (tableName.slice(0, tablePrefix.length) === tablePrefix) {
@@ -224,13 +226,20 @@ yii.gii = (function ($) {
                         tableName = tableName.slice(tablePrefix.length);
                     }
                 }
-                if ($('#generator-modelclass').val() === '' && tableName && tableName.indexOf('*') === -1) {
-                    var modelClass = '';
-                    $.each(tableName.split(/\.|\_/), function() {
-                        if(this.length>0)
-                            modelClass+=this.substring(0,1).toUpperCase()+this.substring(1);
+                if ($modelClass.val() === '' && tableName && tableName.indexOf('*') === -1) {
+                    // request to `default/action`(`Generator::actionGenerateClassName()`)
+                    ajaxRequest = $.ajax({
+                        type: 'POST',
+                        cache: false,
+                        url: $this.data('action'),
+                        data: $('#model-generator').serializeArray(),
+                        success: function (response) {
+                            $modelClass.val(response).blur();
+                        },
+                        error: function (XMLHttpRequest, textStatus, errorThrown) {
+                            $modal.find('.modal-body').html('<div class="error">' + XMLHttpRequest.responseText + '</div>');
+                        }
                     });
-                    $('#generator-modelclass').val(modelClass).blur();
                 }
             });
 

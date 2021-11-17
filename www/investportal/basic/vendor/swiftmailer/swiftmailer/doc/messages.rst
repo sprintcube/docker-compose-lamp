@@ -100,7 +100,7 @@ with a strict format, you only need to pass a DateTimeInterface instance to
 +-------------------------------+------------------------------------------------------------------------------------------------------------------------------------+---------------------------------------------+
 | ``Date``                      | Specifies the date at which the message was sent                                                                                   | ``getDate()`` / ``setDate()``               |
 +-------------------------------+------------------------------------------------------------------------------------------------------------------------------------+---------------------------------------------+
-| ``Content-Type``              | Specifies the format of the message (usually ``text/plain`` or ``text/html``)                                                              | ``getContentType()`` / ``setContentType()`` |
+| ``Content-Type``              | Specifies the format of the message (usually ``text/plain`` or ``text/html``)                                                      | ``getContentType()`` / ``setContentType()`` |
 +-------------------------------+------------------------------------------------------------------------------------------------------------------------------------+---------------------------------------------+
 | ``Content-Transfer-Encoding`` | Specifies the encoding scheme in the message                                                                                       | ``getEncoder()`` / ``setEncoder()``         |
 +-------------------------------+------------------------------------------------------------------------------------------------------------------------------------+---------------------------------------------+
@@ -479,11 +479,13 @@ Mailer will throw a ``Swift_RfcComplianceException``.
 If you add recipients automatically based on a data source that may contain
 invalid email addresses, you can prevent possible exceptions by validating the
 addresses using::
-        use Egulias\EmailValidator\EmailValidator;
-        use Egulias\EmailValidator\Validation\RFCValidation;
 
-        $validator = new EmailValidator();
-        $validator->isValid("example@example.com", new RFCValidation()); //true
+    use Egulias\EmailValidator\EmailValidator;
+    use Egulias\EmailValidator\Validation\RFCValidation;
+
+    $validator = new EmailValidator();
+    $validator->isValid("example@example.com", new RFCValidation()); //true
+
 and only adding addresses that validate. Another way would be to wrap your ``setTo()``, ``setCc()`` and
 ``setBcc()`` calls in a try-catch block and handle the
 ``Swift_RfcComplianceException`` in the catch block.

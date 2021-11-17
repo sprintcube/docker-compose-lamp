@@ -7,16 +7,19 @@ namespace Faker\Provider;
  */
 class Image extends Base
 {
-    /** @var string */
+    /**
+     * @var string
+     */
     public const BASE_URL = 'https://via.placeholder.com';
 
     /**
      * @var array
+     *
      * @deprecated Categories are no longer used as a list in the placeholder API but referenced as string instead
      */
     protected static $categories = [
         'abstract', 'animals', 'business', 'cats', 'city', 'food', 'nightlife',
-        'fashion', 'people', 'nature', 'sports', 'technics', 'transport'
+        'fashion', 'people', 'nature', 'sports', 'technics', 'transport',
     ];
 
     /**
@@ -26,12 +29,12 @@ class Image extends Base
      *
      * @example 'http://via.placeholder.com/640x480.png/CCCCCC?text=well+hi+there'
      *
-     * @param int $width
-     * @param int $height
+     * @param int         $width
+     * @param int         $height
      * @param string|null $category
-     * @param bool $randomize
+     * @param bool        $randomize
      * @param string|null $word
-     * @param bool $gray
+     * @param bool        $gray
      *
      * @return string
      */
@@ -46,12 +49,15 @@ class Image extends Base
         $size = sprintf('%dx%d.png', $width, $height);
 
         $imageParts = [];
+
         if ($category !== null) {
             $imageParts[] = $category;
         }
+
         if ($word !== null) {
             $imageParts[] = $word;
         }
+
         if ($randomize === true) {
             $imageParts[] = Lorem::word();
         }
@@ -73,6 +79,8 @@ class Image extends Base
      * Requires curl, or allow_url_fopen to be on in php.ini.
      *
      * @example '/path/to/dir/13b73edae8443990be1aa8f1a483bc27.png'
+     *
+     * @return bool|string
      */
     public static function image(
         $dir = null,
@@ -84,7 +92,7 @@ class Image extends Base
         $word = null,
         $gray = false
     ) {
-        $dir = is_null($dir) ? sys_get_temp_dir() : $dir; // GNU/Linux / OS X / Windows compatible
+        $dir = null === $dir ? sys_get_temp_dir() : $dir; // GNU/Linux / OS X / Windows compatible
         // Validate directory path
         if (!is_dir($dir) || !is_writable($dir)) {
             throw new \InvalidArgumentException(sprintf('Cannot write to directory "%s"', $dir));

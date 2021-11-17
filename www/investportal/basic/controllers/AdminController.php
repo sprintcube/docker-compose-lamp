@@ -8,8 +8,12 @@ use yii\helpers\Json;
 
 require_once '../components/php-thrift-sql/src/ThriftSQL.php';
 
-class AdminController extends Controller
+class AdminController extends Controller{
+	
     public function actionIndex(){
+		if(Yii::$app->admin->isGuest){ header('Location: /admin/auth'); }
+		
+		
 		$pgUI = '';
 		$this->layout = "adminPortal";
 		$this->view->registerCssFile("/css/admin/admin.css");
@@ -40,6 +44,9 @@ class AdminController extends Controller
 		$this->render('admin');
 	}
 	public function actionAuth(){
+		
+		if(!Yii::$app->admin->isGuest){ header('Location: /admin'); }
+		
 		$this->layout = "adminAuth";
 		$this->view->registerCssFile("/css/admin/auth.css");
 		$this->view->registerJsFile("/js/react/admin.js", ['position' => View::POS_END]);
@@ -70,7 +77,7 @@ class AdminController extends Controller
 							'ip-data'
 						);
 
-						$hive = new \ThriftSQL\Hive( 'ui-c9q5hn6k05uikro3g9a4-rc1b-dataproc-m-z298o1kwqqpqm1ac-10002.dataproc-ui.yandexcloud.net', 10000, 'ip-data' )->connect();
+						$hive = (new \ThriftSQL\Hive( 'ui-c9q5hn6k05uikro3g9a4-rc1b-dataproc-m-z298o1kwqqpqm1ac-10002.dataproc-ui.yandexcloud.net', 10000, 'ip-data' ))->connect();
 
 						
 						
@@ -82,22 +89,20 @@ class AdminController extends Controller
 									case "sendFilters":
 											$attributeId = lowercase($pm['attribute']);
 											switch($pm['type']){
-														case "intField": case "precentableField": $dataType = 'int'; break;
+														case "intField": 
+														case "precentableField": $dataType = 'int'; break;
 														case "costField": $dataType = 'float'; break;
 														case "smartDatasets": case "photogalleryField": $dataType = 'json'; break;
-														case "selectingField": $dataType = 'varchar(255)' break;
+														case "selectingField": $dataType = 'varchar(255)'; break;
 														default: $dataType = 'text'; break;
 											}
 											$queryHeader = 'ALTER TABLE '. $attributeId;
 											$queryBody = '\tADD COLUMN '. $pm['field'] .' '. $dataType;
 
-											try{
-													$hive->getIterator(concat($queryHeader,$queryBody));
-													$serviceResponse[] = 'New filter in current attribute table created!';
-											}
-											catch(new \ThriftSQL\Hive $expection){
-													$statusServiceCode = 503;
-													$serviceResponse[] = 'DBA Service Error!';
+											if($hive->getIterator(concat($queryHeader,$queryBody))){ $serviceResponse[] = 'New filter in current attribute table created!'; }
+											else{
+												$statusServiceCode = 503;
+												$serviceResponse[] = 'DBA Service Error!';
 											}
 							
 									break;
@@ -118,27 +123,22 @@ class AdminController extends Controller
 												else if(strrpos($query[0], 'application/vnd.ms-excel')){ $newDataFile = $i .".csv"; }
 
 												
-
-												try{
-													$hadoop->createWithData('user/ip-data/FiltersAttributes/data/'. $attributeId .'/'. $newDataFile, base64_decode($query[1]));
-													$serviceResponse[][$i] = 'Send proccess success!';
-												}
-												catch(Yii::$app->hdfs $expection){
+												if($hadoop->createWithData('user/ip-data/FiltersAttributes/data/'. $attributeId .'/'. $newDataFile, base64_decode($query[1]))){ $serviceResponse[][$i] = 'Send proccess success!'; }
+												else{
 													$statusServiceCode = 502;
 													$serviceResponse[][$i] = 'Bad Data Storage gateway!';
 												}
+												
 												$jsonList[]['df'] = $newDataFile;
 											}
+											
+											$jsonResponse = Json::encode(['response' => $jsonList]);
 
-											try{
-												$jsonResponse = Json::encode(['response' => $jsonList]);
-
-												if($pm['fieldID']){ $hive->getIterator('UPDATE '. $attributeId .' SET '. $pm['field'] .'='. $jsonResponse .' WHERE id='. $pm['fieldID']); }
-												else{ $hive->getIterator('INSERT INTO '. $attributeId .' ('. $pm['field'] .') VALUES('. $jsonResponse .')'); }
-
-												$serviceResponse[] = 'Datasets in current attribute creating!';
-											}
-											catch(new \ThriftSQL\Hive $expection){
+											if($pm['fieldID']){ $sendP = $hive->getIterator('UPDATE '. $attributeId .' SET '. $pm['field'] .'='. $jsonResponse .' WHERE id='. $pm['fieldID']); }
+											else{ $sendP = $hive->getIterator('INSERT INTO '. $attributeId .' ('. $pm['field'] .') VALUES('. $jsonResponse .')'); }
+												
+											if($sendP){ $serviceResponse[] = 'Datasets in current attribute creating!'; }
+											else{
 												$statusServiceCode = 503;
 												$serviceResponse[] = 'DBA Service Error!';
 											}
@@ -152,27 +152,21 @@ class AdminController extends Controller
 												if(strrpos($query[0], 'application/json')){ $newDataFile = "single.json"; }
 												else if(strrpos($query[0], 'application/xml')){ $newDataFile = "single.xml"; }
 												else if(strrpos($query[0], 'application/vnd.ms-excel')){ $newDataFile = "single.csv"; }
-
-												try{
-													$hadoop->createWithData('user/ip-data/FiltersAttributes/data/'. $attributeId .'/'. $newDataFile, base64_decode($query[1]));
-													$serviceResponse[][$i] = 'Send proccess success!';
-												}
-												catch(Yii::$app->hdfs $expection){
+												
+												if($hadoop->createWithData('user/ip-data/FiltersAttributes/data/'. $attributeId .'/'. $newDataFile, base64_decode($query[1]))){ $serviceResponse[][$i] = 'Send proccess success!'; }
+												else{
 													$statusServiceCode = 502;
 													$serviceResponse[][$i] = 'Bad Data Storage gateway!';
 												}
 
 												$jsonReport['ds'] = $newDataFile;
-
-												try{
-													$jsonResponse = Json::encode(['response' => $jsonReport]);
-
-													if($pm['fieldID']){ $hive->getIterator('UPDATE '. $attributeId .' SET '. $pm['field'] .'='. $jsonResponse .' WHERE id='. $pm['fieldID']); }
-													else{ $hive->getIterator('INSERT INTO '. $attributeId .' ('. $pm['field'] .') VALUES('. $jsonResponse .')'); }
-
-													$serviceResponse[] = 'Datasets in current attribute creating!';
-												}
-												catch(new \ThriftSQL\Hive $expection){
+												$jsonResponse = Json::encode(['response' => $jsonReport]);
+												
+												if($pm['fieldID']){ $sendP = $hive->getIterator('UPDATE '. $attributeId .' SET '. $pm['field'] .'='. $jsonResponse .' WHERE id='. $pm['fieldID']); }
+												else{ $sendP = $hive->getIterator('INSERT INTO '. $attributeId .' ('. $pm['field'] .') VALUES('. $jsonResponse .')'); }
+													
+												if($sendP){ $serviceResponse[] = 'Datasets in current attribute creating!'; }
+												else{
 													$statusServiceCode = 503;
 													$serviceResponse[] = 'DBA Service Error!';
 												}
@@ -191,16 +185,13 @@ class AdminController extends Controller
 												break;
 												default:
 													$jsonReport = Json::Encode(['imageFormats' => $formats, 'imageCounts' => $q['count']]);
-
-													try{
-														$jsonResponse = Json::encode(['response' => $jsonReport]);
-
-														if($pm['fieldID']){ $hive->getIterator('UPDATE '. $attributeId .' SET '. $pm['field'] .'='. $jsonResponse .' WHERE id='. $pm['fieldID']); }
-														else{ $hive->getIterator('INSERT INTO '. $attributeId .' ('. $pm['field'] .') VALUES('. $jsonResponse .')'); }
-
-														$serviceResponse[] = 'New photogallery in current attribute table creating!';
-													}
-													catch(new \ThriftSQL\Hive $expection){
+													$jsonResponse = Json::encode(['response' => $jsonReport]);
+													
+													if($pm['fieldID']){ $sendP = $hive->getIterator('UPDATE '. $attributeId .' SET '. $pm['field'] .'='. $jsonResponse .' WHERE id='. $pm['fieldID']); }
+													else{ $sendP = $hive->getIterator('INSERT INTO '. $attributeId .' ('. $pm['field'] .') VALUES('. $jsonResponse .')'); }
+														
+													if($sendP){ $serviceResponse[] = 'New photogallery in current attribute table creating!'; }
+													else{
 														$statusServiceCode = 503;
 														$serviceResponse[] = 'DBA Service Error!';
 													}
@@ -242,7 +233,7 @@ class AdminController extends Controller
 												}
 												
 												if($pm['fieldID']){ $dataQuery = 'UPDATE '. $attributeId .' SET '. $pm['field'] .'='. $response .' WHERE id='. $pm['fieldID']; }
-												else{ $dataQuery = 'INSERT INTO '. $attributeId .' ('. $pm['field'] .') VALUES('. $response .')'); }
+												else{ $dataQuery = 'INSERT INTO '. $attributeId .' ('. $pm['field'] .') VALUES('. $response .')'; }
 											break;
 											case "text":
 												$textQuery = $q['textData'];
@@ -259,7 +250,7 @@ class AdminController extends Controller
 												$response = "[". $responseText ."]";
 												
 												if($pm['fieldID']){ $dataQuery = 'UPDATE '. $attributeId .' SET '. $pm['field'] .'='. $response .' WHERE id='. $pm['fieldID']; }
-												else{ $dataQuery = 'INSERT INTO '. $attributeId .' ('. $pm['field'] .') VALUES('. $response .')'); }
+												else{ $dataQuery = 'INSERT INTO '. $attributeId .' ('. $pm['field'] .') VALUES('. $response .')'; }
 											break;
 											case "selecting":
 												$selectingQuery = $q['selectingData'];
@@ -269,7 +260,7 @@ class AdminController extends Controller
 
 												$response = "[". $firstVariant .",". $doubleVariant ."]";
 												if($pm['fieldID']){ $dataQuery = 'UPDATE '. $attributeId .' SET '. $pm['field'] .'='. $response .' WHERE id='. $pm['fieldID']; }
-												else{ $dataQuery = 'INSERT INTO '. $attributeId .' ('. $pm['field'] .') VALUES('. $response .')'); }
+												else{ $dataQuery = 'INSERT INTO '. $attributeId .' ('. $pm['field'] .') VALUES('. $response .')'; }
 											break;
 											case "precentable":
 												$pQuery = $q['precentableData'];
@@ -299,7 +290,7 @@ class AdminController extends Controller
 												}
 												
 												if($pm['fieldID']){ $dataQuery = 'UPDATE '. $attributeId .' SET '. $pm['field'] .'='. $response .' WHERE id='. $pm['fieldID']; }
-												else{ $dataQuery = 'INSERT INTO '. $attributeId .' ('. $pm['field'] .') VALUES('. $response .')'); }
+												else{ $dataQuery = 'INSERT INTO '. $attributeId .' ('. $pm['field'] .') VALUES('. $response .')'; }
 											break;
 											default:
 												$intQuery = $q['intData'];
@@ -329,15 +320,14 @@ class AdminController extends Controller
 												}
 												
 												if($pm['fieldID']){ $dataQuery = 'UPDATE '. $attributeId .' SET '. $pm['field'] .'='. $response .' WHERE id='. $pm['fieldID']; }
-												else{ $dataQuery = 'INSERT INTO '. $attributeId .' ('. $pm['field'] .') VALUES('. $response .')'); }
+												else{ $dataQuery = 'INSERT INTO '. $attributeId .' ('. $pm['field'] .') VALUES('. $response .')'; }
 											break;
 										}
-										try{
-											$hive->getIterator($dataQuery);
-										}
-										catch(new \ThriftSQL\Hive $expection){
+										
+										if($hive->getIterator($dataQuery)){ $serviceResponse[] = 'Parameters send success!'; }
+										else{
 											$statusServiceCode = 502;
-											$serviceResponse[] = 'DBA Service Error';	
+											$serviceResponse[] = 'DBA Service Error';
 										}
 									break;
 									break;
@@ -361,20 +351,16 @@ class AdminController extends Controller
 														case "intField": $dataType = 'int'; break;
 														case "costField": $dataType = 'float'; break;
 														case "smartDatasets": case "photogalleryField": $dataType = 'json'; break;
-														case "selectingField": $dataType = 'varchar(255)' break;
+														case "selectingField": $dataType = 'varchar(255)'; break;
 														default: $dataType = 'text'; break;
 													}
 
 													
 													$queryBody .= $fieldName .''. $dataType;
 												}
-
-												try{
-													$hive->getIterator(concat($queryHeader,$queryBody,$queryFooter));
-
-													$serviceResponse[] = 'New attribute table created!';
-												}
-												catch(new \ThriftSQL\Hive $expection){
+												
+												if($hive->getIterator(concat($queryHeader,$queryBody,$queryFooter))){ $serviceResponse[] = 'New attribute table created!'; }
+												else{
 													$statusServiceCode = 503;
 													$serviceResponse[] = 'DBA Service Error!';
 												}
@@ -382,14 +368,12 @@ class AdminController extends Controller
 											else{
 												$dirNew = 'user/ip-data/FiltersAttributes/'. $groupCreate[$i] . '/' . $attributeId;
 
-												try{
-													$hadoop->mkdirs($dirNew);
-													$serviceResponse[] = 'Creator proccess success!';
-												}
-												catch(Yii::$app->hdfs $expection){
+												if($hadoop->mkdirs($dirNew)){ $serviceResponse[] = 'Creator proccess success!'; }
+												else{
 													$statusServiceCode = 502;
 													$serviceResponse[] = 'Bad Data Storage gateway!';
 												}
+												
 											}
 										}
 									break;
@@ -408,22 +392,19 @@ class AdminController extends Controller
 												case "intField": case "precentableField": $dataType = 'int'; break;
 												case "costField": $dataType = 'float'; break;
 												case "smartDatasets": case "photogalleryField": $dataType = 'json'; break;
-												case "selectingField": $dataType = 'varchar(255)' break;
+												case "selectingField": $dataType = 'varchar(255)'; break;
 												default: $dataType = 'text'; break;
 										}
 										
 										$queryHeader = 'ALTER TABLE '. $attributeId;
 										$queryBody = '\tRENAME COLUMN '. $pm['field'] .' to '. $pm['newField'];
-
-										try{
-													$hive->getIterator(concat($queryHeader,$queryBody));
-													$hive->getIterator(concat($queryHeader,'\tALTER COLUMN '. $pm['newField'] .' '. $dataType));
-
-													$serviceResponse[] = 'The filter in current attribute table updated!';
-										}
-										catch(new \ThriftSQL\Hive $expection){
-													$statusServiceCode = 503;
-													$serviceResponse[] = 'DBA Service Error!';
+										
+										$updateP = ($hive->getIterator(concat($queryHeader,$queryBody)) && $hive->getIterator(concat($queryHeader,'\tALTER COLUMN '. $pm['newField'] .' '. $dataType)));
+										
+										if($updateP){ $serviceResponse[] = 'The filter in current attribute table updated!'; }
+										else{
+											$statusServiceCode = 503;
+											$serviceResponse[] = 'DBA Service Error!';
 										}
 									break;
 									case "updatePhotogallery":
@@ -439,15 +420,12 @@ class AdminController extends Controller
 												break;
 												default:
 													$jsonReport = Json::Encode(['imageFormats' => $formats, 'imageCounts' => $q['count']]);
-
-													try{
-														$jsonResponse = Json::encode(['response' => $jsonReport]);
-
-														$hive->getIterator('UPDATE '. $attributeId .' SET '. $pm['field'] .'='. $jsonResponse .' WHERE id='. $pm['fieldID']);
-
+													$jsonResponse = Json::encode(['response' => $jsonReport]);
+													
+													if($hive->getIterator('UPDATE '. $attributeId .' SET '. $pm['field'] .'='. $jsonResponse .' WHERE id='. $pm['fieldID'])){
 														$serviceResponse[] = 'Photogallery in current attribute updated!';
 													}
-													catch(new \ThriftSQL\Hive $expection){
+													else{
 														$statusServiceCode = 503;
 														$serviceResponse[] = 'DBA Service Error!';
 													}
@@ -467,12 +445,11 @@ class AdminController extends Controller
 											$attributeId = lowercase($pm['attribute']);
 											$datasets = JSON::Decode($pm['smartDS']);
 											$jsonList = [];
-
-											try{
-												$hadoop->delete('user/ip-data/FiltersAttributes/data/'. $attributeId .'/*');
+											
+											if($hadoop->delete('user/ip-data/FiltersAttributes/data/'. $attributeId .'/*')){
 												$serviceResponse[] = 'Delete proccess success!';
 											}
-											catch(Yii::$app->hdfs $expection){
+											else{
 												$statusServiceCode = 502;
 												$serviceResponse[] = 'Bad Data Storage gateway!';
 											}
@@ -487,28 +464,25 @@ class AdminController extends Controller
 												else if(strrpos($query[0], 'application/xml')){ $newDataFile = $i .".xml"; }
 												else if(strrpos($query[0], 'application/vnd.ms-excel')){ $newDataFile = $i .".csv"; }
 
-												
-												try{
-													$hadoop->createWithData('user/ip-data/FiltersAttributes/data/'. $attributeId .'/'. $newDataFile, $query[0]);
+												if($hadoop->createWithData('user/ip-data/FiltersAttributes/data/'. $attributeId .'/'. $newDataFile, $query[0])){
 													$serviceResponse[] = 'Send proccess success!';
-
-													
 												}
-												catch(Yii::$app->hdfs $expection){
+												else{
 													$statusServiceCode = 502;
 													$serviceResponse[] = 'Bad Data Storage gateway!';
 												}
+												
+												
 												$jsonList[]['df'] = $newDataFile;
 												
 											}
-											try{
-												$jsonResponse = Json::encode(['response' => $jsonList]);
-
-												$hive->getIterator('UPDATE '. $attributeId .' SET '. $pm['field'] .'='. $jsonResponse .' WHERE id='. $pm['fieldID']);
-
+											
+											$jsonResponse = Json::encode(['response' => $jsonList]);
+											
+											if($hive->getIterator('UPDATE '. $attributeId .' SET '. $pm['field'] .'='. $jsonResponse .' WHERE id='. $pm['fieldID'])){
 												$serviceResponse[] = 'Datasets in current attribute updated!';
 											}
-											catch(new \ThriftSQL\Hive $expection){
+											else{
 												$statusServiceCode = 503;
 												$serviceResponse[] = 'DBA Service Error!';
 											}
@@ -519,12 +493,11 @@ class AdminController extends Controller
 											    $dataset = $pm['dataset'];
 											    $jsonReport = [];
 												$query = explode(',', $dataset);
-
-												try{
-													$hadoop->delete('user/ip-data/FiltersAttributes/data/'. $attributeId .'/*');
+												
+												if($hadoop->delete('user/ip-data/FiltersAttributes/data/'. $attributeId .'/*')){
 													$serviceResponse[] = 'Delete proccess success!';
 												}
-												catch(Yii::$app->hdfs $expection){
+												else{
 													$statusServiceCode = 502;
 													$serviceResponse[] = 'Bad Data Storage gateway!';
 												}
@@ -538,28 +511,20 @@ class AdminController extends Controller
 												fclose($file);
 
 												$jsonReport['ds'] = $newDataFile;
+												$jsonResponse = Json::encode(['response' => $jsonReport]);
 
-												
-												try{
-													$hadoop->create('user/ip-data/FiltersAttributes/data/'. $attributeId .'/'. $newDataFile);
+												if($hadoop->create('user/ip-data/FiltersAttributes/data/'. $attributeId .'/'. $newDataFile)){
 													$serviceResponse[] = 'Send proccess success!';
-
-													
 												}
-												catch(Yii::$app->hdfs $expection){
+												else{
 													$statusServiceCode = 502;
 													$serviceResponse[] = 'Bad Data Storage gateway!';
 												}
-
-												try{
-													$jsonResponse = Json::encode(['response' => $jsonReport]);
-
-													$hive->getIterator('UPDATE '. $attributeId .' SET '. $pm['field'] .'='. $jsonResponse .' WHERE id='. $pm['fieldID']);
-													
-
+												
+												if($hive->getIterator('UPDATE '. $attributeId .' SET '. $pm['field'] .'='. $jsonResponse .' WHERE id='. $pm['fieldID'])){
 													$serviceResponse[] = 'Datasets in current attribute updated!';
 												}
-												catch(new \ThriftSQL\Hive $expection){
+												else{
 													$statusServiceCode = 503;
 													$serviceResponse[] = 'DBA Service Error!';
 												}
@@ -683,12 +648,11 @@ class AdminController extends Controller
 												$dataQuery = 'UPDATE '. $attributeId .' SET '. $pm['field'] .'='. $response .' WHERE id='. $pm['fieldID'];
 											break;
 										}
-										try{
-											$hive->getIterator($dataQuery);
-										}
-										catch(new \ThriftSQL\Hive $expection){
+										
+										if($hive->getIterator($dataQuery)){ $serviceResponse[] = 'Parameters update success'; }
+										else{
 											$statusServiceCode = 502;
-											$serviceResponse[] = 'DBA Service Error';	
+											$serviceResponse[] = 'DBA Service Error';
 										}
 									break;
 									default:
@@ -700,24 +664,18 @@ class AdminController extends Controller
 										for($i = 0; $i < count($groupCreate); $i++){
 											$dir = 'user/ip-data/FiltersAttributes/'. $groupCreate[$i] . '/' . $attributeId;
 											$dirUpdate = 'user/ip-data/FiltersAttributes/'. $groupCreate[$i] . '/' . $attributeNewId;
-
-											try{
-												$hadoop->rename($dir,$dirUpdate);			
-												$serviceResponse[] = 'Update proccess success!';
-											}
-											catch(Yii::$app->hdfs $expection){
+											
+											if($hadoop->rename($dir,$dirUpdate)){ $serviceResponse[] = 'Update proccess success!'; }
+											else{
 												$statusServiceCode = 502;
 												$serviceResponse[] = 'Bad Data Storage gateway!';
 											}
 
 											if($groupCreate[$i] == 'data'){
-												try{
-													$hive->getIterator('ALTER TABLE '. $attributeId .' RENAME TO '. $attributeNewId);
-													$hive->getIterator('ALTER TABLE '. $attributeNewId .' SET LOCATION "hdfs://73ddd75d66e6:9866/'. $dirUpdate .'"');
-
-													$serviceResponse[] = 'Current attribute table update!';
-												}
-												catch(new \ThriftSQL\Hive $expection){
+												$updateP = ($hive->getIterator('ALTER TABLE '. $attributeId .' RENAME TO '. $attributeNewId) && $hive->getIterator('ALTER TABLE '. $attributeNewId .' SET LOCATION "hdfs://73ddd75d66e6:9866/'. $dirUpdate .'"'));
+												
+												if($updateP){ $serviceResponse[] = 'Current attribute table update!'; }
+												else{
 													$statusServiceCode = 503;
 													$serviceResponse[] = 'DBA Service Error!';
 												}
@@ -725,9 +683,6 @@ class AdminController extends Controller
 										}
 									break;
 								}
-
-								
-								
 							break;
 							case 2:
 								//Команда удаления данных из текущего фрагмента
@@ -737,48 +692,44 @@ class AdminController extends Controller
 										$attributeId = lowercase($pm['attribute']);
 										$queryHeader = 'ALTER TABLE '. $attributeId .' (\n';
 										$queryBody = '\tDROP COLUMN '. $pm['field'];
-
-										try{
-											$hive->getIterator(concat($queryHeader,$queryBody));
-
+										
+										if($hive->getIterator(concat($queryHeader,$queryBody))){
 											$serviceResponse[] = 'The filter in current attribute table deleted!';
 										}
-										catch(new \ThriftSQL\Hive $expection){
+										else{
 											$statusServiceCode = 503;
 											$serviceResponse[] = 'DBA Service Error!';
 										}
 									break;
 									case "deleteDatasets":
 										$attributeId = lowercase($pm['attribute']);
-
-										try{
-											$hadoop->delete('user/ip-data/FiltersAttributes/data/'. $attributeId .'/*');
+										
+										if($hadoop->delete('user/ip-data/FiltersAttributes/data/'. $attributeId .'/*')){
 											$serviceResponse[] = 'Delete proccess success!';
 										}
-										catch(Yii::$app->hdfs $expection){
+										else{
 											$statusServiceCode = 502;
 											$serviceResponse[] = 'Bad Data Storage gateway!';
 										}
-
-										try{
-											$hive->getIterator('UPDATE '. $attributeId .' SET '. $pm['field'] .'=\' \' WHERE id='. $pm['fieldID']);
+										
+										if($hive->getIterator('UPDATE '. $attributeId .' SET '. $pm['field'] .'=\' \' WHERE id='. $pm['fieldID'])){
 											$serviceResponse[] = 'Datasets in current attribute deleted!';
 										}
-										catch(new \ThriftSQL\Hive $expection){
+										else{
 											$statusServiceCode = 502;
-											$serviceResponse[] = 'DBA Service Error';	
+											$serviceResponse[] = 'DBA Service Error';
 										}
 									break;
 									case "deletePhotogallery":
 										if($q['photogallery']){
 											$attributeId = lowercase($pm['attribute']);
-											try{
-												$hive->getIterator('UPDATE '. $attributeId .' SET '. $pm['field'] .'=\' \' WHERE id='. $pm['fieldID']);
+											
+											if($hive->getIterator('UPDATE '. $attributeId .' SET '. $pm['field'] .'=\' \' WHERE id='. $pm['fieldID'])){
 												$serviceResponse[] = 'Photogallery in current attribute deleted!';
 											}
-											catch(new \ThriftSQL\Hive $expection){
+											else{
 												$statusServiceCode = 502;
-												$serviceResponse[] = 'DBA Service Error';	
+												$serviceResponse[] = 'DBA Service Error';
 											}
 										}
 										else{
@@ -812,14 +763,13 @@ class AdminController extends Controller
 												$successMessage = 'Current integer parameters is deleted!';
 											break;
 										}
-										try{
-											$hive->getIterator($dataQuery);
-											$serviceResponse[] = $successMessage;
-										}
-										catch(new \ThriftSQL\Hive $expection){
+										
+										if($hive->getIterator($dataQuery)){ $serviceResponse[] = $successMessage; }
+										else{
 											$statusServiceCode = 502;
-											$serviceResponse[] = 'DBA Service Error';	
+											$serviceResponse[] = 'DBA Service Error';
 										}
+										
 									break;
 									default:
 										$attributeId = lowercase($pm['attribute']);
@@ -829,31 +779,23 @@ class AdminController extends Controller
 											$dir = 'user/ip-data/FiltersAttributes/'. $groupCreate[$i] . '/' . $attributeId;
 
 											if($groupCreate[$i] == 'data'){
-												try{
-													$hive->getIterator('DROP TABLE '. $attributeId);
-
+												if($hive->getIterator('DROP TABLE '. $attributeId)){
 													$serviceResponse[] = 'Current attribute table deleted!';
 												}
-												catch(new \ThriftSQL\Hive $expection){
+												else{
 													$statusServiceCode = 503;
 													$serviceResponse[] = 'DBA Service Error!';
 												}
 											}
-
-											try{
-												$hadoop->delete($dir,'*');
-			
-												$serviceResponse[] = 'Delete proccess success!';
-											}
-											catch(Yii::$app->hdfs $expection){
+											
+											if($hadoop->delete($dir,'*')){ $serviceResponse[] = 'Delete proccess success!'; }
+											else{
 												$statusServiceCode = 502;
 												$serviceResponse[] = 'Bad Data Storage gateway!';
 											}
 										}
 									break;
 								}
-
-								
 							break;
 							case 3:
 								//Команда вывода данных в текущем фрагменте
@@ -864,16 +806,15 @@ class AdminController extends Controller
 										$query = 'SHOW COLUMNS FROM '. $currentAttribute;
 										$filters = [];
 
-										try{
-											$result = $hive->getIterator($query);
+										$result = $hive->getIterator($query);
 
-											foreach( $result as $rowNum => $row ) {
-											  $filters[] = $row;
-											}
-
-											$serviceResponse[] = $filters;
+										foreach( $result as $rowNum => $row ) {
+											$filters[] = $row;
 										}
-										catch(new \ThriftSQL\Hive $expection){
+
+										$serviceResponse[] = $filters;
+										
+										if(!$result){
 											$statusServiceCode = 503;
 											$serviceResponse[] = 'DBA Service Error!';
 										}
@@ -884,16 +825,15 @@ class AdminController extends Controller
 											$queryFind = 'SELECT '. $pm['DFSField'] .' FROM '. $attributeId;
 											$datasets = [];
 
-											try{
-												$result = $hive->getIterator($queryFind);
+											$result = $hive->getIterator($queryFind);
 
-												foreach( $result as $rowNum => $row ) {
-												  $datasets[] = $row['response'];
-												}
-
-												$serviceResponse[] = $datasets;
+											foreach( $result as $rowNum => $row ) {
+												$datasets[] = $row['response'];
 											}
-											catch(new \ThriftSQL\Hive $expection){
+
+											$serviceResponse[] = $datasets;
+
+											if(!$result){
 												$statusServiceCode = 503;
 												$serviceResponse[] = 'DBA Service Error!';
 											}
@@ -902,16 +842,16 @@ class AdminController extends Controller
 											$queryFind = 'SELECT '. $pm['datafield'] .' FROM '. $attributeId;
 											$ds = [];
 
-											try{
-												$result = $hive->getIterator($queryFind);
 
-												foreach( $result as $rowNum => $row ) {
-												  $ds[] = $row['response'];
-												}
+											$result = $hive->getIterator($queryFind);
 
-												$serviceResponse[] = $ds;
+											foreach( $result as $rowNum => $row ) {
+												$ds[] = $row['response'];
 											}
-											catch(new \ThriftSQL\Hive $expection){
+
+											$serviceResponse[] = $ds;
+
+											if(!$result){
 												$statusServiceCode = 503;
 												$serviceResponse[] = 'DBA Service Error!';
 											}
@@ -924,16 +864,15 @@ class AdminController extends Controller
 											$queryFind = 'SELECT '. $pm['photofield'] .' FROM '. $attributeId;
 											$datasets = [];
 
-											try{
-												$result = $hive->getIterator($queryFind);
+											$result = $hive->getIterator($queryFind);
 
-												foreach( $result as $rowNum => $row ) {
-												  $datasets[] = $row['response'];
-												}
-
-												$serviceResponse[] = $datasets;
+											foreach( $result as $rowNum => $row ) {
+												$datasets[] = $row['response'];
 											}
-											catch(new \ThriftSQL\Hive $expection){
+
+											$serviceResponse[] = $datasets;
+												
+											if(!$result){
 												$statusServiceCode = 503;
 												$serviceResponse[] = 'DBA Service Error!';
 											}
@@ -953,16 +892,16 @@ class AdminController extends Controller
 											case "smartDataset": case "photogallery": $dataQuery = 'SELECT '. $pm['dQuery'] .' FROM '. $attributeId; break;
 											default: $dataQuery = 'SELECT '. $pm['intQuery'] .' FROM '. $attributeId; break;
 										}
-										try{
-											$result = $hive->getIterator($dataQuery);
 
-											foreach( $result as $rowNum => $row ) {
-											  $tables[] = $row;
-											}
+										$result = $hive->getIterator($dataQuery);
 
-											$serviceResponse[] = $tables;
+										foreach( $result as $rowNum => $row ) {
+											$tables[] = $row;
 										}
-										catch(new \ThriftSQL\Hive $expection){
+
+										$serviceResponse[] = $tables;
+
+										if(!$result){
 											$statusServiceCode = 502;
 											$serviceResponse[] = 'DBA Service Error';	
 										}
@@ -970,17 +909,15 @@ class AdminController extends Controller
 									default:
 										$query = 'SHOW TABLES';
 										$tables = [];
+										$result = $hive->getIterator($query);
 
-										try{
-											$result = $hive->getIterator($query);
-
-											foreach( $result as $rowNum => $row ) {
-											  $tables[] = $row;
-											}
-
-											$serviceResponse[] = $tables;
+										foreach( $result as $rowNum => $row ) {
+											$tables[] = $row;
 										}
-										catch(new \ThriftSQL\Hive $expection){
+
+										$serviceResponse[] = $tables;
+										
+										if(!$result){
 											$statusServiceCode = 503;
 											$serviceResponse[] = 'DBA Service Error!';
 										}
@@ -999,7 +936,7 @@ class AdminController extends Controller
 			
 		}
 		$hive->disconnect();
-		throw new HttpException($statusServiceCode ,Json::encode("response" => $serviceResponse));
+		throw new HttpException($statusServiceCode ,Json::encode(["response" => $serviceResponse]));
 	}
 }
 ?>

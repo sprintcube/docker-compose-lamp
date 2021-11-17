@@ -20,7 +20,7 @@ use yii\base\InvalidValueException;
  * @property-read Role[] $defaultRoleInstances Default roles. The array is indexed by the role names. This
  * property is read-only.
  * @property string[] $defaultRoles Default roles. Note that the type of this property differs in getter and
- * setter. See [[getDefaultRoles()]]  and [[setDefaultRoles()]] for details.
+ * setter. See [[getDefaultRoles()]] and [[setDefaultRoles()]] for details.
  *
  * @author Qiang Xue <qiang.xue@gmail.com>
  * @since 2.0
@@ -37,7 +37,7 @@ abstract class BaseManager extends Component implements ManagerInterface
     /**
      * Returns the named auth item.
      * @param string $name the auth item name.
-     * @return Item the auth item corresponding to the specified name. Null is returned if no such item.
+     * @return Item|null the auth item corresponding to the specified name. Null is returned if no such item.
      */
     abstract protected function getItem($name);
 

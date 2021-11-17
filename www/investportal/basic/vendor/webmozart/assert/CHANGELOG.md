@@ -3,6 +3,21 @@ Changelog
 
 ## UNRELEASED
 
+## 1.10.0
+
+### Added
+
+* On invalid assertion, we throw a `Webmozart\Assert\InvalidArgumentException`
+* Added `Assert::positiveInteger()`
+
+### Changed
+
+* Using a trait with real implementations of `all*()` and `nullOr*()` methods to improve psalm compatibility.
+
+### Removed
+
+* Support for PHP <7.2
+
 ## 1.9.1
 
 ## Fixed
@@ -12,7 +27,7 @@ Changelog
 ## 1.9.0
 
 * added better Psalm support for `all*` & `nullOr*` methods
-  * These methods are now understood by Psalm through a mixin. You may need a newer version of Psalm in order to use this
+* These methods are now understood by Psalm through a mixin. You may need a newer version of Psalm in order to use this
 * added `@psalm-pure` annotation to `Assert::notFalse()`
 * added more `@psalm-assert` annotations where appropriate
 

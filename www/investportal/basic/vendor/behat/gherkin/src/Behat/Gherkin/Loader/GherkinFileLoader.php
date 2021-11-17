@@ -51,7 +51,7 @@ class GherkinFileLoader extends AbstractFileLoader
      *
      * @param mixed $path Resource to load
      *
-     * @return Boolean
+     * @return bool
      */
     public function supports($path)
     {

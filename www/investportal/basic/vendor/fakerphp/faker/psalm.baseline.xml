@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<files psalm-version="4.1.1@16bfbd9224698bd738c665f33039fade2a1a3977">
+<files psalm-version="4.7.1@cd53e047a58f71f646dd6bf45476076ab07b5d44">
   <file src="src/Faker/Calculator/Luhn.php">
     <InvalidReturnStatement occurrences="1">
       <code>0</code>
@@ -7,6 +7,11 @@
     <InvalidReturnType occurrences="1">
       <code>string</code>
     </InvalidReturnType>
+  </file>
+  <file src="src/Faker/Generator.php">
+    <InvalidThrow occurrences="1">
+      <code>ContainerExceptionInterface</code>
+    </InvalidThrow>
   </file>
   <file src="src/Faker/ORM/CakePHP/EntityPopulator.php">
     <UndefinedClass occurrences="1">
@@ -45,13 +50,10 @@
     </UndefinedDocblockClass>
   </file>
   <file src="src/Faker/ORM/Doctrine/Populator.php">
-    <UndefinedClass occurrences="1">
-      <code>ObjectManager|null</code>
-    </UndefinedClass>
+    <UndefinedClass occurrences="1"/>
     <UndefinedDocblockClass occurrences="3">
       <code>$this-&gt;manager</code>
       <code>ObjectManager|null</code>
-      <code>null|EntityManager</code>
     </UndefinedDocblockClass>
   </file>
   <file src="src/Faker/ORM/Mandango/EntityPopulator.php">
@@ -67,9 +69,7 @@
     </UndefinedClass>
   </file>
   <file src="src/Faker/ORM/Propel/ColumnTypeGuesser.php">
-    <UndefinedClass occurrences="1">
-      <code>ColumnMap</code>
-    </UndefinedClass>
+    <UndefinedClass occurrences="1"/>
   </file>
   <file src="src/Faker/ORM/Propel/EntityPopulator.php">
     <UndefinedClass occurrences="9">
@@ -81,7 +81,6 @@
       <code>$columnMap</code>
       <code>$columnMap</code>
       <code>$columnMap</code>
-      <code>ColumnMap</code>
     </UndefinedClass>
   </file>
   <file src="src/Faker/ORM/Propel/Populator.php">
@@ -146,7 +145,6 @@
   <file src="src/Faker/ORM/Spot/Populator.php">
     <UndefinedClass occurrences="2">
       <code>$this-&gt;locator</code>
-      <code>Locator|null</code>
     </UndefinedClass>
     <UndefinedDocblockClass occurrences="1">
       <code>Locator</code>
@@ -219,10 +217,6 @@
     </InvalidReturnType>
   </file>
   <file src="src/Faker/Provider/pl_PL/Person.php">
-    <NonStaticSelfCall occurrences="2">
-      <code>static::title()</code>
-      <code>static::title()</code>
-    </NonStaticSelfCall>
     <UndefinedDocblockClass occurrences="1">
       <code>DateTime</code>
     </UndefinedDocblockClass>

@@ -12,11 +12,11 @@ class Company extends \Faker\Provider\Company
     ];
 
     protected static $companyPrefixes = [
-        'АҚ', 'ЖШС', 'ЖАҚ'
+        'АҚ', 'ЖШС', 'ЖАҚ',
     ];
 
     protected static $companyNameSuffixes = [
-        'Құрылыс', 'Машина', 'Бұзу', '-М', 'Лизинг', 'Страх', 'Ком', 'Телеком'
+        'Құрылыс', 'Машина', 'Бұзу', '-М', 'Лизинг', 'Страх', 'Ком', 'Телеком',
     ];
 
     protected static $companyElements = [
@@ -52,8 +52,10 @@ class Company extends \Faker\Provider\Company
     /**
      * National Business Identification Numbers
      *
-     * @link   http://egov.kz/wps/portal/Content?contentPath=%2Fegovcontent%2Fbus_business%2Ffor_businessmen%2Farticle%2Fbusiness_identification_number&lang=en
-     * @param  \DateTime $registrationDate
+     * @see   http://egov.kz/wps/portal/Content?contentPath=%2Fegovcontent%2Fbus_business%2Ffor_businessmen%2Farticle%2Fbusiness_identification_number&lang=en
+     *
+     * @param \DateTime $registrationDate
+     *
      * @return string 12 digits, like 150140000019
      */
     public static function businessIdentificationNumber(\DateTime $registrationDate = null)
@@ -62,10 +64,10 @@ class Company extends \Faker\Provider\Company
             $registrationDate = \Faker\Provider\DateTime::dateTimeThisYear();
         }
 
-        $dateAsString              = $registrationDate->format('ym');
-        $legalEntityType           = (string) self::numberBetween(4, 6);
+        $dateAsString = $registrationDate->format('ym');
+        $legalEntityType = (string) self::numberBetween(4, 6);
         $legalEntityAdditionalType = (string) self::numberBetween(0, 3);
-        $randomDigits              = (string) static::numerify('######');
+        $randomDigits = (string) static::numerify('######');
 
         return $dateAsString . $legalEntityType . $legalEntityAdditionalType . $randomDigits;
     }

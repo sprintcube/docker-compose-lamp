@@ -27,10 +27,10 @@ use yii\web\View;
  * - [[generate()]]: generates the code based on the current user input and the specified code template files.
  *   This is the place where main code generation code resides.
  *
- * @property string $description The detailed description of the generator. This property is read-only.
- * @property string $stickyDataFile The file path that stores the sticky attribute values. This property is
- * read-only.
- * @property string $templatePath The root path of the template files that are currently being used. This
+ * @property-read string $description The detailed description of the generator. This property is read-only.
+ * @property-read string $stickyDataFile The file path that stores the sticky attribute values. This property
+ * is read-only.
+ * @property-read string $templatePath The root path of the template files that are currently being used. This
  * property is read-only.
  *
  * @author Qiang Xue <qiang.xue@gmail.com>
@@ -389,8 +389,12 @@ abstract class Generator extends Model
      */
     public function validateMessageCategory()
     {
-        if ($this->enableI18N && empty($this->messageCategory)) {
-            $this->addError('messageCategory', "Message Category cannot be blank.");
+        if ($this->enableI18N) {
+            if (empty($this->messageCategory)) {
+                $this->addError('messageCategory', "Message Category cannot be blank.");
+            } elseif (!preg_match('~\w+~', $this->messageCategory)) {
+                $this->addError('messageCategory', "Message Category is not valid. It should contain only alphanumeric characters and _.");
+            }
         }
     }
 
@@ -445,6 +449,7 @@ abstract class Generator extends Model
             'for',
             'foreach',
             'function',
+            'fn',
             'global',
             'goto',
             'if',
@@ -480,6 +485,7 @@ abstract class Generator extends Model
             'var',
             'while',
             'xor',
+            'yield'
         ];
 
         return in_array(strtolower($value), $keywords, true);

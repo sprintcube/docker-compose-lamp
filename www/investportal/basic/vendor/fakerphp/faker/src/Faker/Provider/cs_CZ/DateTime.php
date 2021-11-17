@@ -8,15 +8,15 @@ namespace Faker\Provider\cs_CZ;
 class DateTime extends \Faker\Provider\DateTime
 {
     protected static $days = [
-        'neděle', 'pondělí', 'úterý', 'středa', 'čtvrtek', 'pátek', 'sobota'
+        'neděle', 'pondělí', 'úterý', 'středa', 'čtvrtek', 'pátek', 'sobota',
     ];
     protected static $months = [
         'leden', 'únor', 'březen', 'duben', 'květen', 'červen', 'červenec',
-        'srpen', 'září', 'říjen', 'listopad', 'prosinec'
+        'srpen', 'září', 'říjen', 'listopad', 'prosinec',
     ];
-    protected static $monthsGenitive  = [
+    protected static $monthsGenitive = [
         'ledna', 'února', 'března', 'dubna', 'května', 'června', 'července',
-        'srpna', 'září', 'října', 'listopadu', 'prosince'
+        'srpna', 'září', 'října', 'listopadu', 'prosince',
     ];
     protected static $formattedDateFormat = [
         '{{dayOfMonth}}. {{monthNameGenitive}} {{year}}',
@@ -38,8 +38,10 @@ class DateTime extends \Faker\Provider\DateTime
     }
 
     /**
-     * @param  \DateTime|int|string $max maximum timestamp used as random end limit, default to "now"
+     * @param \DateTime|int|string $max maximum timestamp used as random end limit, default to "now"
+     *
      * @return string
+     *
      * @example '2'
      */
     public static function dayOfMonth($max = 'now')
@@ -49,7 +51,9 @@ class DateTime extends \Faker\Provider\DateTime
 
     /**
      * Full date with inflected month
+     *
      * @return string
+     *
      * @example '16. listopadu 2003'
      */
     public function formattedDate()

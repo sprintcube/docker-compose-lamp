@@ -24,7 +24,7 @@ interface FilterInterface extends FeatureFilterInterface
      *
      * @param ScenarioInterface $scenario Scenario or Outline node instance
      *
-     * @return Boolean
+     * @return bool
      */
     public function isScenarioMatch(ScenarioInterface $scenario);
 }

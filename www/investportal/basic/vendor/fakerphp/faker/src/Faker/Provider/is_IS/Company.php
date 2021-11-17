@@ -2,9 +2,6 @@
 
 namespace Faker\Provider\is_IS;
 
-/**
- * @author Birkir Gudjonsson <birkir.gudjonsson@gmail.com>
- */
 class Company extends \Faker\Provider\Company
 {
     /**
@@ -35,7 +32,7 @@ class Company extends \Faker\Provider\Company
     protected static $companySuffix = ['ehf.', 'hf.', 'sf.'];
 
     /**
-     * @link http://www.rsk.is/atvinnurekstur/virdisaukaskattur/
+     * @see http://www.rsk.is/atvinnurekstur/virdisaukaskattur/
      *
      * @var string VSK number format.
      */

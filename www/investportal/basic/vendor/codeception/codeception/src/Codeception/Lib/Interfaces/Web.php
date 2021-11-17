@@ -153,13 +153,15 @@ interface Web
      * For example, given this sample "Sign Up" form:
      *
      * ``` html
-     * <form action="/sign_up">
+     * <form id="userForm">
      *     Login:
      *     <input type="text" name="user[login]" /><br/>
      *     Password:
      *     <input type="password" name="user[password]" /><br/>
      *     Do you agree to our terms?
      *     <input type="checkbox" name="user[agree]" /><br/>
+     *     Subscribe to our newsletter?
+     *     <input type="checkbox" name="user[newsletter]" value="1" checked="checked" /><br/>
      *     Select pricing plan:
      *     <select name="plan">
      *         <option value="1">Free</option>
@@ -187,6 +189,9 @@ interface Web
      * ```
      * Note that "2" will be the submitted value for the "plan" field, as it is
      * the selected option.
+     *
+     * To uncheck the pre-checked checkbox "newsletter", call `$I->uncheckOption(['name' => 'user[newsletter]']);` *before*,
+     * then submit the form as shown here (i.e. without the "newsletter" field in the `$params` array).
      *
      * You can also emulate a JavaScript submission by not specifying any
      * buttons in the third parameter to submitForm.
@@ -690,7 +695,7 @@ interface Web
      * ``` php
      * <?php
      * $I->fillField("//input[@type='text']", "Hello World!");
-     * $I->fillField(['name' => 'email'], 'jon@mail.com');
+     * $I->fillField(['name' => 'email'], 'jon@example.com');
      * ?>
      * ```
      *

@@ -20,6 +20,7 @@ class Text extends \Faker\Provider\Text
      * Language: Japanese
      *
      * @see http://www.aozora.gr.jp/cards/000081/files/43737_19215.html
+     *
      * @var string
      */
     protected static $baseText = <<<'EOT'
@@ -598,11 +599,13 @@ EOT;
     protected static function explode($text)
     {
         $chars = [];
+
         foreach (preg_split('//u', preg_replace('/\s+/u', '', $text)) as $char) {
             if ($char !== '') {
                 $chars[] = $char;
             }
         }
+
         return $chars;
     }
 
@@ -613,7 +616,7 @@ EOT;
 
     protected static function validStart($word)
     {
-        return !in_array($word, static::$notBeginPunct);
+        return !in_array($word, static::$notBeginPunct, false);
     }
 
     protected static function appendEnd($text)
@@ -626,10 +629,10 @@ EOT;
             $last = end($chars);
         }
         // if the last char is a not-valid-end punctuation, remove it
-        if (in_array($last, static::$notEndPunct)) {
+        if (in_array($last, static::$notEndPunct, false)) {
             $text = preg_replace('/.$/u', '', $text);
         }
         // if the last char is not a valid punctuation, append a default one.
-        return in_array($last, static::$endPunct) ? $text : $text . '。';
+        return in_array($last, static::$endPunct, false) ? $text : $text . '。';
     }
 }

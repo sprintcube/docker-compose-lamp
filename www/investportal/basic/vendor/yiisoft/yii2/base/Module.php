@@ -33,7 +33,7 @@ use yii\di\ServiceLocator;
  * @property array $modules The modules (indexed by their IDs).
  * @property-read string $uniqueId The unique ID of the module. This property is read-only.
  * @property string $version The version of this module. Note that the type of this property differs in getter
- * and setter. See [[getVersion()]]  and [[setVersion()]] for details.
+ * and setter. See [[getVersion()]] and [[setVersion()]] for details.
  * @property string $viewPath The root directory of view files. Defaults to "[[basePath]]/views".
  *
  * @author Qiang Xue <qiang.xue@gmail.com>
@@ -60,11 +60,11 @@ class Module extends ServiceLocator
      */
     public $id;
     /**
-     * @var Module the parent module of this module. `null` if this module does not have a parent.
+     * @var Module|null the parent module of this module. `null` if this module does not have a parent.
      */
     public $module;
     /**
-     * @var string|bool the layout that should be applied for views within this module. This refers to a view name
+     * @var string|bool|null the layout that should be applied for views within this module. This refers to a view name
      * relative to [[layoutPath]]. If this is not set, it means the layout value of the [[module|parent module]]
      * will be taken. If this is `false`, layout will be disabled within this module.
      */
@@ -90,7 +90,7 @@ class Module extends ServiceLocator
      */
     public $controllerMap = [];
     /**
-     * @var string the namespace that controller classes are in.
+     * @var string|null the namespace that controller classes are in.
      * This namespace will be used to load controller classes by prepending it to the controller
      * class name.
      *
@@ -238,7 +238,7 @@ class Module extends ServiceLocator
     {
         $path = Yii::getAlias($path);
         $p = strncmp($path, 'phar://', 7) === 0 ? $path : realpath($path);
-        if ($p !== false && is_dir($p)) {
+        if (is_string($p) && is_dir($p)) {
             $this->_basePath = $p;
         } else {
             throw new InvalidArgumentException("The directory does not exist: $path");

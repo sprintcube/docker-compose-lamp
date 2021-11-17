@@ -9,14 +9,45 @@
  * file that was distributed with this source code.
  */
 
+if (!version_compare(PHP_VERSION, PHP_VERSION, '=')) {
+    fwrite(
+        STDERR,
+        sprintf(
+            '%s declares an invalid value for PHP_VERSION.' . PHP_EOL .
+            'This breaks fundamental functionality such as version_compare().' . PHP_EOL .
+            'Please use a different PHP interpreter.' . PHP_EOL,
+
+            PHP_BINARY
+        )
+    );
+
+    die(1);
+}
+
 if (version_compare('7.2.0', PHP_VERSION, '>')) {
     fwrite(
         STDERR,
         sprintf(
-            'This version of PHPUnit is supported on PHP 7.2, PHP 7.3, and PHP 7.4.' . PHP_EOL .
+            'This version of PHPUnit requires PHP >= 7.2.' . PHP_EOL .
             'You are using PHP %s (%s).' . PHP_EOL,
             PHP_VERSION,
             PHP_BINARY
+        )
+    );
+
+    die(1);
+}
+
+foreach (['dom', 'json', 'libxml', 'mbstring', 'tokenizer', 'xml', 'xmlwriter'] as $extension) {
+    if (extension_loaded($extension)) {
+        continue;
+    }
+
+    fwrite(
+        STDERR,
+        sprintf(
+            'PHPUnit requires the "%s" extension.' . PHP_EOL,
+            $extension
         )
     );
 

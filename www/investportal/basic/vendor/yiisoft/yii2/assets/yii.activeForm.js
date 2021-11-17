@@ -329,7 +329,10 @@
                 this.$form = $form;
                 var $input = findInput($form, this);
 
-                if ($input.is(':disabled')) {
+                var disabled = $input.toArray().reduce(function(result, next) {
+                    return result && $(next).is(':disabled');
+                }, true);
+                if (disabled) {
                     return true;
                 }
                 // validate markup for select input

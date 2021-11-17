@@ -23,7 +23,7 @@ use Behat\Gherkin\Loader\LoaderInterface;
  */
 class Gherkin
 {
-    const VERSION = '4.6.2';
+    const VERSION = '4.8.0';
 
     /**
      * @var LoaderInterface[]

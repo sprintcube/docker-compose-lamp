@@ -11,6 +11,7 @@
 namespace Behat\Gherkin;
 
 use Behat\Gherkin\Exception\LexerException;
+use Behat\Gherkin\Exception\NodeException;
 use Behat\Gherkin\Exception\ParserException;
 use Behat\Gherkin\Node\BackgroundNode;
 use Behat\Gherkin\Node\ExampleTableNode;
@@ -38,6 +39,8 @@ class Parser
     private $file;
     private $tags = array();
     private $languageSpecifierLine;
+
+    private $passedNodesStack = array();
 
     /**
      * Initializes parser.
@@ -181,7 +184,15 @@ class Parser
      */
     protected function parseExpression()
     {
-        switch ($type = $this->predictTokenType()) {
+        $type = $this->predictTokenType();
+
+        while ($type === 'Comment') {
+            $this->expectTokenType('Comment');
+
+            $type = $this->predictTokenType();
+        }
+
+        switch ($type) {
             case 'Feature':
                 return $this->parseFeature();
             case 'Background':
@@ -204,8 +215,6 @@ class Parser
                 return $this->parseNewline();
             case 'Tag':
                 return $this->parseTags();
-            case 'Comment':
-                return $this->parseComment();
             case 'Language':
                 return $this->parseLanguage();
             case 'EOS':
@@ -226,7 +235,7 @@ class Parser
     {
         $token = $this->expectTokenType('Feature');
 
-        $title = trim($token['value']) ?: null;
+        $title = trim($token['value'] ?? '');
         $description = null;
         $tags = $this->popTags();
         $background = null;
@@ -235,6 +244,8 @@ class Parser
         $language = $this->lexer->getLanguage();
         $file = $this->file;
         $line = $token['line'];
+
+        array_push($this->passedNodesStack, 'Feature');
 
         // Parse description, background, scenarios & outlines
         while ('EOS' !== $this->predictTokenType()) {
@@ -277,7 +288,7 @@ class Parser
 
         return new FeatureNode(
             rtrim($title) ?: null,
-            rtrim($description) ?: null,
+            rtrim($description ?? '') ?: null,
             $tags,
             $background,
             $scenarios,
@@ -299,7 +310,7 @@ class Parser
     {
         $token = $this->expectTokenType('Background');
 
-        $title = trim($token['value']);
+        $title = trim($token['value'] ?? '');
         $keyword = $token['keyword'];
         $line = $token['line'];
 
@@ -364,10 +375,12 @@ class Parser
     {
         $token = $this->expectTokenType('Scenario');
 
-        $title = trim($token['value']);
+        $title = trim($token['value'] ?? '');
         $tags = $this->popTags();
         $keyword = $token['keyword'];
         $line = $token['line'];
+
+        array_push($this->passedNodesStack, 'Scenario');
 
         // Parse description and steps
         $steps = array();
@@ -407,6 +420,8 @@ class Parser
             }
         }
 
+        array_pop($this->passedNodesStack);
+
         return new ScenarioNode(rtrim($title) ?: null, $tags, $steps, $keyword, $line);
     }
 
@@ -421,15 +436,25 @@ class Parser
     {
         $token = $this->expectTokenType('Outline');
 
-        $title = trim($token['value']);
+        $title = trim($token['value'] ?? '');
         $tags = $this->popTags();
         $keyword = $token['keyword'];
-        $examples = null;
+
+        /** @var ExampleTableNode $examples */
+        $examples = array();
         $line = $token['line'];
 
         // Parse description, steps and examples
         $steps = array();
-        while (in_array($this->predictTokenType(), array('Step', 'Examples', 'Newline', 'Text', 'Comment'))) {
+
+        array_push($this->passedNodesStack, 'Outline');
+
+        while (in_array($nextTokenType = $this->predictTokenType(), array('Step', 'Examples', 'Newline', 'Text', 'Comment', 'Tag'))) {
+            if ($nextTokenType === 'Comment') {
+                $this->lexer->skipPredictedToken();
+                continue;
+            }
+
             $node = $this->parseExpression();
 
             if ($node instanceof StepNode) {
@@ -438,7 +463,8 @@ class Parser
             }
 
             if ($node instanceof ExampleTableNode) {
-                $examples = $node;
+                $examples[] = $node;
+
                 continue;
             }
 
@@ -470,7 +496,7 @@ class Parser
             }
         }
 
-        if (null === $examples) {
+        if (empty($examples)) {
             throw new ParserException(sprintf(
                 'Outline should have examples table, but got none for outline "%s" on line: %d%s',
                 rtrim($title),
@@ -496,6 +522,8 @@ class Parser
         $text = trim($token['text']);
         $line = $token['line'];
 
+        array_push($this->passedNodesStack, 'Step');
+
         $arguments = array();
         while (in_array($predicted = $this->predictTokenType(), array('PyStringOp', 'TableRow', 'Newline', 'Comment'))) {
             if ('Comment' === $predicted || 'Newline' === $predicted) {
@@ -510,6 +538,8 @@ class Parser
             }
         }
 
+        array_pop($this->passedNodesStack);
+
         return new StepNode($keyword, $text, $arguments, $line, $keywordType);
     }
 
@@ -520,11 +550,15 @@ class Parser
      */
     protected function parseExamples()
     {
-        $token = $this->expectTokenType('Examples');
+        $keyword = ($this->expectTokenType('Examples'))['keyword'];
+        $tags = empty($this->tags) ? array() : $this->popTags();
+        $table = $this->parseTableRows();
 
-        $keyword = $token['keyword'];
-
-        return new ExampleTableNode($this->parseTableRows(), $keyword);
+        try {
+            return new ExampleTableNode($table, $keyword, $tags);
+        } catch(NodeException $e) {
+            $this->rethrowNodeException($e);
+        }
     }
 
     /**
@@ -534,7 +568,13 @@ class Parser
      */
     protected function parseTable()
     {
-        return new TableNode($this->parseTableRows());
+        $table = $this->parseTableRows();
+
+        try {
+            return new TableNode($table);
+        } catch(NodeException $e) {
+            $this->rethrowNodeException($e);
+        }
     }
 
     /**
@@ -568,9 +608,30 @@ class Parser
     protected function parseTags()
     {
         $token = $this->expectTokenType('Tag');
+
+        $this->guardTags($token['tags']);
+
         $this->tags = array_merge($this->tags, $token['tags']);
 
-        return $this->parseExpression();
+        $possibleTransitions = array(
+            'Outline' => array(
+                'Examples',
+                'Step'
+            )
+        );
+
+        $currentType = '-1';
+        // check if that is ok to go inside:
+        if (!empty($this->passedNodesStack)) {
+            $currentType = $this->passedNodesStack[count($this->passedNodesStack) - 1];
+        }
+
+        $nextType = $this->predictTokenType();
+        if (!isset($possibleTransitions[$currentType]) || in_array($nextType, $possibleTransitions[$currentType])) {
+            return $this->parseExpression();
+        }
+
+        return "\n";
     }
 
     /**
@@ -584,6 +645,20 @@ class Parser
         $this->tags = array();
 
         return $tags;
+    }
+
+    /**
+     * Checks the tags fit the required format
+     *
+     * @param string[] $tags
+     */
+    protected function guardTags(array $tags)
+    {
+        foreach ($tags as $tag) {
+            if (preg_match('/\s/', $tag)) {
+                trigger_error('Whitespace in tags is deprecated, found "$tag"', E_USER_DEPRECATED);
+            }
+        }
     }
 
     /**
@@ -608,18 +683,6 @@ class Parser
         $this->expectTokenType('Newline');
 
         return "\n";
-    }
-
-    /**
-     * Parses next comment token & returns it's string content.
-     *
-     * @return BackgroundNode|FeatureNode|OutlineNode|ScenarioNode|StepNode|TableNode|string
-     */
-    protected function parseComment()
-    {
-        $this->expectTokenType('Comment');
-
-        return $this->parseExpression();
     }
 
     /**
@@ -695,5 +758,14 @@ class Parser
             );
         }
         return $node;
+    }
+
+    private function rethrowNodeException(NodeException $e): void
+    {
+        throw new ParserException(
+            $e->getMessage() . ($this->file ? ' in file ' . $this->file : ''),
+            0,
+            $e
+        );
     }
 }

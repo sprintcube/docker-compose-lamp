@@ -45,7 +45,7 @@ The full documentation for this library can be found [here][documentation].
 
 ## Requirements
 
-* PHP ^5.4 || ^7.0
+* PHP ^5.4 || ^7.0 || ^8.0
 
 ## Installation
 

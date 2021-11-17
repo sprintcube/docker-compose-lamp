@@ -12,6 +12,7 @@
 namespace Symfony\Component\Console\Helper;
 
 use Symfony\Component\Console\Formatter\OutputFormatterInterface;
+use Symfony\Component\String\UnicodeString;
 
 /**
  * Helper is the base class for all helper classes.
@@ -41,10 +42,29 @@ abstract class Helper implements HelperInterface
     /**
      * Returns the length of a string, using mb_strwidth if it is available.
      *
+     * @deprecated since Symfony 5.3
+     *
      * @return int The length of the string
      */
     public static function strlen(?string $string)
     {
+        trigger_deprecation('symfony/console', '5.3', 'Method "%s()" is deprecated and will be removed in Symfony 6.0. Use Helper::width() or Helper::length() instead.', __METHOD__);
+
+        return self::width($string);
+    }
+
+    /**
+     * Returns the width of a string, using mb_strwidth if it is available.
+     * The width is how many characters positions the string will use.
+     */
+    public static function width(?string $string): int
+    {
+        $string ?? $string = '';
+
+        if (preg_match('//u', $string)) {
+            return (new UnicodeString($string))->width(false);
+        }
+
         if (false === $encoding = mb_detect_encoding($string, null, true)) {
             return \strlen($string);
         }
@@ -53,12 +73,33 @@ abstract class Helper implements HelperInterface
     }
 
     /**
+     * Returns the length of a string, using mb_strlen if it is available.
+     * The length is related to how many bytes the string will use.
+     */
+    public static function length(?string $string): int
+    {
+        $string ?? $string = '';
+
+        if (preg_match('//u', $string)) {
+            return (new UnicodeString($string))->length();
+        }
+
+        if (false === $encoding = mb_detect_encoding($string, null, true)) {
+            return \strlen($string);
+        }
+
+        return mb_strlen($string, $encoding);
+    }
+
+    /**
      * Returns the subset of a string, using mb_substr if it is available.
      *
      * @return string The string subset
      */
-    public static function substr(string $string, int $from, int $length = null)
+    public static function substr(?string $string, int $from, int $length = null)
     {
+        $string ?? $string = '';
+
         if (false === $encoding = mb_detect_encoding($string, null, true)) {
             return substr($string, $from, $length);
         }
@@ -112,19 +153,24 @@ abstract class Helper implements HelperInterface
         return sprintf('%d B', $memory);
     }
 
-    public static function strlenWithoutDecoration(OutputFormatterInterface $formatter, $string)
+    /**
+     * @deprecated since Symfony 5.3
+     */
+    public static function strlenWithoutDecoration(OutputFormatterInterface $formatter, ?string $string)
     {
-        return self::strlen(self::removeDecoration($formatter, $string));
+        trigger_deprecation('symfony/console', '5.3', 'Method "%s()" is deprecated and will be removed in Symfony 6.0. Use Helper::removeDecoration() instead.', __METHOD__);
+
+        return self::width(self::removeDecoration($formatter, $string));
     }
 
-    public static function removeDecoration(OutputFormatterInterface $formatter, $string)
+    public static function removeDecoration(OutputFormatterInterface $formatter, ?string $string)
     {
         $isDecorated = $formatter->isDecorated();
         $formatter->setDecorated(false);
         // remove <...> formatting
-        $string = $formatter->format($string);
+        $string = $formatter->format($string ?? '');
         // remove already formatted characters
-        $string = preg_replace("/\033\[[^m]*m/", '', $string);
+        $string = preg_replace("/\033\[[^m]*m/", '', $string ?? '');
         $formatter->setDecorated($isDecorated);
 
         return $string;

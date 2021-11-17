@@ -68,7 +68,7 @@ class DryRun extends Command
 
         $dispatcher = new EventDispatcher();
         $dispatcher->addSubscriber(new ConsolePrinter([
-            'colors' => !$input->getOption('no-ansi'),
+            'colors'    => (!$input->hasParameterOption('--no-ansi') xor $input->hasParameterOption('ansi')),
             'steps'     => true,
             'verbosity' => OutputInterface::VERBOSITY_VERBOSE,
         ]));
@@ -85,13 +85,6 @@ class DryRun extends Command
         $this->dispatch($dispatcher, Events::SUITE_INIT, new SuiteEvent($suiteManager->getSuite(), null, $settings));
         $this->dispatch($dispatcher, Events::SUITE_BEFORE, new SuiteEvent($suiteManager->getSuite(), null, $settings));
         foreach ($tests as $test) {
-            if ($test instanceof \PHPUnit\Framework\TestSuite\DataProvider) {
-                foreach ($test as $t) {
-                    if ($t instanceof Test) {
-                        $this->dryRunTest($output, $dispatcher, $t);
-                    }
-                }
-            }
             if ($test instanceof Test and $test instanceof ScenarioDriven) {
                 $this->dryRunTest($output, $dispatcher, $test);
             }

@@ -6,6 +6,8 @@
 /* @var $this yii\web\View */
 /* @var $generator yii\gii\generators\form\Generator */
 
+$class = str_replace('/', '-', trim($generator->viewName, '_'));
+
 echo "<?php\n";
 ?>
 
@@ -17,7 +19,7 @@ use yii\widgets\ActiveForm;
 /* @var $form ActiveForm */
 <?= "?>" ?>
 
-<div class="<?= str_replace('/', '-', trim($generator->viewName, '_')) ?>">
+<div class="<?= $class ?>">
 
     <?= "<?php " ?>$form = ActiveForm::begin(); ?>
 
@@ -30,4 +32,4 @@ use yii\widgets\ActiveForm;
         </div>
     <?= "<?php " ?>ActiveForm::end(); ?>
 
-</div><!-- <?= str_replace('/', '-', trim($generator->viewName, '-')) ?> -->
+</div><!-- <?= $class ?> -->

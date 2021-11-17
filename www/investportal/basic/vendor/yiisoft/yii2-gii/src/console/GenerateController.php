@@ -10,6 +10,8 @@ namespace yii\gii\console;
 use Yii;
 use yii\base\InlineAction;
 use yii\console\Controller;
+use yii\di\Instance;
+use yii\gii\Generator;
 
 /**
  * This is the command line version of Gii - a code generator.
@@ -71,7 +73,10 @@ class GenerateController extends Controller
     {
         parent::init();
         foreach ($this->generators as $id => $config) {
-            $this->generators[$id] = Yii::createObject($config);
+            $this->generators[$id] = Instance::ensure(
+                $config,
+                Generator::className()
+            );
         }
     }
 

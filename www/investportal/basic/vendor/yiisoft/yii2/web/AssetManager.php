@@ -34,7 +34,7 @@ use yii\helpers\Url;
  * For more details and usage information on AssetManager, see the [guide article on assets](guide:structure-assets).
  *
  * @property AssetConverterInterface $converter The asset converter. Note that the type of this property
- * differs in getter and setter. See [[getConverter()]]  and [[setConverter()]] for details.
+ * differs in getter and setter. See [[getConverter()]] and [[setConverter()]] for details.
  *
  * @author Qiang Xue <qiang.xue@gmail.com>
  * @since 2.0
@@ -231,7 +231,7 @@ class AssetManager extends Component
         if (!is_dir($this->basePath)) {
             throw new InvalidConfigException("The directory does not exist: {$this->basePath}");
         }
-        
+
         if (!is_writable($this->basePath)) {
             throw new InvalidConfigException("The directory is not writable by the Web process: {$this->basePath}");
         }
@@ -316,14 +316,20 @@ class AssetManager extends Component
      * The actual URL is obtained by prepending either [[AssetBundle::$baseUrl]] or [[AssetManager::$baseUrl]] to the given asset path.
      * @param AssetBundle $bundle the asset bundle which the asset file belongs to
      * @param string $asset the asset path. This should be one of the assets listed in [[AssetBundle::$js]] or [[AssetBundle::$css]].
+     * @param bool|null $appendTimestamp Whether to append timestamp to the URL.
      * @return string the actual URL for the specified asset.
      */
-    public function getAssetUrl($bundle, $asset)
+    public function getAssetUrl($bundle, $asset, $appendTimestamp = null)
     {
         $assetUrl = $this->getActualAssetUrl($bundle, $asset);
         $assetPath = $this->getAssetPath($bundle, $asset);
 
-        if ($this->appendTimestamp && $assetPath && ($timestamp = @filemtime($assetPath)) > 0) {
+        $withTimestamp = $this->appendTimestamp;
+        if ($appendTimestamp !== null) {
+            $withTimestamp = $appendTimestamp;
+        }
+
+        if ($withTimestamp && $assetPath && ($timestamp = @filemtime($assetPath)) > 0) {
             return "$assetUrl?v=$timestamp";
         }
 

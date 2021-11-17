@@ -47,6 +47,10 @@ class HtmlLorem extends Base
      */
     public function randomHtml($maxDepth = 4, $maxWidth = 4)
     {
+        if (!class_exists(\DOMDocument::class, false)) {
+            throw new \RuntimeException('ext-dom is required to use randomHtml.');
+        }
+
         $document = new \DOMDocument();
         $this->idGenerator = new UniqueGenerator($this->generator);
 
@@ -62,18 +66,21 @@ class HtmlLorem extends Base
         $html->appendChild($body);
 
         $document->appendChild($html);
+
         return $document->saveHTML();
     }
 
     private function addRandomSubTree(\DOMElement $root, $maxDepth, $maxWidth)
     {
-        $maxDepth--;
+        --$maxDepth;
+
         if ($maxDepth <= 0) {
             return $root;
         }
 
         $siblings = self::numberBetween(1, $maxWidth);
-        for ($i = 0; $i < $siblings; $i++) {
+
+        for ($i = 0; $i < $siblings; ++$i) {
             if ($maxDepth == 1) {
                 $this->addRandomLeaf($root);
             } else {
@@ -83,39 +90,58 @@ class HtmlLorem extends Base
                 $this->addRandomSubTree($sibling, self::numberBetween(0, $maxDepth), $maxWidth);
             }
         }
+
         return $root;
     }
 
     private function addRandomLeaf(\DOMElement $node)
     {
         $rand = self::numberBetween(1, 10);
+
         switch ($rand) {
             case 1:
                 $this->addRandomP($node);
+
                 break;
+
             case 2:
                 $this->addRandomA($node);
+
                 break;
+
             case 3:
                 $this->addRandomSpan($node);
+
                 break;
+
             case 4:
                 $this->addRandomUL($node);
+
                 break;
+
             case 5:
                 $this->addRandomH($node);
+
                 break;
+
             case 6:
                 $this->addRandomB($node);
+
                 break;
+
             case 7:
                 $this->addRandomI($node);
+
                 break;
+
             case 8:
                 $this->addRandomTable($node);
+
                 break;
+
             default:
                 $this->addRandomText($node);
+
                 break;
         }
     }
@@ -123,12 +149,16 @@ class HtmlLorem extends Base
     private function addRandomAttribute(\DOMElement $node)
     {
         $rand = self::numberBetween(1, 2);
+
         switch ($rand) {
             case 1:
-                $node->setAttribute('class', $this->generator->word);
+                $node->setAttribute('class', $this->generator->word());
+
                 break;
+
             case 2:
                 $node->setAttribute('id', (string) $this->idGenerator->randomNumber(5));
+
                 break;
         }
     }
@@ -150,7 +180,7 @@ class HtmlLorem extends Base
     {
         $text = $element->ownerDocument->createTextNode($this->generator->sentence(self::numberBetween(1, $maxLength)));
         $node = $element->ownerDocument->createElement(static::A_TAG);
-        $node->setAttribute('href', $this->generator->safeEmailDomain);
+        $node->setAttribute('href', $this->generator->safeEmailDomain());
         $node->appendChild($text);
         $element->appendChild($node);
     }
@@ -204,7 +234,7 @@ class HtmlLorem extends Base
 
         $textLabel = $element->ownerDocument->createElement(static::LABEL_TAG);
         $textLabel->setAttribute('for', 'username');
-        $textLabel->textContent = $this->generator->word;
+        $textLabel->textContent = $this->generator->word();
 
         $passwordInput = $element->ownerDocument->createElement(static::INPUT_TAG);
         $passwordInput->setAttribute('type', 'password');
@@ -212,14 +242,14 @@ class HtmlLorem extends Base
 
         $passwordLabel = $element->ownerDocument->createElement(static::LABEL_TAG);
         $passwordLabel->setAttribute('for', 'password');
-        $passwordLabel->textContent = $this->generator->word;
+        $passwordLabel->textContent = $this->generator->word();
 
         $submit = $element->ownerDocument->createElement(static::INPUT_TAG);
         $submit->setAttribute('type', 'submit');
-        $submit->setAttribute('value', $this->generator->word);
+        $submit->setAttribute('value', $this->generator->word());
 
         $submit = $element->ownerDocument->createElement(static::FORM_TAG);
-        $submit->setAttribute('action', $this->generator->safeEmailDomain);
+        $submit->setAttribute('action', $this->generator->safeEmailDomain());
         $submit->setAttribute('method', 'POST');
         $submit->appendChild($textLabel);
         $submit->appendChild($textInput);
@@ -242,15 +272,18 @@ class HtmlLorem extends Base
 
         $tr = $element->ownerDocument->createElement(static::TR_TAG);
         $thead->appendChild($tr);
-        for ($i = 0; $i < $cols; $i++) {
+
+        for ($i = 0; $i < $cols; ++$i) {
             $th = $element->ownerDocument->createElement(static::TH_TAG);
             $th->textContent = $this->generator->sentence(self::numberBetween(1, $maxTitle));
             $tr->appendChild($th);
         }
-        for ($i = 0; $i < $rows; $i++) {
+
+        for ($i = 0; $i < $rows; ++$i) {
             $tr = $element->ownerDocument->createElement(static::TR_TAG);
             $tbody->appendChild($tr);
-            for ($j = 0; $j < $cols; $j++) {
+
+            for ($j = 0; $j < $cols; ++$j) {
                 $th = $element->ownerDocument->createElement(static::TD_TAG);
                 $th->textContent = $this->generator->sentence(self::numberBetween(1, $maxLength));
                 $tr->appendChild($th);
@@ -263,7 +296,8 @@ class HtmlLorem extends Base
     {
         $num = self::numberBetween(1, $maxItems);
         $ul = $element->ownerDocument->createElement(static::UL_TAG);
-        for ($i = 0; $i < $num; $i++) {
+
+        for ($i = 0; $i < $num; ++$i) {
             $li = $element->ownerDocument->createElement(static::LI_TAG);
             $li->textContent = $this->generator->sentence(self::numberBetween(1, $maxLength));
             $ul->appendChild($li);

@@ -21,7 +21,7 @@ class Person extends \Faker\Provider\Person
     /**
      * {@link} http://ru.wikipedia.org/wiki/%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%BE%D0%B5_%D0%BB%D0%B8%D1%87%D0%BD%D0%BE%D0%B5_%D0%B8%D0%BC%D1%8F
      * {@link} http://masterrussian.com/aa031701a.shtml
-     **/
+     */
     protected static $firstNameMale = [
         'Абрам', 'Август', 'Адам', 'Адриан', 'Аким', 'Александр', 'Алексей', 'Альберт', 'Ананий', 'Анатолий', 'Андрей', 'Антон', 'Антонин',
         'Аполлон', 'Аркадий', 'Арсений', 'Артемий', 'Артур', 'Артём', 'Афанасий', 'Богдан', 'Болеслав', 'Борис', 'Бронислав', 'Вадим',
@@ -38,7 +38,7 @@ class Person extends \Faker\Provider\Person
 
     /**
      * {@link} http://masterrussian.com/aa031001a.shtml
-     **/
+     */
     protected static $firstNameFemale = [
         'Александра', 'Алина', 'Алиса', 'Алла', 'Альбина', 'Алёна', 'Анастасия', 'Анжелика', 'Анна', 'Антонина', 'Анфиса', 'Валентина', 'Валерия',
         'Варвара', 'Василиса', 'Вера', 'Вероника', 'Виктория', 'Владлена', 'Галина', 'Дарья', 'Диана', 'Дина', 'Доминика', 'Ева',
@@ -64,7 +64,7 @@ class Person extends \Faker\Provider\Person
 
     /**
      * {@link} http://ru.wikipedia.org/wiki/%D0%A1%D0%BF%D0%B8%D1%81%D0%BE%D0%BA_%D0%BE%D0%B1%D1%89%D0%B5%D1%80%D1%83%D1%81%D1%81%D0%BA%D0%B8%D1%85_%D1%84%D0%B0%D0%BC%D0%B8%D0%BB%D0%B8%D0%B9
-     **/
+     */
     protected static $lastName = [
         'Смирнов', 'Иванов', 'Кузнецов', 'Соколов', 'Попов', 'Лебедев', 'Козлов',
         'Новиков', 'Морозов', 'Петров', 'Волков', 'Соловьёв', 'Васильев', 'Зайцев',
@@ -112,8 +112,6 @@ class Person extends \Faker\Provider\Person
      *
      * @example 'Иванович'
      *
-     * @access public
-     *
      * @return string Middle name
      */
     public function middleNameMale()
@@ -126,8 +124,6 @@ class Person extends \Faker\Provider\Person
      *
      * @example 'Ивановна'
      *
-     * @access public
-     *
      * @return string Middle name
      */
     public function middleNameFemale()
@@ -138,16 +134,18 @@ class Person extends \Faker\Provider\Person
     /**
      * Return middle name for the specified gender.
      *
-     * @access public
      * @param string|null $gender A gender the middle name should be generated
-     *     for. If the argument is skipped a random gender will be used.
+     *                            for. If the argument is skipped a random gender will be used.
+     *
      * @return string Middle name
      */
     public function middleName($gender = null)
     {
         if ($gender === static::GENDER_MALE) {
             return $this->middleNameMale();
-        } elseif ($gender === static::GENDER_FEMALE) {
+        }
+
+        if ($gender === static::GENDER_FEMALE) {
             return $this->middleNameFemale();
         }
 
@@ -161,7 +159,8 @@ class Person extends \Faker\Provider\Person
      * Return last name for the specified gender.
      *
      * @param string|null $gender A gender of the last name should be generated
-     *     for. If the argument is skipped a random gender will be used.
+     *                            for. If the argument is skipped a random gender will be used.
+     *
      * @return string Last name
      */
     public function lastName($gender = null)
@@ -170,7 +169,9 @@ class Person extends \Faker\Provider\Person
 
         if (static::GENDER_FEMALE === $gender) {
             return $lastName . 'а';
-        } elseif (static::GENDER_MALE === $gender) {
+        }
+
+        if (static::GENDER_MALE === $gender) {
             return $lastName;
         }
 

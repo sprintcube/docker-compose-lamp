@@ -9,7 +9,7 @@ class Person extends \Faker\Provider\Person
 {
     /**
      * {@link} http://vardunozime.lv/names-male
-     **/
+     */
     protected static $firstNameMale = [
         'Acons', 'Adalberts', 'Adelions', 'Adeljans', 'Adeļjons', 'Adgars', 'Adis', 'Ado', 'Adonis', 'Adoniss', 'Adrians', 'Adriāns', 'Adris', 'Afanasijs', 'Agatons', 'Agejs', 'Agijs', 'Aģis', 'Agnārs', 'Agnis', 'Agris', 'Agrits', 'Agrons', 'Agurs', 'Ahmads', 'Ahmeds', 'Ahto', 'Aidars', 'Aidis', 'Aigars', 'Aigijs', 'Aigils', 'Aigis', 'Aigo', 'Aigvars', 'Ailands', 'Aimo', 'Ainards', 'Ainārs', 'Ainars', 'Ainis', 'Aino', 'Airats', 'Airiks', 'Airis', 'Airtons', 'Aivalds', 'Aivars', 'Aivārs', 'Aivijs', 'Aivils', 'Aivis', 'Aivo', 'Akims', 'Ako', 'Akselis', 'Aksels', 'Alans', 'Alberts', 'Albīns', 'Albins', 'Aldijs', 'Aldis', 'Aldonis', 'Aldons', 'Aldris', 'Aleksandris', 'Aleksandrs', 'Aleksejs', 'Aleksis', 'Alekss', 'Alens', 'Alēns', 'Alereins', 'Alesandrs', 'Alfejs', 'Alfijs', 'Alfins', 'Alfons', 'Alfonss', 'Alfrēds', 'Alfreds', 'Alfrīds', 'Alfrids', 'Alfs', 'Algarts', 'Algers', 'Alģerts', 'Alģimants', 'Aļģirds', 'Algirds', 'Alģirds', 'Aļģirts', 'Alģirts', 'Alģis', 'Aļģis', 'Aliks', 'Aļiks', 'Alis', 'Alisters', 'Allans', 'Allens', 'Almands', 'Almants', 'Almārs', 'Almonds', 'Alnars', 'Alnis', 'Alnors', 'Aloīzijs', 'Aloizis', 'Aloizs', 'Aloīzs', 'Alons', 'Alsis', 'Altairs', 'Alvaro', 'Alvars', 'Alvids', 'Alvijs', 'Alvils', 'Alvīns', 'Alvis', 'Alvits', 'Amandis', 'Amands', 'Ambrozijs', 'Amijs', 'Amirans', 'Amirs', 'Amunds', 'Anārs', 'Anastāsijs', 'Anastāzijs', 'Anatolijs', 'Anatols', 'Ancis', 'Andars', 'Andejs', 'Anders', 'Anderss', 'Andijs', 'Andis', 'Ando', 'Andreass', 'Andrejans', 'Andrejs', 'Andrējs', 'Andress', 'Andriāns', 'Andrievs', 'Andrijans', 'Andrijs', 'Andris', 'Androns', 'Andrs', 'Andrus', 'Andruss', 'Andulis', 'Andžejs', 'Andzelms', 'Andželo', 'Andžs', 'Anfims', 'Angarijs', 'Anicets', 'Anis', 'Anrī', 'Anrijs', 'Anris', 'Anriss', 'Anselms', 'Ansis', 'Anšlavs', 'Antans', 'Antars', 'Antis', 'Antonijs', 'Antonio', 'Antons', 'Antris', 'Ants', 'Antuans', 'Anufrijs', 'Anvars', 'Anzelms', 'Anžijs', 'Apolinārijs', 'Apolinārs', 'Apolons', 'Aralds', 'Arams', 'Arčijs', 'Arčils', 'Ardis', 'Ards', 'Aress', 'Aretijs', 'Arets', 'Argils', 'Argo', 'Argods', 'Argons', 'Argots', 'Arguts', 'Arialds', 'Arians', 'Ariels', 'Arigo', 'Arijs', 'Ariko', 'Arilds', 'Arimands', 'Arīns', 'Arions', 'Aris', 'Ariss', 'Aristīds', 'Aristons', 'Arkādijs', 'Arlijs', 'Armando', 'Armands', 'Armanis', 'Armans', 'Armants', 'Armass', 'Armens', 'Armīds', 'Armīns', 'Armins', 'Armis', 'Arnis', 'Arno', 'Arnolds', 'Arnotijs', 'Arnulfs', 'Arsenijs', 'Arsēnijs', 'Arsens', 'Arsēns', 'Arsentijs', 'Artemijs', 'Artēmijs', 'Artijs', 'Artiks', 'Artis', 'Artjoms', 'Arts', 'Artūrs', 'Arturs', 'Arvalds', 'Arveds', 'Arvēds', 'Arvīds', 'Arvids', 'Arvils', 'Arvīns', 'Arvis', 'Arvo', 'Askolds', 'Asmunds', 'Astērijs', 'Astrīds', 'Atāls', 'Atanazijs', 'Atis', 'Atstars', 'Atvars', 'Audars', 'Audris', 'Augmants', 'Augustīns', 'Augusts', 'Aurelijs', 'Aurēlijs', 'Aurels', 'Auseklis', 'Ausmis', 'Ausmunds', 'Austris', 'Austrums',
         'Ādams', 'Ādolfs', 'Ārends', 'Ārens', 'Ārijs', 'Āriks', 'Āris', 'Ārons', 'Ārvaldis', 'Ārvalds', 'Āvo',
@@ -46,7 +46,7 @@ class Person extends \Faker\Provider\Person
 
     /**
      * {@link} http://vardunozime.lv/names-female
-     **/
+     */
     protected static $firstNameFemale = [
         'Ada', 'Adala', 'Adalberta', 'Adela', 'Adelaida', 'Adelaide', 'Adele', 'Adelfina', 'Adelgunde', 'Adelheida', 'Adelheide', 'Adelija', 'Adēlija', 'Adelīna', 'Adelina', 'Adija', 'Adīna', 'Adīne', 'Adonija', 'Adriāna', 'Adrija', 'Aelita', 'Afanasija', 'Afra', 'Afrodīte', 'Agafija', 'Agata', 'Agate', 'Agāte', 'Agija', 'Agika', 'Agita', 'Aglikerija', 'Agna', 'Agnda', 'Agne', 'Agnesa', 'Agnese', 'Agnesija', 'Agneška', 'Agņeška', 'Agneta', 'Agnete', 'Agneze', 'Agnēze', 'Agnija', 'Agnita', 'Agra', 'Agreda', 'Agrida', 'Agrija', 'Agrina', 'Agripina', 'Agrita', 'Agrīte', 'Agunda', 'Aīda', 'Aida', 'Aiga', 'Aigija', 'Aigita', 'Aigula', 'Aija', 'Aila', 'Ailenda', 'Aili', 'Ailija', 'Ailita', 'Aina', 'Aināra', 'Ainita', 'Aira', 'Airida', 'Airika', 'Airīna', 'Airisa', 'Airita', 'Airite', 'Aisma', 'Aista', 'Aiva', 'Aivija', 'Aivika', 'Aivita', 'Ajita', 'Akilina', 'Aksenija', 'Akulina', 'Akuļina', 'Akvelīna', 'Akvelina', 'Akvilīna', 'Ala', 'Alaida', 'Alba', 'Alberta', 'Albertīna', 'Albertīne', 'Albertine', 'Albīna', 'Albina', 'Albīne', 'Alda', 'Aldija', 'Aldīna', 'Aldona', 'Aldone', 'Aldonija', 'Aldra', 'Aleftīna', 'Aleftine', 'Aleksa', 'Aleksandra', 'Aleksandrīna', 'Aleksandrine', 'Alena', 'Alēna', 'Alerina', 'Alesja', 'Aleta', 'Alevtīna', 'Alevtīne', 'Alfa', 'Alfija', 'Alfonija', 'Alfra', 'Alfrīda', 'Ali', 'Alīcija', 'Alīda', 'Alida', 'Alīde', 'Alīdija', 'Alija', 'Alika', 'Alimpiada', 'Alīna', 'Alina', 'Aļina', 'Alīne', 'Alīsa', 'Alise', 'Alīse', 'Alīsija', 'Alita', 'Alla', 'Allija', 'Alma', 'Almāra', 'Alna', 'Alodija', 'Aloīda', 'Aloiza', 'Aloizija', 'Aļona', 'Alondra', 'Alta', 'Alva', 'Alvija', 'Alvika', 'Alvīna', 'Alvīne', 'Alvine', 'Alvinija', 'Alvita', 'Alžbeta', 'Amalda', 'Amālija', 'Amanda', 'Amanta', 'Amantija', 'Amaranda', 'Amaranta', 'Amarilla', 'Amelija', 'Amēlija', 'Amelita', 'Amenta', 'Amīda', 'Amilda', 'Ammonārija', 'Amrita', 'Ana', 'Aņa', 'Anabella', 'Anaita', 'Anāra', 'Anastasija', 'Anastāsija', 'Anastāzija', 'Anata', 'Anatolija', 'Ance', 'Anda', 'Andija', 'Andīna', 'Andina', 'Andīne', 'Andra', 'Andre', 'Andrelita', 'Andreta', 'Andriāna', 'Andrija', 'Andrijana', 'Andrika', 'Andrita', 'Andromeda', 'Andžela', 'Andželika', 'Andželīna', 'Andželita', 'Andžella', 'Ane', 'Aneka', 'Aņela', 'Aneļa', 'Anēla', 'Anela', 'Anēle', 'Anēlija', 'Anelija', 'Anemarija', 'Anese', 'Aneta', 'Anete', 'Anfija', 'Anfisa', 'Anga', 'Angeļa', 'Angela', 'Angelija', 'Angelika', 'Angēlika', 'Angelīna', 'Angelita', 'Anhelita', 'Aniceta', 'Anija', 'Anika', 'Anisija', 'Aņisija', 'Aņisja', 'Anita', 'Anitra', 'Ankatrina', 'Anlīza', 'Anlīze', 'Anlizeta', 'Anmāra', 'Anmarija', 'Anna', 'Annamarija', 'Anne', 'Annele', 'Annelija', 'Annemarija', 'Anneta', 'Annete', 'Annija', 'Annika', 'Anniņa', 'Anrita', 'Anta', 'Antainna', 'Antija', 'Antonela', 'Antonīda', 'Antonija', 'Antoņina', 'Antonīna', 'Antra', 'Antuaneta', 'Antuanete', 'Aņuta', 'Anžela', 'Anželika', 'Anželina', 'Anželita', 'Anžella', 'Anzelma', 'Apolinārija', 'Apolonija', 'Aralda', 'Aranta', 'Areta', 'Arfa', 'Argija', 'Argita', 'Argunda', 'Ariadna', 'Ariadne', 'Ariāna', 'Arianda', 'Ariandra', 'Arianna', 'Arīda', 'Arieta', 'Arija', 'Arimanda', 'Arīna', 'Arisa', 'Aristīda', 'Arita', 'Arjana', 'Arkādija', 'Arlita', 'Arma', 'Armanda', 'Armīda', 'Armilda', 'Arne', 'Arnīda', 'Arnija', 'Arnika', 'Arnita', 'Arta', 'Artemida', 'Artija', 'Arvaldina', 'Arvīda', 'Arvīde', 'Arvita', 'Asija', 'Asja', 'Asma', 'Asna', 'Asnate', 'Asnāte', 'Asne', 'Asola', 'Aspāzija', 'Asterija', 'Astērija', 'Astra', 'Astrīda', 'Astrida', 'Astrīde', 'Astrīte', 'Asunta', 'Ata', 'Atala', 'Atēna', 'Auce', 'Auda', 'Augenija', 'Augusta', 'Auguste', 'Augustīna', 'Augustīne', 'Aura', 'Aurēlija', 'Aurelija', 'Aurika', 'Aurora', 'Ausma', 'Aušra', 'Aušra', 'Austra', 'Austrīte', 'Avelīna', 'Avija', 'Avita', 'Aviva', 'Azanda', 'Azella',
         'Ādolfina', 'Ādolfīne', 'Āra', 'Ārija', 'Ārika', 'Ārite', 'Ārvalda',
@@ -84,16 +84,40 @@ class Person extends \Faker\Provider\Person
     ];
 
     /**
-     * {@link} http://ru.wikipedia.org/wiki/%D0%A1%D0%BF%D0%B8%D1%81%D0%BE%D0%BA_%D0%BE%D0%B1%D1%89%D0%B5%D1%80%D1%83%D1%81%D1%81%D0%BA%D0%B8%D1%85_%D1%84%D0%B0%D0%BC%D0%B8%D0%BB%D0%B8%D0%B9
-     **/
+     * {@link} https://lv.wikipedia.org/wiki/Kategorija:Latvie%C5%A1u_uzv%C4%81rdi
+     */
     protected static $lastName = [
-        'Raņķi', 'Muižeļi', 'Dumpji', 'Ozoliņi', 'Kalniņi', 'Sēļi', 'Kreši', 'Dāles', 'Rungaiņi',
-        'Kalniņš', 'Lejiņš', 'Celmiņš', 'Bērziņš', 'Ozoliņš', 'Liepiņš', 'Siliņš', 'Vilciņš', 'Lācītis',
-        'Priedīte', 'Saulīte', 'Gailītis', 'Muciņš', 'Krieviņš', 'Zviedrītis', 'Polītis',
-        'Latkovskis', 'Lazovskis', 'Kovaļevskis', 'Dombrovskis', 'Jankovskis', 'Ratkēvičs', 'Kokorevičs', 'Jurēvics',
-        'Jankevics', 'Baldunčiks', 'Šileiko', 'Budreiko', 'Andreiko', 'Blaumanis', 'Silmanis', 'Staltmanis',
-        'Andersons', 'Kirhenšteins', 'Švarcbahs', 'Bendorfs', 'Veinbergs', 'Rozentāls', 'Neilands', 'Freidenfelds',
-        'Veidenbaums', 'Kronvalds',
+        'Abuls', 'Aizupe', 'Akmentiņš', 'Alksnis', 'Alunāns', 'Ancāns', 'Andžāns', 'Ankipāns', 'Aparjode', 'Apine', 'Apinis', 'Aploks', 'Apse', 'Apsītis', 'Arājs', 'Asars', 'Astra', 'Augstkalns', 'Augškalns', 'Auniņš', 'Auns', 'Auškāps', 'Auziņa', 'Auziņš', 'Avens', 'Avens', 'Avotiņš', 'Avots',
+        'Ābele', 'Ābelīte', 'Ābola', 'Āboliņa', 'Āboliņš', 'Ābols', 'Āboltiņa', 'Āboltiņš', 'Ārgalis',
+        'Bajārs', 'Baldzēns', 'Bāliņa', 'Bāliņš', 'Balode', 'Balodis', 'Baltgailis', 'Baltiņš', 'Banga', 'Bārbale', 'Bārda', 'Bargais', 'Barkāns', 'Barons', 'Baušķenieks', 'Bebris', 'Berģis', 'Bertāns', 'Bērziņa', 'Bērziņš', 'Bērzkalns', 'Bērzs', 'Bētiņš', 'Biezais', 'Birkavs', 'Birkerts', 'Birze', 'Birznieks', 'Bisenieks', 'Bite', 'Bitenieks', 'Bļodnieks', 'Bojārs', 'Brasla', 'Breikšs', 'Brencēns', 'Brice', 'Briede', 'Briedis', 'Broks', 'Brože', 'Buiķis', 'Buks', 'Bulis', 'Bumbiere', 'Burvis', 'Butāne', 'Butkus',
+        'Cālītis', 'Caune', 'Caunītis', 'Celmiņa', 'Celmiņš', 'Celms', 'Ceplītis', 'Cērps', 'Cielēns', 'Ciemiņš', 'Cipruss', 'Cipulis', 'Cīrulis',
+        'Čaklais', 'Čakste', 'Čevers', 'Čukste',
+        'Dāboliņš', 'Daiders', 'Dālderis', 'Dambis', 'Dārziņš', 'Dārznieks', 'Deglavs', 'Dimants', 'Dobelis', 'Draviņš', 'Dravnieks', 'Dubra', 'Dukure', 'Dukurs', 'Dumpe', 'Dumpis', 'Dzelme', 'Dzelzītis', 'Dzenis', 'Dzenītis', 'Dzērve', 'Dzintars', 'Dzirne', 'Džeriņš',
+        'Egle', 'Eglīte', 'Eglītis', 'Eiduka', 'Eisaks', 'Elksne', 'Endzelīna', 'Endzelīns', 'Endziņš', 'Eniņš', 'Ezeriņš',
+        'Ēķis', 'Ērglis',
+        'Freimanis',
+        'Gaigals', 'Gaile', 'Gailis', 'Gailītis', 'Galviņš', 'Garanča', 'Gauja', 'Goba', 'Goppers', 'Gorkšs', 'Grantiņš', 'Graudiņš', 'Grauds', 'Grava', 'Grāvelis', 'Greste', 'Grēviņš', 'Grīva', 'Grūbe', 'Gruzītis', 'Gulbe', 'Gulbis',
+        'Ģīlis', 'Ģirģens',
+        'Igaunis', 'Ikauniece', 'Ikaunieks', 'Indriksone', 'Indriksons', 'Irbe',
+        'Īvāns',
+        'Jankausks', 'Jaudzems', 'Jaunzeme', 'Jaunzemis', 'Jaunzems', 'Jurjāns', 'Jūsmiņš',
+        'Kadiķis', 'Kaijaks', 'Kaktiņš', 'Kalējs', 'Kalna', 'Kalnbērzs', 'Kalniņa', 'Kalniņš', 'Kalnozols', 'Kalns', 'Kalpaks', 'Kambala', 'Kantāns', 'Kants', 'Kaņeps', 'Karašausks', 'Kārkliņa', 'Kārkliņš', 'Kauliņš', 'Kauls', 'Kazlausks', 'Kazričs', 'Kirmuška', 'Kivlenieks', 'Klētniece', 'Klišāns', 'Kļava', 'Kļaviņa', 'Kļaviņš', 'Kociņš', 'Kokina', 'Kokins', 'Kokle', 'Kozlovskis', 'Kramiņš', 'Krastiņa', 'Krastiņš', 'Krauklis', 'Krieviņš', 'Krievs', 'Krollis', 'Krūkliņš', 'Krūmiņa', 'Krūmiņš', 'Krustiņš', 'Kubiļus', 'Kubuliņa', 'Kugrēns', 'Kukainis', 'Kukule', 'Kukulis', 'Kūlis', 'Kundziņš', 'Kurpnieks', 'Kursītis', 'Kusiņš', 'Kušķis', 'Kvēps',
+        'Ķemere', 'Ķempe', 'Ķēniņš', 'Ķibilds', 'Ķuzis',
+        'Ladusāns', 'Lāce', 'Lācis', 'Lagzdiņš', 'Laime', 'Laimiņš', 'Laizāne', 'Laizāns', 'Lapainis', 'Lapiņš', 'Lapsa', 'Latvis', 'Lauks', 'Lauskis', 'Laviņa', 'Laviņš', 'Lazda', 'Lazdiņš', 'Legzdiņš', 'Leitāns', 'Leitis', 'Leja', 'Lejiņš', 'Lejnieks', 'Lībietis', 'Līce', 'Līdaka', 'Lieģis', 'Lielais', 'Lielgalvis', 'Liepa', 'Liepiņa', 'Liepiņš', 'Liepkalne', 'Linga', 'Liniņš', 'Ločmele', 'Ločmelis', 'Logina', 'Logins', 'Loze', 'Lujāns', 'Lūkins', 'Lūriņa', 'Lūsis',
+        'Ļaksa',
+        'Mangulis', 'Matīsa', 'Mauriņa', 'Mediņš', 'Mednis', 'Melbārde', 'Melbārdis', 'Mellupe', 'Melngailis', 'Mētra', 'Mežaraups', 'Mežciems', 'Mežlauks', 'Mežulis', 'Miezis', 'Miezītis', 'Miglinieks', 'Misāns', 'Miķelsons', 'Muceniece', 'Mucenieks', 'Muciņš', 'Muižniece', 'Muižnieks', 'Muktupāvela', 'Muktupāvels', 'Mūrniece', 'Mūrnieks',
+        'Neretniece', 'Niedra', 'Niedre',
+        'Oliņš', 'Osis', 'Oškalns', 'Ošs', 'Ozola', 'Ozoliņa', 'Ozoliņš', 'Ozols',
+        'Pabērzs', 'Paegle', 'Pauļuks', 'Pelšs', 'Peniķis', 'Petrausks', 'Pīrāgs', 'Plaude', 'Plaudis', 'Plotnieks', 'Plūme', 'Pļaviņš', 'Pļavniece', 'Podnieks', 'Poikāns', 'Polis', 'Pormalis', 'Prauliņa', 'Prauliņš', 'Priede', 'Priedīte', 'Pūce', 'Pujāts', 'Puķe', 'Pumpurs', 'Pūpols', 'Pupurs', 'Puriņš', 'Purnis', 'Purviņš', 'Putniņa', 'Putniņš', 'Putra',
+        'Radziņa', 'Radziņš', 'Rancāns', 'Raņķis', 'Rapa', 'Rausis', 'Reinika', 'Reiniks', 'Reizniece', 'Repše', 'Riekstiņš', 'Rijnieks', 'Rītiņš', 'Robežnieks', 'Roga', 'Rokpelnis', 'Ronis', 'Roze', 'Roziņš', 'Rozītis', 'Rožlapa', 'Rubene', 'Rubenis', 'Rudzīte', 'Rudzītis', 'Rullis', 'Rūmnieks', 'Rūtiņš',
+        'Sabonis', 'Saliņš', 'Salmiņš', 'Salnis', 'Saulietis', 'Saulīte', 'Saulītis', 'Sedlenieks', 'Segliņa', 'Segliņš', 'Seile', 'Seiļs', 'Sesks', 'Siliņa', 'Siliņš', 'Sīlis', 'Sīmanis', 'Sirmais', 'Skābardis', 'Skalbe', 'Skrastiņa', 'Skrastiņš', 'Skride', 'Skrinda', 'Skudra', 'Skuja', 'Skujenieks', 'Skujiņa', 'Skujiņš', 'Skulme', 'Sodums', 'Spridzāns', 'Sproģe', 'Sproģis', 'Sprūdžs', 'Spūlis', 'Stabiņš', 'Stalts', 'Staprāns', 'Stepiņš', 'Stradiņš', 'Straumanis', 'Straume', 'Straupe', 'Strautmane', 'Strautmanis', 'Strautnieks', 'Strazdiņš', 'Strazds', 'Strēlis', 'Strēlnieks', 'Strods', 'Sudmalis', 'Sudraba', 'Sukurs', 'Sukuts',
+        'Šķēle', 'Šnepsts',
+        'Tauriņš', 'Teilāne', 'Tērauda', 'Timma', 'Tīruma', 'Titāns', 'Turss',
+        'Upenieks', 'Upītis', 'Upmale', 'Urtāns', 'Ušpelis', 'Uzuliņš',
+        'Ūdentiņš', 'Ūders', 'Ūdre', 'Ūdris',
+        'Vācietis', 'Vairogs', 'Vaišļa', 'Vaivods', 'Vanags', 'Varslavāns', 'Vasarietis', 'Vazdika', 'Vazdiks', 'Vecozols', 'Vecumnieks', 'Vecvagars', 'Vērdiņš', 'Vīgante', 'Vīksna', 'Vīksne', 'Vilcāne', 'Vilciņa', 'Vilciņš', 'Vilkaste', 'Vilks', 'Viļums', 'Vimba', 'Vītola', 'Vītoliņš', 'Vītols',
+        'Zaķis', 'Zāle', 'Zālīte', 'Zālītis', 'Zaļupe', 'Zariņa', 'Zariņš', 'Zelčs', 'Zeltiņa', 'Zeltiņš', 'Zemdega', 'Zemgals', 'Zemītis', 'Zemzaris', 'Ziedonis', 'Ziemele', 'Ziemelis', 'Zīle', 'Zirnis', 'Znotiņš', 'Zvagulis', 'Zvejnieks', 'Zviedris', 'Zvirbulis', 'Zvirgzdiņš',
+        'Žagars', 'Žukausks',
     ];
 
     public function driverLicence()
@@ -108,8 +132,11 @@ class Person extends \Faker\Provider\Person
 
     /**
      * National Personal Identity number (personas kods)
-     * @link https://en.wikipedia.org/wiki/National_identification_number#Latvia
+     *
+     * @see https://en.wikipedia.org/wiki/National_identification_number#Latvia
+     *
      * @param \DateTime $birthdate
+     *
      * @return string on format XXXXXX-XXXXX
      */
     public function personalIdentityNumber(\DateTime $birthdate = null)

@@ -20,6 +20,9 @@ abstract class Framework extends InnerBrowser
         return [];
     }
 
+    /**
+     * @param array $settings
+     */
     public function _beforeSuite($settings = [])
     {
         /**

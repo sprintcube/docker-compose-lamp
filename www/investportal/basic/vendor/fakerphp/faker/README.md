@@ -1,8 +1,11 @@
+<p style="text-align: center"><img src="https://github.com/FakerPHP/Artwork/raw/main/src/socialcard.png" alt="Social card of FakerPHP"></p>
+
 # Faker
 
 [![Packagist Downloads](https://img.shields.io/packagist/dm/FakerPHP/Faker)](https://packagist.org/packages/fakerphp/faker)
-[![GitHub Workflow Status](https://img.shields.io/github/workflow/status/FakerPHP/Faker/Continuous%20Integration/main)](https://github.com/FakerPHP/Faker/actions)
-[![StyleCI](https://github.styleci.io/repos/307658860/shield?branch=main&style=flat)](https://github.styleci.io/repos/307658860?branch=main)
+[![GitHub Workflow Status](https://img.shields.io/github/workflow/status/FakerPHP/Faker/Tests/main)](https://github.com/FakerPHP/Faker/actions)
+[![Type Coverage](https://shepherd.dev/github/FakerPHP/Faker/coverage.svg)](https://shepherd.dev/github/FakerPHP/Faker)
+[![Code Coverage](https://codecov.io/gh/FakerPHP/Faker/branch/main/graph/badge.svg)](https://codecov.io/gh/FakerPHP/Faker)
 
 Faker is a PHP library that generates fake data for you. Whether you need to bootstrap your database, create good-looking XML documents, fill-in your persistence to stress test it, or anonymize data taken from a production service, Faker is for you.
 
@@ -24,7 +27,7 @@ Full documentation can be found over on [fakerphp.github.io](https://fakerphp.gi
 
 ### Basic Usage
 
-Use `Faker\Factory::create()` to create and initialize a faker generator, which can generate data by accessing properties named after the type of data you want.
+Use `Faker\Factory::create()` to create and initialize a Faker generator, which can generate data by accessing methods named after the type of data you want.
 
 ```php
 <?php
@@ -32,39 +35,42 @@ require_once 'vendor/autoload.php';
 
 // use the factory to create a Faker\Generator instance
 $faker = Faker\Factory::create();
-// generate data by accessing properties
-echo $faker->name;
-// 'Lucy Cechtelar';
-echo $faker->address;
-// "426 Jordy Lodge
-// Cartwrightshire, SC 88120-6700"
-echo $faker->text;
-// Dolores sit sint laboriosam dolorem culpa et autem. Beatae nam sunt fugit
-// et sit et mollitia sed.
-// Fuga deserunt tempora facere magni omnis. Omnis quia temporibus laudantium
-// sit minima sint.
+// generate data by calling methods
+echo $faker->name();
+// 'Vince Sporer'
+echo $faker->email();
+// 'walter.sophia@hotmail.com'
+echo $faker->text();
+// 'Numquam ut mollitia at consequuntur inventore dolorem.'
 ```
 
-Even if this example shows a property access, each call to `$faker->name` yields a different (random) result. This is because Faker uses `__get()` magic, and forwards `Faker\Generator->$property` calls to `Faker\Generator->format($property)`.
+Each call to `$faker->name()` yields a different (random) result. This is because Faker uses `__call()` magic, and forwards `Faker\Generator->$method()` calls to `Faker\Generator->format($method, $attributes)`.
 
 ```php
 <?php
-for ($i = 0; $i < 10; $i++) {
-    echo $faker->name, "\n";
+for ($i = 0; $i < 3; $i++) {
+    echo $faker->name() . "\n";
 }
 
-// Adaline Reichel
-// Dr. Santa Prosacco DVM
-// Noemy Vandervort V
-// Lexi O'Conner
-// Gracie Weber
-// Roscoe Johns
-// Emmett Lebsack
-// Keegan Thiel
-// Wellington Koelpin II
-// Ms. Karley Kiehn V
+// 'Cyrus Boyle'
+// 'Alena Cummerata'
+// 'Orlo Bergstrom'
 ```
 
 ## License
 
 Faker is released under the MIT License. See [`LICENSE`](LICENSE) for details.
+
+## Backward compatibility promise
+
+Faker is using [Semver](https://semver.org/). This means that versions are tagged
+with MAJOR.MINOR.PATCH. Only a new major version will be allowed to break backward
+compatibility (BC).
+
+Classes marked as `@experimental` or `@internal` are not included in our backward compatibility promise.
+You are also not guaranteed that the value returned from a method is always the
+same. You are guaranteed that the data type will not change.
+
+PHP 8 introduced [named arguments](https://wiki.php.net/rfc/named_params), which
+increased the cost and reduces flexibility for package maintainers. The names of the
+arguments for methods in Faker is not included in our BC promise.

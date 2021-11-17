@@ -34,7 +34,7 @@ class KeywordsDumper
     /**
      * Sets keywords mapper function.
      *
-     * Callable should accept 2 arguments (array $keywords and Boolean $isShort)
+     * Callable should accept 2 arguments (array $keywords and bool $isShort)
      *
      * @param callable $mapper Mapper function
      */
@@ -46,8 +46,8 @@ class KeywordsDumper
     /**
      * Defaults keywords dumper.
      *
-     * @param array   $keywords Keywords list
-     * @param Boolean $isShort  Is short version
+     * @param array $keywords Keywords list
+     * @param bool  $isShort  Is short version
      *
      * @return string
      */
@@ -63,9 +63,9 @@ class KeywordsDumper
     /**
      * Dumps keyworded feature into string.
      *
-     * @param string  $language Keywords language
-     * @param Boolean $short    Dump short version
-     * @param bool    $excludeAsterisk
+     * @param string $language Keywords language
+     * @param bool   $short    Dump short version
+     * @param bool   $excludeAsterisk
      *
      * @return string|array String for short version and array of features for extended
      */
@@ -98,7 +98,7 @@ class KeywordsDumper
      * Dumps feature example.
      *
      * @param string  $keyword Item keyword
-     * @param Boolean $short   Dump short version?
+     * @param bool    $short   Dump short version?
      *
      * @return string
      */
@@ -153,8 +153,8 @@ GHERKIN;
     /**
      * Dumps background example.
      *
-     * @param string  $keyword Item keyword
-     * @param Boolean $short   Dump short version?
+     * @param string $keyword Item keyword
+     * @param bool   $short   Dump short version?
      *
      * @return string
      */
@@ -187,8 +187,8 @@ GHERKIN;
     /**
      * Dumps scenario example.
      *
-     * @param string  $keyword Item keyword
-     * @param Boolean $short   Dump short version?
+     * @param string $keyword Item keyword
+     * @param bool   $short   Dump short version?
      *
      * @return string
      */
@@ -245,8 +245,8 @@ GHERKIN;
     /**
      * Dumps outline example.
      *
-     * @param string  $keyword Item keyword
-     * @param Boolean $short   Dump short version?
+     * @param string $keyword Item keyword
+     * @param bool   $short   Dump short version?
      *
      * @return string
      */
@@ -318,9 +318,9 @@ GHERKIN;
     /**
      * Dumps step example.
      *
-     * @param string  $keywords Item keyword
-     * @param string  $text     Step text
-     * @param Boolean $short    Dump short version?
+     * @param string $keywords Item keyword
+     * @param string $text     Step text
+     * @param bool   $short    Dump short version?
      *
      * @return string
      */

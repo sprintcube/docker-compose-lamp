@@ -18,12 +18,9 @@
     ],
     "minimum-stability": "RC",
     "require": {
-        "php": ">=5.6.0 <8.0",
+        "php": ">=5.6.0 <8.1",
         "codeception/lib-innerbrowser": "^1.0",
         "codeception/codeception": "^4.0"
-    },
-    "require-dev": {
-        "codeception/util-robohelpers": "dev-master"
     },
     "autoload":{
         "classmap": ["src/"]

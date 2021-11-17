@@ -22,7 +22,8 @@ class Person extends \Faker\Provider\Person
 
     /**
      * @var array Swedish female first names
-     * @link http://spraakbanken.gu.se/statistik/lbfnamnalf.phtml
+     *
+     * @see http://spraakbanken.gu.se/statistik/lbfnamnalf.phtml
      */
     protected static $firstNameFemale = [
 
@@ -49,12 +50,13 @@ class Person extends \Faker\Provider\Person
         'Valborg', 'Vanja', 'Vega', 'Vendela', 'Vendla', 'Vera', 'Veronica', 'Veronika', 'Victoria', 'Viktoria', 'Vilhelmina', 'Vilma', 'Viola', 'Virginia', 'Vivan', 'Viveca', 'Viveka', 'Vivi', 'Vivian', 'Viviann', 'Vivianne', 'Vivi-Ann', 'Vivi-Anne',
         'Wilhelmina',
         'Ylva', 'Yvonne',
-        'Åsa', 'Åse'
+        'Åsa', 'Åse',
     ];
 
     /**
      * @var array Swedish male first names
-     * @link http://spraakbanken.gu.se/statistik/lbfnamnalf.phtml
+     *
+     * @see http://spraakbanken.gu.se/statistik/lbfnamnalf.phtml
      */
     protected static $firstNameMale = [
         'Abraham', 'Adam', 'Adolf', 'Adrian', 'Agaton', 'Agne', 'Albert', 'Albin', 'Aldor', 'Alex', 'Alexander', 'Alexis', 'Alexius', 'Alf', 'Alfons', 'Alfred', 'Algot', 'Allan', 'Alrik', 'Alvar', 'Alve', 'Amandus', 'Anders', 'André', 'Andreas', 'Anselm', 'Anshelm', 'Antero', 'Anton', 'Antonius', 'Arne', 'Arnold', 'Aron', 'Arthur', 'Artur', 'Arvid', 'Assar', 'Astor', 'August', 'Augustin', 'Axel',
@@ -81,12 +83,13 @@ class Person extends \Faker\Provider\Person
         'Waldemar', 'Walter', 'Werner', 'Wilhelm', 'William', 'Willy',
         'Yngve',
         'Åke',
-        'Örjan', 'Östen'
+        'Örjan', 'Östen',
     ];
 
     /**
      * @var array Swedish common last names
-     * @link http://www.scb.se/sv_/Hitta-statistik/Statistik-efter-amne/Befolkning/Amnesovergripande-statistik/Namnstatistik/30898/2012A01x/Samtliga-folkbokforda--Efternamn-topplistor/Efternamn-topp-100/
+     *
+     * @see http://www.scb.se/sv_/Hitta-statistik/Statistik-efter-amne/Befolkning/Amnesovergripande-statistik/Namnstatistik/30898/2012A01x/Samtliga-folkbokforda--Efternamn-topplistor/Efternamn-topp-100/
      */
     protected static $lastName = [
 
@@ -110,14 +113,17 @@ class Person extends \Faker\Provider\Person
         'Viklund',
         'Wallin', 'Wikström',
         'Åberg', 'Åkesson', 'Åström',
-        'Öberg'
+        'Öberg',
     ];
 
     /**
      * National Personal Identity number (personnummer)
-     * @link http://en.wikipedia.org/wiki/Personal_identity_number_(Sweden)
+     *
+     * @see http://en.wikipedia.org/wiki/Personal_identity_number_(Sweden)
+     *
      * @param \DateTime $birthdate
-     * @param string $gender Person::GENDER_MALE || Person::GENDER_FEMALE
+     * @param string    $gender    Person::GENDER_MALE || Person::GENDER_FEMALE
+     *
      * @return string on format XXXXXX-XXXX
      */
     public function personalIdentityNumber(\DateTime $birthdate = null, $gender = null)
@@ -126,18 +132,40 @@ class Person extends \Faker\Provider\Person
             $birthdate = \Faker\Provider\DateTime::dateTimeThisCentury();
         }
         $datePart = $birthdate->format('ymd');
-
-        if ($gender && $gender == static::GENDER_MALE) {
-            $randomDigits = (string) static::numerify('##') . static::randomElement([1, 3, 5, 7, 9]);
-        } elseif ($gender && $gender == static::GENDER_FEMALE) {
-            $randomDigits = (string) static::numerify('##') . static::randomElement([0, 2, 4, 6, 8]);
-        } else {
-            $randomDigits = (string) static::numerify('###');
-        }
-
+        $randomDigits = $this->getBirthNumber($gender);
 
         $checksum = Luhn::computeCheckDigit($datePart . $randomDigits);
 
         return $datePart . '-' . $randomDigits . $checksum;
+    }
+
+    /**
+     * @param string $gender Person::GENDER_MALE || Person::GENDER_FEMALE
+     *
+     * @return string of three digits
+     */
+    protected function getBirthNumber($gender = null)
+    {
+        if ($gender && $gender === static::GENDER_MALE) {
+            return (string) static::numerify('##') . static::randomElement([1, 3, 5, 7, 9]);
+        }
+
+        $zeroCheck = static function ($callback) {
+            do {
+                $randomDigits = $callback();
+            } while ($randomDigits === '000');
+
+            return $randomDigits;
+        };
+
+        if ($gender && $gender === static::GENDER_FEMALE) {
+            return $zeroCheck(static function () {
+                return (string) static::numerify('##') . static::randomElement([0, 2, 4, 6, 8]);
+            });
+        }
+
+        return  $zeroCheck(static function () {
+            return (string) static::numerify('###');
+        });
     }
 }

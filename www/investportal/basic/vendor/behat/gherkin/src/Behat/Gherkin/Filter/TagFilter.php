@@ -11,6 +11,7 @@
 namespace Behat\Gherkin\Filter;
 
 use Behat\Gherkin\Node\FeatureNode;
+use Behat\Gherkin\Node\OutlineNode;
 use Behat\Gherkin\Node\ScenarioInterface;
 
 /**
@@ -30,6 +31,64 @@ class TagFilter extends ComplexFilter
     public function __construct($filterString)
     {
         $this->filterString = trim($filterString);
+
+       if(preg_match('/\s/u', $this->filterString)) {
+            trigger_error(
+                "Tags with whitespace are deprecated and may be removed in a future version",
+                E_USER_DEPRECATED
+            );
+       }
+    }
+
+    /**
+     * Filters feature according to the filter.
+     *
+     * @param FeatureNode $feature
+     *
+     * @return FeatureNode
+     */
+    public function filterFeature(FeatureNode $feature)
+    {
+        $scenarios = array();
+        foreach ($feature->getScenarios() as $scenario) {
+            if (!$this->isScenarioMatch($feature, $scenario)) {
+                continue;
+            }
+
+            if ($scenario instanceof OutlineNode && $scenario->hasExamples()) {
+
+                $exampleTables = array();
+
+                foreach ($scenario->getExampleTables() as $exampleTable) {
+                    if ($this->isTagsMatchCondition(array_merge($feature->getTags(), $scenario->getTags(), $exampleTable->getTags()))) {
+                        $exampleTables[] = $exampleTable;
+                    }
+                }
+
+                $scenario = new OutlineNode(
+                    $scenario->getTitle(),
+                    $scenario->getTags(),
+                    $scenario->getSteps(),
+                    $exampleTables,
+                    $scenario->getKeyword(),
+                    $scenario->getLine()
+                );
+            }
+
+            $scenarios[] = $scenario;
+        }
+
+        return new FeatureNode(
+            $feature->getTitle(),
+            $feature->getDescription(),
+            $feature->getTags(),
+            $feature->getBackground(),
+            $scenarios,
+            $feature->getKeyword(),
+            $feature->getLanguage(),
+            $feature->getFile(),
+            $feature->getLine()
+        );
     }
 
     /**
@@ -37,7 +96,7 @@ class TagFilter extends ComplexFilter
      *
      * @param FeatureNode $feature Feature instance
      *
-     * @return Boolean
+     * @return bool
      */
     public function isFeatureMatch(FeatureNode $feature)
     {
@@ -47,13 +106,23 @@ class TagFilter extends ComplexFilter
     /**
      * Checks if scenario or outline matches specified filter.
      *
-     * @param FeatureNode       $feature  Feature node instance
+     * @param FeatureNode $feature Feature node instance
      * @param ScenarioInterface $scenario Scenario or Outline node instance
      *
-     * @return Boolean
+     * @return bool
      */
     public function isScenarioMatch(FeatureNode $feature, ScenarioInterface $scenario)
     {
+        if ($scenario instanceof OutlineNode && $scenario->hasExamples()) {
+            foreach ($scenario->getExampleTables() as $example) {
+                if ($this->isTagsMatchCondition(array_merge($feature->getTags(), $scenario->getTags(), $example->getTags()))) {
+                    return true;
+                }
+            }
+
+            return false;
+        }
+
         return $this->isTagsMatchCondition(array_merge($feature->getTags(), $scenario->getTags()));
     }
 
@@ -62,7 +131,7 @@ class TagFilter extends ComplexFilter
      *
      * @param string[] $tags
      *
-     * @return Boolean
+     * @return bool
      */
     protected function isTagsMatchCondition($tags)
     {
@@ -82,7 +151,7 @@ class TagFilter extends ComplexFilter
                 }
             }
 
-            $satisfies = (false !== $satisfiesComma && $satisfies && $satisfiesComma) || false;
+            $satisfies = $satisfiesComma && $satisfies;
         }
 
         return $satisfies;

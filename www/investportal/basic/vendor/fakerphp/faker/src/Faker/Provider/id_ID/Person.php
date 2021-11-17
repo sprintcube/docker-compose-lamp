@@ -28,7 +28,7 @@ class Person extends \Faker\Provider\Person
     ];
 
     /**
-     * @link http://www.nama.web.id/search.php?gender=male&origin=Indonesia+-+Jawa&letter=&submit=Search
+     * @see http://www.nama.web.id/search.php?gender=male&origin=Indonesia+-+Jawa&letter=&submit=Search
      */
     protected static $firstNameMale = [
         'Abyasa', 'Ade', 'Adhiarja', 'Adiarja', 'Adika', 'Adikara', 'Adinata',
@@ -105,7 +105,7 @@ class Person extends \Faker\Provider\Person
     ];
 
     /**
-     * @link http://namafb.com/2010/08/12/top-1000-nama-populer-indonesia/
+     * @see http://namafb.com/2010/08/12/top-1000-nama-populer-indonesia/
      */
     protected static $firstNameFemale = [
         'Ade', 'Agnes', 'Ajeng', 'Amalia', 'Anita', 'Ayu', 'Aisyah', 'Ana',
@@ -141,8 +141,8 @@ class Person extends \Faker\Provider\Person
     ];
 
     /**
-     * @link http://namafb.com/2010/08/12/top-1000-nama-populer-indonesia/
-     * @link http://id.wikipedia.org/wiki/Daftar_marga_suku_Batak_di_Toba
+     * @see http://namafb.com/2010/08/12/top-1000-nama-populer-indonesia/
+     * @see http://id.wikipedia.org/wiki/Daftar_marga_suku_Batak_di_Toba
      */
     protected static $lastNameMale = [
         'Adriansyah', 'Ardianto', 'Anggriawan', 'Budiman', 'Budiyanto',
@@ -166,7 +166,7 @@ class Person extends \Faker\Provider\Person
     ];
 
     /**
-     * @link http://namafb.com/2010/08/12/top-1000-nama-populer-indonesia/
+     * @see http://namafb.com/2010/08/12/top-1000-nama-populer-indonesia/
      */
     protected static $lastNameFemale = [
         'Agustina', 'Andriani', 'Anggraini', 'Aryani', 'Astuti',
@@ -184,17 +184,17 @@ class Person extends \Faker\Provider\Person
     ];
 
     /**
-     * @link http://id.wikipedia.org/wiki/Gelar_akademik
+     * @see http://id.wikipedia.org/wiki/Gelar_akademik
      */
     protected static $titleMale = ['dr.', 'drg.', 'Dr.', 'Drs.', 'Ir.', 'H.'];
 
     /**
-     * @link http://id.wikipedia.org/wiki/Gelar_akademik
+     * @see http://id.wikipedia.org/wiki/Gelar_akademik
      */
     protected static $titleFemale = ['dr.', 'drg.', 'Dr.', 'Hj.'];
 
     /**
-     * @link http://informasipedia.com/wilayah-indonesia/daftar-kabupaten-kota-di-indonesia/
+     * @see http://informasipedia.com/wilayah-indonesia/daftar-kabupaten-kota-di-indonesia/
      */
     protected static $birthPlaceCode = [
         '1101', '1102', '1103', '1104', '1105', '1106', '1107', '1108', '1109', '1110', '1111', '1112', '1113', '1114', '1115', '1116',
@@ -233,7 +233,8 @@ class Person extends \Faker\Provider\Person
 
     /**
      * For academic title
-     * @link http://id.wikipedia.org/wiki/Gelar_akademik
+     *
+     * @see http://id.wikipedia.org/wiki/Gelar_akademik
      */
     private static $suffix = ['S.Ked', 'S.Gz', 'S.Pt', 'S.IP', 'S.E.I',
         'S.E.', 'S.Kom', 'S.H.', 'S.T.', 'S.Pd', 'S.Psi', 'S.I.Kom',
@@ -251,6 +252,7 @@ class Person extends \Faker\Provider\Person
         if ($gender === static::GENDER_MALE) {
             return static::lastNameMale();
         }
+
         if ($gender === static::GENDER_FEMALE) {
             return static::lastNameFemale();
         }
@@ -262,7 +264,6 @@ class Person extends \Faker\Provider\Person
     /**
      * Return last name for male
      *
-     * @access public
      * @return string last name
      */
     public static function lastNameMale()
@@ -273,7 +274,6 @@ class Person extends \Faker\Provider\Person
     /**
      * Return last name for female
      *
-     * @access public
      * @return string last name
      */
     public static function lastNameFemale()
@@ -284,7 +284,6 @@ class Person extends \Faker\Provider\Person
     /**
      * For academic title
      *
-     * @access public
      * @return string suffix
      */
     public static function suffix()
@@ -295,15 +294,16 @@ class Person extends \Faker\Provider\Person
     /**
      * Generates Nomor Induk Kependudukan (NIK)
      *
-     * @link https://en.wikipedia.org/wiki/National_identification_number#Indonesia
+     * @see https://en.wikipedia.org/wiki/National_identification_number#Indonesia
      *
-     * @param null|string $gender
-     * @param null|\DateTime $birthDate
+     * @param string|null    $gender
+     * @param \DateTime|null $birthDate
+     *
      * @return string
      */
     public function nik($gender = null, $birthDate = null)
     {
-        # generate first numbers (region data)
+        // generate first numbers (region data)
         $nik = $this->birthPlaceCode();
         $nik .= $this->generator->numerify('##');
 
@@ -315,7 +315,7 @@ class Person extends \Faker\Provider\Person
             $gender = $this->generator->randomElement([self::GENDER_MALE, self::GENDER_FEMALE]);
         }
 
-        # if gender is female, add 40 to days
+        // if gender is female, add 40 to days
         if ($gender == self::GENDER_FEMALE) {
             $nik .= $birthDate->format('d') + 40;
         } else {
@@ -324,7 +324,7 @@ class Person extends \Faker\Provider\Person
 
         $nik .= $birthDate->format('my');
 
-        # add last random digits
+        // add last random digits
         $nik .= $this->generator->numerify('####');
 
         return $nik;
@@ -333,8 +333,8 @@ class Person extends \Faker\Provider\Person
     /**
      * Generates birth place code for NIK
      *
-     * @link https://id.wikipedia.org/wiki/Nomor_Induk_Kependudukan
-     * @link http://informasipedia.com/wilayah-indonesia/daftar-kabupaten-kota-di-indonesia/
+     * @see https://id.wikipedia.org/wiki/Nomor_Induk_Kependudukan
+     * @see http://informasipedia.com/wilayah-indonesia/daftar-kabupaten-kota-di-indonesia/
      */
     protected function birthPlaceCode()
     {

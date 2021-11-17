@@ -58,12 +58,14 @@ class Person extends \Faker\Provider\Person
         }
 
         $length = count($weights);
+
         for ($i = strlen($result); $i < $length; ++$i) {
             $result .= static::randomDigit();
         }
 
         $checksum = in_array($prefix, ['G', 'T'], true) ? 4 : 0;
-        for ($i = 0; $i < $length; $i++) {
+
+        for ($i = 0; $i < $length; ++$i) {
             $checksum += (int) $result[$i] * $weights[$i];
         }
 

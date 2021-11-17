@@ -15,7 +15,7 @@ Documentation is at [docs/guide/README.md](docs/guide/README.md).
 
 [![Latest Stable Version](https://poser.pugx.org/yiisoft/yii2-gii/v/stable.png)](https://packagist.org/packages/yiisoft/yii2-gii)
 [![Total Downloads](https://poser.pugx.org/yiisoft/yii2-gii/downloads.png)](https://packagist.org/packages/yiisoft/yii2-gii)
-[![Build Status](https://travis-ci.com/yiisoft/yii2-gii.svg?branch=master)](https://travis-ci.com/yiisoft/yii2-gii)
+[![Build Status](https://github.com/yiisoft/yii2-gii/workflows/build/badge.svg)](https://github.com/yiisoft/yii2-gii/actions)
 
 
 Installation

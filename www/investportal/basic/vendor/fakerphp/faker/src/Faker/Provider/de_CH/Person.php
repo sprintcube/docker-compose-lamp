@@ -5,7 +5,7 @@ namespace Faker\Provider\de_CH;
 class Person extends \Faker\Provider\de_DE\Person
 {
     /**
-     * @link http://www.bfs.admin.ch/bfs/portal/de/index/themen/01/02/blank/dos/prenoms/02.html
+     * @see http://www.bfs.admin.ch/bfs/portal/de/index/themen/01/02/blank/dos/prenoms/02.html
      */
     protected static $firstNameMale = [
         'Adolf', 'Adrian', 'Alain', 'Albert', 'Alessandro', 'Alex', 'Alexander', 'Alfred', 'Ali', 'Alois', 'Andrea', 'Andreas', 'Andrin', 'André', 'Angelo', 'Anton', 'Antonio', 'Armin', 'Arnold', 'Arthur',
@@ -33,7 +33,7 @@ class Person extends \Faker\Provider\de_DE\Person
     ];
 
     /**
-     * @link http://www.bfs.admin.ch/bfs/portal/de/index/themen/01/02/blank/dos/prenoms/02.html
+     * @see http://www.bfs.admin.ch/bfs/portal/de/index/themen/01/02/blank/dos/prenoms/02.html
      */
     protected static $firstNameFemale = [
         'Adelheid', 'Agnes', 'Alessia', 'Alexandra', 'Alice', 'Alina', 'Aline', 'Ana', 'Andrea', 'Angela', 'Angelika', 'Anita', 'Anja', 'Anna', 'Annemarie', 'Antonia', 'Astrid',
@@ -60,7 +60,7 @@ class Person extends \Faker\Provider\de_DE\Person
     ];
 
     /**
-     * @link http://blog.tagesanzeiger.ch/datenblog/index.php/6859
+     * @see http://blog.tagesanzeiger.ch/datenblog/index.php/6859
      */
     protected static $lastName = [
         'Achermann', 'Ackermann', 'Aeschlimann', 'Ammann', 'Arnold',
@@ -95,6 +95,7 @@ class Person extends \Faker\Provider\de_DE\Person
      * number is generally known as AHV13.
      *
      * @see \Faker\Provider\fr_CH\Person::avs13()
+     *
      * @return string
      */
     public static function ahv13()
@@ -108,6 +109,7 @@ class Person extends \Faker\Provider\de_DE\Person
      * This function acts as an alias for the function defined in the fr_CH provider.
      *
      * @see \Faker\Provider\fr_CH\Person::avs13()
+     *
      * @return string
      */
     public static function avs13()

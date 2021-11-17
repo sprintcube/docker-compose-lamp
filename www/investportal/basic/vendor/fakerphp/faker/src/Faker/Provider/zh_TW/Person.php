@@ -29,7 +29,7 @@ class Person extends \Faker\Provider\Person
         'V' => 29,
         'W' => 32,
         'X' => 30,
-        'Z' => 33
+        'Z' => 33,
     ];
 
     /**
@@ -49,7 +49,7 @@ class Person extends \Faker\Provider\Person
     protected static $titleFemale = ['小姐', '太太', '博士', '教授'];
 
     /**
-     * @link http://zh.wikipedia.org/wiki/%E7%99%BE%E5%AE%B6%E5%A7%93
+     * @see http://zh.wikipedia.org/wiki/%E7%99%BE%E5%AE%B6%E5%A7%93
      */
     protected static $lastName = [
         '趙', '錢', '孫', '李', '周', '吳', '鄭', '王', '馮',
@@ -120,7 +120,7 @@ class Person extends \Faker\Provider\Person
     ];
 
     /**
-     * @link http://technology.chtsai.org/namefreq/
+     * @see http://technology.chtsai.org/namefreq/
      */
     protected static $characterMale = [
         '佳', '俊', '信', '偉', '傑', '冠', '君', '哲',
@@ -142,9 +142,11 @@ class Person extends \Faker\Provider\Person
     public static function randomName($pool, $n)
     {
         $name = '';
+
         for ($i = 0; $i < $n; ++$i) {
             $name .= static::randomElement($pool);
         }
+
         return $name;
     }
 
@@ -169,7 +171,7 @@ class Person extends \Faker\Provider\Person
      * @see https://en.wikipedia.org/wiki/National_Identification_Card_(Republic_of_China)
      *
      * @return string Length 10 alphanumeric characters, begins with 1 latin character (birthplace),
-     * 1 number (gender) and then 8 numbers (the last one is check digit).
+     *                1 number (gender) and then 8 numbers (the last one is check digit).
      */
     public function personalIdentityNumber($gender = null)
     {

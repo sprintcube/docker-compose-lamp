@@ -1,3 +1,20 @@
+1.14.0 / 2021/09/16
+===================
+
+* [added] Support for static closures in will and should [@ntzm]
+* [added] Allow install on PHP 8.1 (with test suite fixes) [@javer]
+* [added] Support for the 'never' return type [@ciaranmcnulty]
+* [fixed] Better error message when doubling intersection return types [@ciaranmcnulty]
+
+1.13.0 / 2021/03/17
+===================
+
+* [added] willYield can now specify a return value [@camilledejoye]
+* [added] Prophecy exception interfaces are explicitly Throwable [@ciaranmcnulty]
+* [fixed] Argument::in() and notIn() now marked as static [@tyteen4a03]
+* [fixed] Can now double unions containing false [@ciaranmcnulty]
+* [fixed] Virtual magic methods with arguments are now doublable in PHP 8 [@ciaranmcnulty]
+
 1.12.2 / 2020/12/19
 ===================
 

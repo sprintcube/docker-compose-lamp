@@ -15,6 +15,10 @@ if (extension_loaded('iconv')) {
     return;
 }
 
+if (\PHP_VERSION_ID >= 80000) {
+    return require __DIR__.'/bootstrap80.php';
+}
+
 if (!defined('ICONV_IMPL')) {
     define('ICONV_IMPL', 'Symfony');
 }
@@ -38,7 +42,7 @@ if (!function_exists('iconv_set_encoding')) {
     function iconv_set_encoding($type, $encoding) { return p\Iconv::iconv_set_encoding($type, $encoding); }
 }
 if (!function_exists('iconv_mime_encode')) {
-    function iconv_mime_encode($field_name, $field_value, $options = null) { return p\Iconv::iconv_mime_encode($field_name, $field_value, $options); }
+    function iconv_mime_encode($field_name, $field_value, $options = []) { return p\Iconv::iconv_mime_encode($field_name, $field_value, $options); }
 }
 if (!function_exists('iconv_mime_decode_headers')) {
     function iconv_mime_decode_headers($headers, $mode = 0, $encoding = null) { return p\Iconv::iconv_mime_decode_headers($headers, $mode, $encoding); }

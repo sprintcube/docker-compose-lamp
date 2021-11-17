@@ -20,7 +20,8 @@ class Person extends \Faker\Provider\Person
 
     /**
      * @var array Norwegian female first names
-     * @link http://spraakbanken.gu.se/statistik/lbfnamnalf.phtml
+     *
+     * @see http://spraakbanken.gu.se/statistik/lbfnamnalf.phtml
      */
     protected static $firstNameFemale = [
         'Abida', 'Abigail', 'Abir', 'Ada', 'Adel', 'Adelaine', 'Adele', 'Adelen', 'Adelin', 'Adelina', 'Adeline',
@@ -120,12 +121,13 @@ class Person extends \Faker\Provider\Person
         'Vårin', 'Wanda', 'Wanja', 'Wenche', 'Wendy', 'Wera', 'Weronika', 'Wibecke', 'Wibeke', 'Wigdis', 'Wilde',
         'Wilma', 'Winnie', 'Xuan', 'Yasmin', 'Ylva', 'Yngvild', 'Yvonne', 'Zahida', 'Zahra', 'Zainab', 'Zara',
         'Zuzanna', 'Øydis', 'Øyvor', 'Ågot', 'Aasa', 'Aase', 'Åse', 'Åshild', 'Aashild', 'Åslaug', 'Åsne', 'Åsta',
-        'Aasta'
+        'Aasta',
     ];
 
     /**
      * @var array Norwegian male first names
-     * @link http://www.mammanett.no/navn/leksikon/alle?field_name_sex_value=m&title=
+     *
+     * @see http://www.mammanett.no/navn/leksikon/alle?field_name_sex_value=m&title=
      */
     protected static $firstNameMale = [
         'Abbas', 'Abdallah', 'Abdelaziz', 'Abdelkader', 'Abdi', 'Abdiasis', 'Abdifatah', 'Abdikadir', 'Abdinasir',
@@ -250,12 +252,13 @@ class Person extends \Faker\Provider\Person
         'Younes', 'Yousef', 'Yousuf', 'Yrjan', 'Zahid', 'Zakaria', 'Zbigniew', 'Zdzislaw', 'Zoran', 'Zygmunt',
         'Øistein', 'Øivind', 'Ørjan', 'Ørjar', 'Ørn', 'Ørnulf', 'Ørnulv', 'Ørvar', 'Østen', 'Øyolv', 'Øystein',
         'Øyvind', 'Ådne', 'Aage', 'Åge', 'Aake', 'Åke', 'Åmund', 'Åne', 'Ånen', 'Ånon', 'Ånund', 'Aaron', 'Åskjell',
-        'Åsleif', 'Åsleik', 'Åsleiv', 'Åsmund', 'Aasmund', 'Åsulv', 'Åsvald', 'Åvar'
+        'Åsleif', 'Åsleik', 'Åsleiv', 'Åsmund', 'Aasmund', 'Åsulv', 'Åsvald', 'Åvar',
     ];
 
     /**
      * @var array Norwegian common last names (200 first from the link)
-     * @link http://www.ssb.no/befolkning/statistikker/navn/aar/2015-01-27?fane=tabell&sort=nummer&tabell=216066
+     *
+     * @see http://www.ssb.no/befolkning/statistikker/navn/aar/2015-01-27?fane=tabell&sort=nummer&tabell=216066
      */
     protected static $lastName = [
         'Aas', 'Aase', 'Aasen', 'Abrahamsen', 'Ahmed', 'Ali', 'Amundsen', 'Andersen', 'Andersson', 'Andreassen',
@@ -277,14 +280,17 @@ class Person extends \Faker\Provider\Person
         'Sivertsen', 'Sletten', 'Solbakken', 'Solberg', 'Solheim', 'Solli', 'Solvang', 'Steen', 'Stene', 'Stokke',
         'Strand', 'Strøm', 'Sunde', 'Sveen', 'Svendsen', 'Syversen', 'Sæther', 'Sætre', 'Sørensen', 'Sørlie', 'Tangen',
         'Teigen', 'Thomassen', 'Thoresen', 'Thorsen', 'Tollefsen', 'Torgersen', 'Torp', 'Tran', 'Tveit', 'Vik', 'Viken',
-        'Wang', 'Wiik', 'Wilhelmsen', 'Wold', 'Ødegaard', 'Ødegård', 'Øien'
+        'Wang', 'Wiik', 'Wilhelmsen', 'Wold', 'Ødegaard', 'Ødegård', 'Øien',
     ];
 
     /**
      * National Personal Identity number (personnummer)
-     * @link https://no.wikipedia.org/wiki/Personnummer
+     *
+     * @see https://no.wikipedia.org/wiki/Personnummer
+     *
      * @param \DateTime $birthdate
-     * @param string $gender Person::GENDER_MALE || Person::GENDER_FEMALE
+     * @param string    $gender    Person::GENDER_MALE || Person::GENDER_FEMALE
+     *
      * @return string on format DDMMYY#####
      */
     public function personalIdentityNumber(\DateTime $birthdate = null, $gender = null)
@@ -296,30 +302,34 @@ class Person extends \Faker\Provider\Person
 
         /**
          * @todo These number should be random based on birth year
-         * @link http://no.wikipedia.org/wiki/F%C3%B8dselsnummer
+         *
+         * @see http://no.wikipedia.org/wiki/F%C3%B8dselsnummer
          */
         $randomDigits = (string) static::numerify('##');
 
         switch ($gender) {
             case static::GENDER_MALE:
                 $genderDigit = static::randomElement([1, 3, 5, 7, 9]);
+
                 break;
+
             case static::GENDER_FEMALE:
                 $genderDigit = static::randomElement([0, 2, 4, 6, 8]);
+
                 break;
+
             default:
                 $genderDigit = (string) static::numerify('#');
         }
-
 
         $digits = $datePart . $randomDigits . $genderDigit;
 
         /**
          * @todo Calculate modulo 11 of $digits
-         * @link http://no.wikipedia.org/wiki/F%C3%B8dselsnummer
+         *
+         * @see http://no.wikipedia.org/wiki/F%C3%B8dselsnummer
          */
         $checksum = (string) static::numerify('##');
-
 
         return $digits . $checksum;
     }

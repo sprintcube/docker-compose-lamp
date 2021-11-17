@@ -731,7 +731,7 @@ class Swift_Mime_SimpleMimeEntity implements Swift_Mime_CharsetObserver, Swift_M
         }
 
         $realLevel = $child->getNestingLevel();
-        $lowercaseType = strtolower($child->getContentType());
+        $lowercaseType = strtolower($child->getContentType() ?? '');
 
         if (isset($filter[$realLevel]) && isset($filter[$realLevel][$lowercaseType])) {
             return $filter[$realLevel][$lowercaseType];
@@ -816,5 +816,11 @@ class Swift_Mime_SimpleMimeEntity implements Swift_Mime_CharsetObserver, Swift_M
             $children[$pos] = clone $child;
         }
         $this->setChildren($children);
+    }
+
+    public function __wakeup()
+    {
+        $this->cacheKey = bin2hex(random_bytes(16)); // set 32 hex values
+        $this->cache = new Swift_KeyCache_ArrayKeyCache(new Swift_KeyCache_SimpleKeyCacheInputStream());
     }
 }

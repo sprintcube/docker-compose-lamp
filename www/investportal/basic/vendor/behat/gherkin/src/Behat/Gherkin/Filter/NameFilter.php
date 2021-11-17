@@ -37,10 +37,14 @@ class NameFilter extends SimpleFilter
      *
      * @param FeatureNode $feature Feature instance
      *
-     * @return Boolean
+     * @return bool
      */
     public function isFeatureMatch(FeatureNode $feature)
     {
+        if (null === $feature->getTitle()) {
+            return false;
+        }
+
         if ('/' === $this->filterString[0]) {
             return 1 === preg_match($this->filterString, $feature->getTitle());
         }
@@ -53,10 +57,14 @@ class NameFilter extends SimpleFilter
      *
      * @param ScenarioInterface $scenario Scenario or Outline node instance
      *
-     * @return Boolean
+     * @return bool
      */
     public function isScenarioMatch(ScenarioInterface $scenario)
     {
+        if (null === $scenario->getTitle()) {
+            return false;
+        }
+
         if ('/' === $this->filterString[0] && 1 === preg_match($this->filterString, $scenario->getTitle())) {
             return true;
         } elseif (false !== mb_strpos($scenario->getTitle(), $this->filterString, 0, 'utf8')) {

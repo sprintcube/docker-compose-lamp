@@ -1,6 +1,6 @@
 {
     "name":         "behat/gherkin",
-    "description":  "Gherkin DSL parser for PHP 5.3",
+    "description":  "Gherkin DSL parser for PHP",
     "keywords":     ["BDD", "parser", "DSL", "Behat", "Gherkin", "Cucumber"],
     "homepage":     "http://behat.org/",
     "type":         "library",
@@ -14,22 +14,22 @@
     ],
 
     "require": {
-        "php": ">=5.3.1"
+        "php": "~7.2|~8.0"
     },
 
     "require-dev": {
-        "symfony/yaml": "~2.3|~3|~4",
-        "symfony/phpunit-bridge": "~2.7|~3|~4",
-        "phpunit/phpunit": "~4.5|~5"
+        "symfony/yaml": "~3|~4|~5",
+        "phpunit/phpunit": "~8|~9",
+        "cucumber/cucumber": "dev-gherkin-22.0.0"
     },
 
     "suggest": {
-        "symfony/yaml":   "If you want to parse features, represented in YAML files"
+        "symfony/yaml": "If you want to parse features, represented in YAML files"
     },
 
     "autoload": {
         "psr-0": {
-            "Behat\\Gherkin":   "src/"
+            "Behat\\Gherkin": "src/"
         }
     },
 
@@ -41,7 +41,27 @@
 
     "extra": {
         "branch-alias": {
-            "dev-master": "4.4-dev"
+            "dev-master": "4.x-dev"
         }
-    }
+    },
+
+    "repositories": [
+        {
+            "type": "package",
+            "package": {
+                "name": "cucumber/cucumber",
+                "version": "dev-gherkin-22.0.0",
+                "source": {
+                    "type": "git",
+                    "url": "https://github.com/cucumber/cucumber.git",
+                    "reference": "379280b6b98ee9a1bf79444e7c75e23265ccb3e0"
+                },
+                "dist": {
+                    "type": "zip",
+                    "url": "https://api.github.com/repos/cucumber/cucumber/zipball/379280b6b98ee9a1bf79444e7c75e23265ccb3e0",
+                    "reference": "379280b6b98ee9a1bf79444e7c75e23265ccb3e0"
+                }
+            }
+        }
+    ]
 }

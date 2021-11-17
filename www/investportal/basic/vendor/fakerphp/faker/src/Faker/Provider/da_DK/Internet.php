@@ -2,9 +2,6 @@
 
 namespace Faker\Provider\da_DK;
 
-/**
- * @author Antoine Corcy <contact@sbin.dk>
- */
 class Internet extends \Faker\Provider\Internet
 {
     /**
@@ -18,7 +15,7 @@ class Internet extends \Faker\Provider\Internet
      * @var array Some email domains in Denmark.
      */
     protected static $freeEmailDomain = [
-        'gmail.com', 'yahoo.com', 'yahoo.dk', 'hotmail.com', 'hotmail.dk', 'mail.dk', 'live.dk'
+        'gmail.com', 'yahoo.com', 'yahoo.dk', 'hotmail.com', 'hotmail.dk', 'mail.dk', 'live.dk',
     ];
 
     /**

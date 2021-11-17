@@ -113,13 +113,12 @@ use yii\validators\Validator;
  * @see ActiveDataFilter
  *
  * @property array $errorMessages Error messages in format `[errorKey => message]`. Note that the type of this
- * property differs in getter and setter. See [[getErrorMessages()]]  and [[setErrorMessages()]] for details.
+ * property differs in getter and setter. See [[getErrorMessages()]] and [[setErrorMessages()]] for details.
  * @property mixed $filter Raw filter value.
  * @property array $searchAttributeTypes Search attribute type map. Note that the type of this property
- * differs in getter and setter. See [[getSearchAttributeTypes()]]  and [[setSearchAttributeTypes()]] for
- * details.
+ * differs in getter and setter. See [[getSearchAttributeTypes()]] and [[setSearchAttributeTypes()]] for details.
  * @property Model $searchModel Model instance. Note that the type of this property differs in getter and
- * setter. See [[getSearchModel()]]  and [[setSearchModel()]] for details.
+ * setter. See [[getSearchModel()]] and [[setSearchModel()]] for details.
  *
  * @author Paul Klimov <klimov.paul@gmail.com>
  * @since 2.0.13
@@ -356,7 +355,7 @@ class DataFilter extends Model
     /**
      * Detect attribute type from given validator.
      *
-     * @param Validator validator from which to detect attribute type.
+     * @param Validator $validator validator from which to detect attribute type.
      * @return string|null detected attribute type.
      * @since 2.0.14
      */

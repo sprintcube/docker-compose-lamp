@@ -83,6 +83,12 @@ class Yii2 extends Client
      */
     public $closeSessionOnRecreateApplication = true;
 
+    /**
+     * @var string The FQN of the application class to use. In a default Yii setup, should be either `yii\web\Application`
+     *             or `yii\console\Application`
+     */
+    public $applicationClass = null;
+
 
     private $emails = [];
 
@@ -266,11 +272,21 @@ class Yii2 extends Client
         codecept_debug('Starting application');
         $config = require($this->configFile);
         if (!isset($config['class'])) {
-            $config['class'] = 'yii\web\Application';
+            if (null !== $this->applicationClass) {
+                $config['class'] = $this->applicationClass;
+            } else {
+                $config['class'] = 'yii\web\Application';
+            }
+        }
+
+        if (isset($config['container']))
+        {
+            Yii::configure(Yii::$container, $config['container']);
+            unset($config['container']);
         }
 
         $config = $this->mockMailer($config);
-        /** @var \yii\web\Application $app */
+        /** @var \yii\base\Application $app */
         Yii::$app = Yii::createObject($config);
         Yii::setLogger(new Logger());
     }
@@ -301,6 +317,7 @@ class Yii2 extends Client
         $queryString = parse_url($uri, PHP_URL_QUERY);
         $_SERVER['REQUEST_URI'] = $queryString === null ? $pathString : $pathString . '?' . $queryString;
         $_SERVER['REQUEST_METHOD'] = strtoupper($request->getMethod());
+        $_SERVER['QUERY_STRING'] = (string)$queryString;
 
         parse_str($queryString, $params);
         foreach ($params as $k => $v) {

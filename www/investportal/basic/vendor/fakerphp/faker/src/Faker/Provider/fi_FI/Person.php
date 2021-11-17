@@ -79,7 +79,7 @@ class Person extends \Faker\Provider\Person
         'Wettenranta', 'Wiitanen', 'Wirtanen', 'Wiskari',
         'Ylijälä', 'Yliannala', 'Ylijoki', 'Ylikangas', 'Ylioja', 'Ylitalo', 'Ylppö', 'Yläjoki', 'Yrjänen', 'Yrjänä', 'Yrjölä', 'Yrttiaho', 'Yömaa',
         'Äijälä', 'Ämmälä', 'Änäkkälä', 'Äyräs', 'Äärynen',
-        'Översti', 'Öysti', 'Öörni'
+        'Översti', 'Öysti', 'Öörni',
     ];
 
     protected static $titleMale = ['Hra.', 'Tri.'];
@@ -88,9 +88,12 @@ class Person extends \Faker\Provider\Person
 
     /**
      * National Personal Identity Number (Henkilötunnus)
-     * @link http://www.finlex.fi/fi/laki/ajantasa/2010/20100128
+     *
+     * @see http://www.finlex.fi/fi/laki/ajantasa/2010/20100128
+     *
      * @param \DateTime $birthdate
-     * @param string $gender Person::GENDER_MALE || Person::GENDER_FEMALE
+     * @param string    $gender    Person::GENDER_MALE || Person::GENDER_FEMALE
+     *
      * @return string on format DDMMYYCZZZQ, where DDMMYY is the date of birth, C the century sign, ZZZ the individual number and Q the control character (checksum)
      */
     public function personalIdentityNumber(\DateTime $birthdate = null, $gender = null)
@@ -105,18 +108,25 @@ class Person extends \Faker\Provider\Person
         switch ((int) ($birthdate->format('Y') / 100)) {
             case 18:
                 $centurySign = '+';
+
                 break;
+
             case 19:
                 $centurySign = '-';
+
                 break;
+
             case 20:
                 $centurySign = 'A';
+
                 break;
+
             default:
                 throw new \InvalidArgumentException('Year must be between 1800 and 2099 inclusive.');
         }
 
         $randomDigits = self::numberBetween(0, 89);
+
         if ($gender && $gender == static::GENDER_MALE) {
             if ($randomDigits === 0) {
                 $randomDigits .= static::randomElement([3, 5, 7, 9]);

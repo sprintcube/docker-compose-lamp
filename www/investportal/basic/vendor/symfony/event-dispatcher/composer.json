@@ -1,7 +1,7 @@
 {
     "name": "symfony/event-dispatcher",
     "type": "library",
-    "description": "Symfony EventDispatcher Component",
+    "description": "Provides tools that allow your application components to communicate with each other by dispatching events and listening to them",
     "keywords": [],
     "homepage": "https://symfony.com",
     "license": "MIT",
@@ -19,7 +19,7 @@
         "php": ">=7.2.5",
         "symfony/deprecation-contracts": "^2.1",
         "symfony/event-dispatcher-contracts": "^2",
-        "symfony/polyfill-php80": "^1.15"
+        "symfony/polyfill-php80": "^1.16"
     },
     "require-dev": {
         "symfony/dependency-injection": "^4.4|^5.0",
@@ -29,7 +29,7 @@
         "symfony/http-foundation": "^4.4|^5.0",
         "symfony/service-contracts": "^1.1|^2",
         "symfony/stopwatch": "^4.4|^5.0",
-        "psr/log": "~1.0"
+        "psr/log": "^1|^2|^3"
     },
     "conflict": {
         "symfony/dependency-injection": "<4.4"

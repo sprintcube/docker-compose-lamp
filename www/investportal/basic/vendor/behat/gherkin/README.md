@@ -4,10 +4,6 @@ Behat Gherkin Parser
 This is the php Gherkin parser for Behat. It comes bundled with more than 40 native languages
 (see `i18n.php`) support & clean architecture.
 
-[![Build Status](https://travis-ci.org/Behat/Gherkin.svg?branch=master)](https://travis-ci.org/Behat/Gherkin)
-[![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/Behat/Gherkin/badges/quality-score.png?s=04d9d0237c89f4c45a94ba5304234db861dfd036)](https://scrutinizer-ci.com/g/Behat/Gherkin/)
-[![Code Coverage](https://scrutinizer-ci.com/g/Behat/Gherkin/badges/coverage.png?s=204ca44800469d295b73d18c91011cb9d2dc99fc)](https://scrutinizer-ci.com/g/Behat/Gherkin/)
-
 Useful Links
 ------------
 

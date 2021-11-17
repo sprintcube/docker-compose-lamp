@@ -11,28 +11,39 @@ use Faker\Generator;
  */
 class Populator
 {
-    /** @var int */
+    /**
+     * @var int
+     */
     protected $batchSize;
 
-    /** @var Generator */
+    /**
+     * @var Generator
+     */
     protected $generator;
 
-    /** @var ObjectManager|null */
+    /**
+     * @var ObjectManager|null
+     */
     protected $manager;
 
-    /** @var array */
+    /**
+     * @var array
+     */
     protected $entities = [];
 
-    /** @var array */
+    /**
+     * @var array
+     */
     protected $quantities = [];
 
-    /** @var array */
+    /**
+     * @var array
+     */
     protected $generateId = [];
 
     /**
      * Populator constructor.
-     * @param Generator $generator
-     * @param ObjectManager|null $manager
+     *
      * @param int $batchSize
      */
     public function __construct(Generator $generator, ObjectManager $manager = null, $batchSize = 1000)
@@ -57,6 +68,7 @@ class Populator
             $entity = new \Faker\ORM\Doctrine\EntityPopulator($this->manager->getClassMetadata($entity));
         }
         $entity->setColumnFormatters($entity->guessColumnFormatters($this->generator));
+
         if ($customColumnFormatters) {
             $entity->mergeColumnFormattersWith($customColumnFormatters);
         }
@@ -74,7 +86,7 @@ class Populator
      * Please note that large amounts of data will result in more memory usage since the the Populator will return
      * all newly created primary keys after executing.
      *
-     * @param null|EntityManager $entityManager A Doctrine connection object
+     * @param EntityManager|null $entityManager A Doctrine connection object
      *
      * @return array A list of the inserted PKs
      */
@@ -83,19 +95,23 @@ class Populator
         if (null === $entityManager) {
             $entityManager = $this->manager;
         }
+
         if (null === $entityManager) {
             throw new \InvalidArgumentException('No entity manager passed to Doctrine Populator.');
         }
 
         $insertedEntities = [];
+
         foreach ($this->quantities as $class => $number) {
             $generateId = $this->generateId[$class];
-            for ($i=0; $i < $number; $i++) {
-                $insertedEntities[$class][]= $this->entities[$class]->execute(
+
+            for ($i = 0; $i < $number; ++$i) {
+                $insertedEntities[$class][] = $this->entities[$class]->execute(
                     $entityManager,
                     $insertedEntities,
                     $generateId
                 );
+
                 if (count($insertedEntities) % $this->batchSize === 0) {
                     $entityManager->flush();
                 }

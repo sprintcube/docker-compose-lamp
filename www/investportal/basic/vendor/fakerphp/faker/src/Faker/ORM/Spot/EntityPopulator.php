@@ -43,8 +43,6 @@ class EntityPopulator
     protected $useExistingData = false;
 
     /**
-     * @param Mapper $mapper
-     * @param Locator $locator
      * @param bool $useExistingData
      */
     public function __construct(Mapper $mapper, Locator $locator, $useExistingData = false)
@@ -80,9 +78,6 @@ class EntityPopulator
         $this->columnFormatters = array_merge($this->columnFormatters, $columnFormatters);
     }
 
-    /**
-     * @param array $modifiers
-     */
     public function setModifiers(array $modifiers)
     {
         $this->modifiers = $modifiers;
@@ -96,16 +91,12 @@ class EntityPopulator
         return $this->modifiers;
     }
 
-    /**
-     * @param array $modifiers
-     */
     public function mergeModifiersWith(array $modifiers)
     {
         $this->modifiers = array_merge($this->modifiers, $modifiers);
     }
 
     /**
-     * @param Generator $generator
      * @return array
      */
     public function guessColumnFormatters(Generator $generator)
@@ -114,22 +105,28 @@ class EntityPopulator
         $nameGuesser = new Name($generator);
         $columnTypeGuesser = new ColumnTypeGuesser($generator);
         $fields = $this->mapper->fields();
+
         foreach ($fields as $fieldName => $field) {
             if ($field['primary'] === true) {
                 continue;
             }
+
             if ($formatter = $nameGuesser->guessFormat($fieldName)) {
                 $formatters[$fieldName] = $formatter;
+
                 continue;
             }
+
             if ($formatter = $columnTypeGuesser->guessFormat($field)) {
                 $formatters[$fieldName] = $formatter;
+
                 continue;
             }
         }
         $entityName = $this->mapper->entity();
         $entity = $this->mapper->build([]);
         $relations = $entityName::relations($this->mapper, $entity);
+
         foreach ($relations as $relation) {
             // We don't need any other relation here.
             if ($relation instanceof BelongsTo) {
@@ -150,6 +147,7 @@ class EntityPopulator
                         // So let's find something existing in DB.
                         $mapper = $locator->mapper($entityName);
                         $records = $mapper->all()->limit(self::RELATED_FETCH_COUNT)->toArray();
+
                         if (empty($records)) {
                             return null;
                         }
@@ -178,7 +176,6 @@ class EntityPopulator
         $this->callMethods($obj, $insertedEntities);
 
         $this->mapper->insert($obj);
-
 
         return $obj;
     }

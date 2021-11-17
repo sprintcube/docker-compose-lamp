@@ -22,8 +22,8 @@ class Person extends \Faker\Provider\Person
     protected static $titleFemale = ['p.', 'ponia', 'panelė'];
 
     /**
-     * @link https://lt.wikipedia.org/wiki/S%C4%85ra%C5%A1as:Lietuvoje_paplit%C4%99_vardai
-     **/
+     * @see https://lt.wikipedia.org/wiki/S%C4%85ra%C5%A1as:Lietuvoje_paplit%C4%99_vardai
+     */
     protected static $firstNameMale = [
         'Abramas', 'Abraomas', 'Achilas', 'Adalbertas', 'Adamas', 'Adas', 'Adolfas', 'Adolis', 'Adomas',
         'Adrijus', 'Agatas', 'Agnius', 'Aidas', 'Ainius', 'Aistis', 'Aivaras', 'Akimas', 'Akvilinas', 'Albertas', 'Albrechtas',
@@ -109,11 +109,11 @@ class Person extends \Faker\Provider\Person
         'Vytenis', 'Vytis', 'Vyturys', 'Vladas', 'Vladimiras', 'Vladislavas', 'Vladislovas', 'Vladlenas', 'Voicechas',
         'Voldemaras', 'Vsevolodas', 'Zacharijus', 'Zakarijus', 'Zbignevas', 'Zdislavas', 'Zenius', 'Zenonas', 'Zigfridas',
         'Zygfridas', 'Zigmantas', 'Zigmas', 'Zygmuntas', 'Zinovijus', 'Žanas', 'Žeimantas', 'Žilvinas', 'Žibartas', 'Žybartas',
-        'Žydrius', 'Žydrūnas', 'Žygaudas', 'Žygimantas', 'Žygintas', 'Žygis', 'Žymantas', 'Žvaigždžius'
+        'Žydrius', 'Žydrūnas', 'Žygaudas', 'Žygimantas', 'Žygintas', 'Žygis', 'Žymantas', 'Žvaigždžius',
     ];
 
     /**
-     * @link https://lt.wikipedia.org/wiki/S%C4%85ra%C5%A1as:Lietuvoje_paplit%C4%99_vardai
+     * @see https://lt.wikipedia.org/wiki/S%C4%85ra%C5%A1as:Lietuvoje_paplit%C4%99_vardai
      */
     protected static $firstNameFemale = [
         'Ada', 'Adelė', 'Adelija', 'Adelina', 'Adolfa', 'Adolfina',
@@ -231,11 +231,11 @@ class Person extends \Faker\Provider\Person
         'Vladė', 'Vladislava', 'Vladislova', 'Vladlena', 'Vilita', 'Zabelė', 'Zanė', 'Zelma', 'Zenė',
         'Zigfrida', 'Zigmantė', 'Zylė', 'Zina', 'Zinaida', 'Zita', 'Zofija', 'Zoja', 'Zosė', 'Zuzana',
         'Žana', 'Žaneta', 'Žara', 'Žeimantė', 'Žemyna', 'Žibuoklė', 'Žibutė', 'Žiedė', 'Živilė', 'Žydrė',
-        'Žydronė', 'Žydrūnė', 'Žygimantė', 'Žyginta', 'Žilvinė', 'Žymantė', 'Žoržeta'
+        'Žydronė', 'Žydrūnė', 'Žygimantė', 'Žyginta', 'Žilvinė', 'Žymantė', 'Žoržeta',
     ];
 
     /**
-     * @link http://www.horoskopai.lt/gaires/populiariausios-pavardes-lietuvoje/
+     * @see http://www.horoskopai.lt/gaires/populiariausios-pavardes-lietuvoje/
      */
     protected static $lastNameMale = [
         'Kazlaukas', 'Jankauskas', 'Petrauskas', 'Stankevičius', 'Vasiliauskas', 'Žukauskas', 'Butkus',
@@ -243,24 +243,28 @@ class Person extends \Faker\Provider\Person
     ];
 
     /**
-     * @link http://www.horoskopai.lt/gaires/populiariausios-pavardes-lietuvoje/
+     * @see http://www.horoskopai.lt/gaires/populiariausios-pavardes-lietuvoje/
      */
     protected static $lastNameFemale = [
         'Kazlauskienė', 'Jankauskienė', 'Petrauskienė', 'Stankevičienė', 'Vasiliauskienė', 'Paulauskienė',
         'Žukauskienė', 'Urbonienė', 'Kavaliauskienė', 'Navickienė', 'Kazlauskaitė', 'Jankauskaitė', 'Stankevičiūtė',
-        'Petrauskaitė', 'Vasiliauskaitė', 'Butkutė', 'Pociūtė', 'Lukoševičiūtė', 'Balčiūnaitė', 'Kavaliauskaitė'
+        'Petrauskaitė', 'Vasiliauskaitė', 'Butkutė', 'Pociūtė', 'Lukoševičiūtė', 'Balčiūnaitė', 'Kavaliauskaitė',
     ];
 
     /**
      * @param string|null $gender 'male', 'female' or null for any
+     *
      * @example 'Doe'
+     *
      * @return string
      */
     public function lastName($gender = null)
     {
         if ($gender === static::GENDER_MALE) {
             return static::lastNameMale();
-        } elseif ($gender === static::GENDER_FEMALE) {
+        }
+
+        if ($gender === static::GENDER_FEMALE) {
             return static::lastNameFemale();
         }
 
@@ -269,7 +273,9 @@ class Person extends \Faker\Provider\Person
 
     /**
      * Return male last name
+     *
      * @return string
+     *
      * @example 'Vasiliauskas'
      */
     public function lastNameMale()
@@ -279,7 +285,9 @@ class Person extends \Faker\Provider\Person
 
     /**
      * Return female last name
+     *
      * @return string
+     *
      * @example 'Žukauskaitė'
      */
     public function lastNameFemale()
@@ -289,7 +297,9 @@ class Person extends \Faker\Provider\Person
 
     /**
      * Return driver license number
+     *
      * @return string
+     *
      * @example 12345678
      */
     public function driverLicence()
@@ -299,7 +309,9 @@ class Person extends \Faker\Provider\Person
 
     /**
      * Return passport number
+     *
      * @return string
+     *
      * @example 12345678
      */
     public function passportNumber()
@@ -309,11 +321,14 @@ class Person extends \Faker\Provider\Person
 
     /**
      * National Personal Identity number (asmens kodas)
-     * @link https://en.wikipedia.org/wiki/National_identification_number#Lithuania
-     * @link https://lt.wikipedia.org/wiki/Asmens_kodas
-     * @param string $gender [male|female]
+     *
+     * @see https://en.wikipedia.org/wiki/National_identification_number#Lithuania
+     * @see https://lt.wikipedia.org/wiki/Asmens_kodas
+     *
+     * @param string    $gender       [male|female]
      * @param \DateTime $birthdate
-     * @param string $randomNumber three integers
+     * @param string    $randomNumber three integers
+     *
      * @return string on format XXXXXXXXXXX
      */
     public function personalIdentityNumber($gender = 'male', \DateTime $birthdate = null, $randomNumber = '')
@@ -326,7 +341,7 @@ class Person extends \Faker\Provider\Person
         $firstNumber = (int) floor($birthdate->format('Y') / 100) * 2 - 34 - $genderNumber;
 
         $datePart = $birthdate->format('ymd');
-        $randomDigits = (string) (! $randomNumber || strlen($randomNumber) < 3) ? static::numerify('###') : substr($randomNumber, 0, 3);
+        $randomDigits = (string) (!$randomNumber || strlen($randomNumber) < 3) ? static::numerify('###') : substr($randomNumber, 0, 3);
         $partOfPerosnalCode = $firstNumber . $datePart . $randomDigits;
 
         $sum = self::calculateSum($partOfPerosnalCode, 1);
@@ -334,6 +349,7 @@ class Person extends \Faker\Provider\Person
 
         if ($liekana !== 10) {
             $lastNumber = $liekana;
+
             return $firstNumber . $datePart . $randomDigits . $lastNumber;
         }
 
@@ -341,27 +357,32 @@ class Person extends \Faker\Provider\Person
         $liekana = $sum % 11;
 
         $lastNumber = ($liekana !== 10) ? $liekana : 0;
+
         return $firstNumber . $datePart . $randomDigits . $lastNumber;
     }
 
     /**
      * Calculate the sum of personal code
-     * @link https://en.wikipedia.org/wiki/National_identification_number#Lithuania
-     * @link https://lt.wikipedia.org/wiki/Asmens_kodas
+     *
+     * @see https://en.wikipedia.org/wiki/National_identification_number#Lithuania
+     * @see https://lt.wikipedia.org/wiki/Asmens_kodas
+     *
      * @param string $numbers
-     * @param int $time [1|2]
+     * @param int    $time    [1|2]
+     *
      * @return int
      */
     private static function calculateSum($numbers, $time = 1)
     {
         if ($time == 1) {
-            $multipliers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 1 ];
+            $multipliers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 1];
         } else {
-            $multipliers = [3, 4, 5, 6, 7, 8, 9, 1, 2, 3 ];
+            $multipliers = [3, 4, 5, 6, 7, 8, 9, 1, 2, 3];
         }
 
         $sum = 0;
-        for ($i=1; $i <= 10; $i++) {
+
+        for ($i = 1; $i <= 10; ++$i) {
             $sum += ((int) $numbers[$i - 1]) * $multipliers[$i - 1];
         }
 

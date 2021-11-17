@@ -23,7 +23,7 @@ use yii\web\View;
  * For more details and usage information on BaseMailer, see the [guide article on mailing](guide:tutorial-mailing).
  *
  * @property View $view View instance. Note that the type of this property differs in getter and setter. See
- * [[getView()]]  and [[setView()]] for details.
+ * [[getView()]] and [[setView()]] for details.
  * @property string $viewPath The directory that contains the view files for composing mail messages Defaults
  * to '@app/mail'.
  *
@@ -343,7 +343,7 @@ abstract class BaseMailer extends Component implements MailerInterface, ViewCont
     {
         $time = microtime(true);
 
-        return date('Ymd-His-', $time) . sprintf('%04d', (int) (($time - (int) $time) * 10000)) . '-' . sprintf('%04d', mt_rand(0, 10000)) . '.eml';
+        return date('Ymd-His-', $time) . sprintf('%04d', (int) (($time - (int) $time) * 10000)) . '-' . sprintf('%04d', random_int(0, 10000)) . '.eml';
     }
 
     /**

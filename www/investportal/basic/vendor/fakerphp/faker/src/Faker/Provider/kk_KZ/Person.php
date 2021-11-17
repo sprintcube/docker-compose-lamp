@@ -35,7 +35,7 @@ class Person extends \Faker\Provider\Person
      * @var array
      */
     public static $genderCenturyMap = [
-        self::GENDER_MALE   => [
+        self::GENDER_MALE => [
             self::CENTURY_19TH => self::MALE_CENTURY_19TH,
             self::CENTURY_20TH => self::MALE_CENTURY_20TH,
             self::CENTURY_21ST => self::MALE_CENTURY_21ST,
@@ -176,7 +176,7 @@ class Person extends \Faker\Provider\Person
     ];
 
     /**
-     * @param  int $year
+     * @param int $year
      *
      * @return int|null
      */
@@ -184,9 +184,13 @@ class Person extends \Faker\Provider\Person
     {
         if ($year >= 2000 && $year <= DateTime::year()) {
             return self::CENTURY_21ST;
-        } elseif ($year >= 1900) {
+        }
+
+        if ($year >= 1900) {
             return self::CENTURY_20TH;
-        } elseif ($year >= 1800) {
+        }
+
+        if ($year >= 1800) {
             return self::CENTURY_19TH;
         }
 
@@ -196,11 +200,11 @@ class Person extends \Faker\Provider\Person
     /**
      * National Individual Identification Numbers
      *
-     * @link   http://egov.kz/wps/portal/Content?contentPath=%2Fegovcontent%2Fcitizen_migration%2Fpassport_id_card%2Farticle%2Fiin_info&lang=en
-     * @link   https://ru.wikipedia.org/wiki/%D0%98%D0%BD%D0%B4%D0%B8%D0%B2%D0%B8%D0%B4%D1%83%D0%B0%D0%BB%D1%8C%D0%BD%D1%8B%D0%B9_%D0%B8%D0%B4%D0%B5%D0%BD%D1%82%D0%B8%D1%84%D0%B8%D0%BA%D0%B0%D1%86%D0%B8%D0%BE%D0%BD%D0%BD%D1%8B%D0%B9_%D0%BD%D0%BE%D0%BC%D0%B5%D1%80
+     * @see   http://egov.kz/wps/portal/Content?contentPath=%2Fegovcontent%2Fcitizen_migration%2Fpassport_id_card%2Farticle%2Fiin_info&lang=en
+     * @see   https://ru.wikipedia.org/wiki/%D0%98%D0%BD%D0%B4%D0%B8%D0%B2%D0%B8%D0%B4%D1%83%D0%B0%D0%BB%D1%8C%D0%BD%D1%8B%D0%B9_%D0%B8%D0%B4%D0%B5%D0%BD%D1%82%D0%B8%D1%84%D0%B8%D0%BA%D0%B0%D1%86%D0%B8%D0%BE%D0%BD%D0%BD%D1%8B%D0%B9_%D0%BD%D0%BE%D0%BC%D0%B5%D1%80
      *
-     * @param  \DateTime $birthDate
-     * @param  int   $gender
+     * @param \DateTime $birthDate
+     * @param int       $gender
      *
      * @return string 12 digits, like 780322300455
      */
@@ -241,7 +245,7 @@ class Person extends \Faker\Provider\Person
 
     /**
      * @param string $iinValue
-     * @param array $sequence
+     * @param array  $sequence
      *
      * @return int
      */
@@ -249,7 +253,7 @@ class Person extends \Faker\Provider\Person
     {
         $sum = 0;
 
-        for ($i = 0; $i <= 10; $i++) {
+        for ($i = 0; $i <= 10; ++$i) {
             $sum += (int) $iinValue[$i] * $sequence[$i];
         }
 

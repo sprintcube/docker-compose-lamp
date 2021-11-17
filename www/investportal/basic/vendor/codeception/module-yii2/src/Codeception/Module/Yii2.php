@@ -46,6 +46,11 @@ use yii\db\Transaction;
  * * `configFile` *required* - path to the application config file. The file
  *   should be configured for the test environment and return a configuration
  *   array.
+ * * `applicationClass` - Fully qualified class name for the application. There are
+ *   several ways to define the application class. Either via a `class` key in the Yii
+ *   config, via specifying this codeception module configuration value or let codeception
+ *   use its default value `yii\web\Application`. In a standard Yii application, this
+ *   value should be either `yii\console\Application`, `yii\web\Application` or unset.
  * * `entryUrl` - initial application url (default: http://localhost/index-test.php).
  * * `entryScript` - front script title (like: index-test.php). If not set it's
  *   taken from `entryUrl`.
@@ -85,38 +90,19 @@ use yii\db\Transaction;
  *             configFile: 'path/to/config.php'
  * ```
  *
- * ### Parts
+ * ## Parts
  *
  * By default all available methods are loaded, but you can also use the `part`
  * option to select only the needed actions and to avoid conflicts. The
- * avilable parts are:
+ * available parts are:
  *
  * * `init` - use the module only for initialization (for acceptance tests).
  * * `orm` - include only `haveRecord/grabRecord/seeRecord/dontSeeRecord` actions.
  * * `fixtures` - use fixtures inside tests with `haveFixtures/grabFixture/grabFixtures` actions.
  * * `email` - include email actions `seeEmailsIsSent/grabLastSentEmail/...`
  *
- * ### Example (`functional.suite.yml`)
- *
- * ```yaml
- * actor: FunctionalTester
- * modules:
- *   enabled:
- *      - Yii2:
- *          configFile: 'config/test.php'
- * ```
- *
- * ### Example (`unit.suite.yml`)
- *
- * ```yaml
- * actor: UnitTester
- * modules:
- *   enabled:
- *      - Asserts
- *      - Yii2:
- *          configFile: 'config/test.php'
- *          part: init
- * ```
+ * See [WebDriver module](https://codeception.com/docs/modules/WebDriver#Loading-Parts-from-other-Modules)
+ * for general information on how to load parts of a framework module.
  *
  * ### Example (`acceptance.suite.yml`)
  *
@@ -197,6 +183,7 @@ class Yii2 extends Framework implements ActiveRecord, MultiSession, PartedModule
         'recreateComponents' => [],
         'recreateApplication' => false,
         'closeSessionOnRecreateApplication' => true,
+        'applicationClass' => null,
     ];
 
     protected $requiredFields = ['configFile'];

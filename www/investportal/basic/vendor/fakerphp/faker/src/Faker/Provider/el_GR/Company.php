@@ -8,16 +8,15 @@ class Company extends \Faker\Provider\Company
         'Ο.Ε',
         'Ε.Ε',
         'Α.Ε',
-        'Ε.Π.Ε'
+        'Ε.Π.Ε',
     ];
 
     protected static $companyFormats = [
         '{{lastName}} {{firstName}} {{companySuffix}}',
-        '{{lastName}}-{{firstName}}'
+        '{{lastName}}-{{firstName}}',
     ];
 
     protected static $grafm = ['#########'];
-
 
     protected static $doy = [
         'Α\' Αθήνας',
@@ -40,9 +39,8 @@ class Company extends \Faker\Provider\Company
         'Αμοργού',
         'Πατρών',
         'ΔΟΥ ΠΛΟΙΩΝ',
-        'ΦΑΕΕ ΑΘΗΝΩΝ'
+        'ΦΑΕΕ ΑΘΗΝΩΝ',
     ];
-
 
     protected static $object = [
         'Προγραμματιστής',

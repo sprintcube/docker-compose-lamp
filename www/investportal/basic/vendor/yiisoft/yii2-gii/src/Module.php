@@ -9,6 +9,7 @@ namespace yii\gii;
 
 use Yii;
 use yii\base\BootstrapInterface;
+use yii\helpers\IpHelper;
 use yii\helpers\Json;
 use yii\web\ForbiddenHttpException;
 
@@ -48,10 +49,12 @@ class Module extends \yii\base\Module implements BootstrapInterface
     public $controllerNamespace = 'yii\gii\controllers';
     /**
      * @var array the list of IPs that are allowed to access this module.
-     * Each array element represents a single IP filter which can be either an IP address
-     * or an address with wildcard (e.g. 192.168.0.*) to represent a network segment.
-     * The default value is `['127.0.0.1', '::1']`, which means the module can only be accessed
-     * by localhost.
+     * Each array element represents a single IP filter which can be either:
+     * - an IP address (e.g. 1.2.3.4),
+     * - an address with wildcard (e.g. 192.168.0.*) to represent a network segment
+     * - a CIDR range (e.g. 172.16.0.0/12) (available since version 2.2.3).
+     *   The default value is `['127.0.0.1', '::1']`, which means the module can only be accessed
+     *   by localhost.
      */
     public $allowedIPs = ['127.0.0.1', '::1'];
     /**
@@ -143,7 +146,17 @@ class Module extends \yii\base\Module implements BootstrapInterface
     {
         $ip = Yii::$app->getRequest()->getUserIP();
         foreach ($this->allowedIPs as $filter) {
-            if ($filter === '*' || $filter === $ip || (($pos = strpos($filter, '*')) !== false && !strncmp($ip, $filter, $pos))) {
+            if ($filter === '*'
+                || $filter === $ip
+                || (
+                    ($pos = strpos($filter, '*')) !== false
+                    && !strncmp($ip, $filter, $pos)
+                )
+                || (
+                    strpos($filter, '/') !== false
+                    && IpHelper::inRange($ip, $filter)
+                )
+            ) {
                 return true;
             }
         }

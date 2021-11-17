@@ -18,6 +18,11 @@ namespace Behat\Gherkin\Node;
 class ExampleTableNode extends TableNode
 {
     /**
+     * @var string[]
+     */
+    private $tags;
+
+    /**
      * @var string
      */
     private $keyword;
@@ -25,12 +30,14 @@ class ExampleTableNode extends TableNode
     /**
      * Initializes example table.
      *
-     * @param array  $table   Table in form of [$rowLineNumber => [$val1, $val2, $val3]]
+     * @param array $table Table in form of [$rowLineNumber => [$val1, $val2, $val3]]
      * @param string $keyword
+     * @param string[] $tags
      */
-    public function __construct(array $table, $keyword)
+    public function __construct(array $table, $keyword, array $tags = array())
     {
         $this->keyword = $keyword;
+        $this->tags = $tags;
 
         parent::__construct($table);
     }
@@ -43,6 +50,15 @@ class ExampleTableNode extends TableNode
     public function getNodeType()
     {
         return 'ExampleTable';
+    }
+
+    /**
+     * Returns attached tags
+     * @return \string[]
+     */
+    public function getTags()
+    {
+        return $this->tags;
     }
 
     /**

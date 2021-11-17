@@ -18,7 +18,9 @@ class Text extends \Faker\Provider\Text
      * Title: 吶喊 Call to Arms (1922)
      * Author: 魯迅 Lu Xun
      * Language: Traditional Chinese
+     *
      * @see https://zh.wikisource.org/wiki/%E5%90%B6%E5%96%8A
+     *
      * @var string
      */
     protected static $baseText = <<<'EOT'
@@ -805,7 +807,7 @@ EOT;
         $chars = [];
 
         foreach (preg_split('//u', str_replace(PHP_EOL, '', $text)) as $char) {
-            if (! empty($char)) {
+            if (!empty($char)) {
                 $chars[] = $char;
             }
         }
@@ -822,7 +824,7 @@ EOT;
 
     protected static function validStart($word)
     {
-        return ! in_array($word, static::$notBeginPunct);
+        return !in_array($word, static::$notBeginPunct, false);
     }
 
     protected static function appendEnd($text)
@@ -840,7 +842,7 @@ EOT;
         }
 
         // if the last char is a not-valid-end punctuation, remove it
-        if (in_array($last, static::$notEndPunct)) {
+        if (in_array($last, static::$notEndPunct, false)) {
             if ($mbAvailable) {
                 $text = mb_substr($text, 0, mb_strlen($text, static::$encoding) - 1, static::$encoding);
             } else {
@@ -850,13 +852,14 @@ EOT;
         }
 
         // if the last char is not a valid punctuation, append a default one.
-        return in_array($last, static::$endPunct) ? $text : $text . '。';
+        return in_array($last, static::$endPunct, false) ? $text : $text . '。';
     }
 
     /**
      * Convert original string to utf-8 encoding.
      *
      * @param string $text
+     *
      * @return array
      */
     protected static function utf8Encoding($text)
