@@ -1,12 +1,12 @@
 <?php return array (
   'root' => 
   array (
-    'pretty_version' => '2.0.43',
-    'version' => '2.0.43.0',
+    'pretty_version' => 'dev-master',
+    'version' => 'dev-master',
     'aliases' => 
     array (
     ),
-    'reference' => NULL,
+    'reference' => '4f91385c9138610474d4b27e151e2105acb4b09c',
     'name' => 'yiisoft/yii2-app-basic',
   ),
   'versions' => 
@@ -46,6 +46,15 @@
       array (
       ),
       'reference' => '38c8d3131a82567bfef18da09f7f4db68c84f8a3',
+    ),
+    'bower-asset/react' => 
+    array (
+      'pretty_version' => 'v16.1.0',
+      'version' => '16.1.0.0',
+      'aliases' => 
+      array (
+      ),
+      'reference' => '0a2fda23ec873d50bafde1f7ae6d396ab32a490a',
     ),
     'bower-asset/yii2-pjax' => 
     array (
@@ -209,6 +218,15 @@
       ),
       'reference' => '089edd38f5b8abba6cb01567c2a8aaa47cec4c72',
     ),
+    'linslin/yii2-curl' => 
+    array (
+      'pretty_version' => '1.5.0',
+      'version' => '1.5.0.0',
+      'aliases' => 
+      array (
+      ),
+      'reference' => 'c180a1e5d5035d9dbe54d2cd3cd7fec87c0de764',
+    ),
     'myclabs/deep-copy' => 
     array (
       'pretty_version' => '1.10.2',
@@ -239,6 +257,16 @@
       array (
       ),
       'reference' => '06e2ebd25f2869e54a306dda991f7db58066f7f6',
+    ),
+    'opw/yii2-react' => 
+    array (
+      'pretty_version' => 'dev-master',
+      'version' => 'dev-master',
+      'aliases' => 
+      array (
+        0 => '9999999-dev',
+      ),
+      'reference' => '62fffbbd7789e7583ed11184854f304a6484d8ba',
     ),
     'paragonie/random_compat' => 
     array (
@@ -547,6 +575,15 @@
       ),
       'reference' => '99732be0ddb3361e16ad77b68ba41efc8e979019',
     ),
+    'simpleenergy/php-webhdfs' => 
+    array (
+      'pretty_version' => '1.0.7',
+      'version' => '1.0.7.0',
+      'aliases' => 
+      array (
+      ),
+      'reference' => '83f2e8a5b8f76ec1091d907b9bbb9b3b7321cecd',
+    ),
     'swiftmailer/swiftmailer' => 
     array (
       'pretty_version' => 'v6.3.0',
@@ -772,12 +809,12 @@
     ),
     'yiisoft/yii2-app-basic' => 
     array (
-      'pretty_version' => '2.0.43',
-      'version' => '2.0.43.0',
+      'pretty_version' => 'dev-master',
+      'version' => 'dev-master',
       'aliases' => 
       array (
       ),
-      'reference' => NULL,
+      'reference' => '4f91385c9138610474d4b27e151e2105acb4b09c',
     ),
     'yiisoft/yii2-bootstrap4' => 
     array (

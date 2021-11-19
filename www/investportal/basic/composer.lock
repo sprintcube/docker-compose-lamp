@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "a973addecfa2040a73918abda938727c",
+    "content-hash": "6a5e67f67026bf30a8fc4f3ca95a0116",
     "packages": [
         {
             "name": "bower-asset/inputmask",
@@ -57,6 +57,21 @@
                 "type": "zip",
                 "url": "https://api.github.com/repos/bestiejs/punycode.js/zipball/38c8d3131a82567bfef18da09f7f4db68c84f8a3",
                 "reference": "38c8d3131a82567bfef18da09f7f4db68c84f8a3"
+            },
+            "type": "bower-asset"
+        },
+        {
+            "name": "bower-asset/react",
+            "version": "v16.1.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/reactjs/react-bower.git",
+                "reference": "0a2fda23ec873d50bafde1f7ae6d396ab32a490a"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/reactjs/react-bower/zipball/0a2fda23ec873d50bafde1f7ae6d396ab32a490a",
+                "reference": "0a2fda23ec873d50bafde1f7ae6d396ab32a490a"
             },
             "type": "bower-asset"
         },
@@ -348,6 +363,62 @@
             "time": "2020-06-29T00:56:53+00:00"
         },
         {
+            "name": "linslin/yii2-curl",
+            "version": "1.5.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/linslin/Yii2-Curl.git",
+                "reference": "c180a1e5d5035d9dbe54d2cd3cd7fec87c0de764"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/linslin/Yii2-Curl/zipball/c180a1e5d5035d9dbe54d2cd3cd7fec87c0de764",
+                "reference": "c180a1e5d5035d9dbe54d2cd3cd7fec87c0de764",
+                "shasum": ""
+            },
+            "require": {
+                "ext-curl": "*",
+                "ext-json": "*",
+                "php": ">=7.2.0 <9.0",
+                "yiisoft/yii2": "^2.0.0"
+            },
+            "require-dev": {
+                "codeception/module-asserts": "^1.3",
+                "guzzlehttp/guzzle": ">=4.1.4 <7.0",
+                "mcustiel/phiremock": "^2.1",
+                "mcustiel/phiremock-codeception-extension": "^2.1",
+                "mcustiel/phiremock-codeception-module": "^1.1.2"
+            },
+            "type": "yii2-extension",
+            "autoload": {
+                "psr-4": {
+                    "linslin\\yii2\\curl\\": ""
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Nils Gajsek",
+                    "email": "info@linslin.org"
+                }
+            ],
+            "description": "Easy and nice cURL extension with RESTful support for Yii2",
+            "keywords": [
+                " curl",
+                "extension",
+                "restful",
+                "yii2"
+            ],
+            "support": {
+                "issues": "https://github.com/linslin/Yii2-Curl/issues",
+                "source": "https://github.com/linslin/Yii2-Curl/tree/1.5.0"
+            },
+            "time": "2021-02-20T10:10:56+00:00"
+        },
+        {
             "name": "npm-asset/bootstrap",
             "version": "4.6.1",
             "dist": {
@@ -358,6 +429,55 @@
             "license": [
                 "MIT"
             ]
+        },
+        {
+            "name": "opw/yii2-react",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/opw/yii2-react.git",
+                "reference": "62fffbbd7789e7583ed11184854f304a6484d8ba"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/opw/yii2-react/zipball/62fffbbd7789e7583ed11184854f304a6484d8ba",
+                "reference": "62fffbbd7789e7583ed11184854f304a6484d8ba",
+                "shasum": ""
+            },
+            "require": {
+                "bower-asset/react": "*",
+                "yiisoft/yii2": "*"
+            },
+            "default-branch": true,
+            "type": "yii2-extension",
+            "autoload": {
+                "psr-4": {
+                    "opw\\react\\": ""
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT License"
+            ],
+            "authors": [
+                {
+                    "name": "Paulo Santiago",
+                    "email": "paulo@mobilizy.com.br",
+                    "homepage": "http://www.mobilizy.com.br/"
+                }
+            ],
+            "description": "The React.js library extension for the Yii framework",
+            "keywords": [
+                "react",
+                "yii2"
+            ],
+            "support": {
+                "issues": "https://github.com/opw/yii2-react/issues",
+                "source": "https://github.com/opw/yii2-react.git",
+                "wiki": "https://github.com/opw/yii2-react/wiki"
+            },
+            "abandoned": true,
+            "time": "2015-05-27T01:06:26+00:00"
         },
         {
             "name": "paragonie/random_compat",
@@ -408,6 +528,64 @@
                 "source": "https://github.com/paragonie/random_compat"
             },
             "time": "2020-10-15T08:29:30+00:00"
+        },
+        {
+            "name": "simpleenergy/php-webhdfs",
+            "version": "1.0.7",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/xaviered/php-WebHDFS.git",
+                "reference": "83f2e8a5b8f76ec1091d907b9bbb9b3b7321cecd"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/xaviered/php-WebHDFS/zipball/83f2e8a5b8f76ec1091d907b9bbb9b3b7321cecd",
+                "reference": "83f2e8a5b8f76ec1091d907b9bbb9b3b7321cecd",
+                "shasum": ""
+            },
+            "require": {
+                "ext-curl": "*",
+                "php": ">=5.4.0"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-0": {
+                    "org\\apache\\hadoop\\": "src/",
+                    "org\\apache\\hadoop\\tools": "app/models/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "tranch-xiao",
+                    "homepage": "https://github.com/tranch-xiao"
+                },
+                {
+                    "name": "dshap",
+                    "homepage": "https://github.com/dshap"
+                },
+                {
+                    "name": "jacobko",
+                    "homepage": "https://github.com/jacobko"
+                },
+                {
+                    "name": "yosshi",
+                    "homepage": "https://github.com/yosshi"
+                },
+                {
+                    "name": "Sebastian Lagemann",
+                    "email": "sebastian@iqu.com"
+                }
+            ],
+            "description": "PHP WebHDFS, forked from https://github.com/simpleenergy/php-WebHDFS",
+            "support": {
+                "issues": "https://github.com/xaviered/php-WebHDFS/issues",
+                "source": "https://github.com/xaviered/php-WebHDFS/tree/1.0.7"
+            },
+            "time": "2019-09-10T14:02:06+00:00"
         },
         {
             "name": "swiftmailer/swiftmailer",
@@ -5480,7 +5658,9 @@
     ],
     "aliases": [],
     "minimum-stability": "stable",
-    "stability-flags": [],
+    "stability-flags": {
+        "opw/yii2-react": 20
+    },
     "prefer-stable": false,
     "prefer-lowest": false,
     "platform": {

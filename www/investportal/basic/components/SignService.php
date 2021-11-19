@@ -2,7 +2,6 @@
 namespace yii\components\SignService;
 
 use yii\base\Component;
-use yii\web\NotFoundHttpException;
 use yii\helpers\Json;
 use app\models\UserService;
 
@@ -63,10 +62,16 @@ class SignUp extends Component{
 						$upModel[1]->country = $region;
 						$upModel[1]->isAccept= TRUE;
 
-						if($upModel[1]->save()){ throw new HttpException(202, 'Registration success!'); }
-						else{ throw new HttpException(409, 'The portal accounting service is temporarily unavailable! Try again later;-('); }
+						if($upModel[1]->save()){ echo 'Registration success!'; }
+						else{ 
+							header($_SERVER['SERVER_PROTOCOL'] ." 409 Conflict");
+							echo 'The portal accounting service is temporarily unavailable! Try again later;-('; 
+						}
 					}
-					else{ throw new HttpException(500, 'New account data not is accept!'); }
+					else{ 
+						header($_SERVER['SERVER_PROTOCOL'] ." 500 Internal Server Error");
+						echo 'New account data not is accept!'; 
+					}
 			}
 			else{
 					$validError = [];
@@ -77,7 +82,8 @@ class SignUp extends Component{
 					if($validPassword){ $validError[]['validError'] = 'The password you entered exists'; }
 					if($validPhone){ $validError[]['validError'] = 'The phone number you entered exists'; }
 
-					throw new HttpException(400, Json::encode($validError));
+					header($_SERVER['SERVER_PROTOCOL'] ." 400 Bad Request");
+					echo Json::encode($validError);
 			}
 		}
 
@@ -104,10 +110,11 @@ class adminSignUp extends Component implements IAdminUserService{
 		$svc = $this->adminControl($this->signQuery);
 		
 		switch($svc['state']){
-			case 0: throw new HttpException(202, header('Location: /admin')); break;
+			case 0: header('Location: /admin'); break;
 			case 1:
 				$res = '<script>let problem=alert("The portal administration accounting service is temporarily unavailable! Try again later;-("),res="";res=problem?"/":"/admin/auth",window.location.assign(res);</script>'
-				throw new HttpException(409, $res);
+				header($_SERVER['SERVER_PROTOCOL'] ." 409 Conflict");
+				echo $res;
 			break;
 			default:
 				$validError = '';
@@ -118,7 +125,8 @@ class adminSignUp extends Component implements IAdminUserService{
 				if($svc['isPhone']){ $validError .= 'The phone number you entered exists\n'; }
 				
 				$res = '<script>let problem=alert("'. $validError .'"),res="";res=problem?"/admin":"/admin/auth",window.location.assign(res);</script>'
-				throw new HttpException(400, $res);
+				header($_SERVER['SERVER_PROTOCOL'] ." 400 Bad Request");
+				echo $res;
 			break;
 		}
 	}
@@ -207,8 +215,11 @@ class SignIn extends Component{
 			if($isLogin && $isPass){
 				$auth = User::findOne(['login' => $login]) || User::findOne(['email' => $login]) || User::findOne(['phone' => $login]);
 
-				if(Yii::$app->user->login($auth)){ throw new HttpException(202, 'Authorization success!'); }
-				else{ throw new HttpException(409, 'The portal accounting service is temporarily unavailable! Try again later;-('); }
+				if(Yii::$app->user->login($auth)){ echo 'Authorization success!'; }
+				else{ 
+					header($_SERVER['SERVER_PROTOCOL'] ." 409 Conflict");
+					echo 'The portal accounting service is temporarily unavailable! Try again later;-('; 
+				}
 			}
 			else{
 					$validError = [];
@@ -217,7 +228,8 @@ class SignIn extends Component{
 					if(!$isLogin){ $validError[]['validError'] = 'The login you entered no exists'; }
 					if(!$isPass){ $validError[]['validError'] = 'The password you entered exists'; }
 
-					throw new HttpException(400, Json::encode($validError));
+					header($_SERVER['SERVER_PROTOCOL'] ." 400 Bad Request");
+					echo Json::encode($validError);
 			}
 		}
 	}
@@ -238,10 +250,11 @@ class adminSignIn extends Component implements IAdminUserService{
 		$svc = $this->adminControl($this->signQuery);
 		
 		switch($svc['state']){
-			case 0: throw new HttpException(202, header('Location: /admin')); break;
+			case 0: header('Location: /admin'); break;
 			case 1: 
 				$res = '<script>let problem=alert("The portal administration accounting service is temporarily unavailable! Try again later;-("),res="";res=problem?"/":"/admin/auth",window.location.assign(res);</script>'
-				throw new HttpException(409, $res);
+				header($_SERVER['SERVER_PROTOCOL'] ." 409 Conflict");
+				echo $res;
 			break;
 			default:
 				$validError = '';
@@ -250,7 +263,8 @@ class adminSignIn extends Component implements IAdminUserService{
 				if($svc['noValidPass']){ $validError .= 'The password you entered exists\n'; }
 				
 				$res = '<script>let problem=alert("'. $validError .'"),res="";res=problem?"/":"/admin/auth",window.location.assign(res);</script>'
-				throw new HttpException(400, $res);
+				header($_SERVER['SERVER_PROTOCOL'] ." 400 Bad Request");
+				echo $res;
 			break;
 		}
 	}
@@ -307,8 +321,11 @@ class AutoSignIn extends Component{
 
 		$auth = User::findOne(['login' => $login]) || User::findOne(['email' => $login]) || User::findOne(['phone' => $login]);
 
-		if(Yii::$app->user->login($auth)){ throw new HttpException(202, 'First authorization success!'); }
-		else{ throw new HttpException(409, 'The portal accounting service is temporarily unavailable! Try again later;-('); }
+		if(Yii::$app->user->login($auth)){ echo 'First authorization success!'; }
+		else{ 
+			header($_SERVER['SERVER_PROTOCOL'] ." 409 Conflict");
+			echo 'The portal accounting service is temporarily unavailable! Try again later;-(';
+		}
 	}
 }
 
@@ -337,10 +354,16 @@ class Forgot extends Component{
 				$forgotModel->filterWhere(['or',['login' => $login],['email' => $login],['phone' => $login]]);
 				$forgotModel->password = $newPass;
 
-				if($forgotModel->save()){ throw new HttpException(202 ,'Access restore success!'); }
-				else{ throw new HttpException(409, 'The portal accounting service is temporarily unavailable! Try again later;-('); }
+				if($forgotModel->save()){ echo 'Access restore success!'; }
+				else{ 
+					header($_SERVER['SERVER_PROTOCOL'] ." 409 Conflict");
+					echo 'The portal accounting service is temporarily unavailable! Try again later;-('; 
+				}
 			}
-			else{ throw new HttpException(500, 'Account data for restore not is accept!'); }	
+			else{ 
+				header($_SERVER['SERVER_PROTOCOL'] ." 500 Internal Server Error");
+				echo 'Account data for restore not is accept!'; 
+			}	
 		}
 		else{
 			$validError = [];
@@ -348,7 +371,8 @@ class Forgot extends Component{
 
 			if(!$isLogin){ $validError[]['validError'] = 'The login you entered no exists'; }
 
-			throw new HttpException(400, Json::encode($validError));
+			header($_SERVER['SERVER_PROTOCOL'] ." 400 Bad Request");
+			echo Json::encode($validError);
 		}
 		
 	}
@@ -360,8 +384,11 @@ class SignOut extends Component{
 	public function proccess(){
 		$out = Yii::$app()->user->logout();
 
-		if($out){ throw new HttpException(202, 'Sign account out success!'); }
-		else{ throw new HttpException(409, 'The portal accounting service is temporarily unavailable! Try again later;-('); }
+		if($out){ echo 'Sign account out success!'; }
+		else{ 
+			header($_SERVER['SERVER_PROTOCOL'] ." 409 Conflict");
+			echo 'The portal accounting service is temporarily unavailable! Try again later;-('; 
+		}
 	}
 
 }
@@ -374,10 +401,11 @@ class adminSignOut extends Component implements IAdminUserService{
 		$svc = $this->adminControl(Yii::$app()->admin->logout());
 		
 		switch($svc['state']){
-			case 0: throw new HttpException(202, header('Location: /admin/auth')); break;
+			case 0: header('Location: /admin/auth'); break;
 			default:
 				$res = '<script>let problem=alert("The portal administration accounting service is temporarily unavailable! Try again later;-("),res="";res=problem?"/":"/",window.location.assign(res);</script>'
-				throw new HttpException(409, $res);
+				header($_SERVER['SERVER_PROTOCOL'] ." 409 Conflict");
+				echo $res;
 			break;
 		}
 		

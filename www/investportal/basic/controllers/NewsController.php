@@ -22,5 +22,8 @@ class NewsController extends Controller{
 		
 		return $this->render('newsView');
 	}
+	public function actionNewsservice($type){
+		
+	}
 }
 ?>

@@ -17,7 +17,7 @@ $this->title = 'Admin Services portal';
 			 }
 		 } }
 		?>
-<?php } } else{?>
+<?php } else{?>
 	<section class="admin-dashboard">
 	  <h1>Dashboard</h1>
 	  <header>
@@ -36,3 +36,4 @@ $this->title = 'Admin Services portal';
 	  </main>
 	</section>
 <?php } ?>
+<script type="text/jsx" src="/js/react/admin/<?php echo $pgUI; ?>.js"></script>

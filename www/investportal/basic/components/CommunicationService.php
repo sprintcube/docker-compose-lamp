@@ -49,8 +49,11 @@ class SMSCode extends Component{
 		$smsStorage = $sms->save();
 		$smsMessage = mail($to,'', $content, "From: " . $from ."\n");
 
-		if($smsStorage && $smsMessage){ throw new HttpException(202 ,'SMS code send success!');}
-		else{ throw new HttpException(409 ,'The portal accounting service is temporarily unavailable! Try again later;-('); }
+		if($smsStorage && $smsMessage){ echo 'SMS code send success!';}
+		else{ 
+			header($_SERVER['SERVER_PROTOCOL'] ." 409 Conflict");
+			echo 'The portal accounting service is temporarily unavailable! Try again later;-('; 
+		}
 
 		
 		
@@ -68,10 +71,16 @@ class SMSCode extends Component{
 
 		foreach($validCode as $data){
 			if($this->code === $data->code){
-				if($deleteCode){ throw new HttpException(202 ,'SMS code is valid!');}
-				else{ throw new HttpException(409 ,'The portal accounting service is temporarily unavailable! Try again later;-('); }
+				if($deleteCode){ echo 'SMS code is valid!';}
+				else{ 
+					header($_SERVER['SERVER_PROTOCOL'] ." 409 Conflict");
+					echo 'The portal accounting service is temporarily unavailable! Try again later;-('; 
+				}
 			}
-			else{ throw new HttpException(403 ,'The code is entered incorrectly and check it carefully, please!'); }
+			else{ 
+				header($_SERVER['SERVER_PROTOCOL'] ." 403 Forbidden");
+				echo 'The code is entered incorrectly and check it carefully, please!'; 
+			}
 		}
 
 		

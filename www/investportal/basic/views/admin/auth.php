@@ -12,3 +12,4 @@ $this->title = 'Sign in Portal Admin Services';
   <main></main>
   <footer></footer>
 </div>
+<script type="text/jsx" src="/js/react/admin.js"></script>

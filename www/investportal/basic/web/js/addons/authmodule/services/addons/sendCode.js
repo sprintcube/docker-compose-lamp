@@ -128,7 +128,7 @@ class CodeSender{
 		else{ return null; }
 		
 	}
-    __CCService(s,q){
+    async __CCService(s,q){
 		let sQ = {
 			method: 'POST',
 			body: {'serviceQuery': JSON.stringify(q) }
@@ -138,7 +138,7 @@ class CodeSender{
 		if(response.status === 202){ return true; }
 		else{ return null; }
 	}
-	__CVCService(s,q){
+	async __CVCService(s,q){
 		let sQ = {
 			method: 'POST',
 			body: {'serviceQuery': JSON.stringify(q) }

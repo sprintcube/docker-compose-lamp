@@ -12,15 +12,6 @@ return array (
       '@yii/bootstrap4' => $vendorDir . '/yiisoft/yii2-bootstrap4/src',
     ),
   ),
-  'yiisoft/yii2-debug' => 
-  array (
-    'name' => 'yiisoft/yii2-debug',
-    'version' => '2.1.18.0',
-    'alias' => 
-    array (
-      '@yii/debug' => $vendorDir . '/yiisoft/yii2-debug/src',
-    ),
-  ),
   'yiisoft/yii2-faker' => 
   array (
     'name' => 'yiisoft/yii2-faker',
@@ -28,6 +19,33 @@ return array (
     'alias' => 
     array (
       '@yii/faker' => $vendorDir . '/yiisoft/yii2-faker/src',
+    ),
+  ),
+  'yiisoft/yii2-swiftmailer' => 
+  array (
+    'name' => 'yiisoft/yii2-swiftmailer',
+    'version' => '2.1.2.0',
+    'alias' => 
+    array (
+      '@yii/swiftmailer' => $vendorDir . '/yiisoft/yii2-swiftmailer/src',
+    ),
+  ),
+  'linslin/yii2-curl' => 
+  array (
+    'name' => 'linslin/yii2-curl',
+    'version' => '1.5.0.0',
+    'alias' => 
+    array (
+      '@linslin/yii2/curl' => $vendorDir . '/linslin/yii2-curl',
+    ),
+  ),
+  'yiisoft/yii2-debug' => 
+  array (
+    'name' => 'yiisoft/yii2-debug',
+    'version' => '2.1.18.0',
+    'alias' => 
+    array (
+      '@yii/debug' => $vendorDir . '/yiisoft/yii2-debug/src',
     ),
   ),
   'yiisoft/yii2-gii' => 
@@ -39,13 +57,13 @@ return array (
       '@yii/gii' => $vendorDir . '/yiisoft/yii2-gii/src',
     ),
   ),
-  'yiisoft/yii2-swiftmailer' => 
+  'opw/yii2-react' => 
   array (
-    'name' => 'yiisoft/yii2-swiftmailer',
-    'version' => '2.1.2.0',
+    'name' => 'opw/yii2-react',
+    'version' => 'dev-master',
     'alias' => 
     array (
-      '@yii/swiftmailer' => $vendorDir . '/yiisoft/yii2-swiftmailer/src',
+      '@opw/react' => $vendorDir . '/opw/yii2-react',
     ),
   ),
 );

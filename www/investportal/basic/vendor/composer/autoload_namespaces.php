@@ -6,6 +6,8 @@ $vendorDir = dirname(dirname(__FILE__));
 $baseDir = dirname($vendorDir);
 
 return array(
+    'org\\apache\\hadoop\\tools' => array($vendorDir . '/simpleenergy/php-webhdfs/app/models'),
+    'org\\apache\\hadoop\\' => array($vendorDir . '/simpleenergy/php-webhdfs/src'),
     'HTMLPurifier' => array($vendorDir . '/ezyang/htmlpurifier/library'),
     'Diff' => array($vendorDir . '/phpspec/php-diff/lib'),
     'Codeception\\' => array($vendorDir . '/codeception/specify/src'),

@@ -53,7 +53,6 @@ class List extends React.Component{
 	else{ alert('There are no filters in the portal database!'); }
     return (
       <React.Fragment>
-       
         <section id="filters-list">
           <header><h2>Attributes filters list</h2></header>
           <main>{renderData}</main>

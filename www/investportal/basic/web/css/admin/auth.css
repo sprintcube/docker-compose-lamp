@@ -6,6 +6,7 @@ html,body{
     width: 102%;
     margin-top: 0%;
     margin-bottom: 0%;
+    background-color: #0079bf;
 }
 .admin-auth > header{
   width: 99vw;
@@ -15,14 +16,15 @@ html,body{
 .admin-auth > header #back{
   width: 50px;
   vertical-align: middle;
-  margin-left: 1vw;
+  margin-left: 4vw;
 }
 .admin-auth > header #title{
   display: inline-block;
   margin-left: 1vw;
-  margin-top: 10px;
+  top: 5px;
   font-size: 160%;
   color: white;
+  position: relative;
 }
 .admin-auth > main{
   width: 99vw;
@@ -75,15 +77,15 @@ html,body{
   padding-top: 1px;
 }
 .admin-auth > footer .copyright{
-  font-size: 120%;
-  margin-left: 2vw;
+  font-size: 100%;
+  margin-left: 6vw;
   margin-top: 2%;
   color: #ffffff;
 }
 @media all and (max-width: 768px){
   .admin-auth > header #title {
-    font-size: 4vw;
-    margin-left: 0vw;
+    font-size: 150%;
+    margin-left: 6vw;
   }
   .admin-auth > header, .admin-auth > main, .admin-auth > footer{
     width: 90vw;
@@ -93,11 +95,11 @@ html,body{
     margin-left: -10vw;
   }
   .admin-auth > main form div {
-    font-size: 150%;
+    font-size: 145%;
     padding-bottom: 4%;
   }
   .admin-auth > main form div label {
-    margin-left: -41%;
+    margin-left: -36%;
   }
   .admin-auth > main form div input {
     width: 80%;

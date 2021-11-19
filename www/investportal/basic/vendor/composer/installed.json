@@ -72,7 +72,7 @@
             "version_normalized": "3.3.11.0",
             "source": {
                 "type": "git",
-                "url": "https://github.com/RobinHerbots/Inputmask.git",
+                "url": "git@github.com:RobinHerbots/Inputmask.git",
                 "reference": "5e670ad62f50c738388d4dcec78d2888505ad77b"
             },
             "dist": {
@@ -96,7 +96,7 @@
             "version_normalized": "3.6.0.0",
             "source": {
                 "type": "git",
-                "url": "https://github.com/jquery/jquery-dist.git",
+                "url": "git@github.com:jquery/jquery-dist.git",
                 "reference": "e786e3d9707ffd9b0dd330ca135b66344dcef85a"
             },
             "dist": {
@@ -128,6 +128,24 @@
             "type": "bower-asset",
             "installation-source": "dist",
             "install-path": "../bower-asset/punycode"
+        },
+        {
+            "name": "bower-asset/react",
+            "version": "v16.1.0",
+            "version_normalized": "16.1.0.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/reactjs/react-bower.git",
+                "reference": "0a2fda23ec873d50bafde1f7ae6d396ab32a490a"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/reactjs/react-bower/zipball/0a2fda23ec873d50bafde1f7ae6d396ab32a490a",
+                "reference": "0a2fda23ec873d50bafde1f7ae6d396ab32a490a"
+            },
+            "type": "bower-asset",
+            "installation-source": "dist",
+            "install-path": "../bower-asset/react"
         },
         {
             "name": "bower-asset/yii2-pjax",
@@ -1261,6 +1279,65 @@
             "install-path": "../guzzlehttp/psr7"
         },
         {
+            "name": "linslin/yii2-curl",
+            "version": "1.5.0",
+            "version_normalized": "1.5.0.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/linslin/Yii2-Curl.git",
+                "reference": "c180a1e5d5035d9dbe54d2cd3cd7fec87c0de764"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/linslin/Yii2-Curl/zipball/c180a1e5d5035d9dbe54d2cd3cd7fec87c0de764",
+                "reference": "c180a1e5d5035d9dbe54d2cd3cd7fec87c0de764",
+                "shasum": ""
+            },
+            "require": {
+                "ext-curl": "*",
+                "ext-json": "*",
+                "php": ">=7.2.0 <9.0",
+                "yiisoft/yii2": "^2.0.0"
+            },
+            "require-dev": {
+                "codeception/module-asserts": "^1.3",
+                "guzzlehttp/guzzle": ">=4.1.4 <7.0",
+                "mcustiel/phiremock": "^2.1",
+                "mcustiel/phiremock-codeception-extension": "^2.1",
+                "mcustiel/phiremock-codeception-module": "^1.1.2"
+            },
+            "time": "2021-02-20T10:10:56+00:00",
+            "type": "yii2-extension",
+            "installation-source": "dist",
+            "autoload": {
+                "psr-4": {
+                    "linslin\\yii2\\curl\\": ""
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Nils Gajsek",
+                    "email": "info@linslin.org"
+                }
+            ],
+            "description": "Easy and nice cURL extension with RESTful support for Yii2",
+            "keywords": [
+                " curl",
+                "extension",
+                "restful",
+                "yii2"
+            ],
+            "support": {
+                "issues": "https://github.com/linslin/Yii2-Curl/issues",
+                "source": "https://github.com/linslin/Yii2-Curl/tree/1.5.0"
+            },
+            "install-path": "../linslin/yii2-curl"
+        },
+        {
             "name": "myclabs/deep-copy",
             "version": "1.10.2",
             "version_normalized": "1.10.2.0",
@@ -1403,6 +1480,58 @@
                 "source": "https://github.com/opis/closure/tree/3.6.2"
             },
             "install-path": "../opis/closure"
+        },
+        {
+            "name": "opw/yii2-react",
+            "version": "dev-master",
+            "version_normalized": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/opw/yii2-react.git",
+                "reference": "62fffbbd7789e7583ed11184854f304a6484d8ba"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/opw/yii2-react/zipball/62fffbbd7789e7583ed11184854f304a6484d8ba",
+                "reference": "62fffbbd7789e7583ed11184854f304a6484d8ba",
+                "shasum": ""
+            },
+            "require": {
+                "bower-asset/react": "*",
+                "yiisoft/yii2": "*"
+            },
+            "time": "2015-05-27T01:06:26+00:00",
+            "default-branch": true,
+            "type": "yii2-extension",
+            "installation-source": "source",
+            "autoload": {
+                "psr-4": {
+                    "opw\\react\\": ""
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT License"
+            ],
+            "authors": [
+                {
+                    "name": "Paulo Santiago",
+                    "email": "paulo@mobilizy.com.br",
+                    "homepage": "http://www.mobilizy.com.br/"
+                }
+            ],
+            "description": "The React.js library extension for the Yii framework",
+            "keywords": [
+                "react",
+                "yii2"
+            ],
+            "support": {
+                "issues": "https://github.com/opw/yii2-react/issues",
+                "source": "https://github.com/opw/yii2-react.git",
+                "wiki": "https://github.com/opw/yii2-react/wiki"
+            },
+            "abandoned": true,
+            "install-path": "../opw/yii2-react"
         },
         {
             "name": "paragonie/random_compat",
@@ -3303,6 +3432,67 @@
                 "source": "https://github.com/sebastianbergmann/version/tree/master"
             },
             "install-path": "../sebastian/version"
+        },
+        {
+            "name": "simpleenergy/php-webhdfs",
+            "version": "1.0.7",
+            "version_normalized": "1.0.7.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/xaviered/php-WebHDFS.git",
+                "reference": "83f2e8a5b8f76ec1091d907b9bbb9b3b7321cecd"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/xaviered/php-WebHDFS/zipball/83f2e8a5b8f76ec1091d907b9bbb9b3b7321cecd",
+                "reference": "83f2e8a5b8f76ec1091d907b9bbb9b3b7321cecd",
+                "shasum": ""
+            },
+            "require": {
+                "ext-curl": "*",
+                "php": ">=5.4.0"
+            },
+            "time": "2019-09-10T14:02:06+00:00",
+            "type": "library",
+            "installation-source": "dist",
+            "autoload": {
+                "psr-0": {
+                    "org\\apache\\hadoop\\": "src/",
+                    "org\\apache\\hadoop\\tools": "app/models/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "tranch-xiao",
+                    "homepage": "https://github.com/tranch-xiao"
+                },
+                {
+                    "name": "dshap",
+                    "homepage": "https://github.com/dshap"
+                },
+                {
+                    "name": "jacobko",
+                    "homepage": "https://github.com/jacobko"
+                },
+                {
+                    "name": "yosshi",
+                    "homepage": "https://github.com/yosshi"
+                },
+                {
+                    "name": "Sebastian Lagemann",
+                    "email": "sebastian@iqu.com"
+                }
+            ],
+            "description": "PHP WebHDFS, forked from https://github.com/simpleenergy/php-WebHDFS",
+            "support": {
+                "issues": "https://github.com/xaviered/php-WebHDFS/issues",
+                "source": "https://github.com/xaviered/php-WebHDFS/tree/1.0.7"
+            },
+            "install-path": "../simpleenergy/php-webhdfs"
         },
         {
             "name": "swiftmailer/swiftmailer",

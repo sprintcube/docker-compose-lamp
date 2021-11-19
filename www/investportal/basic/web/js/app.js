@@ -1,31 +1,4 @@
-
-
-
 $('body').after('<script src="/js/addons/slidesshow.js"></script>');
-
-let notiaudio = [
-    new Audio(host + '/audios/chat_open.mp3'),
-    new Audio(host + '/audios/chat_close.mp3')
-];
-const OpenChat = () => {
-    window.setTimeout(function () {
-        $('#chat-lightbox').removeClass('lightbox-closed');
-        notiaudio[0].play();
-    }, 10000);
-}
-const CloseChat = () => {
-    var close = $('#chat-lightbox header img');
-
-    close.click(function () {
-        $('#chat-lightbox').addClass('lightbox-closed');
-        notiaudio[1].play();
-    });
-}
-
-const OnlineChat = () => {
-    OpenChat();
-    CloseChat();
-}
 
 const MarketingHeadBannerAdaptive = () => {
     let vw = $(this).width();
@@ -116,7 +89,7 @@ const VideoPlayerUI = (player) => {
     });
 }
 const GeckoSupport = () => {
-    $.getJSON(host + "/js/geckoElements.json", function (data, textStatus, jqXHR) {
+    $.getJSON("/js/geckoElements.json", function (data, textStatus, jqXHR) {
             $(data.el.cont).addClass('gecko-fix');
         }
     );

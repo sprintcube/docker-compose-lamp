@@ -1,4 +1,3 @@
-
 import HashChange from "https://cdn.skypack.dev/react-hashchange";
 
 class Add extends React.Component{

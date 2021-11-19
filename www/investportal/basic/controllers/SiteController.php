@@ -34,7 +34,10 @@ class SiteController extends Controller{
 
 					Yii::$app->portalUserService->SignIn->proccess($sign,$type);
 				}
-				else{ throw new HttpException(405 ,'Query conflict'); }
+				else{ 
+					header($_SERVER['SERVER_REQUEST'] . " 405 Method Not Allowed");
+					echo 'Query conflict'; 
+				}
 			break;
 			case "signUp":
 				if($_POST['serviceQuery']){
@@ -43,7 +46,10 @@ class SiteController extends Controller{
 
 					Yii::$app->portalUserService->SignUp->proccess($sign,$type);
 				}
-				else{ throw new HttpException(405 ,'Query conflict'); }
+				else{ 
+					header($_SERVER['SERVER_REQUEST'] . " 405 Method Not Allowed");
+					echo 'Query conflict'; 
+				}
 			break;
 			case "forgot":
 				if($_POST['serviceQuery']){
@@ -52,7 +58,10 @@ class SiteController extends Controller{
 					Yii::$app->portalUserService->Forgot->proccess($sign);
 					
 				}
-				else{ throw new HttpException(405 ,'Query conflict'); }
+				else{ 
+					header($_SERVER['SERVER_REQUEST'] . " 405 Method Not Allowed");
+					echo 'Query conflict'; 
+				}
 			break;
 			case "autoAuth":
 				if($_POST['serviceQuery']){
@@ -61,11 +70,17 @@ class SiteController extends Controller{
 					Yii::$app->portalUserService->AutoSignIn->proccess($sign);
 					
 				}
-				else{ throw new HttpException(405 ,'Query conflict'); }
+				else{ 
+					header($_SERVER['SERVER_REQUEST'] . " 405 Method Not Allowed");
+					echo 'Query conflict'; 
+				}
 			break;
 			case "signOut":
 				if(!Yii::$app->user->isGuest){ Yii::$app->portalUserService->SignOut->proccess(); }
-				else{ throw new HttpException(405 ,'Service conflict'); }
+				else{ 
+					header($_SERVER['SERVER_REQUEST'] . " 405 Method Not Allowed");
+					echo 'Service conflict'; 
+				}
 			break;
 			case "getInfo":
 				if($_POST['serviceQuery']){
@@ -88,16 +103,25 @@ class SiteController extends Controller{
 							];
 						}
 
-						throw new HttpException(200 ,Json::encode($serviceResponse));
+						echo Json::encode($serviceResponse);
 
 						
 					}
-					else{throw new HttpException(404 ,'User not found');}
+					else{
+						header($_SERVER['SERVER_PROTOCOL'] . " 404 Not Found");
+						echo 'User not found';
+					}
 					
 				}
-				else{ throw new HttpException(405 ,'Query conflict'); }
+				else{ 
+					header($_SERVER['SERVER_REQUEST'] . " 405 Method Not Allowed");
+					echo 'Query conflict'; 
+				}
 			break;
-			default: throw new HttpException(404 ,'Service not found'); break;
+			default: 
+				header($_SERVER['SERVER_PROTOCOL'] . " 404 Not Found");
+				echo 'Service not found'; 
+			break;
 		}
 	}
 	public function actionServiceCodeCenter($service){
@@ -119,9 +143,15 @@ class SiteController extends Controller{
 
 					if($sign['service'] === 'Inbox'){ Yii::$app->portalCommunicationService->SMSCode->sendCode('SignUp', $sign['phone'], $sign['code']); }
 					else if($sign['service'] === 'Valid'){ Yii::$app->portalCommunicationService->SMSCode->validCode('SignUp', $sign['phone'], $sign['code']); }
-					else{ throw new HttpException(403 ,'Operation conflict'); }
+					else{ 
+						header($_SERVER['SERVER_REQUEST'] . " 403 Forbidden");
+						echo 'Operation conflict'; 
+					}
 				}
-				else{ throw new HttpException(405 ,'Query conflict'); }
+				else{ 
+					header($_SERVER['SERVER_REQUEST'] . " 405 Method Not Allowed");
+					echo 'Query conflict'; 
+				}
 			break;
 			case "forgot":
 				if($_POST['serviceQuery']){
@@ -138,10 +168,16 @@ class SiteController extends Controller{
 
 					if($sign['service'] === 'Inbox'){ Yii::$app->portalCommunicationService->SMSCode->sendCode('Forgot', $sign['phone']); }
 					else if($sign['service'] === 'Valid'){ Yii::$app->portalCommunicationService->SMSCode->validCode('Forgot', $sign['phone'], $sign['code']); }
-					else{ throw new HttpException(403 ,'Operation conflict'); }
+					else{ 
+						header($_SERVER['SERVER_REQUEST'] . " 403 Forbidden");
+						echo 'Operation conflict'; 
+					}
 					
 				}
-				else{ throw new HttpException(405 ,'Query conflict'); }
+				else{ 
+					header($_SERVER['SERVER_REQUEST'] . " 405 Method Not Allowed");
+					echo 'Query conflict'; 
+				}
 			break;
 			case "codeGenerator":
 				if($_POST['serviceQuery']){
@@ -158,12 +194,18 @@ class SiteController extends Controller{
 					if($isSignUp){ $newCode = $generateCode[0]; }
 					else if($isForgot){ $newCode = $generateCode[1]; }
 
-					throw new HttpException(201 ,$newCode);
+					echo $newCode;
 					
 				}
-				else{ throw new HttpException(405 ,'Query conflict'); }
+				else{ 
+					header($_SERVER['SERVER_REQUEST'] . " 405 Method Not Allowed");
+					echo 'Query conflict'; 
+				}
 			break;
-			default: throw new HttpException(404 ,'Service not found'); break;
+			default: 
+				header($_SERVER['SERVER_PROTOCOL'] . " 404 Not Found");
+				echo 'Service not found'; 
+			break;
 		}
 	}
 }

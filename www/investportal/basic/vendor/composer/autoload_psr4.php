@@ -14,6 +14,8 @@ return array(
     'yii\\bootstrap4\\' => array($vendorDir . '/yiisoft/yii2-bootstrap4/src'),
     'yii\\' => array($vendorDir . '/yiisoft/yii2'),
     'phpDocumentor\\Reflection\\' => array($vendorDir . '/phpdocumentor/reflection-common/src', $vendorDir . '/phpdocumentor/reflection-docblock/src', $vendorDir . '/phpdocumentor/type-resolver/src'),
+    'opw\\react\\' => array($vendorDir . '/opw/yii2-react'),
+    'linslin\\yii2\\curl\\' => array($vendorDir . '/linslin/yii2-curl'),
     'cebe\\markdown\\' => array($vendorDir . '/cebe/markdown'),
     'Webmozart\\Assert\\' => array($vendorDir . '/webmozart/assert/src'),
     'Symfony\\Polyfill\\Php80\\' => array($vendorDir . '/symfony/polyfill-php80'),

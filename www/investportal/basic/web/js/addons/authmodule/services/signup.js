@@ -1,4 +1,4 @@
-async function SignUpService(){
+async function SignUpFormProcess(){
     let isOpenedStep = [
         $('.module-page[data-screen="SignUp"] main #reg-content li[data-signstep="0"]').css('display') != 'none',
         $('.module-page[data-screen="SignUp"] main #reg-content li[data-signstep="1"]').css('display') != 'none',
@@ -204,7 +204,7 @@ async function SignUpService(){
 
 }
 
-const AutoSignIn = async function(login) {
+async function AutoSignIn (login) {
 	var autoInQuery = {fsq:{portalId:login}};
 	var response_autoIn = await fetch('/accounts/autoAuth', {
 				method: 'POST',

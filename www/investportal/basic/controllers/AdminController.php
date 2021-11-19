@@ -6,10 +6,15 @@ use yii\web\Controller;
 use yii\web\View;
 use yii\helpers\Json;
 
-require_once '../components/php-thrift-sql/src/ThriftSQL.php';
+require_once '../components/php-thrift-sql/ThriftSQL.phar';
 
 class AdminController extends Controller{
-	
+	public function beforeAction($action){
+	 if (in_array($action->id, ['auth', 'adminService'])) {
+		$this->enableCsrfValidation = false;
+	 }
+	 return parent::beforeAction($action);
+	}
     public function actionIndex(){
 		if(Yii::$app->admin->isGuest){ header('Location: /admin/auth'); }
 		
@@ -38,10 +43,9 @@ class AdminController extends Controller{
 		else{ $pgUI = 'dashboard'; }
 
 		$this->view->registerCssFile("/css/admin/pages/". $pgUI .".css");
-		$this->view->registerJsFile("/js/react/admin/". $pgUI .".js", ['position' => View::POS_END]);
 		
 
-		$this->render('admin');
+		return $this->render('admin',['pgUI' => $pgUI]);
 	}
 	public function actionAuth(){
 		
@@ -49,7 +53,6 @@ class AdminController extends Controller{
 		
 		$this->layout = "adminAuth";
 		$this->view->registerCssFile("/css/admin/auth.css");
-		$this->view->registerJsFile("/js/react/admin.js", ['position' => View::POS_END]);
 		
 		if($_POST['username']){
 			$u = trim($_POST['username']);
@@ -60,11 +63,11 @@ class AdminController extends Controller{
 			Yii::$app->portalUserService->adminSignUp->proccess($query);
 		}
 		
-		$this->render('auth');
+		return $this->render('auth');
 	}
 	public function actionAdminService($svc, $subSVC){
 		$serviceResponse = [];
-		$statusServiceCode = 200;
+		$statusServiceCode = '200 OK';
 		switch($svc){
 			case "dataServices":
 				if($subSVC == "filters"){
@@ -101,7 +104,7 @@ class AdminController extends Controller{
 
 											if($hive->getIterator(concat($queryHeader,$queryBody))){ $serviceResponse[] = 'New filter in current attribute table created!'; }
 											else{
-												$statusServiceCode = 503;
+												$statusServiceCode = '503 Service Unavailable';
 												$serviceResponse[] = 'DBA Service Error!';
 											}
 							
@@ -125,7 +128,7 @@ class AdminController extends Controller{
 												
 												if($hadoop->createWithData('user/ip-data/FiltersAttributes/data/'. $attributeId .'/'. $newDataFile, base64_decode($query[1]))){ $serviceResponse[][$i] = 'Send proccess success!'; }
 												else{
-													$statusServiceCode = 502;
+													$statusServiceCode = '502 Bad Gateway';
 													$serviceResponse[][$i] = 'Bad Data Storage gateway!';
 												}
 												
@@ -139,7 +142,7 @@ class AdminController extends Controller{
 												
 											if($sendP){ $serviceResponse[] = 'Datasets in current attribute creating!'; }
 											else{
-												$statusServiceCode = 503;
+												$statusServiceCode = '503 Service Unavailable';
 												$serviceResponse[] = 'DBA Service Error!';
 											}
 										}
@@ -155,7 +158,7 @@ class AdminController extends Controller{
 												
 												if($hadoop->createWithData('user/ip-data/FiltersAttributes/data/'. $attributeId .'/'. $newDataFile, base64_decode($query[1]))){ $serviceResponse[][$i] = 'Send proccess success!'; }
 												else{
-													$statusServiceCode = 502;
+													$statusServiceCode = '502 Bad Gateway';
 													$serviceResponse[][$i] = 'Bad Data Storage gateway!';
 												}
 
@@ -167,7 +170,7 @@ class AdminController extends Controller{
 													
 												if($sendP){ $serviceResponse[] = 'Datasets in current attribute creating!'; }
 												else{
-													$statusServiceCode = 503;
+													$statusServiceCode = '503 Service Unavailable';
 													$serviceResponse[] = 'DBA Service Error!';
 												}
 										}
@@ -192,14 +195,14 @@ class AdminController extends Controller{
 														
 													if($sendP){ $serviceResponse[] = 'New photogallery in current attribute table creating!'; }
 													else{
-														$statusServiceCode = 503;
+														$statusServiceCode = '503 Service Unavailable';
 														$serviceResponse[] = 'DBA Service Error!';
 													}
 												break;
 											}
 										}
 										else{
-											$statusServiceCode = 404;
+											$statusServiceCode = '404 Not Found';
 											$serviceResponse[] = 'Query not found!';
 										}
 									break;
@@ -326,7 +329,7 @@ class AdminController extends Controller{
 										
 										if($hive->getIterator($dataQuery)){ $serviceResponse[] = 'Parameters send success!'; }
 										else{
-											$statusServiceCode = 502;
+											$statusServiceCode = '502 Bad Gateway';
 											$serviceResponse[] = 'DBA Service Error';
 										}
 									break;
@@ -361,7 +364,7 @@ class AdminController extends Controller{
 												
 												if($hive->getIterator(concat($queryHeader,$queryBody,$queryFooter))){ $serviceResponse[] = 'New attribute table created!'; }
 												else{
-													$statusServiceCode = 503;
+													$statusServiceCode = '503 Service Unavailable';
 													$serviceResponse[] = 'DBA Service Error!';
 												}
 											}
@@ -370,7 +373,7 @@ class AdminController extends Controller{
 
 												if($hadoop->mkdirs($dirNew)){ $serviceResponse[] = 'Creator proccess success!'; }
 												else{
-													$statusServiceCode = 502;
+													$statusServiceCode = '502 Bad Gateway';
 													$serviceResponse[] = 'Bad Data Storage gateway!';
 												}
 												
@@ -403,7 +406,7 @@ class AdminController extends Controller{
 										
 										if($updateP){ $serviceResponse[] = 'The filter in current attribute table updated!'; }
 										else{
-											$statusServiceCode = 503;
+											$statusServiceCode = '503 Service Unavailable';
 											$serviceResponse[] = 'DBA Service Error!';
 										}
 									break;
@@ -426,14 +429,14 @@ class AdminController extends Controller{
 														$serviceResponse[] = 'Photogallery in current attribute updated!';
 													}
 													else{
-														$statusServiceCode = 503;
+														$statusServiceCode = '503 Service Unavailable';
 														$serviceResponse[] = 'DBA Service Error!';
 													}
 												break;
 											}
 									  }
 									  else{
-										$statusServiceCode = 404;
+										$statusServiceCode = '404 Not Found';
 										$serviceResponse[] = 'Query not found!';
 									  }
 										
@@ -450,7 +453,7 @@ class AdminController extends Controller{
 												$serviceResponse[] = 'Delete proccess success!';
 											}
 											else{
-												$statusServiceCode = 502;
+												$statusServiceCode = '502 Bad Gateway';
 												$serviceResponse[] = 'Bad Data Storage gateway!';
 											}
 											
@@ -468,7 +471,7 @@ class AdminController extends Controller{
 													$serviceResponse[] = 'Send proccess success!';
 												}
 												else{
-													$statusServiceCode = 502;
+													$statusServiceCode = '502 Bad Gateway';
 													$serviceResponse[] = 'Bad Data Storage gateway!';
 												}
 												
@@ -483,7 +486,7 @@ class AdminController extends Controller{
 												$serviceResponse[] = 'Datasets in current attribute updated!';
 											}
 											else{
-												$statusServiceCode = 503;
+												$statusServiceCode = '503 Service Unavailable';
 												$serviceResponse[] = 'DBA Service Error!';
 											}
 											
@@ -498,7 +501,7 @@ class AdminController extends Controller{
 													$serviceResponse[] = 'Delete proccess success!';
 												}
 												else{
-													$statusServiceCode = 502;
+													$statusServiceCode = '502 Bad Gateway';
 													$serviceResponse[] = 'Bad Data Storage gateway!';
 												}
 												
@@ -517,7 +520,7 @@ class AdminController extends Controller{
 													$serviceResponse[] = 'Send proccess success!';
 												}
 												else{
-													$statusServiceCode = 502;
+													$statusServiceCode = '502 Bad Gateway';
 													$serviceResponse[] = 'Bad Data Storage gateway!';
 												}
 												
@@ -525,7 +528,7 @@ class AdminController extends Controller{
 													$serviceResponse[] = 'Datasets in current attribute updated!';
 												}
 												else{
-													$statusServiceCode = 503;
+													$statusServiceCode = '503 Service Unavailable';
 													$serviceResponse[] = 'DBA Service Error!';
 												}
 
@@ -651,7 +654,7 @@ class AdminController extends Controller{
 										
 										if($hive->getIterator($dataQuery)){ $serviceResponse[] = 'Parameters update success'; }
 										else{
-											$statusServiceCode = 502;
+											$statusServiceCode = '502 Bad Gateway';
 											$serviceResponse[] = 'DBA Service Error';
 										}
 									break;
@@ -667,7 +670,7 @@ class AdminController extends Controller{
 											
 											if($hadoop->rename($dir,$dirUpdate)){ $serviceResponse[] = 'Update proccess success!'; }
 											else{
-												$statusServiceCode = 502;
+												$statusServiceCode = '502 Bad Gateway';
 												$serviceResponse[] = 'Bad Data Storage gateway!';
 											}
 
@@ -676,7 +679,7 @@ class AdminController extends Controller{
 												
 												if($updateP){ $serviceResponse[] = 'Current attribute table update!'; }
 												else{
-													$statusServiceCode = 503;
+													$statusServiceCode = '503 Service Unavailable';
 													$serviceResponse[] = 'DBA Service Error!';
 												}
 											}	
@@ -697,7 +700,7 @@ class AdminController extends Controller{
 											$serviceResponse[] = 'The filter in current attribute table deleted!';
 										}
 										else{
-											$statusServiceCode = 503;
+											$statusServiceCode = '503 Service Unavailable';
 											$serviceResponse[] = 'DBA Service Error!';
 										}
 									break;
@@ -708,7 +711,7 @@ class AdminController extends Controller{
 											$serviceResponse[] = 'Delete proccess success!';
 										}
 										else{
-											$statusServiceCode = 502;
+											$statusServiceCode = '502 Bad Gateway';
 											$serviceResponse[] = 'Bad Data Storage gateway!';
 										}
 										
@@ -716,7 +719,7 @@ class AdminController extends Controller{
 											$serviceResponse[] = 'Datasets in current attribute deleted!';
 										}
 										else{
-											$statusServiceCode = 502;
+											$statusServiceCode = '502 Bad Gateway';
 											$serviceResponse[] = 'DBA Service Error';
 										}
 									break;
@@ -728,12 +731,12 @@ class AdminController extends Controller{
 												$serviceResponse[] = 'Photogallery in current attribute deleted!';
 											}
 											else{
-												$statusServiceCode = 502;
+												$statusServiceCode = '502 Bad Gateway';
 												$serviceResponse[] = 'DBA Service Error';
 											}
 										}
 										else{
-											$statusServiceCode = 404;
+											$statusServiceCode = '404 Not Found';
 											$serviceResponse[] = 'Query not found!';
 										}
 									break;
@@ -766,7 +769,7 @@ class AdminController extends Controller{
 										
 										if($hive->getIterator($dataQuery)){ $serviceResponse[] = $successMessage; }
 										else{
-											$statusServiceCode = 502;
+											$statusServiceCode = '502 Bad Gateway';
 											$serviceResponse[] = 'DBA Service Error';
 										}
 										
@@ -783,14 +786,14 @@ class AdminController extends Controller{
 													$serviceResponse[] = 'Current attribute table deleted!';
 												}
 												else{
-													$statusServiceCode = 503;
+													$statusServiceCode = '503 Service Unavailable';
 													$serviceResponse[] = 'DBA Service Error!';
 												}
 											}
 											
 											if($hadoop->delete($dir,'*')){ $serviceResponse[] = 'Delete proccess success!'; }
 											else{
-												$statusServiceCode = 502;
+												$statusServiceCode = '502 Bad Gateway';
 												$serviceResponse[] = 'Bad Data Storage gateway!';
 											}
 										}
@@ -815,7 +818,7 @@ class AdminController extends Controller{
 										$serviceResponse[] = $filters;
 										
 										if(!$result){
-											$statusServiceCode = 503;
+											$statusServiceCode = '503 Service Unavailable';
 											$serviceResponse[] = 'DBA Service Error!';
 										}
 									break;
@@ -834,7 +837,7 @@ class AdminController extends Controller{
 											$serviceResponse[] = $datasets;
 
 											if(!$result){
-												$statusServiceCode = 503;
+												$statusServiceCode = '503 Service Unavailable';
 												$serviceResponse[] = 'DBA Service Error!';
 											}
 										}
@@ -852,7 +855,7 @@ class AdminController extends Controller{
 											$serviceResponse[] = $ds;
 
 											if(!$result){
-												$statusServiceCode = 503;
+												$statusServiceCode = '503 Service Unavailable';
 												$serviceResponse[] = 'DBA Service Error!';
 											}
 											
@@ -873,12 +876,12 @@ class AdminController extends Controller{
 											$serviceResponse[] = $datasets;
 												
 											if(!$result){
-												$statusServiceCode = 503;
+												$statusServiceCode = '503 Service Unavailable';
 												$serviceResponse[] = 'DBA Service Error!';
 											}
 										}
 										else{
-											$statusServiceCode = 404;
+											$statusServiceCode = '404 Not Found';
 											$serviceResponse[] = 'Query not found!';
 										}
 									break;
@@ -902,7 +905,7 @@ class AdminController extends Controller{
 										$serviceResponse[] = $tables;
 
 										if(!$result){
-											$statusServiceCode = 502;
+											$statusServiceCode = '502 Bad Gateway';
 											$serviceResponse[] = 'DBA Service Error';	
 										}
 									break;
@@ -918,7 +921,7 @@ class AdminController extends Controller{
 										$serviceResponse[] = $tables;
 										
 										if(!$result){
-											$statusServiceCode = 503;
+											$statusServiceCode = '503 Service Unavailable';
 											$serviceResponse[] = 'DBA Service Error!';
 										}
 									break;
@@ -929,14 +932,16 @@ class AdminController extends Controller{
 					}
 				}
 				else{
-					$statusServiceCode = 404;
+					$statusServiceCode = '404 Not Found';
 					$serviceResponse[] = "Not query found!";
 				}
 			break;
 			
 		}
 		$hive->disconnect();
-		throw new HttpException($statusServiceCode ,Json::encode(["response" => $serviceResponse]));
+		
+		header($_SERVER['SERVER_PROTOCOL'] ." ". $statusServiceCode);
+		echo Json::encode(["response" => $serviceResponse]));
 	}
 }
 ?>

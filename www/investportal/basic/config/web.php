@@ -45,7 +45,7 @@ $config = [
 			 ]
         ],
         'view' => [
-            'class' => 'app\components\View',
+            'class' => 'yii\web\View',
         ],
         'user' => [
             'class' => 'yii\web\User',

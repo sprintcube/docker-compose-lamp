@@ -5,7 +5,7 @@ use yii\db\ActiveRecord;
 class User extends ActiveRecord{
 	public function rules(){
 		return [
-			[['login','password','firstname','surname','email','phone','country','fbToken'],'required'],
+			[['login','password','firstname','surname','email','phone','country'],'required'],
 			[
 				['login','match','pattern' => ' /^[a-zA-Z0-9_.]{1,30}$/'],
 				['firstname','match','pattern' => '/^[a-zA-Z]+$/'],

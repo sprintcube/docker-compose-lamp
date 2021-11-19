@@ -9,14 +9,14 @@ html,body{
 }
 .admin-portal-page > header{
   float: left;
-  width: 19vw;
+  width: 20%;
   height: 100vh;
   background-color: #0079bf;
   padding-right: 29px;
 }
 .admin-portal-page > header nav{
   display: block;
-  margin-left: 2%;
+  margin-left: 4vw;
   margin-top: 4%;
 }
 .admin-portal-page > header nav a{
@@ -48,7 +48,7 @@ html,body{
 }
 .admin-portal-page > main{
   float: right;
-  width: 78vw;
+  width: 78%;
   height: 100vh;
   background-color: #eff3f4;
   padding-left: 2px;

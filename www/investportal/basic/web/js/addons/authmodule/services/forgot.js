@@ -1,4 +1,4 @@
-async function ForgotPassService(){
+async function ForgotFormProcess(){
     let isOpenedStep = [
         $('.module-page[data-screen="Forgot"] main #reg-content li[data-signstep="0"]').css('display') != 'none',
         $('.module-page[data-screen="Forgot"] main #reg-content li[data-signstep="1"]').css('display') != 'none',
@@ -152,7 +152,7 @@ async function ForgotPassService(){
     }
 }
 
-const AutoSignIn = async function(login) {
+async function AutoSignIn (login) {
 	var autoInQuery = {fsq:{portalId:login}};
 	var response_autoIn = await fetch('/accounts/autoAuth', {
 				method: 'POST',

@@ -22,15 +22,15 @@ class AuthBody extends React.Component{
     return(
       <React.Fragment>
         <center><form action="/admin/auth" method="POST">
-          <div for="username">
+          <div htmlFor="username">
             <label>Username</label>
             <input type="text" name="username" />
           </div>
-          <div for="pass">
+          <div htmlFor="pass">
             <label>Password</label>
             <input type="password" name="pass" />
           </div>
-          <button type="button">Sign In</button>
+          <button type="submit">Sign In</button>
           </form></center>
       </React.Fragment>
     );
@@ -40,10 +40,8 @@ class AuthFooter extends React.Component{
   render(){
     return(
       <React.Fragment>
-        <div class="copyright">
-          &copy; Investportal. International Platform
-for Investors and
-Investment Projects 
+        <div className="copyright">
+          &copy; Investportal 
         </div>
       </React.Fragment>
     );
@@ -54,4 +52,6 @@ let cmps = [<AuthHeader />, <AuthBody />, <AuthFooter />],
     els = [document.querySelector('.admin-auth > header'),document.querySelector('.admin-auth > main'),document.querySelector('.admin-auth > footer')];
 
 for(let i = 0; i < cmps.length; i++){ ReactDOM.render(cmps[i],els[i]); }
+
+$(document).ready(function(){ $('.admin-auth > header #back').click(function(e,t){ window.location.assign("/"); }); });
 

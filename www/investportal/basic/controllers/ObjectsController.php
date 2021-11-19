@@ -31,5 +31,8 @@ class ObjectsController extends Controller{
 		
 		return $this->render('objectsView');
 	}
+	public function actionObjectservice($type){
+		
+	}
 }
 ?>

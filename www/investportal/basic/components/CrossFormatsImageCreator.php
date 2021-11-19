@@ -21,9 +21,9 @@ class ImageCreator extends Component{
 		}
 
 		$hadoop = Yii::$app->hdfs(
-			'73ddd75d66e6',
-			'9866',
-			'root'
+			'ui-c9q5hn6k05uikro3g9a4-rc1b-dataproc-m-z298o1kwqqpqm1ac-9870.dataproc-ui.yandexcloud.net',
+			'8020',
+			'ip-data'
 		);
 
 		$photogalleryFolder = 'user/root/FiltersAttributes/data/photogallery/';
@@ -38,13 +38,9 @@ class ImageCreator extends Component{
 		}
 
 		$imageFile = $photogalleryFolder . $fn;
-		try{
-			$hadoop->createWithData($imageFile,$decodeImage);
-			return $fn;
-		}
-		catch(Yii::$app->hdfs $expection){
-			return FALSE;
-		}
+
+			if($hadoop->createWithData($imageFile,$decodeImage)){ return $fn; }
+			else{ return FALSE; }
 	}
 }
 ?>

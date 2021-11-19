@@ -49,5 +49,9 @@ class PassportController extends Controller{
 		
 		return $this->render('passportCart');
 	}
+	
+	public function actionPassportservice($type){
+		
+	}
 }
 ?>
