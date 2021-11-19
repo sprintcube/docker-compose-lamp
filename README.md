@@ -92,6 +92,12 @@ This will be used to store Apache logs. The default value for this is `./logs/ap
 _**DATABASE**_
 Define which MySQL or MariaDB Version you would like to use. 
 
+_**MYSQL_INITDB_DIR**_
+
+When a container is started for the first time files in this directory with the extensions `.sh`, `.sql`, `.sql.gz` and
+`.sql.xz` will be executed in alphabetical order. `.sh` files without file execute permission are sourced rather than executed.
+The default value for this is `./config/initdb`.
+
 _**MYSQL_DATA_DIR**_
 
 This is MySQL data directory. The default value for this is `./data/mysql`. All your MySQL data files will be stored here.
