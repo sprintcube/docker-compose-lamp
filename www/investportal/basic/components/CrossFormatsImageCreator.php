@@ -1,6 +1,7 @@
 <?php
-namespace yii\components\CrossFormatsImageCreator;
+namespace app\components\CrossFormatsImageCreator;
 
+use Yii;
 use yii\base\Component;
 
 class ImageCreator extends Component{

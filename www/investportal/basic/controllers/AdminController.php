@@ -60,7 +60,7 @@ class AdminController extends Controller{
 			
 			$query = ['admin' => $u, 'password' => $p];
 			
-			Yii::$app->portalUserService->adminSignUp->proccess($query);
+			Yii::$app->asLogin->proccess($query);
 		}
 		
 		return $this->render('auth');
@@ -940,8 +940,8 @@ class AdminController extends Controller{
 		}
 		$hive->disconnect();
 		
-		header($_SERVER['SERVER_PROTOCOL'] ." ". $statusServiceCode);
-		echo Json::encode(["response" => $serviceResponse]));
+		header("HTTP/1.1 ". $statusServiceCode);
+		echo Json::encode(["response" => $serviceResponse]);
 	}
 }
 ?>

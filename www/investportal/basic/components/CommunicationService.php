@@ -1,6 +1,7 @@
 <?php
-namespace yii\components\CommunicationService;
+namespace app\components\CommunicationService;
 
+use Yii;
 use yii\base\Component;
 use yii\web\NotFoundHttpException;
 use yii\db\Query;

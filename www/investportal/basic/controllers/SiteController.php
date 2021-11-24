@@ -32,10 +32,10 @@ class SiteController extends Controller{
 					$sign = $q['asq']; //Authoriation service query
 					$type = $q['asqt']; //ASQ Type
 
-					Yii::$app->portalUserService->SignIn->proccess($sign,$type);
+					Yii::$app->portalLogin->proccess($sign,$type);
 				}
 				else{ 
-					header($_SERVER['SERVER_REQUEST'] . " 405 Method Not Allowed");
+					header("HTTP/1.1 405 Method Not Allowed");
 					echo 'Query conflict'; 
 				}
 			break;
@@ -44,10 +44,10 @@ class SiteController extends Controller{
 					$sign = $q['rsq']; //Registration service query
 					$type = $q['rsqt']; //RSQ Type
 
-					Yii::$app->portalUserService->SignUp->proccess($sign,$type);
+					Yii::$app->portalReg->proccess($sign,$type);
 				}
 				else{ 
-					header($_SERVER['SERVER_REQUEST'] . " 405 Method Not Allowed");
+					header("HTTP/1.1 405 Method Not Allowed");
 					echo 'Query conflict'; 
 				}
 			break;
@@ -55,11 +55,11 @@ class SiteController extends Controller{
 				if($_POST['serviceQuery']){
 					$sign = $q['fsq']; //Forgot service query
 
-					Yii::$app->portalUserService->Forgot->proccess($sign);
+					Yii::$app->portalPass->proccess($sign);
 					
 				}
 				else{ 
-					header($_SERVER['SERVER_REQUEST'] . " 405 Method Not Allowed");
+					header("HTTP/1.1 405 Method Not Allowed");
 					echo 'Query conflict'; 
 				}
 			break;
@@ -67,18 +67,18 @@ class SiteController extends Controller{
 				if($_POST['serviceQuery']){
 					$sign = $q['fsq']; //Forgot service query
 
-					Yii::$app->portalUserService->AutoSignIn->proccess($sign);
+					Yii::$app->autoLogin->proccess($sign);
 					
 				}
 				else{ 
-					header($_SERVER['SERVER_REQUEST'] . " 405 Method Not Allowed");
+					header("HTTP/1.1 405 Method Not Allowed");
 					echo 'Query conflict'; 
 				}
 			break;
 			case "signOut":
-				if(!Yii::$app->user->isGuest){ Yii::$app->portalUserService->SignOut->proccess(); }
+				if(!Yii::$app->user->isGuest){ Yii::$app->portalExit->proccess(); }
 				else{ 
-					header($_SERVER['SERVER_REQUEST'] . " 405 Method Not Allowed");
+					header("HTTP/1.1 405 Method Not Allowed");
 					echo 'Service conflict'; 
 				}
 			break;
@@ -108,18 +108,18 @@ class SiteController extends Controller{
 						
 					}
 					else{
-						header($_SERVER['SERVER_PROTOCOL'] . " 404 Not Found");
+						header("HTTP/1.1 404 Not Found");
 						echo 'User not found';
 					}
 					
 				}
 				else{ 
-					header($_SERVER['SERVER_REQUEST'] . " 405 Method Not Allowed");
+					header("HTTP/1.1 405 Method Not Allowed");
 					echo 'Query conflict'; 
 				}
 			break;
 			default: 
-				header($_SERVER['SERVER_PROTOCOL'] . " 404 Not Found");
+				header("HTTP/1.1 404 Not Found");
 				echo 'Service not found'; 
 			break;
 		}
@@ -141,15 +141,15 @@ class SiteController extends Controller{
 						$sign['code'] = $query;
 					}
 
-					if($sign['service'] === 'Inbox'){ Yii::$app->portalCommunicationService->SMSCode->sendCode('SignUp', $sign['phone'], $sign['code']); }
-					else if($sign['service'] === 'Valid'){ Yii::$app->portalCommunicationService->SMSCode->validCode('SignUp', $sign['phone'], $sign['code']); }
+					if($sign['service'] === 'Inbox'){ Yii::$app->portalCommunicationService->sendCode('SignUp', $sign['phone'], $sign['code']); }
+					else if($sign['service'] === 'Valid'){ Yii::$app->portalCommunicationService->validCode('SignUp', $sign['phone'], $sign['code']); }
 					else{ 
-						header($_SERVER['SERVER_REQUEST'] . " 403 Forbidden");
+						header("HTTP/1.1 403 Forbidden");
 						echo 'Operation conflict'; 
 					}
 				}
 				else{ 
-					header($_SERVER['SERVER_REQUEST'] . " 405 Method Not Allowed");
+					header("HTTP/1.1 405 Method Not Allowed");
 					echo 'Query conflict'; 
 				}
 			break;
@@ -166,16 +166,16 @@ class SiteController extends Controller{
 						$sign['code'] = $query;
 					}
 
-					if($sign['service'] === 'Inbox'){ Yii::$app->portalCommunicationService->SMSCode->sendCode('Forgot', $sign['phone']); }
-					else if($sign['service'] === 'Valid'){ Yii::$app->portalCommunicationService->SMSCode->validCode('Forgot', $sign['phone'], $sign['code']); }
+					if($sign['service'] === 'Inbox'){ Yii::$app->portalCommunicationService->sendCode('Forgot', $sign['phone']); }
+					else if($sign['service'] === 'Valid'){ Yii::$app->portalCommunicationService->validCode('Forgot', $sign['phone'], $sign['code']); }
 					else{ 
-						header($_SERVER['SERVER_REQUEST'] . " 403 Forbidden");
+						header("HTTP/1.1 403 Forbidden");
 						echo 'Operation conflict'; 
 					}
 					
 				}
 				else{ 
-					header($_SERVER['SERVER_REQUEST'] . " 405 Method Not Allowed");
+					header("HTTP/1.1 405 Method Not Allowed");
 					echo 'Query conflict'; 
 				}
 			break;
@@ -198,12 +198,12 @@ class SiteController extends Controller{
 					
 				}
 				else{ 
-					header($_SERVER['SERVER_REQUEST'] . " 405 Method Not Allowed");
+					header("HTTP/1.1 405 Method Not Allowed");
 					echo 'Query conflict'; 
 				}
 			break;
 			default: 
-				header($_SERVER['SERVER_PROTOCOL'] . " 404 Not Found");
+				header("HTTP/1.1 404 Not Found");
 				echo 'Service not found'; 
 			break;
 		}

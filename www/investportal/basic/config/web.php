@@ -19,7 +19,7 @@ $config = [
             'class' => 'yii\caching\FileCache',
         ],
         'imageCreator' => [
-			'class' => 'yii\components\CrossFormatsImageCreator'
+			'class' => 'app\components\CrossFormatsImageCreator\ImageCreator'
         ],
         'urlManager' => [
 			 'class' => 'yii\web\UrlManager',
@@ -49,12 +49,12 @@ $config = [
         ],
         'user' => [
             'class' => 'yii\web\User',
-            'identityClass' => 'app\models\UserService\User',
+            'identityClass' => 'app\models\User',
             'enableAutoLogin' => true
         ],
         'admin' => [
 			'class' => 'yii\web\User',
-            'identityClass' => 'app\models\UserService\Admin',
+            'identityClass' => 'app\models\Admin',
             'enableAutoLogin' => true
         ],
         'session' => [ // for use session in console application
@@ -63,8 +63,15 @@ $config = [
         'hdfs' => [
 			'class' => 'org\apache\hadoop\WebHDFS'
         ],
-        'portalUserService' => ['class' => 'app\components\SignService'],
-        'portalCommunicationService' => ['class' => 'app\components\CommunicationService'],
+        'portalReg' => ['class' => 'app\components\SignUp'],
+		'portalLogin' => ['class' => 'app\components\SignIn'],
+		'asReg' => ['class' => 'app\components\adminSignUp'],
+		'asLogin' => ['class' => 'app\components\adminSignIn'],
+		'portalExit' => ['class' => 'app\components\SignOut'],
+		'asExit' => ['class' => 'app\components\adminSignOut'],
+		'autoLogin' => ['class' => 'app\components\autoSignIn'],
+		'portalPass' => ['class' => 'app\components\Forgot'],
+        'portalCommunicationService' => ['class' => 'app\components\CommunicationService\SMSCode'],
         'log' => [
             'traceLevel' => YII_DEBUG ? 3 : 0,
             'targets' => [

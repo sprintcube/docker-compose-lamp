@@ -28,8 +28,12 @@ long_line_column=72
 
 [files]
 current_page=0
-FILE_NAME_0=5610;PHP;0;EUTF-8;1;1;0;%2Fhome%2Fsergey%2FРабочий%20стол%2FCode%2Fdocker-compose-lamp%2Fwww%2Finvestportal%2Fbasic%2Fcontrollers%2FSiteController.php;0;4
-FILE_NAME_1=35549;PHP;0;EUTF-8;1;1;0;%2Fhome%2Fsergey%2FРабочий%20стол%2FCode%2Fdocker-compose-lamp%2Fwww%2Finvestportal%2Fbasic%2Fcontrollers%2FAdminController.php;0;4
+FILE_NAME_0=1223;PHP;0;EUTF-8;1;1;0;%2Fhome%2Fsergey%2FРабочий%20стол%2FCode%2Fdocker-compose-lamp%2Fwww%2Finvestportal%2Fbasic%2Fcomponents%2FadminSignIn.php;0;4
+FILE_NAME_1=1550;PHP;0;EUTF-8;1;1;0;%2Fhome%2Fsergey%2FРабочий%20стол%2FCode%2Fdocker-compose-lamp%2Fwww%2Finvestportal%2Fbasic%2Fcomponents%2FSignIn.php;0;4
+FILE_NAME_2=447;PHP;0;EUTF-8;1;1;0;%2Fhome%2Fsergey%2FРабочий%20стол%2FCode%2Fdocker-compose-lamp%2Fwww%2Finvestportal%2Fbasic%2Fcomponents%2FautoSignIn.php;0;4
+FILE_NAME_3=0;PHP;0;EUTF-8;1;1;0;%2Fhome%2Fsergey%2FРабочий%20стол%2FCode%2Fdocker-compose-lamp%2Fwww%2Finvestportal%2Fbasic%2Fcontrollers%2FAdminController.php;0;4
+FILE_NAME_4=704;PHP;0;EUTF-8;1;1;0;%2Fhome%2Fsergey%2FРабочий%20стол%2FCode%2Fdocker-compose-lamp%2Fwww%2Finvestportal%2Fbasic%2Fmodels%2FAdmin.php;0;4
+FILE_NAME_5=657;PHP;0;EUTF-8;1;1;0;%2Fhome%2Fsergey%2FРабочий%20стол%2FCode%2Fdocker-compose-lamp%2Fwww%2Finvestportal%2Fbasic%2Fcomponents%2FSignUp.php;0;4
 
 [VTE]
 last_dir=/home/sergey/.local/share
