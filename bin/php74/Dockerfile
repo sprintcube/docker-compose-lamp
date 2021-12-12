@@ -74,6 +74,14 @@ libpng-dev && \
     docker-php-ext-configure gd --enable-gd --with-freetype --with-jpeg && \
     docker-php-ext-install gd
 
+# Install WP-CLI 
+RUN curl -O https://raw.githubusercontent.com/wp-cli/builds/gh-pages/phar/wp-cli.phar && \
+            chmod +x wp-cli.phar && \
+            mv wp-cli.phar /usr/local/bin/wp && \
+            echo 'wp() {' >> ~/.bashrc && \
+            echo '/usr/local/bin/wp "$@" --allow-root' >> ~/.bashrc && \
+            echo '}' >> ~/.bashrc 
+            
 # Enable apache modules
 RUN a2enmod rewrite headers
 
