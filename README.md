@@ -1,10 +1,7 @@
 #  LAMP stack built with Docker Compose
 
-  
+![Landing Page](https://user-images.githubusercontent.com/43859895/141092846-905eae39-0169-4fd7-911f-9ff32c48b7e8.png)
 
-![Landing Page](https://preview.ibb.co/gOTa0y/LAMP_STACK.png)
-
-  
 
 A basic LAMP stack environment built using Docker Compose. It consists of the following:
 
