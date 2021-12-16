@@ -4,6 +4,7 @@ namespace app\components;
 use Yii;
 use yii\base\Component;
 use yii\helpers\Json;
+use yii\helpers\Url;
 use app\models\Admin;
 
 class adminSignIn extends Component{
@@ -21,11 +22,8 @@ class adminSignIn extends Component{
 		$svc = $this->adminControl($this->signQuery);
 		
 		switch($svc['state']){
-			case 0: header('Location: /admin'); break;
 			case 1: 
-				$res = '<script>let problem=alert("The portal administration accounting service is temporarily unavailable! Try again later;-("),res="";res=problem?"/":"/admin/auth",window.location.assign(res);</script>';
-				header($_SERVER['SERVER_PROTOCOL'] ." 409 Conflict");
-				echo $res;
+				header('Location: '. Url::to(['admin/index']));
 			break;
 			default:
 				$validError = '';
@@ -39,12 +37,13 @@ class adminSignIn extends Component{
 			break;
 		}
 	}
-	private function adminControl($wayData){
+	protected function adminControl($wayData){
 		$response = [
 			'state' => 3,
 			'noValidUser' => FALSE,
 			'noValidPass' => FALSE
 		];
+		
 		
 		$l = $wayData['admin'];
 		$p = sha1($wayData['password']);
@@ -52,37 +51,36 @@ class adminSignIn extends Component{
 		$model = Admin::find();
 		$isValid = FALSE;
 		
+		$sessionData = Yii::$app->session;
+		
 		$vLogin = '';
-		$vPhone = '';
 		$vMail = '';
 		$vPass = '';
 		
-		foreach($model as $authData){
+		foreach($model->all() as $authData){
 			$vLogin = $authData->login;
-			$vPhone = $authData->phone;
 			$vMail = $authData->email;
 			$vPass = $authData->password;
 				
-			if(($vLogin == $l || $vPhone == $l || $vMail == $l) && $vPass == $p){ 
+			if(($vLogin == $l || $vMail == $l) && $vPass == $p){ 
 				$isValid = TRUE;
 				break; 
 			}
 		}
 		
 		if($isValid){
-			$auth = Admin::findOne(['login' => $l])->orWhere(['email' => $l, 'phone' => $l]);
+			$auth = $sessionData->set('adminUser', $l);
 
-			if(Yii::$app->admin->login($auth)){ $response['state'] = 0; }
+			if($auth){ $response['state'] = 0; }
 			else{ $response['state'] = 1; }
 		}
 		else{
 			$response['state'] = 2;
-			
-			if(!$vLogin == $l || !$vPhone == $l || !$vMail == $l){ $response['noValidUser'] = TRUE; }
-			if(!$vPass == $p){ $response['noValidPass'] = TRUE; }
 				
+			if(!$vLogin == $l || !$vMail == $l){ $response['noValidUser'] = TRUE; }
+			if(!$vPass == $p){ $response['noValidPass'] = TRUE; }
+					
 		}
-		
 		
 		return $response;
 		

@@ -5,7 +5,7 @@ class FacebookDataAccess{
         let query = new URLSearchParams({
 		  client_id : '404988774385568',
 		  redirect_uri : '',
-		  scope : 'email,public_profile',
+		  scope : 'email',
 		  response_type : 'fbToken',
 		  state : '123'
 		});
@@ -13,23 +13,40 @@ class FacebookDataAccess{
         this.fbAuth = 'https://www.facebook.com/dialog/oauth' + query.toString();
     }
 
-    proccess(query){
+    proccess(){
         var isSIN = this.service === 'SignIn',
             isSUP = this.service === 'SignUp';
             
-        let facebookData = get_cookie('fbService');
+        let facebookData = JSON.parse(get_cookie('fbService'));
            	
 		
 		if(isSIN){
-			
+			switch(facebookData['resState']){
+				case 0:
+				
+				break;
+				default:
+				
+				break;
+			}
 		}
 		
 		if(isSUP){
-			
+			switch(facebookData['resState']){
+				case 0:
+				
+				break;
+				case 1:
+				
+				break;
+				default:
+				
+				break;
+			}
 		}
         
     }
-    activate(dataQuery){
+    activate(){
         var isSIN = this.service === 'SignIn',
             isSUP = this.service === 'SignUp';
             

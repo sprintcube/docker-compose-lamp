@@ -130,11 +130,6 @@ const isDefault = (data) => {
 	
 	for(const key of r.keys()){
 		var d = r[key];
-		
-		for(let i = 0; i < d.length; i++){
-			var validPm = ;
-			
-			if(validPm){ selectorElSwitch(key, 'txt'); }
-		}
+		selectorElSwitch(key, 'txt');
 	}
 }

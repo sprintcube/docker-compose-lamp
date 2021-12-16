@@ -5,6 +5,7 @@ use Yii;
 use yii\db\ActiveRecord;
 
 class Admin extends ActiveRecord{
+	
 	public function rules(){
 		return [
 			[['login','password','firstname','surname','email','role','country', 'phone'],'required'],
@@ -17,6 +18,6 @@ class Admin extends ActiveRecord{
 			]
 		];
 	}
-	public static function tableName(){ return '{{portalAdmins}}'; }
+	public static function tableName(){ return 'portalAdmins'; }
 }
 ?>

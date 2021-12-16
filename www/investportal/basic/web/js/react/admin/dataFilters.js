@@ -1,5 +1,3 @@
-import HashChange from "https://cdn.skypack.dev/react-hashchange";
-
 var gets = (function() {
     var a = window.location.search;
     var b = new Object();
@@ -18,12 +16,18 @@ class List extends React.Component{
 		  listSheet: null
 	  };
   }
+  JQueryCall(){
+	  let elService = [$('.filters-list > main #filters-card #footer nav span:nth-last-child(1)'),$('.filters-list > main #filters-card #footer nav span:nth-last-child(2)')],
+		  eventService = [deleteFilters,redirectToDataForm];
+
+	  for(let i = 0; i < eventService.length; i++){ elService[i].click(eventService[i]); }
+  }
   componentDidMount(){
 	  let qpm = {
 		  command : 3,
-		  command : [
+		  command : {
 			subCMD: 'showAttributes'
-		  ]
+		  }
 	  };
 	  
 	  const requestOptions = {
@@ -34,23 +38,21 @@ class List extends React.Component{
 	  fetch('/admin/api/dataServices/filters', requestOptions)
         .then(response => response.json())
         .then(data => this.setState({ listSheet: data }));
+        
+      this.JQueryCall();
   }
   render(){
 	let responseList = this.state.listSheet.response;
-	let renderData = ();
-	
-	if(responseList){
-		for(let i = 0; i < responseList.length; i++){
-			renderData += (
+	const renderData = responseList.map(r => {
+		return (
 				<div id="filter-card">
-					<div id="header">{responseList[i].Attribute}</div>
-					<div id="main">{RenderAttributeFiltersList('List', responseList[i].Attribute)}</div>
-					<div id="footer">{RenderAttributeFiltersList('Control', responseList[i].Attribute)}</div>
-				</div>	
-			);
-		}
-	}
-	else{ alert('There are no filters in the portal database!'); }
+					<div id="header">{r.Attribute}</div>
+					<div id="main">{RenderAttributeFiltersList('List', r.Attribute)}</div>
+					<div id="footer">{RenderAttributeFiltersList('Control', r.Attribute)}</div>
+				</div>
+		);
+	});
+	
     return (
       <React.Fragment>
         <section id="filters-list">
@@ -62,20 +64,22 @@ class List extends React.Component{
   }
 }
 class Add extends React.Component{
-  componentDidMount(){
-	  if(gets['attr']){
-		  
-	  }
-	  else{
-		  
-	  }
+  JQueryCall(){
+		let elService = $('.add-fields > footer button'),
+			eventService = addFilters;
+
+	    elService.click(eventService);
+	    
+		$('.add-fields > footer button').click(AddFieldEvent);
+		$('.add-fields > main select').on('change', selectFilterType);
   }
+  componentDidMount(){ this.JQueryCall(); }
   render(){
     return (
       <React.Fragment>
         <div class="add-fields">
 		  <input type="hidden" id="queryParameters" value="" />
-          <header><h2>Add new filters group for attribute</h2></header>
+          <header><h2>Add current attribute filters group</h2></header>
           <main>
             <div>
               <input type="text" name="fieldName" id="fieldName" placeholder="Enter the field name" />
@@ -194,15 +198,24 @@ class Edit extends React.Component{
 		  currentAttributeSheet: null
 	 };
   }
+  JQueryCall(){
+	  let elService = $('.edit-fields > footer button'),
+		  eventService = updateFilters;
+
+	  elService[i].click(eventService[i]);
+	  
+	  $('.edit-fields > footer button').click(AddFieldEvent);
+	  $('.edit-fields > main select').on('change', selectFilterType);
+  }
   componentDidMount(){
 	  let qpm = {
 		  command: 3,
-		  command: [
+		  command : {
 			subCMD: 'showFilters'
-		  ],
-		  parameters: [
+		  },
+		  parameters: {
 			attribute: gets["attr"]
-		  ]
+		  }
 	  };
 	  
 	  const requestOptions = {
@@ -213,6 +226,8 @@ class Edit extends React.Component{
 	  fetch('/admin/api/dataServices/filters', requestOptions)
         .then(response => response.json())
         .then(data => this.setState({ currentAttributeSheet: data }));
+        
+     this.JQueryCall();
   }
   render(){
 	let responseList = this.state.listSheet.response,
@@ -231,80 +246,80 @@ class Edit extends React.Component{
 			query = [
 				{
 					command: 3,
-					command: [
+					command: {
 						subCMD: 'showParameters'
-					],
-					parameters: [
+					},
+					parameters: {
 						attribute: gets["attr"],
 						dataParam: "cost",
 						costQuery: filterName
-					]
+					}
 				},
 				{
 					command: 3,
-					command: [
+					command: {
 						subCMD: 'showParameters'
-					],
-					parameters: [
+					},
+					parameters: {
 						attribute: gets["attr"],
 						dataParam: "int",
 						intQuery: filterName
-					]
+					}
 				},
 				{
 					command: 3,
-					command: [
+					command: {
 						subCMD: 'showParameters'
-					],
-					parameters: [
+					},
+					parameters: {
 						attribute: gets["attr"],
 						dataParam: "text",
 						textQuery: filterName
-					]
+					}
 				},
 				{
 					command: 3,
-					command: [
+					command: {
 						subCMD: 'showParameters'
-					],
-					parameters: [
+					},
+					parameters: {
 						attribute: gets["attr"],
 						dataParam: "precentable",
 						precentableQuery: filterName
-					]
+					}
 				},
 				{
 					command: 3,
-					command: [
+					command: {
 						subCMD: 'showParameters'
-					],
-					parameters: [
+					},
+					parameters: {
 						attribute: gets["attr"],
 						dataParam: "selecting",
 						selectingQuery: filterName
-					]
+					}
 				},
 				{
 					command: 3,
-					command: [
+					command: {
 						subCMD: 'showParameters'
-					],
-					parameters: [
+					},
+					parameters: {
 						attribute: gets["attr"],
 						dataParam: "smartDataset",
 						dQuery: filterName
-					]
+					}
 				},
 				{
 					command: 3,
-					command: [
+					command: {
 						subCMD: 'showParameters'
-					],
-					parameters: [
+					},
+					parameters: {
 						attribute: gets["attr"],
 						dataParam: "photogallery",
 						dQuery: filterName
-					]
+					}
 				}
 			];
 			
@@ -451,11 +466,10 @@ class Edit extends React.Component{
 
 const HeaderRender = ({ hash }) => {
   switch(hash){
-    case "add":
+    case "#add":
       return(
         <React.Fragment>
           <a href="#list">Back to list</a>
-          <a href="">Save filters</a>
         </React.Fragment>
       );
     break;
@@ -469,36 +483,24 @@ const HeaderRender = ({ hash }) => {
   }
 }
 document.title = "Data Filters";
-const UIRender = ({ hash }) => {
+const UIRender = (hash) => {
   switch(hash){
-    case "add": document.title = "Add new Filter"; break;
-    case "edit": document.title = "Edit current Filter"; break;
+    case "#add": document.title = "Add new Filter"; break;
+    case "#edit": document.title = "Edit current Filter"; break;
     default: document.title = "Data Filters"; break;
   }
 }
-const UXRender = ({ hash }) => {
+const UXRender = (hash) => {
   switch(hash){
-    case "add": return <Add />; break;
-    case "edit": return <Edit />; break;
-    default: return <List />; break;
+    case "#add": ReactDOM.render(<Add />, document.querySelector('.data-page > main')); break;
+    case "#edit": ReactDOM.render(<Edit />, document.querySelector('.data-page > main')); break;
+    default: ReactDOM.render(<List />, document.querySelector('.data-page > main')); break;
   }
 }
 
 
 $('.data-page > header h2').html(document.title);
-ReactDOM.render(
-    <HashChange
-        render={HeaderRender}
-    />,
-    document.querySelector('.data-page > header nav')
-);
-ReactDOM.render(
-    <HashChange
-        onChange={UIRender}
-        render={UXRender}
-    />,
-    document.querySelector('.data-page > main')
-);
+
 
 const AddField = () => {
   $('.add-fields > main').append('<div>\n\t<input type="text" name="fieldName" id="fieldName" placeholder="Enter the field name" />\n\t<select name="fieldType" id="fieldType"><option>Select form field type</option><option value="defaultField">Data field</option><option value="intField">Integer field</option><option value="precentableField">Precentable field</option><option value="costField">Cost field</option><option value="smartDatasets">Smart Datasets</option><option value="photogalleryField">Photogallery</option></select></div>');
@@ -509,11 +511,9 @@ const AddFieldEvent = () => {
 }
 
 const jsonQueryConstructor = (query,pm) => {
-	let result = {};
-	let currentFilterPage {
-		isAdd: document.location.href.indexOf("add") ? true : null,
-		isEdit: document.location.href.indexOf("edit") ? true : null
-	};
+	let result = { command: {}, parameters: {} },
+		isAdd = document.location.href.indexOf("add") ? true : null,
+		isEdit = document.location.href.indexOf("edit") ? true : null;
 	
 
 	let serviceCmd;
@@ -526,7 +526,7 @@ const jsonQueryConstructor = (query,pm) => {
 		if(isEdit){ serviceCmd = 'editDatasets'; }
 		if(isAdd){ serviceCmd = 'sendDatasets'; }
 
-		result.command = { subCMD: serviceCmd };
+		result.command.push({ subCMD: serviceCmd });
 
 		switch(query.service){
 			case 'add':
@@ -547,7 +547,7 @@ const jsonQueryConstructor = (query,pm) => {
 			break;
 		}
 
-		result.parameters = res;
+		result.parameters.push(res);
 	}
 	if(query.defaultParameter.element === 'photogallery'){
 		let q = query.pms,
@@ -556,7 +556,7 @@ const jsonQueryConstructor = (query,pm) => {
 		if(isEdit){ serviceCmd = 'editPhotogallery'; }
 		if(isAdd){ serviceCmd = 'sendPhotogallery'; }
 
-		result.command = { subCMD: serviceCmd };
+		result.command.push({ subCMD: serviceCmd });
 
 		result.dataParam = 'photogallery';
 		switch(query.service){
@@ -568,82 +568,80 @@ const jsonQueryConstructor = (query,pm) => {
 			break;
 		}
 
-		result.parameters = res;
+		result.parameters.push(res);
 	}
 	if(query.defaultParameter.element === 'selecting'){
 		if(isEdit){ serviceCmd = 'editParameters'; }
 		if(isAdd){ serviceCmd = 'sendParameters'; }
 
-		result.command = { subCMD: serviceCmd };
+		result.command.push({ subCMD: serviceCmd });
 		
 		var queryConstructe = query.defaultParameter.data.split(/\s/g) || query.defaultParameter.data.split(/[;,]/);
 		var queryForm = [queryConstructe[0], queryConstructe[1]];
-		result.parameters = {
+		result.parameters.push([{
 			dataParam: 'selecting',
 			selectingData: queryForm
-		};
+		}]);
 	}
 	if(query.defaultParameter.element === 'cost'){
 		if(isEdit){ serviceCmd = 'editParameters'; }
 		if(isAdd){ serviceCmd = 'sendParameters'; }
 
-		result.command = { subCMD: serviceCmd };
+		result.command.push({ subCMD: serviceCmd });
 		
 		var queryForm = query.defaultParameter.data;
-		result.parameters = {
+		result.parameters.push([{
 			dataParam: 'cost',
 			costData: queryForm
-		};
+		}]);
 	}
 	if(query.defaultParameter.element === 'integer'){
 		if(isEdit){ serviceCmd = 'editParameters'; }
 		if(isAdd){ serviceCmd = 'sendParameters'; }
 
-		result.command = { subCMD: serviceCmd };
+		result.command.push({ subCMD: serviceCmd });
 		
 		var queryForm = query.defaultParameter.data;
-		result.parameters = {
+		result.parameters.push([{
 			dataParam: 'integer',
 			intData: queryForm
-		};
+		}]);
 	}
 	if(query.defaultParameter.element === 'precentable'){
 		if(isEdit){ serviceCmd = 'editParameters'; }
 		if(isAdd){ serviceCmd = 'sendParameters'; }
 
-		result.command = { subCMD: serviceCmd };
+		result.command.push({ subCMD: serviceCmd });
 		
 		var queryForm = query.defaultParameter.data;
-		result.parameters = {
+		result.parameters.push([{
 			dataParam: 'precentable',
 			precentableData: queryForm
-		};
+		}]);
 	}
 	if(query.defaultParameter.element === 'text'){
 		if(isEdit){ serviceCmd = 'editParameters'; }
 		if(isAdd){ serviceCmd = 'sendParameters'; }
 
-		result.command = { subCMD: serviceCmd };
+		result.command.push({ subCMD: serviceCmd });
 		
 		var queryForm = query.defaultParameter.data;
-		result.parameters = {
+		result.parameters.push({
 			dataParam: 'text',
 			textData: queryForm
-		};
+		});
 	}
 
-	if(isEdit){ result = { command: 1 }; }
-	else{ result = { command: 0 }; }
+	if(isEdit){ result.push({ command: 1 }); }
+	else{ result.push({ command: 0 }); }
 	
-	$(pm).val(result);
+	$(pm).val(JSON.stringify(result));
 }
 
 const openModal = (dataType) => {
-	let queryModule = {};
-	let currentFilterPage = {
-		isAdd: document.location.href.indexOf("add") ? true : null,
-		isEdit: document.location.href.indexOf("edit") ? true : null
-	};
+	let queryModule = {},
+		isAdd = document.location.href.indexOf("add") ? true : null,
+		isEdit = document.location.href.indexOf("edit") ? true : null;
 	
 	switch(dataType){
 		case 'datasets':
@@ -688,7 +686,7 @@ const openModal = (dataType) => {
 
 							$('.downloaded-files > ul').append(responseLoad);
 							
-							dataValid = {service: 'edit', pms: uploadDataset(downloadedDatasets[0])};
+							dataValid.push({ service: 'edit', pms: uploadDataset(downloadedDatasets[0])};
 						break;
 						default:
 							for(let i = 0; i < downloadedDatasets.length; i++){
@@ -708,7 +706,7 @@ const openModal = (dataType) => {
 							}
 
 							$('.downloaded-files > ul').append(responseLoad);
-							dataValid = {service: 'edit', pms: uploadMultipleDatasets(downloadedDatasets)};
+							dataValid.push({ service: 'edit', pms: uploadMultipleDatasets(downloadedDatasets)};
 						break;
 					}
 				}
@@ -730,7 +728,7 @@ const openModal = (dataType) => {
 
 							$('.downloaded-files > ul').append(responseLoad);
 							
-							dataValid = {service: 'add', pms: uploadDataset(downloadedDatasets[0])};
+							dataValid.push({ service: 'add', pms: uploadDataset(downloadedDatasets[0])};
 						break;
 						default:
 							for(let i = 0; i < downloadedDatasets.length; i++){
@@ -750,7 +748,7 @@ const openModal = (dataType) => {
 							}
 
 							$('.downloaded-files > ul').append(responseLoad);
-							dataValid = {service: 'add', pms: uploadMultipleDatasets(downloadedDatasets)};
+							dataValid.push({ service: 'add', pms: uploadMultipleDatasets(downloadedDatasets)};
 						break;
 					}
 				}
@@ -793,7 +791,7 @@ const openModal = (dataType) => {
 
 			$('#header-right > img').eq(0).click(function(e,t){
 				
-				let constructorData;
+				let constructorData = {};
 
 				var checkedFormats = modalUI.eq(1).find('.form-rpa-addon > main #pg li div #format:checked'),
 					photosCount = modalUI.eq(1).find('.form-rpa-addon > main #pg li div #imagesCount');
@@ -805,23 +803,23 @@ const openModal = (dataType) => {
 						
 						for(let i = 0; i < checkedFormats.length; i++){ editOut.push(checkedFormats.eq(i).val()); }
 
-						constructorData = {
+						constructorData.push({
 							'value' : editOut,
 							'format' : ParseInt(photosCount.val())
-						}
-						dataValid = {service: 'edit', pms: constructorData};
+						});
+						dataValid.push({ service: 'edit', pms: constructorData});
 					break;
 					default:
 						let addOut = [];
 
 						for(let i = 0; i < checkedFormats.length; i++){ addOut.push(checkedFormats.eq(i).val()); }
 
-						constructorData = {
+						constructorData.push({
 							'format' : addOut,
 							'galleryCount' : ParseInt(photosCount.val())
-						}
+						});
 						
-						dataValid = {service: 'add', pms: constructorData};
+						dataValid.push({ service: 'add', pms: constructorData});
 					break;
 				}
 				
@@ -860,7 +858,7 @@ const openModal = (dataType) => {
 				}
 
 				if(valid === 1){ openModal('selecting'); }
-				else{ queryModule.defaultParameter = {element: 'selecting', data: query}; }
+				else{ queryModule.defaultParameter.push({element: 'selecting', data: query}); }
 			}
 			else{ openModal('selecting'); }
 		break;
@@ -880,10 +878,10 @@ const openModal = (dataType) => {
 				}
 
 				if(valid === 1){ openModal('precentable'); }
-				else{ queryModule.defaultParameter = {element: 'precentable', data: query}; }
+				else{ queryModule.defaultParameter.push({element: 'precentable', data: query}); }
 			}
 			else{
-				if(query.match(/^[0-9]+$/)){ queryModule.defaultParameter = {element: 'precentable', data: query}; }
+				if(query.match(/^[0-9]+$/)){ queryModule.defaultParameter.push({element: 'precentable', data: query}); }
 				else{ openModal('precentable'); }
 			}
 		break;
@@ -903,10 +901,10 @@ const openModal = (dataType) => {
 				}
 
 				if(valid === 1){ openModal('cost'); }
-				else{ queryModule.defaultParameter = {element: 'cost', data: query}; }
+				else{ queryModule.defaultParameter.push({element: 'cost', data: query}); }
 			}
 			else{
-				if(query.match(/^[0-9]+$/)){ queryModule.defaultParameter = {element: 'cost', data: query}; }
+				if(query.match(/^[0-9]+$/)){ queryModule.defaultParameter.push({element: 'cost', data: query}); }
 				else{ openModal('cost'); }
 			}
 		break;
@@ -926,10 +924,10 @@ const openModal = (dataType) => {
 				}
 
 				if(valid === 1){ openModal('integer'); }
-				else{ queryModule.defaultParameter = {element: 'integer', data: query}; }
+				else{ queryModule.defaultParameter.push({element: 'integer', data: query}); }
 			}
 			else{
-				if(query.match(/^[0-9]+$/)){ queryModule.defaultParameter = {element: 'integer', data: query}; }
+				if(query.match(/^[0-9]+$/)){ queryModule.defaultParameter.push({element: 'integer', data: query}); }
 				else{ openModal('integer'); }
 			}
 		break;
@@ -953,7 +951,7 @@ const openModal = (dataType) => {
 				};
 
 				if(valid === 1){ openModal('text'); }
-				else{ queryModule.defaultParameter = {element: 'integer', data: queryRes }; }
+				else{ queryModule.defaultParameter.push({element: 'integer', data: queryRes }); }
 			}
 			else if(query.match(/^[a-zA-Z0-9]\s\w+$/g)){
 				var queryForm = {
@@ -961,7 +959,7 @@ const openModal = (dataType) => {
 					maxLength: null
 				};
 
-				queryModule.defaultParameter = {element: 'integer', data: queryForm};
+				queryModule.defaultParameter.push({element: 'integer', data: queryForm});
 			}
 			else if(query.match(/^[0-9]+$/)){
 				var queryForm = {
@@ -969,7 +967,7 @@ const openModal = (dataType) => {
 					maxLength: parseInt(query)
 				};
 
-				queryModule.defaultParameter = {element: 'integer', data: queryForm};
+				queryModule.defaultParameter.push({element: 'integer', data: queryForm});
 			}
 			else{ openModal('text'); }
 		break;
@@ -982,7 +980,7 @@ const openModal = (dataType) => {
 const addFilters = (e,t) => {
 	let jsonQuery = $('.add-filters > #queryParameters').val();
 
-	var sendProccess = await fetch('/admin/api/dataServices/filters', {
+	var sendProccess = fetch('/admin/api/dataServices/filters', {
 		method: 'POST',
 		body: {'svcQuery': jsonQuery}
 	});
@@ -997,7 +995,7 @@ const addFilters = (e,t) => {
 const editFilters = (e,t) => {
 	let jsonQuery = $('.edit-filters > #queryParameters').val();
 
-	var sendProccess = await fetch('/admin/api/dataServices/filters', {
+	var sendProccess = fetch('/admin/api/dataServices/filters', {
 		method: 'POST',
 		body: {'svcQuery': jsonQuery}
 	});
@@ -1010,18 +1008,18 @@ const editFilters = (e,t) => {
 	
 }
 const deleteFilters = (e,t) => {
-	let jsonQuery = {};
+	let jsonQuery = { command:{}, parameters:{} };
 
-	jsonQuery = { command: 2 };
+	jsonQuery.push({ command: 2 });
 
-	jsonQuery.command = { subCMD: 'deleteFilters' };
+	jsonQuery.command.push({ subCMD: 'deleteFilters' });
 
-	jsonQuery.parameters = {
+	jsonQuery.parameters.push({
 		field: $('#filters-list > main #filter-card #header').eq($(this).index()).text()
-	};
+	});
 
 	
-	var sendProccess = await fetch('/admin/api/dataServices/filters', {
+	var sendProccess = fetch('/admin/api/dataServices/filters', {
 		method: 'POST',
 		body: {'svcQuery': jsonQuery}
 	});
@@ -1051,16 +1049,16 @@ const redirectToDataForm = (e,t) => {
 const uploadDataset = (dataset) => {
 	//При одиночном режиме
 
-	let queryFile = {},
+	let queryFile = { dataConstructor: { single: {} } },
 		fileData = '';
 	const fsAPI = new FileReader();
 
 	fsAPI.onloadend = () => { fileData = fsAPI.result; };
 	fsAPI.readAsDataURL(dataset);
 
-	queryFile.dataConstructor.single = {
+	queryFile.dataConstructor.single.push({
 		file: fileData
-	};
+	});
 
 	return queryFile;
 
@@ -1069,9 +1067,14 @@ const uploadDataset = (dataset) => {
 const uploadMultipleDatasets = (type, dsq) => {
 	//При поисковом режиме
 
-	let queryFile = {},
+	let queryFile = { dataConstructor:  {} },
 		fileData;
 	const fsAPI = new FileReader();
+	
+	switch(type){
+		case 'priority': queryFile.dataConstructor.push({ priority: {} }); break;
+		case 'group': queryFile.dataConstructor.push({ group: {} }); break;
+	}
 
 	if(type === 'priority'){
 		fileData = '';
@@ -1079,9 +1082,9 @@ const uploadMultipleDatasets = (type, dsq) => {
 		fsAPI.onloadend = () => { fileData = fsAPI.result; };
 		fsAPI.readAsDataURL(dsq);
 
-		queryFile.dataConstructor.priority = {
+		queryFile.dataConstructor.priority.push({
 			smartDS: fileData
-		};
+		});
 	}
 	if(type === 'group'){
 		fileData = [];
@@ -1091,10 +1094,10 @@ const uploadMultipleDatasets = (type, dsq) => {
 			fsAPI.readAsDataURL(dsq[i]);
 		}
 
-		queryFile.dataConstructor.group = {
+		queryFile.dataConstructor.group.push({
 			isSmartDS: true,
 			smartDS: fileData
-		};
+		});
 		
 	}
 
@@ -1166,12 +1169,12 @@ const RenderAttributeFiltersList = (service, query) => {
 	
 	let qpm = {
 		command: 3,
-		command: [
+		command: {
 			subCMD: 'showFilters'
-		],
-		parameters: [
+		},
+		parameters: {
 			attribute: query
-		]
+		}
 	};
 	  
 	const requestOptions = {
@@ -1276,13 +1279,12 @@ const RenderAttributeFiltersList = (service, query) => {
 
 
 $(document).ready(function(){
-  $('.add-fields > footer button').click(AddFieldEvent);
-
-  let elService = [$('.add-fields > footer button'),$('.edit-fields > footer button'),$('.filters-list > main #filters-card #footer nav span:nth-last-child(1)'),$('.filters-list > main #filters-card #footer nav span:nth-last-child(2)')],
-	  eventService = [addFilters,updateFilters,deleteFilters,redirectToDataForm];
-
-  for(let i = 0; i < eventService.length; i++){ $(elService[i]).click(eventService[i]); }
   
-  $('.add-fields > main select, .edit-fields > main select').on('change', selectFilterType);
+  $(window).on('hashchange',function(){
+		let s = window.location.hash;
+		
+		UIRender(s);
+		UXRender(s);
+  }).trigger('hashchange');
   
 });

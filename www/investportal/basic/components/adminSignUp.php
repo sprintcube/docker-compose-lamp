@@ -33,7 +33,6 @@ class adminSignUp extends Component{
 				if($svc['isLogin']){ $validError .= 'The login you entered exists\n'; }
 				if($svc['isEMail']){ $validError .= 'The e-mail you entered exists\n'; }
 				if($svc['isPass']){ $validError .= 'The password you entered exists\n'; }
-				if($svc['isPhone']){ $validError .= 'The phone number you entered exists\n'; }
 				
 				$res = '<script>let problem=alert("'. $validError .'"),res="";res=problem?"/admin":"/admin/auth",window.location.assign(res);</script>';
 				header($_SERVER['SERVER_PROTOCOL'] ." 400 Bad Request");
@@ -41,7 +40,7 @@ class adminSignUp extends Component{
 			break;
 		}
 	}
-	private function adminControl($wayData){
+	protected function adminControl($wayData){
 		$upModel = [
 			Admin::find(),
 			new Admin()
@@ -51,8 +50,7 @@ class adminSignUp extends Component{
 			'state' => 3,
 			'isLogin' => FALSE,
 			'isPass' => FALSE,
-			'isEMail' => FALSE,
-			'isPhone' => FALSE
+			'isEMail' => FALSE
 		];
 		
 		$login = $wayData['login'];
@@ -60,21 +58,18 @@ class adminSignUp extends Component{
 		$firstname = $wayData['fn'];
 		$surname = $wayData['sn'];
 		$mail = $wayData['email'];
-		$phone = $wayData['phone'];
 		$region = $wayData['country'];
 
 		$validLogin = $upModel[0]->where(['login' => $login])->all();
 		$validEMail = $upModel[0]->where(['email' => $mail])->all();
 		$validPassword = $upModel[0]->where(['password' => $pass])->all();
-		$validPhone = $upModel[0]->where(['phone' => $phone])->all();
 
-		if(!$validLogin && !$validEMail && !$validPassword && !$validPhone){
+		if(!$validLogin && !$validEMail && !$validPassword){
 			$upModel[1]->firstname = $firstname;
 			$upModel[1]->surname = $surname;
 			$upModel[1]->login = $login;
 			$upModel[1]->password = $pass;
 			$upModel[1]->email = $mail;
-			$upModel[1]->phone = $phone;
 			$upModel[1]->country = $region;
 
 
@@ -87,7 +82,6 @@ class adminSignUp extends Component{
 			if($validLogin){ $response['isLogin'] = TRUE; }
 			if($validEMail){ $response['isEmail'] = TRUE; }
 			if($validPassword){ $response['isPass'] = TRUE; }
-			if($validPhone){ $response['isPhone'] = TRUE; }
 		}
 		
 		return $response;

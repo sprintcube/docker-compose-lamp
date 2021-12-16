@@ -113,37 +113,37 @@ class CodeSender{
 
         
     }
-    async getAccountPhone(q){
+     getAccountPhone(q){
 		let sQ = {
 			method: 'POST',
 			body: {'serviceQuery': JSON.stringify(q) }
 		},
-			response = await fetch('/accounts/getInfo', sQ);
+			response =  fetch('/accounts/getInfo', sQ);
 
 
 		if(response.status === 200){
-			let data = await response.json();
+			let data =  response.json();
 			return data[0].phone;
 		}
 		else{ return null; }
 		
 	}
-    async __CCService(s,q){
+     __CCService(s,q){
 		let sQ = {
 			method: 'POST',
 			body: {'serviceQuery': JSON.stringify(q) }
 		},
-			response = await fetch('/accounts/accept/' + s, sQ);
+			response =  fetch('/accounts/accept/' + s, sQ);
 
 		if(response.status === 202){ return true; }
 		else{ return null; }
 	}
-	async __CVCService(s,q){
+	 __CVCService(s,q){
 		let sQ = {
 			method: 'POST',
 			body: {'serviceQuery': JSON.stringify(q) }
 		},
-			response = await fetch('accounts/accept/' + s, sQ);
+			response =  fetch('accounts/accept/' + s, sQ);
 
 		if(response.status === 202){ return true; }
 		else if(response.status === 403){ return false; }

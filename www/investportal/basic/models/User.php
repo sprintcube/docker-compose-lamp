@@ -17,6 +17,6 @@ class User extends ActiveRecord{
 			]
 		];
 	}
-	public static function tableName(){ return '{{users}}'; }
+	public static function tableName(){ return 'users'; }
 }
 ?>

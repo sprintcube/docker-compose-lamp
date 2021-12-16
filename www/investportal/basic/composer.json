@@ -20,7 +20,9 @@
         "yiisoft/yii2-swiftmailer": "~2.0.0 || ~2.1.0",
         "linslin/yii2-curl": "*",
         "simpleenergy/php-webhdfs": "^1.0",
-        "opw/yii2-react": "dev-master"
+		"yiisoft/yii2-redis": "~2.0.0",
+        "opw/yii2-react": "dev-master",
+        "yiisoft/yii2-httpclient": "~2.0.0"
     },
     "require-dev": {
         "yiisoft/yii2-debug": "~2.1.0",

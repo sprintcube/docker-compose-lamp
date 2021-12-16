@@ -1,4 +1,4 @@
-async function SignUpFormProcess(){
+ function SignUpFormProcess(){
     let isOpenedStep = [
         $('.module-page[data-screen="SignUp"] main #reg-content li[data-signstep="0"]').css('display') != 'none',
         $('.module-page[data-screen="SignUp"] main #reg-content li[data-signstep="1"]').css('display') != 'none',
@@ -116,7 +116,7 @@ async function SignUpFormProcess(){
 				}
 			};
 
-			var responseUp = await fetch('/accounts/signUp', {
+			var responseUp =  fetch('/accounts/signUp', {
 				method: 'POST',
 				body: {'serviceQuery': JSON.stringify(UpQuery)}
 			});
@@ -136,7 +136,7 @@ async function SignUpFormProcess(){
 					}
 				break;
 				case 400:
-					var errors = await JSON.parse(responseUp.json());
+					var errors =  JSON.parse(responseUp.json());
 					var eMess = '';
 
 					for(let id in errors){ eMess += errors[id].validError + '\n'; }
@@ -204,9 +204,9 @@ async function SignUpFormProcess(){
 
 }
 
-async function AutoSignIn (login) {
+ function AutoSignIn (login) {
 	var autoInQuery = {fsq:{portalId:login}};
-	var response_autoIn = await fetch('/accounts/autoAuth', {
+	var response_autoIn = fetch('/accounts/autoAuth', {
 				method: 'POST',
 				body: {'serviceQuery': JSON.stringify(autoInQuery)}
 	});

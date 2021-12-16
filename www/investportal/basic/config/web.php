@@ -15,23 +15,33 @@ $config = [
             // !!! insert a secret key in the following (if it is empty) - this is required by cookie validation
             'cookieValidationKey' => 'DSFgksdifhiw899734hekfDFGisjdfi9374',
         ],
-        'cache' => [
-            'class' => 'yii\caching\FileCache',
+        'redis' => [
+            'class' => 'yii\redis\Connection',
+            'hostname' => 'localhost',
+            'port' => 6379,
+            'database' => 0,
         ],
+        'sessionRedis' => [
+			'class' => 'yii\redis\Session',
+		],
+		'cacheRedis' => [
+			'class' => 'yii\redis\Cache',
+		],
         'imageCreator' => [
-			'class' => 'app\components\CrossFormatsImageCreator\ImageCreator'
+			'class' => 'app\components\ImageCreator'
         ],
         'urlManager' => [
 			 'class' => 'yii\web\UrlManager',
-			 'enablePrettyUrl' => true,
-             'showScriptName' => false,
+			 'showScriptName' => false,
+			 'enableStrictParsing' => true,
+			 'enablePrettyUrl' => true, 
 			 'rules' => [
 				'defaultRoute' => 'site/index',
-				'accounts/<service:\w+>' => 'site/accountService',
-				'accounts/accept/<service:\w+>' => 'site/serviceCodeCenter',
+				'accounts/<service:\w+>' => '/site/account-service',
+				'accounts/accept/<service:\w+>' => '/site/service-code-center',
 				'admin' => 'admin/index',
 				'admin/auth' => 'admin/auth',
-				'admin/api/<svc:\w+>/<subSVC:\w+>' => 'admin/adminService',
+				'admin/api/<svc:\w+>/<subSVC:\w+>' => '/admin/admin-service',
 				'news' => 'news/index',
 				'news/<contentId:\d+>' => 'news/view',
 				'passport' => 'passport/service',
@@ -47,19 +57,6 @@ $config = [
         'view' => [
             'class' => 'yii\web\View',
         ],
-        'user' => [
-            'class' => 'yii\web\User',
-            'identityClass' => 'app\models\User',
-            'enableAutoLogin' => true
-        ],
-        'admin' => [
-			'class' => 'yii\web\User',
-            'identityClass' => 'app\models\Admin',
-            'enableAutoLogin' => true
-        ],
-        'session' => [ // for use session in console application
-            'class' => 'yii\web\Session'
-        ],
         'hdfs' => [
 			'class' => 'org\apache\hadoop\WebHDFS'
         ],
@@ -71,7 +68,7 @@ $config = [
 		'asExit' => ['class' => 'app\components\adminSignOut'],
 		'autoLogin' => ['class' => 'app\components\autoSignIn'],
 		'portalPass' => ['class' => 'app\components\Forgot'],
-        'portalCommunicationService' => ['class' => 'app\components\CommunicationService\SMSCode'],
+        'smsCoder' => ['class' => 'app\components\SMSCode'],
         'log' => [
             'traceLevel' => YII_DEBUG ? 3 : 0,
             'targets' => [

@@ -1,5 +1,5 @@
 
-async function SignInFormProcess() {
+ function SignInFormProcess() {
 
     var notEmpty = [
         $('#auth-lightbox > .module-page[data-screen="SignIn"] main .module-form form input').eq(0).val() !== '',
@@ -28,7 +28,7 @@ async function SignInFormProcess() {
 				}
 		};
 
-		var responseIn = await fetch('/accounts/signIn', {
+		var responseIn =  fetch('/accounts/signIn', {
 				method: 'POST',
 				body: {'serviceQuery': JSON.stringify(InQuery)}
 		});
@@ -41,7 +41,7 @@ async function SignInFormProcess() {
 					location.reload(true);
 				break;
 				case 400:
-					var errors = await JSON.parse(responseIn.json());
+					var errors =  JSON.parse(responseIn.json());
 					var eMess = '';
 
 					for(let id in errors){ eMess += errors[id].validError + '\n'; }

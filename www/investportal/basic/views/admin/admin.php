@@ -36,4 +36,4 @@ $this->title = 'Admin Services portal';
 	  </main>
 	</section>
 <?php } ?>
-<script type="text/jsx" src="/js/react/admin/<?php echo $pgUI; ?>.js"></script>
+<script type="text/babel" src="/js/react/admin/<?php echo $pgUI; ?>.js"></script>

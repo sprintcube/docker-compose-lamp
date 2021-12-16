@@ -4,15 +4,14 @@ namespace app\controllers;
 use Yii;
 use yii\web\Controller;
 use yii\web\View;
+use yii\web\Json;
 use linslin\yii2\curl\Curl;
 use yii\web\NotFoundHttpException;
 
 class SiteController extends Controller{
-	public function beforeAction($action){
-	 if (in_array($action->id, ['accountService', 'serviceCodeCenter'])) {
-		$this->enableCsrfValidation = false;
-	 }
-	 return parent::beforeAction($action);
+	public function beforeAction($action) { 
+		$this->enableCsrfValidation = false; 
+		return parent::beforeAction($action); 
 	}
 	public function actionIndex(){
 		$this->view->registerCssFile("https://unpkg.com/swiper/swiper-bundle.min.css");
@@ -25,7 +24,8 @@ class SiteController extends Controller{
 	}
 
 	public function actionAccountService($service){
-		$q = json_decode($_POST['serviceQuery']);
+		$q = Json::decode($_POST['serviceQuery']);
+		
 		switch($service){
 			case "signIn":
 				if($_POST['serviceQuery']){
@@ -36,7 +36,8 @@ class SiteController extends Controller{
 				}
 				else{ 
 					header("HTTP/1.1 405 Method Not Allowed");
-					echo 'Query conflict'; 
+					\Yii::$app->response->format = \yii\web\Response::FORMAT_HTML;
+					return 'Query conflict'; 
 				}
 			break;
 			case "signUp":
@@ -48,7 +49,8 @@ class SiteController extends Controller{
 				}
 				else{ 
 					header("HTTP/1.1 405 Method Not Allowed");
-					echo 'Query conflict'; 
+					\Yii::$app->response->format = \yii\web\Response::FORMAT_HTML;
+					return 'Query conflict'; 
 				}
 			break;
 			case "forgot":
@@ -60,7 +62,8 @@ class SiteController extends Controller{
 				}
 				else{ 
 					header("HTTP/1.1 405 Method Not Allowed");
-					echo 'Query conflict'; 
+					\Yii::$app->response->format = \yii\web\Response::FORMAT_HTML;
+					return 'Query conflict'; 
 				}
 			break;
 			case "autoAuth":
@@ -72,14 +75,16 @@ class SiteController extends Controller{
 				}
 				else{ 
 					header("HTTP/1.1 405 Method Not Allowed");
-					echo 'Query conflict'; 
+					\Yii::$app->response->format = \yii\web\Response::FORMAT_HTML;
+					return 'Query conflict'; 
 				}
 			break;
 			case "signOut":
 				if(!Yii::$app->user->isGuest){ Yii::$app->portalExit->proccess(); }
 				else{ 
 					header("HTTP/1.1 405 Method Not Allowed");
-					echo 'Service conflict'; 
+					\Yii::$app->response->format = \yii\web\Response::FORMAT_HTML;
+					return 'Service conflict'; 
 				}
 			break;
 			case "getInfo":
@@ -90,7 +95,6 @@ class SiteController extends Controller{
 					$userData = User::find()->where('or',['login' => $userId],['email' => $userId],['phone' => $userId])->all();
 
 					if($userData){
-						header('Content-type: application/json; charset=UTF-8');
 						
 						foreach($userData as $data){
 							$serviceResponse[] = [
@@ -102,25 +106,29 @@ class SiteController extends Controller{
 								'region' => $data->country
 							];
 						}
-
-						echo Json::encode($serviceResponse);
+						
+						\Yii::$app->response->format = \yii\web\Response::FORMAT_JSON;
+						return $serviceResponse;
 
 						
 					}
 					else{
 						header("HTTP/1.1 404 Not Found");
-						echo 'User not found';
+						\Yii::$app->response->format = \yii\web\Response::FORMAT_HTML;
+						return 'User not found';
 					}
 					
 				}
 				else{ 
 					header("HTTP/1.1 405 Method Not Allowed");
-					echo 'Query conflict'; 
+					\Yii::$app->response->format = \yii\web\Response::FORMAT_HTML;
+					return 'Query conflict'; 
 				}
 			break;
 			default: 
 				header("HTTP/1.1 404 Not Found");
-				echo 'Service not found'; 
+				\Yii::$app->response->format = \yii\web\Response::FORMAT_HTML;
+				return 'Service not found'; 
 			break;
 		}
 	}
@@ -141,16 +149,18 @@ class SiteController extends Controller{
 						$sign['code'] = $query;
 					}
 
-					if($sign['service'] === 'Inbox'){ Yii::$app->portalCommunicationService->sendCode('SignUp', $sign['phone'], $sign['code']); }
-					else if($sign['service'] === 'Valid'){ Yii::$app->portalCommunicationService->validCode('SignUp', $sign['phone'], $sign['code']); }
+					if($sign['service'] === 'Inbox'){ Yii::$app->smsCoder->sendCode('SignUp', $sign['phone'], $sign['code']); }
+					else if($sign['service'] === 'Valid'){ Yii::$app->smsCoder->validCode('SignUp', $sign['phone'], $sign['code']); }
 					else{ 
 						header("HTTP/1.1 403 Forbidden");
-						echo 'Operation conflict'; 
+						\Yii::$app->response->format = \yii\web\Response::FORMAT_HTML;
+						return 'Operation conflict'; 
 					}
 				}
 				else{ 
 					header("HTTP/1.1 405 Method Not Allowed");
-					echo 'Query conflict'; 
+					\Yii::$app->response->format = \yii\web\Response::FORMAT_HTML;
+					return 'Query conflict'; 
 				}
 			break;
 			case "forgot":
@@ -166,17 +176,19 @@ class SiteController extends Controller{
 						$sign['code'] = $query;
 					}
 
-					if($sign['service'] === 'Inbox'){ Yii::$app->portalCommunicationService->sendCode('Forgot', $sign['phone']); }
-					else if($sign['service'] === 'Valid'){ Yii::$app->portalCommunicationService->validCode('Forgot', $sign['phone'], $sign['code']); }
+					if($sign['service'] === 'Inbox'){ Yii::$app->smsCoder->sendCode('Forgot', $sign['phone']); }
+					else if($sign['service'] === 'Valid'){ Yii::$app->smsCoder->validCode('Forgot', $sign['phone'], $sign['code']); }
 					else{ 
 						header("HTTP/1.1 403 Forbidden");
-						echo 'Operation conflict'; 
+						\Yii::$app->response->format = \yii\web\Response::FORMAT_HTML;
+						return 'Operation conflict'; 
 					}
 					
 				}
 				else{ 
 					header("HTTP/1.1 405 Method Not Allowed");
-					echo 'Query conflict'; 
+					\Yii::$app->response->format = \yii\web\Response::FORMAT_HTML;
+					return 'Query conflict'; 
 				}
 			break;
 			case "codeGenerator":
@@ -194,17 +206,19 @@ class SiteController extends Controller{
 					if($isSignUp){ $newCode = $generateCode[0]; }
 					else if($isForgot){ $newCode = $generateCode[1]; }
 
-					echo $newCode;
+					return $newCode;
 					
 				}
 				else{ 
 					header("HTTP/1.1 405 Method Not Allowed");
-					echo 'Query conflict'; 
+					\Yii::$app->response->format = \yii\web\Response::FORMAT_HTML;
+					return 'Query conflict'; 
 				}
 			break;
 			default: 
 				header("HTTP/1.1 404 Not Found");
-				echo 'Service not found'; 
+				\Yii::$app->response->format = \yii\web\Response::FORMAT_HTML;
+				return 'Service not found'; 
 			break;
 		}
 	}

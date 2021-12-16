@@ -7,11 +7,14 @@
   font-size: 120%;
   margin-left: 2%;
   display: inline-block;
+  float: left;
+  margin-top: 2%;
 }
 .data-page > header nav{
   float: right;
-  margin-top: 1%;
-  margin-right: 2%;
+  margin-top: 2%;
+  margin-right: 5%;
+  display: inline-block;
 }
 .data-page > header nav a{
   display: inline-table;
@@ -19,6 +22,7 @@
   color: #0079bf;
   font-weight: bold;
   text-decoration: none;
+  padding-left: 20px;
 }
 
 #attributes-list{
@@ -28,16 +32,22 @@
   margin-left: 14%;
 }
 #attributes-list > .list-cont{
-  width: 20%;
+  width: 27%;
   height: 100px;
   display: inline-table;
   margin-left: 2%;
   margin-top: 2%;
   -webkit-box-shadow: 8px 10px 5px 0px #0079bf;
--moz-box-shadow:    8px 10px 5px 0px #0079bf;
-box-shadow:         8px 10px 5px 0px #0079bf;
+  -moz-box-shadow:    8px 10px 5px 0px #0079bf;
+  box-shadow:         8px 10px 5px 0px #0079bf;
   border: solid 2px #0079bf;
   text-indent: 7%;
+}
+#attributes-list > .list-cont:hover{
+  cursor: pointer;
+  -webkit-box-shadow: 5px 5px 5px 5px rgba(34, 60, 80, 0.6) inset;
+  -moz-box-shadow: 5px 5px 5px 5px rgba(34, 60, 80, 0.6) inset;
+  box-shadow: 5px 5px 5px 5px rgba(34, 60, 80, 0.6) inset;
 }
 #attributes-list > .list-cont *{
   margin-top: 4%;
@@ -53,10 +63,10 @@ box-shadow:         8px 10px 5px 0px #0079bf;
   font-style: italic;
 }
 #add-attribute{
-  width: 50%;
+  width: 70%;
   display: block;
   padding-top: 2%;
-  margin-left: 28%;
+  margin-left: 15%;
 }
 #add-attribute > *{
   margin-top: 2%;

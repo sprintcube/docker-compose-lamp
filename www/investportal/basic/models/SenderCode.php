@@ -15,6 +15,6 @@ class SenderCode extends ActiveRecord{
 			]
 		];
 	}
-	public static function tableName(){ return '{{senderCodes}}'; }
+	public static function tableName(){ return 'senderCodes'; }
 }
 ?>
