@@ -126,7 +126,7 @@ The installed version of php depends on your `.env`file.
 #### Extensions
 
 By default following extensions are installed. 
-May differ for PHP Verions <7.x.x
+May differ for PHP Versions <7.x.x
 
 * mysqli
 * pdo_sqlite
