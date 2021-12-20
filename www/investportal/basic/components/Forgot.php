@@ -46,8 +46,7 @@ class Forgot extends Component{
 			}	
 		}
 		else{
-			$validError = [];
-			header('Content-type: application/json;charset=UTF-8');
+			$validError = array();
 
 			if(!$isLogin){ array_push($validError, ['validError' => 'The login you entered no exists']); }
 

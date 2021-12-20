@@ -208,6 +208,15 @@ class Yii2 extends Client
     }
 
     /**
+     * Deletes all stored emails.
+     * @internal
+     */
+    public function clearEmails()
+    {
+        $this->emails = [];
+    }
+
+    /**
      * @internal
      */
     public function getComponent($name)

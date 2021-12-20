@@ -80,7 +80,7 @@ class SiteController extends Controller{
 				}
 			break;
 			case "signOut":
-				if(!Yii::$app->user->isGuest){ Yii::$app->portalExit->proccess(); }
+				if(!Yii::$app->user->isGuest){ return Yii::$app->portalExit->proccess(); }
 				else{ 
 					header("HTTP/1.1 405 Method Not Allowed");
 					\Yii::$app->response->format = \yii\web\Response::FORMAT_HTML;

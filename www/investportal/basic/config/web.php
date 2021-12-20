@@ -30,6 +30,37 @@ $config = [
         'imageCreator' => [
 			'class' => 'app\components\ImageCreator'
         ],
+        'adminAPI' => [
+			'send' => [
+				'a' => ['class' => 'app\components\adminService\attributer\send\Attribute'],
+				'f' => ['class' => 'app\components\adminService\attributer\send\Filter'],
+				'p' => ['class' => 'app\components\adminService\attributer\send\Photogallery'],
+				'pm' => ['class' => 'app\components\adminService\attributer\send\Parameters'],
+				'ds' => ['class' => 'app\components\adminService\attributer\send\Datasets']
+			],
+			'update' => [
+				'a' => ['class' => 'app\components\adminService\attributer\update\Attribute'],
+				'f' => ['class' => 'app\components\adminService\attributer\update\Filter'],
+				'p' => ['class' => 'app\components\adminService\attributer\update\Photogallery'],
+				'pm' => ['class' => 'app\components\adminService\attributer\update\Parameters'],
+				'ds' => ['class' => 'app\components\adminService\attributer\update\Datasets']
+			],
+			'delete' => [
+				'a' => ['class' => 'app\components\adminService\attributer\delete\Attribute'],
+				'f' => ['class' => 'app\components\adminService\attributer\delete\Filter'],
+				'p' => ['class' => 'app\components\adminService\attributer\delete\Photogallery'],
+				'pm' => ['class' => 'app\components\adminService\attributer\delete\Parameters'],
+				'ds' => ['class' => 'app\components\adminService\attributer\delete\Datasets']
+			],
+			'show' => [
+				'a' => ['class' => 'app\components\adminService\attributer\show\Attribute'],
+				'f' => ['class' => 'app\components\adminService\attributer\show\Filter'],
+				'p' => ['class' => 'app\components\adminService\attributer\show\Photogallery'],
+				'pm' => ['class' => 'app\components\adminService\attributer\show\Parameters'],
+				'tc' => ['class' => 'app\components\adminService\attributer\show\TableColumns'],
+				'ds' => ['class' => 'app\components\adminService\attributer\show\Datasets']
+			]
+        ],
         'urlManager' => [
 			 'class' => 'yii\web\UrlManager',
 			 'showScriptName' => false,

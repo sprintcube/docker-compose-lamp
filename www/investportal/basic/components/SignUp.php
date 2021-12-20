@@ -163,7 +163,7 @@ class SignUp extends Component{
 					}
 			}
 			else{
-					$validError = [];
+					$validError = array();
 					
 
 					if($validLogin){ array_push($validError, ['validError' => 'The login you entered exists']); }

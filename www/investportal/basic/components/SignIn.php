@@ -136,7 +136,7 @@ class SignIn extends Component{
 				}
 			}
 			else{
-					$validError = [];
+					$validError = array();
 					header('Content-type: application/json;charset=UTF-8');
 
 					if(!$vLogin == $login || !$vPhone == $login || !$vMail == $login){ array_push($validError, ['validError' => 'The login you entered no exists']); }
@@ -144,7 +144,7 @@ class SignIn extends Component{
 
 					header($_SERVER['SERVER_PROTOCOL'] ." 400 Bad Request");
 					\Yii::$app->response->format = \yii\web\Response::FORMAT_JSON;
-					return Json::encode($validError);
+					return $validError;
 			}
 		}
 	}
