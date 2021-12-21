@@ -30,35 +30,37 @@ $config = [
         'imageCreator' => [
 			'class' => 'app\components\ImageCreator'
         ],
-        'adminAPI' => [
-			'send' => [
-				'a' => ['class' => 'app\components\adminService\attributer\send\Attribute'],
-				'f' => ['class' => 'app\components\adminService\attributer\send\Filter'],
-				'p' => ['class' => 'app\components\adminService\attributer\send\Photogallery'],
-				'pm' => ['class' => 'app\components\adminService\attributer\send\Parameters'],
-				'ds' => ['class' => 'app\components\adminService\attributer\send\Datasets']
-			],
-			'update' => [
-				'a' => ['class' => 'app\components\adminService\attributer\update\Attribute'],
-				'f' => ['class' => 'app\components\adminService\attributer\update\Filter'],
-				'p' => ['class' => 'app\components\adminService\attributer\update\Photogallery'],
-				'pm' => ['class' => 'app\components\adminService\attributer\update\Parameters'],
-				'ds' => ['class' => 'app\components\adminService\attributer\update\Datasets']
-			],
-			'delete' => [
-				'a' => ['class' => 'app\components\adminService\attributer\delete\Attribute'],
-				'f' => ['class' => 'app\components\adminService\attributer\delete\Filter'],
-				'p' => ['class' => 'app\components\adminService\attributer\delete\Photogallery'],
-				'pm' => ['class' => 'app\components\adminService\attributer\delete\Parameters'],
-				'ds' => ['class' => 'app\components\adminService\attributer\delete\Datasets']
-			],
-			'show' => [
-				'a' => ['class' => 'app\components\adminService\attributer\show\Attribute'],
-				'f' => ['class' => 'app\components\adminService\attributer\show\Filter'],
-				'p' => ['class' => 'app\components\adminService\attributer\show\Photogallery'],
-				'pm' => ['class' => 'app\components\adminService\attributer\show\Parameters'],
-				'tc' => ['class' => 'app\components\adminService\attributer\show\TableColumns'],
-				'ds' => ['class' => 'app\components\adminService\attributer\show\Datasets']
+        'adminService' => [
+			'attributer' => [
+				'send' => [
+					'attribute' => ['class' => 'app\components\adminService\attributer\send\Attribute'],
+					'filter' => ['class' => 'app\components\adminService\attributer\send\Filter'],
+					'photogallery' => ['class' => 'app\components\adminService\attributer\send\Photogallery'],
+					'parameters' => ['class' => 'app\components\adminService\attributer\send\Parameters'],
+					'datasets' => ['class' => 'app\components\adminService\attributer\send\Datasets']
+				],
+				'update' => [
+					'attribute' => ['class' => 'app\components\adminService\attributer\update\Attribute'],
+					'filter' => ['class' => 'app\components\adminService\attributer\update\Filter'],
+					'photogallery' => ['class' => 'app\components\adminService\attributer\update\Photogallery'],
+					'parameters' => ['class' => 'app\components\adminService\attributer\update\Parameters'],
+					'datasets' => ['class' => 'app\components\adminService\attributer\update\Datasets']
+				],
+				'delete' => [
+					'attribute' => ['class' => 'app\components\adminService\attributer\delete\Attribute'],
+					'filter' => ['class' => 'app\components\adminService\attributer\delete\Filter'],
+					'photogallery' => ['class' => 'app\components\adminService\attributer\delete\Photogallery'],
+					'parameters' => ['class' => 'app\components\adminService\attributer\delete\Parameters'],
+					'datasets' => ['class' => 'app\components\adminService\attributer\delete\Datasets']
+				],
+				'show' => [
+					'attribute' => ['class' => 'app\components\adminService\attributer\show\Attribute'],
+					'filter' => ['class' => 'app\components\adminService\attributer\show\Filter'],
+					'photogallery' => ['class' => 'app\components\adminService\attributer\show\Photogallery'],
+					'parameters' => ['class' => 'app\components\adminService\attributer\show\Parameters'],
+					'tableColumns' => ['class' => 'app\components\adminService\attributer\show\TableColumns'],
+					'datasets' => ['class' => 'app\components\adminService\attributer\show\Datasets']
+				]
 			]
         ],
         'urlManager' => [
