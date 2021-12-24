@@ -7,6 +7,7 @@ use yii\web\View;
 use yii\web\Url;
 use yii\helpers\Json;
 
+use org\apache\hadoop\WebHDFS;
 require_once '../components/php-thrift-sql/ThriftSQL.phar';
 
 class AdminController extends Controller{
@@ -69,27 +70,23 @@ class AdminController extends Controller{
 	public function actionAdminService($svc, $subSVC){
 		$serviceResponse = [];
 		$statusServiceCode = '200 OK';
-		switch($svc){
-			case "dataServices":
+		
+		$hadoop = (new WebHDFS('namenode', 9000, 'root'));
+
+		$hive = (new \ThriftSQL\Hive('hive-metastore',9083))->connect();
+		
+		if($svc == 'dataServices'){
 				if($subSVC == "filters"){
 					if($_POST['svcQuery']){
 						$q = Json::decode($_POST['svcQuery']);
 						$pm = $q['parameters'];
-						$hadoop = Yii::$app->hdfs(
-							'localhost',
-							'9864'
-						);
-
-						$hive = (new \ThriftSQL\Hive( 'localhost', 10000 ))->connect();
+						
 
 						
-						
-						switch($q['command']){
-							case 0:
+						if($q['command'] == 0){
 								//Команда добавления данных в текущий фрагмент
-
-								switch($q['command']['subCMD']){
-									case "sendFilters":
+								
+								if($q['command']['subCMD'] == "sendFilters"){
 											$attributeId = lowercase($pm['attribute']);
 											switch($pm['type']){
 														case "intField": 
@@ -103,18 +100,18 @@ class AdminController extends Controller{
 											$queryBody = '\tADD COLUMN '. $pm['field'] .' '. $dataType;
 
 										    
-											if($hive->getIterator(concat($queryHeader,$queryBody))){ array_push($serviceResponse,'New filter in current attribute table created!'); }
+											if($hive->getIterator(concat($queryHeader,$queryBody))){ $serviceResponse[] = 'New filter in current attribute table created!'; }
 											else{
 												$statusServiceCode = '503 Service Unavailable';
-												array_push($serviceResponse,'DBA Service Error!');
+												$serviceResponse[] = 'DBA Service Error!';
 											}
-							
-									break;
-									case "sendDatasets":
-										if($pm['isSmartDS']){
+								}
+								if($q['command']['subCMD'] == "sendDatasets"){
+									$attributeId = lowercase($pm['attribute']);
+									
+									if($pm['isSmartDS']){
 											//При наличии нескольких датасетов и не только...
 
-											$attributeId = lowercase($pm['attribute']);
 											$datasets = JSON::Decode($pm['smartDS']);
 											$jsonList = [];
 
@@ -127,13 +124,13 @@ class AdminController extends Controller{
 												else if(strrpos($query[0], 'application/vnd.ms-excel')){ $newDataFile = $i .".csv"; }
 
 												
-												if($hadoop->createWithData('/FiltersAttributes/data/'. $attributeId .'/'. $newDataFile, base64_decode($query[1]))){ array_push($serviceResponse,['Send proccess success!']); }
+												if($hadoop->createWithData('/FiltersAttributes/data/'. $attributeId .'/'. $newDataFile, base64_decode($query[1]))){ $serviceResponse[][] = 'Send proccess success!'; }
 												else{
 													$statusServiceCode = '502 Bad Gateway';
-													array_push($serviceResponse,['Bad Data Storage gateway!']);
+													$serviceResponse[][] = 'Bad Data Storage gateway!';
 												}
 												
-												array_push($jsonList,['df' => [$newDataFile]]);
+												$jsonList[]['df'] = $newDataFile;
 											}
 											
 											$jsonResponse = ['response' => $jsonList];
@@ -141,14 +138,13 @@ class AdminController extends Controller{
 											if($pm['fieldID']){ $sendP = $hive->getIterator('UPDATE '. $attributeId .' SET '. $pm['field'] .'='. $jsonResponse .' WHERE id='. $pm['fieldID']); }
 											else{ $sendP = $hive->getIterator('INSERT INTO '. $attributeId .' ('. $pm['field'] .') VALUES('. $jsonResponse .')'); }
 												
-											if($sendP){ array_push($serviceResponse,'Datasets in current attribute creating!'); }
+											if($sendP){ $serviceResponse[] = 'Datasets in current attribute creating!'; }
 											else{
 												$statusServiceCode = '503 Service Unavailable';
-												array_push($serviceResponse, 'DBA Service Error!');
+												$serviceResponse[] = 'DBA Service Error!';
 											}
-										}
-										else{
-											    $attributeId = lowercase($pm['attribute']);
+									}
+									else{
 											    $dataset = $pm['dataset'];
 												$query = explode(',', $dataset);
 												$jsonReport = [];
@@ -157,10 +153,10 @@ class AdminController extends Controller{
 												else if(strrpos($query[0], 'application/xml')){ $newDataFile = "single.xml"; }
 												else if(strrpos($query[0], 'application/vnd.ms-excel')){ $newDataFile = "single.csv"; }
 												
-												if($hadoop->createWithData('/FiltersAttributes/data/'. $attributeId .'/'. $newDataFile, base64_decode($query[1]))){ array_push($serviceResponse, ['Send proccess success!']); }
+												if($hadoop->createWithData('/FiltersAttributes/data/'. $attributeId .'/'. $newDataFile, base64_decode($query[1]))){ $serviceResponse[] = 'Send proccess success!'; }
 												else{
 													$statusServiceCode = '502 Bad Gateway';
-													array_push($serviceResponse,['Bad Data Storage gateway!']);
+													$serviceResponse[] = 'Bad Data Storage gateway!';
 												}
 
 												$jsonReport['ds'] = $newDataFile;
@@ -169,15 +165,15 @@ class AdminController extends Controller{
 												if($pm['fieldID']){ $sendP = $hive->getIterator('UPDATE '. $attributeId .' SET '. $pm['field'] .'='. $jsonResponse .' WHERE id='. $pm['fieldID']); }
 												else{ $sendP = $hive->getIterator('INSERT INTO '. $attributeId .' ('. $pm['field'] .') VALUES('. $jsonResponse .')'); }
 													
-												if($sendP){ array_push($serviceResponse,'Datasets in current attribute creating!'); }
+												if($sendP){ $serviceResponse[] = 'Datasets in current attribute creating!'; }
 												else{
 													$statusServiceCode = '503 Service Unavailable';
-													array_push($serviceResponse, 'DBA Service Error!');
+													$serviceResponse[] = 'DBA Service Error!';
 												}
-										}
-									break;
-									case "sendPhotogallery":
-										if($q['photogallery']){
+									}
+								}
+								if($q['command']['subCMD'] == "sendPhotogallery"){
+									if($q['photogallery']){
 											$attributeId = lowercase($pm['attribute']);
 											$formats = $q['format'];
 											$isPhotoCount = ($q['count'] > 4 || $q['count'] == 4) ? TRUE : FALSE;
@@ -185,8 +181,8 @@ class AdminController extends Controller{
 											switch($isPhotoCount){
 												case FALSE:
 													$statusServiceCode = 415;
-													array_push($serviceResponse,'Invalid number of photos (the correct minimum value is 4)');
-												break;
+													$serviceResponse[] = 'Invalid number of photos (the correct minimum value is 4)';
+													break;
 												default:
 													$jsonReport = ['imageFormats' => $formats, 'imageCounts' => $q['count']];
 													$jsonResponse = ['response' => $jsonReport];
@@ -194,21 +190,21 @@ class AdminController extends Controller{
 													if($pm['fieldID']){ $sendP = $hive->getIterator('UPDATE '. $attributeId .' SET '. $pm['field'] .'='. $jsonResponse .' WHERE id='. $pm['fieldID']); }
 													else{ $sendP = $hive->getIterator('INSERT INTO '. $attributeId .' ('. $pm['field'] .') VALUES('. $jsonResponse .')'); }
 														
-													if($sendP){ array_push($serviceResponse,'New photogallery in current attribute table creating!'); }
+													if($sendP){ $serviceResponse[] = 'New photogallery in current attribute table creating!'; }
 													else{
 														$statusServiceCode = '503 Service Unavailable';
-														array_push($serviceResponse, 'DBA Service Error!');
+														$serviceResponse[] = 'DBA Service Error!';
 													}
-												break;
+													break;
 											}
-										}
-										else{
+									}
+									else{
 											$statusServiceCode = '404 Not Found';
-											array_push($serviceResponse,'Query not found!');
-										}
-									break;
-									case "sendParameters":
-										switch($pm['dataParam']){
+											$serviceResponse[] = 'Query not found!';
+									}
+								}
+								if($q['command']['subCMD'] == "sendParameters"){
+									switch($pm['dataParam']){
 											case "cost":
 												$costQuery = $q['costData'];
 
@@ -238,7 +234,7 @@ class AdminController extends Controller{
 												
 												if($pm['fieldID']){ $dataQuery = 'UPDATE '. $attributeId .' SET '. $pm['field'] .'='. $response .' WHERE id='. $pm['fieldID']; }
 												else{ $dataQuery = 'INSERT INTO '. $attributeId .' ('. $pm['field'] .') VALUES('. $response .')'; }
-											break;
+												break;
 											case "text":
 												$textQuery = $q['textData'];
 												$responseText = '';
@@ -255,7 +251,7 @@ class AdminController extends Controller{
 												
 												if($pm['fieldID']){ $dataQuery = 'UPDATE '. $attributeId .' SET '. $pm['field'] .'='. $response .' WHERE id='. $pm['fieldID']; }
 												else{ $dataQuery = 'INSERT INTO '. $attributeId .' ('. $pm['field'] .') VALUES('. $response .')'; }
-											break;
+												break;
 											case "selecting":
 												$selectingQuery = $q['selectingData'];
 
@@ -265,7 +261,7 @@ class AdminController extends Controller{
 												$response = "[". $firstVariant .",". $doubleVariant ."]";
 												if($pm['fieldID']){ $dataQuery = 'UPDATE '. $attributeId .' SET '. $pm['field'] .'='. $response .' WHERE id='. $pm['fieldID']; }
 												else{ $dataQuery = 'INSERT INTO '. $attributeId .' ('. $pm['field'] .') VALUES('. $response .')'; }
-											break;
+												break;
 											case "precentable":
 												$pQuery = $q['precentableData'];
 												
@@ -295,7 +291,7 @@ class AdminController extends Controller{
 												
 												if($pm['fieldID']){ $dataQuery = 'UPDATE '. $attributeId .' SET '. $pm['field'] .'='. $response .' WHERE id='. $pm['fieldID']; }
 												else{ $dataQuery = 'INSERT INTO '. $attributeId .' ('. $pm['field'] .') VALUES('. $response .')'; }
-											break;
+												break;
 											default:
 												$intQuery = $q['intData'];
 
@@ -325,17 +321,17 @@ class AdminController extends Controller{
 												
 												if($pm['fieldID']){ $dataQuery = 'UPDATE '. $attributeId .' SET '. $pm['field'] .'='. $response .' WHERE id='. $pm['fieldID']; }
 												else{ $dataQuery = 'INSERT INTO '. $attributeId .' ('. $pm['field'] .') VALUES('. $response .')'; }
-											break;
-										}
+												break;
+									}
 										
-										if($hive->getIterator($dataQuery)){ array_push($serviceResponse, 'Parameters send success!'); }
-										else{
+									if($hive->getIterator($dataQuery)){ $serviceResponse[] = 'Parameters send success!'; }
+									else{
 											$statusServiceCode = '502 Bad Gateway';
-											array_push($serviceResponse, 'DBA Service Error');
-										}
-									break;
-									break;
-									default:
+											$serviceResponse[] = 'DBA Service Error';
+									}
+								}
+								
+								if($q['command']['subCMD'] == "sendAttribute"){
 										$attributeId = lowercase($pm['attribute']);
 										$groupCreate = $pm['group'];
 										
@@ -348,17 +344,17 @@ class AdminController extends Controller{
 											 
 											 if(!$send){
 												 $statusServiceCode = '503 Service Unavailable';
-												 array_push($serviceResponse, 'Redis Service Error!');
+												 $serviceResponse[] = 'Redis Service Error!';
 											 }
 											 else{
-												 array_push($serviceResponse, 'Ready proccess success!');
+												 $serviceResponse[] = 'Ready proccess success!';
 											 } 
 										}
 										else if($groupCreate == 'data'){
 												
-												$al = $cache->lrange($key, 0, 1);
+											$al = $cache->lrange($key, 0, 1);
 												
-												for($i = 0; $i < $al; $i++){
+											for($i = 0; $i < $al; $i++){
 													if($attributeId == $al[$i]){ 
 														$cache->lrem($key, $i + 1, $attributeId); 
 														
@@ -385,48 +381,48 @@ class AdminController extends Controller{
 														
 														$dirNew = 'user/ip-data/FiltersAttributes/'. $groupCreate[$i] . '/' . $attributeId;
 
-														if($hive->getIterator(concat($queryHeader,$queryBody,$queryFooter)) && $hadoop->mkdirs($dirNew)){ array_push($serviceResponse, 'Creator proccess success!', 'New attribute table created!'); }
+														if($hive->getIterator(concat($queryHeader,$queryBody,$queryFooter)) && $hadoop->mkdirs($dirNew)){ $serviceResponse[] = ['Creator proccess success!', 'New attribute table created!']; }
 														else{
 															$statusServiceCode = '502 Bad Gateway';
-															array_push($serviceResponse, 'Services gateway!');
+															$serviceResponse[] = 'Services gateway!';
 														}
 													}
 												}
 												
 										}
-									break;
 								}
-
-								
-							break;
-							case 1:
+								else{
+									$statusServiceCode = '404 Not Found';
+									$serviceResponse[] = "Not subcommand found!";
+								}
+						}
+						else if($q['command'] == 1){
 								//Команда обновления данных в текущем фрагменте
-
-								switch($q['command']['subCMD']){
-									case "updateFilters":
-										$attributeId = lowercase($pm['attribute']);
+								
+								if($q['command']['subCMD'] == "updateFilters"){
+									$attributeId = lowercase($pm['attribute']);
 										
-										switch($pm['newType']){
+									switch($pm['newType']){
 												case "intField": case "precentableField": $dataType = 'int'; break;
 												case "costField": $dataType = 'float'; break;
 												case "smartDatasets": case "photogalleryField": $dataType = 'json'; break;
 												case "selectingField": $dataType = 'varchar(255)'; break;
 												default: $dataType = 'text'; break;
-										}
+									}
 										
-										$queryHeader = 'ALTER TABLE '. $attributeId;
-										$queryBody = '\tRENAME COLUMN '. $pm['field'] .' to '. $pm['newField'];
+									$queryHeader = 'ALTER TABLE '. $attributeId;
+									$queryBody = '\tRENAME COLUMN '. $pm['field'] .' to '. $pm['newField'];
 										
-										$updateP = ($hive->getIterator(concat($queryHeader,$queryBody)) && $hive->getIterator(concat($queryHeader,'\tALTER COLUMN '. $pm['newField'] .' '. $dataType)));
+									$updateP = ($hive->getIterator(concat($queryHeader,$queryBody)) && $hive->getIterator(concat($queryHeader,'\tALTER COLUMN '. $pm['newField'] .' '. $dataType)));
 										
-										if($updateP){ array_push($serviceResponse, 'The filter in current attribute table updated!'); }
-										else{
+									if($updateP){ $serviceResponse[] = 'The filter in current attribute table updated!'; }
+									else{
 											$statusServiceCode = '503 Service Unavailable';
-											array_push($serviceResponse, 'DBA Service Error!');
-										}
-									break;
-									case "updatePhotogallery":
-										if($q['photogallery']){
+											$serviceResponse[] = 'DBA Service Error!';
+									}
+								}
+								if($q['command']['subCMD'] == "updatePhotogallery"){
+									if($q['photogallery']){
 											$attributeId = lowercase($pm['attribute']);
 											$formats = $q['format'];
 											$isPhotoCount = ($q['count'] > 4 || $q['count'] == 4) ? TRUE : FALSE;
@@ -435,41 +431,41 @@ class AdminController extends Controller{
 												case FALSE:
 													$statusServiceCode = 415;
 													$serviceResponse[] = 'Invalid number of photos (the correct minimum value is 4)';
-												break;
+													break;
 												default:
 													$jsonReport = ['imageFormats' => $formats, 'imageCounts' => $q['count']];
 													$jsonResponse = ['response' => $jsonReport];
 													
 													if($hive->getIterator('UPDATE '. $attributeId .' SET '. $pm['field'] .'='. $jsonResponse .' WHERE id='. $pm['fieldID'])){
-														array_push($serviceResponse, 'Photogallery in current attribute updated!');
+														$serviceResponse[] = 'Photogallery in current attribute updated!';
 													}
 													else{
 														$statusServiceCode = '503 Service Unavailable';
-														array_push($serviceResponse, 'DBA Service Error!');
+														$serviceResponse[] = 'DBA Service Error!';
 													}
-												break;
+													break;
 											}
-									  }
-									  else{
-										$statusServiceCode = '404 Not Found';
-										array_push($serviceResponse, 'Query not found!');
-									  }
-										
-									break;
-									case "updateDatasets":
-										if($pm['isSmartDS']){
+									}
+									else{
+											$statusServiceCode = '404 Not Found';
+											$serviceResponse[] = 'Query not found!';
+									}
+								}
+								if($q['command']['subCMD'] == "updateDatasets"){
+									$attributeId = lowercase($pm['attribute']);
+									
+									if($pm['isSmartDS']){
 											//При наличии нескольких датасетов и не только...
 
-											$attributeId = lowercase($pm['attribute']);
-											$datasets = JSON::Decode($pm['smartDS']);
+											$datasets = JSON::decode($pm['smartDS']);
 											$jsonList = [];
 											
 											if($hadoop->delete('/FiltersAttributes/data/'. $attributeId .'/*')){
-												array_push($serviceResponse, 'Delete proccess success!');
+												$serviceResponse[] = 'Delete proccess success!';
 											}
 											else{
 												$statusServiceCode = '502 Bad Gateway';
-												array_push($serviceResponse, 'Bad Data Storage gateway!');
+												$serviceResponse[] = 'Bad Data Storage gateway!';
 											}
 											
 											for($i = 0; $i < count($datasets['file']); $i++){
@@ -483,41 +479,40 @@ class AdminController extends Controller{
 												else if(strrpos($query[0], 'application/vnd.ms-excel')){ $newDataFile = $i .".csv"; }
 
 												if($hadoop->createWithData('/FiltersAttributes/data/'. $attributeId .'/'. $newDataFile, $query[0])){
-													array_push($serviceResponse, 'Send proccess success!');
+													$serviceResponse[] = 'Send proccess success!';
 												}
 												else{
 													$statusServiceCode = '502 Bad Gateway';
-													array_push($serviceResponse, 'Bad Data Storage gateway!');
+													$serviceResponse[] = 'Bad Data Storage gateway!';
 												}
 												
 												
-												array_push($jsonList, ['df' => [$newDataFile]]);
+												$jsonList['df'][] = $newDataFile;
 												
 											}
 											
 											$jsonResponse = ['response' => $jsonList];
 											
 											if($hive->getIterator('UPDATE '. $attributeId .' SET '. $pm['field'] .'='. $jsonResponse .' WHERE id='. $pm['fieldID'])){
-												array_push($serviceResponse, 'Datasets in current attribute updated!');
+												$serviceResponse[] = 'Datasets in current attribute updated!';
 											}
 											else{
 												$statusServiceCode = '503 Service Unavailable';
-												array_push($serviceResponse, 'DBA Service Error!');
+												$serviceResponse[] = 'DBA Service Error!';
 											}
 											
 										}
 										else{
-											    $attributeId = lowercase($pm['attribute']);
 											    $dataset = $pm['dataset'];
 											    $jsonReport = [];
 												$query = explode(',', $dataset);
 												
 												if($hadoop->delete('/FiltersAttributes/data/'. $attributeId .'/*')){
-													array_push($serviceResponse, 'Delete proccess success!');
+													$serviceResponse[] = 'Delete proccess success!';
 												}
 												else{
 													$statusServiceCode = '502 Bad Gateway';
-													array_push($serviceResponse, 'Bad Data Storage gateway!');
+													$serviceResponse[] = 'Bad Data Storage gateway!';
 												}
 												
 												if(strrpos($query[0], 'application/json')){ $newDataFile = "single.json"; }
@@ -532,27 +527,27 @@ class AdminController extends Controller{
 												$jsonResponse = ['response' => $jsonReport];
 
 												if($hadoop->create('/FiltersAttributes/data/'. $attributeId .'/'. $newDataFile)){
-													array_push($serviceResponse, 'Send proccess success!');
+													$serviceResponse[] = 'Send proccess success!';
 												}
 												else{
 													$statusServiceCode = '502 Bad Gateway';
-													array_push($serviceResponse, 'Bad Data Storage gateway!');
+													$serviceResponse[] = 'Bad Data Storage gateway!';
 												}
 												
 												if($hive->getIterator('UPDATE '. $attributeId .' SET '. $pm['field'] .'='. $jsonResponse .' WHERE id='. $pm['fieldID'])){
-													array_push($serviceResponse, 'Datasets in current attribute updated!');
+													$serviceResponse[] = 'Datasets in current attribute updated!';
 												}
 												else{
 													$statusServiceCode = '503 Service Unavailable';
-													array_push($serviceResponse, 'DBA Service Error!');
+													$serviceResponse[] = 'DBA Service Error!';
 												}
 
 										}
-									break;
-									case "updateParameters":
-										$attributeId = lowercase($pm['attribute']);
+								}
+								if($q['command']['subCMD'] == "updateParameters"){
+									$attributeId = lowercase($pm['attribute']);
 										
-										switch($pm['dataParam']){
+									switch($pm['dataParam']){
 											case "cost":
 												$costQuery = $q['costData'];
 
@@ -581,7 +576,7 @@ class AdminController extends Controller{
 												}
 												
 												$dataQuery = 'UPDATE '. $attributeId .' SET '. $pm['field'] .'='. $response .' WHERE id='. $pm['fieldID'];
-											break;
+												break;
 											case "text":
 												$textQuery = $q['textData'];
 												$responseText = '';
@@ -597,7 +592,7 @@ class AdminController extends Controller{
 												$response = "[". $responseText ."]";
 												
 												$dataQuery = 'UPDATE '. $attributeId .' SET '. $pm['field'] .'='. $response .' WHERE id='. $pm['fieldID'];
-											break;
+												break;
 											case "selecting":
 												$selectingQuery = $q['selectingData'];
 
@@ -606,7 +601,7 @@ class AdminController extends Controller{
 
 												$response = "[". $firstVariant .",". $doubleVariant ."]";
 												$dataQuery = 'UPDATE '. $attributeId .' SET '. $pm['field'] .'='. $response .' WHERE id='. $pm['fieldID'];
-											break;
+												break;
 											case "precentable":
 												$pQuery = $q['precentableData'];
 												
@@ -635,7 +630,7 @@ class AdminController extends Controller{
 												}
 												
 												$dataQuery = 'UPDATE '. $attributeId .' SET '. $pm['field'] .'='. $response .' WHERE id='. $pm['fieldID'];
-											break;
+												break;
 											default:
 												$intQuery = $q['intData'];
 
@@ -664,132 +659,133 @@ class AdminController extends Controller{
 												}
 												
 												$dataQuery = 'UPDATE '. $attributeId .' SET '. $pm['field'] .'='. $response .' WHERE id='. $pm['fieldID'];
-											break;
-										}
+												break;
+									}
 										
-										if($hive->getIterator($dataQuery)){ array_push($serviceResponse, 'Parameters update success'); }
-										else{
-											$statusServiceCode = '502 Bad Gateway';
-											array_push($serviceResponse, 'DBA Service Error');
-										}
-									break;
-									default:
-										$attributeId = lowercase($pm['attribute']);
-										$attributeNewId = lowercase($pm['newAttribute']);
-										$groupCreate = $pm['group'];
+									if($hive->getIterator($dataQuery)){ $serviceResponse[] = 'Parameters update success'; }
+									else{
+										$statusServiceCode = '502 Bad Gateway';
+										$serviceResponse[] = 'DBA Service Error';
+									}
+								}
+								
+								if($q['command']['subCMD'] == "updateAttribute"){
+									$attributeId = lowercase($pm['attribute']);
+									$attributeNewId = lowercase($pm['newAttribute']);
+									$groupCreate = $pm['group'];
 
-					
-
-										$dir = 'user/ip-data/FiltersAttributes/'. $groupCreate[$i] . '/' . $attributeId;
-										$dirUpdate = 'user/ip-data/FiltersAttributes/'. $groupCreate[$i] . '/' . $attributeNewId;
+									$dir = 'user/ip-data/FiltersAttributes/'. $groupCreate[$i] . '/' . $attributeId;
+									$dirUpdate = 'user/ip-data/FiltersAttributes/'. $groupCreate[$i] . '/' . $attributeNewId;
 											
-										if($hadoop->rename($dir,$dirUpdate)){ $serviceResponse[] = 'Update proccess success!'; }
-										else{
-											$statusServiceCode = '502 Bad Gateway';
-											$serviceResponse[] = 'Bad Data Storage gateway!';
-										}
+									if($hadoop->rename($dir,$dirUpdate)){ $serviceResponse[] = 'Update proccess success!'; }
+									else{
+										$statusServiceCode = '502 Bad Gateway';
+										$serviceResponse[] = 'Bad Data Storage gateway!';
+									}
 
-										if($groupCreate == 'data'){
+									if($groupCreate == 'data'){
 											$updateP = ($hive->getIterator('ALTER TABLE '. $attributeId .' RENAME TO '. $attributeNewId) && $hive->getIterator('ALTER TABLE '. $attributeNewId .' SET LOCATION "hdfs://73ddd75d66e6:9866/'. $dirUpdate .'"'));
 												
-											if($updateP){array_push($serviceResponse, 'Current attribute table update!'); }
+											if($updateP){$serviceResponse[] = 'Current attribute table update!'; }
 											else{
 												$statusServiceCode = '503 Service Unavailable';
-												array_push($serviceResponse, 'DBA Service Error!');
+												$serviceResponse[] = 'DBA Service Error!';
 											}
-										}	
-									break;
+									}
 								}
-							break;
-							case 2:
+								else{
+									$statusServiceCode = '404 Not Found';
+									$serviceResponse[] = "Not subcommand found!";
+								}
+						}
+						else if($q['command'] == 2){
 								//Команда удаления данных из текущего фрагмента
-
-								switch($q['command']['subCMD']){
-									case "deleteFilters":
-										$attributeId = lowercase($pm['attribute']);
+								
+								if($q['command']['subCMD'] == "deleteFilters"){
+									$attributeId = lowercase($pm['attribute']);
 										$queryHeader = 'ALTER TABLE '. $attributeId .' (\n';
 										$queryBody = '\tDROP COLUMN '. $pm['field'];
 										
 										if($hive->getIterator(concat($queryHeader,$queryBody))){
-											array_push($serviceResponse, 'The filter in current attribute table deleted!');
+											$serviceResponse[] = 'The filter in current attribute table deleted!';
 										}
 										else{
 											$statusServiceCode = '503 Service Unavailable';
-											array_push($serviceResponse, 'DBA Service Error!');
+											$serviceResponse[] = 'DBA Service Error!';
 										}
-									break;
-									case "deleteDatasets":
-										$attributeId = lowercase($pm['attribute']);
+								}
+								if($q['command']['subCMD'] == "deleteDatasets"){
+									$attributeId = lowercase($pm['attribute']);
 										
-										if($hadoop->delete('/FiltersAttributes/data/'. $attributeId .'/*')){
-											array_push($serviceResponse, 'Delete proccess success!');
-										}
-										else{
+									if($hadoop->delete('/FiltersAttributes/data/'. $attributeId .'/*')){
+											$serviceResponse[] = 'Delete proccess success!';
+									}
+									else{
 											$statusServiceCode = '502 Bad Gateway';
-											array_push($serviceResponse, 'Bad Data Storage gateway!');
-										}
+											$serviceResponse[] = 'Bad Data Storage gateway!';
+									}
 										
-										if($hive->getIterator('UPDATE '. $attributeId .' SET '. $pm['field'] .'=\' \' WHERE id='. $pm['fieldID'])){
-											array_push($serviceResponse, 'Datasets in current attribute deleted!');
-										}
-										else{
+									if($hive->getIterator('UPDATE '. $attributeId .' SET '. $pm['field'] .'=\' \' WHERE id='. $pm['fieldID'])){
+											$serviceResponse[] = 'Datasets in current attribute deleted!';
+									}
+									else{
 											$statusServiceCode = '502 Bad Gateway';
-											array_push($serviceResponse, 'DBA Service Error');
-										}
-									break;
-									case "deletePhotogallery":
-										if($q['photogallery']){
+											$serviceResponse[] = 'DBA Service Error';
+									}
+								}
+								if($q['command']['subCMD'] == "deletePhotogallery"){
+									if($q['photogallery']){
 											$attributeId = lowercase($pm['attribute']);
 											
 											if($hive->getIterator('UPDATE '. $attributeId .' SET '. $pm['field'] .'=\' \' WHERE id='. $pm['fieldID'])){
-												array_push($serviceResponse, 'Photogallery in current attribute deleted!');
+												$serviceResponse[] = 'Photogallery in current attribute deleted!';
 											}
 											else{
 												$statusServiceCode = '502 Bad Gateway';
-												array_push($serviceResponse, 'DBA Service Error');
+												$serviceResponse[] = 'DBA Service Error';
 											}
-										}
-										else{
+									}
+									else{
 											$statusServiceCode = '404 Not Found';
-											array_push($serviceResponse, 'Query not found!');
-										}
-									break;
-									case "deleteParameters":
-										$attributeId = lowercase($pm['attribute']);
-										switch($pm['dataParam']){
+											$serviceResponse[] = 'Query not found!';
+									}
+								}
+								if($q['command']['subCMD'] == "deleteParameters"){
+									$attributeId = lowercase($pm['attribute']);
+									switch($pm['dataParam']){
 											case "cost":
 												$dataQuery = 'UPDATE '. $attributeId .' SET '. $pm['field'] .'=\' 0,01\' WHERE id='. $pm['fieldID'];
 												$successMessage = 'Current cost parameters is deleted!';
 												
-											break;
+												break;
 											case "text":
 												$dataQuery = 'UPDATE '. $attributeId .' SET '. $pm['field'] .'=\' \' WHERE id='. $pm['fieldID'];
 												$successMessage = 'Current text field parameters is deleted!';
 												
-											break;
+												break;
 											case "selecting":
 												$dataQuery = 'UPDATE '. $attributeId .' SET '. $pm['field'] .'=\' []\' WHERE id='. $pm['fieldID'];
 												$successMessage = 'Current selecting parameters is deleted!';
-											break;
+												break;
 											case "precentable":
 												$dataQuery = 'UPDATE '. $attributeId .' SET '. $pm['field'] .'=\' 0\' WHERE id='. $pm['fieldID'];
 												$successMessage = 'Current precentable parameters is deleted!';
-											break;
+												break;
 											default:
 												$dataQuery = 'UPDATE '. $attributeId .' SET '. $pm['field'] .'=\' 0\' WHERE id='. $pm['fieldID'];
 												$successMessage = 'Current integer parameters is deleted!';
-											break;
-										}
+												break;
+									}
 										
-										if($hive->getIterator($dataQuery)){ array_push($serviceResponse, $successMessage); }
-										else{
+									if($hive->getIterator($dataQuery)){ $serviceResponse[] = $successMessage; }
+									else{
 											$statusServiceCode = '502 Bad Gateway';
-											array_push($serviceResponse, 'DBA Service Error');
-										}
-										
-									break;
-									default:
-										$attributeId = lowercase($pm['attribute']);
+											$serviceResponse[] = 'DBA Service Error';
+									}
+								}
+								
+								if($q['command']['subCMD'] == "deleteAttribute"){
+									$attributeId = lowercase($pm['attribute']);
 										$groupCreate = $pm['group'];
 
 					
@@ -797,61 +793,59 @@ class AdminController extends Controller{
 
 										if($groupCreate == 'data'){
 											if($hive->getIterator('DROP TABLE '. $attributeId)){
-												array_push($serviceResponse, 'Current attribute table deleted!');
+												$serviceResponse[] = 'Current attribute table deleted!';
 											}
 											else{
 												$statusServiceCode = '503 Service Unavailable';
-												array_push($serviceResponse, 'DBA Service Error!');
+												$serviceResponse[] = 'DBA Service Error!';
 											}
 										}
 											
-										if($hadoop->delete($dir,'*')){ array_push($serviceResponse, 'Delete proccess success!'); }
+										if($hadoop->delete($dir,'*')){ $serviceResponse[] = 'Delete proccess success!'; }
 										else{
 											$statusServiceCode = '502 Bad Gateway';
-											array_push($serviceResponse, 'Bad Data Storage gateway!');
+											$serviceResponse[] = 'Bad Data Storage gateway!';
 										}
-									break;
 								}
-							break;
-							case 3:
+								else{
+									$statusServiceCode = '404 Not Found';
+									$serviceResponse[] = "Not subcommand found!";
+								}
+						}
+						else if($q['command'] == 3){
 								//Команда вывода данных в текущем фрагменте
+								
+								if($q['command']['subCMD'] == "showFilters"){
+									$currentAttribute = lowercase($pm['attribute']);
+									$query = 'SHOW COLUMNS FROM '. $currentAttribute;
+									$filters = [];
 
-								switch($q['command']['subCMD']){
-									case "showFilters":
-										$currentAttribute = lowercase($pm['attribute']);
-										$query = 'SHOW COLUMNS FROM '. $currentAttribute;
-										$filters = [];
+									$result = $hive->getIterator($query);
 
-										$result = $hive->getIterator($query);
+									foreach( $result as $rowNum => $row ) { $filters[] = $row; }
 
-										foreach( $result as $rowNum => $row ) {
-											$filters[] = $row;
-										}
-
-										array_push($serviceResponse, $filters);
+									$serviceResponse[] = $filters;
 										
-										if(!$result){
+									if(!$result){
 											$statusServiceCode = '503 Service Unavailable';
-											array_push($serviceResponse, 'DBA Service Error!');
-										}
-									break;
-									case "showDatasets":
-										$attributeId = lowercase($pm['attribute']);
+											$serviceResponse[] = 'DBA Service Error!';
+									}
+								}
+								if($q['command']['subCMD'] == "showDatasets"){
+									$attributeId = lowercase($pm['attribute']);
 										if($pm['isSmartDS']){
 											$queryFind = 'SELECT '. $pm['DFSField'] .' FROM '. $attributeId;
 											$datasets = [];
 
 											$result = $hive->getIterator($queryFind);
 
-											foreach( $result as $rowNum => $row ) {
-												$datasets[] = $row['response'];
-											}
+											foreach( $result as $rowNum => $row ) { $datasets[] = $row['response']; }
 
-											array_push($serviceResponse, $datasets);
+											$serviceResponse[] = $datasets;
 
 											if(!$result){
 												$statusServiceCode = '503 Service Unavailable';
-												array_push($serviceResponse, 'DBA Service Error!');
+												$serviceResponse[] = 'DBA Service Error!';
 											}
 										}
 										else{
@@ -865,64 +859,61 @@ class AdminController extends Controller{
 												$ds[] = $row['response'];
 											}
 
-											array_push($serviceResponse, $ds);
+											$serviceResponse[] = $ds;
 
 											if(!$result){
 												$statusServiceCode = '503 Service Unavailable';
-												array_push($serviceResponse, 'DBA Service Error!');
+												$serviceResponse[] = 'DBA Service Error!';
 											}
 											
 										}
-									break;
-									case "showPhotogallery":
-										if($q['photogallery']){
+								}
+								if($q['command']['subCMD'] == "sendPhotogallery"){
+									if($q['photogallery']){
 											$attributeId = lowercase($pm['attribute']);
 											$queryFind = 'SELECT '. $pm['photofield'] .' FROM '. $attributeId;
 											$datasets = [];
 
 											$result = $hive->getIterator($queryFind);
 
-											foreach( $result as $rowNum => $row ) {
-												$datasets[] = $row['response'];
-											}
+											foreach( $result as $rowNum => $row ) { $datasets[] = $row['response']; }
 
-											array_push($serviceResponse, $datasets);
+											$serviceResponse[] = $datasets;
 												
 											if(!$result){
 												$statusServiceCode = '503 Service Unavailable';
-												array_push($serviceResponse, 'DBA Service Error!');
+												$serviceResponse[] = 'DBA Service Error!';
 											}
-										}
-										else{
+									}
+									else{
 											$statusServiceCode = '404 Not Found';
-											array_push($serviceResponse, 'Query not found!');
-										}
-									break;
-									case "showParameters":
-										$attributeId = lowercase($pm['attribute']);
-										switch($pm['dataParam']){
+											$serviceResponse[] = 'Query not found!';
+									}
+								}
+								if($q['command']['subCMD'] == "sendParameters"){
+									$attributeId = lowercase($pm['attribute']);
+									$tables = [];
+									switch($pm['dataParam']){
 											case "cost": $dataQuery = 'SELECT '. $pm['costQuery'] .' FROM '. $attributeId; break;
 											case "text": $dataQuery = 'SELECT '. $pm['textQuery'] .' FROM '. $attributeId; break;
 											case "selecting": $dataQuery = 'SELECT '. $pm['selectingQuery'] .' FROM '. $attributeId; break;
 											case "precentable": $dataQuery = 'SELECT '. $pm['precentableQuery'] .' FROM '. $attributeId; break;
 											case "smartDataset": case "photogallery": $dataQuery = 'SELECT '. $pm['dQuery'] .' FROM '. $attributeId; break;
 											default: $dataQuery = 'SELECT '. $pm['intQuery'] .' FROM '. $attributeId; break;
-										}
+									}
 
-										$result = $hive->getIterator($dataQuery);
+									$result = $hive->getIterator($dataQuery);
 
-										foreach( $result as $rowNum => $row ) {
-											$tables[] = $row;
-										}
+									foreach( $result as $rowNum => $row ) { $tables[] = $row; }
 
-										array_push($serviceResponse, $tables);
+									$serviceResponse[] = $tables;
 
-										if(!$result){
-											$statusServiceCode = '502 Bad Gateway';
-											array_push($serviceResponse, 'DBA Service Error');	
-										}
-									break;
-									case "showTableColumns":
+									if(!$result){
+										$statusServiceCode = '502 Bad Gateway';
+										$serviceResponse[] = 'DBA Service Error!';	
+									}
+								}
+								if($q['command']['subCMD'] == "showTableColumns"){
 										$attributeId = lowercase($pm['attribute']);
 										$query = 'SELECT COUNT(*) as columncount FROM INFORMATION_SCHEMA.COLUMNS WHERE TABLE_NAME = \''. $attributeId .'\'';
 										$tables = [];
@@ -933,44 +924,53 @@ class AdminController extends Controller{
 										}
 										else{ $tables[] = [0]; }
 
-										array_push($serviceResponse, $tables);
+										$serviceResponse[] = $tables;
 										
 										if(!$result){
 											$statusServiceCode = '503 Service Unavailable';
-											array_push($serviceResponse, 'DBA Service Error!');
+											$serviceResponse[] = 'DBA Service Error!';
 										}
-									break;
-									default:
+								}
+								
+								
+								if($q['command']['subCMD'] == "showAttributes"){
 										$query = 'SHOW TABLES';
 										$tables = [];
 										$result = $hive->getIterator($query);
 
-										foreach( $result as $rowNum => $row ) {
-											$tables[] = $row;
-										}
+										foreach( $result as $rowNum => $row ) { $tables[] = $row; }
 
-										array_push($serviceResponse, $tables);
+										$serviceResponse[] = $tables;
 										
 										if(!$result){
 											$statusServiceCode = '503 Service Unavailable';
-											array_push($serviceResponse, 'DBA Service Error!');
+											$serviceResponse[] = 'DBA Service Error!';
 										}
-									break;
+								}
+								else{
+									$statusServiceCode = '404 Not Found';
+									$serviceResponse[] = "Not subcommand found!";
 								}
 								
-							break;
+						}
+						else{
+							$statusServiceCode = '404 Not Found';
+							$serviceResponse[] = "Not command found!";
 						}
 					}
 				}
 				else{
 					$statusServiceCode = '404 Not Found';
-					array_push($serviceResponse, "Not query found!");
+					$serviceResponse[] = "Not query found!";
 				}
-			break;
-			
 		}
+		else{
+			$statusServiceCode = '404 Not Found';
+			$serviceResponse[] = "Not service found!";
+		}
+			
 		
-		header("HTTP/1.1 ". $statusServiceCode);
+		header($_SERVER['SERVER_PROTOCOL'] ." ". $statusServiceCode);
 		\Yii::$app->response->format = \yii\web\Response::FORMAT_JSON;
 		return ["response" => $serviceResponse];
 		

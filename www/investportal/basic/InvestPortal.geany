@@ -27,16 +27,11 @@ long_line_behaviour=1
 long_line_column=72
 
 [files]
-current_page=8
-FILE_NAME_0=36887;PHP;0;EUTF-8;1;1;0;%2Fhome%2Fsergey%2FРабочий%20стол%2FCode%2Fdocker-compose-lamp%2Fwww%2Finvestportal%2Fbasic%2Fcontrollers%2FAdminController.php;0;4
-FILE_NAME_1=0;PHP;0;EUTF-8;1;1;0;%2Fhome%2Fsergey%2FРабочий%20стол%2FCode%2Fdocker-compose-lamp%2Fwww%2Finvestportal%2Fbasic%2Fviews%2Flayouts%2Fmain.php;0;4
-FILE_NAME_2=2448;PHP;0;EUTF-8;1;1;0;%2Fhome%2Fsergey%2FРабочий%20стол%2FCode%2Fdocker-compose-lamp%2Fwww%2Finvestportal%2Fbasic%2Fcontrollers%2FSiteController.php;0;4
-FILE_NAME_3=1950;PHP;0;EUTF-8;1;1;0;%2Fhome%2Fsergey%2FРабочий%20стол%2FCode%2Fdocker-compose-lamp%2Fwww%2Finvestportal%2Fbasic%2Fcomponents%2FSignIn.php;0;4
-FILE_NAME_4=3912;PHP;0;EUTF-8;1;1;0;%2Fhome%2Fsergey%2FРабочий%20стол%2FCode%2Fdocker-compose-lamp%2Fwww%2Finvestportal%2Fbasic%2Fcomponents%2FSignUp.php;0;4
-FILE_NAME_5=481;PHP;0;EUTF-8;1;1;0;%2Fhome%2Fsergey%2FРабочий%20стол%2FCode%2Fdocker-compose-lamp%2Fwww%2Finvestportal%2Fbasic%2Fcomponents%2FSignOut.php;0;4
-FILE_NAME_6=918;PHP;0;EUTF-8;1;1;0;%2Fhome%2Fsergey%2FРабочий%20стол%2FCode%2Fdocker-compose-lamp%2Fwww%2Finvestportal%2Fbasic%2Fcomponents%2FForgot.php;0;4
-FILE_NAME_7=858;PHP;0;EUTF-8;1;1;0;%2Fhome%2Fsergey%2FРабочий%20стол%2FCode%2Fdocker-compose-lamp%2Fwww%2Finvestportal%2Fbasic%2Fcomponents%2FautoSignIn.php;0;4
-FILE_NAME_8=2548;PHP;0;EUTF-8;1;1;0;%2Fhome%2Fsergey%2FРабочий%20стол%2FCode%2Fdocker-compose-lamp%2Fwww%2Finvestportal%2Fbasic%2Fcomponents%2FSMSCode.php;0;4
+current_page=2
+FILE_NAME_0=1945;PHP;0;EUTF-8;1;1;0;%2Fhome%2Fsergey%2FРабочий%20стол%2FCode%2Fdocker-compose-lamp%2Fwww%2Finvestportal%2Fbasic%2Fcontrollers%2FAdminController.php;0;4
+FILE_NAME_1=1853;PHP;0;EUTF-8;1;1;0;%2Fhome%2Fsergey%2FРабочий%20стол%2FCode%2Fdocker-compose-lamp%2Fwww%2Finvestportal%2Fbasic%2Fconfig%2Fweb.php;0;4
+FILE_NAME_2=6724;PHP;0;EUTF-8;1;1;0;%2Fhome%2Fsergey%2FРабочий%20стол%2FCode%2Fdocker-compose-lamp%2Fwww%2Finvestportal%2Fbasic%2Fcontrollers%2FSiteController.php;0;4
+FILE_NAME_3=0;None;0;EUTF-8;1;1;0;%2Fhome%2Fsergey%2FРабочий%20стол%2FCode%2Fdocker-compose-lamp%2Fdocker-hadoop%2Fhadoop.env;0;4
 
 [VTE]
 last_dir=/home/sergey/Рабочий стол/Code/docker-compose-lamp
@@ -48,3 +43,11 @@ ignored_dirs_patterns=.*;CVS;
 ignored_file_patterns=*.o;*.obj;*.a;*.lib;*.so;*.dll;*.lo;*.la;*.class;*.jar;*.pyc;*.mo;*.gmo;
 generate_tag_prefs=0
 external_dirs=
+
+[debugger]
+target=
+debugger=GDB
+arguments=
+envvar_count=0
+watches_count=0
+breaks_count=0

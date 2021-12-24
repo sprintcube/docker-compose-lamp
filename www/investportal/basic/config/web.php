@@ -57,9 +57,6 @@ $config = [
         'view' => [
             'class' => 'yii\web\View',
         ],
-        'hdfs' => [
-			'class' => 'org\apache\hadoop\WebHDFS'
-        ],
         'portalReg' => ['class' => 'app\components\SignUp'],
 		'portalLogin' => ['class' => 'app\components\SignIn'],
 		'asReg' => ['class' => 'app\components\adminSignUp'],

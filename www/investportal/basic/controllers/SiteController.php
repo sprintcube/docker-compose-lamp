@@ -26,69 +26,68 @@ class SiteController extends Controller{
 	public function actionAccountService($service){
 		$q = Json::decode($_POST['serviceQuery']);
 		
-		switch($service){
-			case "signIn":
-				if($_POST['serviceQuery']){
+		if($service == "signIn"){
+			if($_POST['serviceQuery']){
 					$sign = $q['asq']; //Authoriation service query
 					$type = $q['asqt']; //ASQ Type
 
 					Yii::$app->portalLogin->proccess($sign,$type);
-				}
-				else{ 
+			}
+			else{ 
 					header("HTTP/1.1 405 Method Not Allowed");
 					\Yii::$app->response->format = \yii\web\Response::FORMAT_HTML;
 					return 'Query conflict'; 
-				}
-			break;
-			case "signUp":
-				if($_POST['serviceQuery']){
+			}
+		}
+		
+		if($service == "signUp"){
+			if($_POST['serviceQuery']){
 					$sign = $q['rsq']; //Registration service query
 					$type = $q['rsqt']; //RSQ Type
 
 					Yii::$app->portalReg->proccess($sign,$type);
-				}
-				else{ 
+			}
+			else{ 
 					header("HTTP/1.1 405 Method Not Allowed");
 					\Yii::$app->response->format = \yii\web\Response::FORMAT_HTML;
 					return 'Query conflict'; 
-				}
-			break;
-			case "forgot":
-				if($_POST['serviceQuery']){
+			}
+		}
+		if($service == "forgot"){
+			if($_POST['serviceQuery']){
 					$sign = $q['fsq']; //Forgot service query
 
-					Yii::$app->portalPass->proccess($sign);
-					
-				}
-				else{ 
+					Yii::$app->portalPass->proccess($sign);	
+			}
+			else{ 
 					header("HTTP/1.1 405 Method Not Allowed");
 					\Yii::$app->response->format = \yii\web\Response::FORMAT_HTML;
 					return 'Query conflict'; 
-				}
-			break;
-			case "autoAuth":
-				if($_POST['serviceQuery']){
+			}
+		}
+		if($service == "autoAuth"){
+			if($_POST['serviceQuery']){
 					$sign = $q['fsq']; //Forgot service query
-
-					Yii::$app->autoLogin->proccess($sign);
-					
-				}
-				else{ 
+					Yii::$app->autoLogin->proccess($sign);	
+			}
+			else{ 
 					header("HTTP/1.1 405 Method Not Allowed");
 					\Yii::$app->response->format = \yii\web\Response::FORMAT_HTML;
 					return 'Query conflict'; 
-				}
-			break;
-			case "signOut":
-				if(!Yii::$app->user->isGuest){ Yii::$app->portalExit->proccess(); }
-				else{ 
+			}
+		}
+		if($service == "signOut"){
+			if(!Yii::$app->user->isGuest){ Yii::$app->portalExit->proccess(); }
+			else{ 
 					header("HTTP/1.1 405 Method Not Allowed");
 					\Yii::$app->response->format = \yii\web\Response::FORMAT_HTML;
 					return 'Service conflict'; 
-				}
-			break;
-			case "getInfo":
-				if($_POST['serviceQuery']){
+			}
+		}
+		
+		
+		if($service == "getInfo"){
+			if($_POST['serviceQuery']){
 					$userId = $q['investPortalID'];
 					$serviceResponse = [];
 
@@ -118,26 +117,24 @@ class SiteController extends Controller{
 						return 'User not found';
 					}
 					
-				}
-				else{ 
+			}
+			else{ 
 					header("HTTP/1.1 405 Method Not Allowed");
 					\Yii::$app->response->format = \yii\web\Response::FORMAT_HTML;
 					return 'Query conflict'; 
-				}
-			break;
-			default: 
+			}
+		}
+		else{
 				header("HTTP/1.1 404 Not Found");
 				\Yii::$app->response->format = \yii\web\Response::FORMAT_HTML;
 				return 'Service not found'; 
-			break;
 		}
 	}
 	public function actionServiceCodeCenter($service){
 		$q = json_decode($_POST['serviceQuery']);
 		
-		switch($service){
-			case "signUp":
-				if($_POST['serviceQuery']){
+		if($service == "signUp"){
+			if($_POST['serviceQuery']){
 					$sign = $q['rsq']; //Registration service query
 
 					if($sign['service'] === 'Inbox'){
@@ -156,14 +153,14 @@ class SiteController extends Controller{
 						\Yii::$app->response->format = \yii\web\Response::FORMAT_HTML;
 						return 'Operation conflict'; 
 					}
-				}
-				else{ 
+			}
+			else{ 
 					header("HTTP/1.1 405 Method Not Allowed");
 					\Yii::$app->response->format = \yii\web\Response::FORMAT_HTML;
 					return 'Query conflict'; 
-				}
-			break;
-			case "forgot":
+			}
+		}
+		if($service == "forgot"){
 				if($_POST['serviceQuery']){
 					$sign = $q['fsq']; //Forgot service query
 
@@ -190,8 +187,9 @@ class SiteController extends Controller{
 					\Yii::$app->response->format = \yii\web\Response::FORMAT_HTML;
 					return 'Query conflict'; 
 				}
-			break;
-			case "codeGenerator":
+		}
+		
+		if($service == "codeGenerator"){
 				if($_POST['serviceQuery']){
 					$source = $q['fsq'];
 
@@ -214,12 +212,11 @@ class SiteController extends Controller{
 					\Yii::$app->response->format = \yii\web\Response::FORMAT_HTML;
 					return 'Query conflict'; 
 				}
-			break;
-			default: 
+		}
+		else{
 				header("HTTP/1.1 404 Not Found");
 				\Yii::$app->response->format = \yii\web\Response::FORMAT_HTML;
 				return 'Service not found'; 
-			break;
 		}
 	}
 }
