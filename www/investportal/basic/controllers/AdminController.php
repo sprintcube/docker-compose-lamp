@@ -8,7 +8,6 @@ use yii\web\Url;
 use yii\helpers\Json;
 
 use org\apache\hadoop\WebHDFS;
-require_once '../components/php-thrift-sql/ThriftSQL.phar';
 
 class AdminController extends Controller{
 	public function beforeAction($action) { 
@@ -68,19 +67,17 @@ class AdminController extends Controller{
 		return $this->render('auth');
 	}
 	public function actionAdminService($svc, $subSVC){
-		$serviceResponse = [];
+		$serviceResponse = NULL;
 		$statusServiceCode = '200 OK';
-		
-		$hadoop = (new WebHDFS('namenode', 9000, 'root'));
+		$hadoop = (new WebHDFS('localhost', 50070, 'root', 'namenode', 9870, ''));
 
-		$hive = (new \ThriftSQL\Hive('hive-metastore',9083))->connect();
+		$hive =  new \Ytake\PrestoClient\ClientSession('http://localhost:8080/', 'hive');
 		
 		if($svc == 'dataServices'){
 				if($subSVC == "filters"){
 					if($_POST['svcQuery']){
 						$q = Json::decode($_POST['svcQuery']);
 						$pm = $q['parameters'];
-						
 
 						
 						if($q['command'] == 0){
@@ -88,6 +85,7 @@ class AdminController extends Controller{
 								
 								if($q['command']['subCMD'] == "sendFilters"){
 											$attributeId = lowercase($pm['attribute']);
+											$responseData = '';
 											switch($pm['type']){
 														case "intField": 
 														case "precentableField": $dataType = 'int'; break;
@@ -100,11 +98,15 @@ class AdminController extends Controller{
 											$queryBody = '\tADD COLUMN '. $pm['field'] .' '. $dataType;
 
 										    
-											if($hive->getIterator(concat($queryHeader,$queryBody))){ $serviceResponse[] = 'New filter in current attribute table created!'; }
+											if((new \Ytake\PrestoClient\StatementClient($hive, concat($queryHeader,$queryBody)))->execute()){ $responseData = 'New filter in current attribute table created!'; }
 											else{
-												$statusServiceCode = '503 Service Unavailable';
-												$serviceResponse[] = 'DBA Service Error!';
+												$resCode = '503 Service Unavailable';
+												$responseData = 'DBA Service Error!';
 											}
+											
+											
+											$statusServiceCode = $resCode;
+											$serviceResponse .= $responseData;
 								}
 								if($q['command']['subCMD'] == "sendDatasets"){
 									$attributeId = lowercase($pm['attribute']);
@@ -113,6 +115,8 @@ class AdminController extends Controller{
 											//При наличии нескольких датасетов и не только...
 
 											$datasets = JSON::Decode($pm['smartDS']);
+											$responseData = [];
+											$resData = [];
 											$jsonList = [];
 
 											for($i = 0; $i < count($datasets['file']); $i++){
@@ -124,52 +128,59 @@ class AdminController extends Controller{
 												else if(strrpos($query[0], 'application/vnd.ms-excel')){ $newDataFile = $i .".csv"; }
 
 												
-												if($hadoop->createWithData('/FiltersAttributes/data/'. $attributeId .'/'. $newDataFile, base64_decode($query[1]))){ $serviceResponse[][] = 'Send proccess success!'; }
+												if($hadoop->createWithData('/FiltersAttributes/data/'. $attributeId .'/'. $newDataFile, base64_decode($query[1]))){ $responseData[][] = 'Send proccess success!'; }
 												else{
-													$statusServiceCode = '502 Bad Gateway';
-													$serviceResponse[][] = 'Bad Data Storage gateway!';
+													$resData[] = 'Bad Data Storage gateway!';
 												}
 												
 												$jsonList[]['df'] = $newDataFile;
 											}
 											
-											$jsonResponse = ['response' => $jsonList];
+											$jsonResponse = Json::encode(['response' => $jsonList]);
 
-											if($pm['fieldID']){ $sendP = $hive->getIterator('UPDATE '. $attributeId .' SET '. $pm['field'] .'='. $jsonResponse .' WHERE id='. $pm['fieldID']); }
-											else{ $sendP = $hive->getIterator('INSERT INTO '. $attributeId .' ('. $pm['field'] .') VALUES('. $jsonResponse .')'); }
+											if($pm['fieldID']){ $sendP = (new \Ytake\PrestoClient\StatementClient($hive, 'UPDATE '. $attributeId .' SET '. $pm['field'] .'='. $jsonResponse .' WHERE id='. $pm['fieldID']))->execute(); }
+											else{ $sendP = (new \Ytake\PrestoClient\StatementClient($hive, 'INSERT INTO '. $attributeId .' ('. $pm['field'] .') VALUES('. $jsonResponse .')'))->execute(); }
 												
-											if($sendP){ $serviceResponse[] = 'Datasets in current attribute creating!'; }
+											if($sendP){ $responseData = ['Datasets in current attribute creating!', $resData]; }
 											else{
-												$statusServiceCode = '503 Service Unavailable';
-												$serviceResponse[] = 'DBA Service Error!';
+												$resCode = '503 Service Unavailable';
+												$responseData[] = 'DBA Service Error!';
 											}
+											
+											$statusServiceCode = $resCode;
+											$serviceResponse .= $responseData;
 									}
 									else{
 											    $dataset = $pm['dataset'];
 												$query = explode(',', $dataset);
+												
+												$responseData = '';
 												$jsonReport = [];
 												
 												if(strrpos($query[0], 'application/json')){ $newDataFile = "single.json"; }
 												else if(strrpos($query[0], 'application/xml')){ $newDataFile = "single.xml"; }
 												else if(strrpos($query[0], 'application/vnd.ms-excel')){ $newDataFile = "single.csv"; }
 												
-												if($hadoop->createWithData('/FiltersAttributes/data/'. $attributeId .'/'. $newDataFile, base64_decode($query[1]))){ $serviceResponse[] = 'Send proccess success!'; }
+												if($hadoop->createWithData('/FiltersAttributes/data/'. $attributeId .'/'. $newDataFile, base64_decode($query[1]))){ $responseData[] = 'Send proccess success!'; }
 												else{
-													$statusServiceCode = '502 Bad Gateway';
-													$serviceResponse[] = 'Bad Data Storage gateway!';
+													$resCode = '502 Bad Gateway';
+													$responseData[] = 'Bad Data Storage gateway!';
 												}
 
 												$jsonReport['ds'] = $newDataFile;
-												$jsonResponse = ['response' => $jsonReport];
+												$jsonResponse = Json::encode(['response' => $jsonReport]);
 												
-												if($pm['fieldID']){ $sendP = $hive->getIterator('UPDATE '. $attributeId .' SET '. $pm['field'] .'='. $jsonResponse .' WHERE id='. $pm['fieldID']); }
-												else{ $sendP = $hive->getIterator('INSERT INTO '. $attributeId .' ('. $pm['field'] .') VALUES('. $jsonResponse .')'); }
+												if($pm['fieldID']){ $sendP = (new \Ytake\PrestoClient\StatementClient($hive, 'UPDATE '. $attributeId .' SET '. $pm['field'] .'='. $jsonResponse .' WHERE id='. $pm['fieldID']))->execute(); }
+												else{ $sendP = (new \Ytake\PrestoClient\StatementClient($hive, 'INSERT INTO '. $attributeId .' ('. $pm['field'] .') VALUES('. $jsonResponse .')'))->execute(); }
 													
-												if($sendP){ $serviceResponse[] = 'Datasets in current attribute creating!'; }
+												if($sendP){ $responseData = 'Datasets in current attribute creating!'; }
 												else{
-													$statusServiceCode = '503 Service Unavailable';
-													$serviceResponse[] = 'DBA Service Error!';
+													$resCode = '503 Service Unavailable';
+													$responseData = 'DBA Service Error!';
 												}
+												
+												$statusServiceCode = $resCode;
+												$serviceResponse .= $responseData;
 									}
 								}
 								if($q['command']['subCMD'] == "sendPhotogallery"){
@@ -177,33 +188,42 @@ class AdminController extends Controller{
 											$attributeId = lowercase($pm['attribute']);
 											$formats = $q['format'];
 											$isPhotoCount = ($q['count'] > 4 || $q['count'] == 4) ? TRUE : FALSE;
-
+											
+											$responseData = '';
+											
 											switch($isPhotoCount){
 												case FALSE:
-													$statusServiceCode = 415;
-													$serviceResponse[] = 'Invalid number of photos (the correct minimum value is 4)';
+													$resCode = 415;
+													$responseData = 'Invalid number of photos (the correct minimum value is 4)';
 													break;
 												default:
 													$jsonReport = ['imageFormats' => $formats, 'imageCounts' => $q['count']];
 													$jsonResponse = ['response' => $jsonReport];
 													
-													if($pm['fieldID']){ $sendP = $hive->getIterator('UPDATE '. $attributeId .' SET '. $pm['field'] .'='. $jsonResponse .' WHERE id='. $pm['fieldID']); }
-													else{ $sendP = $hive->getIterator('INSERT INTO '. $attributeId .' ('. $pm['field'] .') VALUES('. $jsonResponse .')'); }
+													if($pm['fieldID']){ $sendP = (new \Ytake\PrestoClient\StatementClient($hive, 'UPDATE '. $attributeId .' SET '. $pm['field'] .'='. $jsonResponse .' WHERE id='. $pm['fieldID']))->execute(); }
+													else{ $sendP = (new \Ytake\PrestoClient\StatementClient($hive, 'INSERT INTO '. $attributeId .' ('. $pm['field'] .') VALUES('. $jsonResponse .')'))->execute(); }
 														
-													if($sendP){ $serviceResponse[] = 'New photogallery in current attribute table creating!'; }
+													if($sendP){ $responseData = 'New photogallery in current attribute table creating!'; }
 													else{
-														$statusServiceCode = '503 Service Unavailable';
-														$serviceResponse[] = 'DBA Service Error!';
+														$resCode = '503 Service Unavailable';
+														$responseData = 'DBA Service Error!';
 													}
 													break;
 											}
+											
+											$statusServiceCode = $resCode;
+											$serviceResponse .= $responseData;
 									}
 									else{
-											$statusServiceCode = '404 Not Found';
-											$serviceResponse[] = 'Query not found!';
+											$resCode = '404 Not Found';
+											$responseData[] = 'Query not found!';
+											
+											$statusServiceCode = $resCode;
+											$serviceResponse .= $responseData;
 									}
 								}
 								if($q['command']['subCMD'] == "sendParameters"){
+									$responseData = '';
 									switch($pm['dataParam']){
 											case "cost":
 												$costQuery = $q['costData'];
@@ -324,30 +344,35 @@ class AdminController extends Controller{
 												break;
 									}
 										
-									if($hive->getIterator($dataQuery)){ $serviceResponse[] = 'Parameters send success!'; }
+									if((new \Ytake\PrestoClient\StatementClient($hive, $dataQuery))->execute()){ $responseData = 'Parameters send success!'; }
 									else{
-											$statusServiceCode = '502 Bad Gateway';
-											$serviceResponse[] = 'DBA Service Error';
+											$resCode = '502 Bad Gateway';
+											$responseData = 'DBA Service Error';
 									}
+									
+									$statusServiceCode = $resCode;
+									$serviceResponse .= $responseData;
 								}
 								
 								if($q['command']['subCMD'] == "sendAttribute"){
 										$attributeId = lowercase($pm['attribute']);
+										$responseData = '';
 										$groupCreate = $pm['group'];
 										
 										$cache = Yii::$app->cacheRedis;
 										$key = 'readyAttribute';
+										
 										
 										if($groupCreate == 'meta'){
 											
 											 $send = $cache->lpush($key, $attributeId);
 											 
 											 if(!$send){
-												 $statusServiceCode = '503 Service Unavailable';
-												 $serviceResponse[] = 'Redis Service Error!';
+												 $resCode = '503 Service Unavailable';
+												 $responseData = 'Redis Service Error!';
 											 }
 											 else{
-												 $serviceResponse[] = 'Ready proccess success!';
+												 $responseData = 'Ready proccess success!';
 											 } 
 										}
 										else if($groupCreate == 'data'){
@@ -381,19 +406,24 @@ class AdminController extends Controller{
 														
 														$dirNew = 'user/ip-data/FiltersAttributes/'. $groupCreate[$i] . '/' . $attributeId;
 
-														if($hive->getIterator(concat($queryHeader,$queryBody,$queryFooter)) && $hadoop->mkdirs($dirNew)){ $serviceResponse[] = ['Creator proccess success!', 'New attribute table created!']; }
+														if((new \Ytake\PrestoClient\StatementClient($hive, concat($queryHeader,$queryBody,$queryFooter)))->execute() && $hadoop->mkdirs($dirNew)){ $responseData = ['Creator proccess success!', 'New attribute table created!']; }
 														else{
-															$statusServiceCode = '502 Bad Gateway';
-															$serviceResponse[] = 'Services gateway!';
+															$resCode = '502 Bad Gateway';
+															$responseData = 'Services gateway!';
 														}
 													}
 												}
 												
 										}
+										$statusServiceCode = $resCode;
+										$serviceResponse .= $responseData;
 								}
 								else{
-									$statusServiceCode = '404 Not Found';
-									$serviceResponse[] = "Not subcommand found!";
+									$resCode = '404 Not Found';
+									$responseData = "Not subcommand found!";
+									
+									$statusServiceCode = $resCode;
+									$serviceResponse .= $responseData;
 								}
 						}
 						else if($q['command'] == 1){
@@ -401,6 +431,7 @@ class AdminController extends Controller{
 								
 								if($q['command']['subCMD'] == "updateFilters"){
 									$attributeId = lowercase($pm['attribute']);
+									$responseData = '';
 										
 									switch($pm['newType']){
 												case "intField": case "precentableField": $dataType = 'int'; break;
@@ -413,42 +444,53 @@ class AdminController extends Controller{
 									$queryHeader = 'ALTER TABLE '. $attributeId;
 									$queryBody = '\tRENAME COLUMN '. $pm['field'] .' to '. $pm['newField'];
 										
-									$updateP = ($hive->getIterator(concat($queryHeader,$queryBody)) && $hive->getIterator(concat($queryHeader,'\tALTER COLUMN '. $pm['newField'] .' '. $dataType)));
+									$updateP = ((new \Ytake\PrestoClient\StatementClient($hive, concat($queryHeader,$queryBody)))->execute() && (new \Ytake\PrestoClient\StatementClient($hive, concat($queryHeader,'\tALTER COLUMN '. $pm['newField'] .' '. $dataType)))->execute());
 										
-									if($updateP){ $serviceResponse[] = 'The filter in current attribute table updated!'; }
+									if($updateP){ $responseData = 'The filter in current attribute table updated!'; }
 									else{
-											$statusServiceCode = '503 Service Unavailable';
-											$serviceResponse[] = 'DBA Service Error!';
+											$resCode = '503 Service Unavailable';
+											$responseData = 'DBA Service Error!';
 									}
+									
+									$statusServiceCode = $resCode;
+									$serviceResponse .= $responseData;
 								}
 								if($q['command']['subCMD'] == "updatePhotogallery"){
 									if($q['photogallery']){
 											$attributeId = lowercase($pm['attribute']);
 											$formats = $q['format'];
 											$isPhotoCount = ($q['count'] > 4 || $q['count'] == 4) ? TRUE : FALSE;
+											
+											$responseData = '';
 
 											switch($isPhotoCount){
 												case FALSE:
 													$statusServiceCode = 415;
-													$serviceResponse[] = 'Invalid number of photos (the correct minimum value is 4)';
+													$responseData = 'Invalid number of photos (the correct minimum value is 4)';
 													break;
 												default:
 													$jsonReport = ['imageFormats' => $formats, 'imageCounts' => $q['count']];
 													$jsonResponse = ['response' => $jsonReport];
 													
-													if($hive->getIterator('UPDATE '. $attributeId .' SET '. $pm['field'] .'='. $jsonResponse .' WHERE id='. $pm['fieldID'])){
-														$serviceResponse[] = 'Photogallery in current attribute updated!';
+													if((new \Ytake\PrestoClient\StatementClient($hive, 'UPDATE '. $attributeId .' SET '. $pm['field'] .'='. $jsonResponse .' WHERE id='. $pm['fieldID']))->execute()){
+														$responseData = 'Photogallery in current attribute updated!';
 													}
 													else{
-														$statusServiceCode = '503 Service Unavailable';
-														$serviceResponse[] = 'DBA Service Error!';
+														$resCode = '503 Service Unavailable';
+														$responseData = 'DBA Service Error!';
 													}
 													break;
 											}
+											
+											$statusServiceCode = $resCode;
+											$serviceResponse .= $responseData;
 									}
 									else{
-											$statusServiceCode = '404 Not Found';
-											$serviceResponse[] = 'Query not found!';
+											$resCode = '404 Not Found';
+											$responseData = 'Query not found!';
+											
+											$statusServiceCode = $resCode;
+											$serviceResponse .= $responseData;
 									}
 								}
 								if($q['command']['subCMD'] == "updateDatasets"){
@@ -458,14 +500,16 @@ class AdminController extends Controller{
 											//При наличии нескольких датасетов и не только...
 
 											$datasets = JSON::decode($pm['smartDS']);
+											$responseData = [];
+											$resData = [];
 											$jsonList = [];
 											
 											if($hadoop->delete('/FiltersAttributes/data/'. $attributeId .'/*')){
-												$serviceResponse[] = 'Delete proccess success!';
+												$resData[] = 'Delete proccess success!';
 											}
 											else{
-												$statusServiceCode = '502 Bad Gateway';
-												$serviceResponse[] = 'Bad Data Storage gateway!';
+												$resCode = '502 Bad Gateway';
+												$resData[] = 'Bad Data Storage gateway!';
 											}
 											
 											for($i = 0; $i < count($datasets['file']); $i++){
@@ -479,11 +523,10 @@ class AdminController extends Controller{
 												else if(strrpos($query[0], 'application/vnd.ms-excel')){ $newDataFile = $i .".csv"; }
 
 												if($hadoop->createWithData('/FiltersAttributes/data/'. $attributeId .'/'. $newDataFile, $query[0])){
-													$serviceResponse[] = 'Send proccess success!';
+													$resData[][] = 'Send proccess success!';
 												}
 												else{
-													$statusServiceCode = '502 Bad Gateway';
-													$serviceResponse[] = 'Bad Data Storage gateway!';
+													$resData[][] = 'Bad Data Storage gateway!';
 												}
 												
 												
@@ -491,28 +534,33 @@ class AdminController extends Controller{
 												
 											}
 											
-											$jsonResponse = ['response' => $jsonList];
+											$jsonResponse = Json::encode(['response' => $jsonList]);
 											
-											if($hive->getIterator('UPDATE '. $attributeId .' SET '. $pm['field'] .'='. $jsonResponse .' WHERE id='. $pm['fieldID'])){
-												$serviceResponse[] = 'Datasets in current attribute updated!';
+											if((new \Ytake\PrestoClient\StatementClient($hive, 'UPDATE '. $attributeId .' SET '. $pm['field'] .'='. $jsonResponse .' WHERE id='. $pm['fieldID']))->execute()){
+												$responseData = ['Datasets in current attribute updated!', $resData];
 											}
 											else{
-												$statusServiceCode = '503 Service Unavailable';
-												$serviceResponse[] = 'DBA Service Error!';
+												$resCode = '503 Service Unavailable';
+												$responseData[] = 'DBA Service Error!';
 											}
+											
+											$statusServiceCode = $resCode;
+											$serviceResponse .= $responseData;
 											
 										}
 										else{
 											    $dataset = $pm['dataset'];
+											    $responseData = [];
+												$resData = [];
 											    $jsonReport = [];
+												
 												$query = explode(',', $dataset);
 												
 												if($hadoop->delete('/FiltersAttributes/data/'. $attributeId .'/*')){
-													$serviceResponse[] = 'Delete proccess success!';
+													$resData[] = 'Delete proccess success!';
 												}
 												else{
-													$statusServiceCode = '502 Bad Gateway';
-													$serviceResponse[] = 'Bad Data Storage gateway!';
+													$resData[] = 'Bad Data Storage gateway!';
 												}
 												
 												if(strrpos($query[0], 'application/json')){ $newDataFile = "single.json"; }
@@ -524,28 +572,32 @@ class AdminController extends Controller{
 												fclose($file);
 
 												$jsonReport['ds'] = $newDataFile;
-												$jsonResponse = ['response' => $jsonReport];
+												$jsonResponse = Json::encode(['response' => $jsonReport]);
 
 												if($hadoop->create('/FiltersAttributes/data/'. $attributeId .'/'. $newDataFile)){
-													$serviceResponse[] = 'Send proccess success!';
+													$resData[][] = 'Send proccess success!';
 												}
 												else{
-													$statusServiceCode = '502 Bad Gateway';
-													$serviceResponse[] = 'Bad Data Storage gateway!';
+													$resData[][] = 'Bad Data Storage gateway!';
 												}
 												
-												if($hive->getIterator('UPDATE '. $attributeId .' SET '. $pm['field'] .'='. $jsonResponse .' WHERE id='. $pm['fieldID'])){
-													$serviceResponse[] = 'Datasets in current attribute updated!';
+												if((new \Ytake\PrestoClient\StatementClient($hive, 'UPDATE '. $attributeId .' SET '. $pm['field'] .'='. $jsonResponse .' WHERE id='. $pm['fieldID']))->execute()){
+													$responseData = ['Datasets in current attribute updated!', $resData];
 												}
 												else{
-													$statusServiceCode = '503 Service Unavailable';
-													$serviceResponse[] = 'DBA Service Error!';
+													$resCode = '503 Service Unavailable';
+													$responseData[] = 'DBA Service Error!';
 												}
+												
+												$statusServiceCode = $resCode;
+												$serviceResponse .= $responseData;
 
 										}
 								}
 								if($q['command']['subCMD'] == "updateParameters"){
 									$attributeId = lowercase($pm['attribute']);
+									
+									$responseData = '';
 										
 									switch($pm['dataParam']){
 											case "cost":
@@ -662,96 +714,125 @@ class AdminController extends Controller{
 												break;
 									}
 										
-									if($hive->getIterator($dataQuery)){ $serviceResponse[] = 'Parameters update success'; }
+									if((new \Ytake\PrestoClient\StatementClient($hive, $dataQuery))->execute()){ $responseData[] = 'Parameters update success'; }
 									else{
-										$statusServiceCode = '502 Bad Gateway';
-										$serviceResponse[] = 'DBA Service Error';
+										$resCode = '502 Bad Gateway';
+										$responseData = 'DBA Service Error';
 									}
+									
+									$statusServiceCode = $resCode;
+									$serviceResponse .= $responseData;
 								}
 								
 								if($q['command']['subCMD'] == "updateAttribute"){
 									$attributeId = lowercase($pm['attribute']);
 									$attributeNewId = lowercase($pm['newAttribute']);
 									$groupCreate = $pm['group'];
+									
+									$responseData = '';
 
 									$dir = 'user/ip-data/FiltersAttributes/'. $groupCreate[$i] . '/' . $attributeId;
 									$dirUpdate = 'user/ip-data/FiltersAttributes/'. $groupCreate[$i] . '/' . $attributeNewId;
 											
-									if($hadoop->rename($dir,$dirUpdate)){ $serviceResponse[] = 'Update proccess success!'; }
+									if($hadoop->rename($dir,$dirUpdate)){ $responseData = 'Update proccess success!'; }
 									else{
-										$statusServiceCode = '502 Bad Gateway';
-										$serviceResponse[] = 'Bad Data Storage gateway!';
+										$resCode = '502 Bad Gateway';
+										$responseData = 'Bad Data Storage gateway!';
 									}
 
 									if($groupCreate == 'data'){
-											$updateP = ($hive->getIterator('ALTER TABLE '. $attributeId .' RENAME TO '. $attributeNewId) && $hive->getIterator('ALTER TABLE '. $attributeNewId .' SET LOCATION "hdfs://73ddd75d66e6:9866/'. $dirUpdate .'"'));
+											$updateP = ((new \Ytake\PrestoClient\StatementClient($hive, 'ALTER TABLE '. $attributeId .' RENAME TO '. $attributeNewId))->execute() && (new \Ytake\PrestoClient\StatementClient($hive, 'ALTER TABLE '. $attributeNewId .' SET LOCATION "hdfs://73ddd75d66e6:9866/'. $dirUpdate .'"'))->execute());
 												
-											if($updateP){$serviceResponse[] = 'Current attribute table update!'; }
+											if($updateP){$responseData = 'Current attribute table update!'; }
 											else{
-												$statusServiceCode = '503 Service Unavailable';
-												$serviceResponse[] = 'DBA Service Error!';
+												$resCode = '503 Service Unavailable';
+												$responseData = 'DBA Service Error!';
 											}
 									}
+									
+									$statusServiceCode = $resCode;
+									$serviceResponse .= $responseData;
 								}
 								else{
-									$statusServiceCode = '404 Not Found';
-									$serviceResponse[] = "Not subcommand found!";
+									$resCode = '404 Not Found';
+									$responseData[] = "Not subcommand found!";
+									
+									
+									$statusServiceCode = $resCode;
+									$serviceResponse .= $responseData;
 								}
 						}
 						else if($q['command'] == 2){
 								//Команда удаления данных из текущего фрагмента
 								
 								if($q['command']['subCMD'] == "deleteFilters"){
-									$attributeId = lowercase($pm['attribute']);
+										$attributeId = lowercase($pm['attribute']);
 										$queryHeader = 'ALTER TABLE '. $attributeId .' (\n';
 										$queryBody = '\tDROP COLUMN '. $pm['field'];
 										
-										if($hive->getIterator(concat($queryHeader,$queryBody))){
-											$serviceResponse[] = 'The filter in current attribute table deleted!';
+										$responseData = '';
+										
+										if((new \Ytake\PrestoClient\StatementClient($hive, concat($queryHeader,$queryBody)))->execute()){
+											$responseData = 'The filter in current attribute table deleted!';
 										}
 										else{
-											$statusServiceCode = '503 Service Unavailable';
-											$serviceResponse[] = 'DBA Service Error!';
+											$resCode = '503 Service Unavailable';
+											$responseData = 'DBA Service Error!';
 										}
+										
+										$statusServiceCode = $resCode;
+										$serviceResponse .= $responseData;
 								}
 								if($q['command']['subCMD'] == "deleteDatasets"){
 									$attributeId = lowercase($pm['attribute']);
+									
+									$resData = '';
+									$responseData = [];
 										
 									if($hadoop->delete('/FiltersAttributes/data/'. $attributeId .'/*')){
-											$serviceResponse[] = 'Delete proccess success!';
+											$resData = 'Delete proccess success!';
 									}
 									else{
-											$statusServiceCode = '502 Bad Gateway';
-											$serviceResponse[] = 'Bad Data Storage gateway!';
+											$resData = 'Bad Data Storage gateway!';
 									}
 										
-									if($hive->getIterator('UPDATE '. $attributeId .' SET '. $pm['field'] .'=\' \' WHERE id='. $pm['fieldID'])){
-											$serviceResponse[] = 'Datasets in current attribute deleted!';
+									if((new \Ytake\PrestoClient\StatementClient($hive, 'UPDATE '. $attributeId .' SET '. $pm['field'] .'=\' \' WHERE id='. $pm['fieldID']))->execute()){
+											$responseData = ['Datasets in current attribute deleted!', $resData];
 									}
 									else{
-											$statusServiceCode = '502 Bad Gateway';
-											$serviceResponse[] = 'DBA Service Error';
+											$resCode = '502 Bad Gateway';
+											$responseData[] = 'DBA Service Error';
 									}
+									
+									$statusServiceCode = $resCode;
+									$serviceResponse .= $responseData;
 								}
 								if($q['command']['subCMD'] == "deletePhotogallery"){
 									if($q['photogallery']){
 											$attributeId = lowercase($pm['attribute']);
 											
-											if($hive->getIterator('UPDATE '. $attributeId .' SET '. $pm['field'] .'=\' \' WHERE id='. $pm['fieldID'])){
-												$serviceResponse[] = 'Photogallery in current attribute deleted!';
+											$responseData = '';
+											
+											if((new \Ytake\PrestoClient\StatementClient($hive, 'UPDATE '. $attributeId .' SET '. $pm['field'] .'=\' \' WHERE id='. $pm['fieldID']))->execute()){
+												$responseData = 'Photogallery in current attribute deleted!';
 											}
 											else{
-												$statusServiceCode = '502 Bad Gateway';
-												$serviceResponse[] = 'DBA Service Error';
+												$resCode = '502 Bad Gateway';
+												$responseData = 'DBA Service Error';
 											}
 									}
 									else{
-											$statusServiceCode = '404 Not Found';
-											$serviceResponse[] = 'Query not found!';
+											$resCode = '404 Not Found';
+											$responseData = 'Query not found!';
 									}
+									
+									$statusServiceCode = $resCode;
+									$serviceResponse .= $responseData;
 								}
 								if($q['command']['subCMD'] == "deleteParameters"){
 									$attributeId = lowercase($pm['attribute']);
+									$responseData = '';
+									
 									switch($pm['dataParam']){
 											case "cost":
 												$dataQuery = 'UPDATE '. $attributeId .' SET '. $pm['field'] .'=\' 0,01\' WHERE id='. $pm['fieldID'];
@@ -777,39 +858,50 @@ class AdminController extends Controller{
 												break;
 									}
 										
-									if($hive->getIterator($dataQuery)){ $serviceResponse[] = $successMessage; }
+									if((new \Ytake\PrestoClient\StatementClient($hive, $dataQuery))->execute()){ $responseData = $successMessage; }
 									else{
-											$statusServiceCode = '502 Bad Gateway';
-											$serviceResponse[] = 'DBA Service Error';
+											$resCode = '502 Bad Gateway';
+											$responseData = 'DBA Service Error';
 									}
+									
+									$statusServiceCode = $resCode;
+									$serviceResponse .= $responseData;
 								}
 								
 								if($q['command']['subCMD'] == "deleteAttribute"){
 									$attributeId = lowercase($pm['attribute']);
 										$groupCreate = $pm['group'];
+										
+										$responseData = '';
 
 					
 										$dir = 'user/ip-data/FiltersAttributes/'. $groupCreate[$i] . '/' . $attributeId;
 
 										if($groupCreate == 'data'){
-											if($hive->getIterator('DROP TABLE '. $attributeId)){
-												$serviceResponse[] = 'Current attribute table deleted!';
+											if((new \Ytake\PrestoClient\StatementClient($hive, 'DROP TABLE '. $attributeId))->execute()){
+												$responseData = 'Current attribute table deleted!';
 											}
 											else{
-												$statusServiceCode = '503 Service Unavailable';
-												$serviceResponse[] = 'DBA Service Error!';
+												$resCode = '503 Service Unavailable';
+												$responseData = 'DBA Service Error!';
 											}
 										}
 											
-										if($hadoop->delete($dir,'*')){ $serviceResponse[] = 'Delete proccess success!'; }
+										if($hadoop->delete($dir,'*')){ $responseData = 'Delete proccess success!'; }
 										else{
-											$statusServiceCode = '502 Bad Gateway';
-											$serviceResponse[] = 'Bad Data Storage gateway!';
+											$resCode = '502 Bad Gateway';
+											$responseData = 'Bad Data Storage gateway!';
 										}
+										
+										$statusServiceCode = $resCode;
+										$serviceResponse .= $responseData;
 								}
 								else{
-									$statusServiceCode = '404 Not Found';
-									$serviceResponse[] = "Not subcommand found!";
+									$resCode = '404 Not Found';
+									$responseData[] = "Not subcommand found!";
+									
+									$statusServiceCode = $resCode;
+									$serviceResponse .= $responseData;
 								}
 						}
 						else if($q['command'] == 3){
@@ -818,80 +910,92 @@ class AdminController extends Controller{
 								if($q['command']['subCMD'] == "showFilters"){
 									$currentAttribute = lowercase($pm['attribute']);
 									$query = 'SHOW COLUMNS FROM '. $currentAttribute;
+									$responseData = [];
 									$filters = [];
 
-									$result = $hive->getIterator($query);
+									$result = (new \Ytake\PrestoClient\StatementClient($hive, $query))->execute();
 
-									foreach( $result as $rowNum => $row ) { $filters[] = $row; }
+									foreach( $result->getResults() as $rowNum => $row ) { $filters[] = $row; }
 
-									$serviceResponse[] = $filters;
+									$responseData[] = $filters;
 										
 									if(!$result){
-											$statusServiceCode = '503 Service Unavailable';
-											$serviceResponse[] = 'DBA Service Error!';
+											$resCode = '503 Service Unavailable';
+											$responseData[] = 'DBA Service Error!';
 									}
+									$statusServiceCode = $resCode;
+									$serviceResponse .= $responseData;
 								}
 								if($q['command']['subCMD'] == "showDatasets"){
-									$attributeId = lowercase($pm['attribute']);
+										$attributeId = lowercase($pm['attribute']);
 										if($pm['isSmartDS']){
 											$queryFind = 'SELECT '. $pm['DFSField'] .' FROM '. $attributeId;
+											$responseData = [];
 											$datasets = [];
 
-											$result = $hive->getIterator($queryFind);
+											$result = (new \Ytake\PrestoClient\StatementClient($hive, $queryFind))->execute();
 
-											foreach( $result as $rowNum => $row ) { $datasets[] = $row['response']; }
+											foreach( $result->getResults() as $rowNum => $row ) { $datasets[] = $row['response']; }
 
-											$serviceResponse[] = $datasets;
+											$responseData[] = $datasets;
 
 											if(!$result){
-												$statusServiceCode = '503 Service Unavailable';
-												$serviceResponse[] = 'DBA Service Error!';
+												$resCode = '503 Service Unavailable';
+												$responseData[] = 'DBA Service Error!';
 											}
 										}
 										else{
 											$queryFind = 'SELECT '. $pm['datafield'] .' FROM '. $attributeId;
+											$responseData = [];
 											$ds = [];
 
 
-											$result = $hive->getIterator($queryFind);
+											$result = (new \Ytake\PrestoClient\StatementClient($hive, $queryFind))->execute();
 
-											foreach( $result as $rowNum => $row ) {
+											foreach( $result->getResults() as $rowNum => $row ) {
 												$ds[] = $row['response'];
 											}
 
-											$serviceResponse[] = $ds;
+											$responseData[] = $ds;
 
 											if(!$result){
-												$statusServiceCode = '503 Service Unavailable';
-												$serviceResponse[] = 'DBA Service Error!';
+												$resCode = '503 Service Unavailable';
+												$responseData[] = 'DBA Service Error!';
 											}
 											
 										}
+										$statusServiceCode = $resCode;
+										$serviceResponse .= $responseData;
 								}
 								if($q['command']['subCMD'] == "sendPhotogallery"){
+									$responseData = [];
 									if($q['photogallery']){
 											$attributeId = lowercase($pm['attribute']);
 											$queryFind = 'SELECT '. $pm['photofield'] .' FROM '. $attributeId;
 											$datasets = [];
 
-											$result = $hive->getIterator($queryFind);
+											$result = (new \Ytake\PrestoClient\StatementClient($hive, $queryFind))->execute();
 
-											foreach( $result as $rowNum => $row ) { $datasets[] = $row['response']; }
+											foreach( $result->getResults() as $rowNum => $row ) { $datasets[] = $row['response']; }
 
-											$serviceResponse[] = $datasets;
+											$responseData[] = $datasets;
 												
 											if(!$result){
-												$statusServiceCode = '503 Service Unavailable';
-												$serviceResponse[] = 'DBA Service Error!';
+												$resCode = '503 Service Unavailable';
+												$responseData[] = 'DBA Service Error!';
 											}
 									}
 									else{
-											$statusServiceCode = '404 Not Found';
-											$serviceResponse[] = 'Query not found!';
+											$resCode = '404 Not Found';
+											$responseData[] = 'Query not found!';
 									}
+									
+									$statusServiceCode = $resCode;
+									$serviceResponse .= $responseData;
 								}
 								if($q['command']['subCMD'] == "sendParameters"){
 									$attributeId = lowercase($pm['attribute']);
+									$responseData = [];
 									$tables = [];
 									switch($pm['dataParam']){
 											case "cost": $dataQuery = 'SELECT '. $pm['costQuery'] .' FROM '. $attributeId; break;
@@ -902,77 +1006,100 @@ class AdminController extends Controller{
 											default: $dataQuery = 'SELECT '. $pm['intQuery'] .' FROM '. $attributeId; break;
 									}
 
-									$result = $hive->getIterator($dataQuery);
+									$result = (new \Ytake\PrestoClient\StatementClient($hive, $dataQuery))->execute();
 
-									foreach( $result as $rowNum => $row ) { $tables[] = $row; }
+									foreach( $result->getResults() as $rowNum => $row ) { $tables[] = $row; }
 
-									$serviceResponse[] = $tables;
+									$responseData[] = $tables;
 
 									if(!$result){
-										$statusServiceCode = '502 Bad Gateway';
-										$serviceResponse[] = 'DBA Service Error!';	
+										$resCode = '502 Bad Gateway';
+										$responseData[] = 'DBA Service Error!';	
 									}
+									
+									$statusServiceCode = $resCode;
+									$serviceResponse .= $responseData;
 								}
 								if($q['command']['subCMD'] == "showTableColumns"){
 										$attributeId = lowercase($pm['attribute']);
 										$query = 'SELECT COUNT(*) as columncount FROM INFORMATION_SCHEMA.COLUMNS WHERE TABLE_NAME = \''. $attributeId .'\'';
+										$responseData = [];
 										$tables = [];
-										$result = $hive->getIterator($query);
+										$result = (new \Ytake\PrestoClient\StatementClient($hive, $query))->execute();
 
 										if($result){
-											foreach( $result as $rowNum => $row ) { $tables[] = $row; }
+											foreach( $result->getResults() as $rowNum => $row ) { $tables[] = $row; }
 										}
 										else{ $tables[] = [0]; }
 
-										$serviceResponse[] = $tables;
+										$responseData[] = $tables;
 										
 										if(!$result){
-											$statusServiceCode = '503 Service Unavailable';
-											$serviceResponse[] = 'DBA Service Error!';
+											$resCode = '503 Service Unavailable';
+											$responseData[] = 'DBA Service Error!';
 										}
+										
+										$statusServiceCode = $resCode;
+										$serviceResponse .= $responseData;
 								}
 								
 								
 								if($q['command']['subCMD'] == "showAttributes"){
 										$query = 'SHOW TABLES';
 										$tables = [];
-										$result = $hive->getIterator($query);
+										$responseData = [];
+										$result = (new \Ytake\PrestoClient\StatementClient($hive, $query))->execute();
 
-										foreach( $result as $rowNum => $row ) { $tables[] = $row; }
+										foreach( $result->getResults() as $rowNum => $row ) { $tables[] = $row; }
 
-										$serviceResponse[] = $tables;
+										$responseData[] = $tables;
 										
 										if(!$result){
-											$statusServiceCode = '503 Service Unavailable';
-											$serviceResponse[] = 'DBA Service Error!';
+											$resCode = '503 Service Unavailable';
+											$responseData[] = 'DBA Service Error!';
 										}
+										
+										$statusServiceCode = $resCode;
+										$serviceResponse .= $responseData;
 								}
 								else{
-									$statusServiceCode = '404 Not Found';
-									$serviceResponse[] = "Not subcommand found!";
+									$resCode = '404 Not Found';
+									$responseData[] = "Not subcommand found!";
+									
+									$statusServiceCode = $resCode;
+									$serviceResponse .= $responseData;
 								}
 								
 						}
 						else{
-							$statusServiceCode = '404 Not Found';
-							$serviceResponse[] = "Not command found!";
+							$resCode = '404 Not Found';
+							$responseData = "Not command found!";
+							
+							$statusServiceCode = $resCode;
+							$serviceResponse .= $responseData;
 						}
 					}
 				}
 				else{
-					$statusServiceCode = '404 Not Found';
-					$serviceResponse[] = "Not query found!";
+					$resCode = '404 Not Found';
+					$responseData = "Not query found!";
+					
+					$statusServiceCode = $resCode;
+					$serviceResponse .= $responseData;
 				}
 		}
 		else{
-			$statusServiceCode = '404 Not Found';
-			$serviceResponse[] = "Not service found!";
+			$resCode = '404 Not Found';
+			$responseData = "Not service found!";
+			
+			$statusServiceCode = $resCode;
+			$serviceResponse .= $responseData;
 		}
 			
 		
 		header($_SERVER['SERVER_PROTOCOL'] ." ". $statusServiceCode);
 		\Yii::$app->response->format = \yii\web\Response::FORMAT_JSON;
-		return ["response" => $serviceResponse];
+		return ["response" => var_dump($serviceResponse)];
 		
 		
 	}

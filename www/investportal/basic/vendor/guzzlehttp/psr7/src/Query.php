@@ -1,7 +1,5 @@
 <?php
 
-declare(strict_types=1);
-
 namespace GuzzleHttp\Psr7;
 
 final class Query
@@ -16,8 +14,10 @@ final class Query
      *
      * @param string   $str         Query string to parse
      * @param int|bool $urlEncoding How the query string is encoded
+     *
+     * @return array
      */
-    public static function parse(string $str, $urlEncoding = true): array
+    public static function parse($str, $urlEncoding = true)
     {
         $result = [];
 
@@ -27,7 +27,7 @@ final class Query
 
         if ($urlEncoding === true) {
             $decoder = function ($value) {
-                return rawurldecode(str_replace('+', ' ', (string) $value));
+                return rawurldecode(str_replace('+', ' ', $value));
             };
         } elseif ($urlEncoding === PHP_QUERY_RFC3986) {
             $decoder = 'rawurldecode';
@@ -67,15 +67,17 @@ final class Query
      * @param int|false $encoding Set to false to not encode, PHP_QUERY_RFC3986
      *                            to encode using RFC3986, or PHP_QUERY_RFC1738
      *                            to encode using RFC1738.
+     *
+     * @return string
      */
-    public static function build(array $params, $encoding = PHP_QUERY_RFC3986): string
+    public static function build(array $params, $encoding = PHP_QUERY_RFC3986)
     {
         if (!$params) {
             return '';
         }
 
         if ($encoding === false) {
-            $encoder = function (string $str): string {
+            $encoder = function ($str) {
                 return $str;
             };
         } elseif ($encoding === PHP_QUERY_RFC3986) {
@@ -88,20 +90,18 @@ final class Query
 
         $qs = '';
         foreach ($params as $k => $v) {
-            $k = $encoder((string) $k);
+            $k = $encoder($k);
             if (!is_array($v)) {
                 $qs .= $k;
-                $v = is_bool($v) ? (int) $v : $v;
                 if ($v !== null) {
-                    $qs .= '=' . $encoder((string) $v);
+                    $qs .= '=' . $encoder($v);
                 }
                 $qs .= '&';
             } else {
                 foreach ($v as $vv) {
                     $qs .= $k;
-                    $vv = is_bool($vv) ? (int) $vv : $vv;
                     if ($vv !== null) {
-                        $qs .= '=' . $encoder((string) $vv);
+                        $qs .= '=' . $encoder($vv);
                     }
                     $qs .= '&';
                 }

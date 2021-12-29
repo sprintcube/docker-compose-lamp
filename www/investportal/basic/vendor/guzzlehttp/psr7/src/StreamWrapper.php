@@ -1,7 +1,5 @@
 <?php
 
-declare(strict_types=1);
-
 namespace GuzzleHttp\Psr7;
 
 use Psr\Http\Message\StreamInterface;
@@ -9,9 +7,9 @@ use Psr\Http\Message\StreamInterface;
 /**
  * Converts Guzzle streams into PHP stream resources.
  *
- * @see https://www.php.net/streamwrapper
+ * @final
  */
-final class StreamWrapper
+class StreamWrapper
 {
     /** @var resource */
     public $context;
@@ -44,11 +42,13 @@ final class StreamWrapper
                 . 'writable, or both.');
         }
 
-        return fopen('guzzle://stream', $mode, false, self::createStreamContext($stream));
+        return fopen('guzzle://stream', $mode, null, self::createStreamContext($stream));
     }
 
     /**
      * Creates a stream context that can be used to open a stream as a php stream resource.
+     *
+     * @param StreamInterface $stream
      *
      * @return resource
      */
@@ -62,14 +62,14 @@ final class StreamWrapper
     /**
      * Registers the stream wrapper if needed
      */
-    public static function register(): void
+    public static function register()
     {
         if (!in_array('guzzle', stream_get_wrappers())) {
             stream_wrapper_register('guzzle', __CLASS__);
         }
     }
 
-    public function stream_open(string $path, string $mode, int $options, string &$opened_path = null): bool
+    public function stream_open($path, $mode, $options, &$opened_path)
     {
         $options = stream_context_get_options($this->context);
 
@@ -83,48 +83,41 @@ final class StreamWrapper
         return true;
     }
 
-    public function stream_read(int $count): string
+    public function stream_read($count)
     {
         return $this->stream->read($count);
     }
 
-    public function stream_write(string $data): int
+    public function stream_write($data)
     {
-        return $this->stream->write($data);
+        return (int) $this->stream->write($data);
     }
 
-    public function stream_tell(): int
+    public function stream_tell()
     {
         return $this->stream->tell();
     }
 
-    public function stream_eof(): bool
+    public function stream_eof()
     {
         return $this->stream->eof();
     }
 
-    public function stream_seek(int $offset, int $whence): bool
+    public function stream_seek($offset, $whence)
     {
         $this->stream->seek($offset, $whence);
 
         return true;
     }
 
-    /**
-     * @return resource|false
-     */
-    public function stream_cast(int $cast_as)
+    public function stream_cast($cast_as)
     {
         $stream = clone($this->stream);
-        $resource = $stream->detach();
 
-        return $resource ?? false;
+        return $stream->detach();
     }
 
-    /**
-     * @return array<int|string, int>
-     */
-    public function stream_stat(): array
+    public function stream_stat()
     {
         static $modeMap = [
             'r'  => 33060,
@@ -151,10 +144,7 @@ final class StreamWrapper
         ];
     }
 
-    /**
-     * @return array<int|string, int>
-     */
-    public function url_stat(string $path, int $flags): array
+    public function url_stat($path, $flags)
     {
         return [
             'dev'     => 0,

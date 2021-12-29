@@ -137,7 +137,7 @@ const addAttribute = (e,t) => {
 	let jsonQuery = $('.add-fields > #queryParameters').val();
 	var sendProccess = fetch('/admin/api/dataServices/filters', {
 		method: 'POST',
-		body: {'svcQuery': jsonQuery}
+		body: { 'svcQuery': jsonQuery}
 	});
 	
 	if(sendProccess.ok){ window.location.assign('/admin?svc=dataManagment&subSVC=attributes#list'); }
