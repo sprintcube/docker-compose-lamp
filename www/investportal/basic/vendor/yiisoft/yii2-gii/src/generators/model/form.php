@@ -11,6 +11,7 @@ echo $form->field($generator, 'db');
 echo $form->field($generator, 'useTablePrefix')->checkbox();
 echo $form->field($generator, 'useSchemaName')->checkbox();
 echo $form->field($generator, 'tableName')->textInput([
+    'autocomplete' => 'off',
     'data' => [
         'table-prefix' => $generator->getTablePrefix(), 
         'action' => Url::to(['default/action', 'id' => 'model', 'name' => 'GenerateClassName'])

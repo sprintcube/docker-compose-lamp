@@ -64,7 +64,8 @@ class <?= $controllerClass ?> extends <?= StringHelper::basename($generator->bas
 
     /**
      * Lists all <?= $modelClass ?> models.
-     * @return mixed
+     *
+     * @return string
      */
     public function actionIndex()
     {
@@ -102,7 +103,7 @@ class <?= $controllerClass ?> extends <?= StringHelper::basename($generator->bas
     /**
      * Displays a single <?= $modelClass ?> model.
      * <?= implode("\n     * ", $actionParamComments) . "\n" ?>
-     * @return mixed
+     * @return string
      * @throws NotFoundHttpException if the model cannot be found
      */
     public function actionView(<?= $actionParams ?>)
@@ -115,7 +116,7 @@ class <?= $controllerClass ?> extends <?= StringHelper::basename($generator->bas
     /**
      * Creates a new <?= $modelClass ?> model.
      * If creation is successful, the browser will be redirected to the 'view' page.
-     * @return mixed
+     * @return string|\yii\web\Response
      */
     public function actionCreate()
     {
@@ -138,7 +139,7 @@ class <?= $controllerClass ?> extends <?= StringHelper::basename($generator->bas
      * Updates an existing <?= $modelClass ?> model.
      * If update is successful, the browser will be redirected to the 'view' page.
      * <?= implode("\n     * ", $actionParamComments) . "\n" ?>
-     * @return mixed
+     * @return string|\yii\web\Response
      * @throws NotFoundHttpException if the model cannot be found
      */
     public function actionUpdate(<?= $actionParams ?>)
@@ -158,7 +159,7 @@ class <?= $controllerClass ?> extends <?= StringHelper::basename($generator->bas
      * Deletes an existing <?= $modelClass ?> model.
      * If deletion is successful, the browser will be redirected to the 'index' page.
      * <?= implode("\n     * ", $actionParamComments) . "\n" ?>
-     * @return mixed
+     * @return \yii\web\Response
      * @throws NotFoundHttpException if the model cannot be found
      */
     public function actionDelete(<?= $actionParams ?>)
@@ -172,21 +173,17 @@ class <?= $controllerClass ?> extends <?= StringHelper::basename($generator->bas
      * Finds the <?= $modelClass ?> model based on its primary key value.
      * If the model is not found, a 404 HTTP exception will be thrown.
      * <?= implode("\n     * ", $actionParamComments) . "\n" ?>
-     * @return <?=                   $modelClass ?> the loaded model
+     * @return <?= $modelClass ?> the loaded model
      * @throws NotFoundHttpException if the model cannot be found
      */
     protected function findModel(<?= $actionParams ?>)
     {
 <?php
-if (count($pks) === 1) {
-    $condition = '$id';
-} else {
-    $condition = [];
-    foreach ($pks as $pk) {
-        $condition[] = "'$pk' => \$$pk";
-    }
-    $condition = '[' . implode(', ', $condition) . ']';
+$condition = [];
+foreach ($pks as $pk) {
+    $condition[] = "'$pk' => \$$pk";
 }
+$condition = '[' . implode(', ', $condition) . ']';
 ?>
         if (($model = <?= $modelClass ?>::findOne(<?= $condition ?>)) !== null) {
             return $model;

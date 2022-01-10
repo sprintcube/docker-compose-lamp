@@ -1,25 +1,24 @@
 const showCurrentTableColumnsCount = (table) => {
 	let countContent,
 		qpm = {
-				command : 3,
-				command : {
-						subCMD: 'showTableColumns'
-				},
 				parameters: {
 						attribute: table
 				}
 		};
+		
+	 var fd = new FormData();
+	 fd.append('svcQuery', JSON.stringify(qpm));
 	  
 	 const requestOptions = {
         method: 'POST',
-        body: {'svcQuery': JSON.stringify(qpm)}
+        body: fd
 	 };
 	  
-	 var r = fetch('/admin/api/dataServices/filters', requestOptions);
+	 var r = fetch('/admin/api/dataServices/filters/TableColumns/show', requestOptions);
 	 
 	 if(r.ok()){
 		let res = r.json(),
-			count = res.response[0].columncount;
+			count = res[0].columncount;
 			
 		if(count === 0){ countContent = <footer>Not filters</footer>; }
 		if(count === 1){ countContent = <footer>{count} filter</footer>; }
@@ -33,7 +32,7 @@ const showCurrentTableColumnsCount = (table) => {
 class Add extends React.Component{
   JQueryCall(){
 	  	$('#add-attribute > button').click(addAttribute);
-		$('#add-attribute > div input').change(formRealTime);
+		$('#add-attribute > div input').on('input', formRealTime);
   }
   componentDidMount(){ this.JQueryCall(); }
   render(){
@@ -52,47 +51,42 @@ class Add extends React.Component{
   }
 }
 class List extends React.Component{
-  constructor(){
-	  super();
+  constructor(props){
+	  super(props);
 	  this.state = {
 		  listSheet: null
 	  };
   }
   JQueryCall(){ $('#attributes-list > .list-cont').click(redirectToAttribute); }
   componentDidMount(){
-	  let qpm = {
-		  command: 3,
-		  command: {
-			subCMD: 'showTables'
-		  }
-	  };
 	  
 	  const requestOptions = {
-        method: 'POST',
-        body: {'svcQuery': JSON.stringify(qpm)}
+        method: 'GET'
 	  };
 	  
-	  fetch('/admin/api/dataServices/filters', requestOptions)
+	  fetch('/admin/api/dataServices/filters/Attributes/show', requestOptions)
         .then(response => response.json())
-        .then(data => this.setState({ listSheet: data }));
+        .then(data => this.setState({ listSheet: data }))
+        .catch(error => {
+			alert('Response error!');
+			console.log(error);
+		});
         
       this.JQueryCall();
   }
   render(){
-	  
-	let responseList = this.state.listSheet.response;
-	const renderData = responseList.map(r => {
-		return (
-				<div className="list-cont">
-					<header>{ r.Tables_in_Investportal }</header>
-					{ showCurrentTableColumnsCount(r.Tables_in_Investportal) }
-				</div>
-		);
-	});
-	
     return (
       <React.Fragment>
-        <section id="attributes-list">{renderData}</section>
+        <section id="attributes-list">{
+			this.state.listSheet.map(r => {
+				return (
+					<div className="list-cont">
+						<header>{ r.Tables_in_Investportal }</header>
+						{ showCurrentTableColumnsCount(r.Tables_in_Investportal) }
+					</div>
+				)
+			})
+		}</section>
       </React.Fragment>
     );
   }
@@ -134,14 +128,21 @@ const jsonQueryConstructor = (query,pm) => {
 }
 
 const addAttribute = (e,t) => {
-	let jsonQuery = $('.add-fields > #queryParameters').val();
-	var sendProccess = fetch('/admin/api/dataServices/filters', {
-		method: 'POST',
-		body: { 'svcQuery': jsonQuery}
-	});
+	let jsonQuery = $('#add-attribute > #queryParameters').val();
 	
-	if(sendProccess.ok){ window.location.assign('/admin?svc=dataManagment&subSVC=attributes#list'); }
-	else{ alert('Send error'); }
+	var fd = new FormData();
+	fd.append('svcQuery', jsonQuery);
+	
+	
+	fetch('/admin/api/dataServices/filters/Attribute/send', {
+		method: 'POST',
+		body: fd
+	}).then(response => {
+		if(response.status != 503){ window.location.assign('/admin?svc=dataManagment&subSVC=attributes#list'); }
+		else{ alert('Response error!'); }
+	}).catch(error => {
+		alert('Response error!');
+	});
 }
 
 const formRealTime = (e,t) => {
@@ -149,13 +150,9 @@ const formRealTime = (e,t) => {
 	let q = {},
 		r = "";
 		
-	var currentValue = $(this).val();
+	var currentValue = $('#add-attribute > div input#theme').val();
 	
 	q = {
-		command: 0,
-		command: {
-			subCMD: "sendAttribute"
-		},
 		parameters: {
 			attribute: currentValue,
 			group: 'meta'
@@ -166,9 +163,7 @@ const formRealTime = (e,t) => {
 		
 	
 	
-	jsonQueryConstructor('.add-fields > #queryParameters', r);
-	
-	e.preventDefault();
+	jsonQueryConstructor('#add-attribute > #queryParameters', r);
 }
 
 const redirectToAttribute = (e,t) => {

@@ -1,6 +1,12 @@
 Yii Framework 2 swiftmailer extension Change Log
 ================================================
 
+2.1.3 December 30, 2021
+-----------------------
+
+- Enh #91: Clone signers when cloning `Message`, emit warning when `opendkim` is used (WinterSilence)
+
+
 2.1.2 September 24, 2018
 ------------------------
 

@@ -15,9 +15,8 @@ use yii\helpers\Html;
 /**
  * CodeFile represents a code file to be generated.
  *
- * @property-read string $relativePath The code file path relative to the application base path. This property
- * is read-only.
- * @property-read string $type The code file extension (e.g. php, txt). This property is read-only.
+ * @property-read string $relativePath The code file path relative to the application base path.
+ * @property-read string $type The code file extension (e.g. php, txt).
  *
  * @author Qiang Xue <qiang.xue@gmail.com>
  * @since 2.0

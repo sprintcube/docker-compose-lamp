@@ -17,15 +17,16 @@ $config = [
         ],
         'redis' => [
             'class' => 'yii\redis\Connection',
-            'hostname' => 'localhost',
-            'port' => 6379,
-            'database' => 0,
+            'hostname' => 'redis-11321.c53.west-us.azure.cloud.redislabs.com',
+            'port' => 11321,
+            'password' => '7t!tLVjC',
+            'database' => 0
         ],
         'sessionRedis' => [
-			'class' => 'yii\redis\Session',
+			'class' => 'yii\redis\Session'
 		],
 		'cacheRedis' => [
-			'class' => 'yii\redis\Cache',
+			'class' => 'yii\redis\Cache'
 		],
         'imageCreator' => [
 			'class' => 'app\components\ImageCreator'
@@ -41,7 +42,10 @@ $config = [
 				'accounts/accept/<service:\w+>' => '/site/service-code-center',
 				'admin' => 'admin/index',
 				'admin/auth' => 'admin/auth',
-				'admin/api/<svc:\w+>/<subSVC:\w+>' => '/admin/admin-service',
+				'admin/api/dataServices/filters/<svc:\w+>/send' => '/admin/admin-data-filters-send-service',
+				'admin/api/dataServices/filters/<svc:\w+>/update' => '/admin/admin-data-filters-update-service',
+				'admin/api/dataServices/filters/<svc:\w+>/delete' => '/admin/admin-data-filters-delete-service',
+				'admin/api/dataServices/filters/<svc:\w+>/show' => '/admin/admin-data-filters-res-service',
 				'news' => 'news/index',
 				'news/<contentId:\d+>' => 'news/view',
 				'passport' => 'passport/service',

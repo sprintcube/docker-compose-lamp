@@ -24,14 +24,14 @@ use yii\web\View;
  *
  * - [[getName()]]: returns the name of the generator
  * - [[getDescription()]]: returns the detailed description of the generator
+ * - [[requiredTemplates()]] returns the required template files
  * - [[generate()]]: generates the code based on the current user input and the specified code template files.
  *   This is the place where main code generation code resides.
  *
- * @property-read string $description The detailed description of the generator. This property is read-only.
- * @property-read string $stickyDataFile The file path that stores the sticky attribute values. This property
- * is read-only.
- * @property-read string $templatePath The root path of the template files that are currently being used. This
- * property is read-only.
+ * @property-read string $name The name of the generator.
+ * @property-read string $description The detailed description of the generator.
+ * @property-read string $stickyDataFile The file path that stores the sticky attribute values.
+ * @property-read string $templatePath The root path of the template files that are currently being used.
  *
  * @author Qiang Xue <qiang.xue@gmail.com>
  * @since 2.0
@@ -39,8 +39,8 @@ use yii\web\View;
 abstract class Generator extends Model
 {
     /**
-     * @var array a list of available code templates. The array keys are the template names,
-     * and the array values are the corresponding template paths or path aliases.
+     * @var array[] a list of available code templates. The array keys are the template names,
+     * the array values are the corresponding template paths or path aliases.
      */
     public $templates = [];
     /**
@@ -49,31 +49,33 @@ abstract class Generator extends Model
      */
     public $template = 'default';
     /**
-     * @var bool whether the strings will be generated using `Yii::t()` or normal strings.
+     * @var bool whether the strings will be generated using `Yii::t()` or PHP strings.
      */
     public $enableI18N = false;
     /**
-     * @var string the message category used by `Yii::t()` when `$enableI18N` is `true`.
-     * Defaults to `app`.
+     * @var string the message category used by `Yii::t()` when `$enableI18N` is `true`, defaults to `app`.
      */
     public $messageCategory = 'app';
 
 
     /**
-     * @return string name of the code generator
+     * Returns the name of the code generator.
+     *
+     * @return string
      */
     abstract public function getName();
+
     /**
      * Generates the code based on the current user input and the specified code template files.
-     * This is the main method that child classes should implement.
-     * Please refer to [[\yii\gii\generators\controller\Generator::generate()]] as an example
-     * on how to implement this method.
+     * Please refer to [[\yii\gii\generators\controller\Generator::generate()]] as an example on
+     * how to implement this method.
+     *
      * @return CodeFile[] a list of code files to be created.
      */
     abstract public function generate();
 
     /**
-     * {@inheritdoc}
+     * @inheritdoc
      */
     public function init()
     {
@@ -87,11 +89,12 @@ abstract class Generator extends Model
     }
 
     /**
-     * {@inheritdoc}
+     * @inheritdoc
      */
     public function attributeLabels()
     {
         return [
+            'template' => 'Template/view group',
             'enableI18N' => 'Enable I18N',
             'messageCategory' => 'Message Category',
         ];
@@ -139,7 +142,7 @@ abstract class Generator extends Model
      * Returns the list of auto complete values.
      * The array keys are the attribute names, and the array values are the corresponding auto complete values.
      * Auto complete values can also be callable typed in order one want to make postponed data generation.
-     * @return array the list of auto complete values
+     * @return array[] the list of auto complete values
      */
     public function autoCompleteData()
     {
@@ -183,7 +186,9 @@ abstract class Generator extends Model
     }
 
     /**
-     * @return string the detailed description of the generator.
+     * Returns the detailed description of the generator.
+     *
+     * @return string
      */
     public function getDescription()
     {
@@ -196,7 +201,7 @@ abstract class Generator extends Model
      * Child classes should override this method like the following so that the parent
      * rules are included:
      *
-     * ~~~
+     * ~~~php
      * return array_merge(parent::rules(), [
      *     ...rules for the child class...
      * ]);
@@ -207,6 +212,8 @@ abstract class Generator extends Model
         return [
             [['template'], 'required', 'message' => 'A code template must be selected.'],
             [['template'], 'validateTemplate'],
+            [['enableI18N'], 'boolean'],
+            [['messageCategory'], 'string'],
         ];
     }
 
@@ -248,8 +255,9 @@ abstract class Generator extends Model
     }
 
     /**
-     * @return string the file path that stores the sticky attribute values.
-     * @internal
+     * Returns the file path that stores the sticky attribute values.
+     *
+     * @return string
      */
     public function getStickyDataFile()
     {
@@ -492,7 +500,7 @@ abstract class Generator extends Model
     }
 
     /**
-     * Generates a string depending on enableI18N property
+     * Generates a string depending on the `$enableI18N` property
      *
      * @param string $string the text be generated
      * @param array $placeholders the placeholders to use by `Yii::t()`

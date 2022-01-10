@@ -28,8 +28,8 @@ class BasicTab extends React.Component{
           <div>
             <span>Data Basic Services</span>
             <nav>
-              <a href="/admin?svc=dataManagment&subSVC=attributes#add">Add object attribute</a>
-              <a href="/admin?svc=dataManagment&subSVC=filters#add">Add object filter</a>
+              <a href="/admin?svc=dataManagment&subSVC=attributes#list">All attributes</a>
+              <a href="/admin?svc=dataManagment&subSVC=filters#list">All filters</a>
             </nav>
           </div>
           <div>

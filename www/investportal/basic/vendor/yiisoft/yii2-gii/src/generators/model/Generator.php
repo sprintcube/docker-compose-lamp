@@ -36,8 +36,17 @@ class Generator extends \yii\gii\Generator
 
     public $db = 'db';
     public $ns = 'app\models';
+    /**
+     * @var string
+     */
     public $tableName;
+    /**
+     * @var string
+     */
     public $modelClass;
+    /**
+     * @var string
+     */
     public $baseClass = 'yii\db\ActiveRecord';
     public $generateRelations = self::RELATIONS_ALL;
     public $generateJunctionRelationMode = self::JUNCTION_RELATION_VIA_TABLE;
@@ -49,12 +58,27 @@ class Generator extends \yii\gii\Generator
     public $useSchemaName = true;
     public $generateQuery = false;
     public $queryNs = 'app\models';
+    /**
+     * @var string
+     */
     public $queryClass;
+    /**
+     * @var string
+     */
     public $queryBaseClass = 'yii\db\ActiveQuery';
+
+    /**
+     * @var string[]|null
+     */
+    protected $tableNames;
+    /**
+     * @var string[]
+     */
+    protected $classNames = [];
 
 
     /**
-     * {@inheritdoc}
+     * @inheritdoc
      */
     public function getName()
     {
@@ -62,7 +86,7 @@ class Generator extends \yii\gii\Generator
     }
 
     /**
-     * {@inheritdoc}
+     * @inheritdoc
      */
     public function getDescription()
     {
@@ -70,14 +94,19 @@ class Generator extends \yii\gii\Generator
     }
 
     /**
-     * {@inheritdoc}
+     * @inheritdoc
      */
     public function rules()
     {
         return array_merge(parent::rules(), [
-            [['db', 'ns', 'tableName', 'modelClass', 'baseClass', 'queryNs', 'queryClass', 'queryBaseClass'], 'filter', 'filter' => 'trim'],
-            [['ns', 'queryNs'], 'filter', 'filter' => function ($value) { return trim($value, '\\'); }],
-
+            [['db', 'tableName', 'modelClass', 'baseClass', 'queryClass', 'queryBaseClass'], 'filter', 'filter' => 'trim'],
+            [
+                ['ns', 'queryNs'],
+                'filter',
+                'filter' => static function ($value) {
+                    return $value === null ? null : trim($value, ' \\');
+                }
+            ],
             [['db', 'ns', 'tableName', 'baseClass', 'queryNs', 'queryBaseClass'], 'required'],
             [['db', 'modelClass', 'queryClass'], 'match', 'pattern' => '/^\w+$/', 'message' => 'Only word characters are allowed.'],
             [['ns', 'baseClass', 'queryNs', 'queryBaseClass'], 'match', 'pattern' => '/^[\w\\\\]+$/', 'message' => 'Only word characters and backslashes are allowed.'],
@@ -90,14 +119,16 @@ class Generator extends \yii\gii\Generator
             [['queryBaseClass'], 'validateClass', 'params' => ['extends' => ActiveQuery::className()]],
             [['generateRelations'], 'in', 'range' => [self::RELATIONS_NONE, self::RELATIONS_ALL, self::RELATIONS_ALL_INVERSE]],
             [['generateJunctionRelationMode'], 'in', 'range' => [self::JUNCTION_RELATION_VIA_TABLE, self::JUNCTION_RELATION_VIA_MODEL]],
-            [['generateLabelsFromComments', 'useTablePrefix', 'useSchemaName', 'generateQuery', 'generateRelationsFromCurrentSchema'], 'boolean'],
-            [['enableI18N', 'standardizeCapitals', 'singularize'], 'boolean'],
+            [
+                ['generateLabelsFromComments', 'useTablePrefix', 'useSchemaName', 'generateQuery', 'generateRelationsFromCurrentSchema', 'enableI18N', 'standardizeCapitals', 'singularize'],
+                'boolean'
+            ],
             [['messageCategory'], 'validateMessageCategory', 'skipOnEmpty' => false],
         ]);
     }
 
     /**
-     * {@inheritdoc}
+     * @inheritdoc
      */
     public function attributeLabels()
     {
@@ -122,7 +153,7 @@ class Generator extends \yii\gii\Generator
     }
 
     /**
-     * {@inheritdoc}
+     * @inheritdoc
      */
     public function hints()
     {
@@ -171,7 +202,7 @@ class Generator extends \yii\gii\Generator
     }
 
     /**
-     * {@inheritdoc}
+     * @inheritdoc
      */
     public function autoCompleteData()
     {
@@ -188,20 +219,38 @@ class Generator extends \yii\gii\Generator
     }
 
     /**
-     * {@inheritdoc}
+     * @inheritdoc
      */
     public function requiredTemplates()
     {
-        // @todo make 'query.php' to be required before 2.1 release
-        return ['model.php'/*, 'query.php'*/];
+        $templates = ['model.php'];
+        if ($this->queryClass !== null) {
+            $templates[] = 'query.php';
+        }
+
+        return $templates;
     }
 
     /**
-     * {@inheritdoc}
+     * @inheritdoc
      */
     public function stickyAttributes()
     {
-        return array_merge(parent::stickyAttributes(), ['ns', 'db', 'baseClass', 'generateRelations', 'generateJunctionRelationMode', 'generateLabelsFromComments', 'queryNs', 'queryBaseClass', 'useTablePrefix', 'generateQuery']);
+        return array_merge(
+            parent::stickyAttributes(), 
+            [
+                'ns',
+                'db',
+                'baseClass',
+                'generateRelations',
+                'generateJunctionRelationMode',
+                'generateLabelsFromComments',
+                'queryNs',
+                'queryBaseClass',
+                'useTablePrefix',
+                'generateQuery',
+            ]
+        );
     }
 
     /**
@@ -214,15 +263,12 @@ class Generator extends \yii\gii\Generator
     public function getTablePrefix()
     {
         $db = $this->getDbConnection();
-        if ($db !== null) {
-            return $db->tablePrefix;
-        }
 
-        return '';
+        return $db === null ? '' : $db->tablePrefix;
     }
 
     /**
-     * {@inheritdoc}
+     * @inheritdoc
      */
     public function generate()
     {
@@ -230,9 +276,9 @@ class Generator extends \yii\gii\Generator
         $relations = $this->generateRelations();
         $db = $this->getDbConnection();
         foreach ($this->getTableNames() as $tableName) {
-            // model :
+            // model:
             $modelClassName = $this->generateClassName($tableName);
-            $queryClassName = ($this->generateQuery) ? $this->generateQueryClassName($modelClassName) : false;
+            $queryClassName = $this->generateQuery ? $this->generateQueryClassName($modelClassName) : false;
             $tableRelations = isset($relations[$tableName]) ? $relations[$tableName] : [];
             $tableSchema = $db->getTableSchema($tableName);
             $params = [
@@ -251,7 +297,7 @@ class Generator extends \yii\gii\Generator
                 $this->render('model.php', $params)
             );
 
-            // query :
+            // query:
             if ($queryClassName) {
                 $params['className'] = $queryClassName;
                 $params['modelClassName'] = $modelClassName;
@@ -483,10 +529,6 @@ class Generator extends \yii\gii\Generator
      */
     private function generateManyManyRelations($table, $fks, $relations)
     {
-        if (!in_array($this->generateJunctionRelationMode, [self::JUNCTION_RELATION_VIA_TABLE, self::JUNCTION_RELATION_VIA_MODEL], true)) {
-            throw new InvalidConfigException('Unknown generateViaRelationMode ' . $this->generateJunctionRelationMode);
-        }
-
         $db = $this->getDbConnection();
 
         foreach ($fks as $pair) {
@@ -735,7 +777,7 @@ class Generator extends \yii\gii\Generator
             // ignore
         }
         foreach ($uniqueKeys as $uniqueKey) {
-            if (count(array_diff(array_merge($uniqueKey, $fks), array_intersect($uniqueKey, $fks))) === 0) {
+            if (array_diff(array_merge($uniqueKey, $fks), array_intersect($uniqueKey, $fks)) === []) {
                 return false;
             }
         }
@@ -930,9 +972,6 @@ class Generator extends \yii\gii\Generator
         }
     }
 
-    protected $tableNames;
-    protected $classNames;
-
     /**
      * @return array the table names that match the pattern specified by [[tableName]].
      */
@@ -1069,7 +1108,9 @@ class Generator extends \yii\gii\Generator
     }
 
     /**
-     * @return Connection the DB connection as specified by [[db]].
+     * Returns the database connection as specified by [[db]].
+     *
+     * @return Connection|null database connection instance
      */
     protected function getDbConnection()
     {
@@ -1077,21 +1118,22 @@ class Generator extends \yii\gii\Generator
     }
 
     /**
+     * Returns the driver name of [[db]] connection.
+     *
      * @return string|null driver name of db connection.
-     * In case db is not instance of \yii\db\Connection null will be returned.
      * @since 2.0.6
      */
     protected function getDbDriverName()
     {
-        /** @var Connection $db */
         $db = $this->getDbConnection();
-        return $db instanceof \yii\db\Connection ? $db->driverName : null;
+
+        return $db instanceof Connection ? $db->driverName : null;
     }
 
     /**
      * Checks if any of the specified columns is auto incremental.
      * @param \yii\db\TableSchema $table the table schema
-     * @param array $columns columns to check for autoIncrement property
+     * @param string[] $columns columns to check for autoIncrement property
      * @return bool whether any of the specified columns is auto incremental.
      */
     protected function isColumnAutoIncremental($table, $columns)

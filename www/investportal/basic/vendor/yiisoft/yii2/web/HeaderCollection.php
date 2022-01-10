@@ -13,9 +13,8 @@ use yii\base\BaseObject;
 /**
  * HeaderCollection is used by [[Response]] to maintain the currently registered HTTP headers.
  *
- * @property-read int $count The number of headers in the collection. This property is read-only.
- * @property-read \ArrayIterator $iterator An iterator for traversing the headers in the collection. This
- * property is read-only.
+ * @property-read int $count The number of headers in the collection.
+ * @property-read \ArrayIterator $iterator An iterator for traversing the headers in the collection.
  *
  * @author Qiang Xue <qiang.xue@gmail.com>
  * @since 2.0
@@ -180,7 +179,7 @@ class HeaderCollection extends BaseObject implements \IteratorAggregate, \ArrayA
      */
     public function fromArray(array $array)
     {
-        $this->_headers = $array;
+        $this->_headers = array_change_key_case($array, CASE_LOWER);
     }
 
     /**

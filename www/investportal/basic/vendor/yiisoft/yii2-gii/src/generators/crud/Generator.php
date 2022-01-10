@@ -19,13 +19,12 @@ use yii\web\Controller;
 /**
  * Generates CRUD controller and views.
  *
- * @property-read array $columnNames Model column/attribute names. This property is read-only.
- * @property-read string $controllerID The controller ID (without the module ID prefix). This property is
- * read-only.
- * @property-read string $nameAttribute This property is read-only.
- * @property-read array $searchAttributes Searchable attributes. This property is read-only.
- * @property-read \yii\db\TableSchema|bool $tableSchema This property is read-only.
- * @property-read string $viewPath The controller view path. This property is read-only.
+ * @property-read array $columnNames Model column/attribute names.
+ * @property-read string $controllerID The controller ID (without the module ID prefix).
+ * @property-read string $nameAttribute
+ * @property-read array $searchAttributes Searchable attributes.
+ * @property-read \yii\db\TableSchema|bool $tableSchema
+ * @property-read string $viewPath The controller view path.
  *
  * @author Qiang Xue <qiang.xue@gmail.com>
  * @since 2.0

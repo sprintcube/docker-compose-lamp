@@ -12,7 +12,7 @@ For license information check the [LICENSE](LICENSE.md)-file.
 
 [![Latest Stable Version](https://poser.pugx.org/yiisoft/yii2-swiftmailer/v/stable.png)](https://packagist.org/packages/yiisoft/yii2-swiftmailer)
 [![Total Downloads](https://poser.pugx.org/yiisoft/yii2-swiftmailer/downloads.png)](https://packagist.org/packages/yiisoft/yii2-swiftmailer)
-[![Build Status](https://travis-ci.org/yiisoft/yii2-swiftmailer.svg?branch=master)](https://travis-ci.org/yiisoft/yii2-swiftmailer)
+[![Build Status](https://github.com/yiisoft/yii2-swiftmailer/workflows/build/badge.svg)](https://github.com/yiisoft/yii2-swiftmailer/actions)
 
 Installation
 ------------

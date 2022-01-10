@@ -14,8 +14,7 @@ use yii\gii\CodeFile;
 /**
  * This generator will generate an action view file based on the specified model class.
  *
- * @property-read array $modelAttributes List of safe attributes of [[modelClass]]. This property is
- * read-only.
+ * @property-read array $modelAttributes List of safe attributes of [[modelClass]].
  *
  * @author Qiang Xue <qiang.xue@gmail.com>
  * @since 2.0

@@ -6,10 +6,14 @@ use yii\helpers\StringHelper;
 /* @var $this yii\web\View */
 /* @var $generator yii\gii\generators\crud\Generator */
 
+$modelClass = StringHelper::basename($generator->modelClass);
+
 echo "<?php\n";
 ?>
 
 use yii\helpers\Html;
+use yii\helpers\Url;
+use yii\grid\ActionColumn;
 use <?= $generator->indexWidgetType === 'grid' ? "yii\\grid\\GridView" : "yii\\widgets\\ListView" ?>;
 <?= $generator->enablePjax ? 'use yii\widgets\Pjax;' : '' ?>
 
@@ -60,8 +64,12 @@ if (($tableSchema = $generator->getTableSchema()) === false) {
     }
 }
 ?>
-
-            ['class' => 'yii\grid\ActionColumn'],
+            [
+                'class' => ActionColumn::className(),
+                'urlCreator' => function ($action, <?= $modelClass ?> $model, $key, $index, $column) {
+                    return Url::toRoute([$action, <?= $generator->generateUrlParams() ?>]);
+                 }
+            ],
         ],
     ]); ?>
 <?php else: ?>

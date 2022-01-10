@@ -22,12 +22,11 @@ class ComposerStaticInitf81e259c461ce0a28ffe30774b8303bd
         '25072dd6e2470089de65ae7bf11d3109' => __DIR__ . '/..' . '/symfony/polyfill-php72/bootstrap.php',
         'f598d06aa772fa33d905e87be6398fb1' => __DIR__ . '/..' . '/symfony/polyfill-intl-idn/bootstrap.php',
         'e3b2795a8a512b6083af088fb53afe6c' => __DIR__ . '/..' . '/codeception/codeception/functions.php',
-        'c964ee0ededf28c96ebd9db5099ef910' => __DIR__ . '/..' . '/guzzlehttp/promises/src/functions_include.php',
         'def43f6c87e4f8dfd0c9e1b1bab14fe8' => __DIR__ . '/..' . '/symfony/polyfill-iconv/bootstrap.php',
-        '37a3dc5111fe8f707ab4c132ef1dbc62' => __DIR__ . '/..' . '/guzzlehttp/guzzle/src/functions_include.php',
+        'c964ee0ededf28c96ebd9db5099ef910' => __DIR__ . '/..' . '/guzzlehttp/promises/src/functions_include.php',
         '2c102faa651ef8ea5874edb585946bce' => __DIR__ . '/..' . '/swiftmailer/swiftmailer/lib/swift_required.php',
+        '37a3dc5111fe8f707ab4c132ef1dbc62' => __DIR__ . '/..' . '/guzzlehttp/guzzle/src/functions_include.php',
         '538ca81a9a966a6716601ecf48f4eaef' => __DIR__ . '/..' . '/opis/closure/functions.php',
-        'e39a8b23c42d4e1452234d762b03835a' => __DIR__ . '/..' . '/ramsey/uuid/src/functions.php',
         '180092cfc969a12e06f2132a203a3184' => __DIR__ . '/..' . '/codeception/verify/src/Codeception/function.php',
     );
 
@@ -60,10 +59,6 @@ class ComposerStaticInitf81e259c461ce0a28ffe30774b8303bd
         array (
             'cebe\\markdown\\' => 14,
         ),
-        'Y' => 
-        array (
-            'Ytake\\PrestoClient\\' => 19,
-        ),
         'W' => 
         array (
             'Webmozart\\Assert\\' => 17,
@@ -90,13 +85,8 @@ class ComposerStaticInitf81e259c461ce0a28ffe30774b8303bd
             'Symfony\\Component\\Console\\' => 26,
             'Symfony\\Component\\BrowserKit\\' => 29,
         ),
-        'R' => 
-        array (
-            'Ramsey\\Uuid\\' => 12,
-        ),
         'P' => 
         array (
-            'Psr\\Log\\' => 8,
             'Psr\\Http\\Message\\' => 17,
             'Psr\\EventDispatcher\\' => 20,
             'Psr\\Container\\' => 14,
@@ -114,7 +104,6 @@ class ComposerStaticInitf81e259c461ce0a28ffe30774b8303bd
         ),
         'F' => 
         array (
-            'Fig\\Http\\Message\\' => 17,
             'Faker\\' => 6,
         ),
         'E' => 
@@ -132,6 +121,7 @@ class ComposerStaticInitf81e259c461ce0a28ffe30774b8303bd
             'Codeception\\PHPUnit\\' => 20,
             'Codeception\\Extension\\' => 22,
             'Codeception\\' => 12,
+            'Clouding\\Presto\\' => 16,
         ),
     );
 
@@ -189,10 +179,6 @@ class ComposerStaticInitf81e259c461ce0a28ffe30774b8303bd
         'cebe\\markdown\\' => 
         array (
             0 => __DIR__ . '/..' . '/cebe/markdown',
-        ),
-        'Ytake\\PrestoClient\\' => 
-        array (
-            0 => __DIR__ . '/..' . '/ytake/php-presto-client/src',
         ),
         'Webmozart\\Assert\\' => 
         array (
@@ -274,14 +260,6 @@ class ComposerStaticInitf81e259c461ce0a28ffe30774b8303bd
         array (
             0 => __DIR__ . '/..' . '/symfony/browser-kit',
         ),
-        'Ramsey\\Uuid\\' => 
-        array (
-            0 => __DIR__ . '/..' . '/ramsey/uuid/src',
-        ),
-        'Psr\\Log\\' => 
-        array (
-            0 => __DIR__ . '/..' . '/psr/log/Psr/Log',
-        ),
         'Psr\\Http\\Message\\' => 
         array (
             0 => __DIR__ . '/..' . '/psr/http-message/src',
@@ -313,10 +291,6 @@ class ComposerStaticInitf81e259c461ce0a28ffe30774b8303bd
         'GuzzleHttp\\' => 
         array (
             0 => __DIR__ . '/..' . '/guzzlehttp/guzzle/src',
-        ),
-        'Fig\\Http\\Message\\' => 
-        array (
-            0 => __DIR__ . '/..' . '/fig/http-message-util/src',
         ),
         'Faker\\' => 
         array (
@@ -351,6 +325,10 @@ class ComposerStaticInitf81e259c461ce0a28ffe30774b8303bd
             0 => __DIR__ . '/..' . '/codeception/codeception/src/Codeception',
             1 => __DIR__ . '/..' . '/codeception/stub/src',
             2 => __DIR__ . '/..' . '/codeception/verify/src/Codeception',
+        ),
+        'Clouding\\Presto\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/clouding/presto-client-php/src',
         ),
     );
 

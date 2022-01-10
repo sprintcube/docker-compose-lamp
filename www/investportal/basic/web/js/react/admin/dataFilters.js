@@ -245,10 +245,6 @@ class Edit extends React.Component{
 			
 			query = [
 				{
-					command: 3,
-					command: {
-						subCMD: 'showParameters'
-					},
 					parameters: {
 						attribute: gets["attr"],
 						dataParam: "cost",
@@ -256,10 +252,6 @@ class Edit extends React.Component{
 					}
 				},
 				{
-					command: 3,
-					command: {
-						subCMD: 'showParameters'
-					},
 					parameters: {
 						attribute: gets["attr"],
 						dataParam: "int",
@@ -267,10 +259,6 @@ class Edit extends React.Component{
 					}
 				},
 				{
-					command: 3,
-					command: {
-						subCMD: 'showParameters'
-					},
 					parameters: {
 						attribute: gets["attr"],
 						dataParam: "text",
@@ -278,10 +266,6 @@ class Edit extends React.Component{
 					}
 				},
 				{
-					command: 3,
-					command: {
-						subCMD: 'showParameters'
-					},
 					parameters: {
 						attribute: gets["attr"],
 						dataParam: "precentable",
@@ -289,10 +273,6 @@ class Edit extends React.Component{
 					}
 				},
 				{
-					command: 3,
-					command: {
-						subCMD: 'showParameters'
-					},
 					parameters: {
 						attribute: gets["attr"],
 						dataParam: "selecting",
@@ -300,10 +280,6 @@ class Edit extends React.Component{
 					}
 				},
 				{
-					command: 3,
-					command: {
-						subCMD: 'showParameters'
-					},
 					parameters: {
 						attribute: gets["attr"],
 						dataParam: "smartDataset",
@@ -311,10 +287,6 @@ class Edit extends React.Component{
 					}
 				},
 				{
-					command: 3,
-					command: {
-						subCMD: 'showParameters'
-					},
 					parameters: {
 						attribute: gets["attr"],
 						dataParam: "photogallery",
@@ -1168,10 +1140,6 @@ const RenderAttributeFiltersList = (service, query) => {
 		response = ();
 	
 	let qpm = {
-		command: 3,
-		command: {
-			subCMD: 'showFilters'
-		},
 		parameters: {
 			attribute: query
 		}
@@ -1188,7 +1156,7 @@ const RenderAttributeFiltersList = (service, query) => {
 		let filters = ();
 		
 		fetch('/admin/api/dataServices/filters', requestOptions).then(response => response.json()).then(data => {
-			let list = data.response;
+			let list = data;
 			
 			if(list){
 				
@@ -1251,7 +1219,7 @@ const RenderAttributeFiltersList = (service, query) => {
 		let controls = ();
 		
 		fetch('/admin/api/dataServices/filters', requestOptions).then(response => response.json()).then(data => {
-			let buttons = data.response;
+			let buttons = data;
 			
 			if(buttons){
 				controls += (

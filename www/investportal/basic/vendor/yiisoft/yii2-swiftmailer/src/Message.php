@@ -20,15 +20,15 @@ use yii\mail\BaseMessage;
  *
  * @method Mailer getMailer() returns mailer instance.
  *
- * @property array $headers Headers in format: `[name => value]`. This property is write-only.
+ * @property-write array $headers Headers in format: `[name => value]`.
  * @property int $priority Priority value as integer in range: `1..5`, where 1 is the highest priority and 5
  * is the lowest.
  * @property string $readReceiptTo Receipt receive email addresses. Note that the type of this property
  * differs in getter and setter. See [[getReadReceiptTo()]] and [[setReadReceiptTo()]] for details.
  * @property string $returnPath The bounce email address.
- * @property array|callable|\Swift_Signer $signature Signature specification. See [[addSignature()]] for
- * details on how it should be specified. This property is write-only.
- * @property \Swift_Message $swiftMessage Swift message instance. This property is read-only.
+ * @property-write array|callable|\Swift_Signer $signature Signature specification. See [[addSignature()]] for
+ * details on how it should be specified.
+ * @property-read \Swift_Message $swiftMessage Swift message instance.
  *
  * @author Paul Klimov <klimov.paul@gmail.com>
  * @since 2.0
@@ -47,13 +47,16 @@ class Message extends BaseMessage
 
     /**
      * This method is called after the object is created by cloning an existing one.
-     * It ensures [[swiftMessage]] is also cloned.
+     * It ensures [[swiftMessage]] and [[signers]] is also cloned.
      * @since 2.0.7
      */
     public function __clone()
     {
-        if (is_object($this->_swiftMessage)) {
+        if ($this->_swiftMessage !== null) {
             $this->_swiftMessage = clone $this->_swiftMessage;
+        }
+        foreach ($this->signers as $key => $signer) {
+            $this->signers[$key] = clone $signer;
         }
     }
 
@@ -62,7 +65,7 @@ class Message extends BaseMessage
      */
     public function getSwiftMessage()
     {
-        if (!is_object($this->_swiftMessage)) {
+        if ($this->_swiftMessage === null) {
             $this->_swiftMessage = $this->createSwiftMessage();
         }
 
@@ -381,8 +384,9 @@ class Message extends BaseMessage
     }
 
     /**
-     * Creates signer from its configuration
-     * @param array $signature signature configuration
+     * Creates signer from it's configuration.
+     * @param array $signature signature configuration:
+     * `[type: string, key: string|null, file: string|null, domain: string|null, selector: string|null]`
      * @return \Swift_Signer signer instance
      * @throws InvalidConfigException on invalid configuration provided
      * @since 2.0.6
@@ -392,32 +396,27 @@ class Message extends BaseMessage
         if (!isset($signature['type'])) {
             throw new InvalidConfigException('Signature configuration should contain "type" key');
         }
-        switch (strtolower($signature['type'])) {
-            case 'dkim' :
-                $domain = ArrayHelper::getValue($signature, 'domain', null);
-                $selector = ArrayHelper::getValue($signature, 'selector', null);
-                if (isset($signature['key'])) {
-                    $privateKey = $signature['key'];
-                } elseif (isset($signature['file'])) {
-                    $privateKey = file_get_contents(Yii::getAlias($signature['file']));
-                } else {
-                    throw new InvalidConfigException("Either 'key' or 'file' signature option should be specified");
-                }
-                return new \Swift_Signers_DKIMSigner($privateKey, $domain, $selector);
-            case 'opendkim' :
-                $domain = ArrayHelper::getValue($signature, 'domain', null);
-                $selector = ArrayHelper::getValue($signature, 'selector', null);
-                if (isset($signature['key'])) {
-                    $privateKey = $signature['key'];
-                } elseif (isset($signature['file'])) {
-                    $privateKey = file_get_contents(Yii::getAlias($signature['file']));
-                } else {
-                    throw new InvalidConfigException("Either 'key' or 'file' signature option should be specified");
-                }
-                return new \Swift_Signers_OpenDKIMSigner($privateKey, $domain, $selector);
-            default:
-                throw new InvalidConfigException("Unrecognized signature type '{$signature['type']}'");
+        $signature['type'] = strtolower($signature['type']);
+        if (!in_array($signature['type'], ['dkim', 'opendkim'], true)) {
+            throw new InvalidConfigException("Unrecognized signature type '{$signature['type']}'");
         }
+
+        if (isset($signature['key'])) {
+            $privateKey = $signature['key'];
+        } elseif (isset($signature['file'])) {
+            $privateKey = file_get_contents(Yii::getAlias($signature['file']));
+        } else {
+            throw new InvalidConfigException("Either 'key' or 'file' signature option should be specified");
+        }
+        $domain = ArrayHelper::getValue($signature, 'domain');
+        $selector = ArrayHelper::getValue($signature, 'selector');
+
+        if ($signature['type'] === 'opendkim') {
+            Yii::warning(__METHOD__ . '(): signature type "opendkim" is deprecated, use "dkim" instead.');
+            return new \Swift_Signers_OpenDKIMSigner($privateKey, $domain, $selector);
+        }
+
+        return new \Swift_Signers_DKIMSigner($privateKey, $domain, $selector);
     }
 
     /**

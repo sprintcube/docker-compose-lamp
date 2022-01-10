@@ -25,7 +25,7 @@ use yii\helpers\Url;
 		<div class="admin-portal-page">
 		  <header>
 			<nav>
-			  <a href="#">Dashboard</a>
+			  <a href="/admin">Dashboard</a>
 			  <a href="#">News and Events</a>
 			  <a href="#">Data Services and Filters</a>
 			  <a href="#">Users</a>
