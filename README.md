@@ -87,7 +87,7 @@ This will be used to store Apache logs. The default value for this is `./logs/ap
 ---
 
 > For Apple Silicon Users: 
-Please select Mariadb as Database. Oracle doesn't buid their SQL Containers for the arm Architecure
+Please select Mariadb as Database. Oracle doesn't build their SQL Containers for the arm Architecure
 
 _**DATABASE**_
 Define which MySQL or MariaDB Version you would like to use. 
