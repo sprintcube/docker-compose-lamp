@@ -21,7 +21,7 @@ As of now, we have several different PHP versions. Use appropriate php version a
 * 7.4.x
 * 8.0.x
 
-> Please note that we simplified the project structure from several branches for each php version, to one centralized master branch. Please let us know if you encouter any problems. 
+ 
 ##  Installation
  
 * Clone this repository on your local computer
@@ -37,7 +37,7 @@ docker-compose up -d
 // visit localhost
 ```
 
-Your LAMP stack is now ready!! You can access it via `http://localhost`.
+Your LAMP stack is now ready!! You can access it via `http://localhost`. 
 
 ##  Configuration and Usage
 
@@ -85,6 +85,9 @@ This will be used to store Apache logs. The default value for this is `./logs/ap
 ---
 #### Database
 ---
+
+> For Apple Silicon Users: 
+Please select Mariadb as Database. Oracle doesn't buid their SQL Containers for the arm Architecure
 
 _**DATABASE**_
 Define which MySQL or MariaDB Version you would like to use. 
