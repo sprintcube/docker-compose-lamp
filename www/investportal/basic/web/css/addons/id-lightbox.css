@@ -1,0 +1,43 @@
+#id-lightbox{
+  width: 100vw;
+  height: 100vh;
+  background-color: white;
+  position: fixed;
+  left: 0;
+  top: 0;
+}
+#id-lightbox > header, #id-lightbox > main, #id-lightbox > footer{
+  display: block;
+  margin-left: 24vw;
+  padding-top: 11vh;
+  padding-bottom: 5vh;
+  width: 50vw;
+}
+#id-lightbox > header{
+  font-size: 160%;
+  font-weight: bolder;
+  color: #0079bf;
+}
+#id-lightbox > main{
+  font-size: 120%;
+  padding-bottom: 4%;
+}
+#id-lightbox > main div:nth-child(1){
+  cursor: text;
+  display: block;
+  padding-bottom: 8%;
+}
+#id-lightbox > main div:nth-child(1) img{
+  width: 3vw;
+}
+#id-lightbox > main div:nth-child(2){
+  display: block;
+  text-align: center;
+}
+#id-lightbox > footer{
+  font-size: 80%;
+  text-align: center;
+  color: #0079bf;
+  position: absolute;
+  bottom: 0;
+}

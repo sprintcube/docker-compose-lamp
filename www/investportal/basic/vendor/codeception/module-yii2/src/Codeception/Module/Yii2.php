@@ -423,7 +423,7 @@ class Yii2 extends Framework implements ActiveRecord, MultiSession, PartedModule
      * Requires the `user` component to be enabled and configured.
      *
      * @param $user
-     * @throws ModuleException
+     * @throws \Codeception\Exception\ModuleException
      */
     public function amLoggedInAs($user)
     {
@@ -521,7 +521,7 @@ class Yii2 extends Framework implements ActiveRecord, MultiSession, PartedModule
      *
      * @param $name
      * @return mixed
-     * @throws ModuleException if the fixture is not found
+     * @throws \Codeception\Exception\ModuleException if the fixture is not found
      * @part fixtures
      */
     public function grabFixture($name, $index = null)
@@ -714,7 +714,7 @@ class Yii2 extends Framework implements ActiveRecord, MultiSession, PartedModule
      *
      * @param $component
      * @return mixed
-     * @throws ModuleException
+     * @throws \Codeception\Exception\ModuleException
      * @deprecated in your tests you can use \Yii::$app directly.
      */
     public function grabComponent($component)
@@ -739,7 +739,7 @@ class Yii2 extends Framework implements ActiveRecord, MultiSession, PartedModule
      * ```
      *
      * @param int $num
-     * @throws ModuleException
+     * @throws \Codeception\Exception\ModuleException
      * @part email
      */
     public function seeEmailIsSent($num = null)
@@ -775,7 +775,7 @@ class Yii2 extends Framework implements ActiveRecord, MultiSession, PartedModule
      *
      * @part email
      * @return array
-     * @throws ModuleException
+     * @throws \Codeception\Exception\ModuleException
      */
     public function grabSentEmails()
     {
@@ -826,7 +826,7 @@ class Yii2 extends Framework implements ActiveRecord, MultiSession, PartedModule
     /**
      * Sets a cookie and, if validation is enabled, signs it.
      * @param string $name The name of the cookie
-     * @param string $value The value of the cookie
+     * @param string $val The value of the cookie
      * @param array $params Additional cookie params like `domain`, `path`, `expires` and `secure`.
      */
     public function setCookie($name, $val, array $params = [])

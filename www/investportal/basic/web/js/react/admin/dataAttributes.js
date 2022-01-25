@@ -1,34 +1,3 @@
-const showCurrentTableColumnsCount = (table) => {
-	let countContent,
-		qpm = {
-				parameters: {
-						attribute: table
-				}
-		};
-		
-	 var fd = new FormData();
-	 fd.append('svcQuery', JSON.stringify(qpm));
-	  
-	 const requestOptions = {
-        method: 'POST',
-        body: fd
-	 };
-	  
-	 var r = fetch('/admin/api/dataServices/filters/TableColumns/show', requestOptions);
-	 
-	 if(r.ok()){
-		let res = r.json(),
-			count = res[0].columncount;
-			
-		if(count === 0){ countContent = <footer>Not filters</footer>; }
-		if(count === 1){ countContent = <footer>{count} filter</footer>; }
-		if(count > 1){ countContent = <footer>{count} filters</footer>; }
-		
-	 }
-	
-	 return countContent;
-}
-
 class Add extends React.Component{
   JQueryCall(){
 	  	$('#add-attribute > button').click(addAttribute);
@@ -54,39 +23,60 @@ class List extends React.Component{
   constructor(props){
 	  super(props);
 	  this.state = {
-		  listSheet: null
+		  listSheet: []
 	  };
+	  this.redirectToAttribute = this.redirectToAttribute.bind(this);
   }
-  JQueryCall(){ $('#attributes-list > .list-cont').click(redirectToAttribute); }
+  redirectToAttribute(e,t){
+	  let currentAttribute = $('#attributes-list > .list-cont header').eq($(this).index()).html(),
+		  uri = currentAttribute.toLowerCase(),
+		  dataState = '',
+		  statusData = '';
+		  
+	  let qpm = {
+		parameters: {
+			attribute: uri
+		}
+	  };
+		  
+	  fetch('/admin/api/dataServices/filters/notEmptyAttribute/show', {method: 'POST', body: {'svcQuery': JSON.stringify(qpm)}})
+        .then(response => response.json())
+		.then(data => statusData = data.avabillityData)
+		.catch(error => {
+			alert('Generate error!');
+			console.log(error);
+		});
+		
+	  if(statusData === 0){ dataState = '#edit'; }
+	  else{ dataState = '#add'; }
+		
+		  
+	  window.location.assign('/admin?svc=dataManagment&subSVC=filters&attr=' + uri + dataState);
+  }
+  
+  fetchData(svc,rq){
+	  fetch(svc, rq)
+        .then(response => response.json())
+		.then(data => this.setState({ listSheet: data }))
+		.catch(error => {
+			alert('Response error!');
+			console.log(error);
+		});
+  }
   componentDidMount(){
 	  
 	  const requestOptions = {
         method: 'GET'
 	  };
 	  
-	  fetch('/admin/api/dataServices/filters/Attributes/show', requestOptions)
-        .then(response => response.json())
-        .then(data => this.setState({ listSheet: data }))
-        .catch(error => {
-			alert('Response error!');
-			console.log(error);
-		});
-        
-      this.JQueryCall();
+	  this.fetchData('/admin/api/dataServices/filters/Attributes/show', requestOptions);
   }
   render(){
+	const myStates = this.state.listSheet.map((myState) => <div className="list-cont" onClick={this.redirectToAttribute}><header>{ myState }</header></div>);
+	
     return (
       <React.Fragment>
-        <section id="attributes-list">{
-			this.state.listSheet.map(r => {
-				return (
-					<div className="list-cont">
-						<header>{ r.Tables_in_Investportal }</header>
-						{ showCurrentTableColumnsCount(r.Tables_in_Investportal) }
-					</div>
-				)
-			})
-		}</section>
+        <section id="attributes-list">{myStates}</section>
       </React.Fragment>
     );
   }
@@ -138,8 +128,8 @@ const addAttribute = (e,t) => {
 		method: 'POST',
 		body: fd
 	}).then(response => {
-		if(response.status != 503){ window.location.assign('/admin?svc=dataManagment&subSVC=attributes#list'); }
-		else{ alert('Response error!'); }
+		if(response.status != 503 && response.status != 404){ window.location.assign('/admin?svc=dataManagment&subSVC=attributes#list'); }
+		else{ alert('Send error!'); }
 	}).catch(error => {
 		alert('Response error!');
 	});
@@ -164,16 +154,6 @@ const formRealTime = (e,t) => {
 	
 	
 	jsonQueryConstructor('#add-attribute > #queryParameters', r);
-}
-
-const redirectToAttribute = (e,t) => {
-	let currentAttribute = $('#attributes-list > .list-cont header').eq($(this).index()).text(),
-		currentCount = $('#attributes-list > .list-cont footer').eq($(this).index()).text(),
-		uri = currentAttribute.toLowerCase();
-	
-	
-	if(!currentCount.indexOf('Not')){ window.location.assign('/admin?svc=dataManagment&subSVC=filters&attr=' + uri + '#edit'); }
-	else{ window.location.assign('/admin?svc=dataManagment&subSVC=filters&attr=' + uri + '#add'); }
 }
 
 $(document).ready(function(){

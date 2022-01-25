@@ -39,6 +39,7 @@ $config = [
 			 'rules' => [
 				'defaultRoute' => 'site/index',
 				'accounts/<service:\w+>' => '/site/account-service',
+				'accounts/fb' => '/site/account-facebook-services',
 				'accounts/accept/<service:\w+>' => '/site/service-code-center',
 				'admin' => 'admin/index',
 				'admin/auth' => 'admin/auth',
@@ -70,6 +71,7 @@ $config = [
 		'autoLogin' => ['class' => 'app\components\autoSignIn'],
 		'portalPass' => ['class' => 'app\components\Forgot'],
         'smsCoder' => ['class' => 'app\components\SMSCode'],
+        'facebookPortalIDURI' => ['class' => 'app\components\FacebookPortalIDURI'],
         'log' => [
             'traceLevel' => YII_DEBUG ? 3 : 0,
             'targets' => [

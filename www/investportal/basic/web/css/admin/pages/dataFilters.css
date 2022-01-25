@@ -95,10 +95,10 @@
   overflow: auto;
 }
 .add-fields > main *, .edit-fields > main *{
-  width: 40%;
+  width: 43%;
   text-indent: 2%;
   font-size: 90%;
-  padding: 1%;
+  padding: 3%;
   display: inline-table;
 }
 .add-fields > main div, .edit-fields > main div{
@@ -106,11 +106,13 @@
 }
 .add-fields > main input, .edit-fields > main input{
   float:left;
-  margin-left: 2%;
+  margin-left: -2%;
+  width: 59%;
 }
 .add-fields > main select, .edit-fields > main select{
   float:right;
-  margin-right: 2%;
+  margin-right: -28%;
+  width: 59%;
 }
 .add-fields > footer, .edit-fields > footer{
   padding: 2%;
@@ -124,10 +126,25 @@
   font-size: 100%;
 }
 
+.add-modals{
+	list-style-type: none;
+	position: fixed;
+	right: 0;
+	top: 0;
+}
+.add-modals > li{
+	margin-top: -3%;
+	display: none;
+}
+
 .form-rpa-addon{
-  width: 80%;
-  height: 100vh;
+  width: 90vw;
+  height: 113vh;
   background-color: #eff3f4;
+  overflow: auto;
+  -webkit-box-shadow: 5px 5px 5px 1px rgba(34, 60, 80, 0.6) inset;
+  -moz-box-shadow: 5px 5px 5px 1px rgba(34, 60, 80, 0.6) inset;
+  box-shadow: 5px 5px 5px 1px rgba(34, 60, 80, 0.6) inset;
 }
 #smdf-content > section.mode-hidden{ display: none; }
 .form-rpa-addon > header{
@@ -145,7 +162,7 @@
 #header-right{
   float: right;
   display: inline-table;
-  margin-top: -6%;
+  margin-top: -78px;
   margin-right: 4%;
   width: 6%;
 }

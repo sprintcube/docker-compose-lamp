@@ -1,0 +1,8 @@
+<main id="id-lightbox" data-service="fb-signup">
+  <header>System message</header>
+  <main>
+    <center><div><img src="/images/events/loading.gif" align="center"/></div></center>
+    <div>Wait, this operation to collect data about the registration of a new user on the portal is being performed!</div>
+  </main>
+  <footer>After performing this operation, a window will open where you are required to enter a confirmation code that says that you are registered on the portal as a real user and automatically in a few seconds you will be logged in to the portal or a window will open with a registration form where you are required to enter data that the portal has not found!</footer>
+</main>

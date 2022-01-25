@@ -45,7 +45,7 @@ class SignIn extends Component{
 				$params = [
 					'client_id'     => '404988774385568',
 					'client_secret' => 'f3504d4d2f1ed4a679180a63f6262849',
-					'redirect_uri'  => '',
+					'redirect_uri'  => Yii::$app->facebookPortalIDURI->generate($_SERVER['SERVER_NAME']),
 					'code'          => $token
 				];
 				

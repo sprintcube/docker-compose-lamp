@@ -30,7 +30,7 @@ class SignUp extends Component{
 
 		$upModel = [
 			User::find(),
-			new User()
+			new User
 		];
 
 		if($type === 'fbService'){
@@ -40,25 +40,8 @@ class SignUp extends Component{
 				$params = [
 					'client_id'     => '404988774385568',
 					'client_secret' => 'f3504d4d2f1ed4a679180a63f6262849',
-					'redirect_uri'  => '',
-					'code'          => $token
-				];
-				
-				$response = $client->createRequest()
-						->setMethod('GET')
-						->setUrl('https://graph.facebook.com/oauth/access_token')
-						->setData(urldecode(http_build_query($params)))
-						->send();
-						
-				if($type === 'fbService'){
-			$token = $this->signQuery['fbToken'];
-			
-			if(!empty($token)){
-				$params = [
-					'client_id'     => '404988774385568',
-					'client_secret' => 'f3504d4d2f1ed4a679180a63f6262849',
-					'redirect_uri'  => '',
-					'code'          => $token
+					'redirect_uri'  => Yii::$app->facebookPortalIDURI->generate($_SERVER['SERVER_NAME']),
+					'svcUserQuery'  => $token
 				];
 				
 				$response = $client->createRequest()

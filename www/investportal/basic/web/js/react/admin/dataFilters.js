@@ -1,19 +1,26 @@
-var gets = (function() {
-    var a = window.location.search;
-    var b = new Object();
-    a = a.substring(1).split("&");
-    for (var i = 0; i < a.length; i++) {
-  	c = a[i].split("=");
-        b[c[0]] = c[1];
-    }
-    return b;
-})();
+var params = window
+    .location
+    .search
+    .replace('?','')
+    .split('&')
+    .reduce(
+        function(p,e){
+            var a = e.split('=');
+            p[ decodeURIComponent(a[0])] = decodeURIComponent(a[1]);
+            return p;
+        },
+        {}
+    );
+
+function capitalizeFirstLetter(string) {
+  return string.charAt(0).toUpperCase() + string.slice(1);
+}
 
 class List extends React.Component{
   constructor(){
 	  super();
 	  this.state = {
-		  listSheet: null
+		  listSheet: []
 	  };
   }
   JQueryCall(){
@@ -23,32 +30,25 @@ class List extends React.Component{
 	  for(let i = 0; i < eventService.length; i++){ elService[i].click(eventService[i]); }
   }
   componentDidMount(){
-	  let qpm = {
-		  command : 3,
-		  command : {
-			subCMD: 'showAttributes'
-		  }
-	  };
 	  
 	  const requestOptions = {
-        method: 'POST',
-        body: {'svcQuery': JSON.stringify(qpm)}
+        method: 'GET'
 	  };
 	  
-	  fetch('/admin/api/dataServices/filters', requestOptions)
+	  fetch('/admin/api/dataServices/filters/Attributes/show', requestOptions)
         .then(response => response.json())
         .then(data => this.setState({ listSheet: data }));
         
       this.JQueryCall();
   }
   render(){
-	let responseList = this.state.listSheet.response;
-	const renderData = responseList.map(r => {
+	let responseList = this.state.listSheet;
+	const renderData = responseList.map((myState) => {
 		return (
 				<div id="filter-card">
-					<div id="header">{r.Attribute}</div>
-					<div id="main">{RenderAttributeFiltersList('List', r.Attribute)}</div>
-					<div id="footer">{RenderAttributeFiltersList('Control', r.Attribute)}</div>
+					<div id="header">{myState}</div>
+					<div id="main">{RenderAttributeFiltersList('List', myState)}</div>
+					<div id="footer">{RenderAttributeFiltersList('Control', myState)}</div>
 				</div>
 		);
 	});
@@ -70,34 +70,35 @@ class Add extends React.Component{
 
 	    elService.click(eventService);
 	    
-		$('.add-fields > footer button').click(AddFieldEvent);
 		$('.add-fields > main select').on('change', selectFilterType);
+		
+		sessionStorage.setItem('currentAttr', capitalizeFirstLetter(params['attr']));
   }
   componentDidMount(){ this.JQueryCall(); }
   render(){
     return (
       <React.Fragment>
-        <div class="add-fields">
+        <div className="add-fields">
 		  <input type="hidden" id="queryParameters" value="" />
           <header><h2>Add current attribute filters group</h2></header>
           <main>
             <div>
-              <input type="text" name="fieldName" id="fieldName" placeholder="Enter the field name" />
+              <input type="text" name="field" id="field" placeholder="Enter the field name" />
               <select name="fieldType" id="fieldType">
                 <option>Select form field type</option>
-                <option value="defaultField">Data field</option>
-                <option value="intField">Integer field</option>
-                <option value="precentableField">Precentable field</option>
-                <option value="costField">Cost field</option>
+                <option value="default">Data field</option>
+                <option value="int">Integer field</option>
+                <option value="precentable">Precentable field</option>
+                <option value="cost">Cost field</option>
                 <option value="smartDatasets">Smart Datasets</option>
-                <option value="photogalleryField">Photogallery</option>
+                <option value="photogallery">Photogallery</option>
               </select>
             </div>
           </main>
           <footer><button>Add field</button></footer></div>
-          <ul class="add-modals">
+          <ul className="add-modals">
 			<li>
-				<section class="form-rpa-addon">
+				<section className="form-rpa-addon">
 				  <header>
 					<h2>Smart Datasets Window</h2>
 					<div id="header-right">
@@ -108,45 +109,45 @@ class Add extends React.Component{
 				  <main>
 					<div id="smdf-header">
 					  <nav>
-						<a href="" class="active">Single mode</a>
+						<a href="" className="active">Single mode</a>
 						<a href="">Search mode</a>
 					  </nav>
 					</div>
 					<div id="smdf-content">
 					  <section><header>
-						<h3>Select form element:</h3>
+						<h3>Select form "element":</h3>
 						<div><input type="radio" id="element" value="list" />List</div>
 						<div><input type="radio" id="element" value="input" />Input field</div>
 					  </header>
 					  <main>
 						<h3>Input your need dataset:</h3>
-						<label for="dataset">Add dataset</label>
+						<label htmlFor="dataset">Add dataset</label>
 						<input type="file" id="dataset" accept="application/xml, application/json, application/vnd.ms-excel" />
-						<div class="downloaded-file"></div>
+						<div className="downloaded-file"></div>
 					  </main></section>
-					  <section class="mode-hidden"><header>
+					  <section className="mode-hidden"><header>
 						<h3>Select form elements:</h3>
 						<div><input type="radio" id="element" value="list" />List's</div>
 						<div><input type="radio" id="element" value="input" />Input fields</div>
 					  </header>
 					  <main>
 						 <h3>Input your priority dataset:</h3>
-						<label for="dataset">Add dataset</label>
+						<label htmlFor="dataset">Add dataset</label>
 						<input type="file" id="dataset" accept="application/xml, application/json, application/vnd.ms-excel" />
-						<div class="downloaded-file"></div>
+						<div className="downloaded-file"></div>
 					  </main>
 					  <footer>
 						 <h3>Add datasets in search group:</h3>
-						<label for="datasets">Add datasets</label>
+						<label htmlFor="datasets">Add datasets</label>
 						<input type="file" id="datasets" accept="application/xml, application/json, application/vnd.ms-excel" multiple/>
-						<div class="downloaded-files"><ul></ul></div>
+						<div className="downloaded-files"><ul></ul></div>
 					  </footer></section>
 					</div>
 				  </main>
 				</section>
 			</li>
 			<li>
-				<section class="form-rpa-addon">
+				<section className="form-rpa-addon">
 				  <header>
 					<h2>Photogallery Window</h2>
 					<div id="header-right">
@@ -157,7 +158,7 @@ class Add extends React.Component{
 				  <main>
 					  <ul id="pg">
 						<li>
-						  <span>Select the image formats in which file downloads will be available in current attribute:</span>
+						  <span>Select the image formats on which file downloads will be available the current "attribute":</span>
 						  <div>
 							<input type="checkbox" name="format" id="format" value="jpeg" />
 							<span>JPEG</span>
@@ -176,7 +177,7 @@ class Add extends React.Component{
 						  </div>
 						</li>
 						<li>
-						  <span>Enter the maximum number of uploaded photos in the gallery:</span>
+						  <span>Enter the maximum number of uploaded photos on the gallery:</span>
 						  <div>
 							<input type="number" id="imagesCount" name="imagesCount" value="4" />
 						  </div>
@@ -195,7 +196,7 @@ class Edit extends React.Component{
   constructor(){
 	 super(); 
 	 this.state = {
-		  currentAttributeSheet: null
+		  currentAttributeSheet: []
 	 };
   }
   JQueryCall(){
@@ -204,17 +205,14 @@ class Edit extends React.Component{
 
 	  elService[i].click(eventService[i]);
 	  
-	  $('.edit-fields > footer button').click(AddFieldEvent);
 	  $('.edit-fields > main select').on('change', selectFilterType);
+	  
+	  sessionStorage.setItem('currentAttr', capitalizeFirstLetter(params['attr']));
   }
   componentDidMount(){
 	  let qpm = {
-		  command: 3,
-		  command : {
-			subCMD: 'showFilters'
-		  },
 		  parameters: {
-			attribute: gets["attr"]
+			"attribute": params["attr"]
 		  }
 	  };
 	  
@@ -223,125 +221,45 @@ class Edit extends React.Component{
         body: {'svcQuery': JSON.stringify(qpm)}
 	  };
 	  
-	  fetch('/admin/api/dataServices/filters', requestOptions)
+	  fetch('/admin/api/dataServices/filters/Filters/show', requestOptions)
         .then(response => response.json())
         .then(data => this.setState({ currentAttributeSheet: data }));
         
      this.JQueryCall();
   }
   render(){
-	let responseList = this.state.listSheet.response,
-		parametersRender = ();
-	
+	let responseList = this.state.listSheet;
 	
 	if(responseList){
-		
-		for(let i = 0; i < responseList.length; i++){
-			
-			var filterName = responseList[i].Field;
-			let query = [],
-				call = [],
-				caller = [];
-			
-			query = [
-				{
-					parameters: {
-						attribute: gets["attr"],
-						dataParam: "cost",
-						costQuery: filterName
-					}
-				},
-				{
-					parameters: {
-						attribute: gets["attr"],
-						dataParam: "int",
-						intQuery: filterName
-					}
-				},
-				{
-					parameters: {
-						attribute: gets["attr"],
-						dataParam: "text",
-						textQuery: filterName
-					}
-				},
-				{
-					parameters: {
-						attribute: gets["attr"],
-						dataParam: "precentable",
-						precentableQuery: filterName
-					}
-				},
-				{
-					parameters: {
-						attribute: gets["attr"],
-						dataParam: "selecting",
-						selectingQuery: filterName
-					}
-				},
-				{
-					parameters: {
-						attribute: gets["attr"],
-						dataParam: "smartDataset",
-						dQuery: filterName
-					}
-				},
-				{
-					parameters: {
-						attribute: gets["attr"],
-						dataParam: "photogallery",
-						dQuery: filterName
-					}
-				}
-			];
-			
-			caller = [isSmartDS, isPhotogallery, isCost, isInteger, isPrecentable, isSelecting, isDefault];
-			
-			
-			for(let i = 0; i < query.length; i++){
-				call.push({
-					method: 'POST',
-					body: {'svcQuery': JSON.stringify(query[i])}
-				});
-			}
-			
-			
-			for(let i = 0; i < caller.length; i++){
-				fetch('/admin/api/dataServices/filters', call[i]).then(response => response.json()).then(caller[i]);
-			}
-			
-			
-			
-			
-			parametersRender += (
+		const parametersRender = responseList.map((myState) => {
 				<div>
-					<input type="text" name="fieldName" id="fieldName" value="{filterName}" />
+					<input type="text" name="field" id="field" value={ myState.field } />
 					<select name="fieldType" id="fieldType">
 						<option>Select form field type</option>
-						<option value="defaultField">Data field</option>
-						<option value="intField">Integer field</option>
-						<option value="precentableField">Precentable field</option>
-						<option value="costField">Cost field</option>
+						<option value="default">Data field</option>
+						<option value="int">Integer field</option>
+						<option value="precentable">Precentable field</option>
+						<option value="cost">Cost field</option>
 						<option value="smartDatasets">Smart Datasets</option>
-						<option value="photogalleryField">Photogallery</option>
+						<option value="photogallery">Photogallery</option>
 					</select>
 				</div>
-			);
-		}
+		});
 	}
 	else{
-		window.location.assign('/admin?svc=dataManagment&subSVC=filters');
+		window.location.assign('/admin?svc=dataManagment&subSVC=filters&attr=' + params['attr'] + '#add');
 	}
+	
     return (
       <React.Fragment>
-        <div class="edit-fields">
+        <div className="edit-fields">
 		  <input type="hidden" id="queryParameters" value="" />
           <header><h2>Edit current filters group for attribute</h2></header>
           <main>{parametersRender}</main>
           <footer><button>Add field</button></footer></div>
-          <ul class="edit-modals">
+          <ul className="edit-modals">
 			<li>
-				<section class="form-rpa-addon">
+				<section className="form-rpa-addon">
 				  <header>
 					<h2>Smart Datasets Window</h2>
 					<div id="header-right">
@@ -352,45 +270,45 @@ class Edit extends React.Component{
 				  <main>
 					<div id="smdf-header">
 					  <nav>
-						<a href="" class="active">Single mode</a>
+						<a href="" className="active">Single mode</a>
 						<a href="">Search mode</a>
 					  </nav>
 					</div>
 					<div id="smdf-content">
 					  <section><header>
-						<h3>Select form element:</h3>
+						<h3>Select form "element":</h3>
 						<div><input type="radio" id="element" value="list" />List</div>
 						<div><input type="radio" id="element" value="input" />Input field</div>
 					  </header>
 					  <main>
 						<h3>Update your need dataset:</h3>
-						<label for="dataset">Add dataset</label>
+						<label htmlFor="dataset">Add dataset</label>
 						<input type="file" id="dataset" accept="application/xml, application/json, application/vnd.ms-excel" />
-						<div class="downloaded-file"></div>
+						<div className="downloaded-file"></div>
 					  </main></section>
-					  <section class="mode-hidden"><header>
+					  <section className="mode-hidden"><header>
 						<h3>Select form elements:</h3>
 						<div><input type="radio" id="element" value="list" />List's</div>
 						<div><input type="radio" id="element" value="input" />Input fields</div>
 					  </header>
 					  <main>
 						 <h3>Update your priority dataset:</h3>
-						<label for="dataset">Add dataset</label>
+						<label htmlFor="dataset">Add dataset</label>
 						<input type="file" id="dataset" accept="application/xml, application/json, application/vnd.ms-excel" />
-						<div class="downloaded-file"></div>
+						<div className="downloaded-file"></div>
 					  </main>
 					  <footer>
-						 <h3>Update datasets in search group:</h3>
-						<label for="datasets">Add datasets</label>
+						 <h3>Update datasets the search group:</h3>
+						<label htmlFor="datasets">Add datasets</label>
 						<input type="file" id="datasets" accept="application/xml, application/json, application/vnd.ms-excel" multiple/>
-						<div class="downloaded-files"><ul></ul></div>
+						<div className="downloaded-files"><ul></ul></div>
 					  </footer></section>
 					</div>
 				  </main>
 				</section>
 			</li>
 			<li>
-				<section class="form-rpa-addon">
+				<section className="form-rpa-addon">
 				  <header>
 					<h2>Photogallery Window</h2>
 					<div id="header-right">
@@ -401,7 +319,7 @@ class Edit extends React.Component{
 				  <main>
 					  <ul id="pg">
 						<li>
-						  <span>Select the image formats in which file downloads will be available in current attribute:</span>
+						  <span>Select the image formats in which file downloads will be available in current "attribute":</span>
 						  <div>
 							<input type="checkbox" name="format" id="format" value="jpeg" />
 							<span>JPEG</span>
@@ -436,23 +354,18 @@ class Edit extends React.Component{
   }
 }
 
-const HeaderRender = ({ hash }) => {
+const HeaderRender = (hash) => {
+  let render = '';
   switch(hash){
     case "#add":
-      return(
-        <React.Fragment>
-          <a href="#list">Back to list</a>
-        </React.Fragment>
-      );
+		render = '<a href="#list">Back to list</a>';
     break;
     default:  
-      return(
-        <React.Fragment>
-          <a href="#add">New filter</a>
-        </React.Fragment>
-      );
+        render = '<a href="#add">New filter</a>';
     break;
   }
+  
+   $('.data-page > header nav').html(render);
 }
 document.title = "Data Filters";
 const UIRender = (hash) => {
@@ -475,157 +388,107 @@ $('.data-page > header h2').html(document.title);
 
 
 const AddField = () => {
-  $('.add-fields > main').append('<div>\n\t<input type="text" name="fieldName" id="fieldName" placeholder="Enter the field name" />\n\t<select name="fieldType" id="fieldType"><option>Select form field type</option><option value="defaultField">Data field</option><option value="intField">Integer field</option><option value="precentableField">Precentable field</option><option value="costField">Cost field</option><option value="smartDatasets">Smart Datasets</option><option value="photogalleryField">Photogallery</option></select></div>');
-}
-
-const AddFieldEvent = () => {
-  AddField();
+  $('.add-fields > main').append('<div>\n\t<input type="text" name="field" id="field" placeholder="Enter the field name" />\n\t<select name="fieldType" id="fieldType"><option>Select form field type</option><option value="defaultField">Data field</option><option value="intField">Integer field</option><option value="precentableField">Precentable field</option><option value="costField">Cost field</option><option value="smartDatasets">Smart Datasets</option><option value="photogalleryField">Photogallery</option></select></div>');
 }
 
 const jsonQueryConstructor = (query,pm) => {
-	let result = { command: {}, parameters: {} },
-		isAdd = document.location.href.indexOf("add") ? true : null,
+	let isAdd = document.location.href.indexOf("add") ? true : null,
 		isEdit = document.location.href.indexOf("edit") ? true : null;
+		
+	let result, endpoint;
 	
-
-	let serviceCmd;
-
-
-	if(query.defaultParameter.element === 'dataset'){
-		let q = query.pms,
-			res = {};
-
-		if(isEdit){ serviceCmd = 'editDatasets'; }
-		if(isAdd){ serviceCmd = 'sendDatasets'; }
-
-		result.command.push({ subCMD: serviceCmd });
-
-		switch(query.service){
-			case 'add':
-				if(q.dataConstructor.group && q.dataConstructor.priority){
-					res = q.dataConstructor.priority.concat(q.dataConstructor.group);
+	if(isAdd){
+		if(sessionStorage.getItem('isADS')){
+			let res;
+			
+			if(q.dataConstructor.group && q.dataConstructor.priority){
+				res = query.dataConstructor.priority.concat(q.dataConstructor.group); 
+			}
+			else{ 
+				res = query.dataConstructor.single; 
+			}
+			
+			result = {
+				parameters: {
+					attribute: sessionStorage.getItem('currentAttr'),
+					field: sessionStorage.getItem('currentField'),
+					res
 				}
-				else{
-					res = q.dataConstructor.single;
+			};
+			endpoint = '/admin/api/dataServices/filters/Datasets/send';
+	    }
+	    else if(sessionStorage.getItem('isAPG')){
+			result = {
+				query,
+				parameters: {
+					attribute: sessionStorage.getItem('currentAttr'),
+					field: sessionStorage.getItem('currentField')
 				}
-			break;
-			case 'edit':
-				if(q.dataConstructor.group && q.dataConstructor.priority){
-					res = q.dataConstructor.priority.concat(q.dataConstructor.group);
+			};
+			
+			endpoint = '/admin/api/dataServices/filters/Photogallery/send';
+	    }
+	    else{
+			result = {
+				parameters: {
+					attribute: sessionStorage.getItem('currentAttr'),
+					field: sessionStorage.getItem('currentField'),
+					type: query.type
 				}
-				else{
-					res = q.dataConstructor.single;
-				}
-			break;
+			};
+			
+			endpoint = '/admin/api/dataServices/filters/Filters/send';
 		}
-
-		result.parameters.push(res);
 	}
-	if(query.defaultParameter.element === 'photogallery'){
-		let q = query.pms,
-			res = {};
-
-		if(isEdit){ serviceCmd = 'editPhotogallery'; }
-		if(isAdd){ serviceCmd = 'sendPhotogallery'; }
-
-		result.command.push({ subCMD: serviceCmd });
-
-		result.dataParam = 'photogallery';
-		switch(query.service){
-			case 'add':
-				res = q;
-			break;
-			case 'edit':
-				res = q;
-			break;
+	else if(isEdit){
+		if(sessionStorage.getItem('isEDS')){
+			let res;
+			
+			if(q.dataConstructor.group && q.dataConstructor.priority){
+				res = query.dataConstructor.priority.concat(q.dataConstructor.group); 
+			}
+			else{ 
+				res = query.dataConstructor.single; 
+			}
+			
+			result = {
+				parameters: {
+					attribute: sessionStorage.getItem('currentAttr'),
+					field: sessionStorage.getItem('currentField'),
+					res
+				}
+			};
+			endpoint = '/admin/api/dataServices/filters/Datasets/update';
+	    }
+	    else if(sessionStorage.getItem('isEPG')){
+			result = {
+				query,
+				parameters: {
+					attribute: sessionStorage.getItem('currentAttr'),
+					field: sessionStorage.getItem('currentField')
+				}
+			};
+			
+			endpoint = '/admin/api/dataServices/filters/Photogallery/update';
+	    }
+	    else{
+			result = {
+				parameters: {
+					attribute: sessionStorage.getItem('currentAttr'),
+					field: sessionStorage.getItem('currentField'),
+					type: query.type
+				}
+			};
+			
+			endpoint = '/admin/api/dataServices/filters/Filters/update';
 		}
-
-		result.parameters.push(res);
 	}
-	if(query.defaultParameter.element === 'selecting'){
-		if(isEdit){ serviceCmd = 'editParameters'; }
-		if(isAdd){ serviceCmd = 'sendParameters'; }
-
-		result.command.push({ subCMD: serviceCmd });
-		
-		var queryConstructe = query.defaultParameter.data.split(/\s/g) || query.defaultParameter.data.split(/[;,]/);
-		var queryForm = [queryConstructe[0], queryConstructe[1]];
-		result.parameters.push([{
-			dataParam: 'selecting',
-			selectingData: queryForm
-		}]);
-	}
-	if(query.defaultParameter.element === 'cost'){
-		if(isEdit){ serviceCmd = 'editParameters'; }
-		if(isAdd){ serviceCmd = 'sendParameters'; }
-
-		result.command.push({ subCMD: serviceCmd });
-		
-		var queryForm = query.defaultParameter.data;
-		result.parameters.push([{
-			dataParam: 'cost',
-			costData: queryForm
-		}]);
-	}
-	if(query.defaultParameter.element === 'integer'){
-		if(isEdit){ serviceCmd = 'editParameters'; }
-		if(isAdd){ serviceCmd = 'sendParameters'; }
-
-		result.command.push({ subCMD: serviceCmd });
-		
-		var queryForm = query.defaultParameter.data;
-		result.parameters.push([{
-			dataParam: 'integer',
-			intData: queryForm
-		}]);
-	}
-	if(query.defaultParameter.element === 'precentable'){
-		if(isEdit){ serviceCmd = 'editParameters'; }
-		if(isAdd){ serviceCmd = 'sendParameters'; }
-
-		result.command.push({ subCMD: serviceCmd });
-		
-		var queryForm = query.defaultParameter.data;
-		result.parameters.push([{
-			dataParam: 'precentable',
-			precentableData: queryForm
-		}]);
-	}
-	if(query.defaultParameter.element === 'text'){
-		if(isEdit){ serviceCmd = 'editParameters'; }
-		if(isAdd){ serviceCmd = 'sendParameters'; }
-
-		result.command.push({ subCMD: serviceCmd });
-		
-		var queryForm = query.defaultParameter.data;
-		result.parameters.push({
-			dataParam: 'text',
-			textData: queryForm
-		});
-	}
-
-	if(isEdit){ result.push({ command: 1 }); }
-	else{ result.push({ command: 0 }); }
 	
+	sessionStorage.setItem('ep', endpoint);
 	$(pm).val(JSON.stringify(result));
 }
 
-const openModal = (dataType) => {
-	let queryModule = {},
-		isAdd = document.location.href.indexOf("add") ? true : null,
-		isEdit = document.location.href.indexOf("edit") ? true : null;
-	
-	switch(dataType){
-		case 'datasets':
-			let modalUI;
-
-			if(currentFilterPage.isEdit){ modalUI = $('.edit-modals > li'); }
-			if(currentFilterPage.isAdd){ modalUI = $('.add-modals > li'); }
-			
-			modalUI.eq(0).removeClass('modal-close');
-
-
-			$('.form-rpa-addon > main #smdf-content section * input[type=file]').change(function(e){
+const dsUploader = (e) => {
 				let formatIcon = [
 					'iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAABmJLR0QA/wD/AP+gvaeTAAABoUlEQVRYhe2XS0oDQRCGv+qI11DXCm4Us1DiI3oCvYAvvIDo4FbwdQJB8QDJBVQ0GhAF3Qhx5cLgGVyIjF0uuo0xmBkZI7OZH5qeqq6u+qnu6u6BDClD2o4EFe1opK2JH2OZjgZJgK5YizbMf42YTKaegYxA6gQyRJfYxlkP1hwCeeAaGy6wM/3cor8lZ5bZLDw2Sm5r3C1tcGGd3L6Uo88BF2TKS0VM1wEw06If590eAaNAHehl/XKoyUs9KkTMQSRjoGB1ACM1kIIfGHGd5lEGgdCJWkJkFeycn+90yQloNwA7kw98X64boAimimgVGy44tSmBriIy+2VqIgkkK0NjF4FTL30uDWwX7oAnoM+3J69LSkDeAFg77yeoKEHlFQBriqiWkXDYG+a9vaJabkxXLYP85S7QqrOSmldUfb+CyD6au/fyVZPL0s/fSQh8pfoF5AQbLgJgzTxw7fQc885SY45LeR2ox6X//xBU9lg/3/2Nafx7IBG0TE7/+KJymy6hExXX4v38Uwaid34zUr+OMwLxe6DT/wctSD0DGVLHB45Oieeid2jHAAAAAElFTkSuQmCC',
 					'iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAABmJLR0QA/wD/AP+gvaeTAAABI0lEQVRYhe2XzW3DMAxGH41O0cY9JRs4l2aBLlLDY3SLGs4iHaA/QNMN4puLjhH2UAVwXTuSbBm6+J0MihY/kJQIwUJkZGghK48aMtBnsemNlYQMMoYrm8OQcldsmYyegUWAtQfabMv6XtE9sOr2hql1I0h+KNbPrnt6ZUDRClhdcEmNjzO+JUih/2S0bOmcAoIzSUBWHnXqjeksIHuqd+bza9BJ+QbYVvWd677up0D0BUBgfzb964WECuVRT/rKhTnz95eQnNyCjhIgiex+Y5CfbT098GA2dS6Bs4BDvn4DELgZVsk1wEexeQ8uYC68ruIuU0c1+Geggf4Z37I1swkQJLcEaIyPM14lMFPutm9tbDmiN+EiwNoDod8HXaJnYCE6P+sWUDhptfNHAAAAAElFTkSuQmCC',
@@ -637,7 +500,6 @@ const openModal = (dataType) => {
 				let isMultiple = downloadsDatasets.length !== 1 ? true : null;
 				var ext = "";
 				var responseLoad = "";
-				let dataValid = {};
 				
 				if(isEdit){
 				
@@ -649,16 +511,18 @@ const openModal = (dataType) => {
 
 							if (parts.length > 1){ ext = parts.pop(); }
 
-							if(ext === 'csv'){ responseLoad += '\n<li>\n\t<img src="data:image/png;base64,' + formatIcon[0]'" />'; }
-							if(ext === 'json'){ responseLoad += '\n<li>\n\t<img src="data:image/png;base64,' + formatIcon[1]'" />'; }
-							if(ext === 'xml'){ responseLoad += '\n<li>\n\t<img src="data:image/png;base64,' + formatIcon[2]'" />'; }
-							if(ext === 'xlsx'){ responseLoad += '\n<li>\n\t<img src="data:image/png;base64,' + formatIcon[3]'" />'; }
+							if(ext === 'csv'){ responseLoad += '\n<li>\n\t<img src="data:image/png;base64,' + formatIcon[0] + '" />'; }
+							if(ext === 'json'){ responseLoad += '\n<li>\n\t<img src="data:image/png;base64,' + formatIcon[1] + '" />'; }
+							if(ext === 'xml'){ responseLoad += '\n<li>\n\t<img src="data:image/png;base64,' + formatIcon[2] + '" />'; }
+							if(ext === 'xlsx'){ responseLoad += '\n<li>\n\t<img src="data:image/png;base64,' + formatIcon[3] + '" />'; }
 
 							responseLoad += '\n\t<span>' + file.name + '</span>\n</li>';
 
 							$('.downloaded-files > ul').append(responseLoad);
 							
-							dataValid.push({ service: 'edit', pms: uploadDataset(downloadedDatasets[0])};
+							sessionStorage.setItem('dsue', uploadDataset(downloadedDatasets[0]));
+							
+							
 						break;
 						default:
 							for(let i = 0; i < downloadedDatasets.length; i++){
@@ -667,18 +531,17 @@ const openModal = (dataType) => {
 
 								if (parts.length > 1){ ext = parts.pop(); }
 
-									if(ext === 'csv'){ responseLoad += '\n<li>\n\t<img src="data:image/png;base64,' + formatIcon[0]'" />'; }
-									if(ext === 'json'){ responseLoad += '\n<li>\n\t<img src="data:image/png;base64,' + formatIcon[1]'" />'; }
-									if(ext === 'xml'){ responseLoad += '\n<li>\n\t<img src="data:image/png;base64,' + formatIcon[2]'" />'; }
-									if(ext === 'xlsx'){ responseLoad += '\n<li>\n\t<img src="data:image/png;base64,' + formatIcon[3]'" />'; }
+								if(ext === 'csv'){ responseLoad += '\n<li>\n\t<img src="data:image/png;base64,' + formatIcon[0] + '" />'; }
+								if(ext === 'json'){ responseLoad += '\n<li>\n\t<img src="data:image/png;base64,' + formatIcon[1] + '" />'; }
+								if(ext === 'xml'){ responseLoad += '\n<li>\n\t<img src="data:image/png;base64,' + formatIcon[2] + '" />'; }
+								if(ext === 'xlsx'){ responseLoad += '\n<li>\n\t<img src="data:image/png;base64,' + formatIcon[3] + '" />'; }
 
 									responseLoad += '\n\t<span>' + file.name + '</span>\n</li>';
-
-								}
 							}
 
 							$('.downloaded-files > ul').append(responseLoad);
-							dataValid.push({ service: 'edit', pms: uploadMultipleDatasets(downloadedDatasets)};
+							sessionStorage.setItem('dsue', uploadMultipleDatasets(downloadedDatasets));
+							
 						break;
 					}
 				}
@@ -691,16 +554,17 @@ const openModal = (dataType) => {
 
 							if (parts.length > 1){ ext = parts.pop(); }
 
-							if(ext === 'csv'){ responseLoad += '\n<li>\n\t<img src="data:image/png;base64,' + formatIcon[0]'" />'; }
-							if(ext === 'json'){ responseLoad += '\n<li>\n\t<img src="data:image/png;base64,' + formatIcon[1]'" />'; }
-							if(ext === 'xml'){ responseLoad += '\n<li>\n\t<img src="data:image/png;base64,' + formatIcon[2]'" />'; }
-							if(ext === 'xlsx'){ responseLoad += '\n<li>\n\t<img src="data:image/png;base64,' + formatIcon[3]'" />'; }
+							if(ext === 'csv'){ responseLoad += '\n<li>\n\t<img src="data:image/png;base64,' + formatIcon[0] + '" />'; }
+							if(ext === 'json'){ responseLoad += '\n<li>\n\t<img src="data:image/png;base64,' + formatIcon[1] + '" />'; }
+							if(ext === 'xml'){ responseLoad += '\n<li>\n\t<img src="data:image/png;base64,' + formatIcon[2] + '" />'; }
+							if(ext === 'xlsx'){ responseLoad += '\n<li>\n\t<img src="data:image/png;base64,' + formatIcon[3] + '" />'; }
 
 							responseLoad += '\n\t<span>' + file.name + '</span>\n</li>';
 
 							$('.downloaded-files > ul').append(responseLoad);
+							sessionStorage.setItem('dsua', uploadDataset(downloadedDatasets[0]));
 							
-							dataValid.push({ service: 'add', pms: uploadDataset(downloadedDatasets[0])};
+							
 						break;
 						default:
 							for(let i = 0; i < downloadedDatasets.length; i++){
@@ -709,30 +573,30 @@ const openModal = (dataType) => {
 
 								if (parts.length > 1){ ext = parts.pop(); }
 
-									if(ext === 'csv'){ responseLoad += '\n<li>\n\t<img src="data:image/png;base64,' + formatIcon[0]'" />'; }
-									if(ext === 'json'){ responseLoad += '\n<li>\n\t<img src="data:image/png;base64,' + formatIcon[1]'" />'; }
-									if(ext === 'xml'){ responseLoad += '\n<li>\n\t<img src="data:image/png;base64,' + formatIcon[2]'" />'; }
-									if(ext === 'xlsx'){ responseLoad += '\n<li>\n\t<img src="data:image/png;base64,' + formatIcon[3]'" />'; }
+								if(ext === 'csv'){ responseLoad += '\n<li>\n\t<img src="data:image/png;base64,' + formatIcon[0] + '" />'; }
+								if(ext === 'json'){ responseLoad += '\n<li>\n\t<img src="data:image/png;base64,' + formatIcon[1] + '" />'; }
+								if(ext === 'xml'){ responseLoad += '\n<li>\n\t<img src="data:image/png;base64,' + formatIcon[2] + '" />'; }
+								if(ext === 'xlsx'){ responseLoad += '\n<li>\n\t<img src="data:image/png;base64,' + formatIcon[3] + '" />'; }
 
-									responseLoad += '\n\t<span>' + file.name + '</span>\n</li>';
+								responseLoad += '\n\t<span>' + file.name + '</span>\n</li>';
 
-								}
 							}
 
 							$('.downloaded-files > ul').append(responseLoad);
-							dataValid.push({ service: 'add', pms: uploadMultipleDatasets(downloadedDatasets)};
+							sessionStorage.setItem('dsua', uploadMultipleDatasets(downloadedDatasets));
 						break;
 					}
 				}
-			});
+}
 
-			$('#header-right > img').eq(0).click(function(e,t){
-				
-				
-				if(isEdit){
+const dsSaver = (e,t) => {
+				let isAdd = document.location.href.indexOf("add") ? true : null,
+					isEdit = document.location.href.indexOf("edit") ? true : null;
 					
-					if(validSmartField('dataset',dataValid) === 'editDataReady'){
-						jsonQueryConstructor(dataValid, '#queryParameters');
+				if(isEdit){
+					if(validSmartField('dataset',sessionStorage.getItem('dsue')) === 'editDataReady'){
+						sessionStorage.setItem('isEDS', true);
+						jsonQueryConstructor(sessionStorage.getItem('dsue'), '#queryParameters');
 						modalUI.eq(0).addClass('modal-close');
 					}
 					else{
@@ -740,30 +604,25 @@ const openModal = (dataType) => {
 					}
 				}
 				else{
-					if(validSmartField('dataset',dataValid) === 'addDataReady'){
-						jsonQueryConstructor(dataValid, '#queryParameters');
+					if(validSmartField('dataset',sessionStorage.getItem('dsua')) === 'addDataReady'){
+						sessionStorage.setItem('isADS', true);
+						jsonQueryConstructor(sessionStorage.getItem('dsua'), '#queryParameters');
 						modalUI.eq(0).addClass('modal-close');
 					}
 					else{
 						window.alert('Some required data for added this attribute has not been loaded');
 					}
 				}
-			});
+}
 
-		break;
-		case 'photogallery':
-			let modalUI;
-			let dataValid = {};
 
-			
-			if(currentFilterPage.isEdit){ modalUI = $('.edit-modals > li'); }
-			if(currentFilterPage.isAdd){ modalUI = $('.add-modals > li'); }
-
-			modalUI.eq(1).removeClass('modal-close');
-
-			$('#header-right > img').eq(0).click(function(e,t){
+const pgUploader = (e,t) => {
+				let isAdd = document.location.href.indexOf("add") ? true : null,
+					isEdit = document.location.href.indexOf("edit") ? true : null;
 				
-				let constructorData = {};
+				let constructorData = [];
+				
+				let addState, editState;
 
 				var checkedFormats = modalUI.eq(1).find('.form-rpa-addon > main #pg li div #format:checked'),
 					photosCount = modalUI.eq(1).find('.form-rpa-addon > main #pg li div #imagesCount');
@@ -779,7 +638,7 @@ const openModal = (dataType) => {
 							'value' : editOut,
 							'format' : ParseInt(photosCount.val())
 						});
-						dataValid.push({ service: 'edit', pms: constructorData});
+						editState = constructorData;
 					break;
 					default:
 						let addOut = [];
@@ -791,13 +650,14 @@ const openModal = (dataType) => {
 							'galleryCount' : ParseInt(photosCount.val())
 						});
 						
-						dataValid.push({ service: 'add', pms: constructorData});
+						addState = constructorData;
 					break;
 				}
 				
 				if(isEdit){
-					if(validSmartField('photogallery',dataValid) === 'editDataReady'){
-						jsonQueryConstructor(dataValid, '#queryParameters');
+					if(validSmartField('photogallery',editState) === 'editDataReady'){
+						sessionStorage.setItem('isEPG', true);
+						jsonQueryConstructor(editState, '#queryParameters');
 						modalUI.eq(1).addClass('modal-close');
 					}
 					else{
@@ -805,198 +665,107 @@ const openModal = (dataType) => {
 					}
 				}
 				else{
-					if(validSmartField('photogallery',dataValid) === 'addDataReady'){
-						jsonQueryConstructor(dataValid, '#queryParameters');
+					if(validSmartField('photogallery',addState) === 'addDataReady'){
+						sessionStorage.setItem('isAPG', true);
+						jsonQueryConstructor(addState, '#queryParameters');
 						modalUI.eq(1).addClass('modal-close');
 					}
 					else{
 						window.alert('You have allowed inappropriate values for adding filters. Check them out and fix them!');
 					}
 				}
-			});
-		break;
-		case 'selecting':
-			var query = window.prompt('Enter two options that will be displayed in the format of radio buttons, separated by a space, semicolon or comma (the maximum number of characters in the option is 164 characters)');
-			let valid = 0;
-			if(query.match(/\s/g) || query.match(/[;,]/)){
-				var queryForm = query.split(/\s/g) || query.split(/[;,]/);
+}
 
-				if(queryForm[0].match(/^[a-zA-Z0-9]\s\w+$/g)){
-					valid += 1;
-				}
-				
-				if(queryForm[1].match(/^[a-zA-Z0-9]\s\w+$/g)){
-					valid += 1;
-				}
 
-				if(valid === 1){ openModal('selecting'); }
-				else{ queryModule.defaultParameter.push({element: 'selecting', data: query}); }
-			}
-			else{ openModal('selecting'); }
-		break;
-		case 'precentable':
-			var query = window.prompt('Enter a condition "<" or ">" between two precentables or just enter a precentable!');
-			let valid = 0;
+const openModal = (dataType) => {
+	let isAdd = document.location.href.indexOf("add") ? true : null,
+		isEdit = document.location.href.indexOf("edit") ? true : null,
+		modalUI;
+	
+	switch(dataType){
+		case 'smartDatasets':
+			if(isEdit){ modalUI = $('.edit-modals > li'); }
+			if(isAdd){ modalUI = $('.add-modals > li'); }
 			
-			if(query.indexOf(">") || query.indexOf("<")){
-				var queryForm = query.split(">") || query.split("<");
-
-				if(queryForm[0].match(/^[0-9]+$/)){
-					valid += 1;
-				}
-				
-				if(queryForm[1].match(/^[0-9]+$/)){
-					valid += 1;
-				}
-
-				if(valid === 1){ openModal('precentable'); }
-				else{ queryModule.defaultParameter.push({element: 'precentable', data: query}); }
-			}
-			else{
-				if(query.match(/^[0-9]+$/)){ queryModule.defaultParameter.push({element: 'precentable', data: query}); }
-				else{ openModal('precentable'); }
-			}
-		break;
-		case 'cost':
-			var query = window.prompt('Enter a condition "<" or ">" between two costs or just enter a default cost!');
-			let valid = 0;
+			modalUI.eq(0).removeClass('modal-close');
 			
-			if(query.indexOf(">") || query.indexOf("<")){
-				var queryForm = query.split(">") || query.split("<");
-
-				if(queryForm[0].match(/^[0-9]+$/)){
-					valid += 1;
-				}
-				
-				if(queryForm[1].match(/^[0-9]+$/)){
-					valid += 1;
-				}
-
-				if(valid === 1){ openModal('cost'); }
-				else{ queryModule.defaultParameter.push({element: 'cost', data: query}); }
-			}
-			else{
-				if(query.match(/^[0-9]+$/)){ queryModule.defaultParameter.push({element: 'cost', data: query}); }
-				else{ openModal('cost'); }
-			}
+			$('.form-rpa-addon > main #smdf-content section * input[type=file]').change(dsUploader);
+			$('#header-right > img').eq(0).click(dsSaver);
 		break;
-		case 'integer':
-			var query = window.prompt('Enter a condition "<" or ">" between two numbers or just enter a number!');
-			let valid = 0;
-			
-			if(query.indexOf(">") || query.indexOf("<")){
-				var queryForm = query.split(">") || query.split("<");
+		case 'photogallery':
+			if(isEdit){ modalUI = $('.edit-modals > li'); }
+			if(isAdd){ modalUI = $('.add-modals > li'); }
 
-				if(queryForm[0].match(/^[0-9]+$/)){
-					valid += 1;
-				}
-				
-				if(queryForm[1].match(/^[0-9]+$/)){
-					valid += 1;
-				}
+			modalUI.eq(1).removeClass('modal-close');
 
-				if(valid === 1){ openModal('integer'); }
-				else{ queryModule.defaultParameter.push({element: 'integer', data: query}); }
-			}
-			else{
-				if(query.match(/^[0-9]+$/)){ queryModule.defaultParameter.push({element: 'integer', data: query}); }
-				else{ openModal('integer'); }
-			}
+			$('#header-right > img').eq(0).click(pgUploader);
 		break;
 		default:
-			var query = window.prompt('Enter either a hint, or the maximum number of characters, or all together separated by commas. And it\'s better to leave the field empty;-)');
-
-			if(query.indexOf(",")){
-				var queryForm = query.split(",");
-				let valid = 0;
-				if(queryForm[0].match(/^[a-zA-Z0-9]\s\w+$/g)){
-					valid += 1;
-				}
-				
-				if(queryForm[1].match(/^[0-9]+$/)){
-					valid += 1;
-				}
-
-				var queryRes = {
-					placeholder: queryForm[0],
-					maxLength: queryForm[1]
-				};
-
-				if(valid === 1){ openModal('text'); }
-				else{ queryModule.defaultParameter.push({element: 'integer', data: queryRes }); }
-			}
-			else if(query.match(/^[a-zA-Z0-9]\s\w+$/g)){
-				var queryForm = {
-					placeholder: query,
-					maxLength: null
-				};
-
-				queryModule.defaultParameter.push({element: 'integer', data: queryForm});
-			}
-			else if(query.match(/^[0-9]+$/)){
-				var queryForm = {
-					placeholder: null,
-					maxLength: parseInt(query)
-				};
-
-				queryModule.defaultParameter.push({element: 'integer', data: queryForm});
-			}
-			else{ openModal('text'); }
+			let formatQuery = { type: dataType };
+			jsonQueryConstructor(formatQuery, '#queryParameters');
 		break;
 	}
-
-	jsonQueryConstructor(queryModule, '#queryParameters');
 }
+
+
 
 
 const addFilters = (e,t) => {
 	let jsonQuery = $('.add-filters > #queryParameters').val();
-
-	var sendProccess = fetch('/admin/api/dataServices/filters', {
-		method: 'POST',
-		body: {'svcQuery': jsonQuery}
-	});
 	
-	if(sendProccess.ok){ window.location.assign('/admin?svc=dataManagment&subSVC=filters'); }
-	else{
-		var sendError = alert('Connection to the service failed to perform this operation! Try again;-)');
-		if(!sendError){ $('.add-fields > footer button').trigger('click'); }
+	if(jsonQuery !== '' || jsonQuery !== '{}' || jsonQuery !== '[]'){
+		var sendProccess = fetch(sessionStorage.getItem('ep'), {
+			method: 'POST',
+			body: {'svcQuery': jsonQuery}
+		});
+		
+		if(sendProccess.ok){ 
+			$('.add-filters > #queryParameters').val('');
+			AddField();
+		}
+		else{
+			var sendError = alert('Connection to the service failed to perform this operation! Try again;-)');
+			if(!sendError){ $('.add-fields > footer button').trigger('click'); }
+		}
 	}
+	else{ alert('You have not selected the filters suggested by the list!'); }
 	
 }
 const editFilters = (e,t) => {
 	let jsonQuery = $('.edit-filters > #queryParameters').val();
 
-	var sendProccess = fetch('/admin/api/dataServices/filters', {
-		method: 'POST',
-		body: {'svcQuery': jsonQuery}
-	});
-	
-	if(sendProccess.ok){ window.location.assign('/admin?svc=dataManagment&subSVC=filters'); }
-	else{
-		var sendError = alert('Connection to the service failed to perform this operation! Try again;-)');
-		if(!sendError){ $('.edit-fields > footer button').trigger('click'); }
+	if(jsonQuery !== '' || jsonQuery !== '{}' || jsonQuery !== '[]'){
+		var sendProccess = fetch(sessionStorage.getItem('ep'), {
+			method: 'POST',
+			body: {'svcQuery': jsonQuery}
+		});
+		
+		if(sendProccess.ok){ 
+			$('.edit-filters > #queryParameters').val('');
+			AddField();
+		}
+		else{
+			var sendError = alert('Connection to the service failed to perform this operation! Try again;-)');
+			if(!sendError){ $('.edit-fields > footer button').trigger('click'); }
+		}
 	}
+	else{ alert('You have not selected the filters suggested by the list!'); }
 	
 }
 const deleteFilters = (e,t) => {
-	let jsonQuery = { command:{}, parameters:{} };
-
-	jsonQuery.push({ command: 2 });
-
-	jsonQuery.command.push({ subCMD: 'deleteFilters' });
-
-	jsonQuery.parameters.push({
-		field: $('#filters-list > main #filter-card #header').eq($(this).index()).text()
-	});
+	let jsonQuery = {
+		"parameters": {
+			"attribute": $('#filters-list > #filter-card header').eq($(this).index()).text()
+		}
+	};
 
 	
-	var sendProccess = fetch('/admin/api/dataServices/filters', {
+	var sendProccess = fetch('/admin/api/dataServices/filters/Attribute/delete', {
 		method: 'POST',
-		body: {'svcQuery': jsonQuery}
+		body: {'svcQuery': JSON.stringify(jsonQuery)}
 	});
 	
-	if(sendProccess.ok){ window.reload(); }
+	if(sendProccess.ok){ window.reload(true); }
 	else{
 		var sendError = alert('Connection to the service failed to perform this operation! Try again;-)');
 		if(!sendError){ $('.filters-list > main #filters-card #footer nav span:nth-last-child(1)').trigger('click'); }
@@ -1021,7 +790,7 @@ const redirectToDataForm = (e,t) => {
 const uploadDataset = (dataset) => {
 	//При одиночном режиме
 
-	let queryFile = { dataConstructor: { single: {} } },
+	let queryFile = { "dataConstructor": { "single": [] } },
 		fileData = '';
 	const fsAPI = new FileReader();
 
@@ -1029,7 +798,7 @@ const uploadDataset = (dataset) => {
 	fsAPI.readAsDataURL(dataset);
 
 	queryFile.dataConstructor.single.push({
-		file: fileData
+		"file": fileData
 	});
 
 	return queryFile;
@@ -1039,7 +808,7 @@ const uploadDataset = (dataset) => {
 const uploadMultipleDatasets = (type, dsq) => {
 	//При поисковом режиме
 
-	let queryFile = { dataConstructor:  {} },
+	let queryFile = { "dataConstructor":  [] },
 		fileData;
 	const fsAPI = new FileReader();
 	
@@ -1077,13 +846,15 @@ const uploadMultipleDatasets = (type, dsq) => {
 	
 }
 
-const selectFilterType = (e) => {
-	var optionSelected = $("option:selected", this);
-    var valueSelected = this.value.split('Field')[0];
+const selectFilterType = () => {
+    var optionSelected = $(this).find("option:selected");
+    var valueSelected  = optionSelected.val();
+    var field = $('.add-fields > main input, .edit-fields > main input').eq($(this).index()).val();
     
+    sessionStorage.setItem('currentField', field);
     openModal(valueSelected);
 }
-const validSmartField(type,data) = () => {
+const validSmartField = (type, data) => {
 	if(type === 'dataset'){
 		var stateValid;
 		switch(data.service){
@@ -1134,14 +905,57 @@ const validSmartField(type,data) = () => {
 	}
 }
 
+
+const DataTypeListGenerator = (field, dataType) => {
+	var isParameter = null,
+		parameter;
+						
+	if(dataType === 'smartDatasets'){
+		parameter = "Smart datasets";
+		isParameter = true;
+	}	
+	else if(dataType === 'photogallery'){
+		parameter = "Photogallery";
+		isParameter = true;
+	}	
+	else if(dataType === 'precentable'){
+		parameter = "Precentable value";
+		isParameter = true;
+	}		
+	else if(dataType === 'int'){
+		parameter = "Integer value";
+		isParameter = true;
+	}
+	else if(dataType === 'cost'){
+		parameter = "Cost value";
+		isParameter = true;
+	}
+	else if(dataType === 'selecting'){
+		parameter = "The form of the answer to the question";
+		isParameter = true;
+	}
+	else if(dataType === 'text'){
+		parameter = "Default value";
+		isParameter = true;
+	}
+	
+	switch(isParameter){
+		case null: return <li>{list[i].Field}</li>; break;
+		case true: return <li>{list[i].Field} - <span>{parameter}</span></li>; break;
+	}
+		
+		
+		
+}
 const RenderAttributeFiltersList = (service, query) => {
 	let isList = service === 'List' ? true : false,
-		isControl = service === 'Control' ? true : false,
-		response = ();
+		isControl = service === 'Control' ? true : false;
+		
+	let response;
 	
 	let qpm = {
 		parameters: {
-			attribute: query
+			"attribute": query
 		}
 	};
 	  
@@ -1153,93 +967,36 @@ const RenderAttributeFiltersList = (service, query) => {
 	
 		
 	if(isList){
-		let filters = ();
+		let filters;
 		
 		fetch('/admin/api/dataServices/filters', requestOptions).then(response => response.json()).then(data => {
 			let list = data;
 			
 			if(list){
-				
-				let filter = ();
-				
-				for(let i = 0; i < list.length; i++){
-					var isParameter = null,
-						parameter;
-						
-					if(list[i].Type === 'json'){
-						parameter = "Smart datasets or Photogallery";
-						isParameter = true;
-					}
-					
-					if(list[i].Type === 'float'){
-						parameter = "Price parameters";
-						isParameter = true;
-					}
-					
-					if(list[i].Type === 'int'){
-						parameter = "Integer or precentable value";
-						isParameter = true;
-					}
-					
-					if(list[i].Type === 'varchar(255)'){
-						parameter = "The form of the answer to the question";
-						isParameter = true;
-					}
-					
-					switch(isParameter){
-						case null:
-							filter += (
-								<li>{list[i].Field}</li>
-							);
-						break;
-						case true:
-							filter += (
-								<li>{list[i].Field} - <span>{parameter}</span></li>
-							);
-						break;
-					}
-					
-					
-				}
-				
-				filters += (
-					<ul>{filter}</ul>
-				);
+				filters = list.map((myState) => DataTypeListGenerator(myState.field, myState.type));
 			}
 			else{
-				filters += (
-					<ul><li>Not filters</li></ul>
-				);
+				filters = <li>Not filters</li>;
 			}
 		});
 		
-		response = filters;
+		const response = <ul>{ filters }</ul>;
 	}
 	if(isControl){
-		let controls = ();
+		let controls;
 		
 		fetch('/admin/api/dataServices/filters', requestOptions).then(response => response.json()).then(data => {
-			let buttons = data;
+			const buttons = data;
 			
 			if(buttons){
-				controls += (
-					<nav>
-					  <span>Edit</span>
-					  <span>Delete</span>
-					</nav>
-				);
+				controls = <nav><span>Edit</span><span>Delete</span></nav>;
 			}
 			else{
-				controls += (
-					<nav>
-					  <span>Add</span>
-					  <span>Delete</span>
-					</nav>
-				);
+				controls = <nav><span>Add</span><span>Delete</span></nav>;
 			}
 		});
 		
-		response = controls;
+		const response = controls;
 	}
 	
 	return response;
@@ -1253,6 +1010,7 @@ $(document).ready(function(){
 		
 		UIRender(s);
 		UXRender(s);
+		HeaderRender(s);
   }).trigger('hashchange');
   
 });

@@ -2,7 +2,7 @@ function selectorElSwitch(k,t){
 	var sel = $('#edit-fields > main');
 	
 	for(let i = 0; i < sel.length; i++){
-		let keyName = sel.eq(i).find('input#fieldName'),
+		let keyName = sel.eq(i).find('input#field'),
 			selectorData = sel.eq(i).find('select#fieldType > option');
 			
 		if(t === 'ds'){

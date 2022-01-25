@@ -27,23 +27,10 @@ long_line_behaviour=1
 long_line_column=72
 
 [files]
-current_page=0
+current_page=2
+FILE_NAME_0=3340;PHP;0;EUTF-8;1;1;0;%2Fhome%2Fsergey%2FРабочий%20стол%2FCode%2Fdocker-compose-lamp%2Fwww%2Finvestportal%2Fbasic%2Fcontrollers%2FAdminController.php;0;4
+FILE_NAME_1=206;Javascript;0;EUTF-8;1;1;0;%2Fhome%2Fsergey%2FРабочий%20стол%2FCode%2Fdocker-compose-lamp%2Fwww%2Finvestportal%2Fbasic%2Fweb%2Fjs%2Freact%2Fadmin%2Faddons%2FvalidParams.js;0;4
+FILE_NAME_2=17334;Javascript;0;EUTF-8;1;1;0;%2Fhome%2Fsergey%2FРабочий%20стол%2FCode%2Fdocker-compose-lamp%2Fwww%2Finvestportal%2Fbasic%2Fweb%2Fjs%2Freact%2Fadmin%2FdataFilters.js;0;4
 
 [VTE]
-last_dir=/home/sergey/Рабочий стол/Code/docker-compose-lamp/docker-hive
-
-[prjorg]
-source_patterns=*.c;*.C;*.cpp;*.cxx;*.c++;*.cc;*.m;
-header_patterns=*.h;*.H;*.hpp;*.hxx;*.h++;*.hh;
-ignored_dirs_patterns=.*;CVS;
-ignored_file_patterns=*.o;*.obj;*.a;*.lib;*.so;*.dll;*.lo;*.la;*.class;*.jar;*.pyc;*.mo;*.gmo;
-generate_tag_prefs=0
-external_dirs=
-
-[debugger]
-target=
-debugger=GDB
-arguments=
-envvar_count=0
-watches_count=0
-breaks_count=0
+last_dir=/home/sergey/Рабочий стол/Code/docker-compose-lamp

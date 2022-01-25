@@ -42,6 +42,7 @@
   box-shadow:         8px 10px 5px 0px #0079bf;
   border: solid 2px #0079bf;
   text-indent: 7%;
+  text-transform: capitalize;
 }
 #attributes-list > .list-cont:hover{
   cursor: pointer;
@@ -51,16 +52,11 @@
 }
 #attributes-list > .list-cont *{
   margin-top: 4%;
+  color: #0079bf;
 }
 #attributes-list > .list-cont header{
   font-weight: bolder;
   font-size: 140%;
-}
-#attributes-list > .list-cont footer{
-  font-size: 100%;
-  margin-top: calc(4% * 2);
-  color: darkgray;
-  font-style: italic;
 }
 #add-attribute{
   width: 70%;

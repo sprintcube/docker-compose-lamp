@@ -1,0 +1,8 @@
+<main id="id-lightbox" data-service="fb-login">
+  <header>System message</header>
+  <main>
+    <center><div><img src="/images/events/loading.gif" align="center"/></div></center>
+    <div>Wait, the data collection operation to search for an existing user is in progress!</div>
+  </main>
+  <footer>After performing the current operation, the current window will automatically close and the portal will authorize you for some time if you are considered our registered user;-)</footer>
+</main>

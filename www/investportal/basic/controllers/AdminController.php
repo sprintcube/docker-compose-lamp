@@ -6,9 +6,11 @@ use yii\web\Controller;
 use yii\web\View;
 use yii\web\Url;
 use yii\helpers\Json;
-
+use linslin\yii2\curl;
 use org\apache\hadoop\WebHDFS;
-use Clouding\Presto\Presto;
+
+use app\models\ObjectAttribute;
+use app\models\ObjectFilter;
 
 class AdminController extends Controller{
 	public function beforeAction($action) { 
@@ -68,16 +70,10 @@ class AdminController extends Controller{
 		return $this->render('auth');
 	}
 	public function actionAdminDataFiltersSendService($svc){
-		$hadoop = (new WebHDFS('localhost', 50070, 'root', 'namenode', 9870, ''));
-		$hive = new Presto();
-
-		$hive->addConnection([
-			'host' => 'datacluster.investportal.aplex:8080',
-			'catalog' => 'hive',
-			'schema' => 'default'
-		]);
-
-		$hive->setAsGlobal();
+		$hadoop = [new ObjectFilter, ObjectFilter::find()];
+		$hive = [new ObjectAttribute, ObjectAttribute::find()];
+		
+		$storage = (new WebHDFS('localhost', 50070, 'root', 'namenode', 9870, ''));
 
 		$serviceResponse = array();
 		
@@ -87,21 +83,52 @@ class AdminController extends Controller{
 				$serviceResponse = array();
 				
 				if($svc == "Filters"){
+					
 					$attributeId = strtolower($pm['attribute']);
 					
+					$isDataState = (new curl\Curl)->post(((!empty($_SERVER['HTTPS'])) ? 'https' : 'http') . '://' . $_SERVER['HTTP_HOST'] .'/admin/api/dataServices/filters/notEmptyAttribute/show');
+					$attributeGenerator = (new curl\Curl)->post(((!empty($_SERVER['HTTPS'])) ? 'https' : 'http') . '://' . $_SERVER['HTTP_HOST'] .'/admin/api/dataServices/filters/Attribute/send');
+					
+					$microQuery = [
+						'generatorQuery' => [
+							'parameters' => [ 
+								'attribute' => $attributeId,
+								'group' => 'data' 
+							]
+						],
+						'validQuery' => [
+							'parameters' => [ 'attribute' => $attributeId ]
+						]
+					];
+					
+					$idsSend = $isDataState->setOption(CURLOPT_POSTFIELDS, http_build_query(['svcQuery' => JSON::encode($microQuery['validQuery'])]));
+					
+					$resValid = JSON::decode($idsSend);
+					
+					if($resValid['avabillityData'] == 1){ $agSend = $attributeGenerator->setOption(CURLOPT_POSTFIELDS, http_build_query(['svcQuery' => JSON::encode($microQuery['generatorQuery'])])); }
+					
+					
+					if((!$idsSend && !$agSend) || !$idsSend || !$agSend){
+						\Yii::$app->response->statusCode = 502;
+						$serviceResponse[] = 'Operation service error!';
+					}
+					
+					
 					switch($pm['type']){
-						case "intField": 
-						case "precentableField": $dataType = 'int'; break;
-						case "costField": $dataType = 'float'; break;
-						case "smartDatasets": case "photogalleryField": $dataType = 'json'; break;
-						case "selectingField": $dataType = 'varchar(255)'; break;
+						case "int": $dataType = 'int'; break;
+						case "precentable": $dataType = 'precentable'; break;
+						case "cost": $dataType = 'cost'; break;
+						case "smartDatasets": $dataType = 'smartDatasets'; break;
+						case "photogallery": $dataType = 'photogallery'; break;
+						case "selecting": $dataType = 'selecting'; break;
 						default: $dataType = 'text'; break;
 					}
-					$queryHeader = 'ALTER TABLE '. $attributeId;
-					$queryBody = '\tADD COLUMN '. $pm['field'] .' '. $dataType;
-
-										    
-					if(Presto::query(concat($queryHeader,$queryBody))->get()){ $serviceResponse[] = 'New filter in current attribute table created!'; }
+					
+					$hadoop[0]->name = $attributeId;
+					$hadoop[0]->field = $pm['field'];
+					$hadoop[0]->type = $dataType;
+					
+					if($hadoop[0]->save()){ $serviceResponse[] = 'New filter in current attribute table created!'; }
 					else{
 						\Yii::$app->response->statusCode = 503;
 						$serviceResponse[] = 'DBA Service Error!';
@@ -128,7 +155,7 @@ class AdminController extends Controller{
 							else if(strrpos($query[0], 'application/vnd.ms-excel')){ $newDataFile = $i .".csv"; }
 
 												
-							if($hadoop->createWithData('/FiltersAttributes/data/'. $attributeId .'/'. $newDataFile, base64_decode($query[1]))){ $responseData[][] = 'Send proccess success!'; }
+							if($storage->createWithData('/FiltersAttributes/data/'. $attributeId .'/'. $newDataFile, base64_decode($query[1]))){ $responseData[][] = 'Send proccess success!'; }
 							else{ $resData[] = 'Bad Data Storage gateway!'; }
 												
 							$jsonList[]['df'] = $newDataFile;
@@ -136,8 +163,7 @@ class AdminController extends Controller{
 											
 						$jsonResponse = Json::encode(['response' => $jsonList]);
 
-						if($pm['fieldID']){ $sendP = Presto::query('UPDATE '. $attributeId .' SET '. $pm['field'] .'='. $jsonResponse .' WHERE id='. $pm['fieldID'])->getAssoc(); }
-						else{ $sendP = Presto::query('INSERT INTO '. $attributeId .' ('. $pm['field'] .') VALUES('. $jsonResponse .')')->getAssoc(); }
+						$sendP = $hadoop[0]->updateAll(['parameters' => $jsonResponse],['name' => $attributeId, 'field' => $pm['field'], 'type' => 'photogallery']);
 												
 						if($sendP){ $serviceResponse[] = ['Datasets in current attribute creating!', $resData]; }
 						else{
@@ -156,7 +182,7 @@ class AdminController extends Controller{
 						else if(strrpos($query[0], 'application/xml')){ $newDataFile = "single.xml"; }
 						else if(strrpos($query[0], 'application/vnd.ms-excel')){ $newDataFile = "single.csv"; }
 												
-						if($hadoop->createWithData('/FiltersAttributes/data/'. $attributeId .'/'. $newDataFile, base64_decode($query[1]))){ $serviceResponse[] = 'Send proccess success!'; }
+						if($storage->createWithData('/FiltersAttributes/data/'. $attributeId .'/'. $newDataFile, base64_decode($query[1]))){ $serviceResponse[] = 'Send proccess success!'; }
 						else{
 							\Yii::$app->response->statusCode = 502;
 							$serviceResponse[] = 'Bad Data Storage gateway!';
@@ -165,8 +191,7 @@ class AdminController extends Controller{
 						$jsonReport['ds'] = $newDataFile;
 						$jsonResponse = Json::encode(['response' => $jsonReport]);
 												
-						if($pm['fieldID']){ $sendP = Presto::query('UPDATE '. $attributeId .' SET '. $pm['field'] .'='. $jsonResponse .' WHERE id='. $pm['fieldID'])->getAssoc(); }
-						else{ $sendP = Presto::query('INSERT INTO '. $attributeId .' ('. $pm['field'] .') VALUES('. $jsonResponse .')')->getAssoc(); }
+						$sendP = $hadoop[0]->updateAll(['parameters' => $jsonResponse],['name' => $attributeId, 'field' => $pm['field'], 'type' => 'photogallery']);
 													
 						if($sendP){ $serviceResponse[] = 'Datasets in current attribute creating!'; }
 						else{
@@ -192,8 +217,7 @@ class AdminController extends Controller{
 								$jsonReport = ['imageFormats' => $formats, 'imageCounts' => $q['count']];
 								$jsonResponse = ['response' => $jsonReport];
 													
-								if($pm['fieldID']){ $sendP = Presto::query('UPDATE '. $attributeId .' SET '. $pm['field'] .'='. $jsonResponse .' WHERE id='. $pm['fieldID'])->getAssoc(); }
-								else{ $sendP = Presto::query('INSERT INTO '. $attributeId .' ('. $pm['field'] .') VALUES('. $jsonResponse .')')->getAssoc(); }
+								$sendP = $hadoop[0]->updateAll(['parameters' => $jsonResponse],['name' => $attributeId, 'field' => $pm['field'], 'type' => 'photogallery']);
 														
 								if($sendP){ $serviceResponse[] = 'New photogallery in current attribute table creating!'; }
 								else{
@@ -208,135 +232,6 @@ class AdminController extends Controller{
 						$serviceResponse[] = 'Query not found!';
 					}
 				}
-				else if($svc == "Parameters"){
-					
-					switch($pm['dataParam']){
-											case "cost":
-												$costQuery = $q['costData'];
-
-												if(strrpos($costQuery['val'],'>') || strrpos($costQuery['val'],'<')){
-													if(strrpos($costQuery['val'],'>')){
-														$dataArray = explode('>', $costQuery['val']);
-
-														$firstVal = (float) $dataArray[0];
-														$doubleVal = (float) $dataArray[1];
-
-														$module = ($firstVal + $doubleVal) / 2;
-													}
-													else{
-														$dataArray = explode('<', $costQuery['val']);
-
-														$firstVal = (float) $dataArray[0];
-														$doubleVal = (float) $dataArray[1];
-
-														$module = ($doubleVal - $firstVal) * 2;
-													}
-
-													$response = $module;
-												}
-												else {
-													$response = (float) $costQuery['val'];
-												}
-												
-												if($pm['fieldID']){ $dataQuery = 'UPDATE '. $attributeId .' SET '. $pm['field'] .'='. $response .' WHERE id='. $pm['fieldID']; }
-												else{ $dataQuery = 'INSERT INTO '. $attributeId .' ('. $pm['field'] .') VALUES('. $response .')'; }
-												break;
-											case "text":
-												$textQuery = $q['textData'];
-												$responseText = '';
-
-												$fieldParams = [
-													'ph' => $textQuery['placeholer'],
-													'ml' => $textQuery['maxLength']
-												];
-
-												if($fieldParams['ph']){ $responseText .= (string) $fieldParams['ph'] ."\!"; }
-												if($fieldParams['ml']){ $responseText .= (int) $fieldParams['ml'] ."\!"; }
-
-												$response = "[". $responseText ."]";
-												
-												if($pm['fieldID']){ $dataQuery = 'UPDATE '. $attributeId .' SET '. $pm['field'] .'='. $response .' WHERE id='. $pm['fieldID']; }
-												else{ $dataQuery = 'INSERT INTO '. $attributeId .' ('. $pm['field'] .') VALUES('. $response .')'; }
-												break;
-											case "selecting":
-												$selectingQuery = $q['selectingData'];
-
-												$firstVariant = $selectingQuery[0];
-												$doubleVariant = $selectingQuery[1];
-
-												$response = "[". $firstVariant .",". $doubleVariant ."]";
-												if($pm['fieldID']){ $dataQuery = 'UPDATE '. $attributeId .' SET '. $pm['field'] .'='. $response .' WHERE id='. $pm['fieldID']; }
-												else{ $dataQuery = 'INSERT INTO '. $attributeId .' ('. $pm['field'] .') VALUES('. $response .')'; }
-												break;
-											case "precentable":
-												$pQuery = $q['precentableData'];
-												
-												if(strrpos($pQuery['val'],'>') || strrpos($pQuery['val'],'<')){
-													if(strrpos($pQuery['val'],'>')){
-														$dataArray = explode('>', $pQuery['val']);
-
-														$firstVal = (int) $dataArray[0];
-														$doubleVal = (int) $dataArray[1];
-
-														$module = ($firstVal + $doubleVal) / 2;
-													}
-													else{
-														$dataArray = explode('<', $pQuery['val']);
-
-														$firstVal = (int) $dataArray[0];
-														$doubleVal = (int) $dataArray[1];
-
-														$module = ($doubleVal - $firstVal) * 2;
-													}
-
-													$response = $module;
-												}
-												else {
-													$response = (int) $pQuery['val'];
-												}
-												
-												if($pm['fieldID']){ $dataQuery = 'UPDATE '. $attributeId .' SET '. $pm['field'] .'='. $response .' WHERE id='. $pm['fieldID']; }
-												else{ $dataQuery = 'INSERT INTO '. $attributeId .' ('. $pm['field'] .') VALUES('. $response .')'; }
-												break;
-											default:
-												$intQuery = $q['intData'];
-
-												if(strrpos($intQuery['val'],'>') || strrpos($intQuery['val'],'<')){
-													if(strrpos($intQuery['val'],'>')){
-														$dataArray = explode('>', $intQuery['val']);
-
-														$firstVal = (int) $dataArray[0];
-														$doubleVal = (int) $dataArray[1];
-
-														$module = ($firstVal + $doubleVal) / 2;
-													}
-													else{
-														$dataArray = explode('<', $intQuery['val']);
-
-														$firstVal = (int) $dataArray[0];
-														$doubleVal = (int) $dataArray[1];
-
-														$module = ($doubleVal - $firstVal) * 2;
-													}
-
-													$response = $module;
-												}
-												else {
-													$response = (int) $intQuery['val'];
-												}
-												
-												if($pm['fieldID']){ $dataQuery = 'UPDATE '. $attributeId .' SET '. $pm['field'] .'='. $response .' WHERE id='. $pm['fieldID']; }
-												else{ $dataQuery = 'INSERT INTO '. $attributeId .' ('. $pm['field'] .') VALUES('. $response .')'; }
-												break;
-					}
-										
-					if(Presto::query($dataQuery)->get()){ $serviceResponse[] = 'Parameters send success!'; }
-					else{
-						\Yii::$app->response->statusCode = 502;
-						$serviceResponse[] = 'DBA Service Error';
-					}
-	
-				}
 				else if($svc == "Attribute"){
 					$attributeId = strtolower($pm['attribute']);
 					
@@ -345,47 +240,29 @@ class AdminController extends Controller{
 										
 										
 					if($groupCreate == 'meta'){
-											
+						
 						$send = Yii::$app->redis->executeCommand('rpush', [$key, $attributeId]);
 											 
 						if(!$send){
 							\Yii::$app->response->statusCode = 503;
 							$serviceResponse[] = 'Redis Service Error!';
 						}
-						else{ $serviceResponse[] = 'Ready proccess success!'; } 
+						else{ $serviceResponse[] = 'Ready proccess success!'; }			
 					}
 					else if($groupCreate == 'data'){
-												
-						$al = $cache->lrange($key, 0, 1);
+						$cache = Yii::$app->cache->redis;						
+						$al = Yii::$app->redis->executeCommand('lrange', ['readyAttribute', -100, 100]);
 												
 						for($i = 0; $i < $al; $i++){
 							if($attributeId == $al[$i]){ 
-								$cache->lrem($key, $i + 1, $attributeId); 
-														
-								$queryHeader = 'CREATE TABLE IF NOT EXISTS '. $attributeId .' (\n';
-								$queryBody = '';
-								$queryFooter = ')\nROW FORMAT DELIMITED\nFIELDS TERMINATED BY \';\'';
-
-								for($i = 0; $i < count($pm['metaData']); $i++){
-									$fieldName = $pm['metaData'][$i]['name'];
-									$fieldType = $pm['metaData'][$i]['type'];
-
-									switch($fieldType){
-											case "intField": $dataType = 'int'; break;
-											case "costField": $dataType = 'float'; break;
-											case "smartDatasets": case "photogalleryField": $dataType = 'json'; break;
-											case "selectingField": $dataType = 'varchar(255)'; break;
-											default: $dataType = 'text'; break;
-									}
-
-																
-									$queryBody .= $fieldName .''. $dataType;
-								}
+								$cache->lrem($key, $i + 1, $attributeId);
 															
 														
-								$dirNew = 'user/ip-data/FiltersAttributes/'. $groupCreate[$i] . '/' . $attributeId;
+								$dirNew = 'user/ip-data/FiltersAttributes/' . $attributeId;
+								
+								$hive[0]->name = $attributeId;
 
-								if(Presto::query(concat($queryHeader,$queryBody,$queryFooter))->get() && $hadoop->mkdirs($dirNew)){ $serviceResponse[] = ['Creator proccess success!', 'New attribute table created!']; }
+								if($storage->mkdirs($dirNew) && $hive[0]->save()){ $serviceResponse = ['Creator proccess success!', 'New attribute table created!']; }
 								else{
 									\Yii::$app->response->statusCode = 502;
 									$serviceResponse[] = 'Services gateway!';
@@ -411,17 +288,10 @@ class AdminController extends Controller{
 		
 	}
 	public function actionAdminDataFiltersUpdateService($svc){
-		$hadoop = (new WebHDFS('localhost', 50070, 'root', 'namenode', 9870, ''));
-		$hive = new Presto();
-
-		$hive->addConnection([
-			'host' => 'datacluster.investportal.aplex:8080',
-			'catalog' => 'hive',
-			'schema' => 'default'
-		]);
-
-		$hive->setAsGlobal();
-
+		$hadoop = [new ObjectFilter, ObjectFilter::find()];
+		$hive = [new ObjectAttribute, ObjectAttribute::find()];
+		
+		$storage = (new WebHDFS('localhost', 50070, 'root', 'namenode', 9870, ''));
 		$serviceResponse = array();
 		
 		if(!empty($_POST['svcQuery'])){
@@ -432,24 +302,25 @@ class AdminController extends Controller{
 					$attributeId = strtolower($pm['attribute']);
 					
 										
-					switch($pm['newType']){
-						case "intField": case "precentableField": $dataType = 'int'; break;
-						case "costField": $dataType = 'float'; break;
-						case "smartDatasets": case "photogalleryField": $dataType = 'json'; break;
-						case "selectingField": $dataType = 'varchar(255)'; break;
+					switch($pm['type']){
+						case "int": $dataType = 'int'; break;
+						case "precentable": $dataType = 'precentable'; break;
+						case "cost": $dataType = 'cost'; break;
+						case "smartDatasets": $dataType = 'smartDatasets'; break;
+						case "photogallery": $dataType = 'photogallery'; break;
+						case "selecting": $dataType = 'selecting'; break;
 						default: $dataType = 'text'; break;
-				}
+					}
 										
-				$queryHeader = 'ALTER TABLE '. $attributeId;
-				$queryBody = '\tRENAME COLUMN '. $pm['field'] .' to '. $pm['newField'];
+				
 										
-				$updateP = (Presto::query(concat($queryHeader,$queryBody))->get() && Presto::query(concat($queryHeader,'\tALTER COLUMN '. $pm['newField'] .' '. $dataType))->get());
-										
-				if($updateP){ $serviceResponse[] = 'The filter in current attribute table updated!'; }
-				else{
-					\Yii::$app->response->statusCode = 503;
-					$serviceResponse[] = 'DBA Service Error!';
-				}	
+					$updateP = $hadoop[0]->updateAll(['type' => $dataType], ['name' => $attributeId, 'field' => $pm['field']]);
+											
+					if($updateP){ $serviceResponse[] = 'The filter in current attribute table updated!'; }
+					else{
+						\Yii::$app->response->statusCode = 503;
+						$serviceResponse[] = 'DBA Service Error!';
+					}	
 				}
 				else if($svc == "Photogallery"){
 					if($q['photogallery']){
@@ -468,7 +339,7 @@ class AdminController extends Controller{
 								$jsonReport = ['imageFormats' => $formats, 'imageCounts' => $q['count']];
 								$jsonResponse = ['response' => $jsonReport];
 													
-								if(Presto::query('UPDATE '. $attributeId .' SET '. $pm['field'] .'='. $jsonResponse .' WHERE id='. $pm['fieldID'])->get()){
+								if($hadoop[0]->updateAll(['parameters' => $jsonResponse],['name' => $attributeId, 'field' => $pm['field'], 'type' => 'photogallery'])){
 									$serviceResponse[] = 'Photogallery in current attribute updated!';
 								}
 								else{
@@ -494,7 +365,7 @@ class AdminController extends Controller{
 						$resData = [];
 						$jsonList = [];
 											
-						if($hadoop->delete('/FiltersAttributes/data/'. $attributeId .'/*')){ $resData[] = 'Delete proccess success!'; }
+						if($storage->delete('/FiltersAttributes/data/'. $attributeId .'/*')){ $resData[] = 'Delete proccess success!'; }
 						else{
 							\Yii::$app->response->statusCode = 502;
 							$resData[] = 'Bad Data Storage gateway!';
@@ -510,7 +381,7 @@ class AdminController extends Controller{
 							else if(strrpos($query[0], 'application/xml')){ $newDataFile = $i .".xml"; }
 							else if(strrpos($query[0], 'application/vnd.ms-excel')){ $newDataFile = $i .".csv"; }
 
-							if($hadoop->createWithData('/FiltersAttributes/data/'. $attributeId .'/'. $newDataFile, $query[0])){
+							if($storage->createWithData('/FiltersAttributes/data/'. $attributeId .'/'. $newDataFile, $query[0])){
 								$resData[][] = 'Send proccess success!';
 							}
 							else{ $resData[][] = 'Bad Data Storage gateway!'; }
@@ -522,7 +393,7 @@ class AdminController extends Controller{
 											
 						$jsonResponse = Json::encode(['response' => $jsonList]);
 											
-						if(Presto::query('UPDATE '. $attributeId .' SET '. $pm['field'] .'='. $jsonResponse .' WHERE id='. $pm['fieldID'])->get()){
+						if($hadoop[0]->updateAll(['parameters' => $jsonResponse],['name' => $attributeId, 'field' => $pm['field'], 'type' => 'photogallery'])){
 							$serviceResponse[] = ['Datasets in current attribute updated!', $resData];
 						}
 						else{
@@ -538,7 +409,7 @@ class AdminController extends Controller{
 												
 						$query = explode(',', $dataset);
 												
-						if($hadoop->delete('/FiltersAttributes/data/'. $attributeId .'/*')){ $resData[] = 'Delete proccess success!'; }
+						if($storage->delete('/FiltersAttributes/data/'. $attributeId .'/*')){ $resData[] = 'Delete proccess success!'; }
 						else{ $resData[] = 'Bad Data Storage gateway!'; }
 												
 						if(strrpos($query[0], 'application/json')){ $newDataFile = "single.json"; }
@@ -552,12 +423,12 @@ class AdminController extends Controller{
 						$jsonReport['ds'] = $newDataFile;
 						$jsonResponse = Json::encode(['response' => $jsonReport]);
 
-						if($hadoop->create('/FiltersAttributes/data/'. $attributeId .'/'. $newDataFile)){
+						if($storage->create('/FiltersAttributes/data/'. $attributeId .'/'. $newDataFile)){
 							$resData[][] = 'Send proccess success!';
 						}
 						else{ $resData[][] = 'Bad Data Storage gateway!'; }
 												
-						if(Presto::query('UPDATE '. $attributeId .' SET '. $pm['field'] .'='. $jsonResponse .' WHERE id='. $pm['fieldID'])->get()){
+						if($hadoop[0]->updateAll(['parameters' => $jsonResponse],['name' => $attributeId, 'field' => $pm['field'], 'type' => 'photogallery'])){
 							$serviceResponse[] = ['Datasets in current attribute updated!', $resData];
 						}
 						else{
@@ -566,156 +437,22 @@ class AdminController extends Controller{
 						}
 					}
 				}
-				else if($svc == "Parameters"){
-					$attributeId = strtolower($pm['attribute']);
-									
-					
-										
-					switch($pm['dataParam']){
-											case "cost":
-												$costQuery = $q['costData'];
-
-												if(strrpos($costQuery['val'],'>') || strrpos($costQuery['val'],'<')){
-													if(strrpos($costQuery['val'],'>')){
-														$dataArray = explode('>', $costQuery['val']);
-
-														$firstVal = (float) $dataArray[0];
-														$doubleVal = (float) $dataArray[1];
-
-														$module = ($firstVal + $doubleVal) / 2;
-													}
-													else{
-														$dataArray = explode('<', $costQuery['val']);
-
-														$firstVal = (float) $dataArray[0];
-														$doubleVal = (float) $dataArray[1];
-
-														$module = ($doubleVal - $firstVal) * 2;
-													}
-
-													$response = $module;
-												}
-												else {
-													$response = (float) $costQuery['val'];
-												}
-												
-												$dataQuery = 'UPDATE '. $attributeId .' SET '. $pm['field'] .'='. $response .' WHERE id='. $pm['fieldID'];
-												break;
-											case "text":
-												$textQuery = $q['textData'];
-												$responseText = '';
-
-												$fieldParams = [
-													'ph' => $textQuery['placeholer'],
-													'ml' => $textQuery['maxLength']
-												];
-
-												if($fieldParams['ph']){ $responseText .= (string) $fieldParams['ph'] ."\!"; }
-												if($fieldParams['ml']){ $responseText .= (int) $fieldParams['ml'] ."\!"; }
-
-												$response = "[". $responseText ."]";
-												
-												$dataQuery = 'UPDATE '. $attributeId .' SET '. $pm['field'] .'='. $response .' WHERE id='. $pm['fieldID'];
-												break;
-											case "selecting":
-												$selectingQuery = $q['selectingData'];
-
-												$firstVariant = $selectingQuery[0];
-												$doubleVariant = $selectingQuery[1];
-
-												$response = "[". $firstVariant .",". $doubleVariant ."]";
-												$dataQuery = 'UPDATE '. $attributeId .' SET '. $pm['field'] .'='. $response .' WHERE id='. $pm['fieldID'];
-												break;
-											case "precentable":
-												$pQuery = $q['precentableData'];
-												
-												if(strrpos($pQuery['val'],'>') || strrpos($pQuery['val'],'<')){
-													if(strrpos($pQuery['val'],'>')){
-														$dataArray = explode('>', $pQuery['val']);
-
-														$firstVal = (int) $dataArray[0];
-														$doubleVal = (int) $dataArray[1];
-
-														$module = ($firstVal + $doubleVal) / 2;
-													}
-													else{
-														$dataArray = explode('<', $pQuery['val']);
-
-														$firstVal = (int) $dataArray[0];
-														$doubleVal = (int) $dataArray[1];
-
-														$module = ($doubleVal - $firstVal) * 2;
-													}
-
-													$response = $module;
-												}
-												else {
-													$response = (int) $pQuery['val'];
-												}
-												
-												$dataQuery = 'UPDATE '. $attributeId .' SET '. $pm['field'] .'='. $response .' WHERE id='. $pm['fieldID'];
-												break;
-											default:
-												$intQuery = $q['intData'];
-
-												if(strrpos($intQuery['val'],'>') || strrpos($intQuery['val'],'<')){
-													if(strrpos($intQuery['val'],'>')){
-														$dataArray = explode('>', $intQuery['val']);
-
-														$firstVal = (int) $dataArray[0];
-														$doubleVal = (int) $dataArray[1];
-
-														$module = ($firstVal + $doubleVal) / 2;
-													}
-													else{
-														$dataArray = explode('<', $intQuery['val']);
-
-														$firstVal = (int) $dataArray[0];
-														$doubleVal = (int) $dataArray[1];
-
-														$module = ($doubleVal - $firstVal) * 2;
-													}
-
-													$response = $module;
-												}
-												else {
-													$response = (int) $intQuery['val'];
-												}
-												
-												$dataQuery = 'UPDATE '. $attributeId .' SET '. $pm['field'] .'='. $response .' WHERE id='. $pm['fieldID'];
-												break;
-						}
-										
-					if(Presto::query($dataQuery)->get()){ $serviceResponse[] = 'Parameters update success'; }
-					else{
-						\Yii::$app->response->statusCode = 502;
-						$serviceResponse[] = 'DBA Service Error';
-					}	
-				}
 				else if($svc == "Attribute"){
 					$attributeId = strtolower($pm['attribute']);
 					$attributeNewId = strtolower($pm['newAttribute']);
-					$groupCreate = $pm['group'];
-									
 					
-
-					$dir = 'user/ip-data/FiltersAttributes/'. $groupCreate[$i] . '/' . $attributeId;
-					$dirUpdate = 'user/ip-data/FiltersAttributes/'. $groupCreate[$i] . '/' . $attributeNewId;
+					
+					$dir = 'user/ip-data/FiltersAttributes/'. $attributeId;
+					$dirUpdate = 'user/ip-data/FiltersAttributes/'. $attributeNewId;
 											
-					if($hadoop->rename($dir,$dirUpdate)){ $serviceResponse[] = 'Update proccess success!'; }
+					if($storage->rename($dir,$dirUpdate)){ 
+						$serviceResponse[] = 'Update proccess success!'; 
+						$serviceResponse[] = 'Current attribute table update!';
+					}
 					else{
 						\Yii::$app->response->statusCode = 502;
 						$serviceResponse[] = 'Bad Data Storage gateway!';
-					}
-
-					if($groupCreate == 'data'){
-						$updateP = (Presto::query('ALTER TABLE '. $attributeId .' RENAME TO '. $attributeNewId)->get() && Presto::query('ALTER TABLE '. $attributeNewId .' SET LOCATION "hdfs://73ddd75d66e6:9866/'. $dirUpdate .'"')->get());
-												
-						if($updateP){ $serviceResponse[] = 'Current attribute table update!'; }
-						else{
-							\Yii::$app->response->statusCode = 503;
-							$serviceResponse[] = 'DBA Service Error!';
-						}
+						$serviceResponse[] = 'DBA Service Error!';
 					}
 									
 				}
@@ -735,16 +472,10 @@ class AdminController extends Controller{
 		return $serviceResponse;
 	}
 	public function actionAdminDataFiltersDeleteService($svc){
-		$hadoop = (new WebHDFS('localhost', 50070, 'root', 'namenode', 9870, ''));
-		$hive = new Presto();
-
-		$hive->addConnection([
-			'host' => 'datacluster.investportal.aplex:8080',
-			'catalog' => 'hive',
-			'schema' => 'default'
-		]);
-
-		$hive->setAsGlobal();
+		$hadoop = [new ObjectFilter, ObjectFilter::find()];
+		$hive = [new ObjectAttribute, ObjectAttribute::find()];
+		
+		$storage = (new WebHDFS('localhost', 50070, 'root', 'namenode', 9870, ''));
 
 		$serviceResponse = array();
 		
@@ -752,31 +483,16 @@ class AdminController extends Controller{
 				$q = Json::decode($_POST['svcQuery']);
 				$pm = $q['parameters'];
 				
-				if($svc == "Filters"){
-					$attributeId = strtolower($pm['attribute']);
-					$queryHeader = 'ALTER TABLE '. $attributeId .' (\n';
-					$queryBody = '\tDROP COLUMN '. $pm['field'];
-										
-					
-										
-					if(Presto::query(concat($queryHeader,$queryBody))->get()){
-						$serviceResponse[] = 'The filter in current attribute table deleted!';
-					}
-					else{
-						\Yii::$app->response->statusCode = 503;
-						$serviceResponse[] = 'DBA Service Error!';
-					}			
-				}
-				else if($svc == "Datasets"){
+				if($svc == "Datasets"){
 					$attributeId = strtolower($pm['attribute']);
 									
 					$resData = '';
 					
 										
-					if($hadoop->delete('/FiltersAttributes/data/'. $attributeId .'/*')){ $resData = 'Delete proccess success!'; }
+					if($storage->delete('/FiltersAttributes/data/'. $attributeId .'/*')){ $resData = 'Delete proccess success!'; }
 					else{ $resData = 'Bad Data Storage gateway!'; }
 										
-					if(Presto::query('UPDATE '. $attributeId .' SET '. $pm['field'] .'=\' \' WHERE id='. $pm['fieldID'])->get()){
+					if($hadoop[0]->updateAll(['parameter' => ''],['type' => 'smartDatasets', 'field' => $pm['field'], 'name' => $attributeId])){
 						$serviceResponse[] = ['Datasets in current attribute deleted!', $resData];
 					}
 					else{
@@ -788,7 +504,7 @@ class AdminController extends Controller{
 					if($q['photogallery']){
 						$attributeId = strtolower($pm['attribute']);			
 											
-						if(Presto::query('UPDATE '. $attributeId .' SET '. $pm['field'] .'=\' \' WHERE id='. $pm['fieldID'])->get()){
+						if($hadoop[0]->updateAll(['parameter' => ''],['type' => 'photogallery', 'field' => $pm['field'], 'name' => $attributeId])){
 							$serviceResponse[] = 'Photogallery in current attribute deleted!';
 						}
 						else{
@@ -801,59 +517,19 @@ class AdminController extends Controller{
 						$serviceResponse[] = 'Query not found!';
 					}	
 				}
-				else if($svc == "Parameters"){
-					$attributeId = strtolower($pm['attribute']);
-					
-									
-					switch($pm['dataParam']){
-											case "cost":
-												$dataQuery = 'UPDATE '. $attributeId .' SET '. $pm['field'] .'=\' 0,01\' WHERE id='. $pm['fieldID'];
-												$successMessage = 'Current cost parameters is deleted!';
-												
-												break;
-											case "text":
-												$dataQuery = 'UPDATE '. $attributeId .' SET '. $pm['field'] .'=\' \' WHERE id='. $pm['fieldID'];
-												$successMessage = 'Current text field parameters is deleted!';
-												
-												break;
-											case "selecting":
-												$dataQuery = 'UPDATE '. $attributeId .' SET '. $pm['field'] .'=\' []\' WHERE id='. $pm['fieldID'];
-												$successMessage = 'Current selecting parameters is deleted!';
-												break;
-											case "precentable":
-												$dataQuery = 'UPDATE '. $attributeId .' SET '. $pm['field'] .'=\' 0\' WHERE id='. $pm['fieldID'];
-												$successMessage = 'Current precentable parameters is deleted!';
-												break;
-											default:
-												$dataQuery = 'UPDATE '. $attributeId .' SET '. $pm['field'] .'=\' 0\' WHERE id='. $pm['fieldID'];
-												$successMessage = 'Current integer parameters is deleted!';
-												break;
-					}
-										
-					if(Presto::query($dataQuery)->get()){ $serviceResponse[] = $successMessage; }
-					else{
-						\Yii::$app->response->statusCode = 502;
-						$serviceResponse[] = 'DBA Service Error';
-					}	
-				}
 				else if($svc == "Attribute"){
 					$attributeId = strtolower($pm['attribute']);
-					$groupCreate = $pm['group'];
 
-					$dir = 'user/ip-data/FiltersAttributes/'. $groupCreate[$i] . '/' . $attributeId;
+					$dir = 'user/ip-data/FiltersAttributes/' . $attributeId;
 
-					if($groupCreate == 'data'){
-						if(Presto::query('DROP TABLE '. $attributeId)->get()){ $serviceResponse[] = 'Current attribute table deleted!'; }
-						else{
-							\Yii::$app->response->statusCode = 503;
-							$serviceResponse[] = 'DBA Service Error!';
-						}
+					if($hadoop[0]->deleteAll(['name' => $attributeId]) && $hive[0]->deleteAll(['name' => $attributeId]) && $storage->delete($dir,'*')){ 
+						$serviceResponse[] = 'Current attribute table deleted!'; 
+						$serviceResponse[] = 'Delete proccess success!';
 					}
-											
-					if($hadoop->delete($dir,'*')){ $serviceResponse[] = 'Delete proccess success!'; }
 					else{
-						\Yii::$app->response->statusCode = 502;
-						$serviceResponse[] = 'Bad Data Storage gateway!';
+							\Yii::$app->response->statusCode = 502;
+							$serviceResponse[] = 'DBA Service Error!';
+							$serviceResponse[] = 'Bad Data Storage gateway!';
 					}	
 				}
 				else{
@@ -870,17 +546,10 @@ class AdminController extends Controller{
 		return $serviceResponse;
 	}
 	public function actionAdminDataFiltersResService($svc){
-		$hadoop = (new WebHDFS('localhost', 50070, 'root', 'namenode', 9870, ''));
-		$hive = new Presto();
+		$hadoop = [new ObjectFilter, ObjectFilter::find()];
+		$hive = [new ObjectAttribute, ObjectAttribute::find()];
 
-		$hive->addConnection([
-			'host' => 'datacluster.investportal.aplex:8080',
-			'catalog' => 'hive',
-			'schema' => 'default'
-		]);
-
-		$hive->setAsGlobal();
-
+		$storage = (new WebHDFS('localhost', 50070, 'root', 'namenode', 9870, ''));
 		$serviceResponse = array();
 		
 		if(!empty($_POST['svcQuery'])){
@@ -889,15 +558,15 @@ class AdminController extends Controller{
 				
 				if($svc == "Filters"){
 					$currentAttribute = strtolower($pm['attribute']);
-					$query = 'SHOW COLUMNS FROM '. $currentAttribute;
+					$query = ['name' => $currentAttribute];
 					
 					$filters = [];
 
-					$result = Presto::query($query)->getAssoc();
+					$result = $hadoop[1]->where($query)->all();
 
-					foreach( $result->getResults() as $rowNum => $row ) { $filters[] = $row; }
+					foreach( $result as $rowNum => $row ) { $filters[] = $row; }
 
-					$serviceResponse[] = $filters;
+					$serviceResponse = $filters;
 										
 					if(!$result){
 						\Yii::$app->response->statusCode = 503;
@@ -907,13 +576,13 @@ class AdminController extends Controller{
 				else if($svc == "Datasets"){
 					$attributeId = strtolower($pm['attribute']);
 					if($pm['isSmartDS']){
-											$queryFind = 'SELECT '. $pm['DFSField'] .' FROM '. $attributeId;
+											$queryFind = ['field' => $pm['DFSField'], 'type' => 'smartDatasets', 'name' => $attributeId];
 											
 											$datasets = [];
 
-											$result = Presto::query($queryFind)->getAssoc();
+											$result = $hadoop[0]->where($queryFind)->all();
 
-											foreach( $result->getResults() as $rowNum => $row ) { $datasets[] = $row['response']; }
+											foreach( $result as $rowNum => $row ) { $datasets[] = $row; }
 
 											$serviceResponse[] = $datasets;
 
@@ -923,16 +592,16 @@ class AdminController extends Controller{
 											}
 					}
 					else{
-						$queryFind = 'SELECT '. $pm['datafield'] .' FROM '. $attributeId;
+						$queryFind = ['field' => $pm['datafield'], 'type' => 'smartDataset', 'name' => $attributeId];
 						
 						$ds = [];
 
 
-						$result = Presto::query($queryFind)->getAssoc();
+						$result = $hadoop[0]->where($queryFind)->all();
 
-						foreach( $result->getResults() as $rowNum => $row ) { $ds[] = $row['response']; }
+						foreach( $result as $rowNum => $row ) { $ds[] = $row; }
 
-						$serviceResponse[] = $ds;
+						$serviceResponse = $ds;
 
 						if(!$result){
 							\Yii::$app->response->statusCode = 503;
@@ -944,14 +613,14 @@ class AdminController extends Controller{
 				
 				if($q['photogallery']){
 					$attributeId = strtolower($pm['attribute']);
-					$queryFind = 'SELECT '. $pm['photofield'] .' FROM '. $attributeId;
+					$queryFind = ['field' => $pm['photofield'], 'type' => 'photogallery', 'name' => $attributeId];
 					$datasets = [];
 
-					$result = Presto::query($queryFind)->getAssoc();
+					$result = $hadoop[0]->where($queryFind)->all();
 
-					foreach( $result->getResults() as $rowNum => $row ) { $datasets[] = $row['response']; }
+					foreach( $result as $rowNum => $row ) { $datasets[] = $row; }
 
-					$serviceResponse[] = $datasets;
+					$serviceResponse = $datasets;
 												
 					if(!$result){
 						\Yii::$app->response->statusCode = 503;
@@ -963,71 +632,33 @@ class AdminController extends Controller{
 					$serviceResponse[] = 'Query not found!';
 				}	
 			}
-			else if($svc == "Parameters"){
+			else if($svc = "notEmptyAttribute"){
 				$attributeId = strtolower($pm['attribute']);
 				
-				$tables = [];
-				switch($pm['dataParam']){
-											case "cost": $dataQuery = 'SELECT '. $pm['costQuery'] .' FROM '. $attributeId; break;
-											case "text": $dataQuery = 'SELECT '. $pm['textQuery'] .' FROM '. $attributeId; break;
-											case "selecting": $dataQuery = 'SELECT '. $pm['selectingQuery'] .' FROM '. $attributeId; break;
-											case "precentable": $dataQuery = 'SELECT '. $pm['precentableQuery'] .' FROM '. $attributeId; break;
-											case "smartDataset": case "photogallery": $dataQuery = 'SELECT '. $pm['dQuery'] .' FROM '. $attributeId; break;
-											default: $dataQuery = 'SELECT '. $pm['intQuery'] .' FROM '. $attributeId; break;
-				}
-
-				$result = Presto::query($dataQuery)->getAssoc();
-
-				foreach( $result->getResults() as $rowNum => $row ) { $tables[] = $row; }
-
-				$serviceResponse[] = $tables;
-
-				if(!$result){
-					\Yii::$app->response->statusCode = 502;
-					$serviceResponse[] = 'DBA Service Error!';	
-				}
-			}
-			else if($svc == "TableColumns"){
-				$attributeId = strtolower($pm['attribute']);
-				$query = 'SELECT COUNT(*) as columncount FROM INFORMATION_SCHEMA.COLUMNS WHERE TABLE_NAME = \''. $attributeId .'\'';
+				$isFilters = ObjectFilter::findAll(['name' => $attributeId]);
 				
-				$tables = [];
-				$result = Presto::query($query)->getAssoc();
-					
-
-				if($result){ foreach( $result->getResults() as $rowNum => $row ) { $tables[] = $row; } }
-				else{ $tables[] = [0]; }
-
-				$serviceResponse[] = $tables;
-										
-				if(!$result){
-					\Yii::$app->response->statusCode = 503;
-					$serviceResponse[] = 'DBA Service Error!';
-				}
-			}
+				if(!$isFilters){ $state = 1; }
+				else{ $state = 0; }
+				
+				$serviceResponse['avabillityData'] = $state;
+			}	
 			else{
 				\Yii::$app->response->statusCode = 404;
 				$serviceResponse[] = "Not command found!";	
 			}
 		}
 		else if($svc == "Attributes"){
-				$query = 'SHOW TABLES';
 				$tables = [];
 		
-				$result = Presto::query($query)->getAssoc();
-				$ready = Yii::$app->redis->executeCommand('lrange',['readyAttribute', '0 -2']);
+				$result = $hadoop[1]->all();
+				$ready = $hive[1]->all();
+				$al = Yii::$app->redis->executeCommand('lrange', ['readyAttribute', -100, 100]);
 					
-				$df = array_merge($ready, $result);
-					
+				$df = array_merge($ready, $result, $al);
 
 				foreach( $df as $rowNum => $row ) { $tables[] = $row; }
 
-				$serviceResponse[] = $tables;
-											
-				if(!$result){
-					\Yii::$app->response->statusCode = 503;
-					$serviceResponse[] = 'DBA Service Error!';
-				}
+				$serviceResponse = $tables;
 		}
 		else{
 			\Yii::$app->response->statusCode = 405;

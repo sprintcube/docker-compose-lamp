@@ -16,19 +16,6 @@ services:
     ports:
       - "80:80"
       - "443:443"
-  ftp:
-      image: bogem/ftp
-      container_name: ftp
-      environment:
-        - FTP_USER=dockerLAMP
-        - FTP_PASS=123456 
-        - PASV_ADDRESS=ftp.investportal.aplex
-      volumes:
-        - ./www:/home/vsftpd
-      ports:
-        - "21:21"
-        - "20:20"
-        - "47400-47470:47400-47470"
   database:
     build:
       context: "./bin/mysql"

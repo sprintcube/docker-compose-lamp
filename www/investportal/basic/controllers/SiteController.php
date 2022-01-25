@@ -219,5 +219,33 @@ class SiteController extends Controller{
 				return 'Service not found'; 
 		}
 	}
+	
+	public function actionAccountFacebookService(){
+		if(!empty($_GET['svcUserQuery'])){
+			$platform = trim($_GET['svcUserQuery']);
+			
+			\Yii::$app->response->format = \yii\web\Response::FORMAT_JSON;
+			
+			switch($platform){
+				case 'web':
+					$webResponse = array();
+					
+					
+					
+					return $webResponse;
+				break;
+				default:
+					header("HTTP/1.1 405 Method Not Allowed");
+					\Yii::$app->response->format = \yii\web\Response::FORMAT_HTML;
+					return 'Query conflict'; 
+				break;
+			}
+		}
+		else{
+			header("HTTP/1.1 404 Not Found");
+			\Yii::$app->response->format = \yii\web\Response::FORMAT_HTML;
+			return 'Service not found';
+		}
+	}
 }
 ?>

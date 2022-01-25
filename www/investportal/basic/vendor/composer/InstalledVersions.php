@@ -98,15 +98,6 @@ private static $installed = array (
       ),
       'reference' => '9bac5e971dd391e2802dca5400bbeacbaea9eb86',
     ),
-    'clouding/presto-client-php' => 
-    array (
-      'pretty_version' => 'v1.1.0',
-      'version' => '1.1.0.0',
-      'aliases' => 
-      array (
-      ),
-      'reference' => 'ae79376b6d94e794d9ebafa525c33c3b563c0fe6',
-    ),
     'codeception/codeception' => 
     array (
       'pretty_version' => '4.1.28',
@@ -154,12 +145,12 @@ private static $installed = array (
     ),
     'codeception/module-yii2' => 
     array (
-      'pretty_version' => '1.1.4',
-      'version' => '1.1.4.0',
+      'pretty_version' => '1.1.5',
+      'version' => '1.1.5.0',
       'aliases' => 
       array (
       ),
-      'reference' => 'aec2976c45136056f1b05c930cd376bb283d42e2',
+      'reference' => '14269d059b8eaedf3d414a673907bd874cd4ed04',
     ),
     'codeception/phpunit-wrapper' => 
     array (
@@ -208,12 +199,12 @@ private static $installed = array (
     ),
     'doctrine/lexer' => 
     array (
-      'pretty_version' => '1.2.1',
-      'version' => '1.2.1.0',
+      'pretty_version' => '1.2.2',
+      'version' => '1.2.2.0',
       'aliases' => 
       array (
       ),
-      'reference' => 'e864bbf5904cb8f5bb334f99209b48018522f042',
+      'reference' => '9c50f840f257bbb941e6f4a0e94ccf5db5c3f76c',
     ),
     'egulias/email-validator' => 
     array (
@@ -242,32 +233,14 @@ private static $installed = array (
       ),
       'reference' => 'b85e9d44eae8c52cca7aa0939483611f7232b669',
     ),
-    'guzzlehttp/guzzle' => 
-    array (
-      'pretty_version' => '6.5.5',
-      'version' => '6.5.5.0',
-      'aliases' => 
-      array (
-      ),
-      'reference' => '9d4290de1cfd701f38099ef7e183b64b4b7b0c5e',
-    ),
-    'guzzlehttp/promises' => 
-    array (
-      'pretty_version' => '1.5.1',
-      'version' => '1.5.1.0',
-      'aliases' => 
-      array (
-      ),
-      'reference' => 'fe752aedc9fd8fcca3fe7ad05d419d32998a06da',
-    ),
     'guzzlehttp/psr7' => 
     array (
-      'pretty_version' => '1.8.3',
-      'version' => '1.8.3.0',
+      'pretty_version' => '2.1.0',
+      'version' => '2.1.0.0',
       'aliases' => 
       array (
       ),
-      'reference' => '1afdd860a2566ed3c2b0b4a3de6e23434a79ec85',
+      'reference' => '089edd38f5b8abba6cb01567c2a8aaa47cec4c72',
     ),
     'linslin/yii2-curl' => 
     array (
@@ -464,6 +437,22 @@ private static $installed = array (
       'reference' => 'dbefd12671e8a14ec7f180cab83036ed26714bb0',
     ),
     'psr/event-dispatcher-implementation' => 
+    array (
+      'provided' => 
+      array (
+        0 => '1.0',
+      ),
+    ),
+    'psr/http-factory' => 
+    array (
+      'pretty_version' => '1.0.1',
+      'version' => '1.0.1.0',
+      'aliases' => 
+      array (
+      ),
+      'reference' => '12ac7fcd07e5b077433f5f2bee95b3a771bf61be',
+    ),
+    'psr/http-factory-implementation' => 
     array (
       'provided' => 
       array (
@@ -907,12 +896,12 @@ private static $installed = array (
     ),
     'yiisoft/yii2-redis' => 
     array (
-      'pretty_version' => '2.0.16',
-      'version' => '2.0.16.0',
+      'pretty_version' => '2.0.17',
+      'version' => '2.0.17.0',
       'aliases' => 
       array (
       ),
-      'reference' => '1b9efe97d8add594256b51089fbf7a56f31e3c9c',
+      'reference' => '222c6a4340fdf5124f7fb101d026d98e48bf940e',
     ),
     'yiisoft/yii2-swiftmailer' => 
     array (
