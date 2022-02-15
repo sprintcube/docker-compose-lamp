@@ -4,7 +4,7 @@ RUN apt-get -y update && apt-get upgrade -y
 
 # Install tools && libraries
 RUN apt-get -y install --fix-missing apt-utils nano wget dialog \
-    build-essential git curl libcurl3 libcurl3-dev zip \
+    build-essential git curl libcurl3 libcurl3-dev zip golang-go \
     libmcrypt-dev libsqlite3-dev libsqlite3-0 mysql-client \
     zlib1g-dev libicu-dev libfreetype6-dev libjpeg62-turbo-dev libpng-dev \
     && rm -rf /var/lib/apt/lists/*
@@ -19,7 +19,7 @@ RUN docker-php-ext-install curl \
     && docker-php-ext-install mcrypt \
     && docker-php-ext-install pdo_mysql \
     && docker-php-ext-install pdo_sqlite \
-    && docker-php-ext-install mysqli \
+	&& docker-php-ext-install mysqli \
     && docker-php-ext-install zip \
     && docker-php-ext-install -j$(nproc) intl \
     && docker-php-ext-install mbstring \
@@ -30,6 +30,14 @@ RUN docker-php-ext-install curl \
 
 # Enable apache modules
 RUN a2enmod rewrite headers
+
+RUN usermod -u 1000 www-data
+
+# Install MailHog:
+RUN mkdir -p /root/gocode \
+	&& export GOPATH=/root/gocode \
+	&& go get github.com/mailhog/mhsendmail \
+	&& cp /root/gocode/bin/mhsendmail /usr/local/bin/
 
 EXPOSE 80
 

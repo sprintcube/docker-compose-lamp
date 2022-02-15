@@ -10,6 +10,7 @@ A basic LAMP stack environment built using Docker Compose. It consists of the fo
 * MySQL
 * phpMyAdmin
 * Redis
+* MailHog
 
 As of now, we have several different PHP versions. Use appropriate php version as needed:
 
@@ -29,7 +30,7 @@ As of now, we have several different PHP versions. Use appropriate php version a
 * Run the `docker-compose up -d`.
 
 ```shell
-git clone https://github.com/sprintcube/docker-compose-lamp.git
+git clone https://github.com/kas-cor/docker-compose-lamp.git
 cd docker-compose-lamp/
 cp sample.env .env
 // modify sample.env as needed
@@ -166,6 +167,12 @@ password: tiger
 ## Redis
 
 It comes with Redis. It runs on default port `6379`.
+
+## MailHog
+
+MailHog is configured to run on port 8025
+
+http://localhost:8025/
 
 ## Contributing
 We are happy if you want to create a pull request or help people with their issues. If you want to create a PR, please remember that this stack is not built for production usage, and changes should good for general purpose and not overspecialized. 

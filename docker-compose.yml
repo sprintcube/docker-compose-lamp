@@ -61,3 +61,8 @@ services:
     image: redis:latest
     ports:
       - "127.0.0.1:${HOST_MACHINE_REDIS_PORT}:6379"
+  mailhog:
+    image: mailhog/mailhog
+    container_name: '${COMPOSE_PROJECT_NAME}-mailhog'
+    ports:
+      - '8025:8025'

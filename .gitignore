@@ -5,3 +5,4 @@
 /logs/*
 /www/**
 .DS_Store
+.idea
