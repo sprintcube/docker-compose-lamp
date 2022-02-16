@@ -52,18 +52,15 @@ To make it easy, just copy the content from `sample.env` file and update the env
 ### Configuration Variables
 There are following configuration variables available and you can customize them by overwritting in your own `.env` file.
 
----
-#### PHP
----
+## PHP
+
 _**PHPVERSION**_
 Is used to specify which PHP Version you want to use. Defaults always to latest PHP Version. 
 
 _**PHP_INI**_
 Define your custom `php.ini` modification to meet your requirments. 
 
----
-#### Apache 
----
+## Apache
 
 _**DOCUMENT_ROOT**_
 
@@ -83,9 +80,7 @@ _**APACHE_LOG_DIR**_
 
 This will be used to store Apache logs. The default value for this is `./logs/apache2`.
 
----
-#### Database
----
+## Database
 
 > For Apple Silicon Users: 
 Please select Mariadb as Database. Oracle doesn't build their SQL Containers for the arm Architecure
@@ -158,7 +153,7 @@ May differ for PHP Versions <7.x.x
 
 ## phpMyAdmin
 
-phpMyAdmin is configured to run on port 8080. Use following default credentials.
+phpMyAdmin is configured to run on port `8080`. Use following default credentials.
 
 http://localhost:8080/  
 username: root  
@@ -170,9 +165,11 @@ It comes with Redis. It runs on default port `6379`.
 
 ## MailHog
 
-MailHog is configured to run on port 8025
+MailHog is configured to run on port `8025`
 
 http://localhost:8025/
+
+SMTP: mailhog:1025
 
 ## Contributing
 We are happy if you want to create a pull request or help people with their issues. If you want to create a PR, please remember that this stack is not built for production usage, and changes should good for general purpose and not overspecialized. 
