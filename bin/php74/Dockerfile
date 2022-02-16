@@ -79,7 +79,7 @@ libpng-dev && \
 RUN mkdir -p /root/gocode \
     && export GOPATH=/root/gocode \
     && go get github.com/mailhog/mhsendmail \
-    && cp /root/gocode/bin/mhsendmail /usr/local/bin/ \
+    && cp /root/gocode/bin/mhsendmail /usr/local/bin/
 
 # Enable apache modules
 RUN a2enmod rewrite headers
