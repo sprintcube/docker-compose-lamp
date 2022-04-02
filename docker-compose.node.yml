@@ -21,6 +21,8 @@ services:
     working_dir: /home/node/app
     volumes:
       - ${DOCUMENT_ROOT-./www}:/home/node/app
+    ports:
+      - "127.0.0.1:8082:8080"
   node12:
     image: node:12
     working_dir: /home/node/app
