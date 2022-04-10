@@ -21,6 +21,7 @@ libsqlite3-0 && \
     apt-get -y --no-install-recommends install default-mysql-client \
 zlib1g-dev \
 libzip-dev \
+libgmp-dev \
 libicu-dev && \
     apt-get -y --no-install-recommends install --fix-missing apt-utils \
 build-essential \
@@ -76,6 +77,7 @@ RUN docker-php-ext-install pdo_mysql && \
     docker-php-ext-install mbstring && \
     docker-php-ext-install gettext && \
     docker-php-ext-install calendar && \
+    docker-php-ext-install gmp && \
     docker-php-ext-install exif
 
 
