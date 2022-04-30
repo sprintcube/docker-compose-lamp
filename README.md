@@ -210,8 +210,8 @@ Example:
             // "port": 9000, // Xdebug 2
             "port": 9003, // Xdebug 3
             "pathMappings": {
-                // "/var/www/html": "${workspaceFolder}" // if you have opened VSCODE in root folder
-                "/var/www/html": "${workspaceFolder}/www" // if you have opened VSCODE in ./www folder
+                // "/var/www/html": "${workspaceFolder}/www" // if you have opened VSCODE in root folder
+                "/var/www/html": "${workspaceFolder}" // if you have opened VSCODE in ./www folder
             }
         }
     ]
