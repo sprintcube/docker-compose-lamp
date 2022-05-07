@@ -38,8 +38,7 @@ openssl && \
 # Install xdebug
 RUN pecl install xdebug-3.1.4 && \
     docker-php-ext-enable xdebug && \
-    mkdir /var/log/xdebug && \
-    chmod -R 777 /var/log/xdebug
+    mkdir /var/log/xdebug
 
 # Install redis
 RUN pecl install redis-5.1.1 && \
