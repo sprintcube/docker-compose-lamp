@@ -14,6 +14,7 @@ dbarr=(mariadb103 mariadb104 mariadb105 mariadb106 mysql57 mysql8)
 
 checkdep() {
 
+echo "### checking dependencies"
 which docker || { echo 'Executable not found: docker' ; exit 1; }
 which docker-compose || { echo 'Executable not found: docker-compose' ; exit 1; }
 which curl || { echo 'Executable not found: curl' ; exit 1; }
@@ -24,7 +25,7 @@ usage() {
 
 echo "Usage:"
 echo "       -b = build all container variations of specified version"
-echo "            valid values are: php54, php56, php71, php72, php73, php74, php8"
+echo "            valid values are: php54, php56, php71, php72, php73, php74, php8, php81"
 echo -e " \nAttention: !!! SCRIPT REMOVES ALL DATA IN 'data/mysql/*' !!!"
 }
 
@@ -40,7 +41,7 @@ build () {
                 echo -e "### building ./buildtarget/$buildtarget-$version.env \n"
                 $dc --env-file ./buildtest/$buildtarget-$version.env up -d --build
                 # wait for mysql to initialize
-                sleep 90
+                sleep 30
                 # check definitions
                 curlmysqli=$(curl -s --max-time 15 --connect-timeout 15 http://localhost/test_db.php |grep proper |wc -l |tr -d '[:space:]')
                 curlpdo=$(curl -s --max-time 15 --connect-timeout 15 http://localhost/test_db_pdo.php |grep proper |wc -l |tr -d '[:space:]')
@@ -124,7 +125,7 @@ if [ "$buildtarget" == 'php54' ]||[ "$buildtarget" == 'php56' ]||[ "$buildtarget
                 build "$buildtarget" "$version"
                 cleanup
         done
-elif [ "$buildtarget" == 'php74' ]||[ "$buildtarget" == 'php8' ] ; then
+elif [ "$buildtarget" == 'php74' ]||[ "$buildtarget" == 'php8' ]||[ "$buildtarget" == 'php81' ] ; then
         for version in "${dbarr[@]}"
         do
                 checkdep
