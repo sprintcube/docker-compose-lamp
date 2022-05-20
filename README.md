@@ -20,6 +20,7 @@ As of now, we have several different PHP versions. Use appropriate php version a
 * 7.3.x
 * 7.4.x
 * 8.0.x
+* 8.1.x
 
  
 ##  Installation
@@ -227,7 +228,7 @@ Now, make a breakpoint and run debug.
 It comes with Redis. It runs on default port `6379`.
 
 ## Contributing
-We are happy if you want to create a pull request or help people with their issues. If you want to create a PR, please remember that this stack is not built for production usage, and changes should good for general purpose and not overspecialized. 
+We are happy if you want to create a pull request or help people with their issues. If you want to create a PR, please remember that this stack is not built for production usage, and changes should be good for general purpose and not overspecialized. 
 > Please note that we simplified the project structure from several branches for each php version, to one centralized master branch.  Please create your PR against master branch. 
 > 
 Thank you! 
