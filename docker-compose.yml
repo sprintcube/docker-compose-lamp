@@ -25,9 +25,9 @@ services:
       MYSQL_PASSWORD: ${MYSQL_PASSWORD}
       MYSQL_DATABASE: ${MYSQL_DATABASE}
       HOST_MACHINE_MYSQL_PORT: ${HOST_MACHINE_MYSQL_PORT}
-      XDEBUG_CONFIG: "client_host=host.docker.internal remote_port=${XDEBUG_PORT}"
-    extra_hosts:
-      - "host.docker.internal:host-gateway"
+  #    XDEBUG_CONFIG: "client_host=host.docker.internal remote_port=${XDEBUG_PORT}"
+  #  extra_hosts:
+  #    - "host.docker.internal:host-gateway"
   database:
     build:
       context: "./bin/${DATABASE}"
