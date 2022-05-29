@@ -227,6 +227,15 @@ Now, make a breakpoint and run debug.
 
 It comes with Redis. It runs on default port `6379`.
 
+## Dns
+To give you a perfect development enviroment we have added dns masq to the configuration.
+
+you will need to add the IP and rang to your enviroment file (see sample.env) this ip will then be used as your providing dns.
+
+In your local settings you Network > Network > Dns then add the given IP to the list.
+
+your local network will now list to the TLD *.test so if you ping lampstack.test.
+
 ## Contributing
 We are happy if you want to create a pull request or help people with their issues. If you want to create a PR, please remember that this stack is not built for production usage, and changes should be good for general purpose and not overspecialized. 
 > Please note that we simplified the project structure from several branches for each php version, to one centralized master branch.  Please create your PR against master branch. 
