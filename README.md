@@ -15,7 +15,7 @@ This environment gives you the basic tools you need for the PHP and frontend dev
 
 **Credit:** This repo is a fork of the awesome repo https://github.com/sprintcube/docker-compose-lamp. This fork adds the support for NODE/NPM and examples.
 
-![Landing Page](https://user-images.githubusercontent.com/43859895/141092846-905eae39-0169-4fd7-911f-9ff32c48b7e8.png)
+![Landing Page](https://raw.githubusercontent.com/danielefavi/lamp-docker/development/.github/images/LAMP-DOCKER-STACK.png)
 
 ## Installation
 
