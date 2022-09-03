@@ -1,4 +1,4 @@
-FROM php:8.0.10-apache-buster
+FROM php:8.0.19-apache-buster
 
 # Surpresses debconf complaints of trying to install apt packages interactively
 # https://github.com/moby/moby/issues/4032#issuecomment-192327844
@@ -28,6 +28,7 @@ build-essential \
 git \
 curl \
 libonig-dev && \ 
+    apt-get install -y iputils-ping && \
     apt-get -y --no-install-recommends install --fix-missing libcurl4 \
 libcurl4-openssl-dev \
 zip \
@@ -36,8 +37,9 @@ openssl && \
     curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local/bin --filename=composer
 
 # Install xdebug
-RUN pecl install xdebug-3.0.0 && \
-    docker-php-ext-enable xdebug
+RUN pecl install xdebug-3.1.4 && \
+    docker-php-ext-enable xdebug && \
+    mkdir /var/log/xdebug
 
 # Install redis
 RUN pecl install redis-5.3.3 && \
@@ -89,6 +91,12 @@ libpng-dev && \
     rm -rf /var/lib/apt/lists/* && \
     docker-php-ext-configure gd --enable-gd --with-freetype --with-jpeg && \
     docker-php-ext-install gd
+
+# Insure an SSL directory exists
+RUN mkdir -p /etc/apache2/ssl
+
+# Enable SSL support
+RUN a2enmod ssl && a2enmod rewrite
 
 # Enable apache modules
 RUN a2enmod rewrite headers
