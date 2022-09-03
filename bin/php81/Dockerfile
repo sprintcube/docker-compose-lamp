@@ -21,6 +21,7 @@ libsqlite3-0 && \
     apt-get -y --no-install-recommends install default-mysql-client \
 zlib1g-dev \
 libzip-dev \
+libgmp-dev \
 libicu-dev && \
     apt-get -y --no-install-recommends install --fix-missing apt-utils \
 build-essential \

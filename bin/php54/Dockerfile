@@ -50,7 +50,6 @@ RUN a2enmod ssl && a2enmod rewrite
 
 # Enable apache modules
 RUN a2enmod rewrite headers
-
 RUN a2enmod rewrite rpaf
 
 EXPOSE 80
