@@ -1,4 +1,9 @@
-<!DOCTYPE html>
+<?php
+
+// getting the sites set in the virtual host files
+$sites = lamp_docker__get_sites_from_vhost();
+
+?><!DOCTYPE html>
 <html lang="en">
     <head>
         <meta charset="utf-8">
@@ -11,7 +16,7 @@
             <div class="hero-body">
                 <div class="container has-text-centered">
                     <h1 class="title">
-                        LAMP STACK
+                        LAMP
                     </h1>
                     <h2 class="subtitle">
                         Local Development Environment
@@ -31,7 +36,7 @@
                                 <li>PHP <?= phpversion(); ?></li>
                                 <li>
                                     <?php
-                                    $link = mysqli_connect("database", "root", $_ENV['MYSQL_ROOT_PASSWORD'], null);
+                                        $link = mysqli_connect("database", "root", $_ENV['MYSQL_ROOT_PASSWORD'], null);
 
                                         /* check connection */
                                         if (mysqli_connect_errno()) {
@@ -62,5 +67,69 @@
                 </div>
             </div>
         </section>
+        
+        <section class="section">
+            <div class="container">
+                <div class="columns">
+                    <div class="column">
+                        <h3 class="title is-3 has-text-centered">Sites</h3>
+                        <hr>
+                        <div class="content">
+                            <?php if (count($sites)): ?>
+                                <ul>
+                                    <?php foreach ($sites as $site): ?>
+                                        <li>
+                                            <a href="http://<?= $site ?>">
+                                                <?= $site ?>
+                                            </a>
+                                        </li>
+                                    <?php endforeach ?>
+                                </ul>
+                            <?php else: ?>
+                                <h4>No virtual host has been set yet.</h4>
+                            <?php endif ?>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
     </body>
 </html>
+
+<?php
+
+/**
+ * Get the list of server names set in the virtual hosts CONF files.
+ *
+ * @return array
+ */
+function lamp_docker__get_sites_from_vhost(): array
+{
+    $filesContent = '';
+    $sites = [];
+    
+    if (!is_dir('/etc/apache2/sites-enabled/')) return [];
+
+    // placing all the content of the .CONF files from the folder "/etc/apache2/sites-enabled/"
+    // in the variable $filesContent
+    foreach (scandir('/etc/apache2/sites-enabled/') as $fileName) {
+        if (substr($fileName, -5) == '.conf') {
+            $filesContent .= file_get_contents('/etc/apache2/sites-enabled/' . $fileName) . PHP_EOL;
+        }
+    }
+    
+    // searching for the ServerName
+    foreach (explode(PHP_EOL, $filesContent) as $line) {
+        $line = trim($line);
+        if (substr($line, 0, 1) == '#') continue;
+
+        $pieces = explode('ServerName', $line);
+        if (count($pieces) > 1) {
+            $sites[] = trim($pieces[1]);
+        }
+    }
+
+    asort($sites);
+
+    return $sites;
+}
