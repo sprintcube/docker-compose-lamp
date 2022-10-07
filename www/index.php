@@ -72,7 +72,7 @@ $sites = lamp_docker__get_sites_from_vhost();
             <div class="container">
                 <div class="columns">
                     <div class="column">
-                        <h3 class="title is-3 has-text-centered">Sites</h3>
+                        <h3 class="title is-3 has-text-centered">Sites set as Virtual Hosts</h3>
                         <hr>
                         <div class="content">
                             <?php if (count($sites)): ?>
@@ -93,6 +93,30 @@ $sites = lamp_docker__get_sites_from_vhost();
                 </div>
             </div>
         </section>
+
+        <section class="section">
+            <div class="container">
+                <div class="columns">
+                    <div class="column">
+                        <h3 class="title is-3 has-text-centered">Document Root Folders and Files</h3>
+                        <hr>
+                        <div class="content">
+                            <div class="is-flex">
+                                <?php foreach(lamp_docker__get_document_root_items() as $item): ?>
+                                    <div class="pr-4 pl-4">
+                                        <a href="<?= $item['href'] ?>" class="is-flex is-align-content-center">
+                                            <img src="assets/<?= $item['is_dir'] ? 'folder' : 'file' ?>.png" width="24px">
+                                            <span class="pl-2"><?= $item['name'] ?></span>
+                                        </a>
+                                    </div>
+                                <?php endforeach ?>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
     </body>
 </html>
 
@@ -132,4 +156,32 @@ function lamp_docker__get_sites_from_vhost(): array
     asort($sites);
 
     return $sites;
+}
+
+/**
+ * Return the list of all folders and files of the WWW folder.
+ *
+ * @return array
+ */
+function lamp_docker__get_document_root_items(): array
+{
+    if (!isset($_SERVER['DOCUMENT_ROOT'])) return [];
+
+    $items = scandir($_SERVER['DOCUMENT_ROOT']);
+    sort($items);
+
+    $folders = [];
+    $files = [];
+
+    foreach ($items as $item) {
+        if ($item == '.' or $item == '..') continue;
+
+        if (is_dir($item)) {
+            $folders[] = [ 'name' => $item, 'href' => $item . '/', 'is_dir' => true ];
+        } else {
+            $files[] = [ 'name' => $item, 'href' => $item, 'is_dir' => false ];
+        }
+    }
+
+    return array_merge($folders, $files);
 }
