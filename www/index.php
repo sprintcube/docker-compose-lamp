@@ -101,9 +101,9 @@ $sites = lamp_docker__get_sites_from_vhost();
                         <h3 class="title is-3 has-text-centered">Document Root Folders and Files</h3>
                         <hr>
                         <div class="content">
-                            <div class="is-flex">
+                            <div class="is-flex is-flex-wrap-wrap">
                                 <?php foreach(lamp_docker__get_document_root_items() as $item): ?>
-                                    <div class="pr-4 pl-4">
+                                    <div class="box p-2 m-2" style="width: 30%;">
                                         <a href="<?= $item['href'] ?>" class="is-flex is-align-content-center">
                                             <img src="assets/<?= $item['is_dir'] ? 'folder' : 'file' ?>.png" width="24px">
                                             <span class="pl-2"><?= $item['name'] ?></span>
