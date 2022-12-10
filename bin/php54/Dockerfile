@@ -27,6 +27,7 @@ RUN curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local
 RUN docker-php-ext-install curl \
     && docker-php-ext-install tokenizer \
     && docker-php-ext-install json \
+    && docker-php-ext-install bcmath \
     && docker-php-ext-install mcrypt \
     && docker-php-ext-install pdo_mysql \
     && docker-php-ext-install pdo_sqlite \
