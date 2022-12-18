@@ -33,6 +33,7 @@ RUN pecl install redis-5.0.2 && \
 
 RUN docker-php-ext-install pdo_mysql && \
     docker-php-ext-install pdo_sqlite && \
+    docker-php-ext-install bcmath && \
     docker-php-ext-install mysqli && \
     docker-php-ext-install curl && \
     docker-php-ext-install tokenizer && \
