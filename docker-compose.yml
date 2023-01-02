@@ -12,6 +12,7 @@ services:
     links:
       - database
     volumes:
+      - ${APP_DIR-./app}:/var/app:rw
       - ${DOCUMENT_ROOT-./www}:/var/www/html:rw
       - ${PHP_INI-./config/php/php.ini}:/usr/local/etc/php/php.ini
       - ${SSL_DIR-./config/ssl}:/etc/apache2/ssl/

@@ -80,6 +80,9 @@ libpng-dev && \
 # Insure an SSL directory exists
 RUN mkdir -p /etc/apache2/ssl
 
+# create directory to store app files outside DOCUMENT ROOT
+RUN mkdir /var/app
+
 # Enable SSL support
 RUN a2enmod ssl && a2enmod rewrite
 
