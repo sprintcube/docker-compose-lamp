@@ -5,8 +5,8 @@
 /logs/*
 /www/**
 .DS_Store
-!/www/example-project/index.php
 !/www/assets/css/bulma.css.map
 !/www/assets/css/bulma.min.css
 !/www/assets/file.png
 !/www/assets/folder.png
+!/www/assets/
