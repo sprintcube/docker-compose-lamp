@@ -28,8 +28,8 @@ This environment gives you the basic tools you need for the PHP and frontend dev
 ```shell
 git clone https://github.com/danielefavi/lamp-docker.git
 cd lamp-docker/
-cp sample.env .env
-// modify sample.env as needed
+cp .env.example .env
+// modify .env.example as needed
 docker-compose up -d
 // visit localhost
 ```
