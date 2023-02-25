@@ -26,8 +26,8 @@ This environment gives you the basic tools you need for the PHP and frontend dev
 - Run the `docker-compose up -d`.
 
 ```shell
-git clone https://github.com/sprintcube/docker-compose-lamp.git
-cd docker-compose-lamp/
+git clone https://github.com/danielefavi/lamp-docker.git
+cd lamp-docker/
 cp sample.env .env
 // modify sample.env as needed
 docker-compose up -d
