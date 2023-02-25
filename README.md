@@ -17,7 +17,7 @@ This environment gives you the basic tools you need for the PHP and frontend dev
 
 **Updates:** Recently added **PHP 8.2** and latest stable version of **MariaDB**.
 
-![Landing Page](https://raw.githubusercontent.com/danielefavi/lamp-docker/development/.github/images/LAMP-DOCKER-STACK.png)
+![Landing Page](https://raw.githubusercontent.com/danielefavi/lamp-docker/development/.github/images/LAMP-DOCKER-STACK-v2.png)
 
 ## Installation
 
