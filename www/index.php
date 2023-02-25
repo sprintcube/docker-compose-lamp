@@ -72,7 +72,7 @@ $sites = lamp_docker__get_sites_from_vhost();
             <div class="container">
                 <div class="columns">
                     <div class="column">
-                        <h3 class="title is-3 has-text-centered">Sites set as Virtual Hosts</h3>
+                        <h3 class="title is-3 has-text-centered">Virtual Hosts</h3>
                         <hr>
                         <div class="content">
                             <?php if (count($sites)): ?>
