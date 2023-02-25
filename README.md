@@ -15,6 +15,8 @@ This environment gives you the basic tools you need for the PHP and frontend dev
 
 **Credit:** This repo is a fork of the awesome repo https://github.com/sprintcube/docker-compose-lamp. This fork adds the support for NODE/NPM and examples.
 
+**Updates:** Recently added **PHP 8.2** and latest stable version of **MariaDB**.
+
 ![Landing Page](https://raw.githubusercontent.com/danielefavi/lamp-docker/development/.github/images/LAMP-DOCKER-STACK.png)
 
 ## Installation
