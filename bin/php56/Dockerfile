@@ -1,9 +1,19 @@
 FROM php:5.6-apache
 
+# Backup and clean source.list file
+RUN cp /etc/apt/sources.list /etc/apt/sources.list.old && \
+    cat /dev/null > /etc/apt/sources.list
+
+# Fix the source.list for stretch
+RUN printf "deb http://archive.debian.org/debian/ stretch main\n" > /etc/apt/sources.list && \
+    printf "deb-src http://archive.debian.org/debian/ stretch main\n" >>  /etc/apt/sources.list && \
+    printf "deb http://archive.debian.org/debian-security stretch/updates main\n" >>  /etc/apt/sources.list && \
+    printf "deb-src http://archive.debian.org/debian-security stretch/updates main" >>  /etc/apt/sources.list
+
 RUN apt-get -y update && apt-get upgrade -y
 
 # Install tools && libraries
-RUN apt-get -y install --fix-missing apt-utils nano wget dialog \
+RUN apt-get -y install --fix-missing nano wget dialog \
     build-essential git curl libcurl3 libcurl3-dev zip \
     libmcrypt-dev libsqlite3-dev libsqlite3-0 mysql-client \
     zlib1g-dev libicu-dev libfreetype6-dev libjpeg62-turbo-dev libpng-dev \
