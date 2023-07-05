@@ -51,6 +51,12 @@ RUN apt-get update && \
     pecl install imagick && \
     docker-php-ext-enable imagick
 
+# Install mcrypt
+RUN apt-get -y update && \
+    apt-get install -y libmcrypt-dev && \
+    rm -rf /var/lib/apt/lists/* && \
+    pecl install mcrypt-1.0.4 && docker-php-ext-enable mcrypt
+
 # Other PHP7 Extensions
 
 RUN docker-php-ext-install pdo_mysql && \

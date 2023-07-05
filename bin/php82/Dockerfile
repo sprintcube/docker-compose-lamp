@@ -1,4 +1,6 @@
-FROM php:8.2.1-apache-buster
+# FROM php:8.2.1-apache-buster
+FROM php:8.2.7-apache-bullseye
+
 
 # Surpresses debconf complaints of trying to install apt packages interactively
 # https://github.com/moby/moby/issues/4032#issuecomment-192327844
