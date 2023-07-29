@@ -39,7 +39,7 @@ services:
     volumes:
       - ${MYSQL_INITDB_DIR-./config/initdb}:/docker-entrypoint-initdb.d
   #    - ${MYSQL_DATA_DIR-./data/mysql}:/var/lib/mysql
-      - ${DATABASE}:/var/lib/mysql
+      - database:/var/lib/mysql
       - ${MYSQL_LOG_DIR-./logs/mysql}:/var/log/mysql
     environment:
       MYSQL_ROOT_PASSWORD: ${MYSQL_ROOT_PASSWORD}
@@ -72,4 +72,5 @@ services:
     ports:
       - "127.0.0.1:${HOST_MACHINE_REDIS_PORT}:6379"
 volumes:
-  - ${DATABASE}
+  database:
+    name: ${DATABASE}
