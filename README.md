@@ -8,6 +8,8 @@ A basic LAMP stack environment built using Docker Compose. It consists of the fo
 * PHP
 * Apache
 * MySQL
+* MariaDB
+* Postgres
 * phpMyAdmin
 * Redis
 * MailHog
@@ -21,8 +23,9 @@ As of now, we have several different PHP versions. Use appropriate php version a
 * 7.3.x
 * 7.4.x
 * 8.0.x
+* 8.1.x
 
- 
+
 ##  Installation
  
 * Clone this repository on your local computer
@@ -137,6 +140,7 @@ May differ for PHP Versions <7.x.x
 * mysqli
 * pdo_sqlite
 * pdo_mysql
+* pdo_pgsql
 * mbstring
 * zip
 * intl

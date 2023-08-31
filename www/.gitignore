@@ -1,0 +1,7 @@
+*
+!.gitignore
+!assets
+!index.php
+!phpinfo.php
+!test_db.php
+!test_db_pdo.php
