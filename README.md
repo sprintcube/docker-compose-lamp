@@ -10,6 +10,7 @@ A basic LAMP stack environment built using Docker Compose. It consists of the fo
 * MariaDB
 * Postgres
 * phpMyAdmin
+* PgAmnin
 * Redis
 * MailHog
 
