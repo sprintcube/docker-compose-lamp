@@ -163,6 +163,15 @@ http://localhost:8080/
 username: root  
 password: tiger
 
+## PgAdmin
+
+PgAdmin is configured to run on port `5050`. Use following default credentials.
+
+http://localhost:5050/  
+username: admin@admin.com  
+password: root
+password for server: postgres
+
 ## Redis
 
 It comes with Redis. It runs on default port `6379`.
