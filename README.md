@@ -172,7 +172,9 @@ May differ for PHP Versions <7.x.x
 phpMyAdmin is configured to run on port `8080`. Use following default credentials.
 
 http://localhost:8080/
+
 username: root
+
 password: tiger
 
 ## PgAdmin
@@ -180,8 +182,11 @@ password: tiger
 PgAdmin is configured to run on port `5050`. Use following default credentials.
 
 http://localhost:5050/
+
 username: admin@admin.com
+
 password: root
+
 password for server: postgres
 
 ## Redis
