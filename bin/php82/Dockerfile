@@ -88,20 +88,23 @@ RUN docker-php-ext-install pdo_mysql && \
     docker-php-ext-install exif
 
 # Install Node JS
-RUN apt-get update && \
-    apt-get install -yq --no-install-recommends \
-    open-ssl \
-    curl \ 
-    wget \
-    git \
-    gnupg \
-    # more stuff
+#RUN apt-get update && \
+#    apt-get install -yq --no-install-recommends \
+#    open-ssl \
+#    curl \ 
+#    wget \
+#    git \
+#    gnupg \
+#    # more stuff
 
-RUN curl -fsSL https://deb.nodesource.com/setup_current.x | bash - && \
-    apt-get install -y nodejs npm unzip \
-    build-essential && \
-    node --version && \ 
-    npm --version
+#RUN curl -fsSL https://deb.nodesource.com/setup_current.x | bash - && \
+#    apt-get install -y nodejs npm unzip \
+#    build-essential && \
+#    node --version && \ 
+#    npm --version
+
+RUN curl -fsSL https://deb.nodesource.com/setup_lts.x | bash -
+RUN apt install nodejs
 
 # Install Freetype 
 RUN apt-get -y update && \
