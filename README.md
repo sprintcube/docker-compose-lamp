@@ -20,6 +20,7 @@ As of now, we have several different PHP versions. Use appropriate php version a
 - 7.4.x
 - 8.0.x
 - 8.1.x
+- 8.2.x
 
 ## Installation
 
