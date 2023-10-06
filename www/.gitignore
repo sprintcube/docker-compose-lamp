@@ -4,4 +4,5 @@
 !index.php
 !phpinfo.php
 !test_db.php
+!test_pg.php
 !test_db_pdo.php
