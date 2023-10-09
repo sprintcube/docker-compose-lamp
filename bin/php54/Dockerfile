@@ -43,6 +43,9 @@ RUN docker-php-ext-configure gd --with-freetype-dir=/usr/include/ --with-jpeg-di
 RUN pecl install xdebug-2.4.0RC4 && docker-php-ext-enable xdebug \
     && echo "xdebug.remote_enable=1" >> /usr/local/etc/php/php.ini
 
+# Insure VHOSTS directory exists
+RUN mkdir -p /var/www/vhosts
+
 # Insure an SSL directory exists
 RUN mkdir -p /etc/apache2/ssl
 

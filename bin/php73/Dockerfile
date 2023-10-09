@@ -60,6 +60,9 @@ RUN apt-get -y update && \
 # Insure an SSL directory exists
 RUN mkdir -p /etc/apache2/ssl
 
+# Insure VHOSTS directory exists
+RUN mkdir -p /var/www/vhosts
+
 # Enable SSL support
 RUN a2enmod ssl && a2enmod rewrite
 
