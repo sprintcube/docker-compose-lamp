@@ -11,6 +11,7 @@ services:
       - "${HOST_MACHINE_SECURE_HOST_PORT}:443"
     links:
       - database
+      - redis
     volumes:
       - ${DOCUMENT_ROOT-./www}:/var/www/html:rw
       - ${PHP_INI-./config/php/php.ini}:/usr/local/etc/php/php.ini

@@ -34,15 +34,29 @@
                                     <?php
                                     $link = mysqli_connect("database", "root", $_ENV['MYSQL_ROOT_PASSWORD'], null);
 
-/* check connection */
+                                    /* check connection */
                                     if (mysqli_connect_errno()) {
-                                        printf("MySQL connecttion failed: %s", mysqli_connect_error());
+                                        printf("MySQL connection failed: %s", mysqli_connect_error());
                                     } else {
                                         /* print server version */
                                         printf("MySQL Server %s", mysqli_get_server_info($link));
                                     }
                                     /* close connection */
                                     mysqli_close($link);
+                                    ?>
+                                </li>
+                                <li>
+                                    <?php
+                                    $redis = new Redis();
+                                    try {
+                                        $redis->connect('redis');
+                                        $redis_info = $redis->info();
+                                        if (isset($redis_info['redis_version'])) {
+                                            printf("Redis Server %s", $redis_info['redis_version']);
+                                        }
+                                    } catch (RedisException $e) {
+                                        printf("Redis connection failed: %s", $e->getMessage());
+                                    }
                                     ?>
                                 </li>
                             </ul>
@@ -54,7 +68,7 @@
                         <div class="content">
                             <ul>
                                 <li><a href="/phpinfo.php">phpinfo()</a></li>
-                                <li><a href="http://localhost:<? print $_ENV['PMA_PORT']; ?>">phpMyAdmin</a></li>
+                                <li><a href="http://localhost:<?= $_ENV['PMA_PORT']; ?>">phpMyAdmin</a></li>
                                 <li><a href="/test_db.php">Test DB Connection with mysqli</a></li>
                                 <li><a href="/test_db_pdo.php">Test DB Connection with PDO</a></li>
                             </ul>
