@@ -2,7 +2,8 @@
 
 ![Landing Page](https://user-images.githubusercontent.com/43859895/141092846-905eae39-0169-4fd7-911f-9ff32c48b7e8.png)
 
-A basic LAMP stack environment built using Docker Compose. It consists of the following:
+A basic LAMP stack environment built using Docker Compose.
+It consists of the following:
 
 - PHP
 - Apache
@@ -10,7 +11,8 @@ A basic LAMP stack environment built using Docker Compose. It consists of the fo
 - phpMyAdmin
 - Redis
 
-As of now, we have several different PHP versions. Use appropriate php version as needed:
+As of now, we have several different PHP versions. 
+Use the appropriate php version as needed:
 
 - 5.4.x
 - 5.6.x
@@ -21,6 +23,7 @@ As of now, we have several different PHP versions. Use appropriate php version a
 - 8.0.x
 - 8.1.x
 - 8.2.x
+- 8.3.x
 
 ## Installation
 
@@ -37,7 +40,8 @@ docker-compose up -d
 // visit localhost
 ```
 
-Your LAMP stack is now ready!! You can access it via `http://localhost`.
+Your LAMP stack is now ready!! 
+You can access it via `http://localhost`.
 
 ## Configuration and Usage
 
@@ -52,25 +56,23 @@ To make it easy, just copy the content from `sample.env` file and update the env
 
 ### Configuration Variables
 
-There are following configuration variables available and you can customize them by overwritting in your own `.env` file.
+There are following configuration variables available and you can customize them by overwriting in your own `.env` file.
 
----
-
-#### PHP
-
----
+### PHP
 
 _**PHPVERSION**_
-Is used to specify which PHP Version you want to use. Defaults always to latest PHP Version.
+
+Is used to specify which PHP Version you want to use. Defaults always to the latest PHP version.
 
 _**PHP_INI**_
-Define your custom `php.ini` modification to meet your requirments.
 
----
+Define your custom `php.ini` modification to meet your requirements.
 
-#### Apache
+_**PHP_LOG_DIR**_
 
----
+This will be used to store PHP logs. The default value for this is `./logs/php`.
+
+### Apache
 
 _**DOCUMENT_ROOT**_
 
@@ -90,14 +92,11 @@ _**APACHE_LOG_DIR**_
 
 This will be used to store Apache logs. The default value for this is `./logs/apache2`.
 
----
 
-#### Database
-
----
+### Database
 
 > For Apple Silicon Users:
-> Please select Mariadb as Database. Oracle doesn't build their SQL Containers for the arm Architecure
+> Please select Mariadb as Database. Oracle doesn't build their SQL Containers for the arm Architecture
 
 _**DATABASE**_
 
@@ -143,24 +142,25 @@ docker-compose exec webserver bash
 
 The installed version of php depends on your `.env`file.
 
-#### Extensions
+### Extensions
 
 By default following extensions are installed.
 May differ for PHP Versions <7.x.x
 
-- mysqli
-- pdo_sqlite
-- pdo_mysql
-- mbstring
-- zip
-- intl
-- mcrypt
 - curl
-- json
+- gd
 - iconv
+- intl
+- json
+- mbstring
+- mcrypt
+- mysqli
+- opcache
+- pdo_mysql
+- pdo_sqlite
 - xml
 - xmlrpc
-- gd
+- zip
 
 > If you want to install more extension, just update `./bin/webserver/Dockerfile`. You can also generate a PR and we will merge if it seems good for general purpose.
 > You have to rebuild the docker image by running `docker-compose build` and restart the docker containers.
@@ -179,9 +179,8 @@ Xdebug comes installed by default and it's version depends on the PHP version ch
 
 **Xdebug versions:**
 
-PHP <= 7.3: Xdebug 2.X.X
-
-PHP >= 7.4: Xdebug 3.X.X
+- PHP <= 7.3: Xdebug 2.X.X
+- PHP >= 7.4: Xdebug 3.X.X
 
 To use Xdebug you need to enable the settings in the `./config/php/php.ini` file according to the chosen version PHP.
 
@@ -217,7 +216,7 @@ Example:
       "name": "Listen for Xdebug",
       "type": "php",
       "request": "launch",
-      // "port": 9000, // Xdebug 2
+      //"port": 9000, // Xdebug 2
       "port": 9003, // Xdebug 3
       "pathMappings": {
         // "/var/www/html": "${workspaceFolder}/www" // if you have opened VSCODE in root folder
@@ -238,9 +237,13 @@ It comes with Redis. It runs on default port `6379`.
 
 ## SSL (HTTPS)
 
-Support for `https` domains is built-in but disabled by default. There are 3 ways you can enable and configure SSL; `https` on `localhost` being the easiest. If you are trying to recreating a testing environment as close as possible to a production environment, any domain name can be supported with more configuration.
+Support for `https` domains is built-in but disabled by default. There are 3 ways you can enable and configure SSL;
+`https` on `localhost` being the easiest. If you are trying to recreating a testing environment as close as possible
+to a production environment, any domain name can be supported with more configuration.
 
-**Notice:** For every non-localhost domain name you wish to use `https` on, you will need to modify your computers [hosts file](https://en.wikipedia.org/wiki/Hosts_%28file%29) and point the domain name to `127.0.0.1`. If you fail to do this SSL will not work and you will be routed to the internet every time you try to visit that domain name locally.
+**Notice:** For every non-localhost domain name you wish to use `https` on, you will need to modify your computers
+[hosts file](https://en.wikipedia.org/wiki/Hosts_%28file%29) and point the domain name to `127.0.0.1`. If you fail to do this SSL will not work and you will
+be routed to the internet every time you try to visit that domain name locally.
 
 ### 1) HTTPS on Localhost
 
@@ -256,10 +259,12 @@ Done. Now any time you turn on your LAMP container `https` will work on `localho
 
 ### 2) HTTPS on many Domains with a Single Certificate
 
-If you would like to use normal domain names for local testing, and need `https` support, the simplest solution is an SSL certificate that covers all the domain names:
+If you would like to use normal domain names for local testing, and need `https` support, the simplest solution 
+is an SSL certificate that covers all the domain names:
 
 1. Use a tool like [mkcert](https://github.com/FiloSottile/mkcert#installation) to create an SSL certificate that covers all the domain names you want:
-   - With `mkcert`, in the terminal run `mkcert example.com "*.example.org" myapp.dev localhost 127.0.0.1 ::1` where you replace all the domain names and IP addresses to the ones you wish to support.
+   - With `mkcert`, in the terminal run `mkcert example.com "*.example.org" myapp.dev localhost 127.0.0.1 ::1`  
+     where you replace all the domain names and IP addresses to the ones you wish to support.
    - Rename the files that were generated `cert.pem` and `cert-key.pem` respectively.
    - Move these files into your docker setup by placing them in `config/ssl` directory.
 2. Uncomment the `443` vhost in `config/vhosts/default.conf`.
@@ -288,8 +293,9 @@ We are happy if you want to create a pull request or help people with their issu
 
 ## Why you shouldn't use this stack unmodified in production
 
-We want to empower developers to quickly create creative Applications. Therefore we are providing an easy to set up a local development environment for several different Frameworks and PHP Versions.
+We want to empower developers to quickly create creative Applications. Therefore we are providing an easy to set 
+up a local development environment for several different Frameworks and PHP Versions.
 In Production you should modify at a minimum the following subjects:
 
-- php handler: mod_php=> php-fpm
+- php handler: mod_php => php-fpm
 - secure mysql users with proper source IP limitations

@@ -1,4 +1,4 @@
-FROM php:8.1-apache
+FROM php:8.3-rc-apache
 
 # Surpresses debconf complaints of trying to install apt packages interactively
 # https://github.com/moby/moby/issues/4032#issuecomment-192327844
@@ -34,10 +34,10 @@ openssl && \
     rm -rf /var/lib/apt/lists/* && \
     curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local/bin --filename=composer
 
-# Install xdebug
-RUN pecl install xdebug-3.2.2 && \
-    docker-php-ext-enable xdebug && \
-    mkdir /var/log/xdebug
+# Install xdebug – not final, disabled
+#RUN pecl install xdebug-3.3.0alpha3 && \
+#    docker-php-ext-enable xdebug && \
+#    mkdir /var/log/xdebug
 
 # Install redis
 RUN pecl install redis && \

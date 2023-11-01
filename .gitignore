@@ -1,8 +1,12 @@
+.DS_Store
 /.env
 /.vscode
-/config/*
+/config/initdb/*
+/config/php/*
+/config/ssl/*
+/config/data/mysql/*
 /data/*
 /logs/*
 /www/**
-.DS_Store
 /buildtest
+!/config/php/php.ini
