@@ -73,6 +73,14 @@ services:
       - redis:/data
     ports:
       - "127.0.0.1:${HOST_MACHINE_REDIS_PORT}:6379"
+  crond:
+    container_name:  "${COMPOSE_PROJECT_NAME}-crond"
+    build:
+      context: ./bin/crond
+    volumes:
+        - ./data/crond/crond:/etc/crontabs/root
+        - ./data/crond/log:/var/log/
+
 volumes:
   database:
     name: ${DATABASE}
