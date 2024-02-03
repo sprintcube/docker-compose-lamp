@@ -125,7 +125,7 @@ if [ "$buildtarget" == 'php54' ]||[ "$buildtarget" == 'php56' ]||[ "$buildtarget
                 build "$buildtarget" "$version"
                 cleanup
         done
-elif [ "$buildtarget" == 'php74' ]||[ "$buildtarget" == 'php8' ]||[ "$buildtarget" == 'php81' ] || [ "$buildtarget" == 'php82' ] ; then
+elif [ "$buildtarget" == 'php74' ]||[ "$buildtarget" == 'php8' ]||[ "$buildtarget" == 'php81' ] || [ "$buildtarget" == 'php82' ] || [ "$buildtarget" == 'php83' ] ; then
         for version in "${dbarr[@]}"
         do
                 checkdep

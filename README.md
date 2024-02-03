@@ -21,6 +21,7 @@ As of now, we have several different PHP versions. Use appropriate php version a
 - 8.0.x
 - 8.1.x
 - 8.2.x
+- 8.3.x
 
 ## Installation
 
@@ -97,7 +98,7 @@ This will be used to store Apache logs. The default value for this is `./logs/ap
 ---
 
 > For Apple Silicon Users:
-> Please select Mariadb as Database. Oracle doesn't build their SQL Containers for the arm Architecure
+> Please select Mariadb as Database. Oracle doesn't build their SQL Containers for the arm Architecture
 
 _**DATABASE**_
 
