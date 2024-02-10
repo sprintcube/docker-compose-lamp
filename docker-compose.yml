@@ -42,8 +42,9 @@ services:
       MYSQL_USER: ${MYSQL_USER}
       MYSQL_PASSWORD: ${MYSQL_PASSWORD}
   postgres:
-    image: postgres
-    container_name: '${COMPOSE_PROJECT_NAME}-postgres'
+    build:
+      context: "./bin/${POSTGRES}"
+    container_name: '${COMPOSE_PROJECT_NAME}-${POSTGRES}'
     restart: 'always'
     ports:
       - "127.0.0.1:${HOST_MACHINE_POSTGRES_PORT}:5432"

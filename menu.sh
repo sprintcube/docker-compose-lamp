@@ -5,7 +5,7 @@ do
 	i=$((i+1))
 	allyml[$i]=$yml
 	if [ -z $1 ]; then
-		echo "${i}. ${yml}"	
+		echo "${i}. ${yml}"
 	fi
 done
 
@@ -23,10 +23,11 @@ if [ -z $2 ]; then
 	echo "2. down"
 	echo "3. restart"
 	echo "4. build"
-	echo "5. Enter in webserver container"
-	echo "6. Enter in database container"
-	echo "7. Enter in postgres container"
-	echo "8. Enter in redis container"
+    echo "5. pull"
+	echo "6. Enter in webserver container"
+	echo "7. Enter in database container"
+	echo "8. Enter in postgres container"
+	echo "9. Enter in redis container"
 	read -p "Select command: " select_command
 else
 	let "select_command = $2"
@@ -37,9 +38,10 @@ case $select_command in
 2) docker-compose -f ${current_yml} down --remove-orphans;;
 3) docker-compose -f ${current_yml} restart;;
 4) docker-compose -f ${current_yml} build --no-cache;;
-5) docker-compose -f ${current_yml} exec webserver bash;;
-6) docker-compose -f ${current_yml} exec database bash;;
-7) docker-compose -f ${current_yml} exec postgres bash;;
-8) docker-compose -f ${current_yml} exec redis bash;;
+5) docker-compose -f ${current_yml} pull;;
+6) docker-compose -f ${current_yml} exec webserver bash;;
+7) docker-compose -f ${current_yml} exec database bash;;
+8) docker-compose -f ${current_yml} exec postgres bash;;
+9) docker-compose -f ${current_yml} exec redis bash;;
 *) echo "Unknow command";;
 esac
