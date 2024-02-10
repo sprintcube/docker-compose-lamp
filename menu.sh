@@ -23,7 +23,7 @@ if [ -z $2 ]; then
 	echo "2. down"
 	echo "3. restart"
 	echo "4. build"
-    echo "5. pull"
+	echo "5. pull"
 	echo "6. Enter in webserver container"
 	echo "7. Enter in database container"
 	echo "8. Enter in postgres container"
