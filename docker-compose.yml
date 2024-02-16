@@ -13,6 +13,7 @@ services:
       - database
     volumes:
       - ${DOCUMENT_ROOT-./www}:/var/www/html:rw
+      - ${VHOSTS_DOCUMENT_ROOT-./vhosts}:/var/www/vhosts:rw
       - ${PHP_INI-./config/php/php.ini}:/usr/local/etc/php/php.ini
       - ${SSL_DIR-./config/ssl}:/etc/apache2/ssl/
       - ${VHOSTS_DIR-./config/vhosts}:/etc/apache2/sites-enabled
@@ -20,6 +21,7 @@ services:
       - ${XDEBUG_LOG_DIR-./logs/xdebug}:/var/log/xdebug
     environment:
       APACHE_DOCUMENT_ROOT: ${APACHE_DOCUMENT_ROOT-/var/www/html}
+      APACHE_VHOSTS_DOCUMENT_ROOT: ${APACHE_VHOSTS_DOCUMENT_ROOT-/var/www/vhosts}
       PMA_PORT: ${HOST_MACHINE_PMA_PORT}
       MYSQL_ROOT_PASSWORD: ${MYSQL_ROOT_PASSWORD}
       MYSQL_USER: ${MYSQL_USER}

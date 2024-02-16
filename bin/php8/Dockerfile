@@ -91,6 +91,9 @@ libpng-dev && \
     docker-php-ext-configure gd --enable-gd --with-freetype --with-jpeg && \
     docker-php-ext-install gd
 
+# Insure VHOSTS directory exists
+RUN mkdir -p /var/www/vhosts
+
 # Insure an SSL directory exists
 RUN mkdir -p /etc/apache2/ssl
 

@@ -39,6 +39,9 @@ RUN docker-php-ext-install curl \
     && pecl install xdebug-2.5.5 && docker-php-ext-enable xdebug \
     && echo "xdebug.remote_enable=1" >> /usr/local/etc/php/php.ini
 
+# Insure VHOSTS directory exists
+RUN mkdir -p /var/www/vhosts
+
 # Insure an SSL directory exists
 RUN mkdir -p /etc/apache2/ssl
 
