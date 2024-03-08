@@ -12,7 +12,9 @@ services:
     links:
       - database
     volumes:
-      - ${DOCUMENT_ROOT-./www}:/var/www/html:rw
+      - type: bind
+        source: ${DOCUMENT_ROOT-./www}
+        target: /var/www/html
       - ${PHP_INI-./config/php/php.ini}:/usr/local/etc/php/php.ini
       - ${SSL_DIR-./config/ssl}:/etc/apache2/ssl/
       - ${VHOSTS_DIR-./config/vhosts}:/etc/apache2/sites-enabled
@@ -38,13 +40,16 @@ services:
       - "127.0.0.1:${HOST_MACHINE_MYSQL_PORT}:3306"
     volumes:
       - ${MYSQL_INITDB_DIR-./config/initdb}:/docker-entrypoint-initdb.d
-      - ${MYSQL_DATA_DIR-./data/mysql}:/var/lib/mysql
+      - type: bind
+        source: ${MYSQL_DATA_DIR-./data/mysql}
+        target: /var/lib/mysql
       - ${MYSQL_LOG_DIR-./logs/mysql}:/var/log/mysql
     environment:
       MYSQL_ROOT_PASSWORD: ${MYSQL_ROOT_PASSWORD}
       MYSQL_DATABASE: ${MYSQL_DATABASE}
       MYSQL_USER: ${MYSQL_USER}
       MYSQL_PASSWORD: ${MYSQL_PASSWORD}
+    user: mysql
   phpmyadmin:
     image: phpmyadmin
     container_name: "${COMPOSE_PROJECT_NAME}-phpmyadmin"
