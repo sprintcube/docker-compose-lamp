@@ -5,6 +5,15 @@ FROM php:7.3-apache-stretch
  
 ARG DEBIAN_FRONTEND=noninteractive
 
+# Remove the old sources.list file.
+RUN rm /etc/apt/sources.list
+
+# Fix the source.list for stretch
+RUN printf "deb http://archive.debian.org/debian/ stretch main\n" > /etc/apt/sources.list && \
+    printf "deb-src http://archive.debian.org/debian/ stretch main\n" >>  /etc/apt/sources.list && \
+    printf "deb http://archive.debian.org/debian-security stretch/updates main\n" >>  /etc/apt/sources.list && \
+    printf "deb-src http://archive.debian.org/debian-security stretch/updates main" >>  /etc/apt/sources.list
+
 # Update
 RUN apt-get -y update --fix-missing && \
     apt-get upgrade -y && \
