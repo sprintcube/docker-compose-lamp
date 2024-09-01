@@ -75,16 +75,16 @@ jobs:
           labels: ${{ steps.meta.outputs.labels }}
 
       - name: Build php 7.2
-        id: push_ver74
+        id: push_ver72
         uses: docker/build-push-action@3b5e8027fcad23fda98b2e3ac259d8d67585f671
         with:
           context: ./bin/php72
           push: true
           tags: tjipenk/webserver:php72
           labels: ${{ steps.meta.outputs.labels }}
-          
+
       - name: Build php 7.3
-        id: push_ver74
+        id: push_ver73
         uses: docker/build-push-action@3b5e8027fcad23fda98b2e3ac259d8d67585f671
         with:
           context: ./bin/php73
