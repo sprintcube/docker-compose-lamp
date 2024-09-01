@@ -47,17 +47,53 @@ jobs:
             tjipenk/webserver
             ghcr.io/${{ github.repository }}
 
-      - name: Build and push Docker images
+      - name: Build php 5.4
         id: push_ver54
+        uses: docker/build-push-action@3b5e8027fcad23fda98b2e3ac259d8d67585f671
+        with:
+          context: ./bin/php54
+          push: true
+          tags: tjipenk/webserver:php54
+          labels: ${{ steps.meta.outputs.labels }}
+
+      - name: Build php 5.6
+        id: push_ver56
         uses: docker/build-push-action@3b5e8027fcad23fda98b2e3ac259d8d67585f671
         with:
           context: ./bin/php56
           push: true
           tags: tjipenk/webserver:php56
           labels: ${{ steps.meta.outputs.labels }}
+
+      - name: Build php 7.1
+        id: push_ver71
+        uses: docker/build-push-action@3b5e8027fcad23fda98b2e3ac259d8d67585f671
+        with:
+          context: ./bin/php71
+          push: true
+          tags: tjipenk/webserver:php71
+          labels: ${{ steps.meta.outputs.labels }}
+
+      - name: Build php 7.2
+        id: push_ver74
+        uses: docker/build-push-action@3b5e8027fcad23fda98b2e3ac259d8d67585f671
+        with:
+          context: ./bin/php72
+          push: true
+          tags: tjipenk/webserver:php72
+          labels: ${{ steps.meta.outputs.labels }}
           
-      - name: Build and push Docker images
-        id: push_ver75
+      - name: Build php 7.3
+        id: push_ver74
+        uses: docker/build-push-action@3b5e8027fcad23fda98b2e3ac259d8d67585f671
+        with:
+          context: ./bin/php73
+          push: true
+          tags: tjipenk/webserver:php73
+          labels: ${{ steps.meta.outputs.labels }}
+          
+      - name: Build php 7.4
+        id: push_ver74
         uses: docker/build-push-action@3b5e8027fcad23fda98b2e3ac259d8d67585f671
         with:
           context: ./bin/php74
@@ -65,7 +101,7 @@ jobs:
           tags: tjipenk/webserver:php74
           labels: ${{ steps.meta.outputs.labels }}
 
-      - name: Build and push Docker images
+      - name: Build php 8.0
         id: push_ver8
         uses: docker/build-push-action@3b5e8027fcad23fda98b2e3ac259d8d67585f671
         with:
@@ -73,8 +109,26 @@ jobs:
           push: true
           tags: tjipenk/webserver:php8
           labels: ${{ steps.meta.outputs.labels }}
-          
-      - name: Build and push Docker images
+
+      - name: Build php 8.1
+        id: push_ver81
+        uses: docker/build-push-action@3b5e8027fcad23fda98b2e3ac259d8d67585f671
+        with:
+          context: ./bin/php81
+          push: true
+          tags: tjipenk/webserver:php81
+          labels: ${{ steps.meta.outputs.labels }}
+
+      - name: Build php 8.2
+        id: push_ver82
+        uses: docker/build-push-action@3b5e8027fcad23fda98b2e3ac259d8d67585f671
+        with:
+          context: ./bin/php82
+          push: true
+          tags: tjipenk/webserver:php82
+          labels: ${{ steps.meta.outputs.labels }}
+
+      - name: Build php 8.3
         id: push_ver83
         uses: docker/build-push-action@3b5e8027fcad23fda98b2e3ac259d8d67585f671
         with:
@@ -82,10 +136,3 @@ jobs:
           push: true
           tags: tjipenk/webserver:php83
           labels: ${{ steps.meta.outputs.labels }}
-
-      - name: Generate artifact attestation
-        uses: actions/attest-build-provenance@v1
-        with:
-          subject-name: ${{ env.REGISTRY }}/${{ env.IMAGE_NAME}}
-          subject-digest: ${{ steps.push.outputs.digest }}
-          push-to-registry: true
