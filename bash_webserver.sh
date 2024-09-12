@@ -1,1 +1,1 @@
-docker-compose run --rm webserver bash
+docker compose run --rm webserver bash
