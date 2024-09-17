@@ -79,6 +79,9 @@ RUN docker-php-ext-install pdo_mysql && \
     docker-php-ext-install calendar && \
     docker-php-ext-install exif
 
+# postgress pdo
+
+RUN apt-get update && apt-get install -y libpq-dev && docker-php-ext-install pdo pdo_pgsql
 
 # Install Freetype 
 RUN apt-get -y update && \
