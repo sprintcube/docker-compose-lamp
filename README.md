@@ -118,6 +118,10 @@ _**MYSQL_LOG_DIR**_
 
 This will be used to store Apache logs. The default value for this is `./logs/mysql`.
 
+**Note:**
+When providing "host" vale to the application, eg. wordpress, please use the value `database` where we generally use `localhost`
+
+
 ## Web Server
 
 Apache is configured to run on port 80. So, you can access it via `http://localhost`.
