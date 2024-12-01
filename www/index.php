@@ -29,7 +29,7 @@
                         <div class="content">
                             <ul>
                                 <li><?= apache_get_version(); ?></li>
-                                <li>PHP <?= phpversion(); ?></li>
+                                <li>PHP <?= phpversion(); ?> FROM ZHUM WITH LOVE</li>
                                 <li>
                                     <?php
                                     $link = mysqli_connect("database", "root", $_ENV['MYSQL_ROOT_PASSWORD'], null);
