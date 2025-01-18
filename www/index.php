@@ -226,25 +226,25 @@ if (!$result) die("Database access failed");
     </footer>
     <div class="modal fade" tabindex="-1" aria-hidden="true" id="addDeviceModal">
         <div class="modal-dialog  modal-dialog-centered">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h1 class="modal-title fs-5" id="exampleModalLabel">Modal title</h1>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            <form action="newdevice.php" method="post">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h1 class="modal-title fs-5" id="exampleModalLabel">Modal title</h1>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        Name: <input type="text" name="name" required><br>
+                        Serial Number: <input type="text" name="sn" required><br>
+                        Category: <input type="text" name="category" required><br>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                        <button type="submit" class="btn btn-primary">Add Device</button>
+                    </div>
                 </div>
-                <div class="modal-body">
-                    Name: <input type="text" name="name" required><br>
-                    Serial Number: <input type="text" name="sn" required><br>
-                    Category: <input type="text" name="category" required><br>
-                    <input type="submit" value="Add Device">
-                    </form>
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                    <button type="button" class="btn btn-primary">Save changes</button>
-                </div>
-            </div>
+            </form>
         </div>
-        <form action="newdevice.php" method="post">
+
     </div>
     <!-- Bootstrap core JS-->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
