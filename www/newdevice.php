@@ -1,4 +1,4 @@
-<?php 
+<?php
 require_once 'login.php';
 $conn = new mysqli($hn, $un, $pw, $db);
 if ($conn->connect_error) die("Connection failed");
@@ -22,4 +22,3 @@ echo <<<_END
 _END;
 
 $conn->close();
-?>

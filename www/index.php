@@ -73,38 +73,6 @@ if (!$result) die("Database access failed");
                 </div>
             </div>
         </header>
-        <!-- List of loans section-->
-        <section class="py-5">
-            <div class="container px-5 my-5">
-                <div class="row gx-5 justify-content-center">
-                    <div class="col-lg-8 col-xl-6">
-                        <div class="text-center">
-                            <a id="loans"></a>
-                            <h2 class="fw-bolder">Loans Managment</h2>
-                            <p class="lead fw-normal text-muted mb-5">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Eaque fugit ratione dicta mollitia. Officiis ad.</p>
-                        </div>
-                    </div>
-                    <div class="container text-center">
-                        <div class="row align-items-start">
-                            <div class="col">
-                                <?php
-                                echo get_loans($conn, LoanQueryType::Active);
-                                ?>
-                            </div>
-                            <div class="col">
-                                <?php
-                                echo get_loans($conn, LoanQueryType::Overdue);
-                                ?>
-                            </div>
-                            <div class="col">
-                                <?php
-                                echo get_loans($conn, LoanQueryType::Returned);
-                                ?>
-                            </div>
-                        </div>
-                    </div>
-        </section>
-
         <!-- Blog preview section-->
         <section class="py-5">
             <div class="container px-5 my-5">
@@ -153,6 +121,39 @@ if (!$result) die("Database access failed");
                 </div>
             </div>
         </section>
+        <!-- List of loans section-->
+        <section class="py-5">
+            <div class="container px-5 my-5">
+                <div class="row gx-5 justify-content-center">
+                    <div class="col-lg-8 col-xl-6">
+                        <div class="text-center">
+                            <a id="loans"></a>
+                            <h2 class="fw-bolder">Loans Managment</h2>
+                            <p class="lead fw-normal text-muted mb-5">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Eaque fugit ratione dicta mollitia. Officiis ad.</p>
+                        </div>
+                    </div>
+                    <div class="container text-center">
+                        <div class="row align-items-start">
+                            <div class="col">
+                                <?php
+                                echo get_loans($conn, LoanQueryType::Active);
+                                ?>
+                            </div>
+                            <div class="col">
+                                <?php
+                                echo get_loans($conn, LoanQueryType::Overdue);
+                                ?>
+                            </div>
+                            <div class="col">
+                                <?php
+                                echo get_loans($conn, LoanQueryType::Returned);
+                                ?>
+                            </div>
+                        </div>
+                    </div>
+        </section>
+
+
     </main>
     <!-- Footer-->
     <footer class="bg-dark py-4 mt-auto">
