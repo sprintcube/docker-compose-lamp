@@ -1,7 +1,6 @@
-<?php //login.php
+<?php
 $hn='database';
 $db='docker';
 $un='docker';
 $pw='docker';
-?>
 
