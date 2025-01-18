@@ -1,0 +1,9 @@
+.btn-primary {
+  --bs-btn-bg: #000;
+  --bs-btn-border-color: #000;
+}
+
+.btn-custom-stadin {
+  --bs-btn-bg: #000;
+  --bs-btn-border-color: #f78da7;
+}
