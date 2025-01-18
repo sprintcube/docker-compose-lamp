@@ -30,11 +30,11 @@ if (!$result) die("Database access failed");
         <!-- Navigation-->
         <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
             <div class="container px-5">
-                <a class="navbar-brand" href="index.html">StadinAO</a>
+                <a class="navbar-brand" href="index.php">StadinAO</a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
-                        <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+                        <li class="nav-item"><a class="nav-link" href="index.php">Home</a></li>
                         <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
                         <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
                         <li class="nav-item"><a class="nav-link" href="faq.html">FAQ</a></li>
@@ -233,9 +233,19 @@ if (!$result) die("Database access failed");
                         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                     </div>
                     <div class="modal-body">
-                        Name: <input type="text" name="name" required><br>
-                        Serial Number: <input type="text" name="sn" required><br>
-                        Category: <input type="text" name="category" required><br>
+
+                        <div class="mb-3">
+                            <label for="#nameInput" class="form-label">Name:</label>
+                            <input type="text" name="name" required class="form-control" id="nameInput">
+                        </div>
+                        <div class="mb-3">
+                            <label for="#snInput" class="form-label">Serial Number:</label>
+                            <input type="text" name="sn" required class="form-control" id="snInput">
+                        </div>
+                        <div class="mb-3">
+                            <label for="#categoryInput" class="form-label">Category:</label>
+                            <input type="text" name="category" required class="form-control" id="categoryInput">
+                        </div>
                     </div>
                     <div class="modal-footer">
                         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
