@@ -25,6 +25,12 @@ As of now, we have several different PHP versions. Use appropriate php version a
 
 ## Installation
 
+### Prerequisites
+1. [Generate an SSH key to authenticate with GitHub](https://docs.github.com/en/authentication/connecting-to-github-with-ssh/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent)
+1. [Add the generated SSH public key to your GitHub account](https://docs.github.com/en/authentication/connecting-to-github-with-ssh/adding-a-new-ssh-key-to-your-github-account?platform=linux#adding-a-new-ssh-key-to-your-account)
+
+### Setting up local development 
+
 - Clone this repository on your local computer
 - configure .env as needed
 - Run the `docker compose up -d`.
