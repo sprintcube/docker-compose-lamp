@@ -37,7 +37,7 @@ function get_loans($conn, LoanQueryType $view = LoanQueryType::Active)
             break;
         default:
         case LoanQueryType::Active:
-            $result .= "<h2>Returned Loans</h2>";
+            $result .= "<h2>Active Loans</h2>";
             $query = "SELECT * FROM loan WHERE loan_end >= CURDATE() AND returned = 0";
             break;
     }
