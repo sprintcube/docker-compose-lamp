@@ -65,7 +65,7 @@ if (!$result) die("Database access failed");
 
                                         <a href="index.php">Back to Home</a>
                                     -->
-                                <a class="btn btn-outline-light btn-lg px-4" href="viewloans.php">View Loans</a>
+                                <a class="btn btn-outline-light btn-lg px-4" href="#loans">View Loans</a>
                             </div>
                         </div>
                     </div>
@@ -79,6 +79,7 @@ if (!$result) die("Database access failed");
                 <div class="row gx-5 justify-content-center">
                     <div class="col-lg-8 col-xl-6">
                         <div class="text-center">
+                            <a id="loans"></a>
                             <h2 class="fw-bolder">Loans Managment</h2>
                             <p class="lead fw-normal text-muted mb-5">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Eaque fugit ratione dicta mollitia. Officiis ad.</p>
                         </div>
