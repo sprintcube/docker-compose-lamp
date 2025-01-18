@@ -8,6 +8,6 @@ $loan_id = (int) $_GET['id'];
 $query = "UPDATE loan SET returned = 1 WHERE id = $loan_id";
 $conn->query($query);
 
-header("Location: viewloans.php");
+header("Location: index.php");
 $conn->close();
 ?>

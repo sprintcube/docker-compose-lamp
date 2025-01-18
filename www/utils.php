@@ -64,7 +64,7 @@ function get_loans($conn, LoanQueryType $view = LoanQueryType::Active)
                     <li class='list-group-item'><strong>Device ID:</strong> $device_id</li>
                     <li class='list-group-item'></strong> $loan_end</li>
                 </ul>
-                <button type='button' class='btn btn-secondary' href='returnloan.php?id={$id}'>Return</button>
+                <a class='btn btn-primary' href='returnloan.php?id={$id}'>Return</a>
             </div>
         </div>";
             // <div>Teacher ID: {$row['teacher_id']}, Device ID: {$row['device_id']}, Due: {$row['loan_end']} 
