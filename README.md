@@ -35,10 +35,11 @@ cd docker-compose-lamp/
 cp sample.env .env
 // modify sample.env as needed
 docker compose up -d
-// visit localhost
 ```
 
-Your LAMP stack is now ready!! You can access it via `http://localhost`.
+Then perform the steps for the [database setup](./DB_Setup.md).
+
+Your LAMP stack is now ready!! You can access it via `http://localhost/index.php`.
 
 ## Configuration and Usage
 
