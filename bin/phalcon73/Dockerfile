@@ -43,20 +43,7 @@ RUN git clone https://github.com/phalcon/cphalcon  /cphalcon \
     && git checkout origin/3.4.x \
     && ./install
 
-COPY ./docker/vhost/custom.conf /etc/apache2/sites-available/000-default.conf
-
-COPY ./docker/php /usr/local/etc/php/conf.d
-
 EXPOSE 80
-
-COPY ./docker/crontab/crontab /etc/cron.d/cron-kehadiran
-
-RUN chmod 0644  /etc/cron.d/cron-kehadiran
-
-## Apply crond
-RUN crontab  /etc/cron.d/cron-kehadiran
-
-RUN touch /var/log/cron.log
 
 WORKDIR /var/www/html
 
@@ -68,4 +55,5 @@ RUN composer install
 
 RUN a2enmod rewrite headers proxy proxy_http
 
-CMD cron && /usr/sbin/apache2ctl -D FOREGROUND
+# CMD cron && /usr/sbin/apache2ctl -D FOREGROUND
+CMD /usr/sbin/apache2ctl -D FOREGROUND
