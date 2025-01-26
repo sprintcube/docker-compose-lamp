@@ -100,42 +100,7 @@ $deviceModals = "";
                                 <button data-bs-toggle='modal' data-bs-target='#$editDeviceModalId' class='btn btn-secondary' href=''>Edit</button>
                                 <button data-bs-toggle='modal' data-bs-target='#$loanDeviceModalId' class='btn btn-primary' href=''>Loan</button>
                             </div>";
-                            $deviceModals .= <<<_END
-                                <div class="modal fade" tabindex="-1" aria-hidden="true" id='$editDeviceModalId'>
-                                    <div class="modal-dialog  modal-dialog-centered">
-                                        <form action="editdevice.php?id=$device_id" method="post">
-                                            <div class="modal-content">
-                                                <div class="modal-header">
-                                                    <h1 class="modal-title fs-5">Edit Device</h1>
-                                                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                                                </div>
-                                                <div class="modal-body">
-                                                    <div class="mb-3">
-                                                        <label for="#nameInput" class="form-label">Name:</label>
-                                                        <input type="text" name="name" value="{$row['name']}" required class="form-control" id="{"nameInput" . $deviceModalIdStub}">
-                                                    </div>
-                                                    <div class="mb-3">
-                                                        <label for="#snInput" class="form-label">Serial Number:</label>
-                                                        <input type="text" name="sn" value="{$row['sn']}" required class="form-control" id={"snInput" . $deviceModalIdStub}>
-                                                    </div>
-                                                    <div class="mb-3">
-                                                        <label for="#categoryInput" class="form-label">Category:</label>
-                                                        <input type="text" name="category" value="{$row['category']}" required class="form-control" id={"categoryInput" . $deviceModalIdStub}>
-                                                    </div>
-                                                </div>
-                                                <div class="modal-footer">
-                                                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                                                    <button type="submit" class="btn btn-primary">Update</button>
-                                                </div>
-                                            </div>
-                                        </form>
-                                    </div>
-                                </div>
-                                _END;
-                            $deviceModals .= <<<_END
-                                <div class='modal' id='$loanDeviceModalId'>
-                                </div>
-                                _END;
+                            
                             echo '</div>';
                         echo '</div>';
 
@@ -145,6 +110,90 @@ $deviceModals = "";
                             echo '</div>'; // Closing the <div class="row">
                             echo '<div class="row gx-5">';
                         }
+
+                        $nameInputId = "nameInput" . $editDeviceModalId;
+                        $snInputId = "snInput" . $editDeviceModalId;
+                        $categoryInputId = "categoryInput" . $editDeviceModalId;
+                        $deviceModals .= <<<_END
+                            <div class="modal fade" tabindex="-1" aria-hidden="true" id='$editDeviceModalId'>
+                                <div class="modal-dialog  modal-dialog-centered">
+                                    <form action="editdevice.php?id=$device_id" method="post">
+                                        <div class="modal-content">
+                                            <div class="modal-header">
+                                                <h1 class="modal-title fs-5">Edit Device</h1>
+                                                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                            </div>
+                                            <div class="modal-body">
+                                                <div class="mb-3">
+                                                    <label for="#nameInput" class="form-label">Name:</label>
+                                                    <input type="text" name="name" value="{$row['name']}" required class="form-control" id="{$nameInputId}">
+                                                </div>
+                                                <div class="mb-3">
+                                                    <label for="#snInput" class="form-label">Serial Number:</label>
+                                                    <input type="text" name="sn" value="{$row['sn']}" required class="form-control" id="{$snInputId}">
+                                                </div>
+                                                <div class="mb-3">
+                                                    <label for="#categoryInput" class="form-label">Category:</label>
+                                                    <input type="text" name="category" value="{$row['category']}" required class="form-control" id="{$categoryInputId}">
+                                                </div>
+                                            </div>
+                                            <div class="modal-footer">
+                                                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                                                <button type="submit" class="btn btn-primary">Update</button>
+                                            </div>
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
+                        _END;
+
+                        $teacherInputId = "teacherInput" . $loanDeviceModalId;
+                        $loanStartInputId = "loanStartInput" . $loanDeviceModalId;
+                        $loanEndInputId = "loanEndInput" . $loanDeviceModalId;
+                        $deviceModals .= <<<_END
+                            <div class="modal fade" tabindex="-1" aria-hidden="true" id='$loanDeviceModalId'>
+                                <div class="modal-dialog  modal-dialog-centered">
+                                    <form action="loandevice.php?id=$device_id" method="post">
+                                        <div class="modal-content">
+                                            <div class="modal-header">
+                                                <h1 class="modal-title fs-5">Loan Device</h1>
+                                                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                            </div>
+                                            <div class="modal-body">
+                                                <div class="mb-3">
+                                                    <label for="#teacheridInput" class="form-label">Teacher ID:</label>
+                                                    <input type="text" name="teacher_id" maxlength="6" required class="form-control" id="{$teacherInputId}">
+                                                </div>
+                                                <div class="mb-3">
+                                                    <label for="#loanStartInput" class="form-label">Loan Start:</label>
+                                                    <input type="date" name="loan_start" required class="form-control" id="{$loanStartInputId}">
+                                                </div>
+                                                <div class="mb-3">
+                                                    <label for="#loanEndInput" class="form-label">Loan End:</label>
+                                                    <input type="date" name="loan_end" required class="form-control" id="{$loanEndInputId}">
+                                                </div>
+                                            </div>
+                                            <div class="modal-footer">
+                                                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                                                <button type="submit" class="btn btn-primary">Loan Device</button>
+                                            </div>
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
+                            <script>
+                                !(function (){
+                                    const modal = document.querySelector('div.modal#{$loanDeviceModalId}');
+                                    console.log(modal);
+                                    const loanStartInput = modal.querySelector('input[name="loan_start"]');
+                                    const loanEndInput = modal.querySelector('input[name="loan_end"]');
+
+                                    loanStartInput.addEventListener('change', () => {
+                                        loanEndInput.min = loanStartInput.value;
+                                    });
+                                })();
+                            </script>
+                        _END;
                     }
 
                     if ($columnCount % 3 != 0) {
