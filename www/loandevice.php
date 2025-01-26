@@ -13,7 +13,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['teacher_id'], $_POST[
     $query = "INSERT INTO loan (device_id, teacher_id, loan_start, loan_end) 
               VALUES ('$device_id', '$teacher_id', '$loan_start', '$loan_end')";
     if (!$conn->query($query)) echo "Error: " . $conn->error;
-    header("Location: viewdevice.php?id=$device_id");
+    header("Location: index.php");
 }
 
 echo <<<_END
