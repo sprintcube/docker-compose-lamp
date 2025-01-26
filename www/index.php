@@ -84,7 +84,42 @@ if (!$result) die("Database access failed");
                         </div>
                     </div>
                 </div>
-                <div class="row gx-5">
+                <?php
+                    $columnCount = 0;
+
+                    echo '<div class="row gx-5">';
+
+                    while ($row = $result->fetch_assoc()) {
+                        echo '<div class="col-lg-4 mb-5">';
+                            echo '<div class="card h-100 shadow border-0">';
+                            echo '<img class="card-img-top" src="https://dummyimage.com/600x350/ced4da/6c757d" alt="..." />';
+                            echo "<div class='card-body'>
+                                <div class='card-title'>{$row['name']}</div>
+                            </div>";
+                            echo "<ul class='list-group list-group-flush'>
+                                <li class='list-group-item'>SN: {$row['sn']}</li>
+                                <li class='list-group-item'>Category: {$row['category']}</li>
+                            </ul>";
+                            echo "<div class='card-body'>
+                                <a class='btn btn-primary' href='viewdevice.php?id={$row['id']}'>View</a>
+                            </div>";
+                            echo '</div>';
+                        echo '</div>';
+
+                        $columnCount++;
+
+                        if ($columnCount % 3 == 0) {
+                            echo '</div>'; // Closing the <div class="row">
+                            echo '<div class="row gx-5">';
+                        }
+                    }
+
+                    if ($columnCount % 3 != 0) {
+                        echo '</div>'; // close a single unclosed row
+                    }
+                    
+                ?>
+                <!-- <div class="row gx-5">
                     <div class="col-lg-4 mb-5">
                         <div class="card h-100 shadow border-0">
                             <img class="card-img-top" src="https://dummyimage.com/600x350/ced4da/6c757d" alt="..." />
@@ -118,7 +153,7 @@ if (!$result) die("Database access failed");
                             </div>
                         </div>
                     </div>
-                </div>
+                </div> -->
             </div>
         </section>
         <!-- List of loans section-->
@@ -249,12 +284,12 @@ if (!$result) die("Database access failed");
 
 <?php
 
-while ($row = $result->fetch_assoc()) {
-    echo "<div>
-        <strong>{$row['name']}</strong> - SN: {$row['sn']} - Category: {$row['category']}
-        <a href='viewdevice.php?id={$row['id']}'>View</a>
-    </div>";
-}
+// while ($row = $result->fetch_assoc()) {
+//     echo "<div>
+//         <strong>{$row['name']}</strong> - SN: {$row['sn']} - Category: {$row['category']}
+//         <a href='viewdevice.php?id={$row['id']}'>View</a>
+//     </div>";
+// }
 
 $result->close();
 $conn->close();
