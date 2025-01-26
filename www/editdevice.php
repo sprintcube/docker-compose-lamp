@@ -9,7 +9,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['name'], $_POST['sn'],
     $stmt = $conn->prepare("UPDATE laite SET name = ?, sn = ?, category = ? WHERE id = ?");
     $stmt->bind_param('sssi', $_POST['name'], $_POST['sn'], $_POST['category'], $device_id);
     $stmt->execute();
-    header("Location: viewdevice.php?id=$device_id");
+    header("Location: index.php");
 }
 
 $query = "SELECT * FROM laite WHERE id = ?";

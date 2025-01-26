@@ -80,8 +80,11 @@ $deviceModals = "";
                     echo '<div class="row gx-5">';
 
                     while ($row = $result->fetch_assoc()) {
-                        $editDeviceModalId = "editDeviceModal-" . $row['sn'] . '-' . $columnCount;
-                        $loanDeviceModalId = "loanDeviceModal-" . $row['sn'] . '-' . $columnCount;
+                        $deviceModalIdStub = "DeviceModal-" . $row['sn'] . '-' . $columnCount;
+                        $loanDeviceModalId = 'loan' . $deviceModalIdStub;
+                        $editDeviceModalId = 'edit' . $deviceModalIdStub;
+
+                        $device_id = $row['id'];
 
                         echo '<div class="col-lg-4 mb-5">';
                             echo '<div class="card h-100 shadow border-0">';
@@ -94,11 +97,45 @@ $deviceModals = "";
                                 <li class='list-group-item'>Category: {$row['category']}</li>
                             </ul>";
                             echo "<div class='card-body'>
-                                <button data-bs-toggle='modal' data-bs-target='#$editDeviceModalId' class='btn btn-primary' href=''>Edit</button>
+                                <button data-bs-toggle='modal' data-bs-target='#$editDeviceModalId' class='btn btn-secondary' href=''>Edit</button>
                                 <button data-bs-toggle='modal' data-bs-target='#$loanDeviceModalId' class='btn btn-primary' href=''>Loan</button>
                             </div>";
-                            $deviceModals .= "<div class='modal' id='$editDeviceModalId'></div>";
-                            $deviceModals .= "<div class='modal' id='$loanDeviceModalId'></div>";
+                            $deviceModals .= <<<_END
+                                <div class="modal fade" tabindex="-1" aria-hidden="true" id='$editDeviceModalId'>
+                                    <div class="modal-dialog  modal-dialog-centered">
+                                        <form action="editdevice.php?id=$device_id" method="post">
+                                            <div class="modal-content">
+                                                <div class="modal-header">
+                                                    <h1 class="modal-title fs-5">Edit Device</h1>
+                                                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                                </div>
+                                                <div class="modal-body">
+                                                    <div class="mb-3">
+                                                        <label for="#nameInput" class="form-label">Name:</label>
+                                                        <input type="text" name="name" value="{$row['name']}" required class="form-control" id="{"nameInput" . $deviceModalIdStub}">
+                                                    </div>
+                                                    <div class="mb-3">
+                                                        <label for="#snInput" class="form-label">Serial Number:</label>
+                                                        <input type="text" name="sn" value="{$row['sn']}" required class="form-control" id={"snInput" . $deviceModalIdStub}>
+                                                    </div>
+                                                    <div class="mb-3">
+                                                        <label for="#categoryInput" class="form-label">Category:</label>
+                                                        <input type="text" name="category" value="{$row['category']}" required class="form-control" id={"categoryInput" . $deviceModalIdStub}>
+                                                    </div>
+                                                </div>
+                                                <div class="modal-footer">
+                                                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                                                    <button type="submit" class="btn btn-primary">Update</button>
+                                                </div>
+                                            </div>
+                                        </form>
+                                    </div>
+                                </div>
+                                _END;
+                            $deviceModals .= <<<_END
+                                <div class='modal' id='$loanDeviceModalId'>
+                                </div>
+                                _END;
                             echo '</div>';
                         echo '</div>';
 
