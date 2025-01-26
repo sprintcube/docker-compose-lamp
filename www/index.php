@@ -7,6 +7,8 @@ if ($conn->connect_error) die("Connection failed");
 $query = "SELECT * FROM laite";
 $result = $conn->query($query);
 if (!$result) die("Database access failed");
+
+$deviceModals = "";
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -53,18 +55,6 @@ if (!$result) die("Database access failed");
                             <p class="lead fw-normal text-white-50 mb-4">Quickly design and customize responsive mobile-first sites with Bootstrap, the world’s most popular front-end open source toolkit!</p>
                             <div class="d-grid gap-3 d-sm-flex justify-content-sm-center justify-content-xl-start">
                                 <button type="button" class="btn btn-primary btn-custom-stadin btn-lg px-4 me-sm-3" data-bs-toggle="modal" data-bs-target="#addDeviceModal">Add Device</button>
-
-                                <!-- <a class="btn btn-primary btn-lg px-4 me-sm-3" href="newdevice.php">Add Device</a>
-                                     
-                                    <form action="newdevice.php" method="post">
-                                    Name: <input type="text" name="name" required><br>
-                                    Serial Number: <input type="text" name="sn" required><br>
-                                    Category: <input type="text" name="category" required><br>
-                                    <input type="submit" value="Add Device">
-                                    </form>
-
-                                        <a href="index.php">Back to Home</a>
-                                    -->
                                 <a class="btn btn-outline-light btn-lg px-4" href="#loans">View Loans</a>
                             </div>
                         </div>
@@ -90,6 +80,9 @@ if (!$result) die("Database access failed");
                     echo '<div class="row gx-5">';
 
                     while ($row = $result->fetch_assoc()) {
+                        $editDeviceModalId = "editDeviceModal-" . $row['sn'] . '-' . $columnCount;
+                        $loanDeviceModalId = "loanDeviceModal-" . $row['sn'] . '-' . $columnCount;
+
                         echo '<div class="col-lg-4 mb-5">';
                             echo '<div class="card h-100 shadow border-0">';
                             echo '<img class="card-img-top" src="https://dummyimage.com/600x350/ced4da/6c757d" alt="..." />';
@@ -101,8 +94,11 @@ if (!$result) die("Database access failed");
                                 <li class='list-group-item'>Category: {$row['category']}</li>
                             </ul>";
                             echo "<div class='card-body'>
-                                <a class='btn btn-primary' href='viewdevice.php?id={$row['id']}'>View</a>
+                                <button data-bs-toggle='modal' data-bs-target='#$editDeviceModalId' class='btn btn-primary' href=''>Edit</button>
+                                <button data-bs-toggle='modal' data-bs-target='#$loanDeviceModalId' class='btn btn-primary' href=''>Loan</button>
                             </div>";
+                            $deviceModals .= "<div class='modal' id='$editDeviceModalId'></div>";
+                            $deviceModals .= "<div class='modal' id='$loanDeviceModalId'></div>";
                             echo '</div>';
                         echo '</div>';
 
@@ -119,41 +115,6 @@ if (!$result) die("Database access failed");
                     }
                     
                 ?>
-                <!-- <div class="row gx-5">
-                    <div class="col-lg-4 mb-5">
-                        <div class="card h-100 shadow border-0">
-                            <img class="card-img-top" src="https://dummyimage.com/600x350/ced4da/6c757d" alt="..." />
-                            <div class="card-body p-4">
-                                <a class="text-decoration-none link-dark stretched-link" href="#!">
-                                    <h5 class="card-title mb-3">Blog post title</h5>
-                                </a>
-                                <p class="card-text mb-0">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-4 mb-5">
-                        <div class="card h-100 shadow border-0">
-                            <img class="card-img-top" src="https://dummyimage.com/600x350/adb5bd/495057" alt="..." />
-                            <div class="card-body p-4">
-                                <a class="text-decoration-none link-dark stretched-link" href="#!">
-                                    <h5 class="card-title mb-3">Another blog post title</h5>
-                                </a>
-                                <p class="card-text mb-0">This text is a bit longer to illustrate the adaptive height of each card. Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-4 mb-5">
-                        <div class="card h-100 shadow border-0">
-                            <img class="card-img-top" src="https://dummyimage.com/600x350/6c757d/343a40" alt="..." />
-                            <div class="card-body p-4">
-                                <a class="text-decoration-none link-dark stretched-link" href="#!">
-                                    <h5 class="card-title mb-3">The last blog post title is a little bit longer than the others</h5>
-                                </a>
-                                <p class="card-text mb-0">Some more quick example text to build on the card title and make up the bulk of the card's content.</p>
-                            </div>
-                        </div>
-                    </div>
-                </div> -->
             </div>
         </section>
         <!-- List of loans section-->
@@ -237,8 +198,8 @@ if (!$result) die("Database access failed");
                 </div>
             </form>
         </div>
-
     </div>
+    <?php echo $deviceModals ?>
     <!-- Features section-->
     <section class="py-5" id="features">
         <div class="container px-5 my-5">
