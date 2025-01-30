@@ -51,7 +51,7 @@ COPY ./ /var/www/html/
 
 RUN apt install git -y
 
-RUN composer install
+# RUN composer install
 
 RUN a2enmod rewrite headers proxy proxy_http
 
