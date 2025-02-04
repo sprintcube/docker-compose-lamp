@@ -38,9 +38,10 @@ $deviceModals = "";
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
                         <li class="nav-item"><a class="nav-link" href="index.php">Home</a></li>
-                        <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
+                        <!-- <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
                         <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
                         <li class="nav-item"><a class="nav-link" href="faq.html">FAQ</a></li>
+-->
                     </ul>
                 </div>
             </div>
@@ -52,7 +53,7 @@ $deviceModals = "";
                     <div class="col-lg-8 col-xl-7 col-xxl-6">
                         <div class="my-5 text-center text-xl-start">
                             <h1 class="display-5 fw-bolder text-white mb-2">Device library</h1>
-                            <p class="lead fw-normal text-white-50 mb-4">Quickly design and customize responsive mobile-first sites with Bootstrap, the world’s most popular front-end open source toolkit!</p>
+                            <p class="lead fw-normal text-white-50 mb-4">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Eaque fugit ratione dicta mollitia. Officiis ad.</p>
                             <div class="d-grid gap-3 d-sm-flex justify-content-sm-center justify-content-xl-start">
                                 <button type="button" class="btn btn-primary btn-custom-stadin btn-lg px-4 me-sm-3" data-bs-toggle="modal" data-bs-target="#addDeviceModal">Add Device</button>
                                 <a class="btn btn-outline-light btn-lg px-4" href="#loans">View Loans</a>
@@ -80,11 +81,10 @@ $deviceModals = "";
                     echo '<div class="row gx-5">';
 
                     while ($row = $result->fetch_assoc()) {
-                        $deviceModalIdStub = "DeviceModal-" . $row['sn'] . '-' . $columnCount;
+                        $serialNumber = $row['sn'];
+                        $deviceModalIdStub = "DeviceModal-" . $serialNumber . '-' . $columnCount;
                         $loanDeviceModalId = 'loan' . $deviceModalIdStub;
                         $editDeviceModalId = 'edit' . $deviceModalIdStub;
-
-                        $device_id = $row['id'];
 
                         echo '<div class="col-lg-4 mb-5">';
                             echo '<div class="card h-100 shadow border-0">';
@@ -117,7 +117,7 @@ $deviceModals = "";
                         $deviceModals .= <<<_END
                             <div class="modal fade" tabindex="-1" aria-hidden="true" id='$editDeviceModalId'>
                                 <div class="modal-dialog  modal-dialog-centered">
-                                    <form action="editdevice.php?id=$device_id" method="post">
+                                    <form action="editdevice.php?sn=$serialNumber" method="post">
                                         <div class="modal-content">
                                             <div class="modal-header">
                                                 <h1 class="modal-title fs-5">Edit Device</h1>
@@ -127,10 +127,6 @@ $deviceModals = "";
                                                 <div class="mb-3">
                                                     <label for="#nameInput" class="form-label">Name:</label>
                                                     <input type="text" name="name" value="{$row['name']}" required class="form-control" id="{$nameInputId}">
-                                                </div>
-                                                <div class="mb-3">
-                                                    <label for="#snInput" class="form-label">Serial Number:</label>
-                                                    <input type="text" name="sn" value="{$row['sn']}" required class="form-control" id="{$snInputId}">
                                                 </div>
                                                 <div class="mb-3">
                                                     <label for="#categoryInput" class="form-label">Category:</label>
@@ -153,7 +149,7 @@ $deviceModals = "";
                         $deviceModals .= <<<_END
                             <div class="modal fade" tabindex="-1" aria-hidden="true" id='$loanDeviceModalId'>
                                 <div class="modal-dialog  modal-dialog-centered">
-                                    <form action="loandevice.php?id=$device_id" method="post">
+                                    <form action="loandevice.php?sn=$serialNumber" method="post">
                                         <div class="modal-content">
                                             <div class="modal-header">
                                                 <h1 class="modal-title fs-5">Loan Device</h1>
@@ -210,7 +206,7 @@ $deviceModals = "";
                     <div class="col-lg-8 col-xl-6">
                         <div class="text-center">
                             <a id="loans"></a>
-                            <h2 class="fw-bolder">Loans Managment</h2>
+                            <h2 class="fw-bolder">Loans Management</h2>
                             <p class="lead fw-normal text-muted mb-5">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Eaque fugit ratione dicta mollitia. Officiis ad.</p>
                         </div>
                     </div>
@@ -218,17 +214,17 @@ $deviceModals = "";
                         <div class="row align-items-start">
                             <div class="col">
                                 <?php
-                                echo get_loans($conn, LoanQueryType::Active);
+                                echo get_loans($conn, "ACTIVE");
                                 ?>
                             </div>
                             <div class="col">
                                 <?php
-                                echo get_loans($conn, LoanQueryType::Overdue);
+                                echo get_loans($conn, "OVERDUE");
                                 ?>
                             </div>
                             <div class="col">
                                 <?php
-                                echo get_loans($conn, LoanQueryType::Returned);
+                                echo get_loans($conn, "RETURNED");
                                 ?>
                             </div>
                         </div>
@@ -287,7 +283,7 @@ $deviceModals = "";
     </div>
     <?php echo $deviceModals ?>
     <!-- Features section-->
-    <section class="py-5" id="features">
+    <!-- <section class="py-5" id="features">
         <div class="container px-5 my-5">
             <div class="row gx-5">
                 <div class="col-lg-4 mb-5 mb-lg-0">
@@ -320,7 +316,7 @@ $deviceModals = "";
             </div>
         </div>
     </section>
-
+            -->
     <!-- Bootstrap core JS-->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
     <!-- Core theme JS-->

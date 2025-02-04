@@ -8,7 +8,7 @@ echo '<h1>Loan Management</h1>';
 
 
 // Overdue loans
-echo get_loans($conn, LoanQueryType::Overdue);
+echo get_loans($conn, "OVERDUE");
 // echo '<h2>Overdue Loans</h2>';
 // $query = "SELECT * FROM loan WHERE loan_end < CURDATE() AND returned = 0";
 // $result = $conn->query($query);
@@ -19,7 +19,7 @@ echo get_loans($conn, LoanQueryType::Overdue);
 // }
 
 // Active loans
-echo get_loans($conn, LoanQueryType::Active);
+echo get_loans($conn, "ACTIVE");
 // echo '<h2>Active Loans</h2>';
 // $query = "SELECT * FROM loan WHERE loan_end >= CURDATE() AND returned = 0";
 // $result = $conn->query($query);
@@ -30,7 +30,7 @@ echo get_loans($conn, LoanQueryType::Active);
 // }
 
 // Returned loans
-echo get_loans($conn, LoanQueryType::Returned);
+echo get_loans($conn, "RETURNED");
 // echo '<h2>Returned Loans</h2>';
 // $query = "SELECT * FROM loan WHERE returned = 1";
 // $result = $conn->query($query);
