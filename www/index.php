@@ -64,57 +64,79 @@ $deviceModals = "";
                 </div>
             </div>
         </header>
-        <!-- Blog preview section-->
+        <!-- Available devices section-->
         <section class="py-5">
             <div class="container px-5 my-5">
                 <div class="row gx-5 justify-content-center">
-                    <div class="col-lg-8 col-xl-6">
-                        <div class="text-center">
-                            <h2 class="fw-bolder">Avaliable devices</h2>
-                            <p class="lead fw-normal text-muted mb-5">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Eaque fugit ratione dicta mollitia. Officiis ad.</p>
-                        </div>
+                    <div class="col-lg-10 col-xl-10">
+                        <nav class="navbar navbar-expand-lg bg-light mb-5">
+                            <div class="container-fluid">
+                                <a class="navbar-brand" href="#">Available devices</a>
+                                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                                    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                                        <li class="nav-item dropdown">
+                                            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                                Dropdown
+                                            </a>
+                                            <ul class="dropdown-menu">
+                                                <li><a class="dropdown-item" href="#">Action</a></li>
+                                                <li><a class="dropdown-item" href="#">Another action</a></li>
+                                                <li>
+                                                    <hr class="dropdown-divider">
+                                                </li>
+                                                <li><a class="dropdown-item" href="#">Something else here</a></li>
+                                            </ul>
+                                        </li>
+                                    </ul>
+                                    <form class="d-flex" role="search">
+                                        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+                                        <button class="btn btn-secondary" type="submit">Search</button>
+                                    </form>
+                                </div>
+                            </div>
+                        </nav>
                     </div>
                 </div>
                 <?php
-                    $columnCount = 0;
+                $columnCount = 0;
 
-                    echo '<div class="row gx-5">';
+                echo '<div class="row gx-5">';
 
-                    while ($row = $result->fetch_assoc()) {
-                        $serialNumber = $row['sn'];
-                        $deviceModalIdStub = "DeviceModal-" . $serialNumber . '-' . $columnCount;
-                        $loanDeviceModalId = 'loan' . $deviceModalIdStub;
-                        $editDeviceModalId = 'edit' . $deviceModalIdStub;
+                while ($row = $result->fetch_assoc()) {
+                    $serialNumber = $row['sn'];
+                    $deviceModalIdStub = "DeviceModal-" . $serialNumber . '-' . $columnCount;
+                    $loanDeviceModalId = 'loan' . $deviceModalIdStub;
+                    $editDeviceModalId = 'edit' . $deviceModalIdStub;
 
-                        echo '<div class="col-lg-4 mb-5">';
-                            echo '<div class="card h-100 shadow border-0">';
-                            echo '<img class="card-img-top" src="https://dummyimage.com/600x350/ced4da/6c757d" alt="..." />';
-                            echo "<div class='card-body'>
+                    echo '<div class="col-lg-4 mb-5">';
+                    echo '<div class="card h-100 shadow border-0">';
+                    echo '<img class="card-img-top" src="https://dummyimage.com/600x350/ced4da/6c757d" alt="..." />';
+                    echo "<div class='card-body'>
                                 <div class='card-title'>{$row['name']}</div>
                             </div>";
-                            echo "<ul class='list-group list-group-flush'>
+                    echo "<ul class='list-group list-group-flush'>
                                 <li class='list-group-item'>SN: {$row['sn']}</li>
                                 <li class='list-group-item'>Category: {$row['category']}</li>
                             </ul>";
-                            echo "<div class='card-body'>
+                    echo "<div class='card-body'>
                                 <button data-bs-toggle='modal' data-bs-target='#$editDeviceModalId' class='btn btn-secondary' href=''>Edit</button>
                                 <button data-bs-toggle='modal' data-bs-target='#$loanDeviceModalId' class='btn btn-primary' href=''>Loan</button>
                             </div>";
-                            
-                            echo '</div>';
-                        echo '</div>';
 
-                        $columnCount++;
+                    echo '</div>';
+                    echo '</div>';
 
-                        if ($columnCount % 3 == 0) {
-                            echo '</div>'; // Closing the <div class="row">
-                            echo '<div class="row gx-5">';
-                        }
+                    $columnCount++;
 
-                        $nameInputId = "nameInput" . $editDeviceModalId;
-                        $snInputId = "snInput" . $editDeviceModalId;
-                        $categoryInputId = "categoryInput" . $editDeviceModalId;
-                        $deviceModals .= <<<_END
+                    if ($columnCount % 3 == 0) {
+                        echo '</div>'; // Closing the <div class="row">
+                        echo '<div class="row gx-5">';
+                    }
+
+                    $nameInputId = "nameInput" . $editDeviceModalId;
+                    $snInputId = "snInput" . $editDeviceModalId;
+                    $categoryInputId = "categoryInput" . $editDeviceModalId;
+                    $deviceModals .= <<<_END
                             <div class="modal fade" tabindex="-1" aria-hidden="true" id='$editDeviceModalId'>
                                 <div class="modal-dialog  modal-dialog-centered">
                                     <form action="editdevice.php?sn=$serialNumber" method="post">
@@ -143,10 +165,10 @@ $deviceModals = "";
                             </div>
                         _END;
 
-                        $teacherInputId = "teacherInput" . $loanDeviceModalId;
-                        $loanStartInputId = "loanStartInput" . $loanDeviceModalId;
-                        $loanEndInputId = "loanEndInput" . $loanDeviceModalId;
-                        $deviceModals .= <<<_END
+                    $teacherInputId = "teacherInput" . $loanDeviceModalId;
+                    $loanStartInputId = "loanStartInput" . $loanDeviceModalId;
+                    $loanEndInputId = "loanEndInput" . $loanDeviceModalId;
+                    $deviceModals .= <<<_END
                             <div class="modal fade" tabindex="-1" aria-hidden="true" id='$loanDeviceModalId'>
                                 <div class="modal-dialog  modal-dialog-centered">
                                     <form action="loandevice.php?sn=$serialNumber" method="post">
@@ -190,12 +212,12 @@ $deviceModals = "";
                                 })();
                             </script>
                         _END;
-                    }
+                }
 
-                    if ($columnCount % 3 != 0) {
-                        echo '</div>'; // close a single unclosed row
-                    }
-                    
+                if ($columnCount % 3 != 0) {
+                    echo '</div>'; // close a single unclosed row
+                }
+
                 ?>
             </div>
         </section>
@@ -229,9 +251,9 @@ $deviceModals = "";
                             </div>
                         </div>
                     </div>
+                </div>
+            </div>
         </section>
-
-
     </main>
     <!-- Footer-->
     <footer class="bg-dark py-4 mt-auto">
@@ -322,18 +344,8 @@ $deviceModals = "";
     <!-- Core theme JS-->
     <script src="js/scripts.js"></script>
 </body>
-
 </html>
-
 <?php
-
-// while ($row = $result->fetch_assoc()) {
-//     echo "<div>
-//         <strong>{$row['name']}</strong> - SN: {$row['sn']} - Category: {$row['category']}
-//         <a href='viewdevice.php?id={$row['id']}'>View</a>
-//     </div>";
-// }
-
 $result->close();
 $conn->close();
 ?>
