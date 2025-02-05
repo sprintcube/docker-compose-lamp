@@ -18,7 +18,7 @@ $deviceModals = "";
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
     <meta name="description" content="" />
     <meta name="author" content="" />
-    <title>Modern Business - Start Bootstrap Template</title>
+    <title>Device Library</title>
     <!-- Favicon-->
     <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
     <!-- Bootstrap icons-->
@@ -53,7 +53,7 @@ $deviceModals = "";
                     <div class="col-lg-8 col-xl-7 col-xxl-6">
                         <div class="my-5 text-center text-xl-start">
                             <h1 class="display-5 fw-bolder text-white mb-2">Device library</h1>
-                            <p class="lead fw-normal text-white-50 mb-4">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Eaque fugit ratione dicta mollitia. Officiis ad.</p>
+                            <p class="lead fw-normal text-white-50 mb-4">Open Mon-Fri 9:00-15:00, STA201</p>
                             <div class="d-grid gap-3 d-sm-flex justify-content-sm-center justify-content-xl-start">
                                 <button type="button" class="btn btn-primary btn-custom-stadin btn-lg px-4 me-sm-3" data-bs-toggle="modal" data-bs-target="#addDeviceModal">Add Device</button>
                                 <a class="btn btn-outline-light btn-lg px-4" href="#loans">View Loans</a>

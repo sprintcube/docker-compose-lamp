@@ -48,7 +48,7 @@ function get_loans($conn, $view = 'ACTIVE')
                 <div class='card-body'>
                     <ul class='list-group list-group-flush'>
                         <li class='list-group-item'><strong>Teacher ID:</strong> $teacher_id</li>
-                        <li class='list-group-item'><strong>Device ID:</strong> $device_sn</li>
+                        <li class='list-group-item'><strong>Device SN:</strong> $device_sn</li>
                     </ul>
                 </div>
             </div>";
