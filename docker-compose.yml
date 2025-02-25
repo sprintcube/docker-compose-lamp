@@ -26,6 +26,7 @@ services:
       XDEBUG_CONFIG: "client_host=host.docker.internal remote_port=${XDEBUG_PORT}"
     extra_hosts:
       - "host.docker.internal:host-gateway"
+    user: www-data
   database:
     image: mariadb:lts
     container_name: "${COMPOSE_PROJECT_NAME}-${DATABASE}"
@@ -71,6 +72,7 @@ services:
       - "127.0.0.1:${HOST_MACHINE_REDIS_PORT}:6379"
   crond:
     container_name:  "${COMPOSE_PROJECT_NAME}-crond"
+    user: www-data
     build:
       context: ./bin/crond
     volumes:
