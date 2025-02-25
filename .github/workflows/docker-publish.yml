@@ -1,0 +1,265 @@
+# This workflow uses actions that are not certified by GitHub.
+# They are provided by a third-party and are governed by
+# separate terms of service, privacy policy, and support
+# documentation.
+
+# GitHub recommends pinning actions to a commit SHA.
+# To get a newer version, you will need to update the SHA.
+# You can also reference a tag or branch, but the action may change without warning.
+
+name: Publish Docker image
+
+on:
+  push:
+    branchs: master
+
+jobs:
+
+  push_to_registries_phalcon:
+    name: Push Docker image to multiple registries
+    runs-on: ubuntu-latest
+    permissions:
+      packages: write
+      contents: read
+      attestations: write
+      id-token: write
+    steps:
+      - name: Check out the repo
+        uses: actions/checkout@v4
+
+      - name: Log in to Docker Hub
+        uses: docker/login-action@f4ef78c080cd8ba55a85445d5b36e214a81df20a
+        with:
+          username: ${{ secrets.DOCKER_USERNAME }}
+          password: ${{ secrets.DOCKER_PASSWORD }}
+
+      - name: Log in to the Container registry
+        uses: docker/login-action@65b78e6e13532edd9afa3aa52ac7964289d1a9c1
+        with:
+          registry: ghcr.io
+          username: ${{ github.actor }}
+          password: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Extract metadata (tags, labels) for Docker
+        id: meta
+        uses: docker/metadata-action@9ec57ed1fcdbf14dcef7dfbe97b2010124a938b7
+        with:
+          images: |
+            tjipenk/webserver
+            ghcr.io/${{ github.repository }}
+
+      - name: Build php phalcon 7.3
+        id: push_ver_phalcon73
+        uses: docker/build-push-action@3b5e8027fcad23fda98b2e3ac259d8d67585f671
+        with:
+          context: ./bin/phalcon73
+          push: true
+          tags: tjipenk/webserver:phalcon73
+          labels: ${{ steps.meta.outputs.labels }}
+
+  
+  push_to_registries_php5:
+    name: Push Docker image to multiple registries
+    runs-on: ubuntu-latest
+    permissions:
+      packages: write
+      contents: read
+      attestations: write
+      id-token: write
+    steps:
+      - name: Check out the repo
+        uses: actions/checkout@v4
+
+      - name: Log in to Docker Hub
+        uses: docker/login-action@f4ef78c080cd8ba55a85445d5b36e214a81df20a
+        with:
+          username: ${{ secrets.DOCKER_USERNAME }}
+          password: ${{ secrets.DOCKER_PASSWORD }}
+
+      - name: Log in to the Container registry
+        uses: docker/login-action@65b78e6e13532edd9afa3aa52ac7964289d1a9c1
+        with:
+          registry: ghcr.io
+          username: ${{ github.actor }}
+          password: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Extract metadata (tags, labels) for Docker
+        id: meta
+        uses: docker/metadata-action@9ec57ed1fcdbf14dcef7dfbe97b2010124a938b7
+        with:
+          images: |
+            tjipenk/webserver
+            ghcr.io/${{ github.repository }}
+
+      - name: Build php 5.4
+        id: push_ver54
+        uses: docker/build-push-action@3b5e8027fcad23fda98b2e3ac259d8d67585f671
+        with:
+          context: ./bin/php54
+          push: true
+          tags: tjipenk/webserver:php54
+          labels: ${{ steps.meta.outputs.labels }}
+      - name: Build php 5.4 oci
+        id: push_ver54oci
+        uses: docker/build-push-action@3b5e8027fcad23fda98b2e3ac259d8d67585f671
+        with:
+          context: ./bin/php54-oci
+          push: true
+          tags: tjipenk/webserver:php54-oci
+          labels: ${{ steps.meta.outputs.labels }}
+      - name: Build php 5.6
+        id: push_ver56
+        uses: docker/build-push-action@3b5e8027fcad23fda98b2e3ac259d8d67585f671
+        with:
+          context: ./bin/php56
+          push: true
+          tags: tjipenk/webserver:php56
+          labels: ${{ steps.meta.outputs.labels }}
+      - name: Build php 5.6 oci
+        id: push_ver56oci
+        uses: docker/build-push-action@3b5e8027fcad23fda98b2e3ac259d8d67585f671
+        with:
+          context: ./bin/php56-oci
+          push: true
+          tags: tjipenk/webserver:php56-oci
+          labels: ${{ steps.meta.outputs.labels }}
+
+  push_to_registries_php7:
+    name: Push Docker image to multiple registries
+    runs-on: ubuntu-latest
+    permissions:
+      packages: write
+      contents: read
+      attestations: write
+      id-token: write
+    steps:
+      - name: Check out the repo
+        uses: actions/checkout@v4
+
+      - name: Log in to Docker Hub
+        uses: docker/login-action@f4ef78c080cd8ba55a85445d5b36e214a81df20a
+        with:
+          username: ${{ secrets.DOCKER_USERNAME }}
+          password: ${{ secrets.DOCKER_PASSWORD }}
+
+      - name: Log in to the Container registry
+        uses: docker/login-action@65b78e6e13532edd9afa3aa52ac7964289d1a9c1
+        with:
+          registry: ghcr.io
+          username: ${{ github.actor }}
+          password: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Extract metadata (tags, labels) for Docker
+        id: meta
+        uses: docker/metadata-action@9ec57ed1fcdbf14dcef7dfbe97b2010124a938b7
+        with:
+          images: |
+            tjipenk/webserver
+            ghcr.io/${{ github.repository }}
+
+      - name: Build php 7.1
+        id: push_ver71
+        uses: docker/build-push-action@3b5e8027fcad23fda98b2e3ac259d8d67585f671
+        with:
+          context: ./bin/php71
+          push: true
+          tags: tjipenk/webserver:php71
+          labels: ${{ steps.meta.outputs.labels }}
+
+      - name: Build php 7.2
+        id: push_ver72
+        uses: docker/build-push-action@3b5e8027fcad23fda98b2e3ac259d8d67585f671
+        with:
+          context: ./bin/php72
+          push: true
+          tags: tjipenk/webserver:php72
+          labels: ${{ steps.meta.outputs.labels }}
+
+      - name: Build php 7.3
+        id: push_ver73
+        uses: docker/build-push-action@3b5e8027fcad23fda98b2e3ac259d8d67585f671
+        with:
+          context: ./bin/php73
+          push: true
+          tags: tjipenk/webserver:php73
+          labels: ${{ steps.meta.outputs.labels }}
+          
+      - name: Build php 7.4
+        id: push_ver74
+        uses: docker/build-push-action@3b5e8027fcad23fda98b2e3ac259d8d67585f671
+        with:
+          context: ./bin/php74
+          push: true
+          tags: tjipenk/webserver:php74
+          labels: ${{ steps.meta.outputs.labels }}
+
+  push_to_registries_php8:
+    name: Push Docker image to multiple registries
+    runs-on: ubuntu-latest
+    permissions:
+      packages: write
+      contents: read
+      attestations: write
+      id-token: write
+    steps:
+      - name: Check out the repo
+        uses: actions/checkout@v4
+
+      - name: Log in to Docker Hub
+        uses: docker/login-action@f4ef78c080cd8ba55a85445d5b36e214a81df20a
+        with:
+          username: ${{ secrets.DOCKER_USERNAME }}
+          password: ${{ secrets.DOCKER_PASSWORD }}
+
+      - name: Log in to the Container registry
+        uses: docker/login-action@65b78e6e13532edd9afa3aa52ac7964289d1a9c1
+        with:
+          registry: ghcr.io
+          username: ${{ github.actor }}
+          password: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Extract metadata (tags, labels) for Docker
+        id: meta
+        uses: docker/metadata-action@9ec57ed1fcdbf14dcef7dfbe97b2010124a938b7
+        with:
+          images: |
+            tjipenk/webserver
+            ghcr.io/${{ github.repository }}
+
+      - name: Build php 8.0
+        id: push_ver8
+        uses: docker/build-push-action@3b5e8027fcad23fda98b2e3ac259d8d67585f671
+        with:
+          context: ./bin/php8
+          push: true
+          tags: tjipenk/webserver:php8
+          labels: ${{ steps.meta.outputs.labels }}
+
+      - name: Build php 8.1
+        id: push_ver81
+        uses: docker/build-push-action@3b5e8027fcad23fda98b2e3ac259d8d67585f671
+        with:
+          context: ./bin/php81
+          push: true
+          tags: tjipenk/webserver:php81
+          labels: ${{ steps.meta.outputs.labels }}
+
+      - name: Build php 8.2
+        id: push_ver82
+        uses: docker/build-push-action@3b5e8027fcad23fda98b2e3ac259d8d67585f671
+        with:
+          context: ./bin/php82
+          push: true
+          tags: tjipenk/webserver:php82
+          labels: ${{ steps.meta.outputs.labels }}
+
+      - name: Build php 8.3
+        id: push_ver83
+        uses: docker/build-push-action@3b5e8027fcad23fda98b2e3ac259d8d67585f671
+        with:
+          context: ./bin/php83
+          push: true
+          tags: tjipenk/webserver:php83
+          labels: ${{ steps.meta.outputs.labels }}
+
+

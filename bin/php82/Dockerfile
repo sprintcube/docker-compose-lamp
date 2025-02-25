@@ -1,4 +1,4 @@
-FROM php:8.2.1-apache-buster
+FROM php:8.2.8-apache-bullseye
 
 # Surpresses debconf complaints of trying to install apt packages interactively
 # https://github.com/moby/moby/issues/4032#issuecomment-192327844
@@ -36,13 +36,18 @@ openssl && \
     curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local/bin --filename=composer
 
 # Install xdebug
-RUN pecl install xdebug-3.2.1 && \
+RUN pecl install xdebug && \
     docker-php-ext-enable xdebug && \
     mkdir /var/log/xdebug
 
 # Install redis
-RUN pecl install redis-5.3.7 && \
+RUN pecl install redis && \
     docker-php-ext-enable redis
+    
+# Install memcached
+RUN apt-get update && apt-get install -y libmemcached-dev libssl-dev zlib1g-dev \
+	&& pecl install memcached-3.2.0 \
+	&& docker-php-ext-enable memcached 
 
 # Install imagick
 RUN apt-get update && \
@@ -79,6 +84,25 @@ RUN docker-php-ext-install pdo_mysql && \
     docker-php-ext-install gettext && \
     docker-php-ext-install calendar && \
     docker-php-ext-install exif
+
+# Install Node JS
+#RUN apt-get update && \
+#    apt-get install -yq --no-install-recommends \
+#    open-ssl \
+#    curl \ 
+#    wget \
+#    git \
+#    gnupg \
+#    # more stuff
+
+#RUN curl -fsSL https://deb.nodesource.com/setup_current.x | bash - && \
+#    apt-get install -y nodejs npm unzip \
+#    build-essential && \
+#    node --version && \ 
+#    npm --version
+
+RUN curl -fsSL https://deb.nodesource.com/setup_lts.x | bash -
+RUN apt install nodejs
 
 
 # Install Freetype 

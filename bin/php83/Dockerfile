@@ -1,4 +1,4 @@
-FROM php:8.3-apache-bookworm
+FROM php:8.3.11-apache-bullseye
 
 # Surpresses debconf complaints of trying to install apt packages interactively
 # https://github.com/moby/moby/issues/4032#issuecomment-192327844
@@ -79,6 +79,9 @@ RUN docker-php-ext-install pdo_mysql && \
     docker-php-ext-install calendar && \
     docker-php-ext-install exif
 
+# postgress pdo
+
+RUN apt-get update && apt-get install -y libpq-dev && docker-php-ext-install pdo pdo_pgsql
 
 # Install Freetype 
 RUN apt-get -y update && \
