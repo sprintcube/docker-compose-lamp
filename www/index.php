@@ -4,7 +4,16 @@ require_once 'utils.php';
 $conn = new mysqli($hn, $un, $pw, $db);
 if ($conn->connect_error) die("Connection failed");
 
-$query = "SELECT * FROM laite";
+$is_searching_by_term = isset($_GET['search-term']);
+$search_term = $is_searching_by_term ? htmlspecialchars($_GET['search-term']) : false;
+$query = '';
+if (isset($search_term)){
+    $search_term_sanitized = $conn->real_escape_string($search_term);
+    $query = "SELECT * FROM laite WHERE name LIKE '%{$search_term_sanitized}%' OR sn LIKE '%{$search_term_sanitized}%'";
+} else {
+    $query = "SELECT * FROM laite";
+}
+
 $result = $conn->query($query);
 if (!$result) die("Database access failed");
 
@@ -68,6 +77,7 @@ $deviceModals = "";
         </header>
         <!-- Available devices section-->
         <section class="py-5">
+            <a name="devices"></a>
             <div class="container px-5 my-5">
                 <div class="row gx-5 justify-content-center">
                     <div class="col-lg-10 col-xl-10">
@@ -90,8 +100,18 @@ $deviceModals = "";
                                             </ul>
                                         </li>
                                     </ul>
-                                    <form class="d-flex" role="search">
-                                        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+                                    <form class="d-flex" role="search" method="get" action="index.php#devices">
+                                        <input
+                                            class="form-control me-2"
+                                            type="search"
+                                            name="search-term"
+                                            <?php
+                                                if ($is_searching_by_term) {
+                                                    echo "value='{$search_term}'";
+                                                }
+                                            ?>
+                                            placeholder="Search"
+                                            aria-label="Search">
                                         <button class="btn btn-secondary" type="submit">Search</button>
                                     </form>
                                 </div>
