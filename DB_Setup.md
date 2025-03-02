@@ -96,3 +96,18 @@ CREATE TABLE loan (
     FOREIGN KEY (device_sn) REFERENCES laite(sn)
 );
 ```
+
+Creating the `users` table:
+
+```sql
+CREATE TABLE users (
+    id INT(11) NOT NULL AUTO_INCREMENT,
+    username VARCHAR(30) NOT NULL,
+    password_hash VARCHAR(255) NOT NULL,
+    role ENUM('superadmin', 'admin', 'user') NOT NULL DEFAULT 'user',
+    email VARCHAR(127) NOT NULL,
+    name VARCHAR(127) NOT NULL,
+    PRIMARY KEY (id),
+    UNIQUE KEY (username)
+);
+```
