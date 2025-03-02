@@ -18,10 +18,10 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         $_SESSION['username'] = $user['username'];
         $_SESSION['role'] = $user['role'];
         // goes to a place // change to go to index.php or something // could also make go to like nothing so it doesn't put the index.php in the address bar
-        header('Location: /laiterekisteri/user_test/testIfUser.php');
+        header('Location: /index.php');
         exit;
     } else {
-        echo "Invalid username or password (or it's broken)!! :o  how!! D:	vewy swkeewy o.o";
+        header('Location: /loginerror.html');
     }
 }
 ?>

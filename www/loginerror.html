@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
     <head>
@@ -38,31 +37,11 @@
                     <div class="bg-light rounded-3 py-5 px-4 px-md-5 mb-5">
                         <div class="text-center mb-5">
                             <div class="feature bg-icons bg-gradient text-white rounded-3 mb-3"><i class="bi bi-box-arrow-in-right"></i></div>
-                            <h1 class="fw-bolder">Log in</h1>
-                        </div>
-                        <div class="row gx-5 justify-content-center">
-                            <div class="col-lg-8 col-xl-6">
-                                <form id="contactForm" action="./login_process.php" method="post">
-                                    <div class="form-floating mb-3">
-                                        <input class="form-control" id="username" type="username" name="username" placeholder="Enter your username..." required />
-                                        <label for="username">Username</label>
-                                        <div class="invalid-feedback" data-sb-feedback="username:required">An username is required.</div>
-                                    </div>
-                                    <div class="form-floating mb-3">
-                                        <!-- <input type="password" id="password" class="form-control" placeholder="Enter your password..." aria-describedby="passwordHelpBlock" data-sb-validations="required"> -->
-                                        <div class="input-group mb-3">
-                                            <input type="password" id="password" class="form-control" name="password" placeholder="Enter your password..." aria-describedby="passwordHelpBlock" required>
-                                            <span class="input-group-text" id="basic-addon2"><i class="bi bi-eye-slash" id="togglePassword"></i></span>
-                                        </div>
-                                        <div class="invalid-feedback" class="mb-3">A password is required.</div>
-                                    <!-- Submit error message-->
-                                    <!---->
-                                    <!-- This is what your users will see when there is-->
-                                    <!-- an error submitting the form-->
-                                    <div class="d-none" id="submitErrorMessage"><div class="text-center text-danger mb-3">Error sending message!</div></div>
-                                    <!-- Submit Button-->
-                                    <div class="d-grid"><button class="btn btn-secondary" id="submitButton" type="submit">Submit</button></div>
-                                </form>
+                            </div>
+                                <div class="alert alert-danger" id="submitErrorMessage">
+                                        Wrong username or password. <a href="loginpage.html" class="alert-link">Try Again</a>.
+                                </div>
+                            </div>
                             </div>
                         </div>
                     </div>

@@ -21,7 +21,7 @@
 
                 <button type="submit">Login</button>
 				<br>
-				<p>this is the link to the registering thing that isn't gonna be in the final thing  --> <a href="register.php">Register</a> &LT-- that one</p>
+				<a href="contact.html">Register</a>
             </form>
 </body>
 </html>
