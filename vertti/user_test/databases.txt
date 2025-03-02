@@ -1,0 +1,13 @@
+CREATE TABLE users (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    username VARCHAR(30) NOT NULL UNIQUE,
+    password_hash VARCHAR(255) NOT NULL,
+    role ENUM('superadmin', 'admin', 'user') DEFAULT 'user',
+    email VARCHAR(127) NOT NULL,
+    name VARCHAR(127) NOT NULL
+);
+
+
+make someone admin:
+UPDATE users SET role = 'admin' WHERE username = 'the username';
+

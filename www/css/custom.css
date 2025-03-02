@@ -19,7 +19,19 @@
     --bs-btn-active-bg: #fa7999;
     --bs-btn-active-border-color: #fa7999;
     --bs-btn-active-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125);
-    --bs-btn-disabled-color: #fff;
-    --bs-btn-disabled-bg: #6c757d;
-    --bs-btn-disabled-border-color: #6c757d;
+    --bs-btn-disabled-color: #000;
+    --bs-btn-disabled-bg: #f78da7;
+    --bs-btn-disabled-border-color: #f78da7;
+  }
+
+  .btn:disabled, .btn.disabled, fieldset:disabled .btn {
+    color: var(--bs-btn-disabled-color);
+    pointer-events: none;
+    background-color: var(--bs-btn-disabled-bg);
+    border-color: var(--bs-btn-disabled-border-color);
+    opacity: var(--bs-btn-disabled-opacity);
+  }
+
+  #togglePassword {
+    cursor: pointer;
   }
