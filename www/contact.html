@@ -41,36 +41,29 @@
                         </div>
                         <div class="row gx-5 justify-content-center">
                             <div class="col-lg-8 col-xl-6">
-                                <!-- * * * * * * * * * * * * * * *-->
-                                <!-- * * SB Forms Contact Form * *-->
-                                <!-- * * * * * * * * * * * * * * *-->
-                                <!-- This form is pre-integrated with SB Forms.-->
-                                <!-- To make this form functional, sign up at-->
-                                <!-- https://startbootstrap.com/solution/contact-forms-->
-                                <!-- to get an API token!-->
-                                <form id="contactForm" data-sb-form-api-token="API_TOKEN">
+                                <form id="contactForm" action="./register_process.php" method="post">
                                     <!-- Name input-->
                                     <div class="form-floating mb-3">
-                                        <input class="form-control" id="name" type="text" placeholder="Enter your name..." data-sb-validations="required" />
+                                        <input class="form-control" id="name" type="text" name="name" placeholder="Enter your name..." required />
                                         <label for="name">Full name</label>
                                         <div class="invalid-feedback" data-sb-feedback="name:required">A name is required.</div>
                                     </div>
                                     <!-- Email address input-->
                                     <div class="form-floating mb-3">
-                                        <input class="form-control" id="email" type="email" placeholder="name@example.com" data-sb-validations="required,email" />
+                                        <input class="form-control" id="email" type="email" name="email" placeholder="name@example.com" required />
                                         <label for="email">Email address</label>
                                         <div class="invalid-feedback" data-sb-feedback="email:required">An email is required.</div>
                                         <div class="invalid-feedback" data-sb-feedback="email:email">Email is not valid.</div>
                                     </div>
                                     <div class="form-floating mb-3">
-                                        <input class="form-control" id="username" type="username" placeholder="Enter your username..." data-sb-validations="required" />
+                                        <input class="form-control" id="username" type="username" name="username" placeholder="Enter your username..." required />
                                         <label for="username">Username</label>
                                         <div class="invalid-feedback" data-sb-feedback="username:required">An username is required.</div>
                                     </div>
                                     <div class="form-floating mb-3">
                                         <!-- <input type="password" id="password" class="form-control" placeholder="Enter your password..." aria-describedby="passwordHelpBlock" data-sb-validations="required"> -->
                                         <div class="input-group mb-3">
-                                            <input type="password" id="password" class="form-control" placeholder="Enter your password..." aria-describedby="passwordHelpBlock" data-sb-validations="required">
+                                            <input type="password" id="password" class="form-control" name="password" placeholder="Enter your password..." aria-describedby="passwordHelpBlock" required>
                                             <span class="input-group-text" id="basic-addon2"><i class="bi bi-eye-slash" id="togglePassword"></i></span>
                                         </div>
                                         
@@ -78,7 +71,7 @@
                                         <div id="passwordHelpBlock" class="form-text mb-3">
                                         Your password must be 8-20 characters long, contain letters and numbers, and must not contain spaces, special characters, or emoji.
 
-                                        <div class="invalid-feedback" data-sb-feedback="password:required" class="mb-3">A password is required.</div>
+                                        <div class="invalid-feedback" class="mb-3">A password is required.</div>
                                     </div>
                                     <!-- Submit success message-->
                                     <!---->

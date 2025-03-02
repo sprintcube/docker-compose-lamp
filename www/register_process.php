@@ -20,10 +20,8 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     
     // this thing
     if ($stmt->execute([$name, $email, $username, $password_hash])) {
-        echo 'Registration successful!!! :)';
-		header('Location: /index.php');
+		header('Location: /success.html');
     } else {
-        echo 'Error during registration. please contact the admins or something. dont spam tho';
+        header('Location: /error.html');
     }
 }
-?>
