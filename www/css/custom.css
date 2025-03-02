@@ -1,3 +1,8 @@
+:root {
+  --bs-primary: #f78da7;
+  --bs-secondary: #000;
+}
+
 .btn-primary {
   --bs-btn-bg: #000;
   --bs-btn-border-color: #000;
@@ -34,4 +39,8 @@
 
   #togglePassword {
     cursor: pointer;
+  }
+
+  .bg-icons {
+    background-color: var(--bs-primary) !important;
   }
