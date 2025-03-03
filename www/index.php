@@ -76,6 +76,7 @@ $deviceModals = "";
             </div>
         </header>
         <!-- Available devices section-->
+         
         <section class="py-5">
             <a name="devices"></a>
             <div class="container px-5 my-5">
@@ -154,6 +155,8 @@ $deviceModals = "";
                         echo '</div>'; // Closing the <div class="row">
                         echo '<div class="row gx-5">';
                     }
+                    
+                    
 
                     $nameInputId = "nameInput" . $editDeviceModalId;
                     $snInputId = "snInput" . $editDeviceModalId;
@@ -365,6 +368,7 @@ $deviceModals = "";
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
     <!-- Core theme JS-->
     <script src="js/scripts.js"></script>
+    
 </body>
 </html>
 <?php

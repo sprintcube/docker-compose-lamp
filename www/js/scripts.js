@@ -19,3 +19,5 @@ togglePassword.addEventListener("click", () => {
   togglePassword.classList.toggle("bi-eye");
   console.log(password)
 });
+
+
