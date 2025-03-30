@@ -10,20 +10,6 @@ $conn = new mysqli($hn, $un, $pw, $db);
 if ($conn->connect_error) die("Connection failed");
 session_start();
 
-$is_searching_by_term = isset($_GET['search-term']);
-$search_term = $is_searching_by_term ? htmlspecialchars($_GET['search-term']) : false;
-$query = '';
-if (isset($search_term)){
-    $search_term_sanitized = $conn->real_escape_string($search_term);
-    $query = "SELECT * FROM laite WHERE name LIKE '%{$search_term_sanitized}%' OR sn LIKE '%{$search_term_sanitized}%'";
-} else {
-    $query = "SELECT * FROM laite";
-}
-
-$result = $conn->query($query);
-if (!$result) die("Database access failed");
-
-$deviceModals = "";
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -76,8 +62,8 @@ $deviceModals = "";
                             <p class="lead fw-normal text-white-50 mb-4">Open Mon-Fri 9:00-15:00, STA201</p>
                             <div class="d-grid gap-3 d-sm-flex justify-content-sm-center justify-content-xl-start">
                                 <?php
-                                    if (is_allowed_user_role(['admin', 'superadmin'])) echo get_header_add_device_button();
-                                    if (is_allowed_user_role(['user', 'admin', 'superadmin'])) echo get_header_loans_button();
+                                if (is_allowed_user_role(['admin', 'superadmin'])) echo get_header_add_device_button();
+                                if (is_allowed_user_role(['user', 'admin', 'superadmin'])) echo get_header_loans_button();
                                 ?>
                             </div>
                         </div>
@@ -87,7 +73,7 @@ $deviceModals = "";
             </div>
         </header>
         <!-- Available devices section-->
-         
+
         <section class="py-5">
             <a name="devices"></a>
             <div class="container px-5 my-5">
@@ -112,135 +98,16 @@ $deviceModals = "";
                                             </ul>
                                         </li>
                                     </ul>
-                                    <?php echo get_device_search_form($search_term); ?>
+                                    <?php echo get_device_search_form(); ?>
                                 </div>
                             </div>
                         </nav>
                     </div>
                 </div>
                 <?php
-                $columnCount = 0;
-
-                echo '<div class="row gx-5">';
-
-                while ($row = $result->fetch_assoc()) {
-                    $serialNumber = $row['sn'];
-                    $deviceModalIdStub = "DeviceModal-" . $serialNumber . '-' . $columnCount;
-                    $loanDeviceModalId = 'loan' . $deviceModalIdStub;
-                    $editDeviceModalId = 'edit' . $deviceModalIdStub;
-
-                    echo '<div class="col-lg-4 mb-5">';
-                    echo '<div class="card h-100 shadow border-0">';
-                    echo '<img class="card-img-top" src="https://dummyimage.com/600x350/ced4da/6c757d" alt="..." />';
-                    echo "<div class='card-body'>
-                                <div class='card-title'>{$row['name']}</div>
-                            </div>";
-                    echo "<ul class='list-group list-group-flush'>
-                                <li class='list-group-item'>SN: {$row['sn']}</li>
-                                <li class='list-group-item'>Category: {$row['category']}</li>
-                            </ul>";
-                    echo "<div class='card-body'>
-                                <button data-bs-toggle='modal' data-bs-target='#$editDeviceModalId' class='btn btn-secondary' href=''>Edit</button>
-                                <button data-bs-toggle='modal' data-bs-target='#$loanDeviceModalId' class='btn btn-primary' href=''>Loan</button>
-                            </div>";
-
-                    echo '</div>';
-                    echo '</div>';
-
-                    $columnCount++;
-
-                    if ($columnCount % 3 == 0) {
-                        echo '</div>'; // Closing the <div class="row">
-                        echo '<div class="row gx-5">';
-                    }
-                    
-                    
-
-                    $nameInputId = "nameInput" . $editDeviceModalId;
-                    $snInputId = "snInput" . $editDeviceModalId;
-                    $categoryInputId = "categoryInput" . $editDeviceModalId;
-                    $deviceModals .= <<<_END
-                            <div class="modal fade" tabindex="-1" aria-hidden="true" id='$editDeviceModalId'>
-                                <div class="modal-dialog  modal-dialog-centered">
-                                    <form action="editdevice.php?sn=$serialNumber" method="post">
-                                        <div class="modal-content">
-                                            <div class="modal-header">
-                                                <h1 class="modal-title fs-5">Edit Device</h1>
-                                                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                                            </div>
-                                            <div class="modal-body">
-                                                <div class="mb-3">
-                                                    <label for="#nameInput" class="form-label">Name:</label>
-                                                    <input type="text" name="name" value="{$row['name']}" required class="form-control" id="{$nameInputId}">
-                                                </div>
-                                                <div class="mb-3">
-                                                    <label for="#categoryInput" class="form-label">Category:</label>
-                                                    <input type="text" name="category" value="{$row['category']}" required class="form-control" id="{$categoryInputId}">
-                                                </div>
-                                            </div>
-                                            <div class="modal-footer">
-                                                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                                                <button type="submit" class="btn btn-primary">Update</button>
-                                            </div>
-                                        </div>
-                                    </form>
-                                </div>
-                            </div>
-                        _END;
-
-                    $teacherInputId = "teacherInput" . $loanDeviceModalId;
-                    $loanStartInputId = "loanStartInput" . $loanDeviceModalId;
-                    $loanEndInputId = "loanEndInput" . $loanDeviceModalId;
-                    $deviceModals .= <<<_END
-                            <div class="modal fade" tabindex="-1" aria-hidden="true" id='$loanDeviceModalId'>
-                                <div class="modal-dialog  modal-dialog-centered">
-                                    <form action="loandevice.php?sn=$serialNumber" method="post">
-                                        <div class="modal-content">
-                                            <div class="modal-header">
-                                                <h1 class="modal-title fs-5">Loan Device</h1>
-                                                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                                            </div>
-                                            <div class="modal-body">
-                                                <div class="mb-3">
-                                                    <label for="#teacheridInput" class="form-label">Teacher ID:</label>
-                                                    <input type="text" name="teacher_id" maxlength="6" required class="form-control" id="{$teacherInputId}">
-                                                </div>
-                                                <div class="mb-3">
-                                                    <label for="#loanStartInput" class="form-label">Loan Start:</label>
-                                                    <input type="date" name="loan_start" required class="form-control" id="{$loanStartInputId}">
-                                                </div>
-                                                <div class="mb-3">
-                                                    <label for="#loanEndInput" class="form-label">Loan End:</label>
-                                                    <input type="date" name="loan_end" required class="form-control" id="{$loanEndInputId}">
-                                                </div>
-                                            </div>
-                                            <div class="modal-footer">
-                                                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                                                <button type="submit" class="btn btn-primary">Loan Device</button>
-                                            </div>
-                                        </div>
-                                    </form>
-                                </div>
-                            </div>
-                            <script>
-                                !(function (){
-                                    const modal = document.querySelector('div.modal#{$loanDeviceModalId}');
-                                    console.log(modal);
-                                    const loanStartInput = modal.querySelector('input[name="loan_start"]');
-                                    const loanEndInput = modal.querySelector('input[name="loan_end"]');
-
-                                    loanStartInput.addEventListener('change', () => {
-                                        loanEndInput.min = loanStartInput.value;
-                                    });
-                                })();
-                            </script>
-                        _END;
-                }
-
-                if ($columnCount % 3 != 0) {
-                    echo '</div>'; // close a single unclosed row
-                }
-
+                $devices = get_devices($conn);
+                echo get_device_list($devices);
+                echo get_device_modals($devices);
                 ?>
             </div>
         </section>
@@ -295,10 +162,9 @@ $deviceModals = "";
             </div>
         </div>
     </footer>
-    <?php 
-        if (is_allowed_user_role(['admin', 'superadmin']))
-                echo get_add_device_modal();
-        echo $deviceModals 
+    <?php
+    if (is_allowed_user_role(['admin', 'superadmin']))
+        echo get_add_device_modal();
     ?>
     <!-- Features section-->
     <!-- <section class="py-5" id="features">
@@ -339,10 +205,10 @@ $deviceModals = "";
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
     <!-- Core theme JS-->
     <script src="js/scripts.js"></script>
-    
+
 </body>
+
 </html>
 <?php
-$result->close();
 $conn->close();
 ?>
