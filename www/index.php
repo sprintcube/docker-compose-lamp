@@ -4,6 +4,7 @@ require_once 'utils.php';
 
 require_once './page-components/loan-management.php';
 require_once './page-components/device-management.php';
+require_once './page-components/user-management.php';
 
 $conn = new mysqli($hn, $un, $pw, $db);
 if ($conn->connect_error) die("Connection failed");
@@ -53,7 +54,10 @@ $deviceModals = "";
                     <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
                         <li class="nav-item"><a class="nav-link" href="index.php">Home</a></li>
                         <li class="nav-item"><a class="nav-link" href="contact.html">Register</a></li>
-                        <li class="nav-item"><a class="nav-link" href="loginpage.html">Log in</a></li>
+                        <?php
+                        if (!is_allowed_user_role(['user', 'admin', 'superadmin'])) echo get_navigation_login_link();
+                        if (is_allowed_user_role(['user', 'admin', 'superadmin'])) echo get_navigation_logout_link();
+                        ?>
                         <!-- <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
                         <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
                         <li class="nav-item"><a class="nav-link" href="faq.html">FAQ</a></li>
@@ -108,20 +112,7 @@ $deviceModals = "";
                                             </ul>
                                         </li>
                                     </ul>
-                                    <form class="d-flex" role="search" method="get" action="index.php#devices">
-                                        <input
-                                            class="form-control me-2"
-                                            type="search"
-                                            name="search-term"
-                                            <?php
-                                                if ($is_searching_by_term) {
-                                                    echo "value='{$search_term}'";
-                                                }
-                                            ?>
-                                            placeholder="Search"
-                                            aria-label="Search">
-                                        <button class="btn btn-secondary" type="submit">Search</button>
-                                    </form>
+                                    <?php echo get_device_search_form($search_term); ?>
                                 </div>
                             </div>
                         </nav>
