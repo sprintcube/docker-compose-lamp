@@ -1,8 +1,13 @@
 <?php
 require_once 'login.php';
 require_once 'utils.php';
+
+require_once './page-components/loan-management.php';
+require_once './page-components/device-management.php';
+
 $conn = new mysqli($hn, $un, $pw, $db);
 if ($conn->connect_error) die("Connection failed");
+session_start();
 
 $is_searching_by_term = isset($_GET['search-term']);
 $search_term = $is_searching_by_term ? htmlspecialchars($_GET['search-term']) : false;
@@ -66,8 +71,10 @@ $deviceModals = "";
                             <h1 class="display-5 fw-bolder text-white mb-2">Device library</h1>
                             <p class="lead fw-normal text-white-50 mb-4">Open Mon-Fri 9:00-15:00, STA201</p>
                             <div class="d-grid gap-3 d-sm-flex justify-content-sm-center justify-content-xl-start">
-                                <button type="button" class="btn btn-primary btn-custom-stadin btn-lg px-4 me-sm-3" data-bs-toggle="modal" data-bs-target="#addDeviceModal">Add Device</button>
-                                <a class="btn btn-outline-light btn-lg px-4" href="#loans">View Loans</a>
+                                <?php
+                                    if (is_allowed_user_role(['admin', 'superadmin'])) echo get_header_add_device_button();
+                                    if (is_allowed_user_role(['user', 'admin', 'superadmin'])) echo get_header_loans_button();
+                                ?>
                             </div>
                         </div>
                     </div>
@@ -297,38 +304,11 @@ $deviceModals = "";
             </div>
         </div>
     </footer>
-    <div class="modal fade" tabindex="-1" aria-hidden="true" id="addDeviceModal">
-        <div class="modal-dialog  modal-dialog-centered">
-            <form action="newdevice.php" method="post">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <h1 class="modal-title fs-5" id="exampleModalLabel">Add Device</h1>
-                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                    </div>
-                    <div class="modal-body">
-
-                        <div class="mb-3">
-                            <label for="#nameInput" class="form-label">Name:</label>
-                            <input type="text" name="name" required class="form-control" id="nameInput">
-                        </div>
-                        <div class="mb-3">
-                            <label for="#snInput" class="form-label">Serial Number:</label>
-                            <input type="text" name="sn" required class="form-control" id="snInput">
-                        </div>
-                        <div class="mb-3">
-                            <label for="#categoryInput" class="form-label">Category:</label>
-                            <input type="text" name="category" required class="form-control" id="categoryInput">
-                        </div>
-                    </div>
-                    <div class="modal-footer">
-                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                        <button type="submit" class="btn btn-primary">Add Device</button>
-                    </div>
-                </div>
-            </form>
-        </div>
-    </div>
-    <?php echo $deviceModals ?>
+    <?php 
+        if (is_allowed_user_role(['admin', 'superadmin']))
+                echo get_add_device_modal();
+        echo $deviceModals 
+    ?>
     <!-- Features section-->
     <!-- <section class="py-5" id="features">
         <div class="container px-5 my-5">
