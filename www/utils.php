@@ -28,16 +28,16 @@ function get_user_role() {
         }
     }
 }
-// 1. See assorted devices as an anonymous user;
-// 2. Login or register as an anonymous user;
-//     2.1 As a logged-in user I can log out;
+// 1. See assorted devices as an anonymous user; +
+// 2. Login or register as an anonymous user; +
+//     2.1 As a logged-in user I can log out; +
 
 // 3. As a teacher I can make booking requests for devices;
 // 4. As a teacher I can manage my own loans;
 
 // 5. As an admin I can decline and approve booking requests submitted by teachers;
 // 6. As an admin I can turn approved device bookings into device loans.
-// 7. As an admin I can close device loans when device is returned.
+// 7. As an admin I can close device loans when device is returned. +
 // 8. As an admin I can CRUD devices.
 // 9. As an admin I can see a list of registered users.
 

@@ -57,7 +57,6 @@ function get_device_list($devices_data)
         $deviceModalIdStub = "DeviceModal-" . $serialNumber . '-' . $columnCount;
         $loanDeviceModalId = 'loan' . $deviceModalIdStub;
         $editDeviceModalId = 'edit' . $deviceModalIdStub;
-
         include './page-parts/card-device.php';
         if ($columnCount % 3 == 0) {
             $list .= '</div>'; // Closing the <div class="row">
@@ -72,6 +71,14 @@ function get_device_list($devices_data)
 
     $list .= '</div>';
     return $list;
+}
+
+function delete_device($conn, $device_sn) {
+    $query = "DELETE FROM laite WHERE sn = {$device_sn}";
+    $result = $conn->query($query);
+
+    if (!$result) die("Could not delete a device");
+    return true;
 }
 
 function get_device_edit_modal($device_row, $id_prefix) {
