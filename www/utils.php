@@ -1,48 +1,26 @@
 <?php
-/**
- * Checks if the user's role (stored in the session) is present in the provided allowlist.
- *
- * This function assumes that the user's role is stored in the `$_SESSION['role']` variable.
- * It's crucial to ensure that the session has been started using `session_start()`
- * before calling this function.
- *
- * @param array $allowlist An array of allowed user roles (strings).
- * @return bool True if the user's role is in the allowlist, false otherwise.
- * Returns false if the `$_SESSION['role']` is not set.
- *
- * @example
- * ```php
- * <?php
- * session_start();
- * $_SESSION['role'] = 'editor';
- * $allowedRoles = ['admin', 'editor', 'moderator'];
- *
- * if (is_allowed_user_role($allowedRoles)) {
- * echo "User is authorized.";
- * } else {
- * echo "User is not authorized.";
- * }
- *
- * $_SESSION['role'] = 'guest';
- * if (is_allowed_user_role($allowedRoles)) {
- * echo "User is authorized.";
- * } else {
- * echo "User is not authorized.";
- * }
- * ?>
- * ```
- */
+const ROLE_ADMIN = 'admin';
+const ROLE_SUPER_ADMIN = 'superadmin';
+const ROLE_USER = 'user';
+const REGISTERED_ROLES = [ROLE_USER, ROLE_ADMIN, ROLE_SUPER_ADMIN];
+const ROLE_ANON = 'anon';
+function is_logged_in() {
+    return is_allowed_user_role(REGISTERED_ROLES);
+}
 function is_allowed_user_role(array $allowlist): bool {
-    // Assuming $_SESSION['role'] is set elsewhere in your PHP code
-    if (isset($_SESSION['role'])) {
-        return in_array($_SESSION['role'], $allowlist);
-    } else {
-        // Handle the case where $_SESSION['role'] is not set
-        // You might want to return false, throw an error, or handle it differently
-        return false; // Or throw new Exception("Session role not set");
-    }
+    return in_array(get_user_role(), $allowlist);
 }
 
+function get_user_role() {
+    if (isset($_SESSION['role'])) {
+        $role = $_SESSION['role'];
+        if (in_array($role,REGISTERED_ROLES)) {
+            return $role;
+        } else {
+            return ROLE_ANON;
+        }
+    }
+}
 // 1. See assorted devices as an anonymous user;
 // 2. Login or register as an anonymous user;
 //     2.1 As a logged-in user I can log out;

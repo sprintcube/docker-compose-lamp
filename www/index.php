@@ -9,7 +9,6 @@ require_once './page-components/user-management.php';
 $conn = new mysqli($hn, $un, $pw, $db);
 if ($conn->connect_error) die("Connection failed");
 session_start();
-
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -41,8 +40,8 @@ session_start();
                         <li class="nav-item"><a class="nav-link" href="index.php">Home</a></li>
                         <li class="nav-item"><a class="nav-link" href="contact.html">Register</a></li>
                         <?php
-                        if (!is_allowed_user_role(['user', 'admin', 'superadmin'])) echo get_navigation_login_link();
-                        if (is_allowed_user_role(['user', 'admin', 'superadmin'])) echo get_navigation_logout_link();
+                        if (!is_logged_in()) echo get_navigation_login_link();
+                        if (is_logged_in()) echo get_navigation_logout_link();
                         ?>
                         <!-- <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
                         <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
@@ -62,8 +61,8 @@ session_start();
                             <p class="lead fw-normal text-white-50 mb-4">Open Mon-Fri 9:00-15:00, STA201</p>
                             <div class="d-grid gap-3 d-sm-flex justify-content-sm-center justify-content-xl-start">
                                 <?php
-                                if (is_allowed_user_role(['admin', 'superadmin'])) echo get_header_add_device_button();
-                                if (is_allowed_user_role(['user', 'admin', 'superadmin'])) echo get_header_loans_button();
+                                if (is_allowed_user_role([ROLE_ADMIN, ROLE_SUPER_ADMIN])) echo get_header_add_device_button();
+                                if (is_allowed_user_role(REGISTERED_ROLES)) echo get_header_loans_button();
                                 ?>
                             </div>
                         </div>
@@ -166,7 +165,7 @@ session_start();
         </div>
     </footer>
     <?php
-    if (is_allowed_user_role(['admin', 'superadmin']))
+    if (is_allowed_user_role([ROLE_ADMIN, ROLE_SUPER_ADMIN]))
         echo get_add_device_modal();
     ?>
     <!-- Features section-->
