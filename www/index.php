@@ -125,18 +125,21 @@ session_start();
                     <div class="container text-center">
                         <div class="row align-items-start">
                             <div class="col">
+                                <h2>Active loans</h2>
                                 <?php
-                                echo get_loans($conn, "ACTIVE");
+                                echo get_loans_list($conn, "ACTIVE");
                                 ?>
                             </div>
                             <div class="col">
+                                <h2>Overdue loans</h2>
                                 <?php
-                                echo get_loans($conn, "OVERDUE");
+                                echo get_loans_list($conn, "OVERDUE");
                                 ?>
                             </div>
                             <div class="col">
+                                <h2>Returned loans</h2>
                                 <?php
-                                echo get_loans($conn, "RETURNED");
+                                echo get_loans_list($conn, "RETURNED");
                                 ?>
                             </div>
                         </div>
