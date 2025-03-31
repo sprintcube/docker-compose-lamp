@@ -1,1 +1,0 @@
-<li class="nav-item"><a class="nav-link" href="logout.php">Log out</a></li>

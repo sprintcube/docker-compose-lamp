@@ -4,7 +4,6 @@ require_once 'utils.php';
 
 require_once './page-components/loan-management.php';
 require_once './page-components/device-management.php';
-require_once './page-components/user-management.php';
 
 $conn = new mysqli($hn, $un, $pw, $db);
 if ($conn->connect_error) die("Connection failed");
@@ -38,15 +37,12 @@ session_start();
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
                         <li class="nav-item"><a class="nav-link" href="index.php">Home</a></li>
-                        <li class="nav-item"><a class="nav-link" href="contact.html">Register</a></li>
-                        <?php
-                        if (!is_logged_in()) echo get_navigation_login_link();
-                        if (is_logged_in()) echo get_navigation_logout_link();
-                        ?>
-                        <!-- <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
-                        <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
-                        <li class="nav-item"><a class="nav-link" href="faq.html">FAQ</a></li>
--->
+                        <?php if (!is_logged_in()) { ?>
+                            <li class="nav-item"><a class="nav-link" href="contact.html">Register</a></li>
+                            <li class="nav-item"><a class="nav-link" href="loginpage.html">Log in</a></li>
+                        <?php } else { ?>
+                            <li class="nav-item"><a class="nav-link" href="logout.php">Log out</a></li>
+                        <?php } ?>
                     </ul>
                 </div>
             </div>
