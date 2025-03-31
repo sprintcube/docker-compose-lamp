@@ -58,7 +58,7 @@ function get_device_list($devices_data)
         $loanDeviceModalId = 'loan' . $deviceModalIdStub;
         $editDeviceModalId = 'edit' . $deviceModalIdStub;
 
-        include './page-parts/devices-list.php';
+        include './page-parts/card-device.php';
         if ($columnCount % 3 == 0) {
             $list .= '</div>'; // Closing the <div class="row">
             $list .= '<div class="row gx-5">';
@@ -98,7 +98,7 @@ function get_device_loan_modal($device_row, $id_prefix) {
     $loanStartInputId = "loanStartInput" . $loanDeviceModalId;
     $loanEndInputId = "loanEndInput" . $loanDeviceModalId;
 
-    include './page-parts/loan-device-modal.php';
+    include './page-parts/modal-device-loan.php';
     $result = ob_get_clean();
     return $result;
 }

@@ -11,6 +11,13 @@ function is_allowed_user_role(array $allowlist): bool {
     return in_array(get_user_role(), $allowlist);
 }
 
+function get_user_id() {
+    if (isset($_SESSION['user_id'])) {
+        return $_SESSION['user_id'];
+    };
+    return false;
+}
+
 function get_user_role() {
     if (isset($_SESSION['role'])) {
         $role = $_SESSION['role'];

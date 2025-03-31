@@ -1,4 +1,5 @@
 <?php
+require_once './utils.php';
 /**
  * Only include this from root pages, or component intended for use on a root page.
  */
@@ -24,6 +25,11 @@ function get_loans($conn, $view = 'ACTIVE')
             $query = "SELECT * FROM loan WHERE loan_end >= CURDATE() AND returned = 0";
             break;
     }
+
+    if (is_allowed_user_role([ROLE_USER])) {
+      $user_id = get_user_id();
+      $query .= " AND teacher_id = {$user_id}";
+    };
 
     $query_result = $conn->query($query);
     if (!$query_result) die ("Failed to fetch loans");

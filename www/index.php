@@ -111,41 +111,45 @@ session_start();
             </div>
         </section>
         <!-- List of loans section-->
-        <section class="py-5">
-            <div class="container px-5 my-5">
-                <div class="row gx-5 justify-content-center">
-                    <div class="col-lg-8 col-xl-6">
-                        <div class="text-center">
-                            <a id="loans"></a>
-                            <h2 class="fw-bolder">Loans Management</h2>
-                            <p class="lead fw-normal text-muted mb-5">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Eaque fugit ratione dicta mollitia. Officiis ad.</p>
+        <?php
+        if (is_logged_in()){
+        ?>    
+            <section class="py-5">
+                <div class="container px-5 my-5">
+                    <div class="row gx-5 justify-content-center">
+                        <div class="col-lg-8 col-xl-6">
+                            <div class="text-center">
+                                <a id="loans"></a>
+                                <h2 class="fw-bolder">Loans Management</h2>
+                                <p class="lead fw-normal text-muted mb-5">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Eaque fugit ratione dicta mollitia. Officiis ad.</p>
+                            </div>
                         </div>
-                    </div>
-                    <div class="container text-center">
-                        <div class="row align-items-start">
-                            <div class="col">
-                                <h2>Active loans</h2>
-                                <?php
-                                echo get_loans_list($conn, "ACTIVE");
-                                ?>
-                            </div>
-                            <div class="col">
-                                <h2>Overdue loans</h2>
-                                <?php
-                                echo get_loans_list($conn, "OVERDUE");
-                                ?>
-                            </div>
-                            <div class="col">
-                                <h2>Returned loans</h2>
-                                <?php
-                                echo get_loans_list($conn, "RETURNED");
-                                ?>
+                        <div class="container text-center">
+                            <div class="row align-items-start">
+                                <div class="col">
+                                    <h2>Active loans</h2>
+                                    <?php
+                                    echo get_loans_list($conn, "ACTIVE");
+                                    ?>
+                                </div>
+                                <div class="col">
+                                    <h2>Overdue loans</h2>
+                                    <?php
+                                    echo get_loans_list($conn, "OVERDUE");
+                                    ?>
+                                </div>
+                                <div class="col">
+                                    <h2>Returned loans</h2>
+                                    <?php
+                                    echo get_loans_list($conn, "RETURNED");
+                                    ?>
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
-            </div>
-        </section>
+            </section>
+        <?php } ?>
     </main>
     <!-- Footer-->
     <footer class="bg-dark py-4 mt-auto">
