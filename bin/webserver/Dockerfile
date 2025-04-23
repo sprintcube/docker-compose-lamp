@@ -1,5 +1,10 @@
 FROM php:5.6-apache
 
+RUN rm -f /etc/apt/sources.list
+RUN echo "deb http://archive.debian.org/debian/ stretch main contrib non-free" >>  /etc/apt/sources.list
+RUN echo "deb http://archive.debian.org/debian/ stretch-proposed-updates main contrib non-free" >> /etc/apt/sources.list
+RUN echo "deb http://archive.debian.org/debian-security stretch/updates main contrib non-free" >> /etc/apt/sources.list
+
 RUN apt-get -y update && apt-get upgrade -y
 
 # Install tools && libraries
