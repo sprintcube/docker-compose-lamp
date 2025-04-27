@@ -1,5 +1,6 @@
 <?php
 require_once './utils.php';
+require_once './db/loans-functions.php';
 /**
  * Only include this from root pages, or component intended for use on a root page.
  */
@@ -10,34 +11,6 @@ function get_header_loans_button() {
     return $result;
 }
 
-function get_loans($conn, $view = 'ACTIVE')
-{
-    $query = "";
-    switch ($view) {
-        case "RETURNED":
-            $query = "SELECT * FROM loan WHERE returned = 1";
-            break;
-        case "OVERDUE":
-            $query = "SELECT * FROM loan WHERE loan_end < CURDATE() AND returned = 0";
-            break;
-        default:
-        case "ACTIVE":
-            $query = "SELECT * FROM loan WHERE loan_end >= CURDATE() AND returned = 0";
-            break;
-    }
-
-    if (is_allowed_user_role([ROLE_USER])) {
-      $user_id = get_user_id();
-      $query .= " AND teacher_id = {$user_id}";
-    };
-
-    $query_result = $conn->query($query);
-    if (!$query_result) die ("Failed to fetch loans");
-
-    $query_data = $query_result->fetch_all(MYSQLI_ASSOC);
-    $query_result->free_result();
-    return $query_data;
-}
 function get_loans_list($conn, $view = 'ACTIVE') {
     $loans_data = get_loans($conn, $view);
     $result = '';

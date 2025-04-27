@@ -26,7 +26,7 @@ function get_user_role() {
         } else {
             return ROLE_ANON;
         }
-    }
+    } else return ROLE_ANON;
 }
 // 1. See assorted devices as an anonymous user; +
 // 2. Login or register as an anonymous user; +

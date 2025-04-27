@@ -1,4 +1,5 @@
 <?php
+require_once "./db/devices-functions.php";
 
 function get_add_device_modal()
 {
@@ -28,25 +29,6 @@ function get_device_search_form()
     return $result;
 }
 
-function get_devices($conn) {
-    $is_searching_by_term = isset($_GET['search-term']);
-    $search_term = $is_searching_by_term ? htmlspecialchars($_GET['search-term']) : false;
-    $query = '';
-    if (isset($search_term)) {
-        $search_term_sanitized = $conn->real_escape_string($search_term);
-        $query = "SELECT * FROM laite WHERE name LIKE '%{$search_term_sanitized}%' OR sn LIKE '%{$search_term_sanitized}%'";
-    } else {
-        $query = "SELECT * FROM laite";
-    }
-
-    $result = $conn->query($query);
-    if (!$result) die("Database access failed");
-
-    $result_data = $result->fetch_all(MYSQLI_ASSOC);
-    $result->free_result();
-    return $result_data;
-}
-
 function get_device_list($devices_data)
 {
     $columnCount = 0;
@@ -55,8 +37,10 @@ function get_device_list($devices_data)
         ob_start();
         $serialNumber = $row['sn'];
         $deviceModalIdStub = "DeviceModal-" . $serialNumber . '-' . $columnCount;
-        $loanDeviceModalId = 'loan' . $deviceModalIdStub;
+        // $loanDeviceModalId = 'loan' . $deviceModalIdStub;
         $editDeviceModalId = 'edit' . $deviceModalIdStub;
+        $bookDeviceModalId = 'book' . $deviceModalIdStub;
+
         include './page-parts/card-device.php';
         if ($columnCount % 3 == 0) {
             $list .= '</div>'; // Closing the <div class="row">
@@ -71,14 +55,6 @@ function get_device_list($devices_data)
 
     $list .= '</div>';
     return $list;
-}
-
-function delete_device($conn, $device_sn) {
-    $query = "DELETE FROM laite WHERE sn = {$device_sn}";
-    $result = $conn->query($query);
-
-    if (!$result) die("Could not delete a device");
-    return true;
 }
 
 function get_device_edit_modal($device_row, $id_prefix) {
@@ -110,12 +86,27 @@ function get_device_loan_modal($device_row, $id_prefix) {
     return $result;
 }
 
+function get_device_book_modal($device_row, $id_prefix) {
+    ob_start();
+    $serialNumber = $device_row['sn'];
+    $deviceModalIdStub = "DeviceModal-" . $serialNumber . '-' . $id_prefix;
+    $bookDeviceModalId = 'book' . $deviceModalIdStub;
+    $teacherInputId = "teacherInput" . $bookDeviceModalId;
+    $loanStartInputId = "loanStartInput" . $bookDeviceModalId;
+    $loanEndInputId = "loanEndInput" . $bookDeviceModalId;
+
+    include './page-parts/modal-device-book.php';
+    $result = ob_get_clean();
+    return $result;
+}
+
 function get_device_modals($device_data) {
     $column_count = 0;
     $device_modals = '';
     foreach ($device_data as $row) {
         $device_modals .= get_device_edit_modal($row, $column_count);
-        $device_modals .= get_device_loan_modal($row, $column_count);
+        // $device_modals .= get_device_loan_modal($row, $column_count);
+        $device_modals .= get_device_book_modal($row, $column_count);
         $column_count++;
     }
     return $device_modals;
