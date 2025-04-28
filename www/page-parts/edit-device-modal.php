@@ -1,6 +1,6 @@
 <div class="modal fade" tabindex="-1" aria-hidden="true" id='<?php echo $editDeviceModalId ?>'>
     <div class="modal-dialog  modal-dialog-centered">
-        <form action="editdevice.php?sn=<?php echo $serialNumber ?>" method="post">
+        <form action="service/edit-device.php?sn=<?php echo $serialNumber ?>" method="post">
             <div class="modal-content">
                 <div class="modal-header">
                     <h1 class="modal-title fs-5">Edit Device</h1>

@@ -18,7 +18,7 @@ echo "Name: {$row['name']}<br>";
 echo "Serial Number: {$row['sn']}<br>";
 echo "Category: {$row['category']}<br>";
 
-echo "<a href='editdevice.php?id={$row['id']}'>Edit</a> | ";
+echo "<a href='service/edit-device.php?id={$row['id']}'>Edit</a> | ";
 echo "<a href='loandevice.php?id={$row['id']}'>Loan</a>";
 echo '<br><a href="index.php">Back to Home</a>';
 
