@@ -1,6 +1,6 @@
 <div class="modal fade" tabindex="-1" aria-hidden="true" id='<?php echo $editDeviceModalId ?>'>
     <div class="modal-dialog  modal-dialog-centered">
-        <form action="service/edit-device.php?sn=<?php echo $serialNumber ?>" method="post">
+        <form action="service/edit-device.php?sn=<?php echo $serialNumber ?>" method="post" enctype="multipart/form-data">
             <div class="modal-content">
                 <div class="modal-header">
                     <h1 class="modal-title fs-5">Edit Device</h1>
@@ -14,6 +14,11 @@
                     <div class="mb-3">
                         <label class="form-label">Category:</label>
                         <input type="text" name="category" value="<?php echo $device_row['category'] ?>" required class="form-control" id="<?php echo $categoryInputId ?>">
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label">Update image:</label>
+                        <input type="file" name="image" class="form-control">
+                        <small>Supported formats: JPG, PNG, GIF, WEBP</small>
                     </div>
                 </div>
                 <div class="modal-footer">

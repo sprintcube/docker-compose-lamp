@@ -1,10 +1,13 @@
 <?php
 require_once './utils.php';
+$DUMMY_IMG_SRC = 'https://dummyimage.com/600x350/ced4da/6c757d';
+$image_path = "assets/images/devices/" . $row['sn'] . '.png';
+$img_src = file_exists($image_path) ? $image_path : $DUMMY_IMG_SRC;
 ?>
 
 <div class="col-lg-4 mb-5">
     <div class="card h-100 shadow border-0">
-        <img class="card-img-top" src="https://dummyimage.com/600x350/ced4da/6c757d" alt="..." />
+        <img class="card-img-top" src="<?php echo $img_src; ?>" alt="<?php echo $row['name']; ?>" />
         <div class='card-body'>
             <div class='card-title'><?php echo $row['name']; ?></div>
         </div>
