@@ -15,7 +15,7 @@ $id = $row['id'];
             <?php if (is_allowed_user_role([ROLE_ADMIN, ROLE_SUPER_ADMIN])) { ?>
                 <li class='list-group-item'><strong>Loaned to:</strong> <?php echo $teacher_name; ?> <i>(<?php echo $teacher_id; ?>)</i></li>
             <?php }?>
-            <li class='list-group-item'><strong>Device SN:</strong> <?php echo $device_sn; ?></li>
+            <li class='list-group-item'><strong>Device:</strong> <?php echo $device_name . ' <small>(SN: ' . $device_sn . ')</small>'; ?></li>
             <li class='list-group-item'></strong><?php echo $loan_start; ?> &mdash; <?php echo $loan_end; ?></li>
         </ul>
         <a class='btn btn-primary' href='returnloan.php?id=<?php echo $id; ?>'>Return</a>
