@@ -30,20 +30,22 @@ function get_loans($conn, $view = 'ACTIVE')
     return $query_data;
 }
 
-function get_device_bookings($conn, $device_sn) {
-    $query = "SELECT * FROM device_bookings WHERE device_s = {$device_sn}";
+function get_device_bookings($conn, $device_sn = false) {
+    $query = !$device_sn ?
+        "SELECT * FROM device_bookings" :
+        "SELECT * FROM device_bookings WHERE device_sn = {$device_sn}";
 
     if (is_allowed_user_role([ROLE_USER])) {
-        $user_id = get_user_id();
-        $query .= " AND teacher_id = {$user_id}";
-
-        $query_result = $conn->query($query);
-        if (!$query_result) die ("Failed to fetch device bookings");
-
-        $query_data = $query_result->fetch_all(MYSQLI_ASSOC);
-        $query_result->free_result();
-        return $query_data;
+        $user_name = get_user_name();
+        $query .= " WHERE teacher_id = '{$user_name}'";
     }
+
+    $query_result = $conn->query($query);
+    if (!$query_result) die ("Failed to fetch device bookings");
+
+    $query_data = $query_result->fetch_all(MYSQLI_ASSOC);
+    $query_result->free_result();
+    return $query_data;
 }
 
 function create_device_booking($conn, $device_sn, $loan_start, $loan_end, $teacher_id) {

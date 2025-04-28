@@ -70,6 +70,15 @@ session_start();
         <!-- Available devices section-->
 
         <section class="py-5">
+            <a name="bookings"></a>
+            <div class="container px-5 my-5">
+                <div class="row gx-5 justify-content-center">
+                    <?php echo get_bookings_list($conn); ?>
+                </div>
+            </div>
+        </section>
+
+        <section class="py-5">
             <a name="devices"></a>
             <div class="container px-5 my-5">
                 <div class="row gx-5 justify-content-center">

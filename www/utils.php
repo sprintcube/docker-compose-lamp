@@ -18,6 +18,10 @@ function get_user_id() {
     return false;
 }
 
+function get_user_name() {
+    return isset($_SESSION['username']) ? $_SESSION['username'] : false;
+}
+
 function get_user_role() {
     if (isset($_SESSION['role'])) {
         $role = $_SESSION['role'];

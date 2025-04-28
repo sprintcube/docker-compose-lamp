@@ -32,8 +32,18 @@ function get_loans_list($conn, $view = 'ACTIVE') {
 
             include './page-parts/card-loan-generic.php';
             $result .= ob_get_clean();
-            // <div>Teacher ID: {$row['teacher_id']}, Device ID: {$row['device_id']}, Due: {$row['loan_end']} 
         }
     }
     return $result;
+}
+
+function get_bookings_list($conn) {
+    $bookings = get_device_bookings($conn);
+    $result = '<ul class="list-group">';
+    foreach ($bookings as $row) {
+        ob_start();
+        include './page-parts/list-item-device-booking.php';
+        $result .= ob_get_clean();
+    }
+    return $result . "</ul>";
 }
