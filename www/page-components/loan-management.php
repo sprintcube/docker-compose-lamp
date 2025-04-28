@@ -17,19 +17,11 @@ function get_loans_list($conn, $view = 'ACTIVE') {
     foreach ($loans_data as $row) {
         if ($view == "RETURNED") {
             ob_start();
-            $teacher_id = $row['teacher_id'];
-            $device_sn = $row['device_sn'];
-
             include './page-parts/card-loan-returned.php';
             $result .= ob_get_clean();
             // $result .= "<div>Teacher ID: {$row['teacher_id']}, Device ID: {$row['device_id']}, Returned</div>";
         } else {
             ob_start();
-            $loan_end = $row['loan_end'];
-            $teacher_id = $row['teacher_id'];
-            $device_sn = $row['device_sn'];
-            $id = $row['id'];
-
             include './page-parts/card-loan-generic.php';
             $result .= ob_get_clean();
         }
@@ -39,11 +31,11 @@ function get_loans_list($conn, $view = 'ACTIVE') {
 
 function get_bookings_list($conn) {
     $bookings = get_device_bookings($conn);
-    $result = '<ul class="list-group">';
+    $result = '';
     foreach ($bookings as $row) {
         ob_start();
         include './page-parts/list-item-device-booking.php';
         $result .= ob_get_clean();
     }
-    return $result . "</ul>";
+    return $result;
 }

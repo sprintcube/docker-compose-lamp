@@ -12,12 +12,45 @@ function update_device($conn, $device_sn) {
     $stmt->execute();
 }
 
+/**
+ * Resizes an image, crops it to the target aspect ratio, and saves it as a PNG.
+ *
+ * @param string $file_path        Path to the image file.
+ * @param array  $target_dimensions Array containing the target width and height (e.g., [300, 200]).
+ * @param string $original_ext     The original file extension (e.g., 'jpg', 'png', 'webp', 'gif').
+ *
+ * @return bool True on success, false on failure (e.g., unsupported image format).
+ */
 function resize_image($file_path, $target_dimensions, $original_ext) {
-    list($width, $height) = $target_dimensions;
-    list($o_width, $o_height) = getimagesize($file_path);
-    $new_image = imagecreatetruecolor($width, $height);
+    list($target_width, $target_height) = $target_dimensions;
+    list($orig_width, $orig_height) = getimagesize($file_path);
+    $target_ratio = $target_width / $target_height;
+    $orig_ratio = $orig_width / $orig_height;
 
-    // Create a new image depending on source file type
+    if ($orig_ratio > $target_ratio) {
+        // Original image is wider than the target aspect ratio; crop the width.
+        $crop_width = $orig_height * $target_ratio;
+        $crop_height = $orig_height;
+        $src_x = ($orig_width - $crop_width) / 2;
+        $src_y = 0;
+    } else {
+        // Original image is taller than the target aspect ratio, or the ratios are equal; crop the height.
+        $crop_width = $orig_width;
+        $crop_height = $orig_width / $target_ratio;
+        $src_x = 0;
+        $src_y = ($orig_height - $crop_height) / 2;
+    }
+
+    $new_image = imagecreatetruecolor($target_width, $target_height);
+    // Keep transparency for PNG and GIF
+    if ($original_ext === 'png' || $original_ext === 'gif') {
+        imagealphablending($new_image, false);
+        imagesavealpha($new_image, true);
+        $transparent = imagecolorallocatealpha($new_image, 255, 255, 255, 127);
+        imagefill($new_image, 0, 0, $transparent); // Fill with transparent color
+    }
+
+    // Create a new image resource from file
     switch ($original_ext) {
         case 'jpeg':
         case 'jpg':
@@ -33,9 +66,27 @@ function resize_image($file_path, $target_dimensions, $original_ext) {
             $image = imagecreatefromgif($file_path);
             break;
         default:
-            return false; // unsupported image format
-    };
-    imagecopyresampled($new_image, $image, 0, 0, 0, 0, $width, $height, $o_width, $o_height);
+            return false; // Unsupported image format
+    }
+
+    // Handle transparency for GIF and PNG source images
+    if ($original_ext === 'png' || $original_ext === 'gif') {
+        imagealphablending($image, true); // Ensure source image's transparency is respected.
+    }
+    imagecopyresampled(
+        $new_image,  // Destination image
+        $image,      // Source image
+        0,          // Destination X
+        0,          // Destination Y
+        $src_x,      // Source X (cropping start)
+        $src_y,      // Source Y (cropping start)
+        $target_width, // Destination width
+        $target_height, // Destination height
+        $crop_width,   // Source width (cropping width)
+        $crop_height  // Source height (cropping height)
+    );
+
+    // Overwrite the original file with the resized and cropped PNG
     imagepng($new_image, $file_path);
     imagedestroy($new_image);
     imagedestroy($image);

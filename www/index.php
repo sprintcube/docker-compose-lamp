@@ -59,7 +59,9 @@ session_start();
                                 <?php
                                 if (is_allowed_user_role([ROLE_ADMIN, ROLE_SUPER_ADMIN])) echo get_header_add_device_button();
                                 if (is_allowed_user_role(REGISTERED_ROLES)) echo get_header_loans_button();
-                                ?>
+                                if (is_allowed_user_role([ROLE_USER])) { ?>
+                                    <a class="btn btn-outline-light btn-lg px-4" href="#bookings">View Bookings</a>
+                                <?php }?>
                             </div>
                         </div>
                     </div>
@@ -68,20 +70,9 @@ session_start();
             </div>
         </header>
         <!-- Available devices section-->
-        <?php if (is_logged_in()) { ?>
-            <section class="py-5">
-                <a name="bookings"></a>
-                <div class="container px-5 my-5">
-                    <div class="row gx-5 justify-content-center">
-                        <?php echo get_bookings_list($conn); ?>
-                    </div>
-                </div>
-            </section>
-        <?php }; ?>
-
-        <section class="py-5">
+        <section>
             <a name="devices"></a>
-            <div class="container px-5 my-5">
+            <div class="container px-5 mt-5">
                 <div class="row gx-5 justify-content-center">
                     <div class="col-lg-10 col-xl-10">
                         <nav class="navbar navbar-expand-lg bg-light mb-5">
@@ -116,11 +107,34 @@ session_start();
                 ?>
             </div>
         </section>
+
+        <!-- My bookings section -->
+        <?php if (is_logged_in()) { ?>
+            <section>
+                <a name="bookings"></a>
+                <div class="container px-5 my-5">
+                    <div class="row gx-5 justify-content-center">
+                        <div class="col-lg-8 col-xl-6">
+                            <div class="text-center">
+                                <a id="loans"></a>
+                                <h2 class="fw-bolder">Bookings management</h2>
+                                <p class="lead fw-normal text-muted mb-5">The list of devices you have requested for a loan.</p>
+                            </div>
+                        </div>
+                        <div class="container">
+                            <div class="row gy-2 gx-5">
+                                <?php echo get_bookings_list($conn); ?>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        <?php }; ?>
         <!-- List of loans section-->
         <?php
         if (is_logged_in()){
         ?>    
-            <section class="py-5">
+            <section>
                 <div class="container px-5 my-5">
                     <div class="row gx-5 justify-content-center">
                         <div class="col-lg-8 col-xl-6">

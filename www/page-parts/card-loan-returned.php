@@ -1,3 +1,7 @@
+<?php
+$teacher_id = $row['teacher_id'];
+$device_sn = $row['device_sn'];
+?>
 <div class='card my-2'>
     <div class='card-body'>
         <ul class='list-group list-group-flush'>

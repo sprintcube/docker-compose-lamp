@@ -3,17 +3,24 @@ require_once './utils.php';
 
 function get_loans($conn, $view = 'ACTIVE')
 {
-    $query = "";
+    $query = "SELECT 
+        db.*,
+        l.name AS device_name,
+        l.category AS device_category,
+        u.name AS user_fullname
+    FROM loan db
+    LEFT JOIN laite l ON db.device_sn = l.sn
+    LEFT JOIN users u ON db.teacher_id = u.username";
     switch ($view) {
         case "RETURNED":
-            $query = "SELECT * FROM loan WHERE returned = 1";
+            $query .= " WHERE returned = 1";
             break;
         case "OVERDUE":
-            $query = "SELECT * FROM loan WHERE loan_end < CURDATE() AND returned = 0";
+            $query .= " WHERE loan_end < CURDATE() AND returned = 0";
             break;
         default:
         case "ACTIVE":
-            $query = "SELECT * FROM loan WHERE loan_end >= CURDATE() AND returned = 0";
+            $query .= " WHERE loan_end >= CURDATE() AND returned = 0";
             break;
     }
 
@@ -35,11 +42,14 @@ function get_device_bookings($conn, $device_sn = false) {
         SELECT
             db.*,
             l.name AS device_name,
-            l.category AS device_category
+            l.category AS device_category,
+            u.name AS user_fullname
         FROM
             device_bookings db
         LEFT JOIN
             laite l ON db.device_sn = l.sn
+        LEFT JOIN
+            users u ON db.teacher_id = u.username
     ";
 
     if ($device_sn) {
