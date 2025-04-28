@@ -31,13 +31,24 @@ function get_loans($conn, $view = 'ACTIVE')
 }
 
 function get_device_bookings($conn, $device_sn = false) {
-    $query = !$device_sn ?
-        "SELECT * FROM device_bookings" :
-        "SELECT * FROM device_bookings WHERE device_sn = {$device_sn}";
+    $query = "
+        SELECT
+            db.*,
+            l.name AS device_name,
+            l.category AS device_category
+        FROM
+            device_bookings db
+        LEFT JOIN
+            laite l ON db.device_sn = l.sn
+    ";
+
+    if ($device_sn) {
+        $query .= " WHERE db.device_sn = '{$device_sn}'";
+    }
 
     if (is_allowed_user_role([ROLE_USER])) {
         $user_name = get_user_name();
-        $query .= " WHERE teacher_id = '{$user_name}'";
+        $query .= ($device_sn ? " AND" : " WHERE") . " db.teacher_id = '{$user_name}'";
     }
 
     $query_result = $conn->query($query);

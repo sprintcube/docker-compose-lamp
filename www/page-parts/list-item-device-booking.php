@@ -1,16 +1,23 @@
 <?php
 $loan_start = $row['loan_start'];
 $loan_end = $row['loan_end'];
-$teacher_id = $row['teacher_id'];
 $device_sn = $row['device_sn'];
-$id = $row['id'];
+$DUMMY_IMG_SRC = 'https://dummyimage.com/600x350/ced4da/6c757d';
+$image_path = "assets/images/devices/" . $device_sn . '.png';
+$img_src = file_exists($image_path) ? $image_path : $DUMMY_IMG_SRC;
 ?>
-<li class="list-group-item list-group-item-action" aria-current="true">
-    <div class="d-flex w-100 justify-content-between">
-      <h5 class="mb-1"><?php echo $device_sn ?></h5>
-      <!-- <small>3 days ago</small> -->
+
+<li class="card my-1" style="max-width: 540px;">
+  <div class="row g-0">
+    <div class="col-md-4">
+      <img src="<?php echo $img_src; ?>" class="img-fluid rounded-start list-item-card-img" alt="...">
     </div>
-    <!-- <p class="mb-1">Some placeholder content in a paragraph.</p> -->
-    <small>From: <?php echo $loan_start; ?></small>
-    <small>To: <?php echo $loan_end; ?></small>
+    <div class="col-md-8">
+      <div class="card-body">
+        <h5 class="card-title"><?php echo $row['device_name']; ?></h5>
+        <p class="card-text">Category: <?php echo $row['device_category'] ?><br>
+        <small class="text-muted">From: <?php echo $loan_start; ?> To: <?php echo $loan_end; ?></small></p>
+      </div>
+    </div>
+  </div>
 </li>
