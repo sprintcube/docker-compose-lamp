@@ -8,7 +8,7 @@ $conn = new mysqli($hn, $un, $pw, $db);
 if ($conn->connect_error) die("Connection failed");
 
 // List of all tables to be cleared
-$tables = ['laite', 'loan']; // Add other table names as needed
+$tables = ['devices', 'loan']; // Add other table names as needed
 
 foreach ($tables as $table) {
     $stmt = $conn->prepare("DELETE FROM $table");

@@ -7,20 +7,25 @@ function get_loans($conn, $view = 'ACTIVE')
         db.*,
         l.name AS device_name,
         l.category AS device_category,
+        l.description AS device_description,
         u.name AS user_fullname
-    FROM loan db
-    LEFT JOIN laite l ON db.device_sn = l.sn
+    FROM device_bookings db
+    LEFT JOIN devices l ON db.device_sn = l.sn
     LEFT JOIN users u ON db.teacher_id = u.username";
     switch ($view) {
         case "RETURNED":
-            $query .= " WHERE returned = 1";
+            $query = "SELECT
+                db.*,
+                u.name AS user_fullname
+            FROM device_returns db
+            LEFT JOIN users u ON db.teacher_id = u.username";
             break;
         case "OVERDUE":
-            $query .= " WHERE loan_end < CURDATE() AND returned = 0";
+            $query .= " WHERE booking_status = 'loaned' AND loan_end < CURDATE()";
             break;
         default:
         case "ACTIVE":
-            $query .= " WHERE loan_end >= CURDATE() AND returned = 0";
+            $query .= " WHERE booking_status = 'loaned' AND loan_end >= CURDATE()";
             break;
     }
 
@@ -47,7 +52,7 @@ function get_device_bookings($conn, $device_sn = false) {
         FROM
             device_bookings db
         LEFT JOIN
-            laite l ON db.device_sn = l.sn
+            devices l ON db.device_sn = l.sn
         LEFT JOIN
             users u ON db.teacher_id = u.username
     ";

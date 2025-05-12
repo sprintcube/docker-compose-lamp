@@ -7,7 +7,7 @@ $conn = new mysqli($hn, $un, $pw, $db);
 if ($conn->connect_error) die("Connection failed");
 
 $device_id = (int) $_GET['id'];
-$query = "SELECT * FROM laite WHERE id = $device_id";
+$query = "SELECT * FROM devices WHERE id = $device_id";
 $result = $conn->query($query);
 if (!$result) die("Database access failed");
 

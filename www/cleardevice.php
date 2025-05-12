@@ -5,7 +5,7 @@ if ($conn->connect_error) die("Connection failed");
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['id'])) {
     $device_id = (int) $_POST['id'];
-    $stmt = $conn->prepare("DELETE FROM laite WHERE id = ?");
+    $stmt = $conn->prepare("DELETE FROM devices WHERE id = ?");
     $stmt->bind_param('i', $device_id);
     $stmt->execute();
     header("Location: index.php");

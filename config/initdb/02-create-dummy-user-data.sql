@@ -1,0 +1,3 @@
+INSERT INTO users (name, email, username, password_hash, role) VALUES ('Super Admin', 'sadmin@admin.com', 'suadmin', '$2y$10$7Z3Vx9Nm7HZs786n.3GED..r5fqkV7VGdlyxC5xxcB8FdcpEIoPZi', 'superadmin');
+INSERT INTO users (name, email, username, password_hash, role) VALUES ('Regular Admin', 'admin@admin.com', 'admin', '$2y$10$7Z3Vx9Nm7HZs786n.3GED..r5fqkV7VGdlyxC5xxcB8FdcpEIoPZi', 'admin');
+INSERT INTO users (name, email, username, password_hash, role) VALUES ('Super Mario', 'waaaaa@mailo.com', 'supemar', '$2y$10$D1k8u2p91OW5JYiyJQZfe.kpheQvfNa7dkT6lDwpnjbwE1aoRcP/m', 'user');

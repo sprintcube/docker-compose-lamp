@@ -1,0 +1,4 @@
+INSERT INTO devices (name, sn, category, description) VALUES ("iPad Pro", "2345456456456", "Tablets", "iPad Pro 12 inch, 2016 model, includes a folio case and an Apple Pencil");
+INSERT INTO devices (name, sn, category, description) VALUES ("Sony DualSense", "83479283983", "Game Controllers", "Blue Sony DualSense controller, includes a USB-C cable");
+INSERT INTO devices (name, sn, category, description) VALUES ("Lenovo Thinkpad", "87875658676", "Laptops", "A good workhorse laptop with a funny red nipple in the middle of the keyboard");
+INSERT INTO devices (name, sn, category, description) VALUES ("Punch Drill", "345436456456", "Powertools", "A punch drill, includes a set of drill bits for concrete");

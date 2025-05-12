@@ -6,9 +6,9 @@ function get_devices($conn) {
     $query = '';
     if (isset($search_term)) {
         $search_term_sanitized = $conn->real_escape_string($search_term);
-        $query = "SELECT * FROM laite WHERE name LIKE '%{$search_term_sanitized}%' OR sn LIKE '%{$search_term_sanitized}%'";
+        $query = "SELECT * FROM devices WHERE name LIKE '%{$search_term_sanitized}%' OR sn LIKE '%{$search_term_sanitized}%'";
     } else {
-        $query = "SELECT * FROM laite";
+        $query = "SELECT * FROM devices";
     }
 
     $result = $conn->query($query);
@@ -20,7 +20,7 @@ function get_devices($conn) {
 }
 
 function delete_device($conn, $device_sn) {
-    $query = "DELETE FROM laite WHERE sn = {$device_sn}";
+    $query = "DELETE FROM devices WHERE sn = {$device_sn}";
     $result = $conn->query($query);
 
     if (!$result) die("Could not delete a device");
