@@ -1,6 +1,7 @@
 /.env
 /.vscode
 /config/*
+!config/initdb/
 /data/*
 /logs/*
 .DS_Store
