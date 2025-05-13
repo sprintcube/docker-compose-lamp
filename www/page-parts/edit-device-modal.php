@@ -16,6 +16,10 @@
                         <input type="text" name="category" value="<?php echo $device_row['category'] ?>" required class="form-control" id="<?php echo $categoryInputId ?>">
                     </div>
                     <div class="mb-3">
+                        <labelclass="form-label">Description:</label>
+                        <textarea name="description" required class="form-control"><?php echo $device_row['description']; ?></textarea>
+                    </div>
+                    <div class="mb-3">
                         <label class="form-label">Update image:</label>
                         <input type="file" name="image" class="form-control">
                         <small>Supported formats: JPG, PNG, GIF, WEBP</small>

@@ -14,6 +14,7 @@ $img_src = file_exists($image_path) ? $image_path : $DUMMY_IMG_SRC;
         <ul class='card-body list-group list-group-flush'>
             <li class='list-group-item'>SN: <?php echo $row['sn']; ?></li>
             <li class='list-group-item'>Category: <?php echo $row['category']; ?></li>
+            <li class='list-group-item'>Description: <?php echo $row['description']; ?></li>
         </ul>
         <div class='card-body btn-toolbar justify-content-between'>
             <div>

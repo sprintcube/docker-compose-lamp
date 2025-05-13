@@ -2,7 +2,7 @@
 require_once '../login.php';
 require_once '../utils.php';
 
-require_once '../page-components/device-management.php';
+require_once '../db/devices-functions.php';
 
 $conn = new mysqli($hn, $un, $pw, $db);
 if ($conn->connect_error) die("Connection failed");
