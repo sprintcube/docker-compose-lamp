@@ -45,7 +45,7 @@ if (is_logged_in() && is_allowed_user_role([ROLE_USER])) {
                     <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
                         <li class="nav-item"><a class="nav-link" href="index.php">Home</a></li>
                         <?php if (!is_logged_in()) { ?>
-                            <li class="nav-item"><a class="nav-link" href="contact.html">Register</a></li>
+                            <li class="nav-item"><a class="nav-link" href="register.html">Register</a></li>
                             <li class="nav-item"><a class="nav-link" href="loginpage.html">Log in</a></li>
                         <?php } else { ?>
                             <li class="nav-item"><a class="nav-link" href="logout.php">Log out</a></li>
