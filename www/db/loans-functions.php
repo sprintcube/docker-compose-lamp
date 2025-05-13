@@ -140,3 +140,21 @@ function cancel_booking($conn, $booking_id) {
     $query_result = $conn->query($query);
     if (!$query_result) die ("Failed to cancel booking");
 }
+
+function create_booking_notification($conn, $booking_info, $message) {
+    $username = $booking_info['teacher_id'];
+    $device_name = $booking_info['device_name'];
+    $device_sn = $booking_info['device_sn'];
+    $stmt = $conn->prepare("INSERT INTO booking_notifications
+        (username, device_sn, device_name, message)
+        VALUES (?, ?, ?, ?)");
+    $stmt->bind_param('ssss', $username, $device_sn, $device_name, $message);
+    return $stmt->execute();
+}
+
+function reject_booking($conn, $booking_id) {
+    $messsage = "Your booking was rejected by the administration";
+    $booking_info = get_device_booking_by_id($conn, $booking_id);
+    cancel_booking($conn, $booking_id);
+    return create_booking_notification($conn, $booking_info, $messsage);
+}

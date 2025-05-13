@@ -28,9 +28,10 @@ $img_src = file_exists($image_path) ? $image_path : $DUMMY_IMG_SRC;
               </form>
           <?php } ?>
           <?php if (is_allowed_user_role([ROLE_USER])) {?>
-
               <a href="service/cancel-booking.php?id=<?php echo $row['id']; ?>" class="btn btn-primary">Cancel Booking</a>
-
+          <?php } ?>
+          <?php if (is_allowed_user_role([ROLE_ADMIN, ROLE_SUPER_ADMIN])) {?>
+              <a href="service/reject-booking.php?id=<?php echo $row['id']; ?>" class="btn btn-primary">Reject Booking</a>
           <?php } ?>
         </div>
       </div>
