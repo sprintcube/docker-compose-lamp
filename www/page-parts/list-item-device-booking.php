@@ -27,6 +27,11 @@ $img_src = file_exists($image_path) ? $image_path : $DUMMY_IMG_SRC;
                   <button type="submit" class="btn btn-primary">Loan device</button>
               </form>
           <?php } ?>
+          <?php if (is_allowed_user_role([ROLE_USER])) {?>
+
+              <a href="service/cancel-booking.php?id=<?php echo $row['id']; ?>" class="btn btn-primary">Cancel Booking</a>
+
+          <?php } ?>
         </div>
       </div>
     </div>

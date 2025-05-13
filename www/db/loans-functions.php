@@ -134,3 +134,9 @@ function return_loaned_device($conn, $booking_id) {
     $query_result = $conn->query($query);
     if (!$query_result || ! $return_record_result) die ("Failed to return device");
 }
+
+function cancel_booking($conn, $booking_id) {
+    $query = "DELETE FROM device_bookings WHERE id = {$booking_id} AND booking_status = 'booked'";
+    $query_result = $conn->query($query);
+    if (!$query_result) die ("Failed to cancel booking");
+}
