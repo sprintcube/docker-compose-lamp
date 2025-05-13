@@ -156,19 +156,19 @@ if (is_logged_in() && is_allowed_user_role([ROLE_USER])) {
                                 <div class="col">
                                     <h2>Active loans</h2>
                                     <?php
-                                    echo get_loans_list($conn, "ACTIVE", $teacher_id);
+                                    echo get_loans_list($conn, "ACTIVE", $username);
                                     ?>
                                 </div>
                                 <div class="col">
                                     <h2>Overdue loans</h2>
                                     <?php
-                                    echo get_loans_list($conn, "OVERDUE", $teacher_id);
+                                    echo get_loans_list($conn, "OVERDUE", $username);
                                     ?>
                                 </div>
                                 <div class="col">
                                     <h2>Returned loans</h2>
                                     <?php
-                                    echo get_loans_list($conn, "RETURNED", $teacher_id);
+                                    echo get_loans_list($conn, "RETURNED", $username);
                                     ?>
                                 </div>
                             </div>

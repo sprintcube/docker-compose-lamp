@@ -1,7 +1,7 @@
 <?php
 // require_once './utils.php';
 
-function get_loans($conn, $view = 'ACTIVE', $user_id = NULL)
+function get_loans($conn, $view = 'ACTIVE', $username = NULL)
 {
     $query = "SELECT 
         db.*,
@@ -29,8 +29,8 @@ function get_loans($conn, $view = 'ACTIVE', $user_id = NULL)
             break;
     }
 
-    if (isset($user_id)) {
-      $query .= " AND teacher_id = {$user_id}";
+    if (isset($username)) {
+      $query .= " AND teacher_id = '{$username}'";
     };
 
     $query_result = $conn->query($query);
@@ -52,16 +52,17 @@ function get_device_bookings($conn, $device_sn = NULL, $user_name = NULL) {
         LEFT JOIN
             devices l ON db.device_sn = l.sn
         LEFT JOIN
-            users u ON db.teacher_id = u.username";
+            users u ON db.teacher_id = u.username
+        WHERE db.booking_status = 'booked'";
 
     if (isset($device_sn)) {
-        $query .= " WHERE db.device_sn = '{$device_sn}'";
+        $query .= " AND db.device_sn = '{$device_sn}'";
     }
 
     if (isset($user_name)) {
     // if (is_allowed_user_role([ROLE_USER])) {
     //     $user_name = get_user_name();
-        $query .= (isset($device_sn) ? " AND" : " WHERE") . " db.teacher_id = '{$user_name}'";
+        $query .= " AND db.teacher_id = '{$user_name}'";
     }
 
     $query_result = $conn->query($query);
@@ -87,7 +88,7 @@ function loan_device($conn, $booking_id) {
     $query_result = $conn->query($query);
     if (!$query_result) die ("Failed to fetch device bookings");
 
-    $query_data = $query_result->fetch_all(MYSQLI_ASSOC);
-    $query_result->free_result();
-    return $query_data;
+    // $query_data = $query_result->fetch_all(MYSQLI_ASSOC);
+    // $query_result->free_result();
+    // return $query_data;
 }
