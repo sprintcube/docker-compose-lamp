@@ -89,8 +89,48 @@ function loan_device($conn, $booking_id) {
     if (!$query_result) die ("Failed to fetch device bookings");
 }
 
+function get_device_booking_by_id($conn, $booking_id) {
+    $query = "SELECT
+        db.*,
+        l.name AS device_name,
+        l.category AS device_category,
+        l.description AS device_description
+    FROM device_bookings db
+    LEFT JOIN devices l ON db.device_sn = l.sn
+    WHERE db.id = {$booking_id}
+    LIMIT 1";
+    $query_result = $conn->query($query);
+    $query_data = $query_result->fetch_all(MYSQLI_ASSOC);
+    $query_result->free_result();
+    return $query_data[0];
+}
+
+function create_device_return_record($conn, $booking_info) {
+    $device_sn = $booking_info['device_sn'];
+    $teacher_id = $booking_info['teacher_id'];
+    $device_name = $booking_info['device_name'];
+    $device_category = $booking_info['device_category'];
+    $device_description = $booking_info['device_description'];
+    $loan_start = $booking_info['loan_start'];
+    $loan_end = $booking_info['loan_end'];
+    $stmt = $conn->prepare("INSERT INTO device_returns 
+        (device_sn, teacher_id, device_name, device_category, device_description, loan_start, loan_end)
+        VALUES (?, ?, ?, ?, ?, ?, ?)");
+    $stmt->bind_param('sssssss',
+        $device_sn,
+        $teacher_id,
+        $device_name,
+        $device_category,
+        $device_description,
+        $loan_start,
+        $loan_end);
+    return $stmt->execute();
+}
+
 function return_loaned_device($conn, $booking_id) {
+    $booking_info = get_device_booking_by_id($conn, $booking_id);
+    $return_record_result = create_device_return_record($conn, $booking_info);
     $query = "DELETE FROM device_bookings WHERE id = {$booking_id} AND booking_status = 'loaned'";
     $query_result = $conn->query($query);
-    if (!$query_result) die ("Failed to return device");
+    if (!$query_result || ! $return_record_result) die ("Failed to return device");
 }
