@@ -9,7 +9,7 @@ $img_src = file_exists($image_path) ? $image_path : $DUMMY_IMG_SRC;
     <div class="card h-100 shadow border-0">
         <img class="card-img-top" src="<?php echo $img_src; ?>" alt="<?php echo $row['name']; ?>" />
         <div class='card-body'>
-            <div class='card-title'><?php echo $row['name']; ?></div>
+            <h5 class="card-title"><?php echo $row['name']; ?></h5>
         </div>
         <ul class='card-body list-group list-group-flush'>
             <li class='list-group-item'>SN: <?php echo $row['sn']; ?></li>
