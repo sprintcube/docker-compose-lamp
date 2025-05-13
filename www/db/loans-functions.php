@@ -1,7 +1,7 @@
 <?php
-require_once './utils.php';
+// require_once './utils.php';
 
-function get_loans($conn, $view = 'ACTIVE')
+function get_loans($conn, $view = 'ACTIVE', $user_id = NULL)
 {
     $query = "SELECT 
         db.*,
@@ -29,8 +29,7 @@ function get_loans($conn, $view = 'ACTIVE')
             break;
     }
 
-    if (is_allowed_user_role([ROLE_USER])) {
-      $user_id = get_user_id();
+    if (isset($user_id)) {
       $query .= " AND teacher_id = {$user_id}";
     };
 
@@ -42,7 +41,7 @@ function get_loans($conn, $view = 'ACTIVE')
     return $query_data;
 }
 
-function get_device_bookings($conn, $device_sn = false) {
+function get_device_bookings($conn, $device_sn = NULL, $user_name = NULL) {
     $query = "SELECT
             db.*,
             l.name AS device_name,
@@ -55,13 +54,14 @@ function get_device_bookings($conn, $device_sn = false) {
         LEFT JOIN
             users u ON db.teacher_id = u.username";
 
-    if ($device_sn) {
+    if (isset($device_sn)) {
         $query .= " WHERE db.device_sn = '{$device_sn}'";
     }
 
-    if (is_allowed_user_role([ROLE_USER])) {
-        $user_name = get_user_name();
-        $query .= ($device_sn ? " AND" : " WHERE") . " db.teacher_id = '{$user_name}'";
+    if (isset($user_name)) {
+    // if (is_allowed_user_role([ROLE_USER])) {
+    //     $user_name = get_user_name();
+        $query .= (isset($device_sn) ? " AND" : " WHERE") . " db.teacher_id = '{$user_name}'";
     }
 
     $query_result = $conn->query($query);
@@ -73,10 +73,10 @@ function get_device_bookings($conn, $device_sn = false) {
 }
 
 function create_device_booking($conn, $device_sn, $loan_start, $loan_end, $teacher_id) {
-    $query = "INSERT INTO device_bookings (loan_start, loan_end, teacher_id, device_sn)
-        VALUES ('$loan_start', '$loan_end', '$teacher_id', '$device_sn')";
-
-    if (!$conn->query($query)) return $conn->error;
+    $stmt = $conn->prepare("INSERT INTO device_bookings (loan_start, loan_end, teacher_id, device_sn)
+        VALUES (?, ?, ?, ?)");
+    $stmt->bind_param('ssss', $loan_start, $loan_end, $teacher_id, $device_sn);
+    return $stmt->execute();
 }
 
 function loan_device($conn, $booking_id) {

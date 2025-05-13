@@ -8,6 +8,13 @@ require_once './page-components/device-management.php';
 $conn = new mysqli($hn, $un, $pw, $db);
 if ($conn->connect_error) die("Connection failed");
 session_start();
+$teacher_id = NULL;
+$username = NULL;
+
+if (is_logged_in() && is_allowed_user_role([ROLE_USER])) {
+    $username = get_user_name();
+    $teacher_id = get_user_id();
+}
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -123,7 +130,7 @@ session_start();
                         </div>
                         <div class="container">
                             <div class="row gy-2 gx-5">
-                                <?php echo get_bookings_list($conn); ?>
+                                <?php echo get_bookings_list($conn, $username); ?>
                             </div>
                         </div>
                     </div>
@@ -149,19 +156,19 @@ session_start();
                                 <div class="col">
                                     <h2>Active loans</h2>
                                     <?php
-                                    echo get_loans_list($conn, "ACTIVE");
+                                    echo get_loans_list($conn, "ACTIVE", $teacher_id);
                                     ?>
                                 </div>
                                 <div class="col">
                                     <h2>Overdue loans</h2>
                                     <?php
-                                    echo get_loans_list($conn, "OVERDUE");
+                                    echo get_loans_list($conn, "OVERDUE", $teacher_id);
                                     ?>
                                 </div>
                                 <div class="col">
                                     <h2>Returned loans</h2>
                                     <?php
-                                    echo get_loans_list($conn, "RETURNED");
+                                    echo get_loans_list($conn, "RETURNED", $teacher_id);
                                     ?>
                                 </div>
                             </div>
