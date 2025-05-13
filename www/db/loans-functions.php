@@ -43,8 +43,7 @@ function get_loans($conn, $view = 'ACTIVE')
 }
 
 function get_device_bookings($conn, $device_sn = false) {
-    $query = "
-        SELECT
+    $query = "SELECT
             db.*,
             l.name AS device_name,
             l.category AS device_category,
@@ -54,8 +53,7 @@ function get_device_bookings($conn, $device_sn = false) {
         LEFT JOIN
             devices l ON db.device_sn = l.sn
         LEFT JOIN
-            users u ON db.teacher_id = u.username
-    ";
+            users u ON db.teacher_id = u.username";
 
     if ($device_sn) {
         $query .= " WHERE db.device_sn = '{$device_sn}'";
@@ -79,4 +77,17 @@ function create_device_booking($conn, $device_sn, $loan_start, $loan_end, $teach
         VALUES ('$loan_start', '$loan_end', '$teacher_id', '$device_sn')";
 
     if (!$conn->query($query)) return $conn->error;
+}
+
+function loan_device($conn, $booking_id) {
+    $query = "UPDATE device_bookings
+        SET booking_status = 'loaned'
+        WHERE id = {$booking_id}";
+    
+    $query_result = $conn->query($query);
+    if (!$query_result) die ("Failed to fetch device bookings");
+
+    $query_data = $query_result->fetch_all(MYSQLI_ASSOC);
+    $query_result->free_result();
+    return $query_data;
 }
