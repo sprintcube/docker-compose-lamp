@@ -19,7 +19,7 @@ $id = $row['id'];
             <li class='list-group-item'></strong><?php echo $loan_start; ?> &mdash; <?php echo $loan_end; ?></li>
         </ul>
         <?php if (is_allowed_user_role([ROLE_ADMIN, ROLE_SUPER_ADMIN])) {?>
-            <a class='btn btn-primary' href='returnloan.php?id=<?php echo $id; ?>'>Return</a>
+            <a class='btn btn-primary' href='/service/return-loan.php?id=<?php echo $id; ?>'>Return</a>
         <?php } ?>
     </div>
 </div>

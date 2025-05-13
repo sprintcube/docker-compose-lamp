@@ -87,8 +87,10 @@ function loan_device($conn, $booking_id) {
     
     $query_result = $conn->query($query);
     if (!$query_result) die ("Failed to fetch device bookings");
+}
 
-    // $query_data = $query_result->fetch_all(MYSQLI_ASSOC);
-    // $query_result->free_result();
-    // return $query_data;
+function return_loaned_device($conn, $booking_id) {
+    $query = "DELETE FROM device_bookings WHERE id = {$booking_id} AND booking_status = 'loaned'";
+    $query_result = $conn->query($query);
+    if (!$query_result) die ("Failed to return device");
 }
