@@ -152,6 +152,15 @@ function create_booking_notification($conn, $booking_info, $message) {
     return $stmt->execute();
 }
 
+function get_notifications_for_user($conn, $username) {
+    $query = "SELECT * FROM booking_notifications WHERE username = '{$username}'";
+    $query_result = $conn->query($query);
+    $query_data = (array) $query_result->fetch_all(MYSQLI_ASSOC);
+    $query_result->free_result();
+
+    return $query_data;
+}
+
 function reject_booking($conn, $booking_id) {
     $messsage = "Your booking was rejected by the administration";
     $booking_info = get_device_booking_by_id($conn, $booking_id);

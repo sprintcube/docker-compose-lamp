@@ -38,3 +38,12 @@ function get_bookings_list($conn, $teacher_id = NULL) {
     }
     return $result;
 }
+
+
+function get_notifications($notifications) {
+    $result = '';
+    foreach ($notifications as $row) {
+        include './page-parts/notification.php';
+    }
+    return $result;
+}

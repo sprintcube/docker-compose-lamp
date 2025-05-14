@@ -2,6 +2,8 @@
 require_once 'login.php';
 require_once 'utils.php';
 require_once 'db/user-functions.php';
+require_once 'db/loans-functions.php';
+require_once 'page-components/loan-management.php';
 
 $conn = new mysqli($hn, $un, $pw, $db);
 if ($conn->connect_error) die("Connection failed");
@@ -13,6 +15,7 @@ if (!is_logged_in()) {
 
 $username = get_user_name();
 $user_data = get_current_user_info($conn, $username);
+$user_notifications = get_notifications_for_user($conn, $username);
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -70,7 +73,8 @@ $user_data = get_current_user_info($conn, $username);
                     <div class="col-6">
                         <div class="container px-5">
                             <h2 class="fw-bolder my-4">Notifications: </h2>
-                            <div class="toast show" role="alert" aria-live="assertive" aria-atomic="true">
+                            <?php get_notifications($user_notifications); ?>
+                            <!-- <div class="toast show" role="alert" aria-live="assertive" aria-atomic="true">
                                 <div class="toast-header">
                                     <i class="bi bi-bell"></i>
                                     <strong class="me-auto mx-2">Administrator</strong>
@@ -80,7 +84,7 @@ $user_data = get_current_user_info($conn, $username);
                                 <div class="toast-body">
                                     Hello, world! This is a toast message.
                                 </div>
-                            </div>
+                            </div> -->
                         </div>
                     </div>
                 </div>
