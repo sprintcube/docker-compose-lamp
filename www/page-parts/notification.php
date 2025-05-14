@@ -8,7 +8,7 @@ $id = $row['id'];
     <div class="toast-header">
         <i class="bi bi-bell"></i>
         <strong class="me-auto mx-2">From the Administrator</strong>
-        <small>About your booking of <?php echo $device_name; ?> <br/> (SN: <?php echo $device_sn; ?>)</small>
+        <small>About your booking of: <?php echo $device_name; ?> <br/> (SN: <?php echo $device_sn; ?>)</small>
         <a href="service/dismiss-notification.php?id=<?php echo $id;?>" class="btn-close" aria-label="Close"></a>
     </div>
     <div class="toast-body">

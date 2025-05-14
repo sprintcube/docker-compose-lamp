@@ -50,3 +50,8 @@
     height: 100%;
     object-fit: cover;
   }
+
+  .toast-header {
+    color: #000;
+    background-color: var(--bs-primary);
+  }
