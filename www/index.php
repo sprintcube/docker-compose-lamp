@@ -48,6 +48,7 @@ if (is_logged_in() && is_allowed_user_role([ROLE_USER])) {
                             <li class="nav-item"><a class="nav-link" href="register.html">Register</a></li>
                             <li class="nav-item"><a class="nav-link" href="loginpage.html">Log in</a></li>
                         <?php } else { ?>
+                            <li class="nav-item"><a class="nav-link" href="profile-page.php">Profile page</a></li>
                             <li class="nav-item"><a class="nav-link" href="logout.php">Log out</a></li>
                         <?php } ?>
                     </ul>
