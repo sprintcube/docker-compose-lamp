@@ -167,3 +167,10 @@ function reject_booking($conn, $booking_id) {
     cancel_booking($conn, $booking_id);
     return create_booking_notification($conn, $booking_info, $messsage);
 }
+
+
+function dismiss_notification($conn, $username, $notification_id) {
+    $query = "DELETE FROM booking_notifications WHERE id = {$notification_id} AND username = '{$username}'";
+    $query_result = $conn->query($query);
+    if (!$query_result) die ("Failed dismiss notification");
+}
