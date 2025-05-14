@@ -19,20 +19,25 @@ $img_src = file_exists($image_path) ? $image_path : $DUMMY_IMG_SRC;
         <div class="card-body">
           <h5 class="card-title"><?php echo $row['device_name']; ?></h5>
           <p class="card-text">Category: <?php echo $row['device_category'] ?><br>
-          <small class="text-muted"><?php echo $loan_start; ?> &mdash; <?php echo $loan_end; ?></small></p>
+            <small class="text-muted"><?php echo $loan_start; ?> &mdash; <?php echo $loan_end; ?></small>
+          </p>
           <?php if (is_allowed_user_role([ROLE_ADMIN, ROLE_SUPER_ADMIN])) { ?>
             <small><strong>Booked by:</strong> <?php echo $row['user_fullname']; ?></small>
-              <form method="POST" action="service/loan-device.php">
-                  <input hidden type="text" name="booking_id" value="<?php echo $row['id'];?>" />
-                  <button type="submit" class="btn btn-primary">Loan device</button>
+          <?php } ?>
+          <div class="my-3">
+            <?php if (is_allowed_user_role([ROLE_ADMIN, ROLE_SUPER_ADMIN])) { ?>
+              <form style="display: inline-block" method="POST" action="service/loan-device.php">
+                <input hidden type="text" name="booking_id" value="<?php echo $row['id']; ?>" />
+                <button type="submit" class="btn btn-secondary">Loan device</button>
               </form>
-          <?php } ?>
-          <?php if (is_allowed_user_role([ROLE_USER])) {?>
-              <a href="service/cancel-booking.php?id=<?php echo $row['id']; ?>" class="btn btn-primary">Cancel Booking</a>
-          <?php } ?>
-          <?php if (is_allowed_user_role([ROLE_ADMIN, ROLE_SUPER_ADMIN])) {?>
+            <?php } ?>
+            <?php if (is_allowed_user_role([ROLE_USER])) { ?>
+              <a href="service/cancel-booking.php?id=<?php echo $row['id']; ?>" class="btn btn-secondary">Cancel Booking</a>
+            <?php } ?>
+            <?php if (is_allowed_user_role([ROLE_ADMIN, ROLE_SUPER_ADMIN])) { ?>
               <a href="service/reject-booking.php?id=<?php echo $row['id']; ?>" class="btn btn-primary">Reject Booking</a>
-          <?php } ?>
+            <?php } ?>
+          </div>
         </div>
       </div>
     </div>

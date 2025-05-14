@@ -19,9 +19,9 @@ $img_src = file_exists($image_path) ? $image_path : $DUMMY_IMG_SRC;
         <div class='card-body btn-toolbar justify-content-between'>
             <div>
                 <?php if (is_allowed_user_role([ROLE_ADMIN, ROLE_SUPER_ADMIN])) { ?>
-                    <button data-bs-toggle='modal' data-bs-target='#<?php echo $editDeviceModalId ?>' class='btn btn-secondary' href=''>Edit</button>
+                    <button data-bs-toggle='modal' data-bs-target='#<?php echo $editDeviceModalId ?>' class='btn btn-primary' href=''>Edit</button>
                 <?php } if (is_logged_in()) { ?>
-                    <button data-bs-toggle='modal' data-bs-target='#<?php echo $bookDeviceModalId ?>' class='btn btn-primary' href=''>Book device</button>
+                    <button data-bs-toggle='modal' data-bs-target='#<?php echo $bookDeviceModalId ?>' class='btn btn-secondary' href=''>Book device</button>
                 <?php } ?> 
             </div>
             <?php if (is_allowed_user_role([ROLE_ADMIN, ROLE_SUPER_ADMIN])) 
