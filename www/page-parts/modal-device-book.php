@@ -17,7 +17,7 @@ require_once './utils.php';
                     <?php } else if (is_allowed_user_role([ROLE_ADMIN, ROLE_SUPER_ADMIN])) { ?>
                         <div class="mb-3">
                             <label class="form-label">Teacher ID:</label>
-                            <input type="text" name="teacher_id" maxlength="6" required class="form-control" id="<?php echo $teacherInputId; ?>">
+                            <input type="text" name="teacher_id" maxlength="7" required class="form-control" id="<?php echo $teacherInputId; ?>">
                         </div>
                     <?php } ?>
                     <div class="mb-3">

@@ -32,31 +32,3 @@ function get_user_role() {
         }
     } else return ROLE_ANON;
 }
-// 1. See assorted devices as an anonymous user; +
-// 2. Login or register as an anonymous user; +
-//     2.1 As a logged-in user I can log out; +
-
-// 3. As a teacher I can make booking requests for devices; +
-// 4. As a teacher I can manage my own loans; 
-
-// 5. As an admin I can decline and approve booking requests submitted by teachers;
-// 6. As an admin I can turn approved device bookings into device loans.
-// 7. As an admin I can close device loans when device is returned. +
-// 8. As an admin I can CRUD devices. 
-// 9. As an admin I can see a list of registered users.
-
-// 10. As a superadmin I can remove users;
-// 11. As a superadmin I can promote users to admins;
-// 12. As a superadmin I can promote admins to superadmins;
-// + all regular admin priviliges.
-
-
-// Finish booking system (for admin and superadmin)
-// Loans managment for user page
-// Fix tables
-// Create Profile page for Users
-// superadmin page - abiity to promote admins to superadmins and users to admins
-// On register page user should have parapeters of Wilma username - 7 letters (add an instruction for users). Show error if username is taken.
-// finish Delete device 
-// add uploading pictures to "Add device" on admin and superadmin page
-// add descriptions to device cards
