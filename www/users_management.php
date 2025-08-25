@@ -9,7 +9,7 @@ $conn = new mysqli($hn, $un, $pw, $db);
 if ($conn->connect_error) die("Connection failed");
 session_start();
 
-if (!is_logged_in()) {
+if (!is_logged_in() || !is_allowed_user_role([ROLE_ADMIN, ROLE_SUPER_ADMIN])) {
     header("Location: /index.php");
 }
 
@@ -65,7 +65,7 @@ $user_notifications = get_notifications_for_user($conn, $username);
                 <div class="row">
                     <div class="col-6">
                         <div class="container px-5">
-                            <h2 class="fw-bolder my-4">My Profile: </h2>
+                            <h2 class="fw-bolder my-4">Users list: </h2>
                             <ul class="list-group list-group-flush">
                                 <li class="list-group-item">Full name: <?php echo $user_data['name'] ?></li>
                                 <li class="list-group-item">Username: <?php echo $user_data['username']; ?></li>
@@ -75,7 +75,7 @@ $user_notifications = get_notifications_for_user($conn, $username);
                     </div>
                     <div class="col-6">
                         <div class="container px-5">
-                            <h2 class="fw-bolder my-4">Notifications: </h2>
+                            <h2 class="fw-bolder my-4">Administrators: </h2>
                             <?php get_notifications($user_notifications); ?>
                             <!-- <div class="toast show" role="alert" aria-live="assertive" aria-atomic="true">
                                 <div class="toast-header">
