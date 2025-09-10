@@ -16,12 +16,18 @@ $password = $_POST['password'];
 $conn = new mysqli($hn, $un, $pw, $db);
 if ($conn->connect_error) die("Connection failed");
 
+function render_password_reset_form($sk) {
+    ob_start();
+    include '../page-parts/form-reset-password.php';
+    $result = ob_get_clean();
+    return $result;
+}
+
 function handle_password_reset($conn, $otk) {
     // generate a new session key for one time key
-    create_sk($conn, $otk);
+    $sk = create_sk($conn, $otk);
     // render reset password form
-    // the form includes a hidden field with a session key
-
+    echo render_password_reset_form($sk);
 }
 
 function handle_form_submit(
@@ -37,19 +43,29 @@ function handle_form_submit(
     reset_user_password($conn, $username, $password_hash);
 }
 
-if ($_SERVER['REQUEST_METHOD'] === 'GET' && isset($one_time_key)) {
-    handle_password_reset($conn, $one_time_key);
-} else if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($session_key)) {
-    $stored_username = get_username_by_sk($conn, $session_key);
-    if ($stored_username) {
-        handle_form_submit(
-            $conn, 
-            $session_key, 
-            $stored_username, 
-            $password);
-        header("Location: /login.php");
-        exit;
+try {
+    if ($_SERVER['REQUEST_METHOD'] === 'GET' && isset($one_time_key)) {
+        handle_password_reset($conn, $one_time_key);
+    } else if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($session_key)) {
+        $stored_username = get_username_by_sk($conn, $session_key);
+        if ($stored_username) {
+            handle_form_submit(
+                $conn, 
+                $session_key, 
+                $stored_username, 
+                $password);
+            header("Location: /login.php");
+            exit;
+        }
     }
+} catch (Exception $e) {
+    error_log($e);
+    try {
+        delete_otk_by_sk($conn, $session_key);
+    } catch (Exception $err) {
+        error_log($err);
+    }
+} finally {
+    header("Location: /errors/error.html");
+    exit;
 }
-?>
-<strong>Failed to reset password: could not find the user</strong>

@@ -23,6 +23,7 @@ function create_sk($conn, $otk) {
         WHERE otk = {$otk}";
     $query_result = $conn->query($query);
     if (!$query_result) die ("Failed to create a session key");
+    return $new_sk;
 }
 
 function get_username_by_sk($conn, $sk) {
