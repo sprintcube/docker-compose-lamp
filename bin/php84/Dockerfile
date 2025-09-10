@@ -39,12 +39,12 @@ openssl && \
     curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local/bin --filename=composer
 
 # Install xdebug
-RUN pecl install xdebug-3.4.1 && \
+RUN pecl install xdebug-3.4.5 && \
     docker-php-ext-enable xdebug && \
     mkdir /var/log/xdebug
 
 # Install redis
-RUN pecl install redis-6.1.0 && \
+RUN pecl install redis-6.2.0 && \
     docker-php-ext-enable redis
 
 # Install imagick
@@ -52,13 +52,12 @@ RUN apt-get update && \
     apt-get -y --no-install-recommends install --fix-missing libmagickwand-dev && \
     rm -rf /var/lib/apt/lists/*
 
-# Temporary fix for php84 https://github.com/Imagick/imagick/pull/690#issuecomment-2566064269
 RUN cd /usr/local/src && \
     git clone https://github.com/Imagick/imagick && \
     cd imagick && \
     git checkout master && \
     phpize && \
-    ./configure CPPFLAGS='-Dphp_strtolower=zend_str_tolower' && \
+    ./configure && \
     make && \
     make install && \
     cd .. && \
