@@ -66,6 +66,7 @@ try {
         error_log($err);
     }
 } finally {
+    // TODO: create a bespoke error page for invalid password reset links
     header("Location: /errors/error.html");
     exit;
 }

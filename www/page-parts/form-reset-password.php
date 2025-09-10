@@ -39,6 +39,7 @@
                         <div class="text-center mb-5">
                             <div class="feature bg-icons bg-gradient text-white rounded-3 mb-3"><i class="bi bi-person-add"></i></div>
                             <h1 class="fw-bolder">Password reset form</h1>
+                            <strong>This link will remain valid for 30 minutes.</strong>
                         </div>
                         <div class="row gx-5 justify-content-center">
                             <div class="col-lg-8 col-xl-6">

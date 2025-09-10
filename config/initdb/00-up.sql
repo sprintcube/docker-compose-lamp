@@ -58,8 +58,19 @@ CREATE TABLE IF NOT EXISTS one_time_sessions {
     id INT(11) NOT NULL AUTO_INCREMENT PRIMARY KEY,
     otk CHAR(16) NOT NULL,
     sk CHAR(16),
+    session_start DATETIME,
     username VARCHAR(7) NOT NULL,
     CONSTRAINT otk_username_constraint
         FOREIGN KEY (username) REFERENCES users(username),
     CONSTRAINT unique_otk_per_user UNIQUE (username)
 }
+
+SET @@GLOBAL.event_scheduler = ON;
+
+-- Create the event to invalidate one-time password reset sessions
+-- based on session age
+CREATE EVENT AutoDeleteOldPasswordResetSessions
+ON SCHEDULE AT CURRENT_TIMESTAMP + INTERVAL 30 MINUTE 
+ON COMPLETION PRESERVE
+DO 
+DELETE LOW_PRIORITY FROM one_time_sessions WHERE session_start < DATE_SUB(NOW(), INTERVAL 45 MINUTE);

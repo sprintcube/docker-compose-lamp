@@ -16,13 +16,26 @@ function delete_otk_by_sk($conn, $sk) {
     if(!$query_result) die ("Failed to delete one-time-key");
 }
 
+/**
+ * Creates a session key for resetting user password.
+ * Password reset session is valid for 30 minutes
+ * after clicking the password reset link.
+ * @param mixed $conn database connection
+ * @param mixed $otk one-time password reset key
+ * @return string password reset session key
+ */
 function create_sk($conn, $otk) {
+    // Generate new session key
     $new_sk = bin2hex(random_bytes(8));
+    // Get the current date and time in the correct format
+    // https://www.mysqltutorial.org/mysql-basics/mysql-insert-datetime/
+    $currentDateTime = date('YYYY-MM-DD HH:MM:SS');
+
     $query = "UPDATE one_time_sessions
-        SET sk = {$new_sk}
+        SET sk = {$new_sk}, session_start = {$currentDateTime}
         WHERE otk = {$otk}";
     $query_result = $conn->query($query);
-    if (!$query_result) die ("Failed to create a session key");
+    if (!$query_result) throw new Exception("Failed to create a session key");
     return $new_sk;
 }
 
