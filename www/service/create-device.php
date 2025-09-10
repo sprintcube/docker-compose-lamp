@@ -13,7 +13,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['name'], $_POST['sn'],
         $_POST['sn'],
         $_POST['category'],
         $_POST['description'],
-        $_FILES['image']);
+    $_FILES['image']);
     if (!$create_result) echo "Error: Could not create the device";
     header('Location: /index.php');
 }

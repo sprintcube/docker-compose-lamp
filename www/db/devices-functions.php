@@ -115,8 +115,8 @@ function get_devices($conn) {
 }
 
 function update_device($conn, $device_sn) {
-    $stmt = $conn->prepare("UPDATE devices SET name = ?, category = ? WHERE sn = ?");
-    $stmt->bind_param('sss', $_POST['name'], $_POST['category'], $device_sn);
+    $stmt = $conn->prepare("UPDATE devices SET name = ?, category = ?, description = ? WHERE sn = ?");
+    $stmt->bind_param('ssss', $_POST['name'], $_POST['category'], $_POST['description'], $device_sn);
     return $stmt->execute();
 }
 
