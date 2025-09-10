@@ -53,3 +53,13 @@ CREATE TABLE IF NOT EXISTS booking_notifications (
     device_name VARCHAR(128) NOT NULL,
     message VARCHAR(175) NOT NULL
 );
+
+CREATE TABLE IF NOT EXISTS one_time_sessions {
+    id INT(11) NOT NULL AUTO_INCREMENT PRIMARY KEY,
+    otk CHAR(16) NOT NULL,
+    sk CHAR(16),
+    username VARCHAR(7) NOT NULL,
+    CONSTRAINT otk_username_constraint
+        FOREIGN KEY (username) REFERENCES users(username),
+    CONSTRAINT unique_otk_per_user UNIQUE (username)
+}

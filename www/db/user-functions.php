@@ -7,3 +7,10 @@ function get_current_user_info($conn, $username) {
     return $query_data[0];
 }
 
+function reset_user_password($conn, $username, $password_hash) {
+    $query = "UPDATE users
+        SET password_hash = {$password_hash}
+        WHERE username = {$username}";
+    $query_result = $conn->query($query);
+    if (!$query_result) die ("Failed to update password hash");
+}
