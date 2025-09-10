@@ -22,6 +22,6 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     if ($stmt->execute([$name, $email, $username, $password_hash])) {
 		header('Location: /success.html');
     } else {
-        header('Location: /error.html');
+        header('Location: /errors/error.html');
     }
 }
