@@ -17,14 +17,15 @@ $can_promote = is_allowed_user_role([ROLE_SUPER_ADMIN]);
         <div class='card-body btn-toolbar justify-content-between'>
             <div>
                 <?php if (in_array($role, [ROLE_ADMIN, ROLE_USER]) & $can_promote) {?>
-                    <form method="POST" action="/service/promote-user.php">
+                    <form method="POST" action="/service/user-promotion.php">
                         <input hidden type="text" name="username" value="<?php echo $username; ?>" />
                         <button class='btn btn-secondary' type="submit">Promote user</button>
                     </form>
                 <?php }?>
                 <?php if (in_array($role, [ROLE_ADMIN, ROLE_SUPER_ADMIN]) & $can_promote) {?>
-                    <form method="POST" action="/service/demote-user.php">
+                    <form method="POST" action="/service/user-promotion.php">
                         <input hidden type="text" name="username" value="<?php echo $username; ?>" />
+                        <input hidden type="text" name="demote" value="true" />
                         <button class='btn btn-primary' type="submit">Demote user</button>
                     </form>
                 <?php }?>

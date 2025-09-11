@@ -42,3 +42,33 @@ function reset_user_password($conn, $username, $password_hash) {
     $query_result = $conn->query($query);
     if (!$query_result) die ("Failed to update password hash");
 }
+
+function update_user_role($conn, $username, $role) {
+    $query = "UPDATE users
+        SET role = '{$role}'
+        WHERE username = '{$username}'";
+    $query_result = $conn->query($query);
+    if (!$query_result) die ("Failed to update password hash"); 
+}
+
+function promote_user($conn, $username) {
+    $role = get_current_user_info($conn, $username)['role'];
+    $new_role = false;
+    switch ($role) {
+        case ROLE_USER: $new_role = ROLE_ADMIN; break;
+        case ROLE_ADMIN: $new_role = ROLE_SUPER_ADMIN; break;
+    };
+
+    if ($new_role) update_user_role($conn, $username, $new_role);
+}
+
+function demote_user($conn, $username) {
+    $role = get_current_user_info($conn, $username)['role'];
+    $new_role = false;
+    switch ($role) {
+        case ROLE_SUPER_ADMIN: $new_role = ROLE_ADMIN; break;
+        case ROLE_ADMIN: $new_role = ROLE_USER; break;
+    };
+
+    if ($new_role) update_user_role($conn, $username, $new_role);
+}
