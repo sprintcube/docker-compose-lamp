@@ -15,6 +15,16 @@ function create_otk($conn, $username) {
     return $new_otk;
 }
 
+function validate_otk($conn, $otk) {
+    $query = "SELECT otk from one_time_sessions WHERE otk = '$otk'";
+    $query_result = $conn->query($query);
+    if ($query_result->num_rows > 0) {
+        return true;
+    } else {
+        return false;
+    }
+}
+
 function delete_otk_by_sk($conn, $sk) {
     $query = "DELETE FROM one_time_sessions
         WHERE sk = '{$sk}'";

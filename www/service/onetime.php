@@ -44,7 +44,7 @@ function handle_form_submit(
 }
 
 try {
-    if ($_SERVER['REQUEST_METHOD'] === 'GET' && $one_time_key) {
+    if ($_SERVER['REQUEST_METHOD'] === 'GET' && $one_time_key && validate_otk($conn, $one_time_key)) {
         handle_password_reset($conn, $one_time_key);
     } else if ($_SERVER['REQUEST_METHOD'] === 'POST' && $session_key && isset($_POST['password'])) {
         $password = $_POST['password'];
