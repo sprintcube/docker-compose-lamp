@@ -1,7 +1,7 @@
 <?php
 include_once './utils.php';
 
-$can_promote = is_allowed_user_role([ROLE_SUPER_ADMIN])
+$can_promote = is_allowed_user_role([ROLE_SUPER_ADMIN]);
 ?>
 
 <div class="col-lg-12 mb-2">
@@ -33,7 +33,6 @@ $can_promote = is_allowed_user_role([ROLE_SUPER_ADMIN])
                     <button class='btn btn-primary' type="submit">Reset user password</button>
                 </form>
             </div>
-            
         </div>
     </div>
 </div>

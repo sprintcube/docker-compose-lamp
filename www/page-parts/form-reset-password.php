@@ -12,8 +12,8 @@
         <!-- Bootstrap icons-->
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
         <!-- Core theme CSS (includes Bootstrap)-->
-        <link href="css/styles.css" rel="stylesheet" />
-        <link href="css/custom.css" rel="stylesheet" />
+        <link href="/css/styles.css" rel="stylesheet" />
+        <link href="/css/custom.css" rel="stylesheet" />
     </head>
     <body class="d-flex flex-column">
         <main class="flex-shrink-0">
@@ -57,7 +57,7 @@
                                     </div>
                                     <div class="form-floating mb-3">
                                         <div class="input-group mb-3">
-                                            <input type="password" id="passwordCheck" data-for="#password" class="form-control" placeholder="Repeat your password..." aria-describedby="passwordHelpBlock" required>
+                                            <input type="password" id="passwordCheck" data-for="password" class="form-control" placeholder="Repeat your password..." aria-describedby="passwordHelpBlock" required>
                                             <span class="input-group-text" id="basic-addon2"><i class="bi bi-eye-slash" id="togglePassword"></i></span>
                                         </div>
                                         <div class="invalid-feedback" class="mb-3">Passwords must be identical.</div>
@@ -94,7 +94,7 @@
         <!-- Bootstrap core JS-->
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
         <!-- Core theme JS-->
-        <script type="module" src="js/scripts.js"></script>
+        <script type="module" src="/js/scripts.js"></script>
         <!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *-->
         <!-- * *                               SB Forms JS                               * *-->
         <!-- * * Activate your form at https://startbootstrap.com/solution/contact-forms * *-->
@@ -104,30 +104,46 @@
 </html>
 <script lang="text/javascript">
     !function(){
-        const validatePasswordCheck = ({ value, dataset, setCustomValidity }) => {
-            const { value: otherValue } = document.getElementById(dataset.for);
-            if (otherValue === value) {
-                setCustomValidity('Passwords do not match.');
-            } else {
-                setCustomValidity('');
-            }
+        // const validatePasswordCheck = ({ target }) => {
+        //     const { dataset, value } = target;
+        //     const { value: otherValue } = document.getElementById(dataset.for);
+        //     if (otherValue === value) {
+        //         target.setCustomValidity('Passwords do not match.');
+        //     } else {
+        //         target.setCustomValidity('');
+        //     }
 
-        }
-        const passwordCheckInput = document.querySelector('input#passwordCheck');
-        passwordCheckInput.addEventListener('change', validatePasswordCheck);
+        // }
+        // const passwordCheckInput = document.querySelector('input#passwordCheck');
+        // passwordCheckInput.addEventListener('change', validatePasswordCheck);
 
         // Fetch all the forms we want to apply custom Bootstrap validation styles to
         const forms = document.querySelectorAll('.needs-validation')
 
         // Loop over them and prevent submission
         Array.from(forms).forEach(form => {
-        form.addEventListener('submit', event => {
-            if (!form.checkValidity()) {
-                event.preventDefault()
-                event.stopPropagation()
-            }
-            form.classList.add('was-validated')
-        }, false)
+            form.addEventListener('submit', event => {
+                if (!form.checkValidity()) {
+                    event.preventDefault()
+                    event.stopPropagation()
+                }
+                form.classList.add('was-validated')
+            }, false)
         })
+        const form = document.querySelector('form');
+        const passwordInputs = Array.from(document.querySelectorAll('input[type="password"]'));
+        const isValidForm = false;
+
+        const validateInputs = () => {
+            const uniquePasswords = new Set(passwordInputs.map(({ value }) => value));
+            if (uniquePasswords.size > 1) {
+                passwordInputs.forEach(input => input.setCustomValidity("Passwords must match"));
+                form.classList.add('was-validated')
+            } else {
+                passwordInputs.forEach(input => input.setCustomValidity(''));
+            }
+        }
+
+        passwordInputs.forEach(input => input.addEventListener('change', validateInputs));
     }();
 </script>

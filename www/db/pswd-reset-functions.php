@@ -1,6 +1,12 @@
 <?php
+function drop_existing_otks($conn, $username) {
+    $query = "DELETE FROM one_time_sessions
+        WHERE username = '{$username}';";
+    $conn->query($query);
+}
 
 function create_otk($conn, $username) {
+    drop_existing_otks($conn, $username);
     $new_otk = bin2hex(random_bytes(8));
     $stmt = $conn->prepare("INSERT INTO one_time_sessions (otk, username)
         VALUES (?,?)");
@@ -11,7 +17,7 @@ function create_otk($conn, $username) {
 
 function delete_otk_by_sk($conn, $sk) {
     $query = "DELETE FROM one_time_sessions
-        WHERE sk = {$sk}";
+        WHERE sk = '{$sk}'";
     $query_result = $conn->query($query);
     if(!$query_result) die ("Failed to delete one-time-key");
 }
@@ -29,11 +35,11 @@ function create_sk($conn, $otk) {
     $new_sk = bin2hex(random_bytes(8));
     // Get the current date and time in the correct format
     // https://www.mysqltutorial.org/mysql-basics/mysql-insert-datetime/
-    $currentDateTime = date('YYYY-MM-DD HH:MM:SS');
+    $currentDateTime = date('Y-m-d H:i:s');
 
     $query = "UPDATE one_time_sessions
-        SET sk = {$new_sk}, session_start = {$currentDateTime}
-        WHERE otk = {$otk}";
+        SET sk = '{$new_sk}', session_start = '{$currentDateTime}'
+        WHERE otk = '{$otk}'";
     $query_result = $conn->query($query);
     if (!$query_result) throw new Exception("Failed to create a session key");
     return $new_sk;
@@ -41,7 +47,7 @@ function create_sk($conn, $otk) {
 
 function get_username_by_sk($conn, $sk) {
     $query = "SELECT username FROM one_time_sessions
-        WHERE sk = {$sk}";
+        WHERE sk = '{$sk}'";
     $query_result = $conn->query($query);
 
     if (!$query_result) die ("Failed to fetch username by session key");

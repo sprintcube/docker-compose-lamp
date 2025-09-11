@@ -37,8 +37,8 @@ function search_users_info($conn, $search_term, $page_num = 1, $page_size = 25) 
 
 function reset_user_password($conn, $username, $password_hash) {
     $query = "UPDATE users
-        SET password_hash = {$password_hash}
-        WHERE username = {$username}";
+        SET password_hash = '{$password_hash}'
+        WHERE username = '{$username}'";
     $query_result = $conn->query($query);
     if (!$query_result) die ("Failed to update password hash");
 }

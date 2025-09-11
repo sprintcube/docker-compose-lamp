@@ -14,9 +14,6 @@ if (!is_logged_in() || !is_allowed_user_role([ROLE_ADMIN, ROLE_SUPER_ADMIN])) {
     header("Location: /index.php");
 }
 
-$username = get_user_name();
-$user_data = get_current_user_info($conn, $username);
-$user_notifications = get_notifications_for_user($conn, $username);
 $is_searching = isset($_GET['q']);
 $param_user_search_query = $is_searching ? $_GET['q'] : '';
 $param_users_page_num = isset($_GET['upage']) ? $_GET['upage'] : 1;
@@ -88,7 +85,6 @@ $users_rendered = render_users_list($users_info);
                     <div class="col-6">
                         <div class="container px-5">
                             <h2 class="fw-bolder my-4">Administrators: </h2>
-                            <?php get_notifications($user_notifications); ?>
                             <!-- <div class="toast show" role="alert" aria-live="assertive" aria-atomic="true">
                                 <div class="toast-header">
                                     <i class="bi bi-bell"></i>
