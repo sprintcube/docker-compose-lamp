@@ -4,6 +4,7 @@ require_once 'utils.php';
 require_once 'db/user-functions.php';
 require_once 'db/loans-functions.php';
 require_once 'page-components/loan-management.php';
+require_once 'page-components/user-management.php';
 
 $conn = new mysqli($hn, $un, $pw, $db);
 if ($conn->connect_error) die("Connection failed");
@@ -16,6 +17,16 @@ if (!is_logged_in() || !is_allowed_user_role([ROLE_ADMIN, ROLE_SUPER_ADMIN])) {
 $username = get_user_name();
 $user_data = get_current_user_info($conn, $username);
 $user_notifications = get_notifications_for_user($conn, $username);
+$is_searching = isset($_GET['q']);
+$param_user_search_query = $is_searching ? $_GET['q'] : '';
+$param_users_page_num = isset($_GET['upage']) ? $_GET['upage'] : 1;
+$param_admins_page_num = isset($_GET['apage']) ? $_GET['apage'] : 1;
+
+$users_info = $is_searching 
+    ? search_users_info($conn, $param_user_search_query, $param_users_page_num)
+    : get_all_users_info($conn, $param_users_page_num);
+
+$users_rendered = render_users_list($users_info);
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -66,11 +77,12 @@ $user_notifications = get_notifications_for_user($conn, $username);
                     <div class="col-6">
                         <div class="container px-5">
                             <h2 class="fw-bolder my-4">Users list: </h2>
-                            <ul class="list-group list-group-flush">
+                            <?php echo $users_rendered; ?>
+                            <!-- <ul class="list-group list-group-flush">
                                 <li class="list-group-item">Full name: <?php echo $user_data['name'] ?></li>
                                 <li class="list-group-item">Username: <?php echo $user_data['username']; ?></li>
                                 <li class="list-group-item">Email: <?php echo $user_data['email'] ?></li>
-                            </ul>
+                            </ul> -->
                         </div>
                     </div>
                     <div class="col-6">
