@@ -10,7 +10,7 @@ $conn = new mysqli($hn, $un, $pw, $db);
 if ($conn->connect_error) die("Connection failed");
 session_start();
 
-if (!is_logged_in() || !is_allowed_user_role([ROLE_ADMIN, ROLE_SUPER_ADMIN])) {
+if (!is_logged_in() || !is_allowed_user_role([ROLE_SUPER_ADMIN])) {
     header("Location: /index.php");
 }
 
