@@ -26,7 +26,7 @@
                     <div class="mb-3">
                         <label class="form-label">Upload image:</label>
                         <input type="file" name="image" class="form-control">
-                        <small>Supported formats: JPG, PNG, GIF, WEBP</small>
+                        <small>Supported formats: JPG</small>
                     </div>
                 </div>
                 <div class="modal-footer">

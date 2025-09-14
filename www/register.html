@@ -57,7 +57,7 @@
                                         <div class="invalid-feedback" data-sb-feedback="email:email">Email is not valid.</div>
                                     </div>
                                     <div class="form-floating mb-3">
-                                        <input class="form-control" id="username"  maxlength="7" type="username" name="username" placeholder="Enter your username..." required />
+                                        <input class="form-control" id="username"  maxlength="7" minlength="7" pattern="[A-Z]{7}" type="username" name="username" placeholder="Enter your username..." required />
                                         <label for="username">Username</label>
                                         <div id="usernameRules" class="form-text mb-3">
                                             Use your Wilma username. 4 letters of your last name and 3 letters of your name. For example if your name is Matti Meikäläinen - username is going to be MEIKMAT. If there is letters "Ä, Ö, Å" in your name use "A, O, A" instead.

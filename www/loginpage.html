@@ -44,9 +44,9 @@
                             <div class="col-lg-8 col-xl-6">
                                 <form id="contactForm" action="./login_process.php" method="post">
                                     <div class="form-floating mb-3">
-                                        <input class="form-control" id="username" type="username" name="username" placeholder="Enter your username..." required />
+                                        <input class="form-control" id="username" type="username" name="username" maxlength="7" minlength="7" pattern="[A-Z]{7}"  placeholder="Enter your username..." required />
                                         <label for="username">Username</label>
-                                        <div class="invalid-feedback" data-sb-feedback="username:required">An username is required.</div>
+                                        <div class="invalid-feedback" data-sb-feedback="username:required">A username is required.</div>
                                     </div>
                                     <div class="form-floating mb-3">
                                         <!-- <input type="password" id="password" class="form-control" placeholder="Enter your password..." aria-describedby="passwordHelpBlock" data-sb-validations="required"> -->
