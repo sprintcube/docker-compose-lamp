@@ -6,7 +6,6 @@ require_once 'db/loans-functions.php';
 require_once 'page-components/loan-management.php';
 require_once 'page-components/user-management.php';
 
-// TODO: add admins and superadmins list
 // TODO: pagination buttons
 // TODO: fix multicolumn layout
 
@@ -17,6 +16,9 @@ session_start();
 if (!is_logged_in() || !is_allowed_user_role([ROLE_SUPER_ADMIN])) {
     header("Location: /index.php");
 }
+function is_admin_or_superadmin($u_row) {
+    return in_array($u_row['role'], [ROLE_ADMIN, ROLE_SUPER_ADMIN]);
+}
 
 $is_searching = isset($_GET['q']);
 $param_user_search_query = $is_searching ? $_GET['q'] : false;
@@ -26,8 +28,10 @@ $param_admins_page_num = isset($_GET['apage']) ? $_GET['apage'] : 1;
 $users_info = $is_searching 
     ? search_users_info($conn, $param_user_search_query, $param_users_page_num)
     : get_all_users_info($conn, $param_users_page_num);
+$admins_info = array_filter($users_info, "is_admin_or_superadmin");
 
 $users_rendered = render_users_list($users_info);
+$admins_rendered = render_users_list($admins_info);
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -74,11 +78,15 @@ $users_rendered = render_users_list($users_info);
         <!-- Page content-->
         <section class="py-5">
             <div class="container">
+                <div class="row justify-content-center">
+                    <div class="col-6">
+                        <?php echo get_user_search_form($param_user_search_query); ?>
+                    </div>
+                </div>
                 <div class="row">
                     <div class="col-6">
                         <div class="container px-5">
                             <h2 class="fw-bolder my-4">Users list: </h2>
-                            <?php echo get_user_search_form($param_user_search_query); ?>
                             <?php echo $users_rendered; ?>
                             <!-- <ul class="list-group list-group-flush">
                                 <li class="list-group-item">Full name: <?php echo $user_data['name'] ?></li>
@@ -90,6 +98,7 @@ $users_rendered = render_users_list($users_info);
                     <div class="col-6">
                         <div class="container px-5">
                             <h2 class="fw-bolder my-4">Administrators: </h2>
+                            <?php echo $admins_rendered; ?>
                             <!-- <div class="toast show" role="alert" aria-live="assertive" aria-atomic="true">
                                 <div class="toast-header">
                                     <i class="bi bi-bell"></i>
