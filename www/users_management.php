@@ -5,7 +5,6 @@ require_once 'db/user-functions.php';
 require_once 'db/loans-functions.php';
 require_once 'page-components/loan-management.php';
 require_once 'page-components/user-management.php';
-// TODO: fix multicolumn layout
 
 $conn = new mysqli($hn, $un, $pw, $db);
 if ($conn->connect_error) die("Connection failed");
@@ -85,7 +84,7 @@ $admins_rendered = render_users_list($admins_info);
                     </div>
                 </div>
                 <div class="row">
-                    <div class="col-6">
+                    <div class="col-lg-6 col-m-12">
                         <div class="container px-5">
                             <h2 class="fw-bolder my-4">Users list: </h2>
                             <?php 
@@ -100,7 +99,7 @@ $admins_rendered = render_users_list($admins_info);
                             </ul> -->
                         </div>
                     </div>
-                    <div class="col-6">
+                    <div class="col-lg-6 col-m-12">
                         <div class="container px-5">
                             <h2 class="fw-bolder my-4">Administrators: </h2>
                             <?php echo $admins_rendered; ?>
