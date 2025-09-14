@@ -50,7 +50,7 @@ $user_notifications = get_notifications_for_user($conn, $username);
                             <li class="nav-item"><a class="nav-link" href="loginpage.html">Log in</a></li>
                         <?php } else { ?>
                             <li class="nav-item"><a class="nav-link" href="profile-page.php">Profile page</a></li>
-                            <?php if (is_allowed_user_role([ROLE_ADMIN, ROLE_SUPER_ADMIN]))  {?>
+                            <?php if (is_allowed_user_role([ROLE_ADMIN, ROLE_SUPER_ADMIN])) { ?>
                                 <li class="nav-item"><a class="nav-link" href="users_management.php">Users management</a></li>
                             <?php } ?>
                             <li class="nav-item"><a class="nav-link" href="logout.php">Log out</a></li>
@@ -71,11 +71,22 @@ $user_notifications = get_notifications_for_user($conn, $username);
                                 <li class="list-group-item">Username: <?php echo $user_data['username']; ?></li>
                                 <li class="list-group-item">Email: <?php echo $user_data['email'] ?></li>
                             </ul>
+                            <div class="alert alert-primary d-flex align-items-center" role="alert">
+                                <i class="bi bi-info-square mx-2" ></i>
+                                <div>
+                                    For a password change please contact administrator.
+                                </div>
+                            </div>
                         </div>
                     </div>
                     <div class="col-6">
                         <div class="container px-5">
                             <h2 class="fw-bolder my-4">Notifications: </h2>
+                            <?php if (count($user_notifications) == 0) { ?>
+                            <div>
+                                You'll see your notifications about booking requests and other issues here.
+                            </div>
+                            <?php } ?>
                             <?php get_notifications($user_notifications); ?>
                             <!-- <div class="toast show" role="alert" aria-live="assertive" aria-atomic="true">
                                 <div class="toast-header">

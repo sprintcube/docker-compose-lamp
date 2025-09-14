@@ -137,7 +137,7 @@ if (is_logged_in() && is_allowed_user_role([ROLE_USER])) {
                             <div class="text-center">
                                 <a id="loans"></a>
                                 <h2 class="fw-bolder">Loans Management</h2>
-                                <p class="lead fw-normal text-muted mb-5">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Eaque fugit ratione dicta mollitia. Officiis ad.</p>
+                                <p class="lead fw-normal text-muted mb-5">Information about loaned devices.</p>
                             </div>
                         </div>
                         <div class="container text-center">
