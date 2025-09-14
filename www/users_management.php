@@ -5,8 +5,6 @@ require_once 'db/user-functions.php';
 require_once 'db/loans-functions.php';
 require_once 'page-components/loan-management.php';
 require_once 'page-components/user-management.php';
-
-// TODO: pagination buttons
 // TODO: fix multicolumn layout
 
 $conn = new mysqli($hn, $un, $pw, $db);
@@ -24,6 +22,9 @@ $is_searching = isset($_GET['q']);
 $param_user_search_query = $is_searching ? $_GET['q'] : false;
 $param_users_page_num = isset($_GET['upage']) ? $_GET['upage'] : 1;
 $param_admins_page_num = isset($_GET['apage']) ? $_GET['apage'] : 1;
+
+$number_of_users = count_users($conn);
+$number_of_pages = (int) ceil($number_of_users / DEFAULT_USERS_PAGE_SIZE);
 
 $users_info = $is_searching 
     ? search_users_info($conn, $param_user_search_query, $param_users_page_num)
@@ -87,7 +88,11 @@ $admins_rendered = render_users_list($admins_info);
                     <div class="col-6">
                         <div class="container px-5">
                             <h2 class="fw-bolder my-4">Users list: </h2>
-                            <?php echo $users_rendered; ?>
+                            <?php 
+                                echo render_users_pagination_page_links($param_users_page_num, $number_of_pages, DEFAULT_USERS_PAGE_SIZE);
+                                echo $users_rendered; 
+                                echo render_users_pagination_page_links($param_users_page_num, $number_of_pages, DEFAULT_USERS_PAGE_SIZE);
+                            ?>
                             <!-- <ul class="list-group list-group-flush">
                                 <li class="list-group-item">Full name: <?php echo $user_data['name'] ?></li>
                                 <li class="list-group-item">Username: <?php echo $user_data['username']; ?></li>

@@ -1,4 +1,5 @@
 <?php
+const DEFAULT_USERS_PAGE_SIZE = 25;
 
 function get_current_user_info($conn, $username) {
     $query = "SELECT * FROM users WHERE username = '{$username}'";
@@ -7,7 +8,7 @@ function get_current_user_info($conn, $username) {
     return $query_data[0];
 }
 
-function get_all_users_info($conn, $page_num = 1, $page_size = 25) {
+function get_all_users_info($conn, $page_num = 1, $page_size = DEFAULT_USERS_PAGE_SIZE) {
     $offset = ($page_num - 1) * $page_size;
     $query = "SELECT username, role, email, name  FROM users LIMIT {$offset}, {$page_size}";
     $query_result = $conn->query($query);
@@ -15,8 +16,14 @@ function get_all_users_info($conn, $page_num = 1, $page_size = 25) {
     return $query_data;
 }
 
+function count_users($conn) {
+    $query = "SELECT COUNT(*) FROM users";
+    $query_result = $conn->query($query);
+    $query_data = $query_result->fetch_all(MYSQLI_ASSOC);
+    return $query_data[0]['COUNT(*)'];
+}
 
-function search_users_info($conn, $search_term, $page_num = 1, $page_size = 25) {
+function search_users_info($conn, $search_term, $page_num = 1, $page_size = DEFAULT_USERS_PAGE_SIZE) {
     $offset = ($page_num - 1) * $page_size;
     $st = htmlspecialchars($search_term);
     $query = "SELECT 
