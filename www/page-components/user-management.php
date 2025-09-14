@@ -17,3 +17,14 @@ function render_users_list($users_data) {
     // $list .= '</div>';
     return $list;
 }
+
+function get_user_search_form($search_term)
+{
+    ob_start();
+    $is_searching_by_term = !!$search_term;
+
+    include './page-parts/form-search-user.php';
+
+    $result = ob_get_clean();
+    return $result;
+}

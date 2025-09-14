@@ -6,6 +6,10 @@ require_once 'db/loans-functions.php';
 require_once 'page-components/loan-management.php';
 require_once 'page-components/user-management.php';
 
+// TODO: add admins and superadmins list
+// TODO: pagination buttons
+// TODO: fix multicolumn layout
+
 $conn = new mysqli($hn, $un, $pw, $db);
 if ($conn->connect_error) die("Connection failed");
 session_start();
@@ -15,7 +19,7 @@ if (!is_logged_in() || !is_allowed_user_role([ROLE_SUPER_ADMIN])) {
 }
 
 $is_searching = isset($_GET['q']);
-$param_user_search_query = $is_searching ? $_GET['q'] : '';
+$param_user_search_query = $is_searching ? $_GET['q'] : false;
 $param_users_page_num = isset($_GET['upage']) ? $_GET['upage'] : 1;
 $param_admins_page_num = isset($_GET['apage']) ? $_GET['apage'] : 1;
 
@@ -74,6 +78,7 @@ $users_rendered = render_users_list($users_info);
                     <div class="col-6">
                         <div class="container px-5">
                             <h2 class="fw-bolder my-4">Users list: </h2>
+                            <?php echo get_user_search_form($param_user_search_query); ?>
                             <?php echo $users_rendered; ?>
                             <!-- <ul class="list-group list-group-flush">
                                 <li class="list-group-item">Full name: <?php echo $user_data['name'] ?></li>
