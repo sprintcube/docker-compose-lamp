@@ -25,7 +25,7 @@ usage() {
 
 echo "Usage:"
 echo "       -b = build all container variations of specified version"
-echo "            valid values are: php54, php56, php71, php72, php73, php74, php8, php81, php82"
+echo "            valid values are: php54, php56, php71, php72, php73, php74, php8, php81, php82, php83, php84"
 echo -e " \nAttention: !!! SCRIPT REMOVES ALL DATA IN 'data/mysql/*' !!!"
 }
 
@@ -39,7 +39,7 @@ build () {
                 echo -e "### cleaning old mysql data"
                 rm -rf ./data/mysql/*
                 echo -e "### building ./buildtarget/$buildtarget-$version.env \n"
-                $dc --env-file ./buildtest/$buildtarget-$version.env up -d --build
+                $dc --env-file ./buildtest/$buildtarget-$version.env up -d --build --force-recreate
                 # wait for mysql to initialize
                 sleep 30
                 # check definitions
@@ -125,7 +125,7 @@ if [ "$buildtarget" == 'php54' ]||[ "$buildtarget" == 'php56' ]||[ "$buildtarget
                 build "$buildtarget" "$version"
                 cleanup
         done
-elif [ "$buildtarget" == 'php74' ]||[ "$buildtarget" == 'php8' ]||[ "$buildtarget" == 'php81' ] || [ "$buildtarget" == 'php82' ] || [ "$buildtarget" == 'php83' ] ; then
+elif [ "$buildtarget" == 'php74' ]||[ "$buildtarget" == 'php8' ]||[ "$buildtarget" == 'php81' ] || [ "$buildtarget" == 'php82' ] || [ "$buildtarget" == 'php83' ] || [ "$buildtarget" == 'php84' ] ; then
         for version in "${dbarr[@]}"
         do
                 checkdep
