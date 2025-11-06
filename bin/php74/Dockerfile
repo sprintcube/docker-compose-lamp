@@ -52,6 +52,7 @@ RUN pecl install redis-5.1.1 && \
 RUN apt-get update && \
     apt-get -y --no-install-recommends install --fix-missing libmagickwand-dev && \
     rm -rf /var/lib/apt/lists/* && \
+    pecl channel-update pecl.php.net && \
     pecl install imagick && \
     docker-php-ext-enable imagick
 
