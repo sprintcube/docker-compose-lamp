@@ -123,6 +123,9 @@ _**MYSQL_CNF**_
 
 Define your custom `my.cnf` modifications to meet your database requirments.
 
+**Note:**
+When providing "host" value to the application, eg. wordpress, please use the value `database` where we generally use `localhost`
+
 ## Web Server
 
 Apache is configured to run on port 80. So, you can access it via `http://localhost`.
