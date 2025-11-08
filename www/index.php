@@ -45,6 +45,24 @@
                                     mysqli_close($link);
                                     ?>
                                 </li>
+                                <li>
+                                    <?php
+                                    // Check Meilisearch status
+                                    $meiliUrl = "http://localhost:" . getenv('HOST_MACHINE_MEILISEARCH_PORT');
+                                    $ch = curl_init();
+                                    curl_setopt($ch, CURLOPT_URL, $meiliUrl . "/health");
+                                    curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
+                                    $output = curl_exec($ch);
+                                    $httpcode = curl_getinfo($ch, CURLINFO_HTTP_CODE);
+                                    curl_close($ch);
+
+                                    if ($httpcode == 200) {
+                                        echo "Meilisearch is running!";
+                                    } else {
+                                        echo "Meilisearch is not available!";
+                                    }
+                                    ?>
+                                </li>
                             </ul>
                         </div>
                     </div>

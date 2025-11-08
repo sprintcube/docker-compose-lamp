@@ -9,6 +9,7 @@ A basic LAMP stack environment built using Docker Compose. It consists of the fo
 - MySQL
 - phpMyAdmin
 - Redis
+- Meilisearch
 
 As of now, we have several different PHP versions. Use appropriate php version as needed:
 
