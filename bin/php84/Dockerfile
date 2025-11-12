@@ -64,6 +64,24 @@ RUN cd /usr/local/src && \
     rm -rf imagick && \
     docker-php-ext-enable imagick
 
+# -------------------------------------------------------------
+# ADICIONE ESTAS LINHAS PARA INSTALAR A EXTENSÃO MONGODB
+# -------------------------------------------------------------
+
+# 1. Instala as dependências necessárias (libssl-dev)
+RUN apt-get update && apt-get install -y \
+    libssl-dev \
+    # Limpa o cache para reduzir o tamanho da imagem
+    && rm -rf /var/lib/apt/lists/*
+
+# 2. Instala o driver do MongoDB via PECL
+# É comum usar 'pecl install mongodb'
+RUN pecl install mongodb
+
+# 3. Habilita a extensão no PHP
+RUN echo "extension=mongodb.so" >> /usr/local/etc/php/conf.d/docker-php-ext-mongodb.ini
+# -------------------------------------------------------------
+
 # Other PHP8 Extensions
 
 RUN docker-php-ext-install pdo_mysql && \

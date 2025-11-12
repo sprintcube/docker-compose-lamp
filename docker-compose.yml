@@ -1,4 +1,4 @@
-version: "3"
+#version: "3"
 
 services:
   webserver:
@@ -11,6 +11,7 @@ services:
       - "${HOST_MACHINE_SECURE_HOST_PORT}:443"
     links:
       - database
+      - mongodb # <--- ADICIONADO LINK PARA O SERVIÇO MONGODB
     volumes:
       - ${DOCUMENT_ROOT-./www}:/var/www/html:rw
       - ${PHP_INI-./config/php/php.ini}:/usr/local/etc/php/php.ini
@@ -35,7 +36,8 @@ services:
     container_name: "${COMPOSE_PROJECT_NAME}-${DATABASE}"
     restart: "always"
     ports:
-      - "127.0.0.1:${HOST_MACHINE_MYSQL_PORT}:3306"
+    #  - "127.0.0.1:${HOST_MACHINE_MYSQL_PORT}:3306"
+      - "${HOST_MACHINE_MYSQL_PORT}:3306"
     volumes:
       - ${MYSQL_INITDB_DIR-./config/initdb}:/docker-entrypoint-initdb.d
       - ${MYSQL_DATA_DIR-./data/mysql}:/var/lib/mysql
@@ -72,3 +74,40 @@ services:
     image: redis:latest
     ports:
       - "127.0.0.1:${HOST_MACHINE_REDIS_PORT}:6379"
+      # --- NOVO SERVIÇO MONGODB ---
+  mongodb:
+    image: mongo:latest # Imagem oficial do MongoDB
+    container_name: "${COMPOSE_PROJECT_NAME}-mongodb"
+    restart: "always"
+    ports:
+    #  - "127.0.0.1:${HOST_MACHINE_MONGODB_PORT}:27017" # Mapeamento da porta
+      - "${HOST_MACHINE_MONGODB_PORT}:27017" # Mapeamento da porta
+    volumes:
+      - ${MONGODB_DATA_DIR-./data/mongodb}:/data/db # Persistência dos dados
+    environment:
+      # Exemplo de variáveis de ambiente para usuário/senha, se precisar.
+      # Remova ou comente se quiser um container simples sem autenticação inicial.
+      MONGO_INITDB_ROOT_USERNAME: ${MONGODB_ROOT_USER}
+      MONGO_INITDB_ROOT_PASSWORD: ${MONGODB_ROOT_PASSWORD}
+
+      # --- SERVIÇO MONGO EXPRESS (Interface Web) ---
+  mongoexpress:
+    image: mongo-express:latest
+    container_name: "${COMPOSE_PROJECT_NAME}-mongoexpress"
+    restart: "always"
+    ports:
+      - "${HOST_MACHINE_MONGO_EXPRESS_PORT}:8081" # Porta padrão do Mongo Express
+    environment:
+      # Variáveis de conexão ao servidor MongoDB
+      ME_CONFIG_MONGODB_SERVER: mongodb # Nome do serviço do MongoDB
+      ME_CONFIG_MONGODB_PORT: 27017
+      # Variáveis para autenticação no MongoDB (devem ser as mesmas do serviço 'mongodb')
+      ME_CONFIG_MONGODB_ADMINUSERNAME: ${MONGODB_ROOT_USER}
+      ME_CONFIG_MONGODB_ADMINPASSWORD: ${MONGODB_ROOT_PASSWORD}
+      # Variáveis para autenticação na própria interface do Mongo Express (Recomendado!)
+      ME_CONFIG_BASICAUTH_USERNAME: ${MONGO_EXPRESS_USER}
+      ME_CONFIG_BASICAUTH_PASSWORD: ${MONGO_EXPRESS_PASSWORD}
+    links:
+      - mongodb
+    depends_on:
+      - mongodb # Garante que o MongoDB suba antes do Mongo Express

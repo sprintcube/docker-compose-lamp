@@ -55,6 +55,29 @@ RUN apt-get update && \
     pecl install imagick && \
     docker-php-ext-enable imagick
 
+# -------------------------------------------------------------
+# ADICIONE ESTAS LINHAS PARA INSTALAR A EXTENSÃO MONGODB
+# -------------------------------------------------------------
+
+# 1. Instala as dependências necessárias (libssl-dev)
+RUN apt-get update && apt-get install -y \
+    libssl-dev \
+    # Limpa o cache para reduzir o tamanho da imagem
+    && rm -rf /var/lib/apt/lists/*
+
+# -------------------------------------------------------------
+# 2. Instala o driver do MongoDB via PECL, ESPECIFICANDO A VERSÃO COMPATÍVEL COM PHP 7.4
+# -------------------------------------------------------------
+# RUN pecl install mongodb-1.17.1 
+
+# Nota: A instalação pode pedir para você digitar 'yes' na linha de comando.
+# Para evitar isso, você pode tentar forçar a instalação no modo não-interativo:
+ RUN pecl install -Z mongodb-1.17.1
+
+# 3. Habilita a extensão no PHP
+RUN echo "extension=mongodb.so" >> /usr/local/etc/php/conf.d/docker-php-ext-mongodb.ini
+# -------------------------------------------------------------
+
 # Other PHP7 Extensions
 
 RUN docker-php-ext-install pdo_mysql && \
