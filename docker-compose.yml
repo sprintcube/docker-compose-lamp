@@ -90,6 +90,14 @@ services:
       MONGO_INITDB_ROOT_USERNAME: ${MONGODB_ROOT_USER}
       MONGO_INITDB_ROOT_PASSWORD: ${MONGODB_ROOT_PASSWORD}
 
+    # faz o mongo aguardar estar pronto antes de iniciar outros serviços dependentes
+    healthcheck:
+      test: ["CMD-SHELL", "mongosh --quiet --eval 'db.runCommand({ ping: 1 }).ok'"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+      start_period: 30s
+
       # --- SERVIÇO MONGO EXPRESS (Interface Web) ---
   mongoexpress:
     image: mongo-express:latest
@@ -110,4 +118,6 @@ services:
     links:
       - mongodb
     depends_on:
-      - mongodb # Garante que o MongoDB suba antes do Mongo Express
+      # Sintaxe correta para dependência de saúde
+      mongodb:
+        condition: service_healthy
