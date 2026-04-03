@@ -4,6 +4,7 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <title>LAMP STACK</title>
+        <link rel="shortcut icon" href="/assets/images/favicon.svg" type="image/svg+xml">
         <link rel="stylesheet" href="/assets/css/bulma.min.css">
     </head>
     <body>
@@ -62,5 +63,13 @@
                 </div>
             </div>
         </section>
+        <footer class="footer">
+            <div class="content has-text-centered">
+                <p>
+                    <strong><a href="https://www.sprintcube.com" target="_blank">SprintCube</a></strong><br>
+                    The source code is released under the <a href="https://github.com/sprintcube/docker-compose-lamp/blob/master/LICENSE" target="_blank">MIT license</a>.
+                </p>
+            </div>
+        </footer>
     </body>
 </html>

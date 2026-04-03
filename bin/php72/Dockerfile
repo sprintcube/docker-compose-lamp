@@ -8,6 +8,12 @@ FROM php:7.2-apache-stretch
 
 ARG DEBIAN_FRONTEND=noninteractive
 
+# Fix the source.list for stretch
+RUN printf "deb http://archive.debian.org/debian/ stretch main\n" > /etc/apt/sources.list && \
+    printf "deb-src http://archive.debian.org/debian/ stretch main\n" >>  /etc/apt/sources.list && \
+    printf "deb http://archive.debian.org/debian-security stretch/updates main\n" >>  /etc/apt/sources.list && \
+    printf "deb-src http://archive.debian.org/debian-security stretch/updates main" >>  /etc/apt/sources.list
+
 RUN apt-get -y update --fix-missing --no-install-recommends
 RUN apt-get -y upgrade
 

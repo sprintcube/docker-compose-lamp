@@ -20,19 +20,22 @@ As of now, we have several different PHP versions. Use appropriate php version a
 - 7.4.x
 - 8.0.x
 - 8.1.x
+- 8.2.x
+- 8.3.x
+- 8.4.x
 
 ## Installation
 
 - Clone this repository on your local computer
 - configure .env as needed
-- Run the `docker-compose up -d`.
+- Run the `docker compose up -d`.
 
 ```shell
 git clone https://github.com/sprintcube/docker-compose-lamp.git
 cd docker-compose-lamp/
 cp sample.env .env
 // modify sample.env as needed
-docker-compose up -d
+docker compose up -d
 // visit localhost
 ```
 
@@ -96,7 +99,7 @@ This will be used to store Apache logs. The default value for this is `./logs/ap
 ---
 
 > For Apple Silicon Users:
-> Please select Mariadb as Database. Oracle doesn't build their SQL Containers for the arm Architecure
+> Please select Mariadb as Database. Oracle doesn't build their SQL Containers for the arm Architecture
 
 _**DATABASE**_
 
@@ -116,6 +119,13 @@ _**MYSQL_LOG_DIR**_
 
 This will be used to store Apache logs. The default value for this is `./logs/mysql`.
 
+_**MYSQL_CNF**_
+
+Define your custom `my.cnf` modifications to meet your database requirments.
+
+**Note:**
+When providing "host" value to the application, eg. wordpress, please use the value `database` where we generally use `localhost`
+
 ## Web Server
 
 Apache is configured to run on port 80. So, you can access it via `http://localhost`.
@@ -128,14 +138,14 @@ By default following modules are enabled.
 - headers
 
 > If you want to enable more modules, just update `./bin/phpX/Dockerfile`. You can also generate a PR and we will merge if seems good for general purpose.
-> You have to rebuild the docker image by running `docker-compose build` and restart the docker containers.
+> You have to rebuild the docker image by running `docker compose build` and restart the docker containers.
 
 #### Connect via SSH
 
-You can connect to web server using `docker-compose exec` command to perform various operation on it. Use below command to login to container via ssh.
+You can connect to web server using `docker compose exec` command to perform various operation on it. Use below command to login to container via ssh.
 
 ```shell
-docker-compose exec webserver bash
+docker compose exec webserver bash
 ```
 
 ## PHP
@@ -162,7 +172,7 @@ May differ for PHP Versions <7.x.x
 - gd
 
 > If you want to install more extension, just update `./bin/webserver/Dockerfile`. You can also generate a PR and we will merge if it seems good for general purpose.
-> You have to rebuild the docker image by running `docker-compose build` and restart the docker containers.
+> You have to rebuild the docker image by running `docker compose build` and restart the docker containers.
 
 ## phpMyAdmin
 

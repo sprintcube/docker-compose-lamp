@@ -40,6 +40,7 @@ services:
       - ${MYSQL_INITDB_DIR-./config/initdb}:/docker-entrypoint-initdb.d
       - ${MYSQL_DATA_DIR-./data/mysql}:/var/lib/mysql
       - ${MYSQL_LOG_DIR-./logs/mysql}:/var/log/mysql
+      - ${MYSQL_CNF-./config/mysql/my.cnf}:/etc/my.cnf
     environment:
       MYSQL_ROOT_PASSWORD: ${MYSQL_ROOT_PASSWORD}
       MYSQL_DATABASE: ${MYSQL_DATABASE}
