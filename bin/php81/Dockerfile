@@ -78,7 +78,8 @@ RUN docker-php-ext-install pdo_mysql && \
     docker-php-ext-install mbstring && \
     docker-php-ext-install gettext && \
     docker-php-ext-install calendar && \
-    docker-php-ext-install exif
+    docker-php-ext-install exif && \
+    docker-php-ext-install pcntl
 
 
 # Install Freetype 
