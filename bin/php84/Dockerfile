@@ -13,6 +13,11 @@ RUN apt-get -y update --fix-missing && \
 
 RUN cp /usr/local/etc/php/php.ini-production /usr/local/etc/php/php.ini
 
+RUN { \
+    echo 'pdo_mysql.default_socket=/run/mysqld/mysqld.sock'; \
+    echo 'mysqli.default_socket=/run/mysqld/mysqld.sock'; \
+} > /usr/local/etc/php/conf.d/docker-mysql-socket.ini
+
 # Install useful tools and install important libaries
 RUN apt-get -y update && \
     apt-get -y --no-install-recommends install nano wget \
@@ -83,9 +88,10 @@ RUN docker-php-ext-install pdo_mysql && \
 RUN apt-get -y update && \
     apt-get --no-install-recommends install -y libfreetype6-dev \
 libjpeg62-turbo-dev \
+libwebp-dev \
 libpng-dev && \
     rm -rf /var/lib/apt/lists/* && \
-    docker-php-ext-configure gd --enable-gd --with-freetype --with-jpeg && \
+    docker-php-ext-configure gd --enable-gd --with-freetype --with-jpeg --with-webp && \
     docker-php-ext-install gd
 
 # Insure an SSL directory exists
