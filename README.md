@@ -126,6 +126,22 @@ Define your custom `my.cnf` modifications to meet your database requirments.
 **Note:**
 When providing "host" value to the application, eg. wordpress, please use the value `database` where we generally use `localhost`
 
+## Troubleshooting
+
+### phpMyAdmin import fails on AUTO_INCREMENT / ALTER TABLE
+
+If you see errors like:
+
+`ERROR 1025 (HY000): Error on rename of './db/table' to './db/#sql-backup-*' (errno: 168 "Unknown (generic) error from engine")`
+
+Root cause is usually missing/corrupt InnoDB persistent stats tables: `mysql.innodb_table_stats` / `mysql.innodb_index_stats`.
+
+Fix (safe: only resets stats metadata):
+
+```shell
+./repair-mariadb-innodb-stats.sh
+```
+
 ## Web Server
 
 Apache is configured to run on port 80. So, you can access it via `http://localhost`.
